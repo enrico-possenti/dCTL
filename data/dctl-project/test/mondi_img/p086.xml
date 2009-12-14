@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<!DOCTYPE TEI SYSTEM "../../_common/dtd/dctl.core.dtd" [
+<!ENTITY % TEI.extension.dtd SYSTEM "../../_common/dtd/dctl.extension.dtd">
+<!ENTITY % collection.header.ent SYSTEM "../_header.ent">
+<!ENTITY % package.header.ent SYSTEM "_header.ent">
+<!ENTITY TEI.header SYSTEM "../../_common/headers/teiHeader.package.xml">
+<!ENTITY TEI.header.profileDesc.textClass SYSTEM "../../_common/add-ons/teiHeader.profileDesc.textClass.xml">
+%TEI.extension.dtd;
+%collection.header.ent;
+%package.header.ent;
+]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&package_id;"
+ n="&source_author; - &source_title_main;"> &TEI.header; <text
+  xml:lang="&source_lang;" xml:id="&package_id;.package" ana="&source_genre;">
+  <front>
+   <div type="part" />
+  </front>
+  <body>
+   <div type="part">
+    <!-- NON MODIFICARE LA PARTE PRECEDENTE IL PUNTO "BEGIN" -->
+    <!-- %BEGIN% -->
+    <!-- BEGIN -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- LA DESCRIZIONE DEGLI ELEMENTI TEI È NELLA DOCUMENTAZIONE TEI : http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html -->
+    <!-- LA DESCRIZIONE DEGLI ELEMENTI DCTL È NELLA DOCUMENTAZIONE DCTL : (ancora da scrivere...) -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- [ CASO FRONTESPIZIO ] -->
+    <!-- l'elemento TEI:DIV deve essere di tipo "dctlObject" in quanto scheda e non testo continuo -->
+    <!-- l'attributo XML:ID deve comunque iniziare con la sintassi "pNNN" coincidente con il nome della partizione di package (nome del file precedente l'estensione ".xml") -->
+    <!-- l'attributo N dovrebbe contenere un'etichetta identificativa della scheda, da utilizzare come ultima risorsa in caso di visualizzazione -->
+    <!-- l'attributo CORRESP contiene, se presente, l'URI relativo all'anastatica -->
+    <div type="dctlObject" xml:id="p086in004pg105"
+     n="Inferno de' ricchi avari et de' poveri liberali, Frontespizio" corresp="img://_ANASTATICA_">
+     <!-- l'elemento TEI:PB, come TEI:LB, deve essere all'interno dell'elemento di cui eventualmente si vuole ricreare il riferimento -->
+     
+     <pb n="105" />
+     <!-- l'elemento TEI:HEAD marca l'intestazione della scheda, ma è importante l'elemento INDEX/TERM che marca l'etichetta da utilizzare nella costruzione degli indici e dei riferimenti -->
+     <head>
+      <index>
+       <term>Inferno de' ricchi avari et de' poveri liberali, Frontespizio</term>
+      </index>
+     </head>
+     <!-- l'elemento TEI:BIBL (la cui sottostruttura di elementi è descritta nella documentazione TEI) definisce il "record bibliografico" della scheda -->
+     <bibl>
+      <publisher>Marcolini, Francesco</publisher>
+      <pubPlace>Venezia</pubPlace>
+      <date value="1552/1553-00-00">1552-1553</date>
+      <distributor role="location">Biblioteca Universitaria, Bologna</distributor>
+     </bibl>
+     <!-- l'elemento TEI:FIGURE contiene l'elemento TEI:GRAPHIC (immagine) e l'elemento DCTL:STUDIO -->
+     <figure>
+      <graphic url="img://_IMMAGINE_" />
+      <!-- l'elemento TEI:FIGDESC (obbligatorio) contiene l'etichetta che appare solo passando con il mouse sull'immagine -->
+      <figDesc>Inferno de' ricchi avari et de' poveri liberali, Frontespizio</figDesc>
+      <!-- l'elemento DCTL:STUDIO -->
+      <dctl:studio>
+       <!-- l'elemento DCTL:DESC deve contenere la descrizione dettagliata dell'immagine -->
+       <dctl:desc><!--  --></dctl:desc>
+       <!-- l'elemento DCTL:MEANING con attributo TYPE="original" deve contenere la descrizione del significato originario dell'immagine -->
+       <dctl:meaning type="original"><!--  --></dctl:meaning>
+       <!-- l'elemento DCTL:MEANING con attributo TYPE="context" deve contenere la descrizione del significato contestuale dell'immagine -->
+       <dctl:meaning type="context"><!--  --></dctl:meaning>
+       <!-- l'elemento DCTL:TRANSCRIPTION deve contenere la trascrizione del testo presente nell'immagine -->
+       <dctl:transcription>lorem ipsum ...
+         <!-- l'elemento TEI:SEG con attributo ANA="key_item", assegnato NON manualmente ma dal sistema di poligoni e coordinate che andremo a realizzare, permette di "evidenziare" parole o segmenti da collegare a parti di immagine dell'elemento TEI:GRAPHIC, secondo una codifica ancora da definire --><seg
+         ana="key_item">cesto di frutta</seg> .... lorem ipsum lorem ipsum lorem ipsum lorem
+        ipsum</dctl:transcription>
+       <!-- l'elemento DCTL:TYPOLOGY contiene la tipologia di immagine -->
+       <dctl:typology type="print" />
+       <!-- l'elemento DCTL:TECHNIQUE contiene la tecnica di realizzazione dell'immagine -->
+       <dctl:technique type="woodcut">xilografia</dctl:technique>
+       <!-- l'elemento DCTL:MATERIAL contiene il materiale di supporto dell'immagine -->
+       <dctl:material type="paper" />
+       <!-- l'elemento DCTL:MEASURE contiene le misure dell'immagine -->
+       <dctl:measure><!-- mm ??? x ??? --></dctl:measure>
+       <!-- l'elemento DCTL:POSITION contiene il posizionamento dell'immagine -->
+       <dctl:position>...</dctl:position>
+       <!-- l'elemento DCTL:FRAME contiene la descrizione dell'eventuale cornice -->
+       <dctl:frame>
+        <!-- opzionale -->
+        <dctl:desc>... (mm ??? x ???)</dctl:desc>
+       </dctl:frame>
+       <!-- l'elemento DCTL:MATRIX contiene la descrizione dell'eventuale matrice -->
+       <dctl:matrix>
+        <dctl:desc>...</dctl:desc>
+        <dctl:material type="wood" />
+        <dctl:technique type="woodcut" />
+        <dctl:measure><!-- mm ??? x ??? --></dctl:measure>
+        <note place="apparatus" resp="editor" type="desc"><!-- eventuali note descrittive --></note>
+        <bibl>
+         <author><!-- opzionale --></author>
+         <distributor role="location"><!-- XXX, YYY --></distributor>
+        </bibl>
+       </dctl:matrix>
+       <!-- l'elemento DCTL:ICONTERM contiene la codifica dei codici Iconclass -->
+       <dctl:iconTerm key="XXXXXX"><!-- iconclass-ed --></dctl:iconTerm>
+      </dctl:studio>
+     </figure>
+     <!-- l'elemento TEI:NOTE contiene le note -->
+     <note type="desc" resp="editor" place="apparatus"><!-- note descrittive --></note>
+     <!-- l'elemento TEI:NOTE contiene le note -->
+     <note type="studio" resp="editor" place="apparatus"><!-- note di studio --></note>
+     <!-- l'elemento TEI:LISTBIBL contiene l'elenco degli elementi TEI:BIBL per la bibliografia -->
+     <listBibl>
+      <!-- l'elemento TEI:BIBL contiene un record della bibliografia -->
+      <bibl>
+       <author><!--  --></author>
+       <title><!--  --></title>
+       <publisher><!--  --></publisher>
+       <pubPlace><!--  --></pubPlace>
+       <date value="XXXX-00-00">XXXX</date>
+       <extent>pp. <!--  --></extent>
+      </bibl>
+     </listBibl>
+    </div>
+    <!-- -->
+    <!-- -->
+    <!-- END -->
+    <!-- %END% -->
+    <!-- NON MODIFICARE LA PARTE OLTRE IL PUNTO "END" -->
+   </div>
+  </body>
+  <back>
+   <div type="part" />
+  </back>
+ </text>
+</TEI>

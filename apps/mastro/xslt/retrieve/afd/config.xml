@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+ <menu package_kind="" label="La Collezione" xslt="collection_by_package"
+  icon="collection_by_package" tooltip="La Collezione">
+  <div class="h2_detail">collection_by_package</div>
+ </menu>
+ <menu package_kind="" label="Illustrazioni per canto" xslt="image_by_div" icon="image_by_div"
+  tooltip="Illustrazioni per canto">
+  <div class="h2_detail">image_by_div</div>
+ </menu>
+ <menu package_kind="" label="Scene" xslt="scene_by_package" icon="scene_by_package_img"
+  tooltip="Scene">
+  <div class="h2_detail">scene_by_package</div>
+ </menu>
+ <menu package_kind="" label="Personaggi" xslt="index_by_character" icon="index_by_character"
+  tooltip="Personaggi">
+  <div class="h2_detail">index_by_character</div>
+ </menu>
+ <menu package_kind="" label="Ambientazioni" xslt="index_by_setting" icon="index_by_setting"
+  tooltip="Ambientazioni">
+  <div class="h2_detail">index_by_setting</div>
+ </menu>
+ <menu package_kind="" label="Ecphrasis" xslt="ecphrasis_by_div" icon="ecphrasis_by_div"
+  tooltip="Ecphrasis">
+  <div class="h2_detail">ecphrasis_by_div</div>
+ </menu>
+ <menu package_kind="" label="Ricerca" xslt="query_by_block" icon="query_by_block" tooltip="Ricerca">
+  <div class="h2_detail">query_by_block</div>
+ </menu>
+</config>

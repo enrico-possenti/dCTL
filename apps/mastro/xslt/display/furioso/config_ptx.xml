@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+ <menu label="Edizione" xslt="menu_edition.xsl" icon="edition" tooltip="Edizione"> </menu>
+ <menu label="Allegorie" xslt="menu_image.xsl" icon="image" tooltip="Allegorie">
+  <div class="h2_detail">In questa sezione è possibile navigare le allegorie presenti nell'edizione</div>
+ </menu>
+ <menu label="Episodi" xslt="menu_scene.xsl" icon="scene" tooltip="Episodi">
+  <div class="h2_detail">In questa sezione è possibile navigare gli episodi citati nelle
+   allegorie</div>
+ </menu>
+ <menu label="Personaggi" xslt="menu_character.xsl" icon="character" tooltip="Personaggi">
+  <div class="h2_detail">In questa sezione è possibile navigare i personaggi citati nelle
+   allegorie</div>
+ </menu>
+ <menu label="Oggetti" xslt="menu_object.xsl" icon="object" tooltip="Oggetti">
+  <div class="h2_detail">In questa sezione è possibile navigare gli oggetti citati nelle
+   allegorie</div>
+ </menu>
+ <menu label="Luoghi" xslt="menu_place.xsl" icon="place" tooltip="Luoghi">
+  <div class="h2_detail">In questa sezione è possibile navigare i luoghi citati nelle
+   allegorie</div>
+ </menu>
+</config>

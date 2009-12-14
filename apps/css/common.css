@@ -1,0 +1,187 @@
+/**
++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+| A digital tale (C) 2009 Enrico Possenti :: dCTL                     |
++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+| Author:  NoveOPiu di Enrico Possenti <info@noveopiu.com>            |
+| License: Creative Commons License v3.0 (Attr-NonComm-ShareAlike     |
+|          http://creativecommons.org/licenses/by-nc-sa/3.0/          |
++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+| A main file for "commodoro"                                         |
++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+*/
+
+@import url("ui.css");
+
+/* @group COMMON */
+
+* {
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	font: inherit;
+}
+
+html, body {
+	background-color: #f1f3f5;
+	margin: 0;
+	padding: 10px 0 0;
+	vertical-align: baseline;
+	text-align: center;
+	color: #094171;
+	font-family: Arial, Verdana, Helvetica, Geneva, Lucida Sans, sans-serif;
+	font-size: 12px;
+	line-height: 1.4em;
+}
+
+.center {
+	text-align: center;
+}
+
+hr {
+ border-top: 1px solid #ffffff;
+ border-bottom: 1px solid #bba;
+ height: 0;
+}
+
+div, span, p {
+	font-weight: inherit;
+	font-size: 100%;
+	color: inherit;
+	background: transparent;
+}
+
+form {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+fieldset {
+	padding: 0.2em;
+	border: none;
+}
+
+input {
+	border: 1px inset #8d8d8d;
+}
+
+ul {
+	margin: 0;
+}
+
+a, a:visited, a:link, a:active {
+	text-decoration: none;
+	color: inherit;
+	border: none;
+    outline: 0; /* prevent dotted border in Firefox */
+}
+
+a:hover[href] {
+	text-decoration: underline;
+	color: #0085b8;
+}
+
+a img {
+	border: none;
+}
+
+img {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	border: none;
+}
+
+li img.middle {
+	vertical-align: middle;
+	width: 20px;
+}
+
+.link_pop {
+	padding-right: 1.1em;
+	color: #330099;
+	background: url("../img/freccia_ext.gif") no-repeat right;
+}
+
+.link_pop a, a.link_pop {
+	color: #330099;
+}
+
+.link_ext, .external {
+	padding-right: 1.1em;
+	color: #330099;
+	background: url("../img/freccia_ext.gif") no-repeat right;
+}
+
+.link_int {
+	background: url("../img/freccia_int.gif") no-repeat right;
+	padding-right: 1.1em;
+	color: #062948;
+}
+
+.small {
+	font-size: 0.85em;
+	font-weight: normal;
+	color: inherit;
+}
+
+a.small {
+	font-size: 100%;
+	color: #094171;
+}
+
+.small2 {
+	font-size: 0.85em;
+	color: #6584aa;
+	font-weight: normal;
+}
+
+.help {
+	font-size: 0.85em;
+	color: #999;
+}
+
+.red {
+	color: #CC3300;
+}
+
+.small_caps {
+	font-size: inherit;
+	font-variant: small-caps;
+}
+
+.spacer {
+	display: block;
+	clear: both;
+}
+
+.current,  a.current {
+	color: #6584aa;
+	font: inherit;
+}
+
+#wrapper {
+	min-width: 780px;
+	/*
+
+Splitter can't be too thin ... */
+	min-height: 400px;
+/* .
+
+.. or too flat */
+}
+
+#log {
+	}
+
+#progress {
+    height: 1.0em;
+	visibility: hidden;
+}
+
+.dctlBlock {
+ padding: 3px;	
+}
+
+/* @end */

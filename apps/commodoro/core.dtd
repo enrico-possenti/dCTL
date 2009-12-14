@@ -1,0 +1,110 @@
+<?xml encoding="UTF-8"?>
+
+<!-- root element -->
+<!ELEMENT dctl (resource)* >
+<!ATTLIST dctl
+  xmlns CDATA #FIXED "http://www.ctl.sns.it/dctl/engine/ns/1.0"
+  version CDATA "" >
+
+<!-- description of the dctl resource -->
+<!ELEMENT resource (kind, ref, ((icon, file)? | (path, short, (id, full, desc)?, (packages? | (type, date, collection_ref, (id, full, desc, collection, author, title, publisher)?, xquery?, (fragment | list)? )? )? )? )? ) >
+<!ATTLIST resource >
+
+<!-- packages: list of package resources from a collection -->
+<!ELEMENT packages (resource)+ >
+<!ATTLIST packages >
+
+<!-- xquery: parsed & rebuilt xquery to apply to resource -->
+<!ELEMENT xquery (#PCDATA) >
+<!ATTLIST xquery >
+
+<!-- fragment: a (eventually rebuilt) TEI block, see next -->
+<!ELEMENT fragment ANY >
+<!ATTLIST fragment >
+
+<!-- list: a list of existing values in TEI documents, see next -->
+<!ELEMENT list (item)* >
+<!ATTLIST list >
+<!ELEMENT item (#PCDATA) >
+<!ATTLIST item >
+
+<!-- link: a list of linked resources in TEI document, see next -->
+<!ELEMENT link (anchor)* >
+<!ATTLIST link >
+<!ELEMENT anchor (#PCDATA) >
+<!ATTLIST anchor >
+
+<!-- kind: genre of returned record -->
+<!--  "collection" = collection from a dCTL archive -->
+<!--  "package"    = package from a dCTL archive -->
+<!--  "tei"        = fragment from TEI resource -->
+<!--  "list"       = list from TEI resource -->
+<!--  "link"       = link from TEI resource to TEI resources -->
+<!--  "media"      = resource from a "img" scheme -->
+<!--  "url"        = resource from a generic scheme -->
+<!ELEMENT kind (#PCDATA) >
+<!ATTLIST kind >
+
+<!-- ref: unique identifier to be used as reference in calls -->
+<!ELEMENT ref (#PCDATA) >
+<!ATTLIST ref >
+
+<!-- icon: host-relative path to the icon for the "img"-schemed resource -->
+<!ELEMENT icon (#PCDATA) >
+<!ATTLIST icon >
+
+<!-- file: host-relative path to the file for the "img"-schemed resource -->
+<!ELEMENT file (#PCDATA) >
+<!ATTLIST file >
+
+<!-- path: xml:db path to the "xml"-schemed resource -->
+<!ELEMENT path (#PCDATA) >
+<!ATTLIST path >
+
+<!-- short: user defined identifier of the "xml"-schemed resource -->
+<!ELEMENT short (#PCDATA) >
+<!ATTLIST short >
+
+<!-- id: actually not used -->
+<!ELEMENT id (#PCDATA) >
+<!ATTLIST id >
+
+<!-- full: engine defined description of the "xml"-schemed resource -->
+<!ELEMENT full (#PCDATA) >
+<!ATTLIST full >
+
+<!-- desc: user defined identifier of the "xml"-schemed resource -->
+<!ELEMENT desc (#PCDATA) >
+<!ATTLIST desc >
+
+<!-- type: engine typology of the "xml"-schemed resource -->
+<!--  "_txt" = a flat TEI document of "textual" type -->
+<!--  "_img" = a structured dCTL-TEI document of "iconographic" type -->
+<!--  "_ptx" = a structured dCTL-TEI document of "paratextual" type -->
+<!--  "_gal" = a structured dCTL-TEI document of "gallery" type -->
+<!ELEMENT type (#PCDATA) >
+<!ATTLIST type >
+
+<!-- date: publication date of the "xml"-schemed resource, for sorting purposes -->
+<!ELEMENT date (#PCDATA) >
+<!ATTLIST date >
+
+<!-- collection_ref: unique identifier to be used as reference in calls -->
+<!ELEMENT collection_ref (#PCDATA) >
+<!ATTLIST collection_ref >
+
+<!-- collection: user defined identifier of the "xml"-schemed resource -->
+<!ELEMENT collection (#PCDATA) >
+<!ATTLIST collection >
+
+<!-- author: author of the "xml"-schemed resource -->
+<!ELEMENT author (#PCDATA) >
+<!ATTLIST author >
+
+<!-- title: title of the "xml"-schemed resource -->
+<!ELEMENT title (#PCDATA) >
+<!ATTLIST title >
+
+<!-- publisher: publisher of the "xml"-schemed resource -->
+<!ELEMENT publisher (#PCDATA) >
+<!ATTLIST publisher >

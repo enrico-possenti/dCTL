@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<!-- dCTL DTDs : version 2.12 - 2008/03/30 -->
+<!-- visit http://www.ctl.sns.it/ for more information -->
+<!-- -->
+
+<!ENTITY % xhtml-lat1 SYSTEM "xhtml-lat1.ent" >
+%xhtml-lat1;
+<!ENTITY % xhtml-special SYSTEM "xhtml-special.ent" >
+%xhtml-special;
+<!ENTITY % xhtml-symbol SYSTEM "xhtml-symbol.ent" >
+%xhtml-symbol;
+
+<!ENTITY % div.type "abstract | act | allegory | appendix | argument
+ | back | ballad | bibliography | bio | book | canto | canzone | chapter
+ | collection | colophon | contents | cover | dctlObject | dedication
+ | editorial | emblem | epigram | epilogue | errata
+ | frontispiece | glossary | iconography | imprimatur | index | interpretation | introduction
+ | leaf | letter | madrigal | notes
+ | octave | part | preface | prologue | scene | section | segment | sonnet | speech | stanza
+ | subsection | tercet | treatise | volume | work">
+<!ENTITY % p.type "motto | inscription">
+<!ENTITY % pb.ed "ctl | fake">
+<!ENTITY % pb.label "c | p | f">
+<!ENTITY % milestone.type "wb | lb">
+<!ENTITY % head.type "main | sub | desc | alt | div"> 
+<!ENTITY % trailer.type "main | sub | desc | alt">
+<!ENTITY % bibl.type "text | artwork"> 
+<!ENTITY % title.type "main | sub | desc | alt"> 
+<!ENTITY % titlePart.type "main | sub | desc | alt | volume"> 
+<!ENTITY % rs.type "animal | object | event | location | monument | invented">
+<!ENTITY % rs.subtype "historical | mythological | proverbial | fictional | biblical">
+<!ENTITY % note.type "desc | studio">
+<!ENTITY % note.resp "author | publisher | editor | transcriber">
+<!ENTITY % figure.type "antiporta | frontispiece | frame | initial | portrait | diagram | ornament | mark">
+<!ENTITY % figure.addressed "before | after | inline | margin">
+<!ENTITY % note.place "above | apparatus | below | bottom | end | foot | inline | inspace | margin | opposite | overleaf | top">
+<!ENTITY % figure.place "above | apparatus | below | bottom | end | foot | inline | inspace | margin | opposite | overleaf | top">
+<!ENTITY % distributor.role "commissioner | location | provenance">
+<!ENTITY % ref.type "link | map | generic"> 
+
+<!ATTLIST figure
+ place (%figure.place;) #IMPLIED
+ type (%figure.type;) #IMPLIED
+ addressed (%figure.addressed;) #IMPLIED
+ iconclass NMTOKENS #IMPLIED
+ >
+
+<!ATTLIST distributor
+ role (%distributor.role;) #REQUIRED >
+
+<!ATTLIST date
+ value CDATA #REQUIRED >
+
+<!ATTLIST div
+	type (%div.type;) #REQUIRED >
+
+<!ATTLIST p
+	type (%p.type;) #IMPLIED >
+
+<!ATTLIST bibl
+	type (%bibl.type;) "text" >
+
+<!ATTLIST head
+	type (%head.type;) "desc" >
+
+<!ATTLIST title
+	type (%title.type;) "main" >
+
+<!ATTLIST trailer
+	type (%trailer.type;) "desc" >
+	
+<!ATTLIST milestone
+	unit (%milestone.type;) "wb" >
+
+<!ATTLIST name
+	key NMTOKEN #REQUIRED 
+ subtype CDATA #IMPLIED >
+
+<!ATTLIST rs
+	type (%rs.type;) #REQUIRED 
+	subtype (%rs.subtype;) #IMPLIED > 
+
+<!ATTLIST note
+	type (%note.type;) #IMPLIED
+	place (%note.place;) #REQUIRED
+	resp (%note.resp;) #REQUIRED >
+
+<!ATTLIST graphic
+	url CDATA #REQUIRED >
+
+<!ATTLIST pb
+	n CDATA #REQUIRED
+	ed (%pb.ed;) #IMPLIED 
+	label (%pb.label;) "p"
+	>
+
+ <!-- xml:id ID #REQUIRED -->
+<!ATTLIST ref
+	n CDATA #REQUIRED
+	type (%ref.type;) #REQUIRED
+	target CDATA #REQUIRED >

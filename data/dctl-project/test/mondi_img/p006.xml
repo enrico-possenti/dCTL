@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<!DOCTYPE TEI SYSTEM "../../_common/dtd/dctl.core.dtd" [
+<!ENTITY % TEI.extension.dtd SYSTEM "../../_common/dtd/dctl.extension.dtd">
+<!ENTITY % collection.header.ent SYSTEM "../_header.ent">
+<!ENTITY % package.header.ent SYSTEM "_header.ent">
+<!ENTITY TEI.header SYSTEM "../../_common/headers/teiHeader.package.xml">
+<!ENTITY TEI.header.profileDesc.textClass SYSTEM "../../_common/add-ons/teiHeader.profileDesc.textClass.xml">
+%TEI.extension.dtd;
+%collection.header.ent;
+%package.header.ent;
+]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&package_id;"
+ n="&source_author; - &source_title_main;"> &TEI.header; <text
+  xml:lang="&source_lang;" xml:id="&package_id;.package" ana="&source_genre;">
+  <front>
+   <div type="part" />
+  </front>
+  <body>
+   <div type="part">
+    <!-- NON MODIFICARE LA PARTE PRECEDENTE IL PUNTO "BEGIN" -->
+    <!-- %BEGIN% -->
+    <!-- BEGIN -->
+    <!-- -->
+    <!-- -->
+    <!-- [ CASO IMMAGINE IN PAGINA ] -->
+    <!-- l'elemento TEI:DIV deve essere di tipo "dctlObject" in quanto scheda e non testo continuo -->
+    <!-- l'attributo XML:ID deve comunque iniziare con la sintassi "pNNN" coincidente con il nome della partizione di package (nome del file precedente l'estensione ".xml") -->
+    <!-- l'attributo N dovrebbe contenere un'etichetta identificativa della scheda, da utilizzare come ultima risorsa in caso di visualizzazione -->
+    <!-- l'attributo CORRESP contiene, se presente, l'URI relativo all'anastatica -->
+    <div type="dctlObject" xml:id="p006mn001cc005" n="Mondo piccolo, c. 5r"
+     corresp="img://afd-mondi_005v.jpg">
+     <!-- l'elemento TEI:PB, come TEI:LB, deve essere all'interno dell'elemento di cui eventualmente si vuole ricreare il riferimento -->
+     
+     <pb label="c" n="5r" />
+     <!-- l'elemento TEI:HEAD marca l'intestazione della scheda, ma è importante l'elemento INDEX/TERM che marca l'etichetta da utilizzare nella costruzione degli indici e dei riferimenti -->
+     <head>
+      <index>
+       <term>Mondo piccolo, c. 5r</term>
+      </index>
+     </head>
+     <!-- l'elemento TEI:BIBL (la cui sottostruttura di elementi è descritta nella documentazione TEI) definisce il "record bibliografico" della scheda -->
+     <bibl>
+      <publisher>Marcolini, Francesco</publisher>
+      <pubPlace>Venezia</pubPlace>
+      <date value="1552/1553-00-00">1552-1553</date>
+      <distributor role="location">Biblioteca Universitaria, Bologna</distributor>
+     </bibl>
+     <!-- l'elemento TEI:FIGURE contiene l'elemento TEI:GRAPHIC (immagine) e l'elemento DCTL:STUDIO -->
+     <figure>
+      <graphic url="img://afd-mondi_005v_pw.jpg" />
+      <!-- l'elemento TEI:FIGDESC (obbligatorio) contiene l'etichetta che appare solo passando con il mouse sull'immagine -->
+      <figDesc>Talete</figDesc>
+      <!-- l'elemento DCTL:STUDIO -->
+      <dctl:studio>
+       <!-- l'elemento DCTL:DESC deve contenere la descrizione dettagliata dell'immagine -->
+       <dctl:desc>Il filosofo Talete, rappresentato con una sfera celeste in mano, indica due pescatori che trascinano le reti verso la riva. Sullo sfondo il paesaggio marino e la barca dei pescatori</dctl:desc>
+       <!-- l'elemento DCTL:MEANING con attributo TYPE="original" deve contenere la descrizione del significato originario dell'immagine -->
+       <dctl:meaning type="original">Il filosofo Talete indica i pescatori che trovano il tripode</dctl:meaning>
+       <!-- l'elemento DCTL:MEANING con attributo TYPE="context" deve contenere la descrizione del significato contestuale dell'immagine -->
+       <dctl:meaning type="context">Il filosofo Talete, con in mano una sfera celeste volta a evocare le sue conoscenze astronomiche, indica la strada per conoscere le cose celesti e per salire ai cieli</dctl:meaning>
+       <!-- l'elemento DCTL:TRANSCRIPTION deve contenere la trascrizione del testo presente nell'immagine -->
+       <dctl:transcription>
+         <lb/>In questa prima diceria si fa conoscere agli uomini quanto sia
+        <lb/>difficile il sapere le cose alte et celesti, et si mostra quanto sia <lb/>grande la
+         curiosità nostra, con un discorso mirabile dell'uomo.
+        <lb/>L'essere stato più mesi in questa fantasia di dover <lb/>sapere le cose de' <seg ana="key_item" xml:id="p006ki001"></seg>cieli come le
+         stavano, se gli erano più mondi <lb/>et se ci era mezzo alcuno da poter sapere i secreti più
+         su <lb/>che la <name key="002361">Luna</name>, mi fece ultimamente conferire questo <lb/>mio umore, capriccio, pazzia o
+         voluntà ch'io mi vo<milestone unit="wb"/>
+         <lb/>glia dire con gli <name key="002471" ana="func_character">Academici Peregrini</name>, i
+         quali erano molti uomini virtuosi <lb/>per diverse provintie sparsi; così diedi loro il tempo
+         di ritrovarsi, et con effi<milestone unit="wb"/>
+         <pb n="5v"/>
+         <lb/>caci ragioni mostrai quanto fosse bisogno di adunarsi in un luogo, per <lb/>una delle
+         cose più importanti che mai s'udisse dire. Onde il giorno ter<milestone unit="wb"/>
+         <lb/>minato si ridussero di più parti del mondo questi Academici mirabili, et, <lb/>fatto il
+         seggio loro nella invittissima città di <name key="000568" ana="func_place">Vinegia</name>,
+         tempio di pace, <lb/>d'amore et carità, si congregarono insieme. <lb/>Dapoi che gli ebbero
+         udito questa mia voglia, parve loro alle prime <lb/>parole, in questo incontro alla
+         sprovista, ch'io dimandassi o cercassi di sa<milestone unit="wb"/>
+         <lb/>pere cose impossibili: pure vi furon alcuni, sì ben curiosi come me, <lb/>i quali
+        dissero: <q ana="quotation_simple">&#171;Chi sa che non si trovi il modo di <seg ana="key_item" xml:id="p006ki002">salire ne' cieli</seg>
+          sì come <lb/>s'è trovato la via d'andare agli antipodi&#187;</q>.
+        </dctl:transcription>
+       <!-- l'elemento DCTL:TYPOLOGY contiene la tipologia di immagine -->
+       <dctl:typology type="print" />
+       <!-- l'elemento DCTL:TECHNIQUE contiene la tecnica di realizzazione dell'immagine -->
+       <dctl:technique type="woodcut">xilografia</dctl:technique>
+       <!-- l'elemento DCTL:MATERIAL contiene il materiale di supporto dell'immagine -->
+       <dctl:material type="paper" />
+       <!-- l'elemento DCTL:MEASURE contiene le misure dell'immagine -->
+       <dctl:measure>mm 62 x 94</dctl:measure>
+       <!-- l'elemento DCTL:POSITION contiene il posizionamento dell'immagine -->
+       <dctl:position>Nella parte superiore della pagina, prima del testo ad essa ispirato</dctl:position>
+       <!-- l'elemento DCTL:FRAME contiene la descrizione dell'eventuale cornice -->
+       
+       <dctl:frame>
+        <dctl:measure>mm 14 x 94</dctl:measure>
+        <dctl:desc>fregio xilografico con capitello sul quale sono attaccati una conchiglia e due
+         racemi</dctl:desc>
+        <dctl:measure>mm. 14 x 93</dctl:measure>
+        <dctl:desc>fregio xilografico con capitello al quale sono attaccati cinque visi umani, i due
+         estremi barbuti</dctl:desc>
+       </dctl:frame>
+       
+       <!-- l'elemento DCTL:MATRIX contiene la descrizione dell'eventuale matrice -->
+       <dctl:matrix>
+        <dctl:desc></dctl:desc>
+        <dctl:material type="wood" />
+        <dctl:technique type="woodcut" />
+        <dctl:measure><!-- mm ??? x ??? --></dctl:measure>
+        <note place="apparatus" resp="editor" type="desc"><!-- eventuali note descrittive --></note>
+        <bibl>
+         <author><!-- opzionale --></author>
+         <distributor role="location"><!-- XXX, YYY --></distributor>
+        </bibl>
+       </dctl:matrix>
+       <!-- l'elemento DCTL:REUSELIST contiene l'elenco dei (ri)usi dell'immagine -->
+       <!-- l'attributo TYPE="PRECEDING" identifica il gruppo di (ri)usi precedenti -->
+       <dctl:reuseList type="preceding">
+        <!-- l'elemento DCTL:REUSE è un (ri)uso dell'immagine da collegare tramite XML:ID con altro XML:ID secondo il metodo dei collegamenti già definito -->
+        <!-- l'attributo TYPE="SELF" identifica il (ri)uso dell'immagine nello stesso "contesto" (autore) -->
+        <dctl:reuse xml:id="p006rp001" type="other">F. Marcolini, Le ingeniose sorti, Venezia, Marcolini, 1550, c. F1v</dctl:reuse>        
+       </dctl:reuseList>
+       <!-- l'attributo TYPE="FOLLOWING" identifica il gruppo di (ri)usi successivi -->
+       <dctl:reuseList type="following">
+        <!-- l'elemento DCTL:REUSE è un (ri)uso dell'immagine da collegare tramite XML:ID con altro XML:ID secondo il metodo dei collegamenti già definito -->
+        <!-- l'attributo TYPE="SELF" identifica il (ri)uso dell'immagine nello stesso "contesto" (autore) -->
+        <dctl:reuse xml:id="pNNNYYYY" type="self" />
+        <!-- l'attributo TYPE="OTHER" identifica il (ri)uso dell'immagine in altri "contesti" (autori) -->
+        <dctl:reuse xml:id="pNNNYYYYZZZZ" type="other" />
+       </dctl:reuseList>
+       <!-- l'elemento DCTL:SOURCE identifica la fonte testuale -->
+       <dctl:source>
+        <bibl>
+         <author>Diogenes Laertius</author>
+         <publisher>Bompiani</publisher>
+         <pubPlace>Milano</pubPlace>
+         <date value="2005-00-00">2005</date>
+         <title>Vite e dottrine dei più celebri filosofi</title>
+         <editor>a cura di Giovanni Reale</editor>
+         <extent>Libro I, cap. I, &#167; 28, p. 31</extent>
+         <seg>[La storia del tripode e delle coppa d'oro]
+          <milestone unit="lb"/>
+         <lb/>Non è chiara, invece, la storia relativa al tripode, quello <lb/>trovato dai pescatori e inviato ai Sapienti da parte del popo<milestone unit="wb"/>
+          <lb/>lo di Mileto. Dicono, infatti, che alcuni giovinetti ionici <lb/>acquistarono una retata fatta da alcuni pescatori di Mileto; 
+          <lb/>quando, però, fu tirato su un tripode, sorse un diverbio, che
+          <lb/>proseguì fino a che i Milesii non mandarono una ambasce<milestone unit="wb"/>
+          <lb/>ria a Delfi. E il dio diede responso come segue: 
+          <milestone unit="lb"/>
+          <lb/>O prole di Mileto, su un tripode interroghi Febo?
+          <lb/>Proclamo che il tripode sia di colui che in sapienza è il primo fra tutti.
+          <milestone unit="lb"/>
+          <lb/>Lo assegnano, quindi, a Talete; e questi a un altro sapien<milestone unit="wb"/> <lb/>te, e quest'altro ad un altro, fino a Solone. Quest'ultimo, a 
+          <lb/>sua volta, asserì che il primo in sapienza è il dio, e lo rimandò a Delfi.
+         </seg>
+        </bibl>
+       </dctl:source>
+       <!-- l'elemento DCTL:ICONTERM contiene la codifica dei codici Iconclass -->
+       <dctl:iconTerm key="000446">Talete</dctl:iconTerm>
+       <dctl:iconTerm key="000013">uomini</dctl:iconTerm>
+       <dctl:iconTerm key="000318">indicare</dctl:iconTerm>
+       <dctl:iconTerm key="000421">sfera celeste</dctl:iconTerm>
+       <dctl:iconTerm key="000038">albero</dctl:iconTerm>
+       <dctl:iconTerm key="000033">costa</dctl:iconTerm>
+       <dctl:iconTerm key="000440">pesca costiera</dctl:iconTerm>
+       <dctl:iconTerm key="000441">rete da pesca</dctl:iconTerm>
+       <dctl:iconTerm key="000083">barca</dctl:iconTerm>
+       <dctl:iconTerm key="000427">cappello</dctl:iconTerm>
+      </dctl:studio>
+     </figure>
+     <!-- l'elemento TEI:NOTE contiene le note -->
+     <note type="desc" resp="editor" place="apparatus"><!-- note descrittive --></note>
+     <!-- l'elemento TEI:NOTE contiene le note -->
+     <note type="studio" resp="editor" place="apparatus"><!-- note di studio --></note>
+     <!-- l'elemento TEI:LISTBIBL contiene l'elenco degli elementi TEI:BIBL per la bibliografia -->
+     <listBibl>
+      <!-- l'elemento TEI:BIBL contiene un record della bibliografia -->
+      <bibl>
+       <author><!--  --></author>
+       <title><!--  --></title>
+       <publisher><!--  --></publisher>
+       <pubPlace><!--  --></pubPlace>
+       <date value="XXXX-00-00">XXXX</date>
+       <extent>pp. <!--  --></extent>
+      </bibl>
+     </listBibl>
+    </div>
+    <!-- -->
+    <!-- END -->
+    <!-- %END% -->
+    <!-- NON MODIFICARE LA PARTE OLTRE IL PUNTO "END" -->
+   </div>
+  </body>
+  <back>
+   <div type="part" />
+  </back>
+ </text>
+</TEI>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<!DOCTYPE TEI SYSTEM "../../_common/dtd/dctl.core.dtd" [
+<!ENTITY % TEI.extension.dtd SYSTEM "../../_common/dtd/dctl.extension.dtd">
+<!ENTITY % collection.header.ent SYSTEM "../_header.ent">
+<!ENTITY % package.header.ent SYSTEM "_header.ent">
+<!ENTITY TEI.header SYSTEM "../../_common/headers/teiHeader.package.xml">
+<!ENTITY TEI.header.profileDesc.textClass SYSTEM "../../_common/add-ons/teiHeader.profileDesc.textClass.xml">
+%TEI.extension.dtd;
+%collection.header.ent;
+%package.header.ent;
+]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&collection_id;-&package_id;"
+ n="&source_author; - &source_title_main;"> &TEI.header; <text
+ xml:lang="&source_lang;" xml:id="&collection_id;-&package_id;.package" ana="&source_genre;">
+ <front>
+  <?dctl_insertContent item="p000.xml" ?>
+ </front>
+ <body>
+  <?dctl_insertContent item="p$.xml" ?>
+ </body>
+ <back>
+  <?dctl_insertContent item="p999.xml" ?>
+ </back>
+ </text>
+</TEI>

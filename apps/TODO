@@ -1,0 +1,54 @@
+/**
+ +----------------------------------------------------------------------+
+ | A digital tale (C) 2009 Enrico Possenti :: dCTL                      |
+ +----------------------------------------------------------------------+
+ | Author:  NoveOPiu di Enrico Possenti <info@noveopiu.com>             |
+ | License: Creative Commons License v3.0 (Attr-NonComm-ShareAlike      |
+ |          http://creativecommons.org/licenses/by-nc-sa/3.0/           |
+ +----------------------------------------------------------------------+
+ | A to-do file                                                         |
+ +----------------------------------------------------------------------+
+*/
+
+[HIGH PRIORITY]
+
+Realizzazione di un modulo per la gestione via ACL (Access Control List).
+
+Integrazione del modulo ACL con moduli terzi.
+
+Realizzazione di un modulo per la gestione di Backup e Restore.
+
+Progettazione e realizzazione di un modulo per la gestione gerarchica tra parti di un package.
+
+Realizzazione di un modulo per la gestione dei collegamenti tra “collection” diverse.
+
+Integrazione con UI-tool per la gestione della mappatura poligonale
+
+Progettazione e realizzazione di un modulo Installer per l’intero sistema dCTL.
+
+Introduzione di CVS.
+
+Completamento del modulo “Core” con la ricerca “full text” e parametrica.
+
+Verifica delle funzionalità di ricerca del XML-DB eXist.
+
+Completamento del modulo “API” del “Core”.
+
+
+[MEDIUM PRIORITY]
+
+Progettazione e realizzazione di un modulo per la gestione delle liste di valori.
+
+
+[LOW PRIORITY]
+
+Realizzazione di un modulo per la gestione dei collegamenti di tipo hyperlink.
+
+
+[DESIDERATA]
+
+RE-engineering dei diversi moduli in un framework
+Re-design dell’interfaccia grafica dei diversi moduli (DMS, banche dati, pubblicazione)
+Progettazione e realizzazione di un modulo WYSIWYG per XML editing on-line
+Progettazione e realizzazione di un modulo per la generazione automatica di marcatura DC
+Progettazione e realizzazione implementazione OAI-MHP

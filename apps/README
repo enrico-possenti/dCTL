@@ -1,0 +1,59 @@
+/**
+ +----------------------------------------------------------------------+
+ | A digital tale (C) 2009 Enrico Possenti :: dCTL                      |
+ +----------------------------------------------------------------------+
+ | Author:  NoveOPiu di Enrico Possenti <info@noveopiu.com>             |
+ | License: Creative Commons License v3.0 (Attr-NonComm-ShareAlike      |
+ |          http://creativecommons.org/licenses/by-nc-sa/3.0/           |
+ +----------------------------------------------------------------------+
+ | A read-me file                                                       |
+ +----------------------------------------------------------------------+
+*/
+
+// +----------------------------------------------------------------------+
+// | HOW-TO :: APPS INSTALLATION                                          |
+// +----------------------------------------------------------------------+
+
+Basepath:
+ APPS_HOME = "/your/path/to/folder/apps"
+ COMMON_HOME = "$APPS_HOME/_shared"
+ SAFE_HOME = "$COMMON_HOME/_protected"
+ REPO_HOME = "/your/path/to/folder/repo" ; or data
+
+Add your user to Apache group:
+	useradd -G apache-grp you-usr
+
+Ensure access to folder
+	chown -R apache-usr:apache-grp $APPS_HOME
+	chown -R apache-usr:apache-grp $REPO_HOME
+	chmod -R 0775 $REPO_HOME
+
+PHP setup:
+ In "php.ini" be sure of directive:
+  short_open_tag Off
+
+Apache setup:
+ In "httpd.conf" be sure that:
+  # DirectoryIndex index.html index.php index.htm
+  # <Files ~ "\.inc">
+     Order allow,deny
+     Deny from all
+    </Files>
+
+Security setup:
+ Edit "$SAFE_HOME/_htpasswd" and save it as ".htpasswd" in your secured directory.
+ At least must exist user "ctl" with its own encrypted password. Synchronize your users with "$SAFE_HOME/account.inc.php".
+
+ Edit "$SAFE_HOME/_htaccess" and save it as ".htaccess" in the following directories:
+  - "$SAFE_HOME"
+  - "$APPS_HOME/dctl_iconclass"
+  - "$APPS_HOME/dctl_name"
+  - "$APPS_HOME/commodoro"
+
+Rename "$APPS_HOME/config.default.inc.php" file to "config.inc.php" and setup your environment.
+If you know what you're doing, can even modify "$COMMON_HOME/config.inc.php" (thus overriding "config.inc.php").
+
+// +----------------------------------------------------------------------+
+// | That's it!                                                           |
+// +----------------------------------------------------------------------+
+

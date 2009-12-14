@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<!DOCTYPE TEI SYSTEM "../../_common/dtd/dctl.core.dtd" [
+<!ENTITY % TEI.extension.dtd SYSTEM "../../_common/dtd/dctl.extension.dtd">
+<!ENTITY % collection.header.ent SYSTEM "../_header.ent">
+<!ENTITY % package.header.ent SYSTEM "_header.ent">
+<!ENTITY TEI.header SYSTEM "../../_common/headers/teiHeader.package.xml">
+<!ENTITY TEI.header.profileDesc.textClass SYSTEM "../../_common/add-ons/teiHeader.profileDesc.textClass.xml">
+%TEI.extension.dtd;
+%collection.header.ent;
+%package.header.ent;
+]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&package_id;"
+	n="&source_author; - &source_title_main;"> &TEI.header; <text
+		xml:lang="&source_lang;" xml:id="&package_id;.package" ana="&source_genre;">
+		<front>
+			<div type="part" />
+		</front>
+		<body>
+			<div type="part">
+				<!-- NON MODIFICARE LA PARTE PRECEDENTE IL PUNTO "BEGIN" -->
+				<!-- %BEGIN% -->
+				<!-- BEGIN -->
+				<!-- -->
+				<div type="part" n="2">
+					<div type="frontispiece">
+						<pb label="c" n="29r" corresp="img://afd-mondi_029v.jpg" />
+						<head type="main"
+								><lb />L'ACADEMIA <lb />PEREGRINA <lb />E I <title>MONDI</title> SOPRA LE
+       MEDAGLIE <lb />DEL <name
+								key="	000617" ana="as_source">DONI</name>. <milestone unit="lb"
+								 /><lb />ALLO ILLVSTRISSIMO ET ECCELLENTISSIMO <lb />SIGNOR, IL SIGNOR <lb /><name
+								key="006147">PIETRO STROZZI</name>
+							<lb />CONSACRATA.</head>
+						<figure xml:id="p002f001">
+							<graphic url="img://afd-mondi_029v_pw.jpg" />
+							<figDesc>Frontespizio del Mondo grande, c. 29r</figDesc>
+						</figure>
+						<head type="sub"><lb />IN <name key="000568" ana="func_place"
+								>UINEGIA</name>, NELL'ACADEMIA
+       PEREGRINA. <lb /><date value="1552-00-00"
+							>MDLII</date>.</head>
+					</div>
+					<div type="introduction">
+						<pb label="c" n="29v" corresp="img://afd-mondo_029v.jpg" />
+						<head type="main">IL <name key="005830" ana="func_character"
+							>SATIO</name> ACADEMICO
+       <lb />PEREGRINO <lb />AI LETTORI</head>
+						<milestone unit="lb" />
+						<p><lb />L'esser questo mondo tutto vanità del<milestone unit="wb" />
+							<lb />la nostra vista mortale, desiderio di cose car<milestone unit="wb" />
+							<lb />nali et superbia del viver nostro, non so co<milestone unit="wb" />
+							<lb />me sia possibile lodar alcuno atto, impresa o <lb />cosa che ci si facci.
+        <!-- parafrasi biblica, Giovanni, Prima lettera, 2, 15 e ss --><q
+								ana="quotation_reference"
+									>Abbiamo poi non un comandamento, <lb />ma infiniti: che noi non dobbiamo amare il mondo, né
+        porre af<milestone
+									unit="wb" />
+								<lb />fettione a cosa che ci sia dentro, come cose mortali, caduche et <lb />fragili, perciò
+        che passano tutte queste cose, finirà il mondo <lb />et i desiderii se n'andranno in fumo,
+        però doviamo far la volon<milestone
+									unit="wb" />
+								<lb />tà del <name key="000344"
+								>Fattor del mondo</name> che vive in eterno.</q> Coloro che
+       vivono <lb />secondo la carne sanno cose carnali, et quelli che attendano a <lb />lo spirito
+       sentono la virtù mirabile di quello. Il saper le <lb />cose umane, l'essere esperto in questa
+       carnale sapienza non <lb />è altro che essersi affaticato in cose della morte, ma l'avere
+        po<milestone
+								unit="wb" />
+							<lb />sto tutto l'intelletto alle cose dello spirito farà che noi ritrove<milestone unit="wb" />
+							<lb />remo vita et pace. Già è manifesto a ciascuno che la sapien<milestone unit="wb" />
+							<lb />za della carne è di <name key="000344"
+								>Dio</name> nimica, et queste cose carnali non
+       <lb />piacciono al <name key="000344"
+								>Signore</name>, però vivendo secondo quella morremo,
+       <lb />se andremo accompagnandoci con lo spirito viveremo. <lb />Combatte continuamente lo
+       spirito con la carne et quello <lb />con lo spirito repugna, onde hanno sempre una guerra
+        con<milestone
+								unit="wb" />
+							<lb />tinua, et questa carne di continouo ci conduce in braccio al<milestone unit="wb" />
+							<lb />la morte. Chi ci libererà adunque da questa morte? La <lb />gratia del <name
+								key="000344">Signore</name>, la qual non fu mai tarda a soccorrere <pb label="c" n="30r"
+								corresp="img://afd-mondo_030r.jpg" />
+							<lb />la miseria della nostra vita. Seguitiamo adunque il <name key="000344">Signo<milestone
+									unit="wb" />
+								<lb />re</name>, che è somma bontà, contento et pienezza della divi<milestone unit="wb" />
+							<lb />nità, nella quale sono tutti i tesori della scienza et della <lb />sapienza, sì come nel
+        <title>Mondo Massimo</title>&nbsp;<name
+								key="000344">Dio</name> omnipoten<milestone unit="wb" />
+							<lb />te vedrete, et in questo nostro <title>Mondo Grande</title>, seguendo, <lb />leggerete
+       l'infelicità di questa breve vita, caduca, dubbiosa, <lb />misera et mortale.</p>
+					</div>
+					<div type="chapter" n="1">
+						<pb label="c" n="30v" corresp="img://afd-mondi_031r.jpg" />
+						<head type="main"
+							>MONDO GRANDE <lb />DELL'ACADEMIA PEREGRINA <lb />CONSACRATO A MONSIGNOR
+       <lb />DEGLI STROZZI REVERENDISSIMO.</head>
+						<lb />
+						<figure addressed="after" xml:id="p002f002">
+							<graphic url="img://afd-mondi_031r_pw.jpg" />
+							<figDesc>Illustrazione dei Mondi, Mondo grande, c. 30v</figDesc>
+						</figure>
+						<div type="argument">
+							<head type="main"
+								>In questo discorso si dimostra l'opinione di molti che hanno ragionato sopra
+        <lb />questo mondo, et s'intende varii casi, accidenti, novità, ordini, <lb />miserie et
+        piaceri divini et umani.</head>
+							<p><lb />Molte sono state l'opinioni circa questo mon<milestone unit="wb" />
+								<lb />do grande, dico di questa machina che con i <lb />nostri occhi si vede; prima come egli
+        sia sta<milestone
+									unit="wb" />
+								<lb />to fatto, quanti ce ne sono, quanto debbi <lb />durare et come si debba risolvere.
+         <!-- plagio dalla Vanità delle scienze di Agrippa di Nettesheim, ma dove finisce? --><q
+									ana="quotation_plagiarism"
+										>Fra quella generatione dei filosofi non è mancato chi abbi detto
+          che ce ne sono <pb
+										label="c" n="31r" corresp="img://afd-mondo_031r.jpg" />
+									<lb />infiniti; <name key="001236" ana="as_source"
+										>Talete</name> credette che fosse un solo
+         et diede la gloria <lb />di tanta fabrica a <name
+										key="000344"
+										>Dio</name>,
+          <!-- riferimento alle informazioni tramandate da Aezio, Placita, I, 5, 4 --><name
+										key="001237" ana="as_source">Empedocle</name> s'accordò con la sua vo<milestone unit="wb" />
+									<lb />lontà che fosse un mondo, ma che questo mondo era una <lb />picciola parte
+         dell'universo. <name
+										key="000386" ana="as_source">Democrito</name> et l'<name key="005680" ana="as_source"
+										>Epicuro</name> fu<milestone unit="wb" />
+									<lb />rono di contrario parere, perché credettero che fossero infiniti <lb />mondi; et perché
+         le cause sono senza numero, <name
+										key="000454" ana="as_source"
+										>Metrodoro</name>, lor
+         <lb />discepolo,
+         <!-- riferimento alle informazioni tramandate da Aezio, Placita, I, 5, 4 -->disse esser
+         ancor senza numero i mondi: et più <lb />diceva fermamente che, così come sarebbe cosa da
+         pazzi credere <lb />che in un sol campo una sola spiga di grano nascesse, ancora
+         <lb />sarebbe stoltitia a dire che nell'universo fosse un mondo solo. <lb />Della loro
+         eternità, o quanto debba durare questo mondo, <lb /><name
+										key="000053" ana="as_source">Aristotile</name> et <name key="000548" ana="as_source"
+										>Averroé</name> dissero che egli
+         era eterno et mai <lb />non si corromperebbe. Molti altri hanno detto che egli da <lb /><name
+										key="000344"
+									>Dio</name> è stato generato et che egli debbe aver fine. Alcuni,
+         <lb />cicalando ancora, dissero che sempre si genera il mondo <lb />et sempre si
+        corrompe.</q> Felici noi, che siamo venuti a una età <lb />che abbiamo avuto tanti mirabili
+        et divini uomini, che ci <lb />hanno risoluto di tanto et sì fatto dubbio, mostrandoci il
+         mon<milestone
+									unit="wb" />
+								<lb />do esser da <name key="000344"
+									>Dio</name> creato et che nella sua volontà sia
+         determina<milestone unit="wb" />
+								<lb />to che egli abbi, così come principio, fine!
+         <!-- allusione alla tredizione esegetica, san Girolamo, Commentaria in Danielem --><seg
+         	ana="quotation_reference" xml:id="p002q001.001"><seg ana="verbfig_ecphrasis"
+											><title>La
+          Scrittura</title> po<milestone unit="wb" />
+										<lb />ne una grandissima statua, che con la testa toccava il cielo et <lb />posava i piedi
+          in terra. Il suo capo era d'oro, le braccia e 'l <lb />petto d'argento, il ventre di rame
+          et le gambe di ferro et <lb />i piedi di terra</seg>. Fu interpetrata questa statua, o per
+         meglio <lb />dire, fu dichiarato quello che la significava, da <name
+										key="000779" ana="as_source">Daniello</name> profe<milestone unit="wb" />
+									<lb />ta. Onde disse che quella era le monarchie del mondo: la <lb />prima età sarebbe d'oro,
+         et questo fu il regno degli Assiri, <lb />la seconda d'argento, denotando l'<name
+										key="001426" ana="func_place"
+										>imperio Persiano</name>, il <lb />ventre di metallo voleva
+          dir quello dei Greci, il resto di <pb
+										label="c" n="31v" corresp="img://afd-mondo_031v.jpg" />
+									<lb />ferro et di terra lo stato Romano. Vidde adunque il re <name key="001357"
+										>Nabuc</name>
+									<lb />questa statua, et vidde spiccarsi da un alto monte un picciol <lb />sasso, che
+         scendendo crebbe in grande altezza, et nel cadere per<milestone
+										unit="wb" />
+									<lb />cosse la grande statua et la risolvé in polvere. Questo sasso, <lb />questa pietra, è
+         interpetrato <name
+										key="000348"
+										>Cristo</name>, il quale, sceso dal <lb />Monte celeste, ha
+         abbassato tutti i regni et risoluti in nul<milestone
+										unit="wb" />
+									<lb />la; così pare che questa sia l'ultima età et che poco ci debbi <lb />restare di tempo a
+         risolvere questa mole, essendo passato tut<milestone
+										unit="wb" />
+									<lb />ti i regni et adempiuto le profetie.</seg> Ancora non lo sa nis<milestone unit="wb" />
+								<lb />suno se non il grande <name key="000344"
+									>Iddio</name>, questo apunto, ma per quanto
+        <lb />e si può conietturando comprendere, noi siamo appresso a que<milestone
+									unit="wb" />
+								<lb />sto fine, ogni virtù è al colmo et ogni vitio all'estremo. Chi <lb />vidde mai la
+        teologia più elevata che oggi? la filosofia, <lb />la musica, l'arme, la scoltura, la
+        pittura, gli scrittori, l'e<milestone
+									unit="wb" />
+								<lb />loquentia et i fanciulli sì tosto essere perfetti? Ma udiremo <lb />quel che diranno di
+        questo mondo questi due Academici <lb />Peregrini.</p>
+						</div>
+						<div type="frontispiece">
+							<pb label="c" n="32r" corresp="img://afd-mondi_032v.jpg" />
+							<head type="main"><lb />DELLO <name key="001316" ana="func_character"
+									>SVEGLIATO</name>, ET
+        DELLO <lb /><name key="005916" ana="func_character"
+									>SELVAGGIO</name>, ACADEMICI
+        <lb />PEREGRINI.</head>
+							<figure xml:id="p002f003">
+								<graphic url="img://afd-mondi_032v_pw.jpg" />
+								<figDesc>Frontespizio del Ragionamento Primo, c. 32r</figDesc>
+								<p type="motto"><lb />QVEL CHE MI MOLESTAVA <lb />ACCENDO ET ARDO</p>
+							</figure>
+							<head type="sub"><lb />RAGIONAMENTO PRIMO.</head>
+						</div>
+						<div type="cover">
+							<pb label="c" n="32v" corresp="img://afd-mondi_033r.jpg" />
+							<figure xml:id="p002f004">
+								<graphic url="img://afd-mondi_033r_pw.jpg" />
+								<figDesc>Illustrazione dei Mondi, Mondo grande, c. 32v</figDesc>
+								<p type="motto"><lb />SVEGLIANDO GLI ANIMALI <lb />IN OGNI SELVA.</p>
+							</figure>
+						</div>
+						<div type="cover">
+							<pb label="c" n="33r" corresp="img://afd-mondi_033v.jpg" />
+							<figure xml:id="p002f005">
+								<graphic url="img://afd-mondi_033v_pw.jpg" />
+								<figDesc>Illustrazione dei Mondi, Mondo grande, c. 33r</figDesc>
+								<p type="motto"><lb />MA PVR SI ASPRE VIE <lb />ET SI SELVAGGIE.</p>
+							</figure>
+						</div>
+						<div type="section" n="1.1">
+							<pb label="c" n="33v" corresp="img://afd-mondo_033v.jpg" />
+							<head><lb /><name key="001316" ana="func_character">SVEGLIATO</name> ET <name key="005916"
+									ana="func_character">SELVAGGIO</name>.</head>
+							<p><lb />[<name key="001316" ana="func_character"
+									>Sve.</name>] Ben che egli sia molti anni ch'io
+        delle cose del <lb />mondo desidero favellarne, come colui che n'ho <lb />una buona parte
+        sperimentate, non m'è venuto <lb />commodo, ma poiché voi mi ricercate, vi dirò <lb />il parer
+        mio in ogni cosa. <name
+									key="005916" ana="func_character"
+									><lb />Sel.</name> L'allegoria sopra
+        la statua di <name key="000779"
+									ana="as_source"
+									>Daniello</name> (che significava tutte
+        l'età), circa il nostro <lb />vivere in questo mondo, come la si potrebbe esporre a proposito?
+        <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name> Da che la <title>Scrittura</title> la dichiara
+        lei, non accade altrimenti che noi le <lb />mettiamo bocca, perché troppo sarebbe la nostra
+        lingua arrogan<milestone
+									unit="wb" />
+								<lb />te a creder di dar migliore chiarezza di quella del profeta. <lb />Si può bene
+        pianamente farli un'ispositione per ammaestramento <lb />del cristiano et per consideratione
+        di questa miseria del mondo. <lb /><name
+									key="005916" ana="func_character"
+									>Sel.</name> Questo
+        è quanto io desidero. <lb /><name key="001316"
+									ana="func_character">Sve.</name>&nbsp; <seg ana="quotation_reference"
+										>La grande
+        statua mi pare il mondo che noi abitiamo, che l' <lb />alta parte de' mortali son chiamati
+        ricchi, nobili et potenti. <lb /><name
+										key="005916" ana="func_character"
+										>Sel.</name> Questo
+        s'intende per la testa d'oro. <lb /><name key="001316"
+										ana="func_character"
+										>Sve.</name>
+        Seguita poi l'argento, chiaro, sonoro et lucente, per la dot<milestone
+										unit="wb" />
+									<lb />trina degli uomini che son da noi chiamati sapienti. <lb /><name key="005916"
+										ana="func_character">Sel.</name> Piacemi questa allegoria. <lb /><name key="001316"
+										ana="func_character"
+										>Sve.</name>Il rame sono le arti ritrovate per il commodo del nostro
+        vivere <lb />et tutte l'inventioni che ci travagliano la vita; il ferro si può <lb />dir che
+        sieno le nostre cattive opere piene di ruggine, i nostri <lb />odii del cuore, la durezza del
+        mal fare; et la cattiva vita no<milestone
+										unit="wb" />
+									<lb />stra, la quale è di terra, regge et sopporta tutta questa massa, <lb />questa terrena
+        spoglia ha tutto questo carico sopra di sé; ma il <lb /><name
+										key="000348"
+										>Signore</name>
+        scenderà dal Cielo, quel sasso picciolo, quello che di<milestone
+										unit="wb" />
+									<lb />ventò sì gran pietra, secondo getterà per terra tutti gli stati <pb label="c" n="34r"
+										corresp="anast" />
+									<lb />umani et giudicherà, in quel dì ultimo, l'oro, l'argento <lb />et tutto il restante
+         della nostra travagliata vita.</seg>
+								<lb /><name key="005916" ana="func_character"
+									>Sel.</name> Gran
+        diletto mi danno le parole vostre, et considero che noi terreni piedi, <lb />nudi, bassi et
+        vili, ci siamo lasciati caricare dal ferro delle tristitie, che ci <lb />fanno arugginir
+        l'anima, et più sopra, con il peso dei travagli mortali, ag<milestone
+									unit="wb" />
+								<lb />gravarci ancora. Ma la dottrina che noi abbiamo imparata è stata sì fatta <lb />che l'ha
+        abbracciato tutta questa macchina del mondo et fattosi il capo d'oro, <lb />credendo con le
+        ricchezze et con il tesoro toccare il cielo et con quelle ac<milestone
+									unit="wb" />
+								<lb />quistarci in questo stato mondano un paradiso; ma la divina Legge, dataci sul
+        <lb />monte in tavole di pietra, che d'uno scritto solo se n'è moltiplicati tanti,
+         scen<milestone
+									unit="wb" />
+								<lb />dendo per mano di <name key="000070"
+									>Mosè</name>, ha abbattuto i nostri concetti
+        carnali et spezzata la <lb />legge del vano et umano pensiero. <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name> Questo mondo pericoloso, quanto più ci accarezza,
+         veramen<milestone
+									unit="wb" />
+								<lb />te allora c'è molesto, et quando ei ci si mostra piacevole, allo<milestone unit="wb" />
+								<lb />ra è da considerare la sua natura. Impossibile, pare a me, non <lb />aver paura, non si
+        dolere, non s'affaticare et non pericola<milestone
+									unit="wb" />
+								<lb />re in questo mondo. Vedeva questa statua mondana quel <lb />re, che allegoricamente
+        significava che il mondo essalte<milestone
+									unit="wb" />
+								<lb />rebbe l'oro et amerebbelo sopra tutte le cose; dopo questo, <lb />l'argento maneggerebbe
+        tutto il mondo, et i metalli sareb<milestone
+									unit="wb" />
+								<lb />bono il pieno del nostro corpo da darci continuamente il vitto, <lb />perché sotto il
+        rame, ferro et altri metalli caggiono infi<milestone
+									unit="wb" />
+								<lb />niti stromenti posti in uso per l'uomo. Alla fine l'amor di <name key="000348"
+										>Cri<milestone unit="wb" />
+									<lb />sto</name> ci fa disprezzare et risolvere tutto in terra, la quale è il <lb />piede
+        nostro, <!-- allusione biblica molteplice -->perché di quella
+         nasciamo, viviamo, sopra di <lb />quella ci sostentiamo et in quella ritorniamo.
+         <lb /><name
+									key="005916" ana="func_character"
+									>Sel.</name> Quei santi uomini antichi non
+        appetivano nulla di questo mondo, et però non <lb />avevano alcuno tumulto nel cuore che gli
+        tormentasse. Gran cosa è questa, che <lb />il mondo del continuo ci turba et noi l'amiamo;
+        ora pensate se ci fossi tran<milestone
+									unit="wb" />
+								<lb />quillo, come noi l'ameremmo. Non si coglie mai fiore del suo giardino o che <lb />non
+        puzzi o che non punga, et sempre cerchiamo di farne ghirlanda per la <lb />nostra testa o,
+        per dare diletto all'odorato nostro, un mazzo. Siamo sempre <lb />cupidi di possedere,
+        infiammati del continuo nella lussuria, stimolati ogni ora <pb
+									label="c" n="34v" corresp="img://afd-mondo_034v.jpg" />
+								<lb />dall'avaritia, dall'ambitione giorno et notte tormentati, et a ogni punto
+         invi<milestone
+									unit="wb" />
+								<lb />luppati nelle facende de' vizii. <lb /><name key="001316" ana="func_character"
+									>Sve.</name> Noi siamo tanto legati (certamente) al mondo terreno che noi <lb />non andiamo
+        cercando con i termini naturali, con le ragioni <lb />della filosofia et con lo spirito di
+         <name
+									key="000344">Dio</name>, di levarci mai dal<milestone unit="wb" />
+								<lb />l'amor di questa terra et assotigliare lo spirito a quelle belle <lb />cose, degne di
+        consideratione et ammiratione. <!-- allusione a Giulio Camillo, L'Idea del theatro -->Chi rimirassi il <lb />caos, quella materia confusa che creò il
+         magno <name
+									key="000344">Iddio</name>, nel<milestone unit="wb" />
+								<lb />la quale era il cielo et la terra, gli Angeli, le anime et tut<milestone unit="wb" />
+								<lb />to insieme, et di quella ne fece tre parti: della prima, eccellen<milestone unit="wb" />
+								<lb />te, più perfetta, egli ne fece gli Angeli et le anime, della se<milestone unit="wb" />
+								<lb />conda parte i cieli et dell'ultimo questo mondo. <lb /><name key="005916"
+									ana="func_character"
+									>Sel.</name> Come chi separassi d'una massa confusa d'oro, argento et
+        rame ciascun <lb />metallo da sé solo. <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name> Puossi dire ancora gli Angeli et l'anime nostre esser il sole, <lb />la luce i
+        cieli et il lume la terra. <lb /><name
+									key="005916" ana="func_character"
+									>Sel.</name> Son
+        tutte belle cose da sapere coteste. <lb /><name key="001316"
+									ana="func_character"
+									>Sve.</name>
+        Et tutte sono state dette, ma non in questo modo. Il rimedio a un <lb />male è bene stato
+        trovato altre volte, ma le compositioni del<milestone
+									unit="wb" />
+								<lb />le cose per medicarlo si fanno differentemente, secondo l'età <lb />dell'uomo, la
+        complessione et il tempo. Bisogna acco<milestone
+									unit="wb" />
+								<lb />modare ai luoghi le cose dette, et che le servino a quell'effetto <lb />che tu le vuoi
+        adoperare. Però l'industria nostra ha da saper <lb />questo, se la vuoi dire alcuna nuova
+        inventione, et bisogna più <lb />dottrine a fare un corpo d'una scienza che sia in tutto
+        capace <lb />a un lettore, perché oltre alla sapienza bisogna l'inventione, <lb />la vivacità
+        dello spirito che camini per la lettera, gli ascosti se<milestone
+									unit="wb" />
+								<lb />creti che si possono in quella considerare et un suono di nume<milestone unit="wb" />
+								<lb />ro d'eloquenza che non ti stucchi, anzi ti diletti et giovi. <lb />Cose molto difficili
+        a unire insieme. <pb
+									label="c" n="35r" corresp="img://afd-mondo_035r.jpg" />
+								<lb /><name key="005916" ana="func_character"
+									>Sel.</name> Tutte le cose nobili pare a me che
+        abbino di bisogno di diverse parti perfette, a <lb />fare un'unione mirabile. Se il musico
+        buono ha cattivo stromento da sonare, <lb />male si può gustare la sua virtù in quella
+        perfettione ch'ella è; se le pitture <lb />mancano o di disegno o di colorito naturalissimo,
+        di d'intorni o di lumi, le <lb />perdano infinitamente, dove godendo il privilegio di tutto,
+        come sarebbe una <lb />scultura di mano del mirabile, senza pari, unico <name
+									key="000599"
+									>Michel Agnolo</name>, <lb />ella è perfetta né si può far meglio, o una pittura
+        dell'immortale et più <lb />che stupendo <name
+									key="000608"
+									>Titiano</name>, il quale non se
+        ne può tanto lodare <lb />che egli non meriti più. <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name> Ecco quel che fa il mondo, egli ci dà questo diletto con
+        una ma<milestone
+									unit="wb" />
+								<lb />no et con l'altra ci porge un dispiacere, che ci fa invec<milestone unit="wb" />
+								<lb />chiare tanti virtuosi uomini et poi ce gli toglie per sempre. <lb /><name key="005916"
+									ana="func_character"
+									>Sel.</name> Eimé! che la vera virtù consiste in un animo tutto intento
+        alle cose eterne, <lb />se noi veggiamo in un petto mortale tanta divinità, che fia vedere
+        colui che <lb />fa operare sì perfette cose? Nacque l'uomo per morire, et questo corpo, che
+        <lb />l'anima nostra ha per sua abitatione, è un albergo da viandanti, che poche <lb />ore vi
+        si stantia dentro. A me piace uno di questi animi virtuosi, che il <lb />lor sapere non
+        appropriano ad altro che a <name
+									key="000344"
+									>Dio</name>, et che desiderano vedere colui
+        <lb />che gli ha dato tanta forza nella lingua, nella penna, nel valore, nello scar<milestone
+									unit="wb" />
+								<lb />pello, nel pennello o nella nobiltà reale. Questo mi pare un uomo divino, <lb />che
+        sempre ha l'occhio a <name
+									key="000344"
+									>Dio</name> et lo loda et ringratia del continuo,
+        ogni ora <lb />desiderando di vederlo a faccia a faccia, come colui c'ha veduto che cosa
+        <lb />ei può avere dalla maestà sua et quello ch'egli riceve in questo mondo. <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name> Il mondo dà fumo di stati, ombra di
+        ricchezze, suono di pia<milestone
+									unit="wb" />
+								<lb />ceri et voce di fama. Non siamo noi molestati da ogni ban<milestone unit="wb" />
+								<lb />da et cacciati fuora? Veramente sì, proprio come colui che <lb />rivuole la sua casa, il
+        mondo ci ha accommodato questo casa<milestone
+									unit="wb" />
+								<lb />mento di terra et lo rivuole ogni volta che gli verrà bene; <lb />non bisogna disegnare
+        di fabricarlo et adornarlo di gioie, d'o<milestone
+									unit="wb" />
+								<lb />ro, di vestimenti vani et di pretiosi drappi, perché, ogni vol<milestone unit="wb" />
+								<lb />ta che gli piacerà, farà come colui che compra nuovamente una <lb />fabrica fatta
+        secondo la commodità di colui che l'abitava, <lb />che, non gli piacendo, la getta tutta a
+        terra et a suo modo <lb />la mura di nuovo. <pb
+									label="c" n="35v" corresp="img://afd-mondo_035v.jpg" />
+								<lb /><name key="005916" ana="func_character"
+									>Sel.</name> Questo aviene veramente a chi abita
+        quel d'altri; almeno, abitando noi questa <lb />terrena spoglia, non ci fossimo noi del
+        continuo dentro molestati. Ora le feb<milestone
+									unit="wb" />
+								<lb />bri ci assaltano, ora i dolori ci spaventano, ora l'infirmità diverse da ogni
+        <lb />banda ci combattono, chi vuoi cacciar questo spirito fuori con duol di fianchi,
+        <lb />chi con un catarro, con una irremediabil gocciola, con una inaspettata su<milestone
+									unit="wb" />
+								<lb />bitana; tutte queste così s'apresentano a un tratto dinanzi a noi, et gli
+         uomi<milestone
+									unit="wb" />
+								<lb />ni, non considerando la malitia et la viltà di questo mondo et di questo mi<milestone
+									unit="wb" />
+								<lb />serabil corpo, si vanno del continuo proponendo cose eterne in questo caduco
+        <lb />stato, et quanto la umana età si può allargare tanto non la speranza si <lb />vanno
+        occupando. Infelici a noi, qual cosa in questo mondo ci contenta? <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name> Nessuna, perché non siamo contenti di somma alcuna d'oro
+        né <lb />ci sodisfa alcuna potenza. Qual cosa può esser più vituperosa, <lb />qual più pazza
+        di questa? <!-- allusione a Seneca, Ad Lucilium epistulae morales --><seg
+									ana="quotation_rewriting"
+										>Che nessuna cosa ci basti <lb />dovendo morire, anzi ad ogni ora
+         morendo, imperò che ogni <lb />giorno siamo più presso all'ultimo fine et ogni ora ci
+          condu<milestone
+										unit="wb" />
+									<lb />ce al precipitio dove noi dobbiamo cadere.</seg> Guardate in quan<milestone unit="wb" />
+								<lb />ta cecità sia rinvolta la nostra mente. Mentre che io ragiono, <lb />non corre in fatti
+        quel che io dico in parole? et una parte di <lb />quel che io parlo non è posto in opera? Il
+        tempo sta sempre <lb />in un medesimo punto, negli anni che noi siamo vivuti il tem<milestone
+									unit="wb" />
+								<lb />po stava in quel medesimo luogo che inanzi che noi vivessimo. <lb />È grand'errore
+        temere quel dì estremo che noi lasciamo que<milestone
+									unit="wb" />
+								<lb />sto mondo, perché ciascun giorno fa tanto alla morte quanto <lb />l'ultimo. Quel grado
+        lento lento, che noi manchiamo, non ci <lb />genera stanchezza, ma è un testimonio del nostro
+        termine: alla <lb />morte l'ultimo giorno perviene, ma tutti vi vanno. La mor<milestone
+									unit="wb" />
+								<lb />te non ci porta via in un momento, anzi a poco a poco ci sve<milestone unit="wb" />
+								<lb />glie et sbarbaci che non ce ne accorgiamo. <lb /><name key="005916"
+									ana="func_character"
+									>Sel.</name> Il grande animo adunque, il quale è a sé consapevole di miglior natura,
+         certamen<milestone
+									unit="wb" />
+								<lb />te si debbe studiare di portarsi onoratamente, con ingegno mirabile, in questo
+        <lb />alloggiamento ove egli è posto. Bell'animo è di colui che non giudica <lb />nessuna cosa
+        che gli sia intorno esser sua, ma le tiene come in prestanza, et co<milestone
+									unit="wb" />
+								<lb />me peregrino viandante, che alloggi una sera, le usa. Quando vedremo <pb label="c"
+									n="36r" corresp="img://afd-mondo_036r.jpg" />
+								<lb />noi un uomo di sì fatto intelletto? et che sia delle cose del mondo constante? <lb />A
+        me parrebbe vedere una nuova natura, vedendo sì fatta animosa gran<milestone
+									unit="wb" />
+								<lb />dezza. La qualità del vero tiene et dura, ma le cose false non durano. <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name> Il non esser quieto è un cattivo essempio
+        della mal composta <lb />mente. Ogn'uomo muta consiglio in un corso di sole et va<milestone
+									unit="wb" />
+								<lb />ria a ciascuna ora il desiderio: si delibera di tor donna, or <lb />tener femina, or
+        vuol regnare, tal volta non gli pare che al<milestone
+									unit="wb" />
+								<lb />cuno servisse meglio di lui, molte volte s'insuperbisce, ora si <lb />umilia, spesso
+        getta via i suoi danari et più spesso rapisce <lb />quei degli altri, et così mostra l'animo
+        suo ciascuno essere im<milestone
+									unit="wb" />
+								<lb />prudente, perché viene a ingannar molti et a se stesso essere <lb />inequale, onde si dà
+        questo per risolutione, che in questo mon<milestone
+									unit="wb" />
+								<lb />do non è cosa più vituperosa dell'inconstantia. <lb /><name key="005916"
+									ana="func_character"
+									>Sel.</name> O grande errore de' miseri mortali, che tutti siamo di sì
+        varia volontà! ora <lb />paremo gravi et temprati, ora prodighi et ora vani.
+         <!-- allusione al La moral filosofia, pp. 125-126 -->Né stiamo
+         molto <lb />che ci mutiamo la maschera, ponendocene un'altra contraria a quella che noi
+         <lb />ci abbiamo levata. <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name> O
+        mondo volubile, quando mi spoglierò io della tua veste? Il <lb />mondo ama quello ch'è suo et
+        l'uomo vile d'animo desi<milestone
+									unit="wb" />
+								<lb />dera sempre il mondo. <!-- san Paolo, Corinzi, 3, 19 --><q ana="quotation_rewriting"
+										>La sapienza di questo mondo è paz<milestone unit="wb" />
+									<lb />tia apresso a <name key="000344"
+									>Dio</name></q>; perché il mondo è posto tutto in
+         maligni<milestone unit="wb" />
+								<lb />tà, non può il mondo ricever lo spirito della verità. Che fa<milestone unit="wb" />
+								<lb />remo adunque? Pregheremo colui che creò il cielo et la terra <lb />che di questo mondo
+        grande pien di lacci, quando gli piaccia, ci <lb />unisca a sé, acciò che il nostro cuore,
+        che mai in questo ha tro<milestone
+									unit="wb" />
+								<lb />vato quiete, si riposi in lui, che di tutte le cose è principio et fine.</p>
+						</div>
+						<div type="section" n="1.2">
+							<pb label="c" n="36v" corresp="img://afd-mondo_036v.jpg" />
+							<head type="main"><lb />RAGIONAMENTO <lb />II. <lb /><name key="001316" ana="func_character"
+									>SVEGLIATO</name> ET <name key="005916" ana="func_character">SELVAGGIO</name>.</head>
+							<p>
+								<lb />[<name key="001316" ana="func_character"
+									>Sve.</name>] O che bell'opera è questa
+        macchina di que<milestone unit="wb" />
+								<lb />sto mondo, o come è ella ripiena di variate bel<milestone unit="wb" />
+								<lb />le cose, com'è bella la suprema parte, o quan<milestone unit="wb" />
+								<lb />ta chiarezza, o quanto lume, o quanta luce, <lb />o che splendore, o che suave aure
+        spirano d'intorno a questo <lb />circolo terreno, quanti diversi uccelli di piume sì mirabili
+        <lb />sono in questo aere, quanti et innumerabili pesci, formati diver<milestone
+									unit="wb" />
+								<lb />samente dalla natura, si nutriscono nei mari et quanti mo<milestone unit="wb" />
+								<lb />struosi animali si veggono abitar questa terra, o quanta arte, <lb />maestria et opera
+        divina è stata usata in far questo uomo et <lb />questa donna! Egli è pur ripieno il mondo di
+        sì fatto stupo<milestone
+									unit="wb" />
+								<lb />re che non se ne può ragionare se non stupendo. <lb /><name key="005916"
+									ana="func_character"
+									>Sel.</name> Pensate quanto è divino et eccelso quell'altro mondo, nel
+        quale abita il <lb /><name
+									key="000344"
+									>Fattore</name> di questo; è più stupendo il suo
+        seggio che non è il nostro, quanto egli <lb />è più perfetto di noi. O anima sali, per la
+        scala di queste terrene cose, alla <lb />contemplatione delle superne bellezze! <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name> Colui che potessi spiccarsi da questo mondo
+        potrebbe chiamarsi <lb />felice, ma dove è egli? Noi siamo tanto apiccati all'amore de'
+        <lb />figliuoli, all'affetto dell'acquisto della roba, al desiderio del ven<milestone
+									unit="wb" />
+								<lb />dicar l'ingiurie, al mantenimento delli stati, conservamento de <lb />la sanità et al
+        riposo di questo corpo che noi stiamo occupa<milestone
+									unit="wb" />
+								<lb />ti tutte l'ore in sì vili operationi. <!-- riscrittura di Giovanni, 12, 31-32 --><q
+									ana="quotation_rewriting">Scacciò <name key="000344"
+										>Iddio</name> il Principe <lb />di
+         questo mondo et, nell'eleuarsi in alto, trasse ogni cosa di per<milestone
+										unit="wb" />
+									<lb />fetto a sé; chi adunque con seco non s'inalza alle celesti impre<milestone unit="wb" />
+									<lb />se, non è degno d'altro stato che di questo caduco, o chi non va <lb />dietro allui, non
+         avrà altro principe che quel delle tenebre.</q>
+								<pb label="c" n="37r" corresp="img://afd-mondo_037r.jp" />
+								<lb /><name key="005916" ana="func_character"
+									>Sel.</name> Gran desiderio ho io avuto sempre
+        d'udire un discorso di legge. <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name> Et io
+        di sodisfarvi di quello che desiderate. Or udite, che <lb />io m'ingegnerò di dimostrarvi in
+        parte quanto sia stato grande <lb />et mirabile la legge di <name
+									key="000344">Dio</name> et
+        della Natura, et brevemen<milestone unit="wb" />
+								<lb />te discorrerò tutte le leggi: la mosaica, l'evangelica, l'u<milestone unit="wb" />
+								<lb />mana, la civile, et molte altre cose forse nuove a molti. <lb /><name key="005916"
+									ana="func_character"
+									>Sel.</name>&nbsp;<!-- remota allusione a San Tommaso, Summa theologiae --><q
+									ana="quotation_rewriting"
+										>Più volte n'ho udito ragionare di queste leggi del mondo et che
+         le son parti<milestone
+										unit="wb" />
+									<lb />te in cinque parti, cioè la eterna, la naturale, la mosaica, l'evangelica <lb />et la
+         legge umana</q>. <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name> Così è,
+         <!-- remota allusione a San Tommaso, Summa theologiae --><q
+									ana="quotation_rewriting"
+										>dalla
+         legge eterna derivano tutte le leggi, per reggi<milestone unit="wb" />
+									<lb />mento della creatura ragionevole</q>. <lb /><name key="005916" ana="func_character"
+									>Sel.</name> Il mio desiderio sarebbe bene d'udirne un discorso, ma dubito di lunghezza et
+        <lb />di tedio; il mondo mi par tutto legge, ogni uno ne fa, et quante più se ne <lb />publica
+        tanto manco se n'osserva.
+         <!-- plagio da Antonio de Guevara, Dichiarazione di alcune medaglie antichissime, in Libro primo delle lettere --><q
+									ana="quotation_plagiarism"
+										>Io ho letto che furono sette uomini che le <lb />trovarono
+         anticamente: <name
+										key="000070">Moisè</name> le diede agli Ebrei, <name key="001229"
+										>Solone</name> agli Ateniesi, <lb /><name key="000179"
+										>Ligurgo</name> ai Lacedemoni, un
+         altro, ch'io non mi ricordo, a quei di Rodi, <name
+										key="001171">Nu<milestone unit="wb" />
+										<lb />ma Pompilio</name> ai Romani et <name key="005923"
+										>Foroneo</name> agli Egitti, et fu
+         lor re, fu uo<milestone unit="wb" />
+									<lb />mo giusto, non meno virtuoso che savio et onesto. Alcuni vogliono che le sue
+         <lb />leggi corressino tutto il mondo, perché si vede i Romani aver chiamate certe
+         <lb />leggi giustissime forum, per memoria del re <name
+										key="005923">Foroneo</name>.
+          <lb /><name key="001316" ana="func_character"
+										>Sve.</name> Le leggi del buon <name key="001171"
+										>Pompilio</name> furon lasciate per il caso del <name key="001161">super<milestone
+											unit="wb" />
+										<lb />bo Tarquino</name>, et vi furon condotte quelle di <name key="001229"
+										>Solone</name>,
+         et l'ac<milestone unit="wb" />
+									<lb />cettarono et osservarono, quelle che chiamarono poi le leggi <lb />delle Dodici Tavole.
+         Gran dignità fu quella di quei dieci Ro<milestone
+										unit="wb" />
+									<lb />mani sapientissimi, et furono d'una grande autorità da anda<milestone unit="wb" />
+									<lb />re a tor le leggi, per portarle a sì stupendo Senato. <lb /><name key="005916"
+										ana="func_character"
+										>Sel.</name> Non furono le leggi di tutto il mondo distinte in tre
+         parti? <lb /><name
+										key="001316" ana="func_character">Sve.</name> Sì, <foreign xml:lang="la"
+										>ius naturali</foreign>, <foreign xml:lang="la">legem conditam</foreign> et <foreign
+										xml:lang="la">ad morem antiquum</foreign>. <lb /><name key="005916" ana="func_character"
+										>Sel.</name> Qual'è la naturale? <lb /><name key="001316" ana="func_character"
+										>Sve.</name>
+         Quella che gli antichi chiamaron di natura, et questa contiene, in <lb />somma,
+          <!-- allusione biblica, Matteo e Luca -->non fare ad altri
+          quello che a te non voresti che fos<milestone
+										unit="wb" />
+									<lb />se fatto, la qual legge pare a me che, senza che alcuno ce la inse<milestone
+										unit="wb" />
+									<lb />gni, la ragione ce la mostra apertamente, senza troppo studio. <pb label="c" n="37v"
+										corresp="img://afd-mondo_037v.jpg" />
+									<lb /><name key="005916" ana="func_character">Sel.</name> Et l'altra de <foreign
+										xml:lang="la">lex condita</foreign>? <lb /><name key="001316" ana="func_character"
+										>Sve.</name> Et quello che i re et gli imperadori fanno nei lor dominii, <lb />una parte
+         delle quali consiste in ragione et l'altra in opinione. <lb /><name
+										key="005916" ana="func_character">Sel.</name>
+									<foreign xml:lang="la">Mos antiquus</foreign> come s'intende? <lb /><name key="001316"
+										ana="func_character"
+										>Sve.</name> È la consuetudine che in qualche popolo si ha introdotta
+         a poco <lb />a poco, et questa non ha più forza che esser bene o ma<milestone
+										unit="wb" />
+									<lb />le esseguita. <lb /><name key="005916" ana="func_character"
+										>Sel.</name> Noi possiamo
+         adunque comprendere che <foreign xml:lang="la"
+										>ius</foreign> naturale sia quella legge che
+         consiste <lb />in ragione, <!-- allusione a Isidoro di Siviglia, Etymologiae --><foreign
+										xml:lang="la">lex condita</foreign> quella che è
+          scritta et ordinata, <foreign
+										xml:lang="la">mos antiquus</foreign> la con<milestone unit="wb" />
+									<lb />suetudine di gran tempo usata. Ma ditemi, quegli antichi iurisconsulti fecero
+         <lb />pur non so che divisioni, per amor del litigare. <lb /><name
+										key="001316" ana="func_character">Sve.</name> Le distribuirono in sette sorte: <foreign
+										xml:lang="la">ius gentium</foreign>, <foreign xml:lang="la">ius</foreign> civile, <foreign
+										xml:lang="la">ius <lb />consulare</foreign>, <foreign xml:lang="la"
+										>ius publicum</foreign>,
+          <foreign xml:lang="la">ius quiritum</foreign>, <foreign
+										xml:lang="la">ius
+         militare</foreign> et <lb /><foreign xml:lang="la"
+										>ius magistatus</foreign>. <lb /><name key="005916" ana="func_character"
+										>Sel.</name> O mondo pien di lacci, sì che io comprendo
+         da una parte la tua bellezza, per <lb />intendere più che io posso <name
+										key="000344"
+										>Iddio</name>, et dall'altra veggo manifestamente l'abisso <lb />delle tue malignità. Or
+         seguite il grande invoglio del gran caos delle leggi, <lb />divise da quei dottori.
+          <lb /><name
+										key="001316" ana="func_character">Sve.</name>&nbsp;<foreign xml:lang="la"
+										>Ius gentium</foreign> chiamaron gli antichi quando toglievano et occupa<milestone
+										unit="wb" />
+									<lb />vano alcune robe o facultà che si trovavano senza padrone, <lb />difender la patria
+          ancora et farsi amazzare per la libertà <lb />di quella. <foreign
+										xml:lang="la">Ius</foreign>
+         civile fu l'ordine per formare una lite, co<milestone
+										unit="wb" />
+									<lb />me è oggi accusare, rispondere, citare, provare, negare, alle<milestone unit="wb" />
+									<lb />gare, sententiare, essequire et rilasciare, acciò che ogni per<milestone unit="wb" />
+									<lb />sona abbia per giustitia quello che gli viene tolto per forza. <lb /><foreign
+										xml:lang="la"
+										>Ius</foreign> consulare furon quelle leggi che i consoli romani
+          teneva<milestone
+										unit="wb" />
+									<lb />no per loro, come dire quanto si distendeva la loro autorità et <lb />grandezza; nella
+         qual legge v'era l'orma dell'abito da por<milestone
+										unit="wb" />
+									<lb />tare indosso, che pratica usare, il luogo da ragunarsi et infi<milestone unit="wb" />
+									<lb />no quante ore ci dovevano stare et il modo del viver loro, <lb />et, s'io mi ricordo
+         bene, credo che la contenesse ancora quan<milestone
+										unit="wb" />
+									<pb label="c" n="38r" corresp="img://afd-mondo_038r.jpg" />
+									<lb />ta facultà dovevano avere. <lb /><name key="005916" ana="func_character"
+										>Sel.</name>
+         Questa era legge tutta loro, così mi piace che ancora i grandi abbino da osser<milestone
+										unit="wb" />
+									<lb />vare qualche cosa ancora, et non sempre noi altri piccoli. Intendevasi cote<milestone
+										unit="wb" />
+									<lb />sto ordine per tutti i consoli? <lb /><name key="001316" ana="func_character"
+										>Sve.</name> Per quei di <name key="000050" ana="func_place"
+										>Roma</name> solamente, che
+         abitavano la città. <lb /><name key="005916"
+										ana="func_character">Sel.</name> Sta bene,
+         seguite dell'altre leggi. <lb /><name
+										key="001316" ana="func_character">Sve.</name>
+									<foreign xml:lang="la"
+										>Ius Quiritum</foreign> fu una bella legge, perché la conteneva molti
+          pri<milestone
+										unit="wb" />
+									<lb />vilegi de' gentiluomini romani, come sarebbe a dire non po<milestone unit="wb" />
+									<lb />ter esser noiato per debiti, non pagare, per il camino, l'alogiamento. <lb /><name
+										key="005916" ana="func_character"
+										>Sel.</name> Come dire aloggiare a discretione, o senza
+         più tosto. <lb /><name
+										key="001316" ana="func_character"
+										>Sve.</name> Cadendo in povertà,
+         erano del pubblico tesoro sostentati. <lb /><name
+										key="005916" ana="func_character">Sel.</name> Questa era ottima provisione. <lb /><name
+										key="001316" ana="func_character"
+										>Sve.</name> Potevano farsi sepellire in luoghi alti et altre dignità, premi<milestone
+										unit="wb" />
+									<lb />nenze et privilegi, che non gli potevano godere se non cittadi<milestone unit="wb" />
+									<lb />ni romani. <foreign xml:lang="la"
+										>Ius publicum</foreign> chiamavano gli ordini o
+         capitoli <lb />che tra loro si facevano o che tenevano: come dovevano rac<milestone
+										unit="wb" />
+									<lb />conciar le mura della città per mantener gli aquidotti, fabri<milestone unit="wb" />
+									<lb />car case, misurar le strade, metter balzelli, imposte, far la <lb />guardia alle mura
+         di notte, cose che tutti le facevano, però si <lb />chiamava <foreign
+										xml:lang="la">ius
+          publicum</foreign>. Gli antichi ne fecero una detta <foreign
+										xml:lang="la">ius</foreign>
+									<lb />militare per i bisogni della guerra, quando un regno si rompe<milestone unit="wb" />
+									<lb />va con un altro regno. <lb /><name key="005916" ana="func_character"
+										>Sel.</name> Questa
+         era buona provisione, et mi ricordo aver letto che cotesta legge gli fa<milestone
+										unit="wb" />
+									<lb />ceva governar le cose molto saviamente, perciò che trattavano del publicar la
+         <lb />guerra, del confermar la pace, metter tregua, far gente, far fossi, ordinar
+          sen<milestone
+										unit="wb" />
+									<lb />tinelle, pagare esserciti, dare assalti, metter in punto il dì della giornata,
+          ri<milestone
+										unit="wb" />
+									<lb />tirare la battaglia, riscuoter prigioni et trionfare. <lb /><name key="001316"
+										ana="func_character">Sve.</name> Voi ne sapete quanto ne so io. <lb /><name key="005916"
+										ana="func_character"
+										>Sel.</name> Già leggevo molto, ma, da che io ho bisogno d'altri occhi
+         che i miei, lascio ripo<milestone
+										unit="wb" />
+									<lb />sar le carte. <lb /><name key="001316" ana="func_character"
+										>Sve.</name> Questo <foreign xml:lang="la"
+										>ius</foreign> militare, per finirla, era una autorità dei cavalie<milestone unit="wb" />
+									<lb />ri, per far difender con l'arme la Republica. <pb label="c" n="38v"
+										corresp="img://afd-mondo_038v.jpg" />
+									<lb /><name key="005916" ana="func_character"
+										>Sel.</name> Io mi sodisfo di queste, perché
+         s'egli s'entrasse in ciascuna legge che ciascuno or<milestone
+										unit="wb" />
+									<lb />dinò et da' quali elleno ebber nome, sarebbono infiniti i nomi et gli ordini.</q>
+								<lb />Ora sì che 'l mondo mi pare un travaglio stupendo, et veggio la grande in<milestone
+									unit="wb" />
+								<lb />stabilità degli uomini et che non si contentano di cosa alcuna, perché, non
+        <lb />sodisfatti della legge della natura, che era assai, n'hanno fatte parecchi,
+         an<milestone
+									unit="wb" />
+								<lb />zi infinite. <!-- allusione biblica, Genesi --><name key="000344"
+									>Iddio</name> omnipotente pose legge alle acque che le non passassero i
+         <lb />lor confini, diede legge agli uccelli et a ciascuno animale che crescessino et
+         <lb />moltiplicassero, all'erbe che producessero il seme, et all'uomo ne diede
+          anco<milestone
+									unit="wb" />
+								<lb />ra una et egli non l'osservò, et poi n'è andate facendo tante questa terrena
+        <lb />spoglia che le stelle del cielo son in minor numero; non è maraviglia se egli <lb />se
+        ne osserva poche, poiché il primo nostro padre non osservò i pochi comanda<milestone
+									unit="wb" />
+								<lb />menti. Io son satio di questo vivere umano, et ogni giorno odo qualche caso
+         ac<milestone
+									unit="wb" />
+								<lb />caduto in questo mondo, che mi fa perdere l'amore a fatto, et son poi casi che
+         leg<milestone
+									unit="wb" />
+								<lb />ge alcuna non può por loro tanta pena né dar tanta punitione che basti a <lb />tanto
+        delitto. <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name> Se mai fu caso alcuno
+        degno di gastigo crudele, questo che io <lb />voglio raccontarvi è uno, acciò che voi
+        conosciate che vivere <lb />è questo del gran mondo. <lb /><name
+									key="005916" ana="func_character"
+									>Sel.</name> Altro non desidero che udir essempi, che mi faccino avere
+        in odio la <lb />nostra miseria. <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name>
+        Accade un nuovo, inusitato et raro accidente, ma perché me<milestone
+									unit="wb" />
+								<lb />glio ei si conosca l'orribilità dei perversi casi di questo mondo, <lb />mi farò dal
+        fondamento della causa, inanzi che io venga all'ef<milestone
+									unit="wb" />
+								<lb />fetto. <seg ana="genre_short" xml:id="novella_p002n001.001"
+										>Fu un nobile et ricco cavalieri, il
+         quale era dotato <lb />di virtù infinite, et nella sua matura età prese donna di
+          no<milestone
+										unit="wb" />
+									<lb />bil famiglia, d'ingegno, di bellezza estrema et mirabil et di <lb />virtù ornatissima,
+         talmente che in un regno dei maggiori del <lb />mondo non si sarebbe trovato una fanciulla
+         sì virtuosa, sì bel<milestone
+										unit="wb" />
+									<lb />la, sì nobile et sì gentile. Teneva il cavalieri una fami<milestone unit="wb" />
+									<lb />glia tutta onesta et dotata di virtù, come sarebbono sonatori <lb />di viole, di leuti,
+         scrittori, letterati, pittori et d'ogni <lb />qualità di virtuosi; così spendeva il suo
+         avere in tali uomini <lb />et non solamente teneva costoro, ma sempre aveva la sua
+          ta<milestone
+										unit="wb" />
+									<pb label="c" n="39r" corresp="img://afd-mondo_039r.jpg" />
+									<lb />vola piena dei primi virtuosi gentiluomini della città, et tut<milestone unit="wb" />
+									<lb />to il tempo si spendeva in virtuosissimi atti, fatti et ragiona<milestone unit="wb" />
+									<lb />menti, né mai s'udì di questa nobilissima donna et mirabil <lb />femina parole che
+         fosse contro all'onor suo, pur un pensie<milestone
+										unit="wb" />
+									<lb />ro non andò mai attorno che di lei non fosse onestissimo. Es<milestone unit="wb" />
+									<lb />sendo adunque in questo mondo sì fatta coppia nobile, piacque <lb />alla <name
+										key="001325"
+										>Fortuna</name> far de' suoi effetti et la privò del marito, per la <lb />qual
+         cosa, morendo egli, la lasciò vedova di anni ventisette. <lb />Qual fosse il dolore, pianto,
+         dispiacere, universal lamento lo <lb />può pensar ciascuno. Passati alcuni mesi, cessati i
+         dolori al<milestone
+										unit="wb" />
+									<lb />quanto, la bella vedova, conservando il castissimo animo suo, <lb />mantenne quella
+         gentil famiglia, quell'ordine et quella riputa<milestone
+										unit="wb" />
+									<lb />tione, sì come fosse il cavalieri vivuto: talché nella città <lb />questa casa era lo
+         stupore et l'onore di tutta quella patria. <lb />Tutti i virtuosi che arrivavano nella terra
+         visitavano questa gen<milestone
+										unit="wb" />
+									<lb />tildonna, et ogni gran maestro andava a udire la musica et i <lb />dotti ragionamenti.
+         Capitò, per mala sorte et cattiva ventu<milestone
+										unit="wb" />
+									<lb />ra, un oltramontano, di qual provintia, nome et città non mi <lb />piace di dirlo,
+         perché sia affatto spento il nome suo indegno, il <lb />qual era un uomo di trentadue anni
+         in circa, di assai buono <lb />aspetto et onorevole, ma diserto, stracciato, rovinato et
+          fru<milestone
+										unit="wb" />
+									<lb />sto, il qual fu condotto (perciò che era dotato d'una mirabil vo<milestone unit="wb" />
+									<lb />ce et gratia nel cantare et era nella musica soffitientissimo) in <lb />questa casa dai
+         cantatori di quella, et la donna, mossa da una <lb />intrinseca compassione et bontà, lo
+         rivestì onoreuolmente et <lb />gli donò alcuni scudi, per fare il suo viaggio. Costui
+          trat<milestone
+										unit="wb" />
+									<lb />tenendosi et cantando et praticando spesso, avenne che la don<milestone unit="wb" />
+									<lb />na gli pose amore, et fu di tal maniera che la lo prese per ma<milestone unit="wb" />
+									<lb />rito dopo alcuni anni che la vidde la sua creanza, et come suol <pb label="c" n="39v"
+										corresp="img://afd-mondo_039v.jpg" />
+									<lb />fare l'amore, <seg ana="syntexp_proverbial"
+										>che fa veder l'un due</seg>, ogni cosa gli
+         pareva <lb />che fosse (ancor che male) ben fatta. Così costui ottenne <lb />quello che
+         un'infinità di nobil cavalieri non avevano potuto <lb />ottenere, d'averla per donna, et
+         molti nobili gentiluomini, <lb />pensando forse di averla un giorno, si maravigliaron del
+          ca<milestone
+										unit="wb" />
+									<lb />so. Questa fu cosa nuova, inaspettata a tutti. Poiché così <lb />seguì, ciascuno si
+         quietò, et, se mai fu felice la musica, <lb />per esservi aggiunto un perfetto cantore et sì
+         ottima voce, in <lb />quel tempo la fiorì più che mai. Chi avesse veduto, in pochi
+         <lb />mesi, costui cavalcare con bellissimi cavalli, vestiva con ric<milestone
+										unit="wb" />
+									<lb />chi vestimenti, andava in compagnia onorata, non l'avereb<milestone unit="wb" />
+									<lb />be mai riconosciuto; egli <seg ana="syntexp_idiomatic"
+										>mutò la scorza come il serpe</seg>, rifece <lb />il pelo et la
+         pelle si ringentilì, così pareva un conte. Ma <lb />secondo che suole accadere (<!-- proverb. che vale, che La troppa comodità induce altrui a male cogitazioni; LdCiR --><seg
+										ana="syntexp_proverbial"
+										>chi ben siede mal pensa</seg>), parendoli a <lb />costui di plebeo
+         esser diventato signore, si deliberò di farsi ve<milestone
+										unit="wb" />
+									<lb />dere a' suoi parenti furfanti et mostrare quanto e' fosse divenu<milestone unit="wb" />
+									<lb />to nobile et ricco; ma non potendo farlo senza un gran distur<milestone unit="wb" />
+									<lb />bo, si pensò un modo più risoluto, <!-- Venire in taglio: Porgersi comodità, e occasione; LdCiR --><seg
+										ana="syntexp_idiomatic">venendogli a taglio</seg> più co<milestone unit="wb" />
+									<lb />modamente di farlo. Onde adunati per alcun tempo una gran <lb />somma di danari (come
+         colui che n'era patrone), gli faceva scri<milestone
+										unit="wb" />
+									<lb />vere sopra un banco, et accomodatosene parecchi et parecchi <lb />migliara, quando gli
+         parve tempo si fece far le lettere corrispon<milestone
+										unit="wb" />
+									<lb />denti per i paesi suoi. Poi che egli ebbe acconcio i fatti scelle<milestone unit="wb" />
+									<lb />rati, una notte, dormendo (oimè!) la divina giovane, l'an<milestone unit="wb" />
+									<lb />gelica figura et la celeste donna, angelo in terra, il perverso <lb />marito,
+         scordatisi i benefici, le carezze et l'amore, dopo che egli <lb />l'ebbe goduta, (oimè!)
+         dormendo lei nel suo più dolce riposo, <lb />egli con un pugnale l'aperse il petto, et nel
+         mezzo del cuore fe<milestone
+										unit="wb" />
+									<lb />rendola (oimè!), rendé lo spirito suo purissimo a <name key="000344"
+										>Dio</name>. O
+          sce<milestone unit="wb" />
+									<pb label="c" n="40r" corresp="img://afd-mondo_040r.jpg" />
+									<lb />lerato caso, o ingratitudine non più udita, o perverso demo<milestone unit="wb" />
+									<lb />nio in carne umana, o iniquo uomo come t'è sofferto l'ani<milestone unit="wb" />
+									<lb />mo a ferir colei, che t'avea sanato dalla ferita della miseria? <lb />Chi avrebbe mai
+         offeso quella che era lo splendor del mondo? <lb />Oimè, che il più bel fiore in terra
+         langue! Et dato (lo scelerato <lb />corpo) mano a tutte le gioie, le catene, gli anelli,
+         argenti et <lb />alle più care pretiose cose che ella avesse, fatto una sua valigia,
+         <lb />sopra il più mirabil cavallo che fosse in stalla, la mattina, all'a<milestone
+										unit="wb" />
+									<lb />prir delle porte, si fuggì della città, pigliando in verso il suo <lb />paese il
+         camino, il qual paese credo che piangessi il caso et che <lb />per conto alcuno non volesse
+         ricevere sì orrendo fatto. Le don<milestone
+										unit="wb" />
+									<lb />zelle, quando fu l'ora, andarono al letto (oimè!), et, alzato il pa<milestone
+										unit="wb" />
+									<lb />diglione, trovarono il sole spento, la luce oscurata et lo splen<milestone unit="wb" />
+									<lb />dore divenuto tenebre, et, alzate le strida insino al cielo, corse <lb />tutta la casa
+         al grido, et veduta la bella dea morta, levarono <lb />sì fatto et sì dirotto pianto che la
+         città in poco spatio di tem<milestone
+										unit="wb" />
+									<lb />po fu ripiena del caso terribile et del lamento.</seg>
+								<lb /><name key="005916" ana="func_character"
+									>Sel.</name> O mano feroce, come non ti
+        spiccasti dal braccio più tosto che offendere sì divi<milestone
+									unit="wb" />
+								<lb />na donna? O ingrato uomo, o nimico d'ogni bontà, o ladro di tutto il te<milestone
+									unit="wb" />
+								<lb />soro del mondo et assassino della pietà et della carità distruggitore! Seguite,
+        <lb />che 'l mondo mi viene in odio, da che la virtù muore et 'l vitio vive. <lb /><name
+									key="001316" ana="func_character">Sve.</name>&nbsp;<seg ana="genre_short"
+									xml:id="novella_p002n001.002"
+										>Fu compreso subito come stava il fatto, onde montarono in su le
+         <lb />poste cinquanta dei più valorosi gentiluomini che fossero nella <lb />terra, et, prese
+         tutte le strade diversamente, a quattro, a sei, a due <lb />insieme, seguitarono quel
+         maggior nimico che avesse la gene<milestone
+										unit="wb" />
+									<lb />ratione umana; et lontano venticinque miglia l'aggiunsero, et <lb />tratti dall'ira,
+         non potendo aspettare di prenderlo vivo per fargli <lb />quegli strazii che meritava, lo
+         amazzarono nel mezzo della stra<milestone
+										unit="wb" />
+									<lb />da, scanandolo da porco; poi, legandolo come una bestia a tra<milestone unit="wb" />
+									<lb />verso al cavallo con le sue lettere et con il tesoro, lo fecero <pb label="c" n="40v"
+										corresp="img://afd-mondo_040v.jpg" />
+									<lb />menare nella città. Quanto stratio fosse fatto di quel corpo non <lb />sarebbe lingua
+         che lo potesse manifestare.</seg>
+								<lb /><name key="005916" ana="func_character"
+									>Sel.</name> Perché non raffrenarono l'ira quei
+        giovani, et averlo condotto vivo et con <lb />un toro di <name
+									key="005932"
+									>Perillo</name> o
+        ruote aver scacciato l'animo di quel corpo scellera<milestone
+									unit="wb" />
+								<lb />to? et di lei che ne fecero? <lb /><name key="001316" ana="func_character"
+									>Sve.</name>&nbsp;<seg ana="genre_short" xml:id="novella_p002n001.003"
+										>Le più belle exequie che
+         si vedesser mai (inanzi che la sepelisse<milestone
+										unit="wb" />
+									<lb />ro) furon fatte, dove erano forse venticinque musiche tramez<milestone unit="wb" />
+									<lb />zando le chierisie et l'accompagnavano, onde gli ufici, che si <lb />fanno leggendo,
+         con mille stromenti et altretante voci furon <lb />celebrati. Ella fu vestita dei più ricchi
+         abiti e adornata delle più <lb />pretiose gioie e cose che l'avessi. Et una cassa di bronzo,
+         fatta per <lb />lei, gettare nuovamente con tutta la istoria dentro et di fuori di
+         <lb />basso rilievo intagliata, fu sepolta molto profonda sotto terra, <lb />che non lo
+         seppero altri se non quattro nobili cittadini che la <lb />sepelirono, né mai s'è possuto
+         immaginare il loco. Questo si fe<milestone
+										unit="wb" />
+									<lb />ce acciò che non fosse tolto alcune richezze che son con lei se<milestone unit="wb" />
+									<lb />pulte, et perché quella patria con il tempo abbi questo onore, <lb />che ritrovandosi
+         sì mirabil cassone, dove fu riposta la spoglia del <lb />la unica donna, ne riporti poi per
+         altrettanti secoli la fama.</seg>
+								<lb /><name key="005916" ana="func_character"
+									>Sel.</name> O legge di natura, perché non
+        potevi tu aver fatto quel petto di diamante et <lb />non di carne, acciò che il pugnale, che
+        pensava offender sì pretiosa cosa, <lb />fosse rimasto offeso et lo scellerato uomo confuso?
+         <lb /><name
+									key="001316" ana="func_character">Sve.</name>
+								<!-- allusione all'epistola di Guevara al Conte di Miranda (Libro primo delle Lettere, p. 67) -->&nbsp;<q
+									ana="quotation_rewriting"
+										>Non più di legge, io non ritrovo la più dolce et la più suave
+         <lb />che quella del <name
+										key="000344">Signore</name>; poniamo al nostro ragionamento
+          termi<milestone
+										unit="wb" />
+									<lb />ne et mettiamoci il giogo del <name key="000348"
+										>Saluator nostro</name> sopra il
+         collo, per <lb />ciò che egli ci aiuta portarlo, conciosia che non sì tosto abbia<milestone
+										unit="wb" />
+									<lb />mo posto sotto la miseria nostra che egli dall'altro canto (per<milestone unit="wb" />
+									<lb />ché il giogo vuol due a portarlo) pon la sua spalla. Egli per <lb />noi, in compagnia
+         nostra, ha patito fame, sete, dolori, persecu<milestone
+										unit="wb" />
+									<lb />tioni et tormenti infiniti et, per darci vita, ha sopportato la mor<milestone
+										unit="wb" />
+									<lb />te, umiliato sé medesimo, pigliando forma di seruo et simi<milestone unit="wb" />
+									<pb label="c" n="41r" corresp="img://afd-mondo_041r.jpg" />
+									<lb />glianza di uomo; et sopra il giogo (che gli fu suave) della pe<milestone unit="wb" />
+									<lb />regrinatione del mondo, ha portato ancor la Croce</q>. <lb /><name key="005916"
+									ana="func_character"
+									>Sel.</name> Perché non ho io uno spirito tanto elevato che io possi
+        comprendere i suoi <lb />misteri? <lb /><name
+									key="001316" ana="func_character"
+									>Sve.</name>
+        Seguitiamolo dietro a gran passi, et lasciando questo gran mon<milestone
+									unit="wb" />
+								<lb />do di miserie pieno et di leggi di quegli antichi, abandonandole <lb />come macchiate di
+        vitio, <!-- plagio dall'epistola di Guevara al Conte di Miranda (Libro primo...) --><q
+									ana="quotation_plagiarism"
+										>sì come la Foronea, che permetteua i <lb />ladri, quella di <name key="000179"
+										>Ligurgo</name>, che non gastigava gli omicidi, quel<milestone unit="wb" />
+									<lb />la di <name key="001229">Solone</name>, che dissimulava l'adulterio, quella di <name
+										key="001171"
+										>Pompilio</name>, <lb />che usurpava quanto poteva l'uomo, quella de' Lidi, che
+          gua<milestone
+										unit="wb" />
+									<lb />dagnavan con adulterio la dote le pulzelle, quella de' Ballea<milestone unit="wb" />
+									<lb />ri, che il primo parente conosceva la sposa innanzi al marito</q>, et <lb />altre
+        simili, bestiali et brutte, ma, abbracciando l'amore di <lb /><name
+									key="000344"
+									>Dio</name>
+        et del prossimo, ritorniamo nel seno del mondo massi<milestone
+									unit="wb" />
+								<lb />mo <name key="000344">Dio</name> omnipotente, santo, buono et giusto. <lb /><name
+									key="005916" ana="func_character"
+									>Sel.</name> Egli mi par ora di ritrovarsi et è tempo
+        d'andare all'Academia nostra, la qual <lb />si vuol risolvere se dobbiamo seguitare i nostri
+        ragionamenti per ordine, secon<milestone
+									unit="wb" />
+								<lb />do che s'è stabilito di fare i <title>Mondi</title> veri seguenti, overo passare alle
+         favolo<milestone
+									unit="wb" />
+								<lb />se fintioni nuove. <lb /><name key="001316" ana="func_character"
+									>Sve.</name> Io sarei
+        d'opinione che si lasciasse il mondo di <name key="000344"
+									>Dio</name> all'ulti<milestone unit="wb" />
+								<lb />mo ragionamento. <lb /><name key="005916" ana="func_character"
+									>Sel.</name> Et io son di
+        contrario parere, non framettere in mezzo cosa alcuna; pure il <lb />giuditio di molti o de'
+        più sarà quello che diciderà la vostra et mia opinione. <lb /><name
+									key="001316" ana="func_character">Sve.</name> Non so se io vi potrò essere. <lb /><name
+									key="005916" ana="func_character"
+									>Sel.</name> E' par quasi che abbiate paura che la vostra opinione non
+        sia per a<milestone
+									unit="wb" />
+								<lb />ver effetto. <pb label="c" n="41v" corresp="img://afd-mondo_041v.jpg" />
+								<lb /><name key="001316" ana="func_character"
+									>Sve.</name> Anzi, credo che la debbi succedere,
+        poiché il nuovo <name key="002413"
+									>Presidente</name>
+								<lb />è intestato che si segua l'animo suo. <lb /><name key="005916" ana="func_character"
+									>Sel.</name> Il nostro poco parlamento adunque si porterà
+        a loro, et pregheremo <name
+									key="000344">IDDIO</name>
+								<lb />che governi il tutto bene, et con la sua buona gratia faremo.
+        <milestone
+									unit="lb" />
+								<lb />FINE.</p>
+						</div>
+					</div>
+				</div>
+				<!-- -->
+				<!-- END -->
+				<!-- %END% -->
+				<!-- NON MODIFICARE LA PARTE OLTRE IL PUNTO "END" -->
+			</div>
+		</body>
+		<back>
+			<div type="part" />
+		</back>
+	</text>
+</TEI>

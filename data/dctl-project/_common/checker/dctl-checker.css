@@ -1,0 +1,239 @@
+/* COMMON */
+
+* {
+	color: #000000;
+	margin: 0;
+	padding: 0.1em;
+	text-align: justify;
+	vertical-align: baseline;
+	font: 0.85em/1.4em Arial, Lucida, Verdana, Helvetica, Geneva, sans-serif;
+}
+
+html, body {
+	background-color: #FFFFFF;
+	overflow: hidden;
+}
+
+table {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+	font-size: inherit;
+}
+
+a:hover {
+	text-decoration: none;
+	font-size: inherit;
+}
+
+a.link_int {
+	font-size: inherit;
+	text-decoration: underline;
+}
+
+.img {
+	border: 1px dashed #ddd;
+	width: 120px;
+	min-height: 120px;
+	display: block;
+	
+}
+
+.col_container {
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+}
+
+.col_left {
+	display: block;
+	overflow: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 60%;
+	bottom: 0;
+	overflow: auto;
+	background: #f3efe4;
+}
+
+.col_right {
+	display: block;
+	overflow: auto;
+	position: absolute;
+	top: 0;
+	left: 40%;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+}
+
+.chk_boxText {
+	background: #ffffff url(top_back.png) no-repeat left top;
+	margin: 0.2em;
+	padding: 0.1em;
+	font-size: inherit;
+}
+
+.chk_boxTitle {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.chk_divHead {
+	font-weight: bold;
+	font-size: inherit;
+}
+
+.chk_index {
+	font-weight: bold;
+	font-size: inherit;
+	display: block;
+	border: 1px dashed #ddd;
+}
+
+.chk_page {
+	display: block;
+	text-align: right;
+	border-right: 2px ridge #FFFFCC;
+	border-top: 2px ridge #FFFFCC;
+}
+
+.chk_p {
+	display: block;
+	text-align: justify;
+	margin: 0.5em;
+}
+
+.chk_seg {
+	color: #ff5962;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	border-bottom-style: dashed;
+	border-bottom-width: 1px;
+}
+
+.chk_bibl {
+	color: #ff5962;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	border-bottom-style: dashed;
+	border-bottom-width: 1px;
+}
+
+.chk_title {
+	color: #3333cc;
+	font-size: inherit;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.chk_foreign {
+	color: #CC3300;
+	font-style: italic;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+.chk_date {
+	background: #bff;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+.chk_name {
+	background: #FFFFCC;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+.chk_rs {
+	background: #FFCCCC;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+.chk_q {
+	background: #FFEEFF;
+	font-size: inherit;
+	font-style: italic;
+	font-weight: inherit;
+}
+
+.chk_interp {
+	background: #EEEEFF;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+.chk_ref {
+	color: #b00000;
+	text-decoration: underline;
+}
+
+.chk_palette {
+	clear: both;
+	font-size: 0.9em;
+	color: #cc9999;
+	text-align: center;
+}
+
+.chk_labelH {
+	color: #999999;
+}
+
+.chk_valueH {
+	color: #b10037;
+	padding-left: 1.0em;
+}
+
+.chk_label {
+	font-size: 0.8em;
+	color: #999999;
+}
+
+th.chk_label {
+	background: #f3efe4;
+	padding-left: 0.2em;
+}
+
+.chk_headTitle {
+	font-weight: bold;
+	font-size: inherit;
+	background: #d3d4c6;
+	display: block;
+	padding-left: 0.5em;
+}
+
+.chk_small {
+	font-size: 0.8em;
+}
+
+.chk_error {
+	color: #ffffff;
+	background: #cc3333;
+	font-variant: small-caps;
+	font-size: inherit;
+}
+.chk_studio {
+	display: block;
+	background: #f1f3f5;
+	border: 1px dashed #ff7600;
+}
+.chk_block {
+	display: block;
+	border-bottom: 1px dashed #ccc;
+}

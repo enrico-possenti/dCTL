@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<!DOCTYPE TEI SYSTEM "../_common/dtd/dctl.core.dtd" [
+<!ENTITY % TEI.extension.dtd SYSTEM "../_common/dtd/dctl.extension.dtd">
+<!ENTITY % collection.header.ent SYSTEM "_header.ent">
+<!ENTITY TEI.header SYSTEM "../_common/headers/teiHeader.collection.xml">
+<!ENTITY TEI.header.profileDesc.textClass SYSTEM "../_common/add-ons/teiHeader.profileDesc.textClass.xml">
+%TEI.extension.dtd;
+%collection.header.ent;
+]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&collection_id;" n="&collection_work;"
+		>
+	&TEI.header; <text xml:id="&collection_id;.collection">
+		<body>
+			<div type="collection">
+				<head type="main">&collection_work;</head>
+				<head type="alt">&collection_short;</head>
+				<div type="introduction">
+					<p xml:lang="it"><lb />&collection_summary_it;</p>
+					<p xml:lang="en"><lb />&collection_summary_en;</p>
+				</div>
+				<div type="work">
+					<p xml:lang="it"><lb />&collection_desc_it;</p>
+					<p xml:lang="en"><lb />&collection_desc_en;</p>
+				</div>
+			</div>
+		</body>
+	</text>
+</TEI>

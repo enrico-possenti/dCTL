@@ -1,0 +1,566 @@
+<!-- -->
+<!-- dCTL DTDs : version 2.12 - 2008/03/30 -->
+<!-- visit http://www.ctl.sns.it/ for more information -->
+<!-- -->
+
+<!-- TEXTCLASS -->
+<textClass>
+ <!-- -->
+ <!-- RESPONSIBLE -->
+ <classCode scheme="dCTL-Responsible">
+  <eg xml:lang="it">Elenco dei responsabili per la codifica TEI</eg>
+  <eg xml:lang="en">List of responsible ones for TEI encoding</eg>
+  <term xml:id="LB">
+   <eg xml:lang="it">Lina Bolzoni</eg>
+   <eg xml:lang="en">Lina Bolzoni</eg>
+  </term>
+  <term xml:id="SV">
+   <eg xml:lang="it">Silvia Volterrani</eg>
+   <eg xml:lang="en">Silvia Volterrani</eg>
+  </term>
+  <term xml:id="AT">
+   <eg xml:lang="it">Andrea Torre</eg>
+   <eg xml:lang="en">Andrea Torre</eg>
+  </term>
+  <term xml:id="RS">
+   <eg xml:lang="it">Raffaella Sprugnoli</eg>
+   <eg xml:lang="en">Raffaella Sprugnoli</eg>
+  </term>
+  <term xml:id="SP">
+   <eg xml:lang="it">Serena Pezzini</eg>
+   <eg xml:lang="en">Serena Pezzini</eg>
+  </term>
+  <term xml:id="CF">
+   <eg xml:lang="it">Chiara Fioravanti</eg>
+   <eg xml:lang="en">Chiara Fioravanti</eg>
+  </term>
+  <term xml:id="EP">
+   <eg xml:lang="it">Enrico Possenti</eg>
+   <eg xml:lang="en">Enrico Possenti</eg>
+  </term>
+  <term xml:id="MU">
+   <eg xml:lang="it">Martyna Urbaniak</eg>
+   <eg xml:lang="en">Martyna Urbaniak</eg>
+  </term>
+  <term xml:id="GR">
+   <eg xml:lang="it">Giovanna Rizzarelli</eg>
+   <eg xml:lang="en">Giovanna Rizzarelli</eg>
+  </term>
+  <term xml:id="CG">
+   <eg xml:lang="it">Carlo Alberto Girotto</eg>
+   <eg xml:lang="en">Carlo Alberto Girotto</eg>
+  </term>
+  <term xml:id="FP">
+   <eg xml:lang="it">Federica Pich</eg>
+   <eg xml:lang="en">Federica Pich</eg>
+  </term>
+  <term xml:id="CTL">
+   <eg xml:lang="it">CTL</eg>
+   <eg xml:lang="en">CTL</eg>
+  </term>
+ </classCode>
+ <!-- LANGUAGE -->
+ <classCode scheme="dCTL-Language">
+  <eg xml:lang="it" />
+  <eg xml:lang="en" />
+  <term xml:id="it">
+   <eg xml:lang="it">Italiano</eg>
+   <eg xml:lang="en">Italian</eg>
+  </term>
+  <term xml:id="la">
+   <eg xml:lang="it">Latino</eg>
+   <eg xml:lang="en">Latin</eg>
+  </term>
+  <term xml:id="el">
+   <eg xml:lang="it">Greco</eg>
+   <eg xml:lang="en">Greek</eg>
+  </term>
+  <term xml:id="es">
+   <eg xml:lang="it">Spagnolo</eg>
+   <eg xml:lang="en">Spanish</eg>
+  </term>
+  <term xml:id="ca">
+   <eg xml:lang="it">Catalano</eg>
+   <eg xml:lang="en">Catalan</eg>
+  </term>
+  <term xml:id="de">
+   <eg xml:lang="it">Tedesco</eg>
+   <eg xml:lang="en">Deutsch</eg>
+  </term>
+  <term xml:id="fr">
+   <eg xml:lang="it">Francese</eg>
+   <eg xml:lang="en">French</eg>
+  </term>
+  <term xml:id="en">
+   <eg xml:lang="it">Inglese</eg>
+   <eg xml:lang="en">English</eg>
+  </term>
+  <term xml:id="nl">
+   <eg xml:lang="it">Olandese</eg>
+   <eg xml:lang="en">Dutch</eg>
+  </term>
+  <term xml:id="iw">
+   <eg xml:lang="it">Ebraico</eg>
+   <eg xml:lang="en">Hebrew</eg>
+  </term>
+  <term xml:id="da">
+   <eg xml:lang="it">Danese</eg>
+   <eg xml:lang="en">Danish</eg>
+  </term>
+ </classCode>
+ <!-- GENERE -->
+ <classCode scheme="dCTL-Genre">
+  <eg xml:lang="it" />
+  <eg xml:lang="en" />
+  <term xml:id="genre_various">
+   <eg xml:lang="it">Misto</eg>
+   <eg xml:lang="en">Various content</eg>
+  </term>
+  <term xml:id="genre_anecdote">
+   <eg xml:lang="it">Aneddoto</eg>
+   <eg xml:lang="en">Anecdote content</eg>
+  </term>
+  <term xml:id="genre_allegory">
+   <eg xml:lang="it">Allegoria</eg>
+   <eg xml:lang="en">Allegoric content</eg>
+  </term>
+  <term xml:id="genre_apparatus">
+   <eg xml:lang="it">Apparato</eg>
+   <eg xml:lang="en">Apparatus content</eg>
+  </term>
+  <term xml:id="genre_biography">
+   <eg xml:lang="it">Biografia</eg>
+   <eg xml:lang="en">Biographic content</eg>
+  </term>
+  <term xml:id="genre_catalogue">
+   <eg xml:lang="it">Catalogo</eg>
+   <eg xml:lang="en">Catalogue content</eg>
+  </term>
+  <term xml:id="genre_dialogue">
+   <eg xml:lang="it">Dialogo</eg>
+   <eg xml:lang="en">Dialogue content</eg>
+  </term>
+  <term xml:id="genre_drama">
+   <eg xml:lang="it">Dramma</eg>
+   <eg xml:lang="en">Drama content</eg>
+  </term>
+  <term xml:id="genre_emblem">
+   <eg xml:lang="it">Emblema</eg>
+   <eg xml:lang="en">Emblem content</eg>
+  </term>
+  <term xml:id="genre_epic">
+   <eg xml:lang="it">Epico</eg>
+   <eg xml:lang="en">Epic content</eg>
+  </term>
+  <term xml:id="genre_epistolary">
+   <eg xml:lang="it">Epistolario</eg>
+   <eg xml:lang="en">Epistolary content</eg>
+  </term>
+  <term xml:id="genre_iconography">
+   <eg xml:lang="it">Iconografia</eg>
+   <eg xml:lang="en">iconography content</eg>
+  </term>
+  <term xml:id="genre_lyric">
+   <eg xml:lang="it">Lirico</eg>
+   <eg xml:lang="en">Lyric content</eg>
+  </term>
+  <term xml:id="genre_novel">
+   <eg xml:lang="it">Novella</eg>
+   <eg xml:lang="en">Novel content</eg>
+  </term>
+  <term xml:id="genre_poem">
+   <eg xml:lang="it">Poema</eg>
+   <eg xml:lang="en">Poem content</eg>
+  </term>
+  <term xml:id="genre_prose">
+   <eg xml:lang="it">Prosa</eg>
+   <eg xml:lang="en">Prose content</eg>
+  </term>
+  <term xml:id="genre_proverb">
+   <eg xml:lang="it">Proverbio</eg>
+   <eg xml:lang="en">Proverbe content</eg>
+  </term>
+  <term xml:id="genre_romance">
+   <eg xml:lang="it">Romanza</eg>
+   <eg xml:lang="en">romance content</eg>
+  </term>
+  <term xml:id="genre_satire">
+   <eg xml:lang="it">Satira</eg>
+   <eg xml:lang="en">Satiric content</eg>
+  </term>
+  <term xml:id="genre_short">
+   <eg xml:lang="it">Racconto breve</eg>
+   <eg xml:lang="en">Short content</eg>
+  </term>
+  <term xml:id="genre_tale">
+   <eg xml:lang="it">Racconto</eg>
+   <eg xml:lang="en">Tale content</eg>
+  </term>
+  <term xml:id="genre_technical">
+   <eg xml:lang="it">Tecnico</eg>
+   <eg xml:lang="en">Technical content</eg>
+  </term>
+  <term xml:id="genre_treatise">
+   <eg xml:lang="it">Trattato</eg>
+   <eg xml:lang="en">Treatise content</eg>
+  </term>
+ </classCode>
+ <!-- INTERPRETATION -->
+ <classCode scheme="dCTL-InterpretationAndAnalysis">
+  <eg xml:lang="it" />
+  <eg xml:lang="en" />
+ 	<!--  -->
+ 	<term xml:id="struct_component">
+ 		<eg xml:lang="it">Componente</eg>
+ 		<eg xml:lang="en">Component</eg>
+ 	</term>
+ 	<!--  -->
+ 	<term xml:id="key_item">
+ 		<eg xml:lang="it">Parole chiave</eg>
+ 		<eg xml:lang="en">Words as key</eg>
+ 	</term>
+ 	<!--  -->
+  	<term xml:id="as_source">
+ 		<eg xml:lang="it">Nome come Fonte</eg>
+ 		<eg xml:lang="en">Name as Source</eg>
+ 	</term>
+  <!--  -->
+ 	<term xml:id="what_introduction">
+   <eg xml:lang="it">Introduzione</eg>
+   <eg xml:lang="en">Introduction</eg>
+  </term>
+ 	<term xml:id="what_narration">
+   <eg xml:lang="it">Narrazione</eg>
+   <eg xml:lang="en">Narration</eg>
+  </term>
+ 	<term xml:id="what_explanation">
+   <eg xml:lang="it">Spiegazione</eg>
+   <eg xml:lang="en">Explanation</eg>
+  </term>
+ 	<term xml:id="what_conclusion">
+   <eg xml:lang="it">Conclusione</eg>
+   <eg xml:lang="en">Conclusion</eg>
+  </term>
+  <!--  -->
+  <term xml:id="who_subject">
+   <eg xml:lang="it">Soggetto della Figura</eg>
+   <eg xml:lang="en">Subject of Figure</eg>
+  </term>
+  <term xml:id="who_sitter">
+   <eg xml:lang="it">Modello</eg>
+   <eg xml:lang="en">Sitter</eg>
+  </term>
+  <term xml:id="who_viewer">
+   <eg xml:lang="it">Osservatore</eg>
+   <eg xml:lang="en">Viewer</eg>
+  </term>
+  <term xml:id="who_referrer">
+   <eg xml:lang="it">Chi riferisce</eg>
+   <eg xml:lang="en">Referrer</eg>
+  </term>
+  <term xml:id="who_addressee">
+   <eg xml:lang="it">Chi è riferito</eg>
+   <eg xml:lang="en">Addressee</eg>
+  </term>
+  <term xml:id="who_dreamer">
+   <eg xml:lang="it">Sognatore</eg>
+   <eg xml:lang="en">Dreamer</eg>
+  </term>
+  <!--		-->
+  <term xml:id="narration_first_level">
+   <eg xml:lang="it">Narrazione di primo livello</eg>
+   <eg xml:lang="en">First level narration</eg>
+  </term>
+  <term xml:id="narration_second_level">
+   <eg xml:lang="it">Narrazione di secondo livello</eg>
+   <eg xml:lang="en">Second level narration</eg>
+  </term>
+  <!--		-->
+  <term xml:id="quotation_simple">
+   <eg xml:lang="it">Citazione Semplice</eg>
+   <eg xml:lang="en">Simple quotation</eg>
+  </term>
+  <term xml:id="quotation_reference">
+   <eg xml:lang="it">Citazione con Riferimento</eg>
+   <eg xml:lang="en">Quotation as Reference</eg>
+  </term>
+  <term xml:id="quotation_rewriting">
+   <eg xml:lang="it">Citazione con Riscrittura</eg>
+   <eg xml:lang="en">Quotation as Rewriting</eg>
+  </term>
+  <term xml:id="quotation_plagiarism">
+   <eg xml:lang="it">Citazione con Plagio</eg>
+   <eg xml:lang="en">Quotation as Plagiarism</eg>
+  </term>
+  <term xml:id="quotation_self">
+   <eg xml:lang="it">Auto-Citazione</eg>
+   <eg xml:lang="en">Self-Citation</eg>
+  </term>
+  <!--		-->
+  <term xml:id="desc_character">
+   <eg xml:lang="it">Descrizione Personaggio</eg>
+   <eg xml:lang="en">Character description</eg>
+  </term>
+  <term xml:id="desc_place">
+   <eg xml:lang="it">Descrizione Luogo</eg>
+   <eg xml:lang="en">Place description</eg>
+  </term>
+  <term xml:id="desc_object">
+   <eg xml:lang="it">Descrizione Oggetto</eg>
+   <eg xml:lang="en">Object description</eg>
+  </term>
+  <!--		-->
+  <term xml:id="syntexp_idiomatic">
+   <eg xml:lang="it">Espressione Idiomatica</eg>
+   <eg xml:lang="en">Idiomatic expression</eg>
+  </term>
+  <term xml:id="syntexp_proverbial">
+   <eg xml:lang="it">Espressione Proverbiale</eg>
+   <eg xml:lang="en">Proverbial expression</eg>
+  </term>
+  <term xml:id="syntexp_wellerism">
+   <eg xml:lang="it">Wellerismo</eg>
+   <eg xml:lang="en">Wellerism</eg>
+  </term>
+ 	<!--		-->
+ 	<term xml:id="verbfig_memory">
+ 		<eg xml:lang="it">Memoria</eg>
+ 		<eg xml:lang="en">Memory</eg>
+ 	</term>
+ 	<term xml:id="verbfig_dream">
+ 		<eg xml:lang="it">Sogno</eg>
+ 		<eg xml:lang="en">Dream</eg>
+ 	</term>
+ 	<term xml:id="verbfig_example">
+ 		<eg xml:lang="it">Testo come Esempio</eg>
+ 		<eg xml:lang="en">Text as Example</eg>
+ 	</term>
+ 	<term xml:id="verbfig_iconological">
+   <eg xml:lang="it">Iconologia</eg>
+   <eg xml:lang="en">Iconological</eg>
+  </term>
+  <term xml:id="verbfig_ecphrasis">
+   <eg xml:lang="it">Ecfrasi</eg>
+   <eg xml:lang="en">Ecphrasis</eg>
+  </term>
+  <!--		-->
+ 	<term xml:id="func_person">
+ 		<eg xml:lang="it">Persona</eg>
+ 		<eg xml:lang="en">Person</eg>
+ 	</term>
+ 	<term xml:id="func_character">
+ 		<eg xml:lang="it">Personaggio</eg>
+ 		<eg xml:lang="en">Character</eg>
+ 	</term>
+ 	<term xml:id="func_place">
+   <eg xml:lang="it">Luogo</eg>
+   <eg xml:lang="en">Place</eg>
+  </term>
+  <term xml:id="func_object">
+   <eg xml:lang="it">Oggetto</eg>
+   <eg xml:lang="en">Object</eg>
+  </term>
+  <term xml:id="func_artist">
+   <eg xml:lang="it">Artista</eg>
+   <eg xml:lang="en">Artist</eg>
+  </term>
+  <term xml:id="func_author">
+   <eg xml:lang="it">Autore</eg>
+   <eg xml:lang="en">Author</eg>
+  </term>
+  <term xml:id="func_beloved">
+   <eg xml:lang="it">Amato</eg>
+   <eg xml:lang="en">Beloved</eg>
+  </term>
+  <term xml:id="func_fortune">
+   <eg xml:lang="it">Fortuna</eg>
+   <eg xml:lang="en">Fortune</eg>
+  </term>
+  <term xml:id="func_god">
+   <eg xml:lang="it">Dio</eg>
+   <eg xml:lang="en">God</eg>
+  </term>
+  <term xml:id="func_love">
+   <eg xml:lang="it">Amore</eg>
+   <eg xml:lang="en">Love</eg>
+  </term>
+  <term xml:id="func_lover">
+   <eg xml:lang="it">Amante</eg>
+   <eg xml:lang="en">Lover</eg>
+  </term>
+  <term xml:id="func_nature">
+   <eg xml:lang="it">Natura</eg>
+   <eg xml:lang="en">Nature</eg>
+  </term>
+  <term xml:id="func_occasion">
+   <eg xml:lang="it">Occasione</eg>
+   <eg xml:lang="en">Occasion</eg>
+  </term>
+  <term xml:id="func_patron">
+   <eg xml:lang="it">Mecenate</eg>
+   <eg xml:lang="en">Patron</eg>
+  </term>
+  <term xml:id="func_poet">
+   <eg xml:lang="it">Poeta</eg>
+   <eg xml:lang="en">Poet</eg>
+  </term>
+  <term xml:id="func_portrait">
+   <eg xml:lang="it">Ritratto</eg>
+   <eg xml:lang="en">Portrait</eg>
+  </term>
+  <!--		-->
+   <term xml:id="setting_spring">
+   <eg xml:lang="it">Sorgente</eg>
+   <eg xml:lang="en">Spring</eg>
+  </term>
+  <term xml:id="setting_loggia">
+   <eg xml:lang="it">Loggiato</eg>
+   <eg xml:lang="en">Loggia</eg>
+  </term>
+  <term xml:id="setting_locusamoenus">
+   <eg xml:lang="it">Locus amœnus</eg>
+   <eg xml:lang="en">Locus amœnus</eg>
+  </term>
+  <term xml:id="setting_trail">
+   <eg xml:lang="it">Sentiero</eg>
+   <eg xml:lang="en">Trail</eg>
+  </term>
+  <term xml:id="setting_landscape">
+   <eg xml:lang="it">Paesaggio</eg>
+   <eg xml:lang="en">Landscape</eg>
+  </term>
+  <term xml:id="setting_seaside">
+   <eg xml:lang="it">Paesaggio Marino</eg>
+   <eg xml:lang="en">Seaside</eg>
+  </term>
+  <term xml:id="setting_woodland_area">
+   <eg xml:lang="it">Paesaggio Boschivo</eg>
+   <eg xml:lang="en">Woodland</eg>
+  </term>
+  <term xml:id="setting_rocky_countryside">
+   <eg xml:lang="it">Paesaggio Rupestre</eg>
+   <eg xml:lang="en">Rocky Countryside</eg>
+  </term>
+  <term xml:id="setting_river_landscape">
+   <eg xml:lang="it">Paesaggio Fluviale</eg>
+   <eg xml:lang="en">River Landscape</eg>
+  </term>
+  <term xml:id="setting_urban_landscape">
+   <eg xml:lang="it">Paesaggio Urbano</eg>
+   <eg xml:lang="en">Urban Landscape</eg>
+  </term>
+  <term xml:id="setting_island">
+   <eg xml:lang="it">Isola</eg>
+   <eg xml:lang="en">Island</eg>
+  </term>
+  <term xml:id="setting_cliff">
+   <eg xml:lang="it">Scoglio</eg>
+   <eg xml:lang="en">Cliff</eg>
+  </term>
+  <term xml:id="setting_palace">
+   <eg xml:lang="it">Palazzo</eg>
+   <eg xml:lang="en">Palace</eg>
+  </term>
+  <term xml:id="setting_bridge">
+   <eg xml:lang="it">Ponte</eg>
+   <eg xml:lang="en">Bridge</eg>
+  </term>
+  <term xml:id="setting_sky">
+   <eg xml:lang="it">Cielo</eg>
+   <eg xml:lang="en">Sky</eg>
+  </term>
+  <term xml:id="setting_coast">
+   <eg xml:lang="it">Costa</eg>
+   <eg xml:lang="en">Coast</eg>
+  </term>
+  <term xml:id="setting_ruins">
+   <eg xml:lang="it">Rovine</eg>
+   <eg xml:lang="en">Ruins</eg>
+  </term>
+  <term xml:id="setting_castle">
+   <eg xml:lang="it">Castello</eg>
+   <eg xml:lang="en">Castle</eg>
+  </term>
+  <term xml:id="setting_town">
+   <eg xml:lang="it">Città</eg>
+   <eg xml:lang="en">Town</eg>
+  </term>
+  <term xml:id="setting_tower">
+   <eg xml:lang="it">Torre</eg>
+   <eg xml:lang="en">Tower</eg>
+  </term>
+  <term xml:id="setting_glade">
+   <eg xml:lang="it">Radura</eg>
+   <eg xml:lang="en">Glade</eg>
+  </term>
+  <term xml:id="setting_tavern">
+   <eg xml:lang="it">Osteria</eg>
+   <eg xml:lang="en">Taverna</eg>
+  </term>
+  <term xml:id="setting_exterior">
+   <eg xml:lang="it">Esterno</eg>
+   <eg xml:lang="en">Exterior</eg>
+  </term>
+  <term xml:id="setting_interior">
+   <eg xml:lang="it">Interno</eg>
+   <eg xml:lang="en">Interior</eg>
+  </term>
+  <term xml:id="setting_cave">
+   <eg xml:lang="it">Caverna</eg>
+   <eg xml:lang="en">Cave</eg>
+  </term>
+  <term xml:id="setting_garden">
+   <eg xml:lang="it">Giardino</eg>
+   <eg xml:lang="en">Garden</eg>
+  </term>
+  <term xml:id="setting_architecture">
+   <eg xml:lang="it">Architettura</eg>
+   <eg xml:lang="en">Architecture</eg>
+  </term>
+  <term xml:id="setting_arena">
+   <eg xml:lang="it">Arena</eg>
+   <eg xml:lang="en">Arena</eg>
+  </term>
+  <term xml:id="setting_square">
+   <eg xml:lang="it">Piazza</eg>
+   <eg xml:lang="en">Square</eg>
+  </term>
+  <term xml:id="setting_ship">
+   <eg xml:lang="it">Nave</eg>
+   <eg xml:lang="en">Ship</eg>
+  </term>
+  <term xml:id="setting_pavilion">
+   <eg xml:lang="it">Padiglione</eg>
+   <eg xml:lang="en">Pavilion</eg>
+  </term>
+  <term xml:id="setting_fountain">
+   <eg xml:lang="it">Fontana</eg>
+   <eg xml:lang="en">Fountain</eg>
+  </term>
+  <term xml:id="setting_mausoleum">
+   <eg xml:lang="it">Tomba, Mausoleo</eg>
+   <eg xml:lang="en">Mausoleum</eg>
+  </term>
+  <term xml:id="setting_wall">
+   <eg xml:lang="it">Mura</eg>
+   <eg xml:lang="en">Wall</eg>
+  </term>
+  <term xml:id="setting_grave">
+   <eg xml:lang="it">Pietra tombale</eg>
+   <eg xml:lang="en">Grave</eg>
+  </term>
+  <term xml:id="setting_house">
+   <eg xml:lang="it">Casa</eg>
+   <eg xml:lang="en">House</eg>
+  </term>
+  <term xml:id="setting_church">
+   <eg xml:lang="it">Chiesa</eg>
+   <eg xml:lang="en">Church</eg>
+  </term>
+  <term xml:id="setting_abbey">
+   <eg xml:lang="it">Abbazia, Monastero</eg>
+   <eg xml:lang="en">Abbey</eg>
+  </term>
+ </classCode>
+ <!-- -->
+</textClass>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<!DOCTYPE TEI SYSTEM "../../_common/dtd/dctl.core.dtd" [
+<!ENTITY % TEI.extension.dtd SYSTEM "../../_common/dtd/dctl.extension.dtd">
+<!ENTITY % collection.header.ent SYSTEM "../_header.ent">
+<!ENTITY % package.header.ent SYSTEM "_header.ent">
+<!ENTITY TEI.header SYSTEM "../../_common/headers/teiHeader.package.xml">
+<!ENTITY TEI.header.profileDesc.textClass SYSTEM "../../_common/add-ons/teiHeader.profileDesc.textClass.xml">
+%TEI.extension.dtd;
+%collection.header.ent;
+%package.header.ent;
+]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&package_id;"
+ n="&source_author; - &source_title_main;"> &TEI.header; <text
+  xml:lang="&source_lang;" xml:id="&package_id;.package" ana="&source_genre;">
+  <front>
+   <div type="part"/>
+  </front>
+  <body>
+   <div type="part">
+    <!-- NON MODIFICARE LA PARTE PRECEDENTE IL PUNTO "BEGIN" -->
+    <!-- %BEGIN% -->
+    <!-- BEGIN -->
+    <!-- -->
+    <!-- -->
+    <!-- [ CASO IMMAGINE IN PAGINA ] -->
+    <!-- l'elemento TEI:DIV deve essere di tipo "dctlObject" in quanto scheda e non testo continuo -->
+    <!-- l'attributo XML:ID deve comunque iniziare con la sintassi "pNNN" coincidente con il nome della partizione di package (nome del file precedente l'estensione ".xml") -->
+    <!-- l'attributo N dovrebbe contenere un'etichetta identificativa della scheda, da utilizzare come ultima risorsa in caso di visualizzazione -->
+    <!-- l'attributo CORRESP contiene, se presente, l'URI relativo all'anastatica -->
+    <div type="dctlObject" xml:id="p010pt001pg138" n="I, p. 138" corresp="img://afd-marmi_p1_10.jpg">
+     <!-- collegato a Marmi_txt_p001f009 -->
+     <!-- l'elemento TEI:PB, come TEI:LB, deve essere all'interno dell'elemento di cui eventualmente si vuole ricreare il riferimento -->
+
+     <pb n="138"/>
+     <!-- l'elemento TEI:HEAD marca l'intestazione della scheda, ma è importante l'elemento INDEX/TERM che marca l'etichetta da utilizzare nella costruzione degli indici e dei riferimenti -->
+     <head>
+      <index>
+       <term>I, p. 138</term>
+      </index>
+     </head>
+     <!-- l'elemento TEI:BIBL (la cui sottostruttura di elementi è descritta nella documentazione TEI) definisce il "record bibliografico" della scheda -->
+     <bibl>
+      <publisher>Marcolini, Francesco</publisher>
+      <pubPlace>Venezia</pubPlace>
+      <date value="1552/1553-00-00">1552-1553</date>
+      <distributor role="location">Bologna, Biblioteca Universitaria, A.V.N.VIII.14</distributor>
+     </bibl>
+     <!-- l'elemento TEI:FIGURE contiene l'elemento TEI:GRAPHIC (immagine) e l'elemento DCTL:STUDIO -->
+     <figure>
+      <graphic url="img://afd-marmi_p1_07_pw.jpg"/>
+      <!-- l'elemento TEI:FIGDESC (obbligatorio) contiene l'etichetta che appare solo passando con il mouse sull'immagine -->
+      <figDesc>Illustrazione dei Marmi, parte I, p. 138</figDesc>
+      <!-- l'elemento DCTL:STUDIO -->
+      <dctl:studio>
+       <!-- l'elemento DCTL:DESC deve contenere la descrizione dettagliata dell'immagine -->
+       <dctl:desc>Allegoria dell'Industria, raffigurata come una donna in atto di cucire con un ago
+        in mano; a terra, numerosi oggetti; sullo sfondo alcune formiche, simbolo dell'operosità</dctl:desc>
+       <!-- l'elemento DCTL:MEANING con attributo TYPE="original" deve contenere la descrizione del significato originario dell'immagine -->
+       <dctl:meaning type="original">allegoria dell'Industria</dctl:meaning>
+       <!-- l'elemento DCTL:MEANING con attributo TYPE="context" deve contenere la descrizione del significato contestuale dell'immagine -->
+       <dctl:meaning type="context">le donne intente a cucire e ricamare</dctl:meaning>
+       <!-- l'elemento DCTL:TRANSCRIPTION deve contenere la trascrizione del testo presente nell'immagine -->
+       <dctl:transcription>
+        <lb/>Bet. Le camere son fatte per dormire et non per passeggiare o ban<milestone unit="wb"
+        /><lb/>chettarvi dentro, né per ballarvi; però le son d'avanzo. La sa<milestone unit="wb"
+        /><lb/>la sta ben così, perché vi si riduce tutta la casa a un tratto dentro. <lb/><seg
+         ana="key_item" xml:id="p010ki001">Le Donne</seg> stanno a' piedi delle <seg ana="key_item"
+         xml:id="p010ki002">finestre</seg>, si per veder lume a <seg ana="key_item"
+         xml:id="p010ki003">lavorare <lb/>con l'ago</seg> le cose sottili et i <seg ana="key_item"
+         xml:id="p010ki004">ricami</seg>; sì per poter esser comode a <lb/>farsi alla finestra; </dctl:transcription>
+       <!-- l'elemento DCTL:TYPOLOGY contiene la tipologia di immagine -->
+       <dctl:typology type="print"/>
+       <!-- l'elemento DCTL:TECHNIQUE contiene la tecnica di realizzazione dell'immagine -->
+       <dctl:technique type="woodcut">xilografia</dctl:technique>
+       <!-- l'elemento DCTL:MATERIAL contiene il materiale di supporto dell'immagine -->
+       <dctl:material type="paper"/>
+       <!-- l'elemento DCTL:MEASURE contiene le misure dell'immagine -->
+       <dctl:measure>mm 78 x 74</dctl:measure>
+       <!-- l'elemento DCTL:POSITION contiene il posizionamento dell'immagine -->
+       <dctl:position>illustrazione posta nella parte inferiore della pagina, inclusa tra due
+        porzioni di testo da essa ispirato</dctl:position>
+       <!-- l'elemento DCTL:FRAME contiene la descrizione dell'eventuale cornice -->
+       <dctl:frame>
+        <!-- opzionale -->
+        <dctl:desc/>
+       </dctl:frame>
+       <!-- l'elemento DCTL:MATRIX contiene la descrizione dell'eventuale matrice -->
+       <dctl:matrix>
+        <dctl:desc/>
+        <dctl:material type="wood"/>
+        <dctl:technique type="woodcut"/>
+        <dctl:measure/>
+        <note place="apparatus" resp="editor" type="desc"><!-- eventuali note descrittive --></note>
+        <bibl>
+         <author><!-- opzionale --></author>
+         <distributor role="location"><!-- XXX, YYY --></distributor>
+        </bibl>
+       </dctl:matrix>
+       <!-- l'elemento DCTL:REUSELIST contiene l'elenco dei (ri)usi dell'immagine -->
+       <!-- l'attributo TYPE="PRECEDING" identifica il gruppo di (ri)usi precedenti -->
+       <dctl:reuseList type="preceding">
+        <!-- l'elemento DCTL:REUSE è un (ri)uso dell'immagine da collegare tramite XML:ID con altro XML:ID secondo il metodo dei collegamenti già definito -->
+        <!-- l'attributo TYPE="SELF" identifica il (ri)uso dell'immagine nello stesso "contesto" (autore) -->
+        <dctl:reuse xml:id="p010rp001" type="other">F. Marcolini, Sorti, Venezia, Marcolini, 1550,
+         c. E3r</dctl:reuse>
+        <!-- collegato a Sorti:img:p017 -->
+        <dctl:reuse xml:id="p010rp002" type="self">A. F. Doni, Foglie della zucca, in Id., Zucca,
+         Venezia, Marcolini, 1551-1552, c. C2r</dctl:reuse>
+        <!-- da collegato a Zucca img:p042lv212pg035 -->
+       </dctl:reuseList>
+       <!-- l'attributo TYPE="FOLLOWING" identifica il gruppo di (ri)usi successivi -->
+       <dctl:reuseList type="following">
+        <!-- l'elemento DCTL:REUSE è un (ri)uso dell'immagine da collegare tramite XML:ID con altro XML:ID secondo il metodo dei collegamenti già definito -->
+        <!-- l'attributo TYPE="SELF" identifica il (ri)uso dell'immagine nello stesso "contesto" (autore) -->
+        <!-- l'attributo TYPE="OTHER" identifica il (ri)uso dell'immagine in altri "contesti" (autori) -->
+        <dctl:reuse xml:id="pNNNYYYYZZZZ" type="other"/>
+       </dctl:reuseList>
+       <!-- l'elemento DCTL:SOURCE identifica la fonte testuale -->
+       <dctl:source>
+        <bibl>
+         <author><!-- ... --></author>
+         <publisher><!-- ... --></publisher>
+         <pubPlace><!-- ... --></pubPlace>
+         <date value="XXXX-XX-XX"><!-- ... --></date>
+         <title><!-- ... --></title>
+         <extent><!-- ... --></extent>
+         <seg><!-- trascrizione del segmento --></seg>
+        </bibl>
+       </dctl:source>
+       <!-- l'elemento DCTL:ICONTERM contiene la codifica dei codici Iconclass -->
+       <dctl:iconTerm key="000001">donna</dctl:iconTerm>
+       <dctl:iconTerm key="000410">ago,cucire</dctl:iconTerm>
+       <dctl:iconTerm key="000411">insetti:formica</dctl:iconTerm>
+       <dctl:iconTerm key="000412">Industria</dctl:iconTerm>
+       <dctl:iconTerm key="000469">tendaggio</dctl:iconTerm>
+       <dctl:iconTerm key="000436">brocca</dctl:iconTerm>
+       <dctl:iconTerm key="000393">paesaggio</dctl:iconTerm>
+       <dctl:iconTerm key="000471">maschera</dctl:iconTerm>
+      </dctl:studio>
+     </figure>
+     <!-- l'elemento TEI:NOTE contiene le note -->
+     <note type="desc" resp="editor" place="apparatus"><!-- note descrittive --></note>
+     <!-- l'elemento TEI:NOTE contiene le note -->
+     <note type="studio" resp="editor" place="apparatus"><!-- note di studio --></note>
+     <!-- l'elemento TEI:LISTBIBL contiene l'elenco degli elementi TEI:BIBL per la bibliografia -->
+     <listBibl>
+      <!-- l'elemento TEI:BIBL contiene un record della bibliografia -->
+      <bibl>
+       <author>David McTavish</author>
+       <title>Giuseppe Porta called Giuseppe Salviati</title>
+       <publisher>Garland Publishing</publisher>
+       <pubPlace>New York-London</pubPlace>
+       <date value="1981-00-00">1981</date>
+       <extent>pp. 64 - 122</extent>
+      </bibl>
+      <bibl>
+       <author>Elena Pierazzo<!--  --></author>
+       <title>Iconografia della &#171;Zucca&#187; del Doni: emblematica, ekphrasis e
+        variantistica<!--  --></title>
+       <publisher>&#171;Italianistica&#187;<!--  --></publisher>
+       <pubPlace><!--  --></pubPlace>
+       <date value="1998-00-00">XXVIII (1998), 3</date>
+       <extent>pp. 403-425: 422</extent>
+      </bibl>
+     </listBibl>
+    </div>
+    <!-- -->
+    <!-- END -->
+    <!-- %END% -->
+    <!-- NON MODIFICARE LA PARTE OLTRE IL PUNTO "END" -->
+   </div>
+  </body>
+  <back>
+   <div type="part"/>
+  </back>
+ </text>
+</TEI>

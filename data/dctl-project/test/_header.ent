@@ -1,0 +1,18 @@
+<!-- # CTL # -->
+ <!ENTITY dctl_ctl "CTL">
+ <!-- # -->
+ <!-- # COLLECTION INFORMATION # -->
+ <!ENTITY collection_id "test">
+ <!ENTITY collection_short "TEST">
+ <!ENTITY collection_work "Collezione x Unit Test">
+ <!ENTITY collection_year_created "2009">
+ <!ENTITY collection_year_updated "2009">
+ <!ENTITY collection_resp "EP">
+ <!ENTITY collection_packageCount "002">
+ <!ENTITY collection_summary_it "(sommario)">
+ <!ENTITY collection_summary_en "(summary)">
+ <!ENTITY collection_desc_it "(descrizione)">
+ <!ENTITY collection_desc_en "(description)">
+ <!ENTITY collection_editorial_it "">
+ <!ENTITY collection_editorial_en "">
+ 

@@ -1,0 +1,713 @@
+/**
++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+| A digital tale (C) 2009 Enrico Possenti :: dCTL                     |
++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+| Author:  NoveOPiu di Enrico Possenti <info@noveopiu.com>            |
+| License: Creative Commons License v3.0 (Attr-NonComm-ShareAlike     |
+|          http://creativecommons.org/licenses/by-nc-sa/3.0/          |
++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+| A main file for "commodoro"                                         |
++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+*/
+
+@import url("common.css");
+
+* {
+	text-align: left;
+	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html, body {
+margin: 0;padding: 0;border: 0;height: 100%; max-height: 100%; 	background: #FFFFFF;
+}
+
+/* @group COMMON */
+
+#running_ops {
+display: block;
+width: 100%;
+/*
+height: 150px;
+overflow: auto;
+border: 1px inset #bba;	
+*/
+}
+
+._hidden, ._unhidden {
+}
+
+*[type=hidden] {
+	visibility: hidden;
+}
+
+.wip {
+	background: url(../img/wip.gif) no-repeat right center;
+	margin-right: 1.0em;
+	color: #ccc;
+	font-weight: normal;
+	font-style: normal;
+}
+
+em {
+	font-weight: inherit;
+	color: inherit;
+	font-size: inherit;
+	font-style: italic;
+}
+
+strong, .strong {
+	font-weight: bold;
+	color: inherit;
+	font-size: inherit;
+	font-style: inherit;
+}
+
+div {
+	padding: 0.1em;
+}
+
+h1 {
+	color: #39c;
+	font-weight: bold;
+	font-size: 1.4em;
+	margin-top: 0.5em;
+	margin-bottom: 0.1em;
+}
+
+h2 {
+	color: #ccb;
+	font-size: 1.2em;
+	font-weight: bold;
+	border-bottom: 2px solid #ccb;
+	margin-top: 0.5em;
+	margin-bottom: 0.3em;
+}
+
+h3 {
+	color: #888;
+	font-size: 1.1em;
+	font-weight: bold;
+	margin-top: 0.1em;
+	margin-bottom: 0.3em;
+}
+
+h4 {
+	color: #888;
+	font-size: 1.0em;
+	font-weight: bold;
+	margin-top: 0.1em;
+	margin-bottom: 0.3em;
+}
+
+a {
+	color: #39c;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.alert {
+	color: red;
+	font-size: 70%;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #039;
+}
+
+img {
+	border: 0;
+	vertical-align: middle;
+}
+
+select, input, textarea {
+	color: #665;
+	padding: 2px;
+	border: 2px solid #ccb;
+	font-weight: bold;
+	max-width: 40.0em;
+	background: #FFFFFF;
+}
+
+.action {
+	border: 0;
+	vertical-align: bottom;
+}
+
+.linkRule {
+	color: #39c;
+	font-weight: bold;
+}
+
+ul {
+	list-style-type: circle;
+	list-style-position: inside;
+}
+
+table {
+	border: 2px dotted #eed;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+thead, tbody {
+	width: 100%;	
+}
+
+tr {
+	border-bottom: 2px solid #ccb;
+	width: 100%;	
+}
+
+th {
+	border: 1px solid #998;
+	background: #bba;
+	color: #eed;
+	font-weight: bold;
+}
+
+td {
+	background: #fcfcf0;
+	color: #666;
+	border-top: none;
+	border-bottom: 1px dotted #eed;
+	border-right: none;
+	border-left: none;
+	padding: 4px;
+	font-weight: normal;
+	vertical-align: top;
+}
+
+.label {
+	min-width: 15.0em;
+}
+
+.w-1 {
+	width: 280px;
+	display: table-cell;
+}
+
+.w-2 {
+	width: 90px;
+	display: table-cell;
+}
+
+.w-3 {
+	width: 90px;
+	display: table-cell;
+}
+
+.w-4 {
+	width: 40px;
+	display: table-cell;
+	text-align: center;
+}
+
+.w-5 {
+	width: 140px;
+	display: table-cell;
+}
+
+#wrapper {
+		min-width: 780px;
+/* Splitter can't be too thin ... */
+	min-height: 400px;
+/* ... or too flat */
+	margin: 0 10px;
+	text-align: center;
+}
+
+#header {
+	padding: 0;
+	margin: 0 auto;
+	border-bottom: 4px solid #eed;
+	clear: both;
+}
+
+#main {
+padding: 0 10px;
+margin-left: 150px; /*Set left value to WidthOfLeftFrameDiv*/margin-right: 150px; /*Set right value to WidthOfRightFrameDiv*/
+
+}
+
+.sidebar {
+	display: inline;}
+
+.sidebar.left {
+width: 150px; /*Width of left frame div*/	border-right: 1px solid #eed;
+	float: left;}
+
+.sidebar.right {
+width: 150px; /*Width of left frame div*/	border-left: 1px solid #eed;
+	float: right;}
+
+#footer {
+clear: both;	font-size: 0.9em;
+	color: #666;
+	border-top: 2px solid #eed;
+	margin: 20px 0 10px 0;
+	text-align: right;
+}
+
+.menu a,
+     .menu a:link,	.menu a:visited {
+	background: #fff;
+	display: block;
+	text-decoration: none;
+}
+
+.menu a:hover {
+	background: #eed;
+	text-decoration: none;
+}
+
+ul.menu {
+	margin: 10px 0 0;
+}
+
+ul.menu li {
+	list-style: none;
+	margin: 0;
+	padding: 2px;
+	border-bottom: 1px solid #eed;
+	font-weight: bold;
+}
+
+ul.menu li a {
+	font-weight: normal;
+}
+
+ul.menu li ul {
+	margin: 0;
+	padding: 0 0 0 10px;
+}
+
+ul.menu li ul li a {
+	font-weight: normal;
+}
+
+a.pageheading:hover {
+	color: #003300;
+	text-decoration: underline;
+}
+
+a.subheading:hover {
+	color: #003300;
+	text-decoration: underline;
+}
+
+.morelink,	.footer {
+	text-align: right;
+}
+
+.morelink {
+	color: #930
+}
+
+.byline {
+	text-align: left;
+	font-weight: bold;
+}
+
+.warning {
+	color: #ff941b;
+	font-weight: bold;
+	padding-left: 1.0em;
+	padding-right: 1.0em;
+	background-color: #EEEEEE;
+}
+
+.error {
+	color: #ff5b00;
+	font-weight: bold;
+	background-color: #FFCCCC;
+	padding-left: 1.0em;
+	padding-right: 1.0em;
+}
+
+.ok {
+	color: #009d62;
+	font-weight: bold;
+	background-color: #CCFFCC;
+	padding-left: 1.0em;
+	padding-right: 1.0em;
+}
+
+.dctl_ok {
+	color: #339933;
+}
+
+.dctl_ko {
+	color: #FF0033;
+}
+
+.smaller {
+	font-size: 50%;
+	font-weight: inherit;
+	font-style: inherit;
+}
+
+.help {
+	font-size: 85%;
+	font-weight: inherit;
+	font-style: italic;
+}
+
+#wikicontrols {
+float: right;	
+}
+
+/* @end */
+
+
+
+/* @group NEWS TICKER */
+
+ul.todo {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+ul.todo li:first-line {
+	color: #960040;
+}
+
+.news {
+	margin: 0;
+	padding: 0;
+}
+
+.news_head {
+	color: #b00000;
+}
+
+.news ul {
+	color: #094171;
+	border: 1px solid #d7dae1;
+	margin-bottom: 0.2em;
+	margin: 0;
+	padding: 0;
+}
+
+.news li {
+	color: #094171;
+	border-top: 1px dotted #d7dae1;
+	border-bottom: 1px dotted #d7dae1;
+}
+
+.news_last {
+	background: #ffffef;
+}
+
+#ticker-container {
+	position: relative;
+	overflow: hidden;
+	height: 150px;
+	border: 1px solid #f3efe4;
+}
+
+#ticker {
+	position: relative;
+}
+
+#ticker ul {
+	list-style-type: none;
+}
+
+#ticker ul li {
+	display: list-item;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	font-size: xx-small;
+	font-weight: normal;
+	padding-left: 2px;
+}
+
+#ticker ul li a {
+	font-size: xx-small;
+	font-weight: normal;
+	text-decoration: none;
+	padding-left: 2px;
+}
+
+#ticker ul li a:hover {
+	font-size: xx-small;
+	text-decoration: none;
+	padding-left: 2px;
+}
+
+/* @end */
+
+
+/* @group CONTAINER */
+
+
+
+.trueContainer {
+	display: block;
+	overflow: auto;
+}
+
+.trueContainer2 {
+	display: block;
+	height: 8.0em;
+	overflow: auto;
+	color: #665;
+	padding: 2px;
+	border: 2px solid #ccb;
+	background: #FFFFFF;
+}
+
+.trueContainer li {
+	display: table-cell;
+	border: 2px ridge #f1f3f5;
+	width: 120px;
+	height: 120px;
+	vertical-align: middle;
+}
+
+.trueContainer2 li {
+	display: list-item;
+	list-style-type: decimal;
+}
+
+.trueContainer li a {
+	display: block;
+	background: #ffffff;
+	width: 120px;
+	height: 120px;
+	text-align: center;
+}
+
+.trueContainer2 li a {
+	
+}
+
+.trueContainer li a img {
+	max-width: 120px;
+	max-height: 120px;
+	vertical-align: middle;
+}
+
+.collection {
+	font-weight: bold;
+}
+
+.package {
+	font-weight: bold;
+}
+
+.part {
+	font-weight: bold;
+}
+
+.media {
+	font-weight: bold;
+}
+
+/* @end */
+
+/* @group TREE JQUERY */
+
+.layout {
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.linker {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.linker label {
+	display: inline;
+	margin: 0.3em;
+	width: 10%;
+}
+
+#manager_map .linker label {
+	width: 100%;
+}
+
+#manager_map .linker input[type=button][name=bDelA] {
+	float: left;
+	clear: left;
+}
+
+.linker input {
+	display: inline;
+	color: #000;
+	padding: 0px 2px;
+	border: 1px inset #ccc;
+	margin: 0.3em;
+	width: 40%;
+}
+
+#manager_map .linker label {
+	display: inline-block;
+}
+
+#manager_map .linker input[type=text] {
+	width: 85%;
+}
+	
+.linker input[type=text][disabled=disabled] {
+	border: 1px dashed #ccc;
+}
+
+.linker input[type=button] {
+	width: 7.0em;
+	clear: right;
+	float: right;
+	display: block;
+	text-align: center;
+	background-color: #eee;
+	border: 1px outset #ccc;
+	margin: 1.0em;
+}
+
+.lnk_left {
+	display: block;
+	width: 20%;
+	height: 100%;
+	float: left;
+margin: 0;
+padding: 0;
+}
+
+.lnk_col, .src_tree {
+	display: block;
+	height: 250px;
+	margin: 0;
+	padding: 0;
+border: 1px dotted #ccc;
+}
+.src_tree2 {
+	display: block;
+	height: 100px;
+	margin: 0;
+	padding: 0;
+border: 1px dotted #ccc;
+}
+.lnk_col, #xml_chunk {
+	overflow: auto;	
+	height: 100%;
+	padding: 3px;
+}
+
+.lnk_right {
+	display: block;
+	width: 80%;
+	float: left;
+margin: 0;
+padding: 0;
+}
+
+.src_col {
+	display: block;
+	float: left;
+		width: 50%;
+margin: 0;
+	padding: 0;
+}
+
+
+.src_col2 {
+	display: block;
+	clear: both;
+margin: 0;
+	padding: 3px;
+}
+
+pre {
+	font: 0.9em "Courier New", Courier, mono;
+}
+
+pre .highlight {
+	background-color: #fcfcf0;
+	padding: 0px 2px;
+}
+
+.lineH1 {
+	border: 1px solid #998;
+	background: #bba;
+	color: #eed;
+	font-weight: bold;
+	text-align: center;
+}
+
+.lineH2 {
+	border: 1px solid #998;
+	background: #fcfcf0;
+	color: #666;
+	font-weight: normal;
+	text-align: center;
+}
+
+#img_area {
+	min-height: 100px;
+	width: 99.5%;
+    border: 1px dotted #ccc;
+}
+
+#img_edit {
+	display: block;
+	width: 100%;
+}
+
+.lnk_result {
+	clear: both;
+	padding: 3px;
+}
+
+div.imt {
+ height: 400px;
+}
+
+#manager_map.imt .src_col {
+	display: block;
+	float: left;
+		width: 100%;
+margin: 0;
+padding: 0;
+}
+
+#manager_map.imt .lnk_col {
+	height: 250px;
+}
+
+#manager_map.imt #xml_chunk {
+	width: 100%;
+    border: 1px dotted #ccc;
+}
+
+#manager_repo label {
+	display: inline-block;
+	min-width: 5.0em;
+	text-align: right;
+}
+
+#manager_repo input[type='button'] {
+	display: inline-block;
+	margin-left: 6.0em;
+	text-align: center;
+	background-color: #f1f3f5;
+	margin-top: 3px;
+	margin-bottom: 0.5em;
+}
+/* @end */
+

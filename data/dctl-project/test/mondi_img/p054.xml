@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<!DOCTYPE TEI SYSTEM "../../_common/dtd/dctl.core.dtd" [
+<!ENTITY % TEI.extension.dtd SYSTEM "../../_common/dtd/dctl.extension.dtd">
+<!ENTITY % collection.header.ent SYSTEM "../_header.ent">
+<!ENTITY % package.header.ent SYSTEM "_header.ent">
+<!ENTITY TEI.header SYSTEM "../../_common/headers/teiHeader.package.xml">
+<!ENTITY TEI.header.profileDesc.textClass SYSTEM "../../_common/add-ons/teiHeader.profileDesc.textClass.xml">
+%TEI.extension.dtd;
+%collection.header.ent;
+%package.header.ent;
+]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&package_id;"
+ n="&source_author; - &source_title_main;"> &TEI.header; <text
+  xml:lang="&source_lang;" xml:id="&package_id;.package" ana="&source_genre;">
+  <front>
+   <div type="part" />
+  </front>
+  <body>
+   <div type="part">
+    <!-- NON MODIFICARE LA PARTE PRECEDENTE IL PUNTO "BEGIN" -->
+    <!-- %BEGIN% -->
+    <!-- BEGIN -->
+    <!-- -->
+    <!-- -->
+    <!-- [ CASO IMMAGINE IN PAGINA ] -->
+    <!-- l'elemento TEI:DIV deve essere di tipo "dctlObject" in quanto scheda e non testo continuo -->
+    <!-- l'attributo XML:ID deve comunque iniziare con la sintassi "pNNN" coincidente con il nome della partizione di package (nome del file precedente l'estensione ".xml") -->
+    <!-- l'attributo N dovrebbe contenere un'etichetta identificativa della scheda, da utilizzare come ultima risorsa in caso di visualizzazione -->
+    <!-- l'attributo CORRESP contiene, se presente, l'URI relativo all'anastatica -->
+    <div type="dctlObject" xml:id="p054mn005cc081" n="Mondo risibile, c. 81r" corresp="img://afd-mondi_081v.jpg">
+     <!-- l'elemento TEI:PB, come TEI:LB, deve essere all'interno dell'elemento di cui eventualmente si vuole ricreare il riferimento -->
+     
+     <pb label="c" n="81r" />
+     <!-- l'elemento TEI:HEAD marca l'intestazione della scheda, ma è importante l'elemento INDEX/TERM che marca l'etichetta da utilizzare nella costruzione degli indici e dei riferimenti -->
+     <head>
+      <index>
+       <term>Mondo risibile, c. 81r</term>
+      </index>
+     </head>
+     <!-- l'elemento TEI:BIBL (la cui sottostruttura di elementi è descritta nella documentazione TEI) definisce il "record bibliografico" della scheda -->
+     <bibl>
+      <publisher>Marcolini, Francesco</publisher>
+      <pubPlace>Venezia</pubPlace>
+      <date value="1552/1553-00-00">1552-1553</date>
+      <distributor role="location">Pisa, Biblioteca della Scuola Normale Superiore, XVID683</distributor>
+     </bibl>
+     <!-- l'elemento TEI:FIGURE contiene l'elemento TEI:GRAPHIC (immagine) e l'elemento DCTL:STUDIO -->
+     <figure>
+      <graphic url="img://afd-mondi_081v_pw.jpg" />
+      <!-- l'elemento TEI:FIGDESC (obbligatorio) contiene l'etichetta che appare solo passando con il mouse sull'immagine -->
+      <figDesc>Illustrazione dei Mondi, Mondo misto, c. 81r</figDesc>
+      <!-- l'elemento DCTL:STUDIO -->
+      <dctl:studio>
+       <!-- l'elemento DCTL:DESC deve contenere la descrizione dettagliata dell'immagine -->
+       <dctl:desc>Platone, rappresentato come un uomo giovane, è raffigurato nell'atto di indicare un libro che ha appena dato alle fiamme</dctl:desc>
+       <!-- l'elemento DCTL:MEANING con attributo TYPE="original" deve contenere la descrizione del significato originario dell'immagine -->
+       <dctl:meaning type="original">l'azione memorabile di Platone che dà alle fiamme una propria tragedia</dctl:meaning>
+       <!-- l'elemento DCTL:MEANING con attributo TYPE="context" deve contenere la descrizione del significato contestuale dell'immagine -->
+       <dctl:meaning type="context">Aristotele brucia dei libri, non avendovi trovato una risposta al problema dell'immortalità dell'anima</dctl:meaning>
+       <!-- l'elemento DCTL:TRANSCRIPTION deve contenere la trascrizione del testo presente nell'immagine -->
+       <dctl:transcription><lb/>Et quando l'uomo gli fa <lb/>toccar con mano che egli è un
+        pazzo et che egli ha dell'opi<milestone unit="wb"/>
+        <lb/>nione da ridersi del fatto suo, e' dice che tutto il restante
+        de' fi<milestone unit="wb"/>
+        <lb/>losofi per altro non si sono aviluppati che per non saper
+        distin<milestone unit="wb"/>
+        <lb/>guere fra spirito et anima: questo è, che dicevano ora esser
+        <lb/>mortale et ora immortale; et quell'altro, messer <seg ana="key_item" xml:id="p054ki001">Aristotile</seg>, <lb/>quando ebbe
+        copiati tutti i <seg ana="key_item" xml:id="p054ki002">libri</seg> et pesti et cavatone il sugo, <lb/><seg ana="key_item" xml:id="p054ki003">gli fece
+         abruciare</seg>, et non volse dare la sua parola risolutamente, <lb/>se
+        l'era o non era; ma se gli avesse veduto la distintione, udita
+        <lb/>o letta di colui che fu, è et sarà la perfetta sapienza, che
+        <lb/>disse: Dolente è l'anima mia insino alla morte (ecco
+        l'una), e: <lb/>In mano tua raccomando lo spirito mio (ecco l'altro), egli
+        non <lb/>avrebbe errato.</dctl:transcription>
+       <!-- l'elemento DCTL:TYPOLOGY contiene la tipologia di immagine -->
+       <dctl:typology type="print" />
+       <!-- l'elemento DCTL:TECHNIQUE contiene la tecnica di realizzazione dell'immagine -->
+       <dctl:technique type="woodcut">xilografia</dctl:technique>
+       <!-- l'elemento DCTL:MATERIAL contiene il materiale di supporto dell'immagine -->
+       <dctl:material type="paper" />
+       <!-- l'elemento DCTL:MEASURE contiene le misure dell'immagine -->
+       <dctl:measure>mm 62 x 94 ca.</dctl:measure>
+       <!-- l'elemento DCTL:POSITION contiene il posizionamento dell'immagine -->
+       <dctl:position>illustrazione posta nella parte superiore della pagina, prima del testo da essa ispirato</dctl:position>
+       <!-- l'elemento DCTL:FRAME contiene la descrizione dell'eventuale cornice -->
+       <dctl:frame>
+        <dctl:measure>mm 10 x 93 ca.</dctl:measure>
+        <dctl:desc>fregio xilografico con basamento architettonico e un viso umano</dctl:desc>
+        <dctl:measure>mm 14 x 93 ca.</dctl:measure>
+        <dctl:desc>fregio xilografico con un fregio architettonico e un volto angelico</dctl:desc>
+       </dctl:frame>
+       <!-- l'elemento DCTL:MATRIX contiene la descrizione dell'eventuale matrice -->
+       <dctl:matrix>
+        <dctl:desc></dctl:desc>
+        <dctl:material type="wood" />
+        <dctl:technique type="woodcut" />
+        <dctl:measure><!-- mm ??? x ??? --></dctl:measure>
+        <note place="apparatus" resp="editor" type="desc"><!-- eventuali note descrittive --></note>
+        <bibl>
+         <author><!-- opzionale --></author>
+         <distributor role="location"><!-- XXX, YYY --></distributor>
+        </bibl>
+       </dctl:matrix>
+       <!-- l'elemento DCTL:REUSELIST contiene l'elenco dei (ri)usi dell'immagine -->
+       <!-- l'attributo TYPE="PRECEDING" identifica il gruppo di (ri)usi precedenti -->
+       <dctl:reuseList type="preceding">
+        <!-- l'elemento DCTL:REUSE è un (ri)uso dell'immagine da collegare tramite XML:ID con altro XML:ID secondo il metodo dei collegamenti già definito -->
+        <!-- l'attributo TYPE="SELF" identifica il (ri)uso dell'immagine nello stesso "contesto" (autore) -->
+        <dctl:reuse xml:id="p054rp001" type="other" >F. Marcolini, Sorti, Venezia, Marcolini, 1550, c. Z3v</dctl:reuse>
+        <dctl:reuse xml:id="p054rp002" type="self">A. F. Doni, Trattati, in Id., Moral filosofia - Trattati, Venezia, Marcolini, 1552, p. 34</dctl:reuse>
+       </dctl:reuseList>
+       <!-- l'attributo TYPE="FOLLOWING" identifica il gruppo di (ri)usi successivi -->
+       <dctl:reuseList type="following">
+        <!-- l'elemento DCTL:REUSE è un (ri)uso dell'immagine da collegare tramite XML:ID con altro XML:ID secondo il metodo dei collegamenti già definito -->
+        <!-- l'attributo TYPE="SELF" identifica il (ri)uso dell'immagine nello stesso "contesto" (autore) -->
+        <!-- l'attributo TYPE="OTHER" identifica il (ri)uso dell'immagine in altri "contesti" (autori) -->
+        <dctl:reuse xml:id="p054rf001" type="other" >D. Laerzio, Compendio delle vite, Venezia, Brugnolo, 1598, c. I1v</dctl:reuse>
+        <dctl:reuse xml:id="p054rf002" type="other" >D. Laerzio, Compendio delle vite, Venezia, Brugnolo, 1598, c. N4r</dctl:reuse>
+       </dctl:reuseList>
+       <!-- l'elemento DCTL:SOURCE identifica la fonte testuale -->
+       <dctl:source>
+        <bibl>
+         <author>Diogenes Laertius</author>
+         <publisher>Bompiani</publisher>
+         <pubPlace>Milano</pubPlace>
+         <date value="2005-00-00">2005</date>
+         <title>Vite e dottrine dei più celebri filosofi</title>
+         <editor>a cura di Giovanni Reale</editor>
+         <extent>Libro III, cap. I, &#167; 5, p. 313</extent>
+         <seg><lb/>[Socrate e altri suoi maesti]
+         <lb/>[...] Successivamente, mentre stava per partecipare a un concor<milestone unit="wb"/>
+          <lb/>so con una tragedia, davanti al teatro di Dionisio, udito So<milestone unit="wb"/>
+          <lb/>crate, diede alle fiamme le sue poesie, esclamando: 
+          <lb/>Efesto, vieni qui: Platone ora ha bisogno di te.</seg>
+        </bibl>
+       </dctl:source>
+       <!-- l'elemento DCTL:ICONTERM contiene la codifica dei codici Iconclass -->
+       <dctl:iconTerm key="000567">Platone</dctl:iconTerm>
+       <dctl:iconTerm key="000243">uomo</dctl:iconTerm>
+       <dctl:iconTerm key="000502">mantello</dctl:iconTerm>
+       <dctl:iconTerm key="000017">libro</dctl:iconTerm>
+       <dctl:iconTerm key="000260">fiamme</dctl:iconTerm>
+       <dctl:iconTerm key="000194">in fiamme</dctl:iconTerm>
+       <dctl:iconTerm key="000318">indicare</dctl:iconTerm>
+       </dctl:studio>
+     </figure>
+     <!-- l'elemento TEI:NOTE contiene le note -->
+     <note type="desc" resp="editor" place="apparatus"><!-- note descrittive --></note>
+     <!-- l'elemento TEI:NOTE contiene le note -->
+     <note type="studio" resp="editor" place="apparatus">Si può ipotizzare che il rapporto tra il testo e l'immagine non sia basato solo sul 
+      <lb/>recupero del gesto del filosofo. Il dialogo dei due Pellegrini richiama infatti la seconda prova dell'immortalità dell'anima 
+      <lb/>esposta da Platone in "Phaedon", rendendo così più complesso e sfumato il dialogo tra l'immagine e il testo da 
+      <lb/>essa ispirato (cfr. G. Rizzarelli, &#171;Se le parole si potessero scorgere&#187;, cit., p. 79)</note>
+     <!-- l'elemento TEI:LISTBIBL contiene l'elenco degli elementi TEI:BIBL per la bibliografia -->
+     <listBibl>
+      <!-- l'elemento TEI:BIBL contiene un record della bibliografia -->
+      <bibl>
+       <author>Giovanna Rizzarelli</author>
+       <title>&#171;Se le parole si potessero scorgere&#187;. I Mondi di Doni tra Italia e
+        Francia</title>
+       <publisher>Vecchiarelli</publisher>
+       <pubPlace>Manziana</pubPlace>
+       <date value="2007-00-00">2007</date>
+       <extent>pp. 30, 31, 34-35, 65-66 e n, 77, 79, 161-163, 165, 169, 174-175</extent>
+      </bibl>
+     </listBibl>
+    </div>
+    <!-- -->
+    <!-- END -->
+    <!-- %END% -->
+    <!-- NON MODIFICARE LA PARTE OLTRE IL PUNTO "END" -->
+   </div>
+  </body>
+  <back>
+   <div type="part" />
+  </back>
+ </text>
+</TEI>

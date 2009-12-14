@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE TEI SYSTEM "../_common/dtd/dctl.core.dtd" [ <!ENTITY % TEI.extension.dtd SYSTEM "../_common/dtd/dctl.extension.dtd"> <!ENTITY % collection.header.ent SYSTEM "_header.ent"> <!ENTITY TEI.header SYSTEM "../_common/headers/teiHeader.collection.xml"> <!ENTITY TEI.header.profileDesc.textClass SYSTEM "../_common/add-ons/teiHeader.profileDesc.textClass.xml"> %TEI.extension.dtd; %collection.header.ent; ]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&collection_id;" n="&collection_work;">
+	&TEI.header; <text xml:id="&collection_id;.linker">
+		<body>
+			<p>
+				<!-- %BEGIN% -->
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000040" n="Immagini di Michelangelo"
+					target="xml://test/marmi_gal/p001michelangelo01 xml://test/marmi_gal/p001michelangelo02 xml://test/marmi_gal/p001michelangelo03 xml://sogno/sogno_gal/p001carpioni01"
+					>Immagini di Michelangelo</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000041" n="Ritratto di Doni"
+					target="xml://test/marmi_txt/p001f-000 xml://test/mondi_txt/p001f-med-doni">Ritratto di
+					Doni</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000042" n="Prohemio, c. **3rGuevara, Horologio"
+					target="xml://test/marmi_txt/p001anguauli-p3r xml://test/marmi_gal/p001anguauli-p3r">Prohemio,
+					c. **3rGuevara, Horologio</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000001" n="Immagini dell'Occasione"
+					target="xml://test/marmi_txt/p001f-003-001 xml://test/marmi_gal/p001occasione01 xml://test/marmi_gal/p001occasione02 xml://test/marmi_gal/p001occasione03 xml://test/marmi_gal/p001occasione04 xml://test/marmi_gal/p001occasione05 xml://test/marmi_gal/p001occasione06"
+					>Immagini dell'Occasione</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000002" n="Immagini della Fortuna"
+					target="xml://test/marmi_txt/p001f-003-002 xml://test/marmi_gal/p001fortuna01 xml://test/marmi_gal/p001fortuna02 xml://test/marmi_gal/p001fortuna03 xml://test/marmi_gal/p001fortuna04"
+					>Immagini della Fortuna</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000003" n="???"
+					target="xml://test/marmi_txt/p001f-001-001 xml://test/marmi_gal/p001anguauli-cxxx3r">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000004" n="???"
+					target="xml://test/marmi_txt/p001f-001-002 xml://test/marmi_gal/p001anguauli-xxx2v">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000005" n="???"
+					target="xml://test/marmi_txt/p001f-001-003 xml://test/marmi_gal/p001frpetrvf-v4">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000006" n="Immagini dell'Amore"
+					target="xml://test/marmi_txt/p001f-001-004 xml://test/marmi_gal/p001amore01 xml://test/marmi_gal/p001amore02"
+					>Immagini dell'Amore</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000007" n="???"
+					target="xml://test/marmi_txt/p001f-simon xml://test/marmi_gal/p001dilavifi-p90 xml://test/mondi_txt/p001f-000"
+					>???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000008" n="???"
+					target="xml://test/marmi_txt/p001f-001-005 xml://test/marmi_gal/p001anguauli-2ccxxxx">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000009" n="???"
+					target="xml://test/marmi_txt/p001f-001-006 xml://test/marmi_gal/p001anguauli-2ccxxxx">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000010" n="???"
+					target="xml://test/marmi_txt/p001f-001-007 xml://test/marmi_gal/p001anguauli-2c5v">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000011" n="???"
+					target="xml://test/marmi_txt/p001f-001-008 xml://test/marmi_gal/p001anguauli-2c5r">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000012" n="???"
+					target="xml://test/marmi_txt/p001f-001-009 xml://test/marmi_gal/p001anguauli-2c5r">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000013" n="???"
+					target="xml://test/marmi_txt/p001f-001-010 xml://test/marmi_gal/p001anguauli-2c5r">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000014" n="Immagini del Tempo"
+					target="xml://test/marmi_txt/p001f-004 xml://test/mondi_txt/p001f-003 xml://test/marmi_gal/p001tempo01 xml://test/marmi_gal/p001tempo02 xml://test/marmi_gal/p001tempo03 xml://test/marmi_gal/p001tempo04"
+					>Immagini del Tempo</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000015" n="???"
+					target="xml://test/marmi_txt/p001f-001-011 xml://test/michelangelo03">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000016" n="???"
+					target="xml://test/marmi_txt/p001f-001-012 xml://test/michelangelo01">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000017" n="???"
+					target="xml://test/marmi_txt/p001f-001-013 xml://test/anguauli-1cc49r">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000018" n="???"
+					target="xml://test/marmi_txt/p001f-001-014 xml://test/michelangelo02">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000019" n="???"
+					target="xml://test/marmi_txt/p001f-001-015 xml://test/marmi_gal/p001anguauli-2c9v">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000020" n="???"
+					target="xml://test/marmi_txt/p001f-001-016 xml://test/marmi_gal/p001anguauli-2c8v">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000021" n="???"
+					target="xml://test/marmi_txt/p001f-001-017 xml://test/marmi_gal/p001anguauli-2c8r">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000022" n="???"
+					target="xml://test/marmi_txt/p001f-003 xml://test/marmi_gal/p001dilavifi-p30">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000023" n="???"
+					target="xml://test/marmi_txt/p001f-001-018 xml://test/marmi_gal/p001anguauli-1c75v">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000024" n="???"
+					target="xml://test/marmi_txt/p001f-001-019 xml://test/marmi_gal/p001anguauli-1c75v">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000025" n="???"
+					target="xml://test/marmi_txt/p001f-001-020 xml://test/marmi_gal/p001anguauli-1c75r">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000026" n="???"
+					target="xml://test/marmi_txt/p001f-001-021 xml://test/marmi_gal/p001anguauli-1c75r">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000027" n="???"
+					target="xml://test/marmi_txt/p001f-001-022 xml://test/marmi_gal/p001anguauli-1c75r">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000028" n="???"
+					target="xml://test/marmi_txt/p001f-001-023 xml://test/marmi_gal/p001anguauli-1c74v">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000029" n="???"
+					target="xml://test/marmi_txt/p001f-001-024 xml://test/marmi_gal/p001anguauli-1c74v">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000030" n="???"
+					target="xml://test/marmi_txt/p001f-001-025 xml://test/marmi_gal/p001anguauli-1c74v">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000031" n="???"
+					target="xml://test/marmi_txt/p001f-001-026 xml://test/marmi_gal/p001anguauli-1c74r">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000032" n="???"
+					target="xml://test/marmi_txt/p001f-001-027 xml://test/marmi_gal/p001anguauli-1c74r">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000033" n="???"
+					target="xml://test/marmi_txt/p001f-001-028 xml://test/marmi_gal/p001anguauli-1c73v">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000034" n="???"
+					target="xml://test/marmi_txt/p001f-001-029 xml://test/marmi_gal/p001anguauli-1cc73rv">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000035" n="???"
+					target="xml://test/marmi_txt/p001f-001-030 xml://test/marmi_gal/p001anguauli-1c47v">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000036" n="???"
+					target="xml://test/marmi_txt/p001f-001-031 xml://test/marmi_gal/p001anguauli-1c47v">???</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000037"
+					n="incisione presente nelle Sorti, episodio della vita del filosofo Anassimandro"
+					target="xml://test/marmi_txt/p001f-002 xml://test/marmi_gal/p001dilavifi-p48 xml://test/mondi_txt/p001f-002"
+					>incisione presente nelle Sorti, episodio della vita del filosofo Anassimandro</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000038"
+					n="incisione presente nelle Sorti, episodio della vita del filosofo Ferecide"
+					target="xml://test/marmi_txt/p001f-001 xml://test/marmi_gal/p001frmainso-p13r xml://test/marmi_gal/p001dilavifi-p45 xml://test/mondi_txt/p001f-001"
+					>incisione presente nelle Sorti, episodio della vita del filosofo Ferecide</ref>
+				<!-- -->
+				<ref type="generic" xml:id="test-0000000039" n="Prohemio, c. **3vGuevara, Horologio"
+					target="xml://test/marmi_txt/p001f-001-032 xml://test/marmi_gal/p001anguauli-p3v">Prohemio, c.
+					**3vGuevara, Horologio</ref>
+				<!-- -->
+				<!-- -->
+				<ref xml:id="test-IUeS7zNWNv" type="generic" n="Marmi_I_8"
+					target="xml://test/marmi_txt/p001f001 xml://test/marmi_img/p002pt001pg008">Marmi_I_8</ref>
+				<!-- -->
+				<ref xml:id="test-Mk4TUzReBB" type="generic" n="Marmi_I_16"
+					target="xml://test/marmi_txt/p001f002 xml://test/marmi_img/p003pt001pg016">Marmi_I_16</ref>
+				<!-- -->
+				<ref xml:id="test-EJF2teSab1" type="generic" n="Marmi_I_p.20"
+					target="xml://test/marmi_txt/p001f003 xml://test/marmi_img/p004pt001pg020">Marmi_I_p.20</ref>
+				<!-- -->
+				<ref xml:id="test-Ial90NjSzQ" type="generic" n="Marmi_I_p.48"
+					target="xml://test/marmi_txt/p001f004 xml://test/marmi_img/p005pt001pg048">Marmi_I_p.48</ref>
+				<!-- -->
+				<ref xml:id="test-sggYD7uvki" type="generic" n="Marmi_I_p.58"
+					target="xml://test/marmi_txt/p001f005 xml://test/marmi_img/p006pt001pg058">Marmi_I_p.58</ref>
+				<!-- -->
+				<ref xml:id="test-A0xDzv3XjH" type="generic" n="Marmi_I_p.78"
+					target="xml://test/marmi_txt/p001f006 xml://test/marmi_img/p007pt001pg078">Marmi_I_p.78</ref>
+				<!-- -->
+				<ref xml:id="test-U7k2P9VBsh" type="generic" n="Marmi_I_p.91"
+					target="xml://test/marmi_txt/p001f007 xml://test/marmi_img/p008pt001pg091">Marmi_I_p.91</ref>
+				<!-- -->
+				<ref xml:id="test-6SlvAecSMD" type="generic" n="Mondi_1_Frontespizio_Mondo_Piccolo"
+					target="xml://test/mondi_txt/p000f001 xml://test/mondi_img/p002mn001cc001"
+					>Mondi_1_Frontespizio_Mondo_Piccolo</ref>
+				<!-- -->
+				<ref xml:id="test-AtEwYKXerh" type="generic" n="Mondi_1_marca_tip_con_leone"
+					target="xml://test/mondi_txt/p000f002 xml://test/mondi_img/p003mn001cc001"
+					>Mondi_1_marca_tip_con_leone</ref>
+				<!-- -->
+				<ref xml:id="test-od4Has6ct6" type="generic" n="Riuso_precedente_Marmi_I_p.16"
+					target="xml://test/marmi_img/p003rp001 xml://test/sorti_img/p006cc003"
+					>Riuso_precedente_Marmi_I_p.16</ref>
+				<!-- -->
+				<ref xml:id="test-gpYVADoZs7" type="generic" n="Riuso_Precedente_Marmi_1_Anassimandro_p.20"
+					target="xml://test/marmi_img/p004rp001 xml://test/sorti_img/p058cc003"
+					>Riuso_Precedente_Marmi_1_Anassimandro_p.20</ref>
+				<!-- -->
+				<ref xml:id="test-gvvxbTdO9d" type="generic" n="Riuso_precedente_Marmi_I_p.48"
+					target="xml://test/marmi_img/p005rp001 xml://test/sorti_img/p060cc001"
+					>Riuso_precedente_Marmi_I_p.48</ref>
+				<!-- -->
+				<ref xml:id="test-ERtpk1hDet" type="generic" n="Mondi_1_Cristo_risorge_dal_sepolcro"
+					target="xml://test/mondi_img/p004mn001cc002 xml://test/mondi_txt/p001f001"
+					>Mondi_1_Cristo_risorge_dal_sepolcro</ref>
+				<!-- -->
+				<ref xml:id="test-6afqAIu2M7" type="generic" n="Mondi_1_Tre_Corone"
+					target="xml://test/mondi_img/p005mn001cc004 xml://test/mondi_txt/p001f002"
+					>Mondi_1_Tre_Corone</ref>
+				<!-- -->
+				<ref xml:id="test-QvUh8jXUeU" type="generic" n="Mondi_1_Talete"
+					target="xml://test/mondi_img/p006mn001cc005 xml://test/mondi_txt/p001f003">Mondi_1_Talete</ref>
+				<!-- -->
+				<ref xml:id="test-2d2qAP97j6" type="generic" n="Riuso_precedente_Mondi_1_Talete_p.5"
+					target="xml://test/mondi_img/p006rp001 xml://test/sorti_img/p020cc001"
+					>Riuso_precedente_Mondi_1_Talete_p.5</ref>
+				<!-- -->
+				<ref xml:id="test-i0VMKTPzb7" type="generic" n="Mondi_1_Aristotele_p_6"
+					target="xml://test/mondi_img/p007mn001cc006 xml://test/mondi_txt/p001f004"
+					>Mondi_1_Aristotele_p_6</ref>
+				<!-- -->
+				<ref xml:id="test-6wVoEMYYg0" type="generic" n="Riuso_precedente_Mondi_1_Aristotele_p_6"
+					target="xml://test/mondi_img/p007rp001 xml://test/sorti_img/p014cc003"
+					>Riuso_precedente_Mondi_1_Aristotele_p_6</ref>
+				<!-- -->
+				<ref xml:id="test-6Wn2RS06fn" type="generic" n="Mondi_1_Senofonte_p.8"
+					target="xml://test/mondi_txt/p001f005 xml://test/mondi_img/p008mn001cc008"
+					>Mondi_1_Senofonte_p.8</ref>
+				<!-- -->
+				<ref xml:id="test-kjMNU3f5f7" type="generic" n="Riuso_precedente_Mondi_1_Senofonte_p.8"
+					target="xml://test/mondi_img/p008rp001 xml://test/sorti_img/p042cc003"
+					>Riuso_precedente_Mondi_1_Senofonte_p.8</ref>
+				<!-- -->
+				<ref xml:id="test-6z1VLXXGVI" type="generic" n="Mondo_1_Teodoro_p.9"
+					target="xml://test/mondi_img/p009mn001cc009 xml://test/mondi_txt/p001f006"
+					>Mondo_1_Teodoro_p.9</ref>
+				<!-- -->
+				<ref xml:id="test-kKHy2DZc4N" type="generic" n="Riuso_Precedente_Mondo_1_Teodoro_p.9"
+					target="xml://test/mondi_img/p009rp001 xml://test/sorti_img/p084cc001"
+					>Riuso_Precedente_Mondo_1_Teodoro_p.9</ref>
+				<!-- -->
+				<ref xml:id="test-Uj4Ayrufkk" type="generic" n="Mondo_0_Cristo_p.2"
+					target="xml://test/mondi_img/p004mn000cc002 xml://test/mondi_txt/p000f003"
+					>Mondo_0_Cristo_p.2</ref>
+				<!-- -->
+				<ref xml:id="test-oCPfMkDLie" type="generic" n="Riuso_precedente_Mondi_1_Aristotele_p.6"
+					target="xml://test/mondi_img/p007rp002 xml://test/moralfilosofia_img/p041lv216pg101"
+					>Riuso_precedente_Mondi_1_Aristotele_p.6</ref>
+				<!-- -->
+				<ref xml:id="test-onVhjIVupu" type="generic" n="Mondi_1_Cleante_p.13"
+					target="xml://test/mondi_img/p012mn001cc013 xml://test/mondi_txt/p001f009"
+					>Mondi_1_Cleante_p.13</ref>
+				<!-- -->
+				<ref xml:id="test-oVCrHv8nDK" type="generic" n="Riuso_precedente_Mondi_1_Cleante_p.13"
+					target="xml://test/mondi_img/p012rp001 xml://test/sorti_img/p062cc003"
+					>Riuso_precedente_Mondi_1_Cleante_p.13</ref>
+				<!-- -->
+				<ref xml:id="test-czGLOoNklr" type="generic" n="Mondi_1_Euclide_p.10"
+					target="xml://test/mondi_img/p010mn001cc010 xml://test/mondi_txt/p001f007"
+					>Mondi_1_Euclide_p.10</ref>
+				<!-- -->
+				<ref xml:id="test-MAqt7cB6nr" type="generic" n="Riuso_precedente_Mondi_1_Euclide_p.10"
+					target="xml://test/mondi_img/p010rp001 xml://test/sorti_img/p064cc001"
+					>Riuso_precedente_Mondi_1_Euclide_p.10</ref>
+				<!-- -->
+				<ref xml:id="test-s14B7U7cDE" type="generic" n="Mondi_1_Speusippo_p.13"
+					target="xml://test/mondi_img/p011mn001cc013 xml://test/mondi_txt/p001f008"
+					>Mondi_1_Speusippo_p.13</ref>
+				<!-- -->
+				<ref xml:id="test-wEiF5guT5l" type="generic" n="Riuso_precedente_Mondi_1_Speusippo_p.13"
+					target="xml://test/mondi_img/p011rp001 xml://test/sorti_img/p052cc001"
+					>Riuso_precedente_Mondi_1_Speusippo_p.13</ref>
+				<!-- -->
+				<ref xml:id="test-Ae0TzMEnX8" type="generic" n="Mondi_1_Simone_p.15"
+					target="xml://test/mondi_img/p013mn001cc015 xml://test/mondi_txt/p001f010"
+					>Mondi_1_Simone_p.15</ref>
+				<!-- -->
+				<ref xml:id="test-MFK19RBSVm" type="generic" n="Riuso_precedente_Mondi_1_Simone_p.15"
+					target="xml://test/mondi_img/p013rp001 xml://test/sorti_img/p048cc001"
+					>Riuso_precedente_Mondi_1_Simone_p.15</ref>
+				<!-- -->
+				<ref xml:id="test-2HwIQd1Edu" type="generic" n="Mondi_1_Crisippo_p.16"
+					target="xml://test/mondi_img/p014mn001cc016 xml://test/mondi_txt/p001f011"
+					>Mondi_1_Crisippo_p.16</ref>
+				<!-- -->
+				<ref xml:id="test-AV1qfONBWU" type="generic" n="Riuso_Precedente_Mondi_1_Crisippo_p.16"
+					target="xml://test/mondi_img/p014rp001 xml://test/sorti_img/p012cc001"
+					>Riuso_Precedente_Mondi_1_Crisippo_p.16</ref>
+				<!-- -->
+				<ref xml:id="test-ot39t1MZbm" type="generic" n="Mondi_1_Fericide_p.17"
+					target="xml://test/mondi_img/p015mn001cc017 xml://test/mondi_txt/p001f012"
+					>Mondi_1_Fericide_p.17</ref>
+				<!-- -->
+				<ref xml:id="test-YBrzT6egam" type="generic" n="Riuso_precedente_Mondi_1_Fericide_p.17"
+					target="xml://test/mondi_img/p015rp001 xml://test/sorti_img/p006cc003"
+					>Riuso_precedente_Mondi_1_Fericide_p.17</ref>
+				<!-- -->
+				<ref xml:id="test-wOR84UYHCI" type="generic" n="Marmi_parteI_p138"
+					target="xml://test/marmi_txt/p001f009 xml://test/marmi_img/p010pt001pg138"
+					>Marmi_parteI_p138</ref>
+				<!-- -->
+				<ref xml:id="test-oo8GXo5IPB" type="generic" n="Riuso_precedente_Marmi_Industria_p138"
+					target="xml://test/marmi_img/p010rp001 xml://test/sorti_img/p017cc003"
+					>Riuso_precedente_Marmi_Industria_p138</ref>
+				<!-- -->
+				<ref xml:id="test-6ejCuCaOs2" type="generic" n="Mondi_1_Ritratto_Gelli_p.18"
+					target="xml://test/mondi_img/p017mn001cc018 xml://test/mondi_txt/p001f014"
+					>Mondi_1_Ritratto_Gelli_p.18</ref>
+				<!-- -->
+				<ref xml:id="test-Agn3EuwMSV" type="generic" n="Mondi_1_Marca_xilografica_p.18"
+					target="xml://test/mondi_img/p016mn001cc018 xml://test/mondi_txt/p001f013"
+					>Mondi_1_Marca_xilografica_p.18</ref>
+				<!-- -->
+				<ref xml:id="test-kEMCAGQCZz" type="generic" n="Riuso_precedente_self_Marmi_I_p138"
+					target="xml://test/marmi_img/p010rp002 xml://test/zucca_img/p042lv212pg035"
+					>Riuso_precedente_self_Marmi_I_p138</ref>
+				<!-- -->
+				<ref xml:id="test-EVV2FuNAuB" type="generic" n="Riuso_successivo_Marmi_I_ferecide_p16"
+					target="xml://test/marmi_img/p003rf001 xml://test/mondi_img/p015mn001cc017"
+					>Riuso_successivo_Marmi_I_ferecide_p16</ref>
+				<!-- -->
+				<!-- -->
+				<ref xml:id="test-YOWrulWHLf" type="generic" n="Riuso_precedente_Marmi_I_Vanita_p78"
+					target="xml://test/marmi_img/p007rp001 xml://test/sorti_img/p023cc001"
+					>Riuso_precedente_Marmi_I_Vanita_p78</ref>
+				<!-- -->
+				<ref xml:id="test-EeQDeQGrm4" type="generic" n="Marmi_I_p.97"
+					target="xml://test/marmi_txt/p001f008 xml://test/marmi_img/p009pt001pg097">Marmi_I_p.97</ref>
+				<!-- -->
+				<ref xml:id="test-U6pEok6YKs" type="generic" n="Mondi_1_Ritratto_del_Doni_p.19"
+					target="xml://test/mondi_img/p018mn001cc019 xml://test/mondi_txt/p001f015"
+					>Mondi_1_Ritratto_del_Doni_p.19</ref>
+				<!-- -->
+				<ref xml:id="test-EW1gGbE5vs" type="generic" n="Riuso_precedente_Mondi_1_RItratto_del_Doni_p.19"
+					target="xml://test/mondi_img/p018rp001 xml://test/zucca_img/p004lv110cc008"
+					>Riuso_precedente_Mondi_1_RItratto_del_Doni_p.19</ref>
+				<!-- -->
+				<ref xml:id="test-w5ckUkj7M8" type="generic" n="Mondi_1_Solone_p.22"
+					target="xml://test/mondi_img/p019mn001cc022 xml://test/mondi_txt/p001f016"
+					>Mondi_1_Solone_p.22</ref>
+				<!-- -->
+				<ref xml:id="test-oM4vzsEfhJ" type="generic" n="Riuso_precedente_Mondi_1_Solone_p.22"
+					target="xml://test/mondi_img/p019rp001 xml://test/sorti_img/p024cc001"
+					>Riuso_precedente_Mondi_1_Solone_p.22</ref>
+				<!-- -->
+				<ref xml:id="test-Ywn0LhwvmL" type="generic" n="Mondi_1_Crate_p.24"
+					target="xml://test/mondi_img/p020mn001cc024 xml://test/mondi_txt/p001f017"
+					>Mondi_1_Crate_p.24</ref>
+				<!-- -->
+				<ref xml:id="test-Y8vSwD9rxm" type="generic" n="Riuso_precedente_Mondi_1_Crate_p.24"
+					target="xml://test/mondi_img/p020rp001 xml://test/sorti_img/p022cc003"
+					>Riuso_precedente_Mondi_1_Crate_p.24</ref>
+				<!-- -->
+				<ref xml:id="test-cdPAB521u8" type="generic" n="Riuso_precedente_Mondi_1_Simone_p.15"
+					target="xml://test/mondi_img/p013rp002 xml://test/marmi_img/p009pt001pg097"
+					>Riuso_precedente_Mondi_1_Simone_p.15</ref>
+				<!-- -->
+				<ref xml:id="test-Up587yhtQS" type="generic" n="Riuso_precedente_Mondi_1_Ferecide_p.17"
+					target="xml://test/mondi_img/p015rp002 xml://test/marmi_img/p003pt001pg016"
+					>Riuso_precedente_Mondi_1_Ferecide_p.17</ref>
+				<!-- -->
+				<ref xml:id="test-oIkROfjTIA" type="generic" n="Riuso_precedente_Mondi_1_Gelli_p.18"
+					target="xml://test/mondi_img/p017rp002 xml://test/marmi_img/p045pt004pg013"
+					>Riuso_precedente_Mondi_1_Gelli_p.18</ref>
+				<!-- -->
+				<ref xml:id="test-kXIkrtBstA" type="generic" n="Riuso_precedente_Mondi_1_Doni_p.19"
+					target="xml://test/mondi_img/p018rp002 xml://test/marmi_img/p002pt001pg008"
+					>Riuso_precedente_Mondi_1_Doni_p.19</ref>
+				<!-- -->
+				<ref xml:id="test-wlhUQbFEwV" type="generic" n="Riuso_successivo_Marmi_I_Doni_p.8"
+					target="xml://test/marmi_img/p002rf001 xml://test/mondi_img/p018mn001cc019"
+					>Riuso_successivo_Marmi_I_Doni_p.8</ref>
+				<!-- -->
+				<ref xml:id="test-kVNSGhWuql" type="generic" n="Riuso_precedente_Marmi_I_Doni_p.8"
+					target="xml://test/marmi_img/p002rp001 xml://test/zucca_img/p004lv110cc008"
+					>Riuso_precedente_Marmi_I_Doni_p.8</ref>
+				<!-- -->
+				<ref xml:id="test-MhYT7O4Xsw" type="generic" n="Frontespizio_Marmi"
+					target="xml://test/marmi_txt/p000f001 xml://test/marmi_img/p001pt001pg001"
+					>Frontespizio_Marmi</ref>
+				<!-- -->
+				<ref xml:id="test-25nDPu0DbO" type="generic" n="Riuso_successivo_Marmi_I_Simone_p.97"
+					target="xml://test/marmi_img/p009rf001 xml://test/mondi_img/p013mn001cc015"
+					>Riuso_successivo_Marmi_I_Simone_p.97</ref>
+				<!-- -->
+				<ref xml:id="test-oRw0wrFSpd" type="generic" n="Riuso_precedente_1_Marmi_I_Tempo_p.58"
+					target="xml://test/marmi_img/p006rp001 xml://test/sorti_img/p019cc001"
+					>Riuso_precedente_1_Marmi_I_Tempo_p.58</ref>
+				<!-- -->
+				<ref xml:id="test-cQIygV3d3i" type="generic" n="Riuso_precedente_Marmi_I_Simone_p.97"
+					target="xml://test/marmi_img/p009rp001 xml://test/sorti_img/p048cc001"
+					>Riuso_precedente_Marmi_I_Simone_p.97</ref>
+				<!-- -->
+				<ref xml:id="test-2tMtaShNLN" type="generic" n="Mondi_2_Anassimandro_p.30"
+					target="xml://test/mondi_img/p022mn002cc030 xml://test/mondi_txt/p002f002"
+					>Mondi_2_Anassimandro_p.30</ref>
+				<!-- -->
+				<!-- -->
+				<!-- -->
+				<ref xml:id="test-EtHCYIn6km" type="generic" n="Mondi_2_Frontespizio_p.29"
+					target="xml://test/mondi_img/p021mn002cc001 xml://test/mondi_txt/p002f001"
+					>Mondi_2_Frontespizio_p.29</ref>
+				<!-- -->
+				<ref xml:id="test-IciU0NWNwH" type="generic" n="Mondi_2_Frontespizio_Ragionamento_1_p.32"
+					target="xml://test/mondi_img/p023mn002cc032 xml://test/mondi_txt/p002f003"
+					>Mondi_2_Frontespizio_Ragionamento_1_p.32</ref>
+				<!-- -->
+				<ref xml:id="test-AHa92XDzU0" type="generic" n="Mondi_2_Ritratto_Aretino_p.33"
+					target="xml://test/mondi_img/p024mn002cc032 xml://test/mondi_txt/p002f004"
+					>Mondi_2_Ritratto_Aretino_p.33</ref>
+				<!-- -->
+				<ref xml:id="test-MC0oQDF4VW" type="generic" n="Riuso_Precedente_Mondi_1_RItratto_Doni_p.19"
+					target="xml://test/mondi_img/p018rp003 xml://test/marmi_img/p023pt003pg008"
+					>Riuso_Precedente_Mondi_1_RItratto_Doni_p.19</ref>
+				<!-- -->
+				<ref xml:id="test-6UCYP3jqX2" type="generic" n="Mondi_2_Ritratto_Marcolini_p.33"
+					target="xml://test/mondi_img/p025mn002cc033 xml://test/mondi_txt/p002f005"
+					>Mondi_2_Ritratto_Marcolini_p.33</ref>
+				<!-- -->
+				<ref xml:id="test-EY0kNz8EhY" type="generic"
+					n="Riuso_precedente_Mondi_2_Ritratto_Marcolini_p.33"
+					target="xml://test/mondi_img/p025rp001 xml://test/moralfilosofia_img/p014lv112cc004"
+					>Riuso_precedente_Mondi_2_Ritratto_Marcolini_p.33</ref>
+				<!-- -->
+				<ref xml:id="test-kgqlZvpzcB" type="generic"
+					n="Riuso_precedente_Mondi_2_Ritratto_Marcolini_p.33"
+					target="xml://test/mondi_img/p025rp002 xml://test/marmi_img/p046pt004pg015"
+					>Riuso_precedente_Mondi_2_Ritratto_Marcolini_p.33</ref>
+				<!-- -->
+				<ref xml:id="test-I9tkL0PMrr" type="generic"
+					n="Riuso_precedente_Marmi_4_Ritratto_Marcolini_p.15"
+					target="xml://test/marmi_img/p046rp001 xml://test/moralfilosofia_img/p014lv112cc004"
+					>Riuso_precedente_Marmi_4_Ritratto_Marcolini_p.15</ref>
+				<!-- -->
+				<ref xml:id="test-BBRZRJvMYS" type="generic"
+					n="Riuso_successivo_Marmi_4_Ritratto_Marcolini_p.15"
+					target="xml://test/marmi_img/po46rf001 xml://test/mondi_img/p025mn002cc033"
+					>Riuso_successivo_Marmi_4_Ritratto_Marcolini_p.15</ref>
+				<!-- -->
+				<ref xml:id="test-I7QG8onfxo" type="generic" n="Riuso_Precedente_Mondi_2_Anassimandro_p.30"
+					target="xml://test/mondi_img/p022rp001 xml://test/sorti_img/p058cc003"
+					>Riuso_Precedente_Mondi_2_Anassimandro_p.30</ref><!-- --><ref xml:id="test-czBu9AXU18"
+					type="generic" n="Riuso_precedente_Mondi_2_Anassimandro_p.30"
+					target="xml://test/mondi_img/p022rp002 xml://test/marmi_img/p004pt001pg020"
+					>Riuso_precedente_Mondi_2_Anassimandro_p.30</ref><!-- --><ref xml:id="test-kbLEZXl7zv"
+					type="generic" n="Mondi_3_Eudosso_p.43"
+					target="xml://test/mondi_img/p027mn003cc043 xml://test/mondi_txt/p003f002"
+					>Mondi_3_Eudosso_p.43</ref><!-- --><ref xml:id="test-vy93cBwFwR" type="generic"
+					n="Riuso_precedente_Mondi_3_Eudosso_p.43"
+					target="xml://test/mondi_img/p027rp001 xml://test/sorti_img/p068cc001"
+					>Riuso_precedente_Mondi_3_Eudosso_p.43</ref><!-- --><ref xml:id="test-I4qpvta2yt"
+					type="generic" n="Riuso_precedente_Mondi_3_Eudosso_p.43"
+					target="xml://test/mondi_img/p027rp002 xml://test/moralfilosofia_img/p007rf001"
+					>Riuso_precedente_Mondi_3_Eudosso_p.43</ref><!-- --><ref xml:id="test-giWI3V8OVx"
+					type="generic" n="Riuso_precedente_Moral_filosofia_Eudosso_p.31"
+					target="xml://test/moralfilosofia_img/p007rp001 xml://test/sorti_img/p068cc001"
+					>Riuso_precedente_Moral_filosofia_Eudosso_p.31</ref><!-- --><ref xml:id="test-sJcguVmh90"
+					type="generic" n="Marmi_II_p.85"
+					target="xml://test/marmi_img/p013pt002pg085 xml://test/marmi_txt/p002f001"
+					>Marmi_II_p.85</ref><!-- --><ref xml:id="test-YAWJSHOSdo" type="generic" n="Marmi_II_p.87"
+					target="xml://test/marmi_img/p014pt002pg087 xml://test/marmi_txt/p002f002"
+					>Marmi_II_p.87</ref><!-- --><ref xml:id="test-kzz1pMD40V" type="generic" n="Marmi_II_p.94"
+					target="xml://test/marmi_img/p015pt002pg094 xml://test/marmi_txt/p002f003"
+					>Marmi_II_p.94</ref><!-- --><ref xml:id="test-EggyoAtBVs" type="generic"
+					n="Marmi_II_frontespizio"
+					target="xml://test/marmi_txt/p002f000 xml://test/marmi_img/p012pt002pg001"
+					>Marmi_II_frontespizio</ref><!-- --><ref xml:id="test-EfuWzXjoxe" type="generic"
+					n="Riuso_precedente_MarmiII_matrimonio_p85"
+					target="xml://test/marmi_img/p013rp001 xml://test/sorti_img/p005cc003"
+					>Riuso_precedente_MarmiII_matrimonio_p85</ref><!-- --><ref xml:id="test-6cpPsJJKal"
+					type="generic" n="Riuso_precedente_self_MarmiII_Matrimonio_p85"
+					target="xml://test/marmi_img/p013rp003 xml://test/zucca_img/p018lv122pg021"
+					>Riuso_precedente_self_MarmiII_Matrimonio_p85</ref><!-- --><ref xml:id="test-UulTWSaPtI"
+					type="generic" n="Riuso_precedente_MarmiII_Malinconia_p87"
+					target="xml://test/marmi_img/p014rp001 xml://test/sorti_img/p011cc001"
+					>Riuso_precedente_MarmiII_Malinconia_p87</ref><!-- --><ref xml:id="test-sm9g5CdXgP"
+					type="generic" n="Riuso_precedente_self_MarmiII_Malinconia_p87"
+					target="xml://test/marmi_img/p014rp002 xml://test/zucca_img/p058lv311pg023"
+					>Riuso_precedente_self_MarmiII_Malinconia_p87</ref><!-- --><ref xml:id="test-ouVcPKCox5"
+					type="generic" n="Mondi_3_Cleobulo_p.45"
+					target="xml://test/mondi_txt/p003f003 xml://test/mondi_img/p028mn003cc045"
+					>Mondi_3_Cleobulo_p.45</ref><!-- --><ref xml:id="test-MFVK6a56l5" type="generic"
+					n="Riuso_precedente_Mondi_3_Cleobulo_p.44"
+					target="xml://test/mondi_img/p028001 xml://test/sorti_img/p016cc001"
+					>Riuso_precedente_Mondi_3_Cleobulo_p.44</ref><!-- --><ref xml:id="test-YwSWwBy1i6"
+					type="generic" n="Riuso_Successivo_MarmiII_p94"
+					target="xml://test/angelica_img/p010 xml://test/marmi_img/p015rs001"
+					>Riuso_Successivo_MarmiII_p94</ref><!-- --><ref xml:id="test-oQDLDSqgqk" type="generic"
+					n="Mondi_3_Eraclide_p.46"
+					target="xml://test/mondi_txt/p003f004 xml://test/mondi_img/p029mn003cc046"
+					>Mondi_3_Eraclide_p.46</ref><!-- --><ref xml:id="test-zNzAOycDDM" type="generic"
+					n="Riuso_precedente_Mondi_3_Eraclide_p.46"
+					target="xml://test/mondi_img/p029rp001 xml://test/sorti_img/p076cc001"
+					>Riuso_precedente_Mondi_3_Eraclide_p.46</ref><!-- --><ref xml:id="test-wtt8QioCwD"
+					type="generic" n="Marmi_II_p97"
+					target="xml://test/marmi_txt/p002f004 xml://test/marmi_img/p016pt002pg097"
+					>Marmi_II_p97</ref><!-- --><ref xml:id="test-sxftmc23WA" type="generic"
+					n="Mondi_3_Ritratto_Simeoni_p.48"
+					target="xml://test/mondi_img/p030mn003cc048 xml://test/mondi_txt/p003f005"
+					>Mondi_3_Ritratto_Simeoni_p.48</ref><!-- --><ref xml:id="test-ccshXcZY5b" type="generic"
+					n="Mondi_3_ritratto_Sansovino_p.49"
+					target="xml://test/mondi_img/p031mn003cc049 xml://test/mondi_txt/p003f006"
+					>Mondi_3_ritratto_Sansovino_p.49</ref><!-- --><ref xml:id="test-wk6brrQIu0" type="generic"
+					n="Riuso_precedente_self_MarmiII_petrarca_p97"
+					target="xml://test/marmi_img/p016rp002 xml://test/zucca_img/p075lv400cc001"
+					>Riuso_precedente_self_MarmiII_petrarca_p97</ref><!-- --><ref xml:id="test-guofdEBU4t"
+					type="generic" n="Marmi_II_p103"
+					target="xml://test/marmi_txt/p002f005 xml://test/marmi_img/p017pt002pg103"
+					>Marmi_II_p103</ref><!-- --><ref xml:id="test-QqPcwYrSTh" type="generic"
+					n="Riuso_successivo_Marmi_II_p103"
+					target="xml://test/marmi_img/p017rs001 xml://test/angelica_img/p002"
+					>Riuso_successivo_Marmi_II_p103</ref><!-- --><ref xml:id="test-QcCTDhPXU4" type="generic"
+					n="Marmi_II_p104" target="xml://test/marmi_img/p018pt002pg104 xml://test/marmi_txt/p002f006"
+					>Marmi_II_p104</ref><!-- --><ref xml:id="test-AZW2FbcTyA" type="generic"
+					n="Riuso_successivo_self_Marmi_II_p104"
+					target="xml://test/marmi_img/p018rf001 xml://test/mondi_img/p005mn001cc004"
+					>Riuso_successivo_self_Marmi_II_p104</ref><!-- --><ref xml:id="test-YIQaZ5V0ZV" type="generic"
+					n="Riusco_precedente_self_MarmiII_trecorone_p104"
+					target="xml://test/marmi_img/p018rp004 xml://test/zucca_img/p005lv110cc008"
+					>Riusco_precedente_self_MarmiII_trecorone_p104</ref><!-- --><ref xml:id="test-rQhMq4mjav"
+					type="generic" n="Riuso_precedente_self_MarmiII_trecoronep104"
+					target="xml://test/marmi_img/p018rp005 xml://test/zucca_img/p012lv121cc004"
+					>Riuso_precedente_self_MarmiII_trecoronep104</ref><!-- --><ref xml:id="test-2b47FomDQl"
+					type="generic" n="Riuso_precedente_self_MarmiII_trecorone_p104"
+					target="xml://test/marmi_img/p018rp006 xml://test/zucca_img/p028lv131cc004"
+					>Riuso_precedente_self_MarmiII_trecorone_p104</ref><!-- --><ref xml:id="test-wLXsRnFCE8"
+					type="generic" n="Mondi_3_Eraclito_p.52"
+					target="xml://test/mondi_img/p032mn003cc052 xml://test/mondi_txt/p003f007"
+					>Mondi_3_Eraclito_p.52</ref><!-- --><ref xml:id="test-gUlCvD8AiT" type="generic"
+					n="Mondi_3_Riuso_precedente_Eraclito_p.52"
+					target="xml://test/mondi_img/p032rp001 xml://test/sorti_img/p070cc003"
+					>Mondi_3_Riuso_precedente_Eraclito_p.52</ref><!-- --><ref xml:id="test-YrYindF681"
+					type="generic" n="Riuso_precedente_self_MarmiII_trecorone_p104"
+					target="xml://test/marmi_img/p018rp007 xml://test/zucca_img/p032lv211cc008"
+					>Riuso_precedente_self_MarmiII_trecorone_p104</ref><!-- --><ref xml:id="test-A9xocAcLAi"
+					type="generic" n="Riuso_successivo_self_Marmi_II_le3corone_p104"
+					target="xml://test/marmi_img/p018rf002 xml://test/mondi_img/p035mn004cc060"
+					>Riuso_successivo_self_Marmi_II_le3corone_p104</ref><!-- --><ref xml:id="test-s5k9sR45LE"
+					type="generic" n="Riuso_successivo_self_MarmiII_trecorone_p104"
+					target="xml://test/marmi_img/p018rf003 xml://test/mondi_img/p062mn007cc106"
+					>Riuso_successivo_self_MarmiII_trecorone_p104</ref><!-- --><!-- --><ref
+					xml:id="test-o0IE4UsMfN" type="generic" n="Mondi_3_Frontespizio_p.42"
+					target="xml://test/mondi_img/p026mn003cc042 xml://test/mondi_txt/p003f001"
+					>Mondi_3_Frontespizio_p.42</ref><!-- --><ref xml:id="test-2pCQRPWqxn" type="generic"
+					n="Mondi_3_La_nascita_di_Cristo_p.55"
+					target="xml://test/mondi_img/p033mn003cc055 xml://test/mondi_txt/p003f008"
+					>Mondi_3_La_nascita_di_Cristo_p.55</ref><!-- --><ref xml:id="test-2btAWsROCe" type="generic"
+					n="Mondi_4_Frontespizio_p.60"
+					target="xml://test/mondi_img/p034mn004cc060 xml://test/mondi_txt/p004f001"
+					>Mondi_4_Frontespizio_p.60</ref><!-- --><ref xml:id="test-20CxBao9RV" type="generic"
+					n="Mondi_4_Tre_Corone_p.60"
+					target="xml://test/mondi_img/p035mn004cc060 xml://test/mondi_txt/p004f002"
+					>Mondi_4_Tre_Corone_p.60</ref><!-- --><ref xml:id="test-s40hp3n9jJ" type="generic"
+					n="Riuso_precedente_Mondi_4_Tre_Corone_p.60"
+					target="xml://test/mondi_img/p035rp004 xml://test/zucca_img/p005lv110cc008"
+					>Riuso_precedente_Mondi_4_Tre_Corone_p.60</ref><!-- --><ref xml:id="test-Ama0Yp5XNw"
+					type="generic" n="Riuso_Precedente_Mondi_4_p.60"
+					target="xml://test/mondi_img/p035rp009 xml://test/marmi_img/p018pt002pg104"
+					>Riuso_Precedente_Mondi_4_p.60</ref><!-- --><ref xml:id="test-o752RnQx3K" type="generic"
+					n="Riuso_precedente_Mondi_4_Tre_Corone_p.60"
+					target="xml://test/mondi_img/p035rp010 xml://test/mondi_img/p005mn001cc004"
+					>Riuso_precedente_Mondi_4_Tre_Corone_p.60</ref><!-- --><ref xml:id="test-gxmtp9e6XK"
+					type="generic" n="Riuso_successivo_Mondi_4_Tre_Corone_p.60"
+					target="xml://test/mondi_img/p035rf001 xml://test/mondi_img/p062mn007cc106"
+					>Riuso_successivo_Mondi_4_Tre_Corone_p.60</ref><!-- --><ref xml:id="test-oSIGYAS9v0"
+					type="generic" n="Riuso_precedente_Mondi_1_Tre_Corone_p.4"
+					target="xml://test/mondi_img/p005rp009 xml://test/marmi_img/p018pt002pg104"
+					>Riuso_precedente_Mondi_1_Tre_Corone_p.4</ref><!-- --><ref xml:id="test-Nx3SP2Xoq8"
+					type="generic" n="Riuso_successivo_Mondi_1_Tre_Corone_p.4"
+					target="xml://test/mondi_img/p005rf001 xml://test/mondi_img/p035mn004cc060"
+					>Riuso_successivo_Mondi_1_Tre_Corone_p.4</ref><!-- --><ref xml:id="test-c7pa7DdVe6"
+					type="generic" n="Riuso_successivo_Mondi_1_Tre_Corone_p.4"
+					target="xml://test/mondi_img/p005rf002 xml://test/mondi_img/p062mn007cc106"
+					>Riuso_successivo_Mondi_1_Tre_Corone_p.4</ref><!-- --><ref xml:id="test-EaeJsfYG2Y"
+					type="generic" n="Riuso_precedente_Mondi_7_Tre_Corone_p.106"
+					target="xml://test/mondi_img/p062rp009 xml://test/marmi_img/p018pt002pg104"
+					>Riuso_precedente_Mondi_7_Tre_Corone_p.106</ref><!-- --><ref xml:id="test-oSLuKSv79e"
+					type="generic" n="Riuso_precedente_Mondi_7_Tre_Corone_p.106"
+					target="xml://test/mondi_img/p062rp004 xml://test/zucca_img/p005lv110cc008"
+					>Riuso_precedente_Mondi_7_Tre_Corone_p.106</ref><!-- --><ref xml:id="test-6ZQ9bK9v0A"
+					type="generic" n="Riuso_precedente_Mondi_7_Tre_Corone_p.106"
+					target="xml://test/mondi_img/p062rp010 xml://test/mondi_img/p005mn001cc004"
+					>Riuso_precedente_Mondi_7_Tre_Corone_p.106</ref><!-- --><ref xml:id="test-6GlBdtvFPv"
+					type="generic" n="Riuso_precedente_Mondi_7_Tre_Corone_p.106"
+					target="xml://test/mondi_img/p062rp011 xml://test/mondi_img/p035mn004cc060"
+					>Riuso_precedente_Mondi_7_Tre_Corone_p.106</ref><!-- --><ref xml:id="test-2lByCjfZWY"
+					type="generic" n="Marmi_II_p115"
+					target="xml://test/marmi_img/p019pt002pg115 xml://test/marmi_txt/p002f007"
+					>Marmi_II_p115</ref><!-- --><ref xml:id="test-MvxlDppL03" type="generic" n="Marmi_II_p117"
+					target="xml://test/marmi_img/p020pt002pg117 xml://test/marmi_txt/p002f008"
+					>Marmi_II_p117</ref><!-- --><ref xml:id="test-IaQ8cOZX39" type="generic"
+					n="Mondi_4_Anassagora_p.61"
+					target="xml://test/mondi_img/p036mn004cc061 xml://test/mondi_txt/p004f003"
+					>Mondi_4_Anassagora_p.61</ref><!-- --><ref xml:id="test-MK5AkkBUcJ" type="generic"
+					n="Mondi_4_Riuso_precedente_Anassagora_p.61"
+					target="xml://test/mondi_img/p036rp001 xml://test/sorti_img/p066cc003"
+					>Mondi_4_Riuso_precedente_Anassagora_p.61</ref><!-- --><ref xml:id="test-cu7kTCtfKp"
+					type="generic" n="Riuso_precedente_Mondi_1_Tre_Corone_p.4"
+					target="xml://test/mondi_img/p005rp004 xml://test/zucca_img/p005lv110cc008"
+					>Riuso_precedente_Mondi_1_Tre_Corone_p.4</ref><!-- --><ref xml:id="test-kz08Ww8PQC"
+					type="generic" n="Riuso_precedente_Mondi_1_Tre_Corone_p.4"
+					target="xml://test/mondi_img/p005rp005 xml://test/zucca_img/p012lv121cc004"
+					>Riuso_precedente_Mondi_1_Tre_Corone_p.4</ref><!-- --><ref xml:id="test-giRWit19TN"
+					type="generic" n="Riuso_precedente_Mondi_1_Tre_Corone_p.4"
+					target="xml://test/mondi_img/p005rp006 xml://test/zucca_img/p028lv131cc004"
+					>Riuso_precedente_Mondi_1_Tre_Corone_p.4</ref><!-- --><ref xml:id="test-EyjJ2Qv3Ce"
+					type="generic" n="Riuso_precedente_Mondi_1_Tre_Corone_p.4"
+					target="xml://test/mondi_img/p005rp008 xml://test/zucca_img/p032lv211cc008"
+					>Riuso_precedente_Mondi_1_Tre_Corone_p.4</ref><!-- --><ref xml:id="test-EJ6PPo5uuU"
+					type="generic" n="Riuso_Precedente_Mondi_4_Tre_Corone_p.60"
+					target="xml://test/mondi_img/p035rp005 xml://test/zucca_img/p012lv121cc004"
+					>Riuso_Precedente_Mondi_4_Tre_Corone_p.60</ref><!-- --><ref xml:id="test-ota21KJUVQ"
+					type="generic" n="Riuso_precedente_Mondi_4_Tre_Corone_p.60"
+					target="xml://test/mondi_img/p035rp006 xml://test/zucca_img/p028lv131cc004"
+					>Riuso_precedente_Mondi_4_Tre_Corone_p.60</ref><!-- --><ref xml:id="test-YquLCZIK48"
+					type="generic" n="Riuso_precedente_Mondi_4_Tre_Corone_p.60"
+					target="xml://test/mondi_img/p035rp008 xml://test/zucca_img/p032lv211cc008"
+					>Riuso_precedente_Mondi_4_Tre_Corone_p.60</ref><!-- --><ref xml:id="test-lvUZnbWeGr"
+					type="generic" n="Riuso_successivo_Marmi_II_p115"
+					target="xml://test/marmi_img/p019rs001 xml://test/angelica_img/p012"
+					>Riuso_successivo_Marmi_II_p115</ref><!-- --><ref xml:id="test-wmyPXG50uZ" type="generic"
+					n="Riuso_successivo_Marmi_II_p115"
+					target="xml://test/marmi_img/p019rs002 xml://test/angelica_img/p020"
+					>Riuso_successivo_Marmi_II_p115</ref><!-- --><ref xml:id="test-6oTikA0yxc" type="generic"
+					n="Riuso_successivo_Marmi_II_p117"
+					target="xml://test/marmi_img/p020rs001 xml://test/angelica_img/p007"
+					>Riuso_successivo_Marmi_II_p117</ref><!-- --><ref xml:id="test-sN3mVbu63v" type="generic"
+					n="Marmi_II_marca_p120"
+					target="xml://test/marmi_txt/p002f009 xml://test/marmi_img/p021pt002pg120"
+					>Marmi_II_marca_p120</ref><!-- --><ref xml:id="test-McMj7yUytg" type="generic"
+					n="Mondi_4_Diogene_p.62"
+					target="xml://test/mondi_img/p037mn004cc062 xml://test/mondi_txt/p004f004"
+					>Mondi_4_Diogene_p.62</ref><!-- --><ref xml:id="test-AsMdTto3fn" type="generic"
+					n="Mondi_4_Riuso_precedente_Diogene_p.62"
+					target="xml://test/mondi_img/p037rp001 xml://test/sorti_img/p026cc003"
+					>Mondi_4_Riuso_precedente_Diogene_p.62</ref><!-- --><ref xml:id="test-MXj8N010vU"
+					type="generic" n="Riuso_successivo_self_MarmiI_p.8"
+					target="xml://test/marmi_img/p002rf002 xml://test/marmi_img/p023pt003pg008"
+					>Riuso_successivo_self_MarmiI_p.8</ref><!-- --><ref xml:id="test-kz46zQ2gnC" type="generic"
+					n="Mondi_4_Socrate_p.64"
+					target="xml://test/mondi_img/p038mn004cc064 xml://test/mondi_txt/p004f005"
+					>Mondi_4_Socrate_p.64</ref><!-- --><ref xml:id="test-EVDTryyfIL" type="generic"
+					n="Riuso_precedente_Mondi_4_Socrate_p.64"
+					target="xml://test/mondi_img/p038rp001 xml://test/sorti_img/p018cc003"
+					>Riuso_precedente_Mondi_4_Socrate_p.64</ref><!-- --><ref xml:id="test-EsO0lkcsJo"
+					type="generic" n="Riuso_precedente_MarmiI_self_p8"
+					target="xml://test/marmi_img/p002rp004 xml://test/zucca_img/p033lv211cc008"
+					>Riuso_precedente_MarmiI_self_p8</ref><!-- --><ref xml:id="test-YjmEWOgQlq" type="generic"
+					n="Riuso_precedente_MarmiIII_self_p8"
+					target="xml://test/marmi_img/p023rp003 xml://test/zucca_img/p004lv110cc008"
+					>Riuso_precedente_MarmiIII_self_p8</ref><!-- --><ref xml:id="test-QUVa9Vzef3" type="generic"
+					n="Riuso_precedente_MarmiIII_self_p8"
+					target="xml://test/marmi_img/p023rp004 xml://test/zucca_img/p033lv211cc008"
+					>Riuso_precedente_MarmiIII_self_p8</ref><!-- --><ref xml:id="test-k6GTxwVJfl" type="generic"
+					n="Riuso_precedente_MarmiIII_self_p8"
+					target="xml://test/marmi_img/p023rp006 xml://test/marmi_img/p002pt001pg008"
+					>Riuso_precedente_MarmiIII_self_p8</ref><!-- --><ref xml:id="test-IZYDeGd1nV" type="generic"
+					n="Mondi_4_Epimenide_p.65"
+					target="xml://test/mondi_img/p039mn004cc065 xml://test/mondi_txt/p004f006"
+					>Mondi_4_Epimenide_p.65</ref><!-- --><ref xml:id="test-YOiNdpQJcn" type="generic"
+					n="Riuso_precedente_Mondi_4_Epimenide_p.65"
+					target="xml://test/mondi_img/p039rp001 xml://test/sorti_img/p080cc001"
+					>Riuso_precedente_Mondi_4_Epimenide_p.65</ref><!-- --><ref xml:id="test-QMCqBBGRwm"
+					type="generic" n="Riuso_successivo_MarmiIII_self_p8"
+					target="xml://test/marmi_img/p023rf001 xml://test/mondi_img/p018mn001cc019"
+					>Riuso_successivo_MarmiIII_self_p8</ref><!-- --><ref xml:id="test-MVJl9qsO9u" type="generic"
+					n="Riuso_successivo_MarmiI_self_p20"
+					target="xml://test/marmi_img/p004rf001 xml://test/mondi_img/p022mn002cc030"
+					>Riuso_successivo_MarmiI_self_p20</ref><!-- --><ref xml:id="test-Rd3w8BVkFK" type="generic"
+					n="Mondi_4_Antistene_p.66"
+					target="xml://test/mondi_img/p040mn004cc066 xml://test/mondi_txt/p004f007"
+					>Mondi_4_Antistene_p.66</ref><!-- --><ref xml:id="test-sznglhjXas" type="generic"
+					n="Riuso_precedente_Mondi_4_Antistene_p.66"
+					target="xml://test/mondi_img/p040rp001 xml://test/sorti_img/p098cc003"
+					>Riuso_precedente_Mondi_4_Antistene_p.66</ref><!-- --><ref xml:id="test-Mq4r7zslfV"
+					type="generic" n="Riuso_precedente_self_MarmiI_p58"
+					target="xml://test/marmi_img/p006rp002 xml://test/zucca_img/p013lv122pg002"
+					>Riuso_precedente_self_MarmiI_p58</ref><!-- --><ref xml:id="test-YpguijHKPS" type="generic"
+					n="Riuso_successivo_self_MarmiI_p58"
+					target="xml://test/marmi_img/p006rf001 xml://test/mondi_img/p059mn006cc093"
+					>Riuso_successivo_self_MarmiI_p58</ref><!-- --><ref xml:id="test-kGYxBOys3D" type="generic"
+					n="Mondi_4_Piagora_p.67"
+					target="xml://test/mondi_img/p041mn004cc067 xml://test/mondi_txt/p004f008"
+					>Mondi_4_Piagora_p.67</ref><!-- --><ref xml:id="test-sG9Srx3AWb" type="generic"
+					n="Riuso_precedente_Mondi_4_Pitagora_p.67"
+					target="xml://test/mondi_img/p041rp001 xml://test/sorti_img/p056cc001"
+					>Riuso_precedente_Mondi_4_Pitagora_p.67</ref><!-- --><ref xml:id="test-2UT0cRwWPJ"
+					type="generic" n="Mondi_4_Senocrate_p.67"
+					target="xml://test/mondi_img/p042mn004cc067 xml://test/mondi_txt/p004f009"
+					>Mondi_4_Senocrate_p.67</ref><!-- --><ref xml:id="test-MLDky6WSzm" type="generic"
+					n="Riuso_precedente_Mondi_4_Senocrate_p.67"
+					target="xml://test/mondi_img/p042rp001 xml://test/sorti_img/p092cc001"
+					>Riuso_precedente_Mondi_4_Senocrate_p.67</ref><!-- --><ref xml:id="test-IDyRYvjSYh"
+					type="generic" n="Mondo_4_Momino_p.69"
+					target="xml://test/mondi_img/p043mn004cc069 xml://test/mondi_txt/p004f010"
+					>Mondo_4_Momino_p.69</ref><!-- --><ref xml:id="test-Iln5u6R06R" type="generic"
+					n="Riuso_precedente_Mondi_4_Momino_p.69"
+					target="xml://test/mondi_img/p004rp001 xml://test/sorti_img/p102cc003"
+					>Riuso_precedente_Mondi_4_Momino_p.69</ref><!-- --><ref xml:id="test-cZXYkC18NC" type="generic"
+					n="Mondo_4_Empedocle_p.69"
+					target="xml://test/mondi_img/p044mn004cc069 xml://test/mondi_txt/p004f011"
+					>Mondo_4_Empedocle_p.69</ref><!-- --><ref xml:id="test-AX6WZ93zsc" type="generic"
+					n="Riuso_precedente_Mondo_4_Empedocle_p.69"
+					target="xml://test/mondi_img/p044rp001 xml://test/sorti_img/p032cc001"
+					>Riuso_precedente_Mondo_4_Empedocle_p.69</ref><!-- --><ref xml:id="test-UdY14xN6D9"
+					type="generic" n="Riuso_precedente_Marmi_I_p91"
+					target="xml://test/marmi_img/p008rp001 xml://test/sorti_img/p047cc001"
+					>Riuso_precedente_Marmi_I_p91</ref><!-- --><ref xml:id="test-6TnWoCy2pq" type="generic"
+					n="Mondi_4_Epicuro_p.70"
+					target="xml://test/mondi_img/p045mn004cc070 xml://test/mondi_txt/p004f012"
+					>Mondi_4_Epicuro_p.70</ref><!-- --><ref xml:id="test-g1wZfz8HeM" type="generic"
+					n="Riuso_precedente_Mondi_4_Epicuro_p.70"
+					target="xml://test/mondi_img/p045rp001 xml://test/sorti_img/p072cc001"
+					>Riuso_precedente_Mondi_4_Epicuro_p.70</ref><!-- --><ref xml:id="test-2P3tpITqNQ"
+					type="generic" n="Riuso_successivo_Mondi_4_Epicuro_p.70"
+					target="xml://test/mondi_img/p045rf001 xml://test/compendio_img/p023cc003"
+					>Riuso_successivo_Mondi_4_Epicuro_p.70</ref><!-- --><ref xml:id="test-V7To6bPU43"
+					type="generic" n="Mondi_4_Sirena_p.71"
+					target="xml://test/mondi_img/p046mn004cc071 xml://test/mondi_txt/p004f013"
+					>Mondi_4_Sirena_p.71</ref><!-- --><ref xml:id="test-IorbSKUuxg" type="generic"
+					n="Marca_Marmi_I" target="xml://test/marmi_txt/p001f010 xml://test/marmi_img/p011pt001pg168"
+					>Marca_Marmi_I</ref><!-- --><ref xml:id="test-Mqwnrn73Hu" type="generic"
+					n="Mondi_4_Misone_p.72"
+					target="xml://test/mondi_img/p047mn004cc072 xml://test/mondi_txt/p004f014"
+					>Mondi_4_Misone_p.72</ref><!-- --><ref xml:id="test-IFSFUNpjww" type="generic"
+					n="Riuso_precedente_Mondi_4_Misone_p.72"
+					target="xml://test/mondi_img/p047rp001 xml://test/sorti_img/p036cc001"
+					>Riuso_precedente_Mondi_4_Misone_p.72</ref><!-- --><ref xml:id="test-kfttyS8ULU" type="generic"
+					n="Riuso_successivo_other_MarmiI_p16"
+					target="xml://test/marmi_img/p003rf002 xml://test/compendio_img/p011cc004"
+					>Riuso_successivo_other_MarmiI_p16</ref><!-- --><ref xml:id="test-UWcxAzKJXj" type="generic"
+					n="Riuso_successivo_other_MarmiI_p16"
+					target="xml://test/marmi_img/p003rf003 xml://test/compendio_img/p049cc001"
+					>Riuso_successivo_other_MarmiI_p16</ref><!-- --><ref xml:id="test-kJFBlCO1Mx" type="generic"
+					n="Riuso_successivo_other_MarmiI_p48"
+					target="xml://test/marmi_img/p005rf001 xml://test/compendio_img/p061cc003"
+					>Riuso_successivo_other_MarmiI_p48</ref><!-- --><ref xml:id="test-c3E2dJz80X" type="generic"
+					n="Riuso_successivo_other_MarmiI_p48"
+					target="xml://test/marmi_img/p005rf002 xml://test/compendio_img/p066cc002"
+					>Riuso_successivo_other_MarmiI_p48</ref><!-- --><ref xml:id="test-kZywpe8YqK" type="generic"
+					n="riuso_successivo_other_MarmiI_p58"
+					target="xml://test/marmi_img/p006rf002 xml://test/compendio_img/p002cc004"
+					>riuso_successivo_other_MarmiI_p58</ref><!-- --><ref xml:id="test-wgax8oK45X" type="generic"
+					n="riuso_successivo_other_MarmiI_p97"
+					target="xml://test/marmi_img/p009rf002 xml://test/compendio_img/p018cc002"
+					>riuso_successivo_other_MarmiI_p97</ref><!-- --><ref xml:id="test-Yfmf8ytfNS" type="generic"
+					n="riuso_successivo_self_MarmiII_p85"
+					target="xml://test/marmi_img/p013rp002 xml://test/zuccaes_img/p010pg088"
+					>riuso_successivo_self_MarmiII_p85</ref><!-- --><ref xml:id="test-kMQN2yfcMX" type="generic"
+					n="Mondi_5_Frontespizio_p.73"
+					target="xml://test/mondi_img/p048mn005cc073 xml://test/mondi_txt/p005f001"
+					>Mondi_5_Frontespizio_p.73</ref><!-- --><ref xml:id="test-6NlhaiEGE4" type="generic"
+					n="Mondi_5_marca_xilografica_p.73"
+					target="xml://test/mondi_img/p049mn005cc073 xml://test/mondi_txt/p005f002"
+					>Mondi_5_marca_xilografica_p.73</ref><!-- --><ref xml:id="test-cwOofl5oqT" type="generic"
+					n="Riuso_precedente_Mondi_5_marca_p.73"
+					target="xml://test/mondi_img/p049rp001 xml://test/mondi_img/p002mn001cc001"
+					>Riuso_precedente_Mondi_5_marca_p.73</ref><!-- --><ref xml:id="test-EnrlPhbNXt" type="generic"
+					n="Riuso_precedente_Mondi_5_marca_p.73"
+					target="xml://test/mondi_img/p049rp002 xml://test/marmi_img/p012pt002pg001"
+					>Riuso_precedente_Mondi_5_marca_p.73</ref><!-- --><ref xml:id="test-QqWuLNvFIp" type="generic"
+					n="Mondi_5_Ritratto_Aretino_p.74"
+					target="xml://test/mondi_img/p050mn005cc074 xml://test/mondi_txt/p005f003"
+					>Mondi_5_Ritratto_Aretino_p.74</ref><!-- --><ref xml:id="test-Iw3Cw3d49Y" type="generic"
+					n="Mondi_5_Ritratto_Marcolini_p.75"
+					target="xml://test/mondi_img/p051mn005cc075 xml://test/mondi_txt/p005f004"
+					>Mondi_5_Ritratto_Marcolini_p.75</ref><!-- --><ref xml:id="test-sa9l7FuBpV" type="generic"
+					n="Riuso_precendente_other_MarmiII_p94"
+					target="xml://test/marmi_img/p015rp001 xml://test/innamorato_img/p049pt002cc003"
+					>Riuso_precendente_other_MarmiII_p94</ref><!-- --><ref xml:id="test-Ei2a5RDxSS" type="generic"
+					n="Riuso_successivo_other_Marmi_p94"
+					target="xml://test/marmi_img/p015rs002 xml://test/rampazzetto_img/p028cc169"
+					>Riuso_successivo_other_Marmi_p94</ref><!-- --><ref xml:id="test-66kZu3LX8w" type="generic"
+					n="Riuso_successivo_other_MarmiII_p103"
+					target="xml://test/marmi_img/p017rp001 xml://test/innamorato_img/p005pt001cc007"
+					>Riuso_successivo_other_MarmiII_p103</ref><!-- --><ref xml:id="test-ssuBdB8c1d" type="generic"
+					n="riuso_successivo_other_MarmiII_p103"
+					target="xml://test/marmi_img/p017rp002 xml://test/innamorato_img/p012pt001cc003"
+					>riuso_successivo_other_MarmiII_p103</ref><!-- --><ref xml:id="test-I9vkqPu1PU" type="generic"
+					n="riuso_successivo_other_MarmiII_p103"
+					target="xml://test/marmi_img/p017rp003 xml://test/innamorato_img/p027pt001cc005"
+					>riuso_successivo_other_MarmiII_p103</ref><!-- --><ref xml:id="test-YnH0r2q8zm" type="generic"
+					n="riuso_successivo_other_Marmi_p103"
+					target="xml://test/marmi_img/p017rp004 xml://test/innamorato_img/p066pt003cc004"
+					>riuso_successivo_other_Marmi_p103</ref><!-- --><ref xml:id="test-UQ1qo6hwvh" type="generic"
+					n="riuso_successivo_other_MarmiII_p103"
+					target="xml://test/marmi_img/p017rs002 xml://test/rampazzetto_img/p018cc092"
+					>riuso_successivo_other_MarmiII_p103</ref><!-- --><ref xml:id="test-2se8eMsu1V" type="generic"
+					n="Riuso_precedente_other_MarmiII_p117"
+					target="xml://test/marmi_img/p019rp001 xml://test/innamorato_img/p004pt001cc003"
+					>Riuso_precedente_other_MarmiII_p117</ref><!-- --><ref xml:id="test-E0oil8XS7f" type="generic"
+					n="Riuso_precedente_other_MarmiII_p117"
+					target="xml://test/marmi_img/p019rp002 xml://test/innamorato_img/p047pt002cc003"
+					>Riuso_precedente_other_MarmiII_p117</ref><!-- --><ref xml:id="test-zT9mJtPTpS" type="generic"
+					n="riuso_precedente_other_MarmiII_p117"
+					target="xml://test/marmi_img/p019rp003 xml://test/innamorato_img/p054pt002cc004"
+					>riuso_precedente_other_MarmiII_p117</ref><!-- --><ref xml:id="test-26Qx5KqrC3" type="generic"
+					n="riuso_successivo_other_MarmiII_p117"
+					target="xml://test/marmi_img/p019rs003 xml://test/rampazzetto_img/p022cc128"
+					>riuso_successivo_other_MarmiII_p117</ref><!-- --><ref xml:id="test-AEFAxMiIhj" type="generic"
+					n="Riuso_successivo_other_MarmiII_p117"
+					target="xml://test/marmi_img/p019rs004 xml://test/rampazzetto_img/p041cc251"
+					>Riuso_successivo_other_MarmiII_p117</ref><!-- --><ref xml:id="test-cXzHDCJVGH" type="generic"
+					n="Riuso_precedente_Mondi_5_Ritratto_Marcolini_p.75"
+					target="xml://test/mondi_img/p051rp001 xml://test/sorti_img/p002cc001"
+					>Riuso_precedente_Mondi_5_Ritratto_Marcolini_p.75</ref><!-- --><ref xml:id="test-ItWuYdON6B"
+					type="generic" n="Riuso_precedente_other_MarmiII_p117"
+					target="xml://test/marmi_img/p020rp001 xml://test/innamorato_img/p044pt002cc001"
+					>Riuso_precedente_other_MarmiII_p117</ref><!-- --><ref xml:id="test-stMwulUAEl" type="generic"
+					n="Riuso_successivo_other_MarmiII_p117"
+					target="xml://test/marmi_img/p020rs003 xml://test/rampazzetto_img/p045cc279"
+					>Riuso_successivo_other_MarmiII_p117</ref><!-- --><ref xml:id="test-wWnztrfsFf" type="generic"
+					n="Riuso_precedente_Zucca_Cicalamenti_Esilio_p.35"
+					target="xml://test/zucca_img/p008rp001 xml://test/sorti_img/p053cc003"
+					>Riuso_precedente_Zucca_Cicalamenti_Esilio_p.35</ref><!-- --><ref xml:id="test-aSQoA8TZxJ"
+					type="generic" n="Riuso_successivo_Zucca_Cicalamenti_Esilio_p.35"
+					target="xml://test/zucca_img/p008rf001 xml://test/zuccaes_img/p004pg047"
+					>Riuso_successivo_Zucca_Cicalamenti_Esilio_p.35</ref><!-- --><ref xml:id="test-EhtEVtDywZ"
+					type="generic" n="Riuso_successivo_Zucca_Cicalamenti_Esilio_p.35"
+					target="xml://test/zucca_img/p008rf002 xml://test/mondi_img/p048mn005cc073"
+					>Riuso_successivo_Zucca_Cicalamenti_Esilio_p.35</ref><!-- --><ref xml:id="test-gOkU0nigAS"
+					type="generic" n="Mondi_5_Occasione_p.75"
+					target="xml://test/mondi_img/p052mn005cc075 xml://test/mondi_txt/p005f005"
+					>Mondi_5_Occasione_p.75</ref><!-- --><ref xml:id="test-sbHI5RvIdq" type="generic"
+					n="Riuso_precedente_Mondi_5_Occasione_p.75"
+					target="xml://test/mondi_img/p052rp001 xml://test/sorti_img/p095cc001"
+					>Riuso_precedente_Mondi_5_Occasione_p.75</ref><!-- --><ref xml:id="test-khLVCsTa3O"
+					type="generic" n="Riuso_precedente_Mondi_5_Occasione_p.75"
+					target="xml://test/mondi_img/p052rp002 xml://test/zucca_img/p047lv223pg151"
+					>Riuso_precedente_Mondi_5_Occasione_p.75</ref><!-- --><ref xml:id="test-oDr3lQfxrC"
+					type="generic" n="Riuso_precedente_Zucca_Foglie_Occasione_p.151"
+					target="xml://test/zucca_img/p047rp001 xml://test/sorti_img/p095cc001"
+					>Riuso_precedente_Zucca_Foglie_Occasione_p.151</ref><!-- --><ref xml:id="test-2sBVNOkM1x"
+					type="generic" n="Riuso_successivo_Zucca_Foglie_Occasione_p.151"
+					target="xml://test/zucca_img/p047rf001 xml://test/mondi_img/p052mn005cc075"
+					>Riuso_successivo_Zucca_Foglie_Occasione_p.151</ref><!-- --><ref xml:id="test-o2TaOKfS0v"
+					type="generic" n="Mondi_5_Clitomaco_p.78"
+					target="xml://test/mondi_img/p053mn005cc078 xml://test/mondi_txt/p005f006"
+					>Mondi_5_Clitomaco_p.78</ref><!-- --><ref xml:id="test-U1rUKG0JIi" type="generic"
+					n="Riuso_precedente_Mondi_5_Clitomaco_p.78"
+					target="xml://test/mondi_img/p053rp001 xml://test/sorti_img/p096cc001"
+					>Riuso_precedente_Mondi_5_Clitomaco_p.78</ref><!-- --><ref xml:id="test-w2jHmzjNDA"
+					type="generic" n="Riuso_successivo_Mondi_5_Clitomaco_p.78"
+					target="xml://test/mondi_img/p053rf001 xml://test/compendio_img/p029cc002"
+					>Riuso_successivo_Mondi_5_Clitomaco_p.78</ref><!-- --><ref xml:id="test-2MP3cYqFSC"
+					type="generic" n="Riuso_successivo_Mondi_5_Clitomaco_p.78"
+					target="xml://test/mondi_img/p053rf002 xml://test/compendio_img/p039cc003"
+					>Riuso_successivo_Mondi_5_Clitomaco_p.78</ref><!-- --><ref xml:id="test-k7U0T3v7M3"
+					type="generic" n="Frontespizio_Marmi_III"
+					target="xml://test/marmi_txt/p003f000 xml://test/marmi_img/p022pt003pg001"
+					>Frontespizio_Marmi_III</ref><!-- --><ref xml:id="test-oe57QuFjMn" type="generic"
+					n="Marmi_III_p8_ritrattodoni"
+					target="xml://test/marmi_txt/p003f001 xml://test/marmi_img/p023pt003pg008"
+					>Marmi_III_p8_ritrattodoni</ref><!-- --><ref xml:id="test-AwtLTeONLN" type="generic"
+					n="Mondi_5_Platone_p.81"
+					target="xml://test/mondi_img/p054mn005cc081 xml://test/mondi_txt/p005f007"
+					>Mondi_5_Platone_p.81</ref><!-- --><ref xml:id="test-63hNfLy7Rw" type="generic"
+					n="Mondi_5_Riuso_precedente_Platone_p.81"
+					target="xml://test/mondi_img/p054rp001 xml://test/sorti_img/p090cc003"
+					>Mondi_5_Riuso_precedente_Platone_p.81</ref><!-- --><ref xml:id="test-FOUPYrTpBN"
+					type="generic" n="Mondi_5_Riuso_precedente_Platone_p.81"
+					target="xml://test/mondi_img/p054rp002 xml://test/moralfilosofia_img/p034lv212pg034"
+					>Mondi_5_Riuso_precedente_Platone_p.81</ref><!-- --><ref xml:id="test-ITpVkGdVdV"
+					type="generic" n="Mondi_5_Riuso_successivo_Platone_p.81"
+					target="xml://test/mondi_img/p054rf001 xml://test/compendio_img/p038cc001"
+					>Mondi_5_Riuso_successivo_Platone_p.81</ref><!-- --><ref xml:id="test-whFznamYvU"
+					type="generic" n="Mondi_5_Riuso_successivo_Platone_p.81"
+					target="xml://test/mondi_img/p054rf002 xml://test/compendio_img/p056cc004"
+					>Mondi_5_Riuso_successivo_Platone_p.81</ref><!-- --><ref xml:id="test-YQjDfxvdFC"
+					type="generic" n="Marmi_III_p14"
+					target="xml://test/marmi_txt/p003f002 xml://test/marmi_img/p024pt003pg014"
+					>Marmi_III_p14</ref><!-- --><ref xml:id="test-Azet7HerXg" type="generic" n="Marmi_III_p19"
+					target="xml://test/marmi_txt/p003f003 xml://test/marmi_img/p025pt003pg19"
+					>Marmi_III_p19</ref><!-- --><code xml:id="placeholder"
+					><!-- % DO NOT REMOVE FOR ANY REASON % --></code>
+				<!-- -->
+				<!-- %END% -->
+			</p>
+		</body>
+	</text>
+</TEI>

@@ -1,0 +1,1190 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<!DOCTYPE TEI SYSTEM "../../_common/dtd/dctl.core.dtd" [
+<!ENTITY % TEI.extension.dtd SYSTEM "../../_common/dtd/dctl.extension.dtd">
+<!ENTITY % collection.header.ent SYSTEM "../_header.ent">
+<!ENTITY % package.header.ent SYSTEM "_header.ent">
+<!ENTITY TEI.header SYSTEM "../../_common/headers/teiHeader.package.xml">
+<!ENTITY TEI.header.profileDesc.textClass SYSTEM "../../_common/add-ons/teiHeader.profileDesc.textClass.xml">
+%TEI.extension.dtd;
+%collection.header.ent;
+%package.header.ent;
+]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&package_id;"
+	n="&source_author; - &source_title_main;"> &TEI.header; <text
+		xml:lang="&source_lang;" xml:id="&package_id;.package" ana="&source_genre;">
+		<front>
+			<div type="part"/>
+		</front>
+		<body>
+			<div type="part">
+				<!-- NON MODIFICARE LA PARTE PRECEDENTE IL PUNTO "BEGIN" -->
+				<!-- %BEGIN% -->
+				<!-- BEGIN -->
+				<!-- -->
+				<div type="part" n="1">
+					<div type="frontispiece">
+						<pb n="1" corresp="img://afd-inferni_frontespizio.jpg"/>
+						<head type="main">INFERNI <lb/>DEL <name key="000617"
+							>DONI</name><lb/>ACADEMICO PELLEGRINO. <lb/>LIBRO SECONDO DE'
+								<title>MONDI</title><figure xml:id="p008f001">
+								<graphic url="img://afd-inferni_frontespizio_pw.jpg"/>
+								<figDesc>Marca del Marcolini </figDesc>
+							</figure></head>
+						<head type="sub">IN <name key="000568" ana="func_place">VINEGIA</name> PER
+								<name key="001245">FRANCESCO MARCOLINI</name>
+							<lb/>NEL <date value="1552-00-00">M D L I I I</date>.</head>
+					</div>
+					<div type="dedication">
+						<pb n="3" corresp="img://afd-inferno_003.jpg"/>
+						<head type="main"><lb/>AL NOBILISSIMO SIGNORE <lb/>IL MAGNIFICO SIGNOR
+								<lb/><name key="006411">ALBERTO DAL CARRETTO</name><lb/>ILLUSTRE ET
+							MAGGIOR <lb/>MIO OSSERVANDISSIMO. <milestone unit="lb"/></head>
+						<p><lb/>Volevano i nostri Academici mandare in <lb/>luce alcuni loro
+								<title>Inferni</title> sotto il nome del <name key="000617"
+								>Doni</name>, <lb/>Academico Bizzarro, sì come hanno mandato
+							<lb/>molti libri et i <title>Marmi</title> ultimamente, et
+								vedu<milestone unit="wb"/><lb/>toci disposti a questo, ci avertì che
+							egli era gran cosa a mandare <lb/>in luce le tenebre, ma, se pure eran
+							disposti a questo, che elegges<lb/>sino uomini tanto illustri che
+							facessin risplender l'opera qua <lb/>di sopra, poiché l'era cavata
+							disotto da sì gran buio. Così furon <lb/>contenti. Ciascuno in questo
+							cominciò a nominare amici, conoscenti, <lb/>benefattori et altre persone
+							degne; et essendone posti inanzi molti <lb/>che meritavano o per
+							amicitia o per virtù o per nobiltà o per merito, <lb/>il <name
+								key="000617">Doni</name>, udito il discorso, disse:
+							&#171;Signori, poiché sotto mio nome ha <lb/>da uscir quest'opera,
+							io ho un illustre gentiluomo, si<milestone unit="wb"/><lb/>gnor per
+							merito, per natura gentile et nobilissimo, virtuoso in <lb/>opere, mio
+							amico et padrone et benefattore singularissimo, <lb/>però a lui sia dato
+							questo luogo et fatto in mio nome questo pre<milestone unit="wb"
+								/><lb/><pb n="4" corresp="img://afd-inferno_004.jpg"
+							/>sente&#187;. Tutta l'Academia, conosciuto esser vero ciò che egli
+								dice<milestone unit="wb"/><lb/>va et più, fu contenta. Ecco adunque
+							che i vostri meriti faran<milestone unit="wb"/><lb/>no rilucer l'opera
+							scura, i meriti vostri ancora fanno che noi vi sia<milestone unit="wb"
+							/><lb/>mo tutti buoni et sinceri amici. Accettate il dono dal <name
+								key="000617">Doni</name><lb/> et amateci, che noi ci raccomandiamo
+							infinitamente. A dì primo <lb/>di gennaio, secondo l'uso nostro nel
+							MDLIII. <lb/>Di <name key="000568" ana="func_place">Vinegia</name>
+							nell'Academia. <lb/>Al servitio vostro. <lb/>Il Presidente dell'Academia
+							Peregrina et Academici. </p>
+					</div>
+					<div type="argument" n="1">
+						<pb n="5" corresp="img://afd-inferno_005.jpg"/>
+						<head type="main">ACADEMICI PEREGRINI <lb/>ANDATI ALL'INFERNO.</head>
+						<p><lb/>IL <name key="005706">DISPERATO</name>, <lb/> IL <name key="001142"
+								>PERDUTO</name>,<lb/>LO <name key="001447">SMARRITO</name>,<lb/> IL
+								<name key="001597">PAZZO</name>, <lb/>L'<name key="001122"
+								>ARDITO</name>,<lb/> IL <name key="001598">SAVIO</name>, ET L'<name
+								key="005943">OSTINATO</name>. <lb/> OMBRE CHE SONO GUIDA A GLI
+							<lb/>ACADEMICI A VEDERE<lb/>GL'INFERNI.<lb/><name key="000402"
+								>VIRGILIO</name>, <lb/><name key="000790">DANTE</name>, <lb/><name
+								key="005684">MATTEO PALMIERI</name>, <lb/><name key="006043"
+								>MENIPPO</name>, <lb/>LA <name key="006240">FATA FIESOLANA</name>,
+								<lb/><name key="000562">ORPHEO</name> et<lb/> la<name key="006239"
+								>SIBILLA DA NORCIA</name>. <lb/><name key="000834">Momo</name> va
+							per tutto in compagnia, riferisce, insegna,<lb/>loda, biasima, accusa et
+							fa ogni male, et <lb/>dice contro de' dannati.<lb/>
+						</p>
+					</div>
+					<div type="argument" n="2">
+						<pb n="6" corresp="img://afd-inferno_006.jpg"/>
+						<head type="main">DICHIARATIONE <lb/>DEL <name key="001216">DUBBIOSO</name>
+							ACADEMICO PEREGRINO. <milestone unit="lb"/></head>
+						<p><lb/>La epistola scritta a <name key="006412">Plutone</name> s'intende
+								<name key="006412">Plutone</name> per la ric<milestone unit="wb"
+							/><lb/>chezza, come fece <name key="000790">Dante</name>. Dove si vede
+							che 'l <name key="005706">Disperato</name> Academico vuo<milestone
+								unit="wb"/><lb/>le che la sia tolta di mno ai principi et signori,
+							che sono ignoranti et <lb/>ingrati, e sia distribuita ai virtuosi et ai
+							buoni. Poi fa vedere che il mon<milestone unit="wb"/><lb/>do è oggi
+							uscito sì della via della virtù che i virtuosi farebbon manco <lb/>male
+							a dedicar le loro opere et impiegare le loro fatiche et honorati
+							<lb/>studi alii Dei Infernali che a tali signori che sono al mondo.
+							<lb/>Dipoi fa palese che 'l donare di tali principi o il premiare non
+							procede da la lor conoscen<milestone unit="wb"/><lb/>za, perché si
+							lasciano aggirare dai ministri ignoranti et dal fumo, perché danno assai
+							<lb/>dove non doverebbon dare et dove è il merito poco o nulla donano;
+							et riprende ancora <lb/>gli arroganti scrittori di troppo ardire.
+							Ultimamente mi par che sia certo che non gioveran<milestone unit="wb"
+							/><lb/>no nulla questi suoi avertimenti, se <name key="000898"
+								>Satanasso</name> non lieva di terra sì fatti perso<milestone
+								unit="wb"/><lb/>naggi; mostrando che, se la ricchezza non gli
+							abandona et si ritiri fra i migliori, le voci <lb/>sante che s'alzeranno
+							al Cielo con divotione di cuore saranno esaudite, et alla fine
+								ga<milestone unit="wb"/><lb/>stigati tutti i terreni uomini che si
+							son dati a consumare la vita nel vitio et dispensare i lor tesori
+							malamente. <lb/></p>
+					</div>
+					<div type="introduction" n="1">
+						<pb n="7" corresp="img://afd-inferno_007.jpg"/>
+						<head type="main">SETTE INFERNI <lb/>DEGLI ACADEMICI PEREGRINI. <lb/>Mandati
+							a <name key="006412">Plutone</name>, <name key="000877">Cerbero</name>,
+								<name key="006414">Caronte</name>, <name key="004979">Minos</name>,
+								<lb/><name key="006416">Eaco</name>, <name key="002349"
+								>Radamanto</name> et <name key="000925">Proserpina</name>.
+								<milestone unit="lb"/><lb/>
+						</head>
+						<div type="letter" n="1">
+							<head type="main">Primo Mondo infernale, del <name key="005706"
+									>Disperato</name> academico Peregrino. <lb/> Alla spaventevol
+								grandezza et stupenda corona del gran <name key="006412"
+									>Plutone</name>, <lb/> principe de' dannati. <milestone
+									unit="lb"/></head>
+							<p><lb/>Altro che una gran disperatione, Re po<milestone unit="wb"
+								/>tentissimo, poteva condurmi a far tanto ufitio <lb/>(et un chieder
+								vendetta ancora mi ci ha spro<milestone unit="wb"/>nato) di mandarvi
+								il presente libro. Questa è <lb/>un'opera che descrive le pene che
+								la potenza <lb/>di voi altri principi infernali date agli scolari
+								perversi, le quali <lb/>visibilmente m'è paruta di vedere in sogno.
+								Onde nei nostri <title>Mondi</title><lb/> di sopra ciascuno che la
+								leggerà conoscerà per tal mezzo la giustitia <lb/>che voi tenete
+								costà giù di sotto, gastigando con acerbissime pene i <lb/>rei. Così
+								vi verranno i vivi a temere per i tormenti, et riveri<milestone
+									unit="wb"/><lb/>re ancora per giustamente tormentare chi n'è
+								degno.<lb/> Nuova cosa parerà alla vostra corona (ardente et
+								fiammeggiante) <lb/>che un uomo de' mondi mezzani sia datosi vivendo
+								a tener con<lb/>to di voi, cosa rara certamente, e si sia messo a
+								scrivervi precipi<milestone unit="wb"/><lb/>tosamente in tai
+								profondi. Non vi maravigliate, perché la <name key="000938"
+										>Di<milestone unit="wb"/><lb/><pb n="8"
+										corresp="img://afd-inferno_008.jpg"/>speratione</name>,
+								vostra ministra potente, è una femina terribilissima, <lb/>et fa di
+								cattivi scherzi spesso spesso a noi altri, tormentandoci
+									vi<milestone unit="wb"/><lb/>vi vivi: et s'io dicessi più
+								pessimi et crudeli che non son le pene <lb/>che voi date alla turba
+								grande de' vostri prigioni, non direi for<milestone unit="wb"
+								/><lb/>se le bugie. <lb/>Lei adunque è stata quella che m'ha
+								disposto a mandarvi (et l'i<milestone unit="wb"/><lb/>ra della
+								vendetta) il mio volume, et insegnatomi la via che <lb/>io debbo
+								tenere a mandarvelo. La cagione per che io ho atteso ai <lb/>
+								consigli della <name key="000938">Disperatione</name>, per non esser
+								biasimato da molti che <lb/> non sanno i fatti miei, son forzato a
+								dirvela brevemente. <lb/>Abbiamo un costume, noi altri qua disopra
+								che scriviamo <lb/>leggende: poi che le sono stampate, di
+								presentarle a gran maestri, et <lb/>a dire il vero alla Corona
+								Vostra, la povertà lo fa fare spesso a <lb/>molti componitori et non
+								il merito d'alcuni signori a i quali l'o<milestone unit="wb"
+								/><lb/>pera è consacrata. Loro si sono accorti di non esser degni
+								et, presso <lb/>ch'io non lo dissi, ce ne disgratiano, anzi più, ci
+								diventano co<milestone unit="wb"/><lb/>me nimici capitali per questo
+								onore che noi facciamo loro. <lb/>Poi, quando arriviamo loro inanzi,
+								ci fanno le più brutte cere, i più <lb/>brutti ceffi di can mastino
+								che al mondo nostro si vedessin mai; et <lb/>se non fusse che noi
+								siamo alquanto arditetti, et ancora che temo<lb/>no l'impennate
+								d'inchiostro di molti de' nostri scrittori (meglio fa<milestone
+									unit="wb"/><lb/>rebbono i fatti et l'esser prosontuosacci), et
+								veggono che del <lb/>continuo ci facciamo inanzi con imbasciate, con
+								mezzani, con <lb/>lettere, con libri greci et latini et tradutioni
+								dell'una et <lb/>l'altra lingua, spesso spesso, oltre che noi ci
+								cascheremo di fa<milestone unit="wb"/><lb/>me nel mezzo della via,
+								et non ci darebbon nulla (o che ingor<milestone unit="wb"/><lb/>da
+								gente! ogni cosa vorrebbon per loro), né direbbon pur gran mercé.
+								<lb/>Da questi ignoranti, adunque, molti di quelli che meritano
+								l'opere <lb/>(s'io non m'inganno, come altre volte mi sono
+								ingannato) hanno <pb n="9" corresp="img://afd-inferno_009.jpg"
+								/>imparato a non ci riconoscere, come dire: &#171;II tal non
+								dona, né anch'io <lb/>voglio esser corrivo&#187;. Et fannoci le
+								belle parole, cambiando pro<milestone unit="wb"/><lb/>messe con i
+								nostri scartabegli, onde noi stiamo (a dirlo fra noi) <lb/>male
+								male, malissimo vi dico, aspettando nulla di bene da costoro.
+									<lb/><seg ana="syntexp_wellerism">Io dirò qui come quel
+									Francioso che era d'inverno mezzo ignudo <lb/>e, tremando tutto,
+									diceva: &#171;Per la mia fede, che egli fa gran freddo! Io
+									<lb/>non lo dico per me, ma per le povere genti&#187;</seg>.
+								Voi dovete intende<milestone unit="wb"/><lb/>re et io vi fo a
+								sapere, signor <name key="006414">Plutone</name>, che questo
+								discorso lo <lb/>fo più per altri che per me, conciosia che io non
+								ho bisogno de' fat<milestone unit="wb"/><lb/>ti loro et manco delle
+								parole; et che sia il vero di ciò ch'io <lb/>dico, mai gli corteggio
+								o vo lor dietro a tener su la co<milestone unit="wb"/><lb/>da.
+								Veduto adunque sì mal trattare i virtuosi et vedu<milestone
+									unit="wb"/><lb/>togli disperare, anch'io, che mi diletto
+								alquanto di questa vir<milestone unit="wb"/><lb/>tuosa compagnia, mi
+								son messo in dozzina, et, principiando <lb/>come gli altri a scriver
+								libri, consacrargli, donargli et far de' <lb/> presenti, mi son
+								accorto che tutto ciò che si fa qua su, a questi che <lb/>sono
+								ingrati signori, è gettato via. Egli è ben vero che certi poeti
+								<lb/>furfanti, certe dottoresse ignoranti et altri gaglioffi
+								pedantacci <lb/>che imbratton carta, hanno rovinato questo traffico;
+								non voglio <lb/>dire che in tutto in tutto e ' signori et i principi
+								abbino il tor<milestone unit="wb"/><lb/>to, che io <seg
+									ana="syntexp_idiomatic">mentirei per la gola</seg>, conciosia
+								che sono stati a forza <lb/>afrontati in di grosso con traduzione
+								manigolde, scartafacci infa<milestone unit="wb"/><lb/>mi et altre
+								pedanterie non meno triste che sciocche: onde son corsi <lb/>dietro
+								alle parole de' mezzani (perché loro non leggan molto, i <lb/>libri
+								fanno loro afa), al fumo di quei gran tomi et a quell'om<milestone
+									unit="wb"/><lb/>bra di titoli, et hanno creduto alle frappe de'
+								cerretani, talmente <lb/>che subito hanno sborsato le belle
+								centinaia de fiorini. Il virtuoso <lb/>scrittore, veduto premiare
+								simili bestioni, s'è fatto inanzi et ha <lb/>argumentato da sé
+								medesimo, dicendo: &#171;S'io dono a questi <lb/><pb n="10"
+									corresp="img://afd-inferno_010.jpg"/>signori tali una opera che
+								sia approvata per buona et sia cava<milestone unit="wb"/><lb/>ta di
+								mia testa, non meriterò io più che copiare dal latino quel<milestone
+									unit="wb"/><lb/>la che ha fatta un altro? Et, per consequente,
+								avrò più?&#187; (o che <lb/>cattivo loico!). Et si son posti a
+								fare et a studiare, et hanno im<milestone unit="wb"/>parato et
+								composto. Ma indarno, signor <name key="006414">Plutone</name>, si
+								sono affa<milestone unit="wb"/>ticati, perché i pedanti sono
+								aventurati, gli ignoranti inalzati, <lb/>per la maggior parte, et i
+								virtuosi sono sgratiati tutti. Così, ve<milestone unit="wb"
+								/><lb/>duto con i proprii occhi questo comune errore et questo male
+									in<milestone unit="wb"/><lb/>fistolito et usar tanta
+								ingratitudine, ho conosciuto veramente <lb/>che qua su non c'è da
+								far fondamento alcuno. <lb/>Io ricorro adunque alla Corona Vostra
+								non per premio, né perché io <lb/>voglia nulla da voi, ma per
+								giustitia: principe no, re no, signor <lb/>no, perciò che dal
+								mandarvi questo libro infuori, se mi faceste <name key="000877"
+										>Cer<milestone unit="wb"/><lb/>bero</name>, non verrei nel
+								vostro regno, o mi donaste <name key="002306">Euridice</name> con
+								tutto <lb/>uno imperio, perché non aspiro a vostre grandezze, né mi
+								curo <lb/>di ricchezze sì profonde. Ma l'ho fatto solamente perché
+								ho in<milestone unit="wb"/><lb/>teso da certi spiritati che voi
+								avete la mano qua su ne' capegli a <lb/>questi tali ignoranti vivi
+								et ingrati, non meno che fra i piedi <lb/>costà giù molti gran
+								barbassori morti, che furon già nostri ma<milestone unit="wb"
+								/><lb/>maù et nostri tiranni, et furon tanto nimici de' virtuosi
+									quan<milestone unit="wb"/><lb/>to questi che oggi ci vivono a
+								torto per nostra pena. Fategli <lb/>i medesimi scherzi nel morire, a
+								ragione, et insieme con cotesti <lb/>altri gastigategli a misura di
+								carbone. <lb/>Questo è, signor <name key="006412">Plutone</name>, il
+								premio che io desidero delle nostre fa<milestone unit="wb"
+								/><lb/>tiche, di questo vi prego e di questo, per l'amor che voi
+								portate a <lb/><name key="000925">Proserpina</name>, vi scongiuro. A
+								voi tocca a gastigar costoro che sono <lb/>ignoranti, superbi,
+								furfanti et ingrati: voi sète il lor principe, <lb/>et a voi
+								s'aspetta a fargli tormentare (vendicando noi altri po<pb n="11"
+									corresp="img://afd-inferno_011.jpg"/><milestone unit="wb"
+								/><lb/>veri virtuosi, stratiati dalla ricchezza loro ignorante)
+								tanto <lb/>quanto meritano. <lb/>Quanto che no, cioè che la Signoria
+								Vostra si facci beffe della no<milestone unit="wb"/><lb/>stra
+								miseria, perché siamo uomini da bene, la prima cosa ri<milestone
+									unit="wb"/><lb/>mandatemi il mio libro, perché v'avrò in quel
+								conto che ho a<milestone unit="wb"/><lb/>vuto sempre. Io vi protesto
+								per tutti, et vi dico che ciascuno ha <lb/>sopracapo: io andrò in
+								luogo che sarò udito, et vi converrà far <lb/>quello per forza che
+								porta la ragione; et s'io non potrò, per es<milestone unit="wb"
+								/><lb/>ser il <name key="005706">Disperato</name> (che questo nome
+								non suona), andar sì alto, ci <lb/>manderò l'<name key="002410"
+									>Elevato</name> nostro, il <name key="002408">Divoto</name> et
+								altri nostri Academi<milestone unit="wb"/><lb/>ci, che avranno per
+								questa cosa qualche favore. Non vo' dir al<milestone unit="wb"
+								/><lb/>tro per ora alla Signoria Vostra, se non ch'io la prego che
+									que<milestone unit="wb"/><lb/>sta fatica non sia gettata via
+								come molte altre, et ricordatevi poi <lb/>come sanno conciare i
+								poeti le Vostre Eccellenze Illustrissime, <lb/>quando non andrete
+								dietro al dovere, idest al verso nostro. <lb/>Colui che vi diede il
+								regno vi possi distruggere a fatto, se non <milestone unit="wb"
+								/><lb/>fate tanto quanto io v'ho per questa mia scritto et
+								richiesto. Da <lb/>i mondi dei vivi, <date value="1555-01-01">a dì
+									primo di gennaio M D LIII</date>. <lb/>Il <name key="005706"
+									>Disperato</name>, Academico Pellegrino <lb/>di mano
+								propria.<lb/></p>
+						</div>
+						<div type="cover">
+							<pb n="12" corresp="img://afd-inferni_12.jpg"/>
+							<lb/>
+							<figure xml:id="p008f002">
+								<graphic url="img://afd-inferni_12_pw.jpg"/>
+								<figDesc>Ritratto di Anton Francesco Doni</figDesc>
+							</figure>
+						</div>
+						<div type="argument" n="1">
+							<pb n="13" corresp="img://afd-inferno_013.jpg"/>
+							<head type="main">A I LETTORI. <milestone unit="lb"/></head>
+							<p><lb/>Molti et molti anni sono, lettori onorati <lb/>et d'elevato
+								ingegno, che egli mi venne una <lb/>certa fantasia nel capo di
+								scrivere alcuni In<milestone unit="wb"/><lb/>ferni, et ora me n'è
+								cresciuto la voglia più <lb/>che mai, vedendo che i
+									<title>Mondi</title> de' nostri Aca<milestone unit="wb"
+								/><lb/>demici hanno fatto si buona riuscita. Ma perché lo scriver
+								bene <lb/>una cosa vuol esser detto di veduta, io l'ho tocco con
+								mano ec<milestone unit="wb"/><lb/>cettera, mi disposi d'andarvi
+								essendo vivo. A molti la parrà co<milestone unit="wb"/><lb/>sa da
+								non la fare così facilmente, a posta di sodisfare all'umor del
+								<lb/>cervello. Io per questo son forzato adunque a lasciarmi
+								intendere <lb/>per che cagione mi venne tal capriccio, acciò che non
+								paia che in <lb/>tutto io abbia, verbigratia, della bestia. <lb/>Voi
+								sapete che questo mondo (secondo l'opinione del <name key="001121"
+									>Bizzarro</name>, <lb/>Academico nostro) è un'uccellaia tutta
+								impaniata, nella quale più <lb/>tosto noi ci invischiamo del
+								continuo che fare altra cosa. Ora ci <lb/>apicchiamo alla roba, ora
+								ai piaceri, ora all'amicitia, talvolta al <lb/>riposo et bene spesso
+								all'amore, di più maniere. Alla fine <lb/>conviene spiccarci et
+								lasciarci le piume, et chi più s'invischia <lb/>vi lascia le penne
+								maestre, ch'al mio giuditio importano assai. Io, <lb/>che più volte
+								sono entrato in questa frasconaia et bene bene <lb/>impianiatomi, ho
+								messo di quelle strida et fatti di quei lamenti <lb/>che sono
+								possibili et impossibili di far fare a un uomo in simil <lb/>casi.
+								Ma due panioni m'hanno dato la stretta malamente: uno <lb/>è stato
+								quel vischio dell'amicitia e l'altro de l'amore. Io amai <lb/>già,
+								nel fior della mia gioventù, donna, a' miei occhi mirabile,
+									in<milestone unit="wb"/><lb/>finiti anni, et quando fui per
+								ricever il fine di tale amore, il son<milestone unit="wb"/><lb/>no
+								lungo la prese et me la rapì dinanzi a gli occhi. Talmente <lb/><pb
+									n="14" corresp="img://afd-inferno_014.jpg"/>che io penai i
+								secoli inanzi che io mi spaniassi, et ancora spesso <lb/> spesso
+								sospiro delle penne maestre che io vi lasciai; ond'io, per <lb/>non
+								calare mai più in questi laberinti, mi son tenuto su le ali a
+								<lb/>mezz'aere, senza pur mai dar un'occhiata a verdura alcuna
+									di<milestone unit="wb"/><lb/>lettevole della terra. L'amicitia
+								fu poi il secondo vischio che mi ci <lb/>colse, et qua rimasi et
+								rimango sempre inviluppato, onde, spes<milestone unit="wb"/><lb/>so
+								perdendone uno et ora un altro, vi prometto che egli non è <lb/>mai
+								anno ch'io non riceva infiniti tormenti et dispiaceri senza
+								<lb/>numero. Morendomi adunque gli amici (per uscir di
+									favella<milestone unit="wb"/><lb/>re in metafora) et io
+								ritrovandomi solo, privo di sì mirabil com<milestone unit="wb"
+								/><lb/>pagnia, vo come pazzo a torno et in tutti i modi vorrei
+									segui<milestone unit="wb"/><lb/>targli; et se non fosse la
+								bilancia che pesa l'amore che io porto a <lb/>quegli che son vivi,
+								idest a gli amici che io ho et che del continuo <lb/>m'acquisto,
+								veramente il dolore mi porterebbe via per quella stra<milestone
+									unit="wb"/><lb/>da della morte che l'infirmità o altro accidente
+								ha portato loro. <lb/>L'amicitia adunque, et l'amore primo d'una
+								bella donna (se 'l <lb/>giuditio fu retto in quegli anni) m'hanno
+								fatto cercar più vie et <lb/>provar diverse strade da potermi
+								consolare: il che sarebbe stato con <lb/> riveder lei et loro una
+								sola volta. <lb/>Leggendo adunque lo stupendo poeta, il nostro <name
+									key="000790">Dante</name>, mi <lb/>son creduto un tempo di
+								trovar questa selva et caminar dietro <lb/>alle sue pedate, per
+								veder in ciascuno di quei tre luoghi, cioè <lb/><name key="001115"
+									ana="func_place">Inferno</name>, <name key="001151"
+									>Purgatorio</name> e <name key="002028">Paradiso</name>, se io
+								poteva godere la presenza <lb/>et il ragionamento de' morti amici a
+								bocca, sì come fece <name key="000790">Dante</name>. <lb/>Ma indarno
+								ho caminato et invano ho fatto i miei viaggi per <lb/>questi boschi
+								della vita, onde ho per fermo che la selva che egli <lb/>trovò sia
+								stata tagliata et spiantata, che mai più alcuno la sa<milestone
+									unit="wb"/><lb/>prà trovare. <lb/>La <name key="002167"
+									>Sibilla<!-- ma è la sibilla giusta? nel sesto dell'Eneide è la cumana, ma in apertura di inferni citava quella da Norcia --></name>
+								di <name key="000402">Vergilio</name> né per pelaghi, per grotte,
+								caverne o <lb/><pb n="15" corresp="img://afd-inferno_015.jpg"
+								/>laghi, né per terribil montagne ho trovato alcuno che me ne dia
+								<lb/>notitia. <lb/><name key="006043">Menippo</name> ebbe al suo
+								tempo quella ventura d'uno incantatore, <lb/>d'un negromante che lo
+								volle servire; adesso va' trovagli
+								tu<!-- coordinamento asindetico di due imperativi -->, chi <lb/>sa
+								far fare i diavoli a suo modo non si cura che gli altri abbino
+								<lb/>questo contento.<lb/>
+								<name key="000562">Orfeo</name> aveva quella virtù di saper sonare
+								la ribeca et dice<milestone unit="wb"/><lb/>va provisi stupendi. A
+								quest'impresa non accade che io mi ci <lb/> metta, perché non avrei
+								alcuno onore. Egli poi sapeva la via, che <lb/>è il nerbo di questa
+								mia stravagante voglia. <lb/>Essendo adunque di questo animo fisso
+								d'andare vivendo all'<name key="001115">In<milestone unit="wb"
+									/><lb/>ferno</name>, mi posi in viaggio et andai cercando dì et
+								notte mille <lb/>profondi et caverne della terra, non per altro, se
+								non avendo udito <lb/>dire che molti entrando sotto terra vi sono
+								andati et che l'<name key="001115" ana="func_place"
+								>Inferno</name><lb/> sotto terra è luogo tenebroso et scuro; et però
+								mi ficcavo in quei <lb/>fondi (oh che sciocco pensiero!) credendo di
+								trovar qualche via fa<milestone unit="wb"/><lb/>cile a scender, come
+								dicono i dotti, et andar via da galante uomo. <lb/>Che direte voi,
+								che mai trovai questa facilità d'andarvi? Onde, strac<milestone
+									unit="wb"/><lb/>co et disperato, lasciate tutte le cure del
+								mondo, <seg ana="syntexp_idiomatic">andando come <lb/>mosca senza
+									capo</seg>, non guardando dove io metteva i piedi, caddi
+								<lb/>lungo disteso in una cava in terra, che io trovai una sera
+								tardi tardi, <lb/>all'improvista et al buio, tal che, per molte
+								cagioni et per non potere <lb/>da me solo uscirne, vi stetti tanto
+								che io m'adormentai. <lb/>Certo, se non era quel profondo sonno che
+								io presi et la dispera<milestone unit="wb"/><lb/>tione che mi ci
+								condusse, mai mai andava all'<name key="001115" ana="func_place"
+									>Inferno</name>. Et chi non <lb/>credesse che io dicessi il
+								vero, provi questo medesimo modo et <lb/>troverà che io non dico le
+								bugie. <lb/>Ora sì ch'io comincio a intendere la facilità dello
+								scendere al<milestone unit="wb"/><lb/> l'<name key="001115"
+									ana="func_place">Inferno</name>, perché facil cosa è cadere in
+								una fossa, disperarsi facile <lb/><pb n="16"
+									corresp="img://afd-inferno_016.jpg"/>et facilissima ad
+								adormentarsi per un secolo: che in lingua di <lb/>
+								<name key="002273">Adamo</name>, che fu la prima che si favelasse,
+								significa morire.<lb/><name key="000790">Dante</name>, dormendo come
+								me, andò anch'egli all'<name key="001115">Inferno</name> et, se
+								<lb/>non si svegliava come mi sono svegliato io, non ci avrebbe
+									sapu<milestone unit="wb"/><lb/>to dire le cose che egli vedde et
+								ritrovò; et io ancora, che mi <lb/>sono desto, il tutto vi
+								racconterò. <lb/>Adunque, per via di sonno vi sono ito in sogno: per
+								non dir le bugie <lb/>come molti altri, perché non ho trovato chi mi
+								conduca là giù, in quei <lb/>bui, più facilmente che il sonno (et il
+								morire, che io doveva dire <lb/>in prima), et il sonno so che egli è
+								una premeditatione della mor<milestone unit="wb"/><lb/>te, più
+								propinquo alla morte che qual si voglia cosa. Disse lo <lb/><name
+									key="001452">Spedato</name> che egli era una gelata imagine
+								della morte, benché lo <lb/><name key="001447">Smarrito</name>
+								voglia che sia il mezzo fra la vita et la morte. Sia <lb/>come si
+								voglia: tutti costoro dicon per me, perché, essendo vi<milestone
+									unit="wb"/><lb/>vo et volendo andare all'<name key="001115"
+									>Inferno</name>, è forza morire, cioè ador<milestone unit="wb"
+								/><lb/>mentarsi et il sonno è ottimo mezzo al condursi a morire. &#171;&#200;<!-- la Pellizzari edita 'E' -->
+								<lb/>bella cosa, - disse il <name key="001142">Perduto</name> nel
+								suo <title>Teatro</title>, - che, mentre che un <lb/>corpo dorme, lo
+								spirito veglia, et quanto più dorme profonda<milestone unit="wb"
+								/><lb/>mente, tanto meglio lo spirito si unisce al suo proprio
+								essere&#187;. <lb/> &#171;Adormentandosi il corpo per sempre
+								- rispose il <name key="001597">Pazzo</name> - lo spiri<milestone
+									unit="wb"/><lb/>to viene adunque a farsi tanto più maggiore et
+								andare alla perfettio<milestone unit="wb"/><lb/>ne&#187;. A me
+								pare, per risolverla, che per questo mezzo del sonno <lb/>gli Dei ci
+								abbino manifestato molte cose in sogno, et che sia il <lb/>vero
+								udite questo mio discorso. <lb/>Egli è cosa certissima, nobilissimi
+								lettori, che fra <name key="000344">Dio</name> e l'uo<milestone
+									unit="wb"/><lb/>mo è un certo gran misterio secreto, che la
+								natura umana non ne <lb/>può esser capace. O gran cose che ha fatto
+									<name key="000344">Dio</name>, stupende, ma<milestone unit="wb"
+								/><lb/>ravigliose et terribili, et per cui? Per l'uomo. La terra
+									pro<milestone unit="wb"/><lb/>duce tanti et tanti et sì infiniti
+								mirabil semi, fiori et frutti, <lb/><pb n="17"
+									corresp="img://afd-inferno_017.jpg"/>non per altro se non per
+								l'uomo. L'inobedienza dell'uomo fu <lb/>cagione di perder i beni
+								divini, che l'obedienza di <name key="000348">Cristo Giesù</name> ha
+								racquistati. Perde l'uomo il favellare a faccia a fac<milestone
+									unit="wb"/><lb/>cia continuamente con <name key="000344"
+									>Dio</name>. Et pure il <name key="000348">Signore</name>
+								vorrebbe con <lb/>questo peccatore uomo similmente favellare, ma
+								questa carne in<milestone unit="wb"/><lb/>ferma non vuole; pur vuole
+									<name key="000344">Iddio</name>, quando trova l'uomo
+									secon<milestone unit="wb"/><lb/>do il cuor suo, parlargli, e
+								come gli favellerà egli? Udite quel<milestone unit="wb"/><lb/>lo che
+								è scritto nei <title>Numeri</title> (cap. xii): <q ana="quotation_simple"
+									>&#171;Se fra voi sarà alcun <lb/>profeta del <name
+										key="000348">Signore</name>, io gli aparirò in visione et
+									parlerogli in
+									<lb/>sogno&#187;<!-- Si tratta di Num. 12 6: Si quis fuerit inter vos propheta Domini,
+										in visione apparebo ei vel per somnium loquar ad illum. --></q>.
+								Questi sono di quei secreti che l'uomo non può saperne il
+								<lb/>tutto. Dice bene nell'<title>Ecclesiastico</title>: <q
+									ana="quotation_simple">&#171;Molte cose ti sono mostrate
+									<lb/>sopra il senso
+									umano&#187;<!-- si tratta di Eccl. 3 25: Plurima enim super sensum hominum ostensa sunt --></q>.
+								E <name key="001243">Dionisio</name> c'insegna a conoscerle con
+								<lb/> dire: &#171;Egli fa bisogno che con le cose più basse noi
+								sagliamo alle <lb/>mezzane et per le mezzane alle più
+								alte&#187;<!-- individuare il passo??? -->. Assai sono i modi,
+								<lb/> per visione, per sonno et per segni, che Iddio s'è fatto
+								conosce<lb/>re et intendere. A <name key="000779">Daniello</name> in
+								un modo che fu per rappresen<milestone unit="wb"/><lb/>tatione della
+								cosa al senso. A <name key="006418">Baldasare</name> mostrò la mano
+								che scri<milestone unit="wb"/><lb/>veva nel muro, che son forme
+								imaginarie divinamente formate. <lb/>A i Profeti et a gli Apostoli
+								fu per infusa scienza (o gran <lb/>misterio de' secreti di <name
+									key="000344">Dio</name>!) et dottrina. Santo <name key="000414"
+									>Agostino</name> vuo<milestone unit="wb"/><lb/>le che la visione
+								si distingua così: in sensibile, imaginata et in<milestone unit="wb"
+								/><lb/>tellettuale, nelle quali non mi destenderò per ora. La
+								vehemente<!-- eliminare l'h? --> contemplatione vede cose divine,
+								come si legge di san <name key="000199">Pie<milestone unit="wb"
+									/><lb/>tro</name> al x. capo de' <title>Fatti degli
+									Apostoli</title>, et per via di contempla<milestone unit="wb"
+								/><lb/>tione molti buoni cristiani hanno veduto et fatto conoscere
+								al <lb/>mondo infiniti secreti celesti. Il sogno del pane d'orzo,
+								che è <lb/>scritto ne' <title>Iudici</title> al capo vii, non mostrò
+								egli la spada da vincere <lb/>i nimici et fu interpretato
+								ottimamente et venne ad effetto l'in<milestone unit="wb"
+								/><lb/>terpretatione? In sogno apparve l'angelo a <name key="000669"
+									>Gioseppo<!-- ma verifica se la key assegnata al nome è quella corretta (Giuseppe è il padre di Gesù) --></name>,
+								et gli mo<milestone unit="wb"/><lb/><pb n="18"
+									corresp="img://afd-inferno_018.jpg"/>strò come doveva partirsi.
+								Diremo adunque che 'l sogno sia cosa <lb/>divina et umana. Il divino
+								sogno è sempre vero, l'uma<milestone unit="wb"/><lb/>no non ha alcun
+								misterio stupendo in sé, perché è cagionato dal <lb/>pensiero
+								ardente della cosa che si ama più, si desidera et si teme.
+								<lb/>L'avaro sogna danari, lo studioso gli par disputare et leggere,
+								<lb/>l'amante fruire etc.; il qual sogno direi che si chiamasse
+									d'intrin<milestone unit="wb"/><lb/>seca affetione, perché molti
+								artigiani sognano di far la loro arte, et <lb/>i loro ufitii spesse
+								volte gli ufitiali. <seg ana="verbfig_dream">E' non è molto che un sarto,
+									<lb/>stando male alla morte, (et morì in poche ore), astratto
+									dal sonno, <lb/>sonniferando insegnava cucire et chiedeva le
+									cesoie per tagliare, et pa<milestone unit="wb"/><lb/>revagli
+									tagliare et far ogni cosa</seg>. Alcuni altri sogni, al mio
+								giuditio, <lb/>mi par che abbino principio dal divino, ma, offuscati
+								come il buon <lb/>seme dalle spine, non vengano a luce chiara.
+								Questi son quelli <lb/>che bene spesso ne vien vero qualche parte et
+								son talvolta ca<milestone unit="wb"/><lb/>gione d'aprire alcune
+								strade che ci sono utili. Le visioni che io ho <milestone unit="wb"
+								/><lb/>vedute in sogno, io ve le narrerò tutte scrivendole a una a
+								una, et <lb/>lascierò nel vostro giuditio il giudicare di che specie
+								le sieno. <lb/>Utili credo ben io che le saranno per la maggior
+								parte; se poi vi <lb/>sieno alcune cose a voi incredibili,
+								ricordatevi che chi ha sogna<milestone unit="wb"/><lb/>to è composto
+								di spirito celeste et di carne umana, et che que<milestone unit="wb"
+								/>ste non son di quelle visioni imaginarie divine, come fu
+									quel<milestone unit="wb"/><lb/>la d'<name key="001383"
+									>Isaia</name> (cap. vi), che vedde il <name key="000348"
+									>Signore</name> sopra quel trono sì mirabile, che con la maestà
+								sua empieva la casa, dove erano i Se<milestone unit="wb"
+								/><lb/>rafini etc., che san <name key="000265">Girolamo</name>
+								interpetrò sì mirabilmente, mo<milestone unit="wb"/><lb/>strando
+								allegoricamente la fine di tal visione. Il seggio sono i
+									Che<milestone unit="wb"/><lb/>rubini, sì come dice il profeta
+									<name key="001097">Davitte</name>: &#171;Qui sedes super
+									Che<milestone unit="wb"/><lb/>rubin&#187;, etc.; per la casa
+								superiore, la Chiesa trionfante; il tem<milestone unit="wb"/>pio
+								inferiore, le creature corporali che participano di tanta
+									divi<milestone unit="lb"/><lb/>nità. La divina faccia non mostra
+								altro che le cose inanzi alla <lb/><pb n="19"
+									corresp="img://afd-inferno_019.jpg"/>creatione del mondo. I
+								piedi, dopo la fine di questo secolo, la glo<milestone unit="wb"
+								/><lb/>ria de' beati; il mezzo, le cose che corrono per l'età. La
+								differenza <lb/> ch'io fo dunque da sogno a sogno, o da visione a
+								visione, è questa: <lb/>che gli uomini di Dio vegghino cose alte,
+								quegli che sono par<milestone unit="wb"/><lb/>te divini et parte
+								umani le mediocri. Io che son basso in tut<milestone unit="wb"
+								/><lb/>ti i modi, per dottrina, per ispirito, per intelligenza (et
+								per <lb/>fortuna, in buon'ora) et per credito, ho sognato bassissime
+								cose, <lb/>anzi non potevano esser più basse, perché son disceso al
+								centro, al <lb/>profondo, che sono stati sogni di diversi Inferni:
+								come sien fatti, <lb/>ciò che vi sia dentro et quel che vi si
+								faccia, leggendo l'in<milestone unit="wb"/><lb/>tenderete. </p>
+						</div>
+						<div type="argument" n="2">
+							<pb n="20" corresp="img://afd-inferno_020.jpg"/>
+							<head type="main"> INFERNI DE GLI <name key="002471">ACADEMICI
+									<lb/>PEREGRINI</name>. <milestone unit="lb"/></head>
+							<p><!-- fare qui lista di bibl.title? o va bene così? -->
+								<lb/>INFERNO DE GLI SCOLARI <lb/> ET DE' PEDANTI.<lb/> INFERNO DE'
+								MAL MARITATI <lb/> ET DE GLI AMANTI. <lb/>INFERNO DE' RICCHI AVARI
+								<lb/>ET DE' POVERI LIBERALI. <lb/>INFERNO DELLE PUTTANE <lb/>ET DE'
+								RUFFIANI. <lb/>INFERNO DE' DOTTORI IGNORANTI, <lb/>ARTISTI ET
+								LEGISTI. <lb/>INFERNO DE' POETI <lb/>ET COMPOSITORI. <lb/>INFERNO
+								DE' SOLDATI <lb/>ET CAPITANI POLTRONI, etc.<lb/>
+							</p>
+						</div>
+						<div type="argument" n="3">
+							<pb n="21" corresp="img://afd-inferno_021.jpg"/>
+							<head type="main">PRIMA VISIONE. <milestone unit="lb"/></head>
+							<p><lb/>Legato il corpo da un laccio di pensiero, fui da un
+									profon<milestone unit="wb"/><lb/>do sonno gravemente opresso. In
+								questo, mi condussi in un te<milestone unit="wb"/><lb/>atro
+								mirabilmente fabricato et con grande industria adornato, <lb/>in
+								qual modo non lo so. Era questo luogo tondo et alto et ri<milestone
+									unit="wb"/>ceveva dalla cima, che era il mezzo, per un
+								grandissimo occhio il <lb/>lume, che tutta la bella fabrica
+								illuminava: quasi una rotonda <lb/>di Roma. Attorno attorno erano
+								mirabilissimi seggi, et sopra di <lb/>quelli uomini di grave aspetto
+								et mirabili, onde rimasi tutto <lb/> maravigliato ritrovandomi in
+								mezzo di sì divine faccie; ciascuno <lb/> mi guardava, et io loro
+								attentamente rimiravo, talmente che <lb/>uno di ricchi et onorati
+								vestimenti mi prese a dimandare: &#171;Che <lb/> cerchi, uomo
+								umano, in questi spiriti divini?&#187; Allo<milestone unit="wb"
+								/><lb/>ra io fui forzato a narrare tutto il cuor mio et aprire il
+								<lb/>mio concetto et concludere che io desiderava d'andare
+									al<milestone unit="wb"/><lb/>l'<name key="001115"
+									ana="func_place">Inferno</name>, se possibile fosse stato. Egli,
+								voltatosi a tutti gli al<milestone unit="wb"/><lb/>tri del teatro,
+								disse: &#171;Spiriti celesti, questo uomo, tratto dal
+									desi<milestone unit="wb"/><lb/>derio carnale et dalla curiosità,
+								desidera veder l'<name key="001115" ana="func_place">Inferno</name>:
+								però <lb/>ciascun di voi gli dica la sua opinione&#187;. Il
+								primo, udendo questo <lb/>comandamento, disse: &#171;Questo tuo
+								desiderio è molto cattivo, né cre<milestone unit="wb"/><lb/>do che
+								ti venga ad effetto quanto tu ti sei imaginato. L'<name key="001115"
+									ana="func_place">Inferno</name> è <lb/> un lago senza misura, un
+								profondo senza fondo, pieno d'un ardor <lb/> di fuoco incomparabile,
+								colmo di puzzo intollerabile et d'innumera<milestone unit="wb"
+								/><lb/>bil dolore ripieno; là v'è la miseria, quivi son le tenebre,
+								eterno or<milestone unit="wb"/><lb/>rore v'abita sempre, speranza di
+								ben non vi si trova, ma tutti i mali <lb/>ti son atorno del
+								continuo&#187;. Queste parole mi cominciarono a toc<milestone
+									unit="wb"/><lb/>care il cuore, onde m'attristai forte, quando un
+								altro di quella <lb/>bella schiera soggiunse: &#171;Chi va là
+								dentro, o terreno uomo, va <lb/><pb n="22"
+									corresp="img://afd-inferno_022.jpg"/>in luogo che non esce più:
+								là è condennato, là è sepolto; et è tanto il luogo maligno senza
+								remissione che 'l padre non può aiu<milestone unit="wb"/><lb/>tare
+								il figliuolo, né il figliuolo soccorrere il padre. Non vi si
+									scor<milestone unit="wb"/><lb/>ge amico alcuno, né vi si vede
+								parente. Là non giova l'oro, né <lb/>l'argento è di valuta alcuna;
+								le ricchezze non v'hanno spaccio, le <lb/>quali gli avari uomini
+								mondani accumulano con tanta ansietà et <lb/>affanno. Et se tu
+								potessi vedere quei che vi son dannati, udireste dir <lb/>loro
+								queste parole: &#171;Che c'è giovata al mondo la nostra
+								superbia? <lb/>Che utile ci hanno riportato ultimamente le
+								ricchezze? Gli onori <lb/>a che mi servono? Le dignità dove sono
+								ite? Io son pur satio ora <lb/>di lussuriare, la gola è pur piena et
+								il corpo satollo: tutti i con<milestone unit="wb"/><lb/>tenti e
+								tutti i piaceri che m'hanno fatto, o che mi fanno? O infe<milestone
+									unit="wb"/><lb/>lice a me, che tutte le cose passarono come
+								sogno! quasi un fummo, <lb/>un'ombra mi son riuscite, anzi proprio
+								come se non fussero state. <lb/>Che riceve ora l'anima mia per
+								quelle? Eterna pena per breve <lb/>diletto, fuoco intollerabile per
+								vani piaceri, son deputato ad eter<milestone unit="wb"/><lb/>ni
+								suplitii, perché offesi infinitamente; qua non è redentione
+									al<milestone unit="wb"/><lb/>cuna, non c'è altro rimedio che
+								piangere, affligersi e tormentarsi per <lb/>tutti i
+								secoli&#187;. Queste son le parole che t'udiresti
+								<!-- problematica la scrittura: t'udiresti o tu 'diresti? -->dire&#187;.
+								Se prima <lb/>aveva preso spavento, queste parole poi mi afflissero
+								più. Ma <lb/>nel pensare in me medesimo come potevano patir l'anime
+									inpalpa<milestone unit="wb"
+								/><lb/>bili<!-- inpalpabili o impalpabili? --> et gli spiriti
+								invisibili, eccoti che un altro sopra il mio pensie<milestone
+									unit="wb"/><lb/>ro forma queste parole: &#171;Egli è tanta
+								la potestà di <name key="000344">Dio</name>, o uo<milestone
+									unit="wb"/><lb/>mo incredulo, ella è tanta che mai ne serai
+								capace. <name key="000344">Iddio</name>, in quel <lb/>modo che gli
+								piace et che egli vuole, comprende il tutto et fa ogni <lb/>cosa,
+								può far patir l'impalpabile et tormentar l'invisibile. Cia<milestone
+									unit="wb"/><lb/>scuno teme <name key="000344">Iddio</name>,
+								perché egli gastiga gli angeli cattivi, egli i demo<milestone
+									unit="wb"/><lb/>ni punisce et opera tutto come gli piace: perché
+								non può egli l'a<milestone unit="wb"/><lb/>nime far patire? Egli la
+								vestirà un giorno di carne, e starà che tal <pb n="23"
+									corresp="img://afd-inferno_023.jpg"/><lb/>carne patirà (senza
+								consumarsi) eternamente pene, fiamma et <lb/>tormento
+								infinito&#187;. Io mi ristrinsi in me a queste riprensioni, e
+								<lb/>ciascuno de gli altri del mirabil teatro disse alcuna cosa.
+								&#171;Molti <lb/>temono - disse uno - la fiamma, ma io più pena
+								patisco a pensa<milestone unit="wb"/><lb/>re la perdita della faccia
+								di Dio che 'l ricever della pena. Più <lb/>cocerà al peccatore
+								l'udir dire: &#171;Io non ti conosco&#187;, che non gli
+									tor<milestone unit="wb"/><lb/>menterà: &#171;Va' nel fuoco
+								eterno&#187;. Un altro disse: &#171;Chi unisse tutte le
+								<lb/>pene de' dolori del mondo, di tutte le malattie et di tutti gli
+									af<milestone unit="wb"/><lb/>fanni non rapresenterebbe una sola
+								minima pena dell'<name key="001115" ana="func_place">Inferno</name>,
+								<lb/>et tu cerchi, infelice uomo, d'andarvi?&#187;
+								&#171;Guai a chi vi capita per <lb/>forza, - fu da un altro
+								soggiunto - perché cade nel fuoco che non <lb/>si può spegnere, cade
+								nella ghiaccia che non si disfa, trova un ver<milestone unit="wb"
+								/><lb/>mine immortale che del continuo lo rode, confusione lo preme
+								et <lb/>spavento lo calca senza paragone. La morte non t'amazza
+									fa<milestone unit="wb"/><lb/>cendoti morire, perché la comincia
+								et seguita insino al fine, et mai <lb/>non finisce&#187;. In
+								tanto spavento et in udir sì fatti tormenti, mi <lb/>svegliai. </p>
+						</div>
+						<div type="argument" n="4">
+							<pb n="24" corresp="img://afd-inferno_024.jpg"/>
+							<head type="main">DICHIARATIONE <lb/>DELLA PRIMA VISIONE. <milestone
+									unit="lb"/></head>
+							<p><lb/>Ben che l'autore si lasci facilmente intendere, nulladimeno
+								<lb/>c'è parso aprire alquanto più inanzi il senso nascosto. Il
+									tea<milestone unit="wb"/><lb/>tro adunque è questo mondo, et gli
+								uomini, che sopra l'<name key="001115" ana="func_place"
+									>Inferno</name><lb/> hanno parlato, sono stati i dottori santi:
+									<name key="000414">Agostino</name>, <name key="005704"
+										>Grisosto<milestone unit="wb"/><lb/>mo</name>, <name
+									key="005675">Bernardo</name>, <name key="000553">Ugo</name>,
+									<name key="002097">Gregorio</name> etc., illuminati d'un lume
+								<lb/>sopranaturale; et si dimostra che ciascuno doverebbe fuggire
+								l'andare al tenebro<milestone unit="wb"/><lb/>so luogo pien di
+								miserie et non cercar la strada, sì come si fa continuamente
+									og<milestone unit="wb"/><lb/>gi, per via di sì scellerato vivere
+								che fa il cristiano con rapine, omicidii, <lb/>biastemme,
+								assassinamenti et tradimenti. Anzi, udendo le intollerabil pene, si
+								<lb/>doverebbe svegliare dal sonno del peccato et pigliar il
+								sentiero delle buone ope<milestone unit="wb"/>re per condursi al
+								Cielo, schifando in tutti i modi di scendere là giù; et <lb/>si
+								conclude che, per via da noi fabricata con parole, non si può andare
+									all'<name key="001115" ana="func_place">In<milestone unit="wb"
+									/><lb/>ferno</name> vivendo et a uscirne fuori, scrivendo poi
+								atti o fatti di tanto et sì <lb/>fatto precipizio. </p>
+						</div>
+						<div type="cover">
+							<pb n="25" corresp="img://afd-inferno_025.jpg"/>
+							<head type="main">LA RUOTA DEGLI SCOLARI <lb/>NEGLIGENTI.</head>
+							<figure xml:id="p008f003">
+								<figDesc>
+									<graphic url="img://afd-inferni_25_pw.jpg"/>Ruota infernale
+								</figDesc>
+							</figure>
+							<p>
+								<q ana="quotation_simple">Sicut in uno quoque mater est diligentia, ita
+									universae doctrinae <lb/>et disciplinae noverca est
+									negligentia</q>. <lb/><name key="005721">Boetii</name>
+								<title>De disciplina scolarium</title>. </p>
+						</div>
+						<div type="argument" n="5">
+							<pb n="26" corresp="img://afd-inferno_026.jpg"/>
+							<head type="main">LO <name key="006425">SCOLARE</name> ACADEMICO
+								<lb/>PEREGRINO. <lb/>A GLI SCOLARI IGNORANTI. <milestone unit="lb"
+								/></head>
+							<p><lb/>Alcuni di voi si crederanno che, volendo <lb/>scriver il vostro
+								et nostro <name key="001115" ana="func_place">Inferno</name> il
+									<name key="005706">Dispe<milestone unit="wb"/><lb/>rato</name>
+								Academico, ei voglia darvi di quelle pe<milestone unit="wb"/><lb/>ne
+								che vanno per l'ordinario, cioè farvi ro<milestone unit="wb"
+								/><lb/>gnosi, aver debito, ogni cosa al giudeo, <lb/>i libri in
+								pegno, essere inamorati soli il più delle volte, rinegar la
+								<lb/>patienza ad aver danari da casa, giocarsi insino alle brache,
+									dor<milestone unit="wb"/><lb/>mire insino alla campana e tal
+								volta arrivare al mezzo della le<milestone unit="wb"/><lb/>zione,
+								avere la suona, patire una gran passione nell'aver a di<milestone
+									unit="wb"/><lb/>sputare cose che l'uomo non le sa, non trovar
+								credito, star in ca<milestone unit="wb"/><lb/>sa per non aver da
+								vestirsi, esser uccellato dagli altri scolari o<milestone unit="wb"
+								/><lb/>ra per goffo, ora per ignorante et ora per plebeo. Tenuto
+								<lb/>furfante, pidocchioso, misero, spesso a torto, molte volte a
+									ra<milestone unit="wb"/><lb/>gione et alcuna volta forzatamente.
+								Nessuna di queste cose, <lb/>né mille altre che si lasciano per non
+								fastidire chi legge, sono le <lb/>pene di quest'<name key="001115"
+									ana="func_place">Inferno</name>. Ma sono altri bizzarri tormenti
+								forse <lb/>non più uditi, altra sorte di scolari che dello Studio di
+									<name key="001178">Parigi</name>
+								<lb/>o di <name key="001241">Pavia</name>; et altri pedanti che voi
+								non vi pensate, sì come <lb/>leggendo intenderete. <lb/></p>
+						</div>
+					</div>
+					<div type="chapter" n="1">
+						<pb n="27" corresp="img://afd-inferno_027.jpg"/>
+						<head type="main">INFERNO DE GLI SCOLARI <lb/>DEL <name key="005706"
+								>DISPERATO</name>
+							<lb/>ACADEMICO PEREGRINO.</head>
+						<div type="section" n="1.1">
+							<head type="sub"><lb/><name key="000790">DANTE</name>, IL <name
+									key="005706">DISPERATO</name>
+								<lb/>ET <name key="000834">MOMO</name>.<milestone unit="lb"/></head>
+							<p><lb/><name key="000790" ana="func_character">[Dante]</name>Voi
+								andaste dunque inanzi o pur restaste? Secon<milestone unit="wb"
+								/><lb/>do ch'io vi mostrai teneste la via forse? Ma come <lb/>avete
+								trovati tanti Inferni? Io per me non avrei <lb/>giudicato mai che si
+								potesse passar più inanzi. I no<milestone unit="wb"/><lb/>stri
+								antichi non penetraron già sì profondamente. <lb/>
+								<name key="000834" ana="func_character">Mo.</name> Né ancora i
+								nostri moderni naviganti avrebbon trovato tanti nuovi paesi, se si
+								<lb/>fossero stati al detto et al fatto degli antichi. <lb/>
+								<name key="000790" ana="func_character">Dan.</name> Avrò caro, da
+								poi che io sono stato il primo a far la via inanzi, di <lb/>saper
+								qualche bella cosa particulare. <lb/>
+								<name key="000834" ana="func_character">Mo.</name> Dicavela lui, che
+								io per me non ho tenuto a mente le belle cose, ma le brutte sì,
+								<lb/>per poter dir la mia quando mi verrà bene. <lb/>
+								<name key="000790" ana="func_character">Dan.</name>
+								<name key="005706">Disperato</name>, a voi tocca a narrarmi il
+								viaggio. <lb/>
+								<name key="005706" ana="func_character">Disp.</name> Voi salisti, se
+								ben mi ricorda, per tornare all'emispero nostro, su per <name
+									key="000898">Lucifero</name> et <lb/>v'apicaste al collo di
+									<name key="000402">Virgilio</name>; io, che v'era dietro,
+								entrai, per la paura, per il belli<milestone unit="wb"/><lb/>co di
+									<name key="000898">Lucifero</name> nel suo corpo, il quale era
+								tanto grande di cerchio quanto è <lb/>la larghezza del centro. <lb/>
+								<name key="000834" ana="func_character">Mo.</name> La non è tanto,
+								messer <name key="005706">Disperato</name>, voi sognate; doveste
+								vedere il <lb/>corpo di <name key="000898">Lucifero</name> dormendo
+								forse? <lb/><pb n="28" corresp="img://afd-inferni_28.jpg"/>
+								<name key="005706" ana="func_character">Disp.</name> Dico così
+								visibilmente lo viddi, come veggo ora voi qui presentialmente. <lb/>
+								<figure xml:id="p008f004">
+									<figDesc>
+										<graphic url="img://afd-inferni_28_pw.jpg"/>Discesa del
+										Disperato lungo le gambe di Lucifero </figDesc>
+								</figure><lb/>
+								<name key="000790" ana="func_character">Dan.</name> Seguite pure ciò
+								che avete in animo di dire, che il tutto ascol<milestone unit="wb"
+								/><lb/>terò volentieri. <lb/><name key="000834" ana="func_character"
+									>Mo.</name> Et io lascierò dire. <lb/></p>
+						</div>
+						<div type="section" n="1.2">
+							<head type="main"><pb n="29" corresp="img://afd-inferno_029.jpg"
+								/>SECONDA VISIONE.<milestone unit="lb"/></head>
+							<p><lb/><name key="005706" ana="func_character">Disp.</name> Quando io
+								fui in corpo a <name key="000898">Lucifero</name>, egli mi pareva
+								che vi fos<milestone unit="wb"/><lb/>se in ciascuno de' suoi membri
+								diversi tormenti. Il suo cuore era <lb/>un fuoco ardentissimo et
+								grande, le sue vene fiumi correnti di <lb/> bollite acque rosse
+								infocate, il ventre un mar di zolfo strutto <lb/> puzzolente, il
+								fegato pareva un lago congelato come argento <lb/> vivo, in guisa
+								d'oro fonduto, con una vampa terribile, il pol<milestone unit="wb"
+								/><lb/>mone un adiacciato paese. Et nel divorare che egli faceva de
+								gli <lb/>uomini, ciascuno andava nella sua pena destinatagli, chi
+								nella <lb/>fiamma del cuore, chi nelle infocate veni bollenti, altri
+								nel diac<milestone unit="wb"/><lb/>ciato polmone, certi nel ventre
+								puzzolente et di strutto zolfo <lb/>ardente, et quivi si
+								consumavano; poi per le parti di sotto uscen<milestone unit="wb"
+								/><lb/>do fuori liquidi, andavano in una acqua che pareva un mare,
+								la <lb/>quale i quattro fiumi infernali menava in quel profondo. Et
+								quivi ritornavano integri, et <name key="000898">Lucifero</name>, di
+								mano in mano che eglino ar<milestone unit="wb"/><lb/>rivavano a
+								nuoto, gli pigliava et similmente devorava, et era tan<milestone
+									unit="wb"/><lb/>to grande l'ingordigia che tali scendevano giù
+								per la canna della <lb/>gola in quarti, tali mezzi, alcuni senza
+								testa et poi quella die<milestone unit="wb"/><lb/>tro, et altri
+								interi interi; et nel bere di quelle acque che <name key="000898"
+									>Lucifero</name> faceva, ne inghiottiva tanti quanti se gli
+								apresentavano alla boc<milestone unit="wb"/><lb/>ca, come faresti
+								voi a tirar giù le sorsate di vino con i fiori di quel<milestone
+									unit="wb"/><lb/>lo, che vengono a esser infiniti, che si beono
+								con esso; nel cader giù <lb/>nello stomaco di <name key="000898"
+									>Lucifero</name>, ciascuno si lamentava, biastemava,
+									ma<milestone unit="wb"/><lb/>lediva et narrava il suo peccato.
+								Era il suo corpo tutto traspa<milestone unit="wb"/><lb/>rente alcune
+								ore, alcune altre nebbioso et alcune scurissimo. <lb/><pb n="30"
+									corresp="img://afd-inferni_30.jpg"/>In quel tempo adunque ch'io
+								lo vedeva trasparente, mi si mostrava <lb/>tutto il lago, il mare,
+								cioè quella ragunanza d'acque che facevano <lb/>
+								<figure xml:id="p008f005">
+									<figDesc>
+										<graphic url="img://afd-inferni_30_pw.jpg"/>Lucifero nella
+										Giudecca ghiacciata </figDesc>
+								</figure><lb/> i quattro fiumi ch'io v'ho detto. In questo mare
+								d'acque, adun<milestone unit="wb"/><lb/>que, stavano infiniti
+								tormenti et vi cadevano dentro gli uomini, <lb/><pb n="31"
+									corresp="img://afd-inferno_031.jpg"/>che di sopra erano gittati
+								(secondo ch'io poteva comprendere) in <lb/> acqua in questo modo.
+								Andava una barca atorno atorno sopra le <lb/> acque et s'aggirava
+								come fa un uccello che vuoi pigliar del <lb/> pesce, che subito che
+								egli lo vede si tuffa et gli da di piglio. <lb/> Quando il nocchieri
+								aveva carica la sua barca, andava in giro, <lb/>et secondo che egli
+								vedeva nella fronte dell'anime scritto il suo <lb/> tormento, le
+								gettava giù, et quelle, agravate dal peccato, come <lb/>piombo
+								cadevano sopra nella pena determinata loro. Et qui sta<milestone
+									unit="wb"/><lb/>vano in quell'affanno et dolore tanto che le se
+								n'andavano a galla, <lb/> poi agitate dalle onde in qua et là
+								urtavano nelle mani di <name key="000898">Lucifero</name>, et
+								quelle, come ho detto, divorava. In questo pelago era <lb/>una gran
+								ruota, la quale girava del continuo, et nelle traverse vi <lb/>erano
+								certi aperti dove l'anime cadevano d'una in altra divisione,
+								<lb/>così facevano un gran rimescolamento, percotendosi l'un
+								l'altro, <lb/>battendosi, graffiandosi, infragnendosi et
+								villaneggiandosi. Et <lb/>quello che era più pesto, più macero et
+								rotto, non si potendo tene<milestone unit="wb"/><lb/>re, cadea fuori
+								et subito andava a galla et dava nelle unghie di <lb/><name
+									key="000898">Lucifero</name>; così di mano in mano dalla cima
+								delle acque ne cade<milestone unit="wb"/><lb/>vano nella ruota et
+								dalla ruota ne cadevano fuori et si stavano con <lb/>la testa a
+								galla. Andavano in questo luogo a nuoto, a uso di pe<milestone
+									unit="wb"/><lb/>sci, certi animali quasi come cavallette, ma
+								grandi come uomini, <lb/>con le ali aperte, poi tutto il corpo
+								armato et in capo avevano <lb/>uno sprone, et, nel corseggiare come
+								pesci, spesso spesso davano di <lb/>quello sprone a quelle anime che
+								erano in ruota, nude et senza po<milestone unit="wb"/><lb/>ter far
+								difesa. A queste cavallette, dopo alcuno spatio di tempo,
+								<lb/>quando si scurava <name key="000898">Lucifero</name>, cadeva di
+								dosso tutta quella forma <lb/>et si convertivano in anime, et
+								similmente davano in mano a <name key="000898">Lu<milestone
+										unit="wb"/><lb/>cifero</name>: così facevano sette volte il
+								giorno. Nel lamentarsi che fa<milestone unit="wb"/><lb/>cevano
+								costoro, io conobbi che erano stati pedanti al mondo, et <lb/><pb
+									n="32" corresp="img://afd-inferno_032.jpg"/>quei della ruota
+								scolari; parte de' pedanti andavano nel ventre, <lb/>parte nel cuore
+								et in ciascun membro di <name key="000898">Lucifero</name>, et
+									similmen<milestone unit="wb"/><lb/>te gli scolari. Che pena la
+								fusse et per che cagione, ciascuno gri<milestone unit="wb"
+								/><lb/>dando, piangendo, stridendo et lamentandosi la mostrava,
+									par<milestone unit="wb"/><lb/>te delle quali vi dirà <name
+									key="000834">Momo</name>, conciosia che io intendo alquanto
+								<lb/>di riposarmi, tante n'ho dette a un fiato. <lb/><name
+									key="000790" ana="func_character">Dan.</name> Una spaventevol
+								cosa, un terribil tormento ritrovaste. Ma dimmi, <name key="000834"
+									>Momo</name>, alcu<milestone unit="wb"/><lb/>ne cagioni.
+									<lb/><name key="000834" ana="func_character">Mo.</name> Per ora,
+								messer <name key="000790">Dante</name>, non mi forzate a questo,
+								un'altra vol<milestone unit="wb"/><lb/>ta son contento di dirvi il
+								tutto. <lb/></p>
+						</div>
+						<div type="argument">
+							<head type="main">DICHIARATIONE DEL <name key="001216"
+									>DUBBIOSO</name>.<milestone unit="lb"/></head>
+							<p><lb/><name key="000898">Lucifero</name> in questo luogo, parlando con
+								una nuo<milestone unit="wb"/><lb/>va maniera d'allegoria, significa
+								il mondo, nel quale, entrati che <lb/>noi siamo, subito caschiamo
+								ne' tormenti, perché le membra di <lb/>questo mondo son tutte
+								afflitioni, sia uno nella parte dell'<name key="000485"
+									ana="func_place">A<milestone unit="wb"/><lb/>sia</name>,
+									dell'<name key="002729" ana="func_place">Africa</name>,
+									dell'<name key="001698" ana="func_place">Europa</name>, o sia,
+								per più particular mem<milestone unit="wb"/><lb/>bro, per la <name
+									key="001612" ana="func_place">Magna</name>, per la <name
+									key="001042" ana="func_place">Spagna</name>, per la <name
+									key="000803" ana="func_place">Francia</name> o per <name
+									key="000564" ana="func_place">Italia</name>, per tutto si trova
+								<lb/>fuoco di malignità, calor d'ignoranza, vampa di vendetta, zolfo
+								di tristitie, diac<milestone unit="wb"/><lb/>cio di vitii et bollore
+								d'infirmità, onde, consumati, i nostri membri caggiono <lb/>nella
+								corruttione, che è la morte. Di nuovo dai quattro elementi uniti
+									insie<milestone unit="wb"/><lb/>me, per il mare et i quattro
+								fiumi, ritorniamo alla generatione. Chi ci vie<milestone unit="wb"
+								/><lb/>ne in questo mondo integro viene sapiente, buono etd
+								eccellente. Chi manca d'un <lb/>pezzo non è perfetto, perché sia
+								ignorante, sia bestiale, vitioso, maligno o <lb/>altro difetto
+								umano. Chi manca il capo viene a essere stolto, senza
+									cervel<milestone unit="wb"/><lb/>lo et pazzo publico. Beve il
+								mondo di questi elementi bene spesso, perché ne <lb/> nasce infiniti
+								da questi elementi. Ciascuno che ci nasce si lamenta, si duole,
+								<lb/>maledisce il mondo et confessa i proprii difetti, dice gli
+								affanni et publica i <lb/>dolori che egli ci patisce, onde del
+								continuo si lamenta. Il mondo fa luce il <lb/>giorno, tenebre la
+								notte et nebbia quando è fra l'uno et l'altra.<lb/></p>
+						</div>
+						<div type="argument">
+							<pb n="33" corresp="img://afd-inferno_033.jpg"/>
+							<head type="main">DICHIARATIONE DEL <name key="005712"
+									>NEGLIGENTE</name>.<milestone unit="lb"/></head>
+							<p><lb/>Vogliono costoro che la barca che solca il pelago fatto da'
+								quattro fiumi la sia <lb/>tessuta d'anni et che il nocchieri di
+								quella sia il <name key="001140">Tempo</name>, che l'empie d'anime
+								et, quan<milestone unit="wb"/><lb/>do gli piace, le getta in mare,
+								che significa il corpo nostro composto de' quattro elementi. Et
+								<lb/>qua dentro è tormentata da varie afflitioni, secondo che noi
+								portiamo lo scrittoci nella fronte <lb/>dal merito. Talmente che,
+								dopo un continuo affanno, sgravati dal peso, ce ne torniamo a
+								<lb/>galla donde venimmo prima. Et chi ha fatto le perverse opere,
+								offendendo <name key="000344">Dio</name>, il prossi<milestone
+									unit="wb"/><lb/>mo et la Chiesa, uscendo de' suoi santi
+								comandamenti, da nelle mani del <name key="000898">Principe delle
+									tenebre</name>.<lb/></p>
+						</div>
+						<div type="section" n="1.3">
+							<head type="main"><name key="000834">MOMO</name> SOLO.<milestone
+									unit="lb"/></head>
+							<p><lb/>Male certamente si posson far le dichiarationi del<milestone
+									unit="wb"/><lb/>le cose senza sapere i fondamenti, conciosia
+								che, chi <lb/>non sa come si stieno, male, dico, posson fabricarvi
+								<lb/>sopra. Ciascun pensa che i pedanti nominati <lb/>dal <name
+									key="005706">Disperato</name> sieno quella razza d'ignoranti che
+								insegnano a' <lb/>fanciulli per lettera. Che son vitiosi, golosi,
+								negligenti, igno<milestone unit="wb"/><lb/>ranti, goffi, sozzi,
+								noiosi, fastidiosi, ribaldi, scellerati et peg<milestone unit="wb"
+								/><lb/>gio: messer no. Credon poi che, dicendo scolari, egli abbi
+									volu<milestone unit="wb"/><lb/>to favellare de' poveri sgratiati
+								che si stanno tutto il giorno in baie, <lb/>in ciancie, in novelle,
+								et studiano di fare ciascuna altra cosa che <lb/>imparare o legge o
+								filosofia o alcuna buona lettera. Né ancor <lb/>di questi negligenti
+								vuoi dire egli. O quali sono i pedanti et gli <lb/>scolari che egli
+								dice? <name key="000834">Momo</name>, sta' in cervello, pigliala per
+								il buon <lb/>verso. So ben che non ti mancherebbe da fare una
+								rivolta et ti<milestone unit="wb"/><lb/>rar l'acqua a quel mulino ti
+								piacesse, et so che tu sapresti fare una <lb/>lista di scolari di
+								quei della cappellina et infilzare una turba di <lb/>pedanti di
+								ventiquattro cotte. Non ne fia altro per ora. <name key="000834"
+									>Momo</name>, <lb/><pb n="34"
+									corresp="img://afd-inferno_034.jpg"/>che pedanti son questi? Che
+								scolari intende questa lettera? &#200;cci, <name key="000834"
+									>Momo</name>, sì buio che tu non lo vegga? Non sai tu che
+								ciascuno che ci na<milestone unit="wb"/><lb/>sce è scolare del
+								mondo? Ognuno bisogna che impari, tutti gli uomi<milestone unit="wb"
+								/><lb/>ni vengono amaestrati: da chi? Mancano i pedanti? Ma
+								l'insegnar <lb/>sarebbe un piacere, il male è che ci danno delle
+								busse et bisogna <lb/>imparare contro alla voglia nostra. La ruota
+								adunque che è in <lb/>questo mare del mondo viene a esser piena di
+								noi altri scolari. Et <lb/>qua si gira, et che effetto fa ella nel
+								girare? Cader l'uno adosso <lb/>all'altro, urtarci, darci,
+								stratiarci et rovinarci del continuo: <lb/>chi più può et più sa,
+								vince. Quegli uccellacci che, a uso di pe<milestone unit="wb"
+								/><lb/>sci, fuor della ruota si sollazzano in qua et là armati di
+									pan<milestone unit="wb"/><lb/>tiera, con quello sprone in capo,
+								chi sono? Secondo me (di' ben, <lb/><name key="000834">Momo</name>),
+								dico, secondo me, che sono tutti i nostri tiranni et fan<milestone
+									unit="wb"/><lb/>no l'ufitio di cattivo pedante, perché non basta
+								loro godere la mag<milestone unit="wb"/><lb/>gior parte et esser
+								fuori della ruota et del pericolo d'essere ur<milestone unit="wb"
+								/><lb/>tati dalla miseria, pesti et malmenati dalla povertà, che ci
+									vo<milestone unit="wb"/><lb/>glion battere ancora et spronarci,
+								non ci lasciando vivere ne' nostri <lb/>affanni. O <name
+									key="000344">Dio</name>, perché non poss'io dire? Avess'io chi
+									m'ascol<milestone unit="wb"/><lb/>tasse, come io direi di belle
+								cose di questi nostri pedanti che si sono <lb/>impatroniti del fatto
+								nostro et di ciò che noi abbiamo! Et darei la <lb/>interpetratione
+								alle ali, alla corrazzina che si sono armati con es<milestone
+									unit="wb"/><lb/>sa, et a quello sprone farei una brava
+								allegoria. Ma non aven<milestone unit="wb"/><lb/>do chi m'ascolti,
+								che accade cicalar da me solo? Alla fine e' cade lo<milestone
+									unit="wb"/><lb/>ro la tirannia da dosso et paion noi altri,
+								gentiluomini tut<milestone unit="wb"/><lb/>ti et qualche cosa manco.
+								Il tiranneggiar va in visibilio, et <lb/>sopportano più assai di
+								noi, se ben c'è paruto strano a ricever qual<milestone unit="wb"
+								/><lb/>che puntura, nel volerci far fare a lor modo. Tutti a galla,
+								tutti <lb/>in gola a <name key="000898">Satanasso</name> et tutti in
+								corpo alla terra. Ma ecco <name key="000790">Dante</name> et il
+									<name key="005706">Disperato</name>, e' bisogna che io
+								m'apparechi a dar una interpe<milestone unit="wb"/><lb/><pb n="35"
+									corresp="img://afd-inferno_035.jpg"/>tratione o allegoria che
+								stia bene et calzi a punto. Sarà qual<milestone unit="wb"/><lb/>che
+								cosa. Eccomegli atorno. <lb/>
+								<name key="000790" ana="func_character">Dan.</name>
+								<name key="000834">Momo</name>, egli c'è di nuovo: noi abbiamo avuto
+								una lettera da <name key="006412">Plutone</name>, per risposta di
+								quella che gli scrisse il <name key="005706">Disperato</name>.<lb/>
+								<name key="000834" ana="func_character">Mo.</name> Questa fia ben
+								cosa nuova, non lo credo. <lb/>
+								<name key="005706" ana="func_character">Disp.</name> Eccola, con gli
+								increduli si fa così. <lb/>
+								<name key="000834">Mo.</name> La fia una risposta finta, chi volete
+								voi che l'abbi portata? Da<milestone unit="wb"/><lb/>te qua, che io
+								la voglio prima leggere, et poi dirò il parer mio.<lb/></p>
+						</div>
+						<div type="letter" n="1">
+							<head type="main">LETTERA DI <name key="006412">PLUTONE</name><lb/> Al
+									<name key="005706">Disperato</name>, nei mondi de' vivi scrittor
+									dell'<title>Inferno</title><lb/> de gli scolari, molto
+									reale.<milestone unit="lb"/></head>
+							<p><lb/>«Messer lo <name key="005706">Disperato</name>, noi abbiamo
+								ricevuto <lb/>il vostro libro che ci avete mandato, il quale è
+								<lb/>stato d'una gran maraviglia a tutti noi altri signo<milestone
+									unit="wb"/><lb/>ri, oltre che egli ci ha dato materia di ridere
+								un <lb/>pezzo per quell'imaginatione che voi vi sète fatta a scriver
+								le pe<milestone unit="wb"/><lb/>ne infernali. Voi siate lontano dal
+								mercato. Noi abbiamo una <lb/>ruota che è piena di serpenti et di
+								fiamme di fuoco, dove gli sco<milestone unit="wb"/><lb/>lari vi
+								giran dentro né più né manco come facevan girar loro i li<milestone
+									unit="wb"/><lb/>bri su quel lor leggio, et ciascuno ha tante
+								serpe intorno nell'<name key="001115" ana="func_place">In<milestone
+										unit="wb"/><lb/>ferno</name> quanti libri avevano nel mondo.
+								Son poi morsi conti<milestone unit="wb"/>nuamente da quelle, sì come
+								loro con le lor trappole studiate sem<milestone unit="lb"/><lb/>pre
+								mordevan la roba di questo et di quello. Cioè ciò che gli
+									stu<milestone unit="wb"/><lb/>diavono non era ad altro fine che
+								per rubar ciascuno con arte et <lb/>inventione. Un'altra parte di
+								scolari noi gli abbiamo fatti bat<milestone unit="wb"/><lb/>tere, né
+								più né meno come se fossero stati un libro da legare, et <lb/>messo
+								tanti scolari l'un sopra l'altro proprio proprio a uso di fo<pb
+									n="36" corresp="img://afd-inferni_36.jpg"/><milestone unit="wb"
+								/><lb/>gli o carte d'un libro, et qui facciamo studiarvi sopra da'
+								nostri <lb/>diavolotti, i quali fanno quegli scherzi a loro che loro
+								facevano <lb/>
+								<figure xml:id="p008f006">
+									<figDesc>
+										<graphic url="img://afd-inferni_36_pw.jpg"/>
+										<!-- da verificare se si tratta della riproduzione più corretta da esibire!!! -->
+									</figDesc>
+								</figure>
+								<lb/> ai libri. Ora te gli scaglion là, ora ne straccion un pezzo,
+									o<milestone unit="wb"/><lb/>ra vi versan sopra olio, ne fanno
+								scanni, gli prestano, gli ven<milestone unit="wb"/><lb/><pb n="37"
+									corresp="img://afd-inferno_037.jpg"/>dano, barattano et alla
+								fine gli mandano in cento pezzi. La <lb/>differenza, che è dai libri
+								che noi abbiamo fatto di scolari a quel<milestone unit="wb"/><lb/>li
+								che adopravan loro quando erano scolari, si conosce solamente a
+								<lb/>questo: che i lor libri non dicevan nulla essendo stratiati, ma
+								i no<milestone unit="wb"/><lb/>stri gridano et malediscono i <name
+									key="001388">Bartoli</name>, i <name key="001252">Baldi</name> e
+									<name key="006435">Ruino</name>, rovina de' fatti loro. Pensate
+								voi. Qua c'è la minuta di tutti gli <lb/>stratii che gli scolari
+								hanno fatto de' libri, et secondo che levavano i <lb/>pezzi delle
+								carte, di loro si levano ora i bracci, ora una gamba, un
+								<lb/>occhio, quattro coste, il naso, et presso ch'io non lo dissi,
+								questo è un <lb/>de' tormenti che eglino hanno, ancor quella ruota
+								non è poca pena. <lb/>Sì che voi non l'avete colta. Generalmente noi
+								abbiamo poi <lb/>tutte l'anime per iscolari, conciosia che noi
+								troviamo chi è stato <lb/>negligente a imparar la legge di <name
+									key="000344">Dio</name>, et vi dirò una cosa et cre<milestone
+									unit="wb"/><lb/>detemela: che de' cento che vengano qua giù,
+								ottanta et novanta <lb/>non sanno i comandamenti della legge; vi par
+								egli che sien negli<milestone unit="wb"/><lb/>genti questi scolari?
+								De' buon costumi sono ignorantissimi et del <lb/>ben fare hanno
+								perduto insin da piccioli le forme. Ancora che <lb/>queste sien cose
+								che fanno per noi, non resta per questo che le non <lb/>sieno da
+								dire, per farvi capace meglio della negligentia del vostro <lb/>
+								vivere. Quando ci capita un ricco, noi gli dimandiamo che
+									co<milestone unit="wb"/><lb/>sa egli ha studiato al mondo, che
+								lettere egli ha. Tanto risponde <lb/>egli quanto un muro. E non
+								intende, non sa che cosa si sia lette<milestone unit="wb"/><lb/>re o
+								studiare; della gola et delle puttane, de' giochi et altre
+									no<milestone unit="wb"/><lb/>biltà da suoi pari egli ci terrebbe
+								tutti a scuola. Et noi subito gli <lb/>faccian dire chi è stato il
+								suo pedante. Se è stato il padre, se gli <lb/>prepara il suo premio;
+								se parenti o altri mercenarii pedanti, simil<milestone unit="wb"
+								/><lb/>mente il luogo gli è beilo e assegnato. A pedanti sì fatti
+								abbiamo <lb/>fatto un'altra ruota, et quello che insegnò con la
+								lingua cattivi <lb/>amaestramenti, noi gli facciamo portar la testa
+								in mano girando <lb/><pb n="38" corresp="img://afd-inferni_38.jpg"
+								/>per quella ruota sempre. Quegli altri che avevano cattiva
+									inten<milestone unit="wb"/><lb/>tione et dal mal cuore
+								insegnavano mali essempi, noi vogliamo <lb/>
+								<figure xml:id="p008f007">
+									<figDesc>
+										<graphic url="img://afd-inferni_38_pw.jpg"/>Girone
+										infernale<!-- verifica la correttezza dell'immagine -->
+									</figDesc>
+								</figure> che si sbranino il petto et mostrin tutto il di dentro.
+								Chi scri<milestone unit="wb"/><lb/>veva cattiva dottrina, s'aggira
+								con le mani tagliate, et chi ba<milestone unit="wb"/><lb/><pb n="39"
+									corresp="img://afd-inferno_039.jpg"/>stonava i buoni autori, il
+								diavolo stafila lui. Volete voi altro, che <lb/>ciascuno è
+								negligentissimo a fare quello che egli è tenuto et ubligato di fare?
+								Et sollecitissimo a operar tutte le cose che non dove<milestone
+									unit="wb"/><lb/>rebbe. Noi non mandiamo da un tempo in qua più
+								diavoletti a ten<milestone unit="wb"/><lb/>tar le persone, perché si
+								tentano l'un l'altro, si stimulano a far <lb/>male insieme et fanno
+								più tristitie che noi non faremmo far loro <lb/>stimulandogli». <lb/>
+								<name key="000834" ana="func_character">Mo.</name> In effetto il
+								diavolo è padre della bugia, ma in questo gli credo; oggi non si
+								<lb/>studia in altro che in tristitie, ciascuno insegna ribalderie,
+								e per la robba, che è co<milestone unit="wb"/><lb/>sa che finisce,
+								ma il lor desiderio non ha mai fine, ogni grandissima
+									scelleratez<milestone unit="wb"/><lb/>za si mette ad effetto. Or
+								lasciami finir la lettera. <lb/> «Del pregarci che noi gastighiamo
+								non accade: voi non vi potresti <lb/>imaginare sì gran pena costà su
+								che 'l minimo tormento qua giù non <lb/>la passi un milion di volte;
+								è ben vero che, inanzi che noi gli mettia<milestone unit="wb"
+								/><lb/>mo al martorio, vogliamo saper inanzi tutta la vita a parte
+								per parte <lb/>di ciascuno, le quali vite tal volta son sì insolenti
+								che un di noi <lb/>diavoli non la farebbe sì bestiale. Attendete a
+								fare altro che a scri<milestone unit="wb"/><lb/>ver pene, perché
+								dall'ombra al vero et dalla luce alle tenebre non <lb/>v'è
+								comparatione. E son sopragiunti in questo una gran turba <lb/>di
+								scolari et di pedanti; noi gli examineremo et vi scriveremo <lb/>per
+								un de' nostri folletti tutto ciò che diranno et minutamente
+								<lb/>daremo risposta alla vostra lettera. Per ora abbiate patienza,
+								che <lb/>non si può far altro; bisogna andare a far giustitia et
+								gastigare i <lb/>tristi. Dagli <name key="001115" ana="func_place"
+									>Inferni</name> del Nostro Regno, dove non è termine né <lb/>di
+								giorni, di mesi o d'anni. <lb/><name key="006412">Plutone</name>, Re
+								de' dannati». <lb/>
+								<name key="000834" ana="func_character">Momo</name> Io m'aveva messo
+								in cuore di dare una interpetratione al sogno del <name key="005706"
+									>Disperato</name> qui, <lb/>ma fia meglio aspettar la minuta di
+									<name key="006412">Plutone</name>. <lb/><name key="000790"
+									ana="func_character">Dante</name>. Perché ho da passar più
+								inanzi, non so s'io potrò esser con esso
+									<!-- cinquecentina: 'esse' --><lb/><pb n="40"
+									corresp="img://afd-inferno_040.jpg"/>voi; a me parrebbe, se
+								volete altro, che lo diceste ora. <lb/><name key="005706"
+									ana="func_character">Disp.</name> Aspetteremo tempo più comodo.
+								E ci son degli altri nostri Academici che sono <lb/>stati come me
+									all'<name key="001115" ana="func_place">Inferno</name> et
+								desiderano di ragionare ancor loro di ciò che ve<milestone unit="wb"
+								/><lb/>duto hanno o, per dir meglio, paruto di vedere. <lb/><name
+									key="000834" ana="func_character">Momo</name> Per un'altra volta
+								adunque si termini il nostro ragionamento. <lb/><name key="000790"
+									ana="func_character">Dante</name> Sia fatto. <lb/></p>
+						</div>
+						<div type="section" n="1.4">
+							<head type="main"><name key="000834">MOMO</name> SOLO.</head>
+							<p><lb/>Vedi che sorte è stata la mia cattiva. Io era solito di <lb/>
+								stare fra gli dei, et ora son diventato familiar <lb/>de' diavoli.
+								Io attendeva a cose alte, ora alle <lb/>basse, ridevo d'allegrezza
+								et mi bisogna pian<milestone unit="wb"/><lb/>ger di dispiacere. S'io
+								avessi a darne la minuta dicendo quel che <lb/>mi par dell'<name
+									key="001115" ana="func_place">Inferno</name>, direi che mi
+								somiglia la casa di <name key="003579">Dedalo</name>, fa<milestone
+									unit="wb"/><lb/>cile a entrare, difficile a uscire, proprio come
+								una nassa da pesce. <lb/>E mi par aver letto che l'uscir dell'<name
+									key="001115" ana="func_place">Inferno</name> (quando studiava
+								<lb/>anch'io in libris) si può intender in due modi. Il primo è
+									uscen<milestone unit="wb"/><lb/>done che quel luogo non sia poi
+								mai più <name key="001115" ana="func_place">Inferno</name> (difficil
+								cosa, al <lb/>mio giuditio). L'altro per providentia divina egli sia
+								permesso d'u<milestone unit="wb"/><lb/>scirne per ritornare (che non
+								s'intende uscire), come si fa nel ca<milestone unit="wb"/><lb/>var
+								fuori di prigione uno tanto che se gli parli, et per questo non
+								<lb/>si libera dalla prigione et non si scioglie del legame. Adunque
+								<lb/>per insegnare et ammaestrare, mostrando il gran terrore del
+								luogo, <lb/>la divina bontà permette l'aparitioni, pur sempre
+								quell'anima ha <lb/>il cruciato medesimo. So che, s'io volessi ora
+								stare a ricordarmi <lb/> dell'aparitioni et visioni accadute et
+								sogni, che io ne direi pa<milestone unit="wb"/>recchie, ma tutto
+								riserbo alla seconda parte del terzo libro.</p>
+						</div>
+					</div>
+					<div type="colophon">
+						<p>FINE <lb/>della prima parte dell'<title>Inferno</title> de gli
+							scolari.</p>
+					</div>
+				</div>
+				<!-- -->
+				<!-- END -->
+				<!-- %END% -->
+				<!-- NON MODIFICARE LA PARTE OLTRE IL PUNTO "END" -->
+			</div>
+		</body>
+		<back>
+			<div type="part"/>
+		</back>
+	</text>
+</TEI>

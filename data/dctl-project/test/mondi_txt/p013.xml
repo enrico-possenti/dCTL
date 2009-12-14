@@ -1,0 +1,1081 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<!DOCTYPE TEI SYSTEM "../../_common/dtd/dctl.core.dtd" [
+<!ENTITY % TEI.extension.dtd SYSTEM "../../_common/dtd/dctl.extension.dtd">
+<!ENTITY % collection.header.ent SYSTEM "../_header.ent">
+<!ENTITY % package.header.ent SYSTEM "_header.ent">
+<!ENTITY TEI.header SYSTEM "../../_common/headers/teiHeader.package.xml">
+<!ENTITY TEI.header.profileDesc.textClass SYSTEM "../../_common/add-ons/teiHeader.profileDesc.textClass.xml">
+%TEI.extension.dtd;
+%collection.header.ent;
+%package.header.ent;
+]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&package_id;"
+	n="&source_author; - &source_title_main;"> &TEI.header; <text
+		xml:lang="&source_lang;" xml:id="&package_id;.package" ana="&source_genre;">
+		<front>
+			<div type="part"/>
+		</front>
+		<body>
+			<div type="part">
+				<!-- NON MODIFICARE LA PARTE PRECEDENTE IL PUNTO "BEGIN" -->
+				<!-- %BEGIN% -->
+				<!-- BEGIN -->
+
+				<div type="part" n="6">
+					<div type="frontispiece">
+						<pb n="169" corresp="img://afd-inferni_169.jpg"/>
+						<head type="main"><lb/>INFERNI <lb/>DEL <name key="000617">DONI</name>.
+							<lb/>SESTO INFERNO DELLO <name key="001447">SMARRITO</name>
+							<lb/>ACADEMICO PEREGRINO. <lb/><figure xml:id="p013f001">
+								<p type="motto">SAEPE LEO MINUTARUM <lb/>AVIUM CIBUS FUI.</p>
+								<graphic url="img://afd-inferni_169_pw.jpg"/>
+								<figDesc>Marca doniana</figDesc>
+							</figure></head>
+						<head type="sub"><lb/>IN <name key="000568" ana="func_place">VINEGIA</name>
+							<lb/>NELL'ACADEMIA PEREGRINA <lb/>PER <name key="001245">FRANCESCO
+								MARCOLINI</name>. <lb/><date value="1553-00-00">M D L
+							III</date>.</head>
+					</div>
+					<div type="dedication">
+						<pb n="170"/>
+						<pb n="171" corresp="img://afd-inferno_171.jpg"/>
+						<head type="main"><lb/>AL NOBILISSIMO SIGNORE, <lb/>IL SIGNOR <name
+								key="006662">MARSILIO <lb/>DE GROSSI</name>, GENTILUOMO <lb/>REALE
+							ET MOLTO <lb/>MAGNIFICO, <milestone unit="lb"/><lb/>massaro
+							dell'illustrissimo et eccellentissimo signor Duca di <name key="003385"
+								ana="func_place">Mantova</name>.</head>
+						<p><lb/><name key="003385" ana="func_place">Mantova</name>, patria vostra
+							illustrissima ci <lb/>ha mostrato della sua pianta anticamente frutti
+							<lb/>mirabili, de i qualli n'ha gustato tutto il mon<milestone unit="wb"
+							/><lb/>do et oggi dalla sua radice, par che ne pul<milestone unit="wb"
+							/><lb/>luli del continuo infiniti rami, che di foglie, <lb/>di fiori et
+							di frutti si colmeranno per mostrare quanto ab<milestone unit="wb"
+							/><lb/>bino fermato eccellentemente le barbe un sì fertilissimo terreno.
+							<lb/>Quella prova ch'ella ha fatto nell'arbor delle lettere, della
+								nobil<milestone unit="wb"/><lb/>tà et delle virtù fra gli antichi la
+							non sìè scordata mai di di<milestone unit="wb"/><lb/>mostrarla nelle
+							moderne piante de' suoi uomini illustri. <lb/>La fama adunque non resta
+							mai di portarci con la tromba della ve<milestone unit="wb"/><lb/>rità
+							nuovi parti, et ce gli mostra, onde siamo sforzati noi altri (che <lb/>i
+							cieli ci hanno destinato a scriver i meriti de' buoni), per debito et
+							<lb/>per osservatione del giusto, di farne fede al mondo, ora
+								illustran<milestone unit="wb"/><lb/>do il nome et ora inchinandoci
+							con riverenza a sì fatti uomi<milestone unit="wb"/><lb/>ni degni
+							d'onore. <lb/>Noi, a far questo uffitio, non ci moviamo mai se il merito
+							non <lb/>ce lo accenna prima, la <name key="003718">Fama</name> lo
+							affermi et gli uomini del mon<pb n="172"
+								corresp="img://afd-inferno_172.jpg"/><milestone unit="wb"/><lb/>do
+							ce lo manifestino. Non mancano per vostra signoria illustre
+								gentil<milestone unit="wb"/><lb/>uomini degni che vengano in questa
+							città di <name key="000568" ana="func_place">Vinegia</name>, patria
+							<lb/>de' virtuosi, che ci affermino esser vero quanto suona la <name
+								key="000718">Fama</name><lb/> et accenna il merito di vostra
+							signoria. Onde noi veggiamo in voi la <lb/>realità del cuore, la bontà
+							dello spritio et la sincertià della <lb/>mente. La fede regna nella
+							vostra parola, et la carità si ferma <lb/>nell'anima, talmente che noi
+							siamo mossi debitamente a scri<milestone unit="wb"/>vere il vostro nome,
+							degno d'ogni eternità, in questo piccol vo<milestone unit="lb"
+							/><lb/>lume, il quale è un minimo grano di seme; ma crescerà et sarà
+							<lb/>gran frutto, percioché noi l'abbiamo gettato in campo
+								fertilissi<milestone unit="wb"/><lb/>, che è il merito di vostra
+							signoria, cosè il mondo vedrà tosto per vir<milestone unit="wb"/><lb/>tù
+							dell'aumento di questo, et foglie et fiori et frutti mira<milestone
+								unit="wb"/><lb/>, imitando la realità di vostra signoria, che sotto
+							la pianta della sua <lb/>virtù si riposano all'ombra delle foglie i
+							poveri afflitti dall'ar<milestone unit="wb"/><lb/>dor della miseria, i
+							buoni odorano la suavità de' fiori et i vir<milestone unit="wb"
+							/><lb/>tuosi gustano de' frutti. Così la nostra penna affermerà con
+								eter<milestone unit="wb"/><lb/>na testimonianza il valore di vostra
+							signoria, alla quale noi siamo ob<milestone unit="wb"/><lb/>ligatissimi,
+							et infinitamente et humilmente ci raccomandiamo. <lb/>Di <name
+								key="000568" ana="func_place">Vinegia</name>, <date
+								value="1553-02-03">alli III di febraio MDLIII.</date>
+							<milestone unit="lb"/> Dell'Academia. <lb/>Di vostra signoria <milestone
+								unit="lb"/>Il <name key="000617">Doni</name> presidente et <name
+								key="002471">Academici Peregrini</name>.</p>
+					</div>
+					<div type="argument" n="1">
+						<pb n="173" corresp="img://afd-inferno_173.jpg"/>
+						<head type="main">
+							<lb/>A I LETTORI <lb/>LO <name key="001447" ana="func_character"
+								>Smarrito</name>
+							<lb/>ACADEMICO. </head>
+						<p><lb/>Un certo Academico è scappato via d'un'Acade<milestone unit="wb"
+							/><lb/>mia et è venuto a trovare un suo amico che egli <lb/>aveva già,
+							il quale è nella nostra Pellegrina, et <lb/>credendo che non sapesse le
+							cose accadute, va <seg ana="syntexp_idiomatic">da <lb/>buono a
+								buono</seg>, et quivi hanno ragionato et discorso insieme
+								d'o<milestone unit="wb"/><lb/>pere, d'autori, di poeti, di
+							tradutioni et detto mille pazzie. <lb/>Io sono stato per dar fuori il
+							loro ragionamento alla stampa, ma, <lb/>nel pensare di farlo senza lor
+							licenzia, mi si rappresentava un far <lb/>loro un certo carico. Il
+							nostro <name key="006228">Pellegrino</name> è stato contento, che <lb/>è
+							come dire la maggior parte che importa, io son stracontento, il
+							<lb/>cicalamento ha un certo che del buono, se bene egli carica
+								l'Aca<milestone unit="wb"/><lb/>demico Ignorante <name key="006663"
+								>Svergognato</name>, non importa: a ogni <lb/>modo, chi porta adosso
+							cento libre di vergogna, un'oncia di vitu<milestone unit="wb"
+							/><lb/>perio non gli fa carico di più et la sente tanto quanto la non ci
+							<lb/>fosse; poi egli ha buone spalle esperimentate a tante bastonate
+								con<milestone unit="wb"/><lb/>tanti, non si muta di colore, non si
+							vergogna et stima tanto il <lb/>dire a lui quanto se si dicesse a un
+							muro. Però il partito è vin<milestone unit="wb"/><lb/>to: che si dia
+							fuori quelle quattro parole che eglino hanno frappa<milestone unit="wb"
+							/><lb/>to et vengano a proposito inanzi all'<bibl xml:id="p13001.01">
+								<title>Inferno de' poeti</title>
+							</bibl> (perché <lb/>ne toccano non so che) <bibl xml:id="p13001.02">
+								<title>et de' compositori</title>
+							</bibl>, per abbozzar la mate<milestone unit="wb"/><lb/>ria; se la sarà
+							stata a proposito la cosa o no, lo lascerò nel giu<milestone unit="wb"
+							/><lb/>ditio di chi leggerà, et con questo mi raccomando. </p>
+					</div>
+					<div type="argument" n="2">
+						<pb n="174" corresp="img://afd-inferno_174.jpg"/>
+						<head type="main"><lb/>LO <name key="006663" ana="func_character"
+								>SVERGOGNATO</name>
+							<lb/>Cancellieri dell'Academia de gli Ignoranti, <lb/>ET IL <name
+								key="006228" ana="func_character">PELLEGRINO</name>, <lb/>Presidente
+							dell'Academia Pellegrina. <milestone unit="lb"/></head>
+						<p><lb/>[<name key="006663" ana="func_character">Sver.</name>] Da poi che
+							gli <name key="006665">Academici Ignoranti</name> m'hanno fatto
+							<lb/>cancellieri, che tosto farà parecchi giorni, come tu <lb/>sai,
+								<name key="006228">Pellegrino</name> caro, onde io non fo mai altro
+							che <lb/>scrivere non cose apartenenti all'Academia ma <lb/>certi umori
+							(rime, a dirti il vero), et ho una voglia di metterle a <lb/>stampa
+							ch'io smanio, non come fanno gli altri che dicano <bibl>
+								<title>Rime <lb/>del tale</title>
+							</bibl>, ma con un titolo bravo che sia a questa foggia: <bibl>
+								<title>Le mi<milestone unit="wb"/><lb/>rabili compositioni dello
+										<name key="006663">Svergognato</name>, poeta
+									laureato</title>
+							</bibl>; sì che io <lb/>ho la caccia da questa passione. Che di' tu,
+								<name key="006228">Pellegrino</name>? <lb/><name key="006228"
+								ana="func_character">Pel.</name> E' ci sono alcune cose, caro
+							fratello, che mi ritirano indietro le redine del dirti sì et
+							<lb/>sbarbazzarti cotesto capriccio, et al mio parere tu hai preso in
+							bocca il morso del<milestone unit="wb"/><lb/>la prosuntione et sento
+							dirti già dai popoli: &#171;O che goffo scartafaccio!&#187;,
+							perché <lb/>io so che le non saranno molto volume, sì che senza rispetto
+								<seg ana="syntexp_idiomatic">tu toccherai del <lb/>raccheto</seg>.
+								<lb/><name key="006663" ana="func_character">Sver.</name> S'io vi
+							fusse (per ispaventachio) <seg ana="verbfig_ecphrasis">ritratto nel
+								frontespitio, con <lb/>una bella palandra di domasco di terzo pelo
+								foderata di lupi cer<milestone unit="wb"/><lb/>vieri, con due
+								famettine sopra che avessino le lor grillande d'al<milestone
+									unit="wb"/><lb/>loro per mettermele in capo, con due satiretti
+								di sotto che reggessi<pb n="175" corresp="img://afd-inferno_175.jpg"
+									/><milestone unit="wb"/><lb/>no il mio mostacchio", con il mio
+								nome latinamente in cerchio</seg>, non <lb/>credi tu che generasse
+							un certo che di timore et tremore? <lb/><name key="006228"
+								ana="func_character">Pel.</name> A punto tu hai trovato oggi le
+							brigate spaurose, tu non gli spaventeresti se tu <lb/>ti facessi
+							ritrarre con una istoria sotto di tradimento, con diavoli atorno et con
+							<lb/> le sirene che fanno tanto male; anzi più, se tu vi mettessi un
+							teschio et una <lb/>corda, quasi trofei del boia, non ti temerebbono un
+							pelo, sì che pensa pure ad <lb/>altro, che la cosa non ti riuscirà, anzi
+							ti diranno capo grosso cento volte di più. <lb/><name key="006663"
+								ana="func_character">Sver.</name> Tu di' il vero, l'andare ancora in
+							mano alla plebe, che ti compra<milestone unit="wb"/><lb/>no per cinque
+							soldi, non istà bene; et, per dirti tutti i miei secreti, <lb/>già dieci
+							anni fa le detti a stampa; et ben sai che sempre s'impara, <lb/>io mi
+							sono accorto d'averci fatto dentro mille et mille castronerie, <lb/>onde
+							l'ho scritte, trascritte, riscritte, rapezzate, cassate, rifatti versi,
+							<lb/>cancellate et di nuovo le vorrei dare alla stampa, e volentieri
+								fa<milestone unit="wb"/><lb/>rei questa cosa per levar via certi
+							uomini da bene che vi son no<milestone unit="wb"/><lb/>minati, i quali
+							son miei nimici, et certe lettere che io ho rimestate <lb/>et fatte far
+							bene, nelle quali v'erano più errori che parole. <lb/><name key="006228"
+								ana="func_character">Pel.</name> Già il male è fatto, tu sei stato
+							adunque tenuto per un castrone insino a ora, tu <lb/>stai fresco; se te
+							le rifacesse il <name key="000103">Petrarca</name> et il <name
+								key="000597">Boccaccio</name>, non entrereste più in <lb/>credito di
+							rime, se alla prima le non hanno avuto corso. <lb/><name key="006663"
+								ana="func_character">Sver.</name> Nulla di
+							esito<!-- cinquecentina: 'exito' -->, secondo che mi vien detto da chi
+							tiene il magazzino <lb/>dove le son dentro, et nessuno le dimanda, ma,
+							s'io le ristampo nuo<milestone unit="wb"/><lb/>vamente, penso che
+							saranno lette et rilette, o io ci ho agiunto le <lb/>belle cose! Ma se
+							non son chieste, lo stampatore non vorrà rifarme<milestone unit="wb"
+							/><lb/>le, né vero? <lb/><name key="006228" ana="func_character"
+								>Pel.</name> Chiara, senza dubbio. <lb/><name key="006663"
+								ana="func_character">Sver.</name> Sarà il meglio ch'io lasci stare.
+								<lb/><name key="006228" ana="func_character">Pel.</name> Sì, al
+							parer mio. <lb/><name key="006663" ana="func_character">Sver.</name>
+							Egli è pure una gran vergogna che ogni civetta ti vogli censurare
+							<lb/>et lacerar le tue compositioni. <lb/><name key="006228"
+								ana="func_character">Pel.</name> Non so quel che si sia cagione di
+							questo, ma il più vituperoso titolo che si possa <lb/> dare a uno oggi è
+							dirgli: egli è poeta. Credo che ne siate cagione voi per <lb/>uno, a
+							favellarvi d'amico. <pb n="176" corresp="img://afd-inferno_176.jpg"
+								/><lb/><name key="006663" ana="func_character">Sver.</name> O
+							perché? <lb/><name key="006228" ana="func_character">Pel.</name> Perché
+							avete sempre avuto natura maligna, dite sempre male di chi vi fa bene,
+							<lb/>siate poi svergognato: credete che non si sappia? Chi volete voi
+							che stam<milestone unit="wb"/><lb/>pino le vostre cose? <lb/><name
+								key="006663" ana="func_character">Sver.</name> Quella fu una favola
+							che tosto passò via, io non me ne vergogno, <lb/>anzi mi ficco inanzi
+							più che mai et mi lascio vedere. <lb/><name key="006228"
+								ana="func_character">Pel.</name> Messer sì, secondo che vi dovevate
+							andare a sotterrare. <lb/><name key="006663" ana="func_character"
+								>Sver.</name> Non ischerzar con il vero particularmente, ma favella
+							come me, <lb/>che do nell'universale, et ho qui un'opera che discorre
+							sopra i <lb/>poeti et altri componitori. <lb/><name key="006228"
+								ana="func_character">Pel.</name> Che discorri tu, in conclusione?
+								<lb/><name key="006663" ana="func_character">Sver.</name> Io ho
+							cominciato a riprender certi che si son presi una licenza <lb/>di
+							racconciare i libri d'altri, che non sanno cucire i loro; che, se
+							<lb/>guardassino prima le lor cose, vedrebbono che sono aroganti et le
+							<lb/>lascerebbono stare in quel grado che le sono, senza assassinarle,
+							<lb/>perché le stanno meglio scorrette dal tempo che storpiate da gli
+							<lb/>uomini. <lb/><name key="006228" ana="func_character">Pel.</name>
+							Fatevi netta la barba, messere. <lb/><name key="006663"
+								ana="func_character">Sver.</name> De' comenti faccino quanti ne
+							piace loro. Che vuoi dire che l'<name key="000643">A<milestone unit="wb"
+								/><lb/>riosto</name> non si messe a rappezzar <name key="003144"
+								>Morgante</name>, come certi altri goffi <lb/>che v'hanno fatto
+							atorno mille frasche? Et non ha tòcco il <name key="002118">Bo<milestone
+									unit="wb"/><lb/>iardo</name>? Guarda che l'<name key="002743"
+								>Alamanni</name> stia a rompersi il cervello con il <lb/>comentar il
+								<name key="000103">Petrarca</name> o postillarlo! <lb/><name
+								key="006228" ana="func_character">Pel.</name> Perché gli basta
+							l'animo (ed è) di farsi illustre con le sue opere, senza gettarsi
+							<lb/>adosso ad altri. <lb/><name key="006663" ana="func_character"
+								>Sver.</name> L'<name key="001666">Aretino</name> anch'egli non
+							traduce et non comenta nulla. <lb/><name key="006228"
+								ana="func_character">Pel.</name> E non usurpa anco, come hai fatto
+							tu, opera d'alcuno et la dedica a suo nome, <lb/>ma fa tutto da natura e
+							di quel che gli ha dato <name key="000344">Dio</name>. <lb/><name
+								key="006663" ana="func_character">Sver.</name> Da voi posso
+							soportare ogni cosa, ma se fosse un altro, farei cen<milestone unit="wb"
+							/><lb/>to risposte. Ma diteme: io ho inteso che si fa nella vostra
+								Aca<milestone unit="wb"/><lb/>demia certi <bibl>
+								<title>Inferni</title>
+							</bibl>, che cosa sono eglino? <pb n="177"
+								corresp="img://afd-inferno_177.jpg"/><lb/><name key="006228"
+								ana="func_character">Pel.</name> Trattano de' poeti vostri pari et
+							componitori. <lb/><name key="006663" ana="func_character">Sver.</name>
+							S'io ci avessi a metter la mia santa mano, direi le belle cose.
+								<lb/><name key="006228" ana="func_character">Pel.</name> Che
+							direste? <lb/><name key="006663" ana="func_character">Sver.</name> Direi
+							che la stampa è un inferno nostro et degli altri scritto<milestone
+								unit="wb"/><lb/>ri morti. <lb/><name key="006228"
+								ana="func_character">Pel.</name> In che modo? Ma non vi fate
+							scrittore, anzi più tosto ombra degli scrittori. <lb/><name key="006663"
+								ana="func_character">Sver.</name> Come vi piace, ma udite da che
+							canto io mi farei. Uno ignoran<milestone unit="wb"/><lb/>te poeta o
+							scrittore, avendo il fuoco del desiderio d'imortalarsi, <lb/>non gli
+							bastando l'animo con le sue opere di sodisfare al suo desi<milestone
+								unit="wb"/><lb/>derio, corre a farsi nominare in qualche leggenda,
+							et prega et <lb/>supplica tanto che egli entra in calendario; et qua
+							comincia a es<milestone unit="wb"/><lb/>ser conosciuto in nome, ma
+							quando viene alla prova de' fatti, ri<milestone unit="wb"/><lb/>mane
+							disonorato: ecco già che egli si trova in uno inferno. <lb/><name
+								key="006228" ana="func_character">Pel.</name> Buono spolverizzo per
+							principio. <lb/><name key="006663" ana="func_character">Sver.</name> Io
+							ci sono stato mille volte a questa sorte d'<name key="001115"
+								ana="func_place">inferni</name>. <lb/><name key="006228"
+								ana="func_character">Pel.</name> Vivo o morto? <lb/><name
+								key="006663" ana="func_character">Sver.</name> Quando voleva
+							stampare le cose mie et far la spesa, quando pen<milestone unit="wb"
+							/><lb/>sava di guadagnare, d'arricchirmi, poi non le vendeva, gettava
+							<lb/>via i danari et perdeva. <lb/><name key="006228"
+								ana="func_character">Pel.</name> Ancor questa vai qualche cosa.
+								<lb/><name key="006663" ana="func_character">Sver.</name> Non è poco
+							tormento il volere i suoi libri in forma grande et gli <lb/>stampatori,
+							' librai gli vorrebbon piccoli, onde tu rinieghi il mondo, <lb/>perché
+							un mare de' tuoi scritti se ne va in quattro fogli, et tu <lb/>pensi di
+							presentare un volume et doni una leggenda. Io mi son <lb/> riso di certi
+							prosontuosi che d'un libruzzo di dieci carte ne fanno <lb/>tre et
+							quattro parte, et urtano con le dedicationi in principi, <lb/>gran
+							signori et reine, ma alla fine si chiariscono, perciò che <lb/>non ne
+							ricevano né premio né risposta di ringratiamento. O che <lb/>inferno, o
+							che pena si prova egli in sì fatti casi! <lb/><name key="006228"
+								ana="func_character">Pel.</name> E' mi dorrebbe più la spesa che io
+							vi facessi a torno. <pb n="178" corresp="img://afd-inferno_178.jpg"/>
+							<lb/><name key="006663" ana="func_character">Sver.</name> Udite, ancor
+							cotesta cuoce: far legar un libro con ori, sete, vel<milestone unit="wb"
+							/><lb/>luti, miniature et pagare chi lo porti et donare a chi ti
+								favo<milestone unit="wb"/><lb/>risca, et poi <seg
+								ana="syntexp_idiomatic">rimanere su le <name key="004147">secche di
+									Barberia</name></seg>. <lb/><name key="006228"
+								ana="func_character">Pel.</name> I protettori miei son morti: uno
+							era il nobile virtuoso et il virtuoso nobilissimo <lb/>messer <name
+								key="005673">Francesco Campana da Colle</name>, corona de' buoni
+							intelletti appresso al <name key="001633">Prin<milestone unit="wb"
+								/><lb/>cipe di Firenze</name>, l'altro signore illustre et degno
+							d'ogni onore conte <lb/><name key="001214">Fortunato Martinengo</name>,
+							con i suoi amici. Ma così è piaciuto a <name key="000344">Dio</name>,
+							così sia. <lb/>Egli me gli tolse et la sua bontà me ne darà de gli
+							altri. <lb/><name key="006663" ana="func_character">Sver.</name> Mi
+							piace che voi vi ricordate di chi v'ha fatto piacere et in mor<milestone
+								unit="wb"/><lb/>te gli lodiate et onoriate, che così è dovere.
+								<lb/><name key="006228" ana="func_character">Pel.</name> Mi ricordo
+							ancora di chi m'offende, a torto dico, che a ragione me lo scordo
+								su<milestone unit="wb"/><lb/>bito et me ne ricorderò sempre a torto.
+								<lb/><name key="006663" ana="func_character">Sver.</name> Di questo
+							v'exorterei a dimenticarvelo ancora. <lb/><name key="006228"
+								ana="func_character">Pel.</name> Sarà ciò che <name key="000344"
+								>Dio</name> vorrà. Seguitate. <lb/><name key="006663"
+								ana="func_character">Sver.</name> O che pena quando si getta via il
+							tempo, la fatica, la spesa et <lb/>l'amico, et aviene bene spesso. D'una
+							cosa ragionerei gagliarda<milestone unit="wb"/><lb/>mente, quasi che mi
+							verrebbe voglia di dir lor villania: e' ci son <lb/>certi che fanno un
+							libruzzo in dieci anni, et, se per sorte e' si ri<milestone unit="wb"
+							/><lb/>stampa, e' lo rimpiumano et raffazzonano, che egli non c'è mai
+							<lb/>altro che fare che con quelle leggende. Benedetti sien coloro
+							<lb/>che alla prima volta si risolvano et non vanno sempre
+								rappez<milestone unit="wb"/><lb/>zando. Ridagli, ritocca, rimuovi,
+							che passione di chi spende! A <lb/>posta di tre versi di più, avere a
+							ricomprare il medesimo libriccino. <lb/>Costoro che fanno, o sanno o non
+							sanno: se sanno fare, perché <lb/>dare alle persone questa corda? Se non
+							sanno, lasciano andare; o <lb/>io dubito: guardala meglio inanzi che tu
+							la dia fuori, che il man<milestone unit="wb"/><lb/>dare un libro a
+							stampa per il mondo non è come dare una volta <lb/>al canto e tornare a
+							casa. Se sentissino ciò che si dice, e' parreb<milestone unit="wb"
+							/><lb/>be loro d'esser nell'<name key="001115" ana="func_place"
+								>inferno</name> da dovero. Bella prova fanno certi <lb/>traduttori,
+							che, traducendo un'opera di qualche valente o fa<milestone unit="wb"
+							/><lb/>moso o buon autore, v'appiccano una coda d'aggiunta per <pb
+								n="179" corresp="img://afd-inferno_179.jpg"/><lb/>correre gli anni
+							dell'eternità, et non s'accorgano che inferno <lb/> d'infamia e'
+							n'acquistano con quel paragone sì appresso. <lb/><name key="006228"
+								ana="func_character">Pel.</name> Ce ne son molti che urtano in
+							cotesti umori. Ma toccate voi, la Signoria Vo<milestone unit="wb"
+							/><lb/>stra (non vo' dir più &#171;tu&#187;, ch'io mi ricordo
+							che avete grado), nulla de gli autori <lb/>morti in cotesti discorsi?
+								<lb/><name key="006663" ana="func_character">Sver.</name> Per
+							eccellenza. Io fo conoscere al mondo come noi (cioè chi è <lb/>stato)
+							gli abbiamo assassinati. <lb/><name key="006228" ana="func_character"
+								>Pel.</name> La Signoria Vostra, messer sì; dite via. <lb/><name
+								key="006663" ana="func_character">Sver.</name> Come sono stati conci
+							i poeti latini da molti stampatori et <lb/>correttori? <lb/><name
+								key="006228" ana="func_character">Pel.</name> Pessimamente.
+								<lb/><name key="006663" ana="func_character">Sver.</name> I sonetti
+							del <name key="006668">Guidiccione</name> (che chi gli vede a penna di
+							sua mano <lb/>strabilia della gran differenza) come si ritrovano?
+								<lb/><name key="006228" ana="func_character">Pel.</name>
+							Assassinati. <lb/><name key="006663" ana="func_character">Sver.</name>
+							Quanta corda hanno avuto i <bibl>
+								<title>Petrarchi</title>
+							</bibl>, i <bibl>
+								<title>Danti</title>
+							</bibl>, i <bibl>
+								<title>Boiardi</title>
+							</bibl>, <lb/>i <bibl>
+								<title>Boccacci</title>
+							</bibl> et altri infiniti buoni autori da chi non ha saputo <lb/>d'esser
+							vivo? <lb/><name key="006228" ana="func_character">Pel.</name> Sono
+							stati stratiati et condotti all'<name key="001115" ana="func_place"
+								>inferno</name>. <lb/><name key="006663" ana="func_character"
+								>Sver.</name> O che titoli curiosi da far comprare i libri malamente
+								malme<milestone unit="wb"/><lb/>nati: opera veduta, riveduta,
+							rifatta, corretta, ampliata, <lb/>illustrata, cavatola dalle tenebre,
+							con cose mai più vedute et <lb/>altre frappe. <lb/><name key="006228"
+								ana="func_character">Pel.</name> Come vorresti voi che dicessino a
+							dire il vero? <name key="006663" ana="func_character">Sver.</name>
+							Storpiata, assassinata, scomessa, lacerata et guasta, cavata <lb/>di
+							sesto, fuori di strada et rovinata di tal sorte che mai la sarà <lb/>da
+							vedere. <lb/><name key="006228" ana="func_character">Pel.</name> Chi
+							trova coteste canzone altri che voi poeti, per fare spedire i libri a'
+							librari? <lb/>E n'acquistate vergogna et danno. <lb/><name key="006663"
+								ana="func_character">Sver.</name> Che vi par del mio discorso?
+								<lb/><name key="006228" ana="func_character">Pel.</name> Tanto bene
+							che, s'io vo a dire il vero, mi siate venuto a noia; se pensate di
+							<lb/>farmi piacere, chetatevi. <pb n="180"
+								corresp="img://afd-inferno_180.jpg"/>
+							<lb/><name key="006663" ana="func_character">Sver.</name> Se io vi
+							levassi dinanzi? <lb/><name key="006228" ana="func_character"
+								>Pel.</name> Bene. <lb/><name key="006663" ana="func_character"
+								>Sver.</name> S'io non tornassi? <lb/><name key="006228"
+								ana="func_character">Pel.</name> Meglio. <lb/><name key="006663"
+								ana="func_character">Sver.</name> Me ne vo. <lb/><name key="006228"
+								ana="func_character">Pel.</name> Andate come <name key="006670">san
+								Gallo</name>, ma non con quella gratia. <lb/><name key="006663"
+								ana="func_character">Sver.</name> Dichiaratemi questo <name
+								key="006670">san Gallo</name>. <lb/><name key="006228"
+								ana="func_character">Pel.</name> Son contento, a ciò che voi
+							conosciate ben l'animo mio. <name key="006670">San Gallo</name> è una
+							chiesa di <lb/><name key="000570" ana="func_place">Fiorenza</name>, e,
+							facendosi le mura alla città, fu lasciato fuori, cred'io, o essendo
+							<lb/> forse dentro qualche chiesa piccola, ne fu fatta una fuori et la
+							si ritirò, onde <lb/>non è mai più tornato in <name key="000570"
+								ana="func_place">Firenze</name>. <lb/><name key="006663"
+								ana="func_character">Sver.</name> Non era egli ne' borghi?
+								<lb/><name key="006228" ana="func_character">Pel.</name> Sì.
+								<lb/><name key="006663" ana="func_character">Sver.</name> Non sono
+							eglino stati rovinati per l'assedio, o inanzi? <lb/><name key="006228"
+								ana="func_character">Pel.</name>
+							<lb/><name key="006663" ana="func_character">Sver.</name> Così non
+							fussino eglino stati rovinati. <lb/><name key="006228"
+								ana="func_character">Pel.</name> Son contento che voi torniate da
+							me, come tornò dentro egli. <lb/><name key="006663" ana="func_character"
+								>Sver.</name>
+							<lb/><name key="006228" ana="func_character">Pel.</name> Come?
+								<lb/><name key="006663" ana="func_character">Sver.</name> Gran
+							merché! Or su, or mi vi lievo dinanzi, et non tornarò mai più.
+								<lb/><name key="006228" ana="func_character">Pel.</name>
+							<name key="000344">Dio</name> ve ne dia la gratia. </p>
+					</div>
+					<div type="letter" n="1">
+						<pb n="181" corresp="img://afd-inferno_181.jpg"/>
+						<head><lb/>ALLA GRAN POTENZA <lb/>DI <name key="000925">PROSERPINA</name>,
+							<lb/>ANIMA DI <name key="000824">PLUTONE</name>. <milestone unit="lb"
+							/>LO <name key="001447" ana="func_character">Smarrito</name>
+							<lb/>ACADEMICO PEREGRINO. <milestone unit="lb"/></head>
+						<p><lb/>Madonna <name key="000925">Proserpina</name> carissima, questa
+							<lb/>sarà per avisarvi come qua ci son un branco <lb/>di poeti freddi et
+							scrittori aghiadati, et son <lb/>quegli che cantano le favole et
+							scrivono le <lb/>istorie, imitando (come la testuggine il cer<milestone
+								unit="wb"/><lb/>bio a correre) gli antichi che cicalarono del vostro
+							rapirvi, i quali <lb/>vorrebbon venire costà giù da voi altre reine per
+							trattenersi in <lb/>festa et gioco, ma non sanno come si possin venire
+							comodamente <lb/>senza sconciarsi la corona dell'alloro, che portano in
+							cima della ber<milestone unit="wb"/><lb/>retta. Ora e' m'hanno pregato
+							che io, da parte delle &#171;Lor Riverenze&#187;, <lb/>scriva a
+							Vostra Signoria Illustrissima che sia contenta di mandar loro la
+							<lb/>vostra carretta, quella che il signor <name key="000824"
+								>Plutone</name> adoprò a tirarvi nel <lb/>Porta Inferi. I cavagli
+							son gagliardi, et la potranno caricare de' <lb/>lor libri ancora; la
+							qual cosa vi sarà d'un gran contento, l'udir sì <lb/>fatte, tante et
+							tali compositioni. Certamente che voi siate ubli<milestone unit="wb"
+							/><lb/>gata a far loro questo servigio per più conti, ma, se non fosse
+							per <lb/> altro, basta che v'hanno messo in mille lor canzone. Et se pur
+							<lb/>non vi paresse di farlo per amor loro, fatelo perciò che io tengo
+								<pb n="182" corresp="img://afd-inferno_182.jpg"/><lb/>conto di voi,
+							et che sia il vero, ecco ch'io vi mando l'<bibl>
+								<title>Inferno</title>
+							</bibl><lb/>loro: un presente da poeta. E se pure la Signoria Vostra non
+								po<milestone unit="wb"/><lb/>tesse mandarla, come colei che debbe
+							andar tutto il giorno a spasso <lb/> con essa visitando quelle altre
+							principesse che sono in cotesti regni, <lb/> fatevi prestare la carretta
+								d'<name key="006672">Anfiarao</name> et mandatela loro <lb/>per
+							qualche folletto. Se vengano (come si vede che crepano di <lb/>stento
+							nell'indugiare a venirvi), se vengano, dico, potrete (essen<milestone
+								unit="wb"/><lb/>dovene stati de' cicaloni, che di voi hanno
+							straparlato alcune cose che <lb/>passano il segno) gastigargli et fargli
+							ridire. E' son poi fred<milestone unit="wb"/><lb/>di, come v'ho detto,
+							però farete scaldare il carro bene bene, che sia <lb/>infocato come il
+							toro di <name key="005932">Perillo</name> quando v'era egli dentro,
+								alman<milestone unit="wb"/><lb/>co perché, se non fosse caldo, i
+							poveri sventurati si potrebbono, a <lb/>un bisogno, bello et aghiadarsi
+							per la via.
+							Sia[n]vi<!-- cinquecentina: 'siavi'; la correzione è giusta -->
+							raccomandati i poeti, cara signora Reina; voi altre donne (s'io non
+							fallo la <lb/>strada) ne siate cagione che tanta canaglia venga a' regni
+							bui; <lb/> et se pure non vi voleste impacciare con i fatti loro, perché
+							fanno <lb/>come il carbone che cuoce o che tigne, scrivetemi, perché
+								provede<milestone unit="wb"/><lb/>remo per altra via. Noi avremmo
+							poi caro assai (o che piacere <lb/>ci fareste voi) che la Signoria
+							Vostra si venisse a stare nell'Academia <lb/>nostra; oggi mai penso che
+							vi sia venuto a noia star tanto disotto, <lb/>venite disopra, di gratia,
+							che ci farete piacere a tutti. Et se non <lb/>venite o non mandate la
+							carretta per certi poetacci, come ho detto, <lb/>freddi, scrivete
+							l'animo vostro circa a ogni cosa e vi bacio la <lb/>mano. </p>
+					</div>
+					<div type="chapter">
+						<pb n="183" corresp="img://afd-inferno_183.jpg"/>
+						<head type="main"><lb/>INFERNO DE' POETI <lb/>ET COMPOSITORI <lb/>DELLO
+								<name key="001447" ana="func_character">Smarrito</name>,
+							<lb/>ACADEMICO PEREGRINO. <milestone unit="lb"/></head>
+						<div type="section" n="1.1">
+							<head type="main">LO <name key="001447" ana="func_character"
+									>Smarrito</name>, <name key="000834" ana="func_character"
+									>MOMO</name> ET LA <name key="006239" ana="func_character"
+									>SIBILLA</name>. <milestone unit="lb"/></head>
+							<p><lb/>[<name key="001447" ana="func_character">Smar.</name>] Vieni et
+								non pensare ad altro; pur che ti basti <lb/>l'animo di farmi passare
+								le guardie che sono alla <lb/>montagna, che poi si va al lago dove
+								sta la <name key="006239">Si<milestone unit="wb"/><lb/>billa</name>,
+								mi basta. Vedi tu questo libro? Come io l'a<milestone unit="wb"
+								/><lb/>pro, la <name key="006239">Sibilla</name> verrà da noi
+								subito. <lb/><name key="000834" ana="func_character">Momo</name>
+								Circa alle guardie stanne sicuro, perché con alcune parole ch'io
+								dico le farò tutte <lb/>adormentare; ma, dimmi, che ti muove a veder
+									l'<name key="001115" ana="func_place">Inferno</name> dove stanno
+								i poeti? <lb/><name key="001447" ana="func_character">Smar.</name>
+								Cose assai, ma la prima è per vedere se poveri uomini hanno,
+								<lb/>come si dice, l'un male et l'altro, cioè che gli abbino
+								stentato al <lb/>mondo et or si tormentino et sien tormentati, o
+								veramente, se <lb/>gli hanno stentato, godino, o avendo goduto
+								stentino. <lb/><name key="000834" ana="func_character">Momo</name>
+								Sarà cosa difficile. <lb/><name key="001447" ana="func_character"
+									>Smar.</name> Credo che io farei maravigliare tutto il mondo,
+								s'io sapessi dir lo <lb/>stato di ciascun poeta. <lb/><name
+									key="000834" ana="func_character">Momo</name> Antico latino o
+								moderno vulgare? <lb/><name key="001447" ana="func_character"
+									>Smar.</name> Quegli che sono in più cognitione. <lb/><name
+									key="000834" ana="func_character">Momo</name> Vorresti tu dir di
+									<name key="000790">Dante</name>, <name key="000103"
+									>Petrarca</name>, <name key="000597">Boccaccio</name>, <name
+									key="000643">Ariosto</name>, <name key="000649">Bembo</name>,
+									<name key="000796">Vittoria <lb/>Colonna</name>, <name
+									key="000649">Molza</name> e <name key="006668"
+									>Guidiccione</name>? <lb/><name key="001447"
+									ana="func_character">Smar.</name> O tu sai il nome di tanti.
+								Cotesti non credo trovargli o vedergli. <lb/><name key="000834"
+									ana="func_character">Momo</name> Perché? Per esser stati valenti
+								uomini? <lb/><name key="001447" ana="func_character">Smar.</name> Et
+								per altro ancora. <pb n="184" corresp="img://afd-inferni_184.jpg"
+									/><lb/><name key="000834" ana="func_character">Momo</name> Vi
+								son più <name key="0001115" ana="func_place">Inferni</name>,
+								messere. <lb/><name key="001447" ana="func_character">Smar.</name>
+								Vorrei vedere lo stato del <name key="003197">Bernia</name>, di
+									<name key="006675">Baldassare Olimpo</name>, del <lb/><name
+									key="002095">Burchiello</name>, del <name key="006679"
+									>Cornazzano</name>, del <name key="005677">Verini</name>, del
+									<name key="006682">Serafino</name>, del <name key="006058"
+									>Betussi</name>, del <lb/><name key="006687">Borra</name>, che
+								so io, et altri. <lb/><name key="000834" ana="func_character"
+									>Momo</name> Eccoci sopra il lago, che tu non te ne sei accorto. <lb/>
+								<figure xml:id="p013f002">
+									<graphic url="img://afd-inferni_184_pw.jpg"/>
+									<figDesc>Immagine infernale</figDesc>
+								</figure>
+								<lb/><name key="001447" ana="func_character">Smar.</name> Come mi ci
+								son io condotto? <pb n="185" corresp="img://afd-inferno_185.jpg"
+									/><lb/><name key="000834" ana="func_character">Momo</name> Basta
+								che tu ci sia, non cercar altro per ora. <lb/><name key="001447"
+									ana="func_character">Smar.</name> O vedi pelago stupendo! Che
+								molo è quello che cinge quel fiume? <lb/>Che fortezza è quella del
+								mezzo? <lb/><name key="000834" ana="func_character">Momo</name> Apri
+								il libro. <lb/><name key="001447" ana="func_character">Smar.</name>
+								Lasciami considerare il tempo, l'ora e 'l punto. Ora sta
+									benis<milestone unit="wb"/><lb/>simo. O che gran scossa ha dato
+								la terra, hai tu udito che terribi<milestone unit="wb"/><lb/>lità ha
+								generato l'aprir sì fatto libro? Ecco la <name key="006239"
+									>Sibilla</name>, con mol<milestone unit="wb"/><lb/>ta riverenza
+								facciamocegli incontro. Donna di spirito stupendo, <lb/> questo è il
+								libro che <name key="005684">Matteo Palmieri</name>, vostro tanto
+								affettionato, ebbe da voi, io ve lo rendo per parte sua et vi prego
+								a condur<milestone unit="wb"/><lb/>mi, per l'amore che sempre egli
+								v'ha portato et io vi porto, in <lb/>luogo ch'io vegga le pene de'
+								poeti ignoranti. <lb/><name key="000834" ana="func_character"
+									>Momo</name> Se tu volevi vedere i poeti ignoranti, non accadeva
+								nominar molti di quegli che poco <lb/>fa dicesti. <lb/><name
+									key="001447" ana="func_character">Smar.</name> Avrò caro di
+								vedere et l'uno et l'altro. <lb/><name key="006239"
+									ana="func_character">Sibil.</name> Nell'<name key="001115"
+									>Inferno</name> ve ne sono tanti che a pena si potrà trovar chi
+								voi volete particolar<milestone unit="wb"/><lb/>mente vedere. Io,
+								che sono avezza a far de' libri, ne conosco una gran parte; <lb/>
+								quegli ch'io saprò, tutti ve li son per mostrare. <lb/><name
+									key="000834" ana="func_character">Momo</name> Noi non faremo
+								nulla, perché la <name key="006239">Sibilla</name> conosce i buoni
+								et non i cat<milestone unit="wb"/><lb/>tivi, i buoni non vi sono, i
+								cattivi la non ti potrà dir nulla. Tu <lb/>non gli conosci né io per
+								vista, noi potremo dir cento volte et <lb/>domandar: &#171;Sei
+								tu il tal poeta ignorante et goffo?&#187;, che nessuno ti
+								risponderà. <lb/><name key="001447" ana="func_character"
+									>Smar.</name> Sarà bene adunque, <name key="000834">Momo</name>,
+								che tu finga d'esser poeta goffo et che tu entri nelle <lb/>pene
+								come loro (a ogni modo tu non puoi patire) et afratellarti tanto che
+									sap<milestone unit="wb"/><lb/>pi il nome; se ti pare da far così
+								però. Che dite, savia <name key="006239">Sibilla</name>, di questa
+								cosa? <lb/><name key="006239" ana="func_character">Sibil.</name>
+								Andiamo prima sopra le pene loro et sopra quell'<name key="001115"
+									>Inferno</name>, poi <lb/>ci risolveremo. <lb/><name
+									key="000834" ana="func_character">Momo</name> Buon consiglio
+								certamente. <lb/><name key="006239" ana="func_character"
+									>Sibil.</name> Va' in tanto, <name key="000834">Momo</name>,
+								sopra la cima di questa montagna a dare un'<milestone unit="wb"
+								/><lb/> occhiata al pelago et ritorna, perché io intendo
+								secretamente fa<pb n="186" corresp="img://afd-inferno_186.jpg"
+									/><milestone unit="lb"/><lb/>vellar con lo <name key="001447"
+									>Smarrito</name> alquanto. <lb/><name key="000834"
+									ana="func_character">Momo</name> Io vo e torno. </p>
+						</div>
+						<div type="section" n="1.2">
+							<head type="main"><lb/><name key="006239" ana="func_character"
+									>SIBILLA</name> ET LO <name key="001447" ana="func_character"
+									>SMARRITO</name>. <milestone unit="lb"/></head>
+							<p><lb/>[<name key="006239" ana="func_character">Sibil.</name>] A me
+								pare, amico caro, che tu abbi dello smarrito da dovero: <lb/>che
+								profitto ne caverai tu, quando avrai veduti i poveri
+									sgratia<milestone unit="wb"/><lb/>ti? Non sai tu che la poesia
+								vera vien da un lume sopra naturale, <lb/>et la sorte di quell'altra
+								ciancia che fanno un'infinità di imbrat<milestone unit="wb"/><lb/>ta
+								carta è stoltitia espressa? Quanti n'avete voi oggi tra voi che
+								<lb/>si credono esser poeti per far due sonettuzzi, una mezza
+									can<milestone unit="wb"/><lb/>zona o un pien quaderno (et tre et
+								quattro libri colmati di ba<milestone unit="wb"/><lb/>ie) di
+								madrigali, capitolacci et altre girandole. I buoni <lb/>non sono
+									all'<name key="001115" ana="func_place">Inferno</name> di là,
+								all'altra vita, ma sono nell'inferno di qua, perché sono stratiati
+								or da' pedanti che gli dichiarono, <lb/>or da' maestri che gli
+								espongano et spesso da' comentatori che <lb/>gli lacerano. Ma di là
+								stanno ottimamente. Quanto che tu a<milestone unit="wb"/><lb/>vrai
+								di contento sarà il sodisfare all'animo tuo, del resto non ti
+								<lb/>contenterai di nulla. Levati in punta di piedi et mira in
+								questo <lb/>profondo del pelago ciò che tu ci vedi. <lb/><name
+									key="001447" ana="func_character">Smar.</name> Veggio una ruota,
+								dove gli uomini son sepulti in terra da le gambe in fuori, et
+								<lb/>quelle da una fiamma son tormentate su la pianta del piede.
+									<lb/><name key="006239" ana="func_character">Sibil.</name> Quei
+								son poeti mal dicenti, che hanno speso i loro studi in morder <lb/>
+								questo et quell'altro gentile spirito, ora per invidia et ora
+								<lb/>per malignità, et son sepelliti che mai più alcuno gli può
+								vedere in <lb/>viso, né loro vedere altri; nel terreno è una fiamma
+								che penetra loro <lb/>per tutta la vita sottilmente et svapora per
+								la suola del piede; ra<milestone unit="wb"/><lb/>gionando con quegli
+								(se vi vorrai andar con <name key="000834">Momo</name>), ti converrà
+								<lb/>abbassar l'orecchia, et del terreno uscirà la lor voce, et nel
+									rispon<milestone unit="wb"/><lb/>dere et dimandare ti converrà
+								gridar forte. <pb n="187" corresp="img://afd-inferni_187.jpg"
+									/><lb/><name key="001447" ana="func_character">Smar.</name> O
+								che pene terribile! <lb/><name key="006239" ana="func_character"
+									>Sibil.</name> I versi loro si posson chiamare cibo da diavoli,
+								pompa di parole <lb/>et van concetti; dentro ai versi di tali
+								scellerati non v'è stato <lb/>
+								<figure xml:id="p013f003">
+									<graphic url="img://afd-inferni_187_pw.jpg"/>
+									<figDesc>Immagine infernale</figDesc>
+								</figure>
+								<lb/>verità alcuna, non v'è stato parola giusta né cosa degna da
+									guar<milestone unit="wb"/><lb/>dar non che da leggere. Chi
+								avesse vedutogli in vita, non av<pb n="188"
+									corresp="img://afd-inferno_188.jpg"/><milestone unit="wb"
+								/><lb/>rebbe stimatogli per altro che per qualche gran cosa, e tutto
+								si fa<milestone unit="wb"/><lb/>cevano inanzi, per ciascun luogo
+								volevano esser grandi et potere <lb/> fare et dire: meritamente
+								stanno ben sepulti e tormentati; al mio <lb/> parere, adunque, non
+								avresti a impacciarti di sì fatte bestie. Ecco <lb/>
+								<name key="000834">Momo</name>, tu udirai adesso molte altre cose.
+									<lb/><name key="000834" ana="func_character">Momo</name> Che
+								casse son quelle in quel mezzo della fortezza? <lb/><name
+									key="006239" ana="func_character">Sibil.</name> Hai tu veduto il
+								restante di tutte le cose? quel fiume che corre atorno
+									ator<milestone unit="lb"/><lb/>no di quel fuoco, che pare un
+								molo di terra, et poi quel <lb/>pelago grande dove son tanti in
+								quelle acque? <lb/><name key="000834" ana="func_character"
+									>Momo</name> Ho veduto benissimo ogni cosa. <lb/><name
+									key="006239" ana="func_character">Sibil.</name> Le casse son
+								sepolture donde i poeti escan fuori et, entrati nella na<milestone
+									unit="wb"/><lb/>vicella alla torre, per passare il fiume come
+								tutti gl'altri caggiono nel<milestone unit="wb"/><lb/>l'acque, et
+								molti passando per quel fuoco, cacciati dalla furia <lb/>dell'impeto
+								di quel corso, vi si tormentano un tempo, poi trapas<milestone
+									unit="wb"/><lb/>sano al pelago. Tu vedi come egli è nero. Quello
+								è d'inchio<milestone unit="wb"/><lb/>stro ardentissimo et
+								puzzolente, egli macchia et cuoce. Tu <lb/> potrai sopra un'altra
+								barca andarvi con lo <name key="001447">Smarrito</name>, ma bisogna
+								<lb/>che abbiate cura di non vi perdere et passare per il porto
+								dentro <lb/>alla fortezza, et quivi di mano in mano chiamar quei
+								poeti di <lb/>quelle casse et ragionar quel che vi piace; sopra i
+								lor coperchi <lb/>vedrete i titoli, gli epitaffi, i versi et i nomi:
+								quegli che vi pa<milestone unit="wb"/><lb/>reran di destare
+								chiamate, gli altri, che di loro non vi curerete trop<milestone
+									unit="wb"/><lb/>po, lasciategli dormire. Ultimamente <name
+									key="000834">Momo</name> potrà, per sapere <lb/>tutto il resto
+								de' fatti loro, entrare, come s'è detto, nelle pene. Qua <lb/>è la
+								via che vi ci condurrà, andate et nel ritorno mi troverrete <lb/>qui
+								dove m'avete lasciata. <lb/><name key="001447" ana="func_character"
+									>Smar.</name> Andiamo, che ho grandissimo desiderio di udir cose
+								nuove. </p>
+						</div>
+						<div type="section" n="1.3">
+							<pb n="189" corresp="img://afd-inferno_189.jpg"/>
+							<head type="main"><lb/>LA <name key="006239" ana="func_character"
+									>SIBILLA</name> SOLA. <milestone unit="lb"/></head>
+							<p><lb/>L'è pure una gran cosa di questi scrittori, che s'assassinino
+								l'un <lb/>l'altro così volentieri. Io sono stata più volte in
+								fantasia di scri<milestone unit="wb"/><lb/>verne, così sibilla come
+								io sono, un libro che tratti <bibl>
+									<title>De occulta <lb/>nimicitia o vero della rabbia de'
+										poeti</title>
+								</bibl>, anco non sarebbe sta<milestone unit="wb"/><lb/>to mal
+								averlo chiamato <bibl>
+									<title>Cerbero degli scrittori</title>
+								</bibl>. Il primo tito<milestone unit="wb"/><lb/>lo avrebbe fatto
+								chiaro al mondo (o, per dir meglio, il primo li<milestone unit="wb"
+								/><lb/>bro con quel titolo) le secrete cose che conducano i poeti a
+									scor<milestone unit="wb"/><lb/>ticarsi l'un l'altro. Egli è
+								ancora una cosa pazza questo ch'io <lb/>voglio dire ora. Sarà uno
+								che avrà poche buone lette<milestone unit="wb"/><lb/>re ma
+								tristitie, astutie, inganni et tradimenti nell'animo assai, <lb/> et
+								non potrà acquistarsi la fama che egli vorrebbe con quelle poche
+								<lb/> scienze, onde cerca, con quel sopra più che egli ha del
+								tristo, d'in<milestone unit="wb"/><lb/>gannare o trappolare i buoni
+								sapienti ad alzarlo. Veduto poi che <lb/>non può con tali mezzi
+								volpini, né per via di traditore né di fal<milestone unit="wb"
+								/><lb/>se accuse né per ordine d'inganno o disordine di vergogna,
+									ro<milestone unit="wb"/><lb/>vinare i nobili spiriti et i
+								poveretti o farsi grande; si dispera <lb/> d'aver fama mai più che
+								sia da nulla, et viene ad arrabbiarsi et <lb/>diventa un cane da tre
+								teste, cioè con una abaia, con l'altra spu<milestone unit="wb"
+								/><lb/>ta veleno et con la terza morde, così si mette a torno a chi
+								scrive <lb/>bene et ai buoni et del continuo latra; ma alla fine
+								bisognerà <lb/> trarre a sì fatte bestie della terra in gola, quando
+								avremo sopor<milestone unit="wb"/><lb/>tato assai. L'invidia è il
+								corpo principale di questa battaglia, al <lb/>mio parere.
+								L'arroganza ordina le squadre, la fama porta <lb/>l'insegna, lo star
+								male è l'archibuseria. La natura cattiva son <lb/>le picche. La
+								disperatione è il tamburo. Il pagamento la <lb/> cavalleria d'uomini
+								d'arme. L'ingratitudine sono i canno<milestone unit="wb"/><lb/>ni da
+								batteria. La subornatione è la trombetta, il far piacere <pb n="190"
+									corresp="img://afd-inferno_190.jpg"/><lb/>è il
+								fiffero<!-- la voce, corretta da pellizzari in 'piffero', sembra sostenibile; vd. Sberlati -->
+								traverso, che va con il tamburino. Il rivolere il suo <lb/>sono i
+								cavalli leggieri. L'adulare è l'incendio che fa la guer<milestone
+									unit="wb"/><lb/>ra, et il dar fede a chi riferisce parole
+								cattive è la morte. L'a<milestone unit="wb"/><lb/>ver poi lettere
+								assai è la vettovaglia che nutrisce questa militia, <lb/>et l'esser
+								ignorante è la carestia. Son certa che s'io fossi poe<milestone
+									unit="wb"/><lb/>tessa invidiosa che io darei l'assalto alla
+								città di tutti coloro <lb/>che per le lor virtù si son fatti grandi,
+								et qua biasimerei ciò che <lb/>eglino hanno fatto; se bene coloro
+								che intendono mi tenessino per <lb/>una bestia, non mi darebbe noia,
+								chi non sa crederebbe et per<milestone unit="wb"/><lb/>derebbe
+								l'affetione che portasse a tali autori, se non in tutto,
+									ba<milestone unit="wb"/><lb/>sta ch'io non gioverei molto.
+								L'arroganza mia farebbe un'ordi<milestone unit="wb"/><lb/>nanza di
+								squadra nel cervello (s'io avesse a somigliare i più) <lb/>che tutte
+								l'altre cose a petto alle mie mi parrebbono nulla; et qua <lb/>mi
+								vanterei, loderei le mie compositioni sopra modo et non ce<milestone
+									unit="wb"/><lb/>derei a colui che serra a chiave le Muse. S'io
+								avesse fame, spie<milestone unit="wb"/><lb/>gherei la bandiera del
+								dir male, et a chi la toccasse, suo danno. <lb/>Stando male et gli
+								altri bene, pensate ch'io trarrei a mira, fa<milestone unit="wb"
+								/><lb/>rei la spia et peggio. Essendo poi poeta o scrittore di
+								cattiva <lb/>natura, ogni uno vorrei far passar per le picche de'
+								miei assassina<milestone unit="wb"/><lb/>menti. La disperatione mi
+								condurrebbe testimoniare il fal<milestone unit="wb"/><lb/>so et
+								publicarlo con gli scritti, come so che lo fanno alcuni, et
+								<lb/>come un tamburo rintronerei per tutto. Se per disgratia io
+									tro<milestone unit="wb"/><lb/>vassi chi mi pagasse per dir male,
+								non è cavallo grosso che fosse <lb/>più feroce di me né più forte
+								armato a far male per tutte le vie <lb/>a' buoni. Ecco che mi
+								s'appresenta l'ingratitudine, con la quale <lb/>darei assalti con
+								l'artellaria di non mi ricordar di beneficio ricevu<milestone
+									unit="wb"/><lb/>to da maladetto senno. La subornatione mi
+								servirebbe per trom<milestone unit="wb"/><lb/>betta con la lingua
+								arrotata et sempre pronta a lacerare chi sa<milestone unit="wb"
+								/><lb/>pesse. Farei, per far piacere, tutte le tristitie et userei
+								le ma<pb n="191" corresp="img://afd-inferno_191.jpg"/><milestone
+									unit="wb"/><lb/>litie d'andare sonando bugie per tutto di qua et
+								di là come fif<milestone unit="wb"
+								/><lb/>fero<!-- vd. supra per fiffero --> di tamburino. Rivolendo il
+								mio, sarei prestissimo a offen<milestone unit="wb"/><lb/>dere et far
+								male più che cavallo leggieri. Lieva la gamba, s'io <lb/>mi mettesse
+								a far l'adulatore, abrucerei ciascuno di ciò che egli <lb/>avesse di
+								fama, di bontà, d'utile o d'onore. Et prestando <lb/>fede a le
+								parole de' riportatori, amazzarei ogn'uno. Con le let<milestone
+									unit="wb"/><lb/>tere poi manterrei la battaglia del mio far male
+								del continuo abon<milestone unit="wb"/><lb/>dantemente, et essendo
+								ignorante, metterei la carestia del servire <lb/>alcuni, anzi
+								volterei sottosopra il mondo. <q ana="quotation_simple">Perisca
+										<name key="000507">Sansone</name> e <lb/>tutti i
+									Filistei</q>. Queste son le sorti di canaglia poetesca che
+								vivono <lb/>al mondo, et vivendo s'assassinano l'un l'altro per
+								ciascuna di <lb/>queste cagioni: o per invidia, per arroganza, per
+								la fame, per <lb/>istar male, per natura cattiva, per disperatione,
+								per esser pagati, <lb/>per ingratitudine, per subornatione, per far
+								piacere, per rivolere <lb/>il suo, per adulare, per credere a'
+								riportatori, per esser letteruto <lb/>o per esser ignorante.
+								Troverebbesi egli oggi nessuno scrit<milestone unit="wb"/><lb/>tore
+								leggier di cervello et bestia, che credesse alle semplici et
+								<lb/>astute parole d'un tristo, e, senza altra considereazione, da
+								bestia <lb/>si mettesse a dir male? Ecci alcuno che facendo
+								l'adulatore in<milestone unit="wb"/><lb/>gannasse i buoni? Quanti
+								per rivolere il suo hanno fatto male più <lb/>a loro (per procedere
+								da bestie) che ad altri? Alcuni per far <lb/>piacere offendono oggi,
+								o bella professione! Chi si lascia sol<milestone unit="wb"
+								/><lb/>levare? Chi si dispera? Chi è di cattiva natura? O quanti
+									fur<milestone unit="wb"/><lb/>fanti scrittori simili si trovano
+								oggi. Lo star male et la fame <lb/>mette loro in cuore bestialità
+								non più udite, et l'arroganza et <lb/>l'invidia è cagione di tanti
+								assassinamenti per conclusione d'ogni <lb/>cosa. O poetacci bestie,
+								che sempre dite l'un dell'altro male, o <lb/>scrittoracci infami,
+								che scoprite i vostri occulti vituperi, raffrenate <lb/>tanta
+								insolenzà, non mettete i nomi d'alcuno ne' vostri goffi com<pb
+									n="192" corresp="img://afd-inferno_192.jpg"/><milestone
+									unit="wb"/><lb/>ponimenti, favellate di voi bestie da due piedi,
+								et, se pur volete <lb/>dir d'altri, fate che le vostre parolacce
+								sien generali, a utile del <lb/>lettore et non a distruttione. Ma
+								ecco <name key="000834">Momo</name> et lo <name key="001447"
+										>Smarri<milestone unit="wb"/><lb/>to</name> molto
+								spaventati; che maraviglie son queste che voi fate? <lb/><name
+									key="000834" ana="func_character">Momo</name> Stupende.
+									<lb/><name key="006239" ana="func_character">Sibil.</name>
+								Quali? <lb/><name key="001447" ana="func_character">Smar.</name> 7
+								Dillo tu, <name key="000834">Momo</name>, che io sono tanto
+								stupefatto che a pena posso credere d'esser vivo. <lb/><name
+									key="000834" ana="func_character">Momo</name> Noi vedemmo venire
+								per aere una nube scurissima, folta, et ri<milestone unit="wb"
+								/><lb/>sonava d'uno stridore orribile et spaventoso, et aggirandosi
+								un <lb/>pezzo in aere come aquila da predare, calò con un impeto al
+									cen<milestone unit="wb"/><lb/>tro terribilissimo, né sì tosto
+								toccò il punto ch'ella con un tuono <lb/>grandissimo scoppiò da un
+								canto. Venne fuori di quella subito <lb/>una grandissima turba di
+								demoni et, fatto cerchio, vi fu un di lo<milestone unit="wb"
+								/><lb/>ro che chiamò in una lingua strana un nome, che fu dichiarato
+								vo<lb/>ler dire &#171;antico nido&#187;. Un altro trasse
+								della nube una bandiera, <lb/>nella quale v'era dipinto una verga.
+								Il nome era &#171;primo et ulti<milestone unit="wb"
+								/><lb/>mo&#187;, che fu in quella diabolica lingua bociato;
+								quando eccoti un <lb/>uomo legato, che vien tirato fuori per la
+								barba et per i capelli, <lb/> et i demoni tutti cavaron fuori alla
+								sua presenza scritti, polizi<milestone unit="wb"/><lb/>ni, libretti
+								et altri stracciafogli et lessero un pezzo. Alla <lb/>fine uno
+								gridò, di quei più grandi: &#171;Venga le pene!&#187; O gran
+								cosa! <lb/>Ciascun demonio ebbe subito un vaso pieno di diversi
+								animali <lb/>velenosi et lo versò adosso a quella anima, et gli fu
+								dato per <lb/>sentenza che dieci fiate il giorno gli fusse fatto
+								questo rifrusto et <lb/>del restante del tempo stesse sepellito come
+								gli altri nella ruota de' <lb/>poeti e degli scrittori, e la colpa
+								furon dieci peccati che a<milestone unit="wb"/><lb/>veva stupendi.
+									<lb/><name key="006239" ana="func_character">Sibil.</name>
+								Vedete voi altri scrittori come son trattati i bestiali, goffi et i
+								pazzi ignoranti im<milestone unit="wb"/><lb/>bratta-carta; attendete
+								alla parte perfetta et non vi date a sì fatto essercitio. <lb/>Or
+								seguita. <pb n="193" corresp="img://afd-inferno_193.jpg"/><lb/><name
+									key="000834" ana="func_character">Momo</name> La turba, subito
+								che fu precipitato, gli cadde adosso né più si ved<milestone
+									unit="wb"/><lb/>dono. Subito della medesima nube altretanti
+								demoni usciron fuo<milestone unit="wb"/><lb/>ri et s'acconciaron in
+								forma di triangolo, et uno di loro nella <lb/>sua lingua gridò
+								primamente: &#171;O del raro taglio!&#187; Eccoti, subito
+									die<milestone unit="wb"/><lb/>tro alla grida, che fu cavato
+								un'altra bandiera dove erano due code <lb/>di pesce dipinte,
+								apiccate insieme; poi fu chiamato per nome: <lb/>&#171;L'ultimo
+								giorno!&#187;, et subito fu strascinato fuori per i piedi
+									un'a<milestone unit="wb"/><lb/>nima meschina, et fattola stare
+								con il capo in terra et i piedi in <lb/>su, ritto, con un suono di
+								lingue doppie fu letto un gran libro del <lb/>fatto suo. Alla fine
+								si gridò: &#171;Tormenti!&#187; Et v'apparì in mano a
+									cia<milestone unit="wb"/><lb/>scun demonio una facella accesa,
+								et subito gli furono attorno <lb/>a spegnerla nella sua faccia, et,
+								precipitato nel fondo, solo gli <lb/>corsero dietro la mità de'
+								demoni e l'altra parte che restò chia<milestone unit="wb"/><lb/>mò:
+								&#171;Corona in terra!&#187;, et uscì fuori la bandiera,
+								dove era dipinto <lb/>dentro un elmo di ferro, che dentro v'era
+								fatto una lira, ma <lb/>tutto era ruggine, spezzato et guasto ogni
+								cosa che a pena si <lb/>discerneva. Et nel chiamar &#171;Erba
+								virtuosa!&#187;, fu condotto un vec<milestone unit="wb"
+								/><lb/>chio all'indietro fuori, con la faccia tutta verde, et, messo
+								mano <lb/>a non so che carte, gli risero un pezzo i diavoli, attorno
+								facendo un <lb/>ballo. Poi si gridò: &#171;Gastigo!&#187;,
+								et furon preparati stafili et da tut<milestone unit="wb"/><lb/>ti
+								molto bene rifrustato da capo a piedi; poi, cadendo al baratro
+								<lb/>infernale, tre soli diavoli gli caddero adosso per tre peccati
+								<lb/>segnalati. <lb/><name key="006239" ana="func_character"
+									>Sibil.</name> Voi avete veduto cose che io mai udito ho dire;
+								se così è vero, fo pensiero <lb/>di venire in vostra compagnia a
+								spettacolo sì raro. <lb/><name key="000834" ana="func_character"
+									>Momo</name> Vennero fuori con grand'impeto un'altra turba di
+								demoni, quan<milestone unit="wb"/><lb/>ti quei primi, tirando
+								un'anima per i piedi, per le mani, per i <lb/>capelli, et ciascuno
+								s'appiccava come poteva et confusamente <lb/>si posero a
+								scorticarlo; poi lo distesero su la sua pelle et gli fic<pb n="194"
+									corresp="img://afd-inferno_194.jpg"/><milestone unit="wb"/><lb/>
+								caron la sua bandiera in mezzo adosso, dove erano guaine
+									dipin<milestone unit="wb"/>te, et gridava:
+								&#171;Zolfo!&#187; - et - &#171;Mobile impeto!
+								&#187; Ecco che in un tratto <lb/>s'aperse il terreno et
+								l'inghiotì con tutta la turba de' demoni, che <lb/>di nuovo messer
+								mano a i rasoi per tormentarlo, mostrando che <lb/>del continuo
+								volevano far questo spettacolo. <lb/><name key="001447"
+									ana="func_character">Smar.</name> O gran paura mi mettevano gli
+								altri spettacoli, et di questo non temetti nulla. Ma <lb/>seguita di
+								quello che gli scomettevano gli ossi. <lb/><name key="000834"
+									ana="func_character">Momo</name> Uscì fuori un'anima sola et
+								andava in giro, ma voltandosi poi <lb/>tutta come ruota di molino
+								sotto sopra et caminava in cerchio, et <lb/>ella stessa gridava:
+								&#171;Montagna!&#187; et &#171;Terra di fiori et d'erbe
+								buone! &#187;; <lb/>et, quando ebbe gridato un pezzo, uscì fuori
+								della nube un de<milestone unit="wb"/><lb/>monio grandissimo, che
+								aveva lo stendardo in mano, nel quale era <lb/>una torre dipinta, et
+								voltatolo prese l'asta e cominciò a basto<milestone unit="wb"
+								/><lb/>nar questa anima, facendola come trottola girare altretanto
+								di quel<milestone unit="wb"/><lb/>lo che faceva prima, et quando
+								ebbe fatto un pezzo questo ver<milestone unit="wb"/><lb/>so, vennero
+								fuori i demoni a centinara, et postolo in ruota gli <lb/>spezzaron
+								tutte l'ossa et insieme caddero allo scuro. <lb/><name key="006239"
+									ana="func_character">Sibil.</name> O che pena bestiale, che
+								tormenti feroci! Avete voi veduto altre anime di <lb/>queste?
+									<lb/><name key="000834" ana="func_character">Momo</name>
+								Condussero due demoni un altro et due altri l'avevano uno per
+								<lb/>le mani et l'altro per i piedi, et tiravano distendendolo et
+									allun<milestone unit="wb"/><lb/>gandolo quanto più potevano, et
+								da due altri con sacchetti di re<milestone unit="wb"/><lb/>na molto
+								ben pestato, lo scagliarono nella ruota de' poeti, &#171;Gran
+								<lb/> pancie! Bandiera di gallo!&#187; e &#171;Nome
+								biancheggiante!&#187; gridando. <lb/><name key="006239"
+									ana="func_character">Sibil.</name> Non me ne dir più, che io
+								voglio vedere da me. <lb/><name key="000834" ana="func_character"
+									>Momo</name> Male gli potrete vedere questi che son passati.
+									<lb/><name key="006239" ana="func_character">Sibil.</name> Ben
+								ne verrà de' simili. <lb/><name key="000834" ana="func_character"
+									>Momo</name>. Udite quest'altro et poi andaremo. <lb/><name
+									key="006239" ana="func_character">Sibil.</name> Seguita adunque.
+									<lb/><name key="000834" ana="func_character">Momo</name> Una
+								gran turba, maggior che uscisse inanzi, venne fuori, et in un <pb
+									n="195" corresp="img://afd-inferno_195.jpg"/><lb/>sacco avevano
+								un poeta et ne facevano alla palla i diavoli, <lb/>et egli cantando
+								proferiva questi versi: <lb/>
+								<seg ana="genre_lyric">Chiocciole di pantano et la divisa <lb/>d'un
+									giubileo ch'han posto le zambracche <lb/>han fatto a un dolfin
+									far dieci tacche <lb/>a una taglia, che vi s'era intrisa.
+									<lb/>Allor venn'un cavallo a pié da <name key="001731"
+										ana="func_place">Pisa</name>, <lb/>che pescava a civetta
+									delle vacche, <lb/>et disse che i panioni et le trabacche
+									<lb/>scoppiavan per gli orecchi delle risa. <lb/>In questo, i
+									terremoti et gli stivali<lb/> corsero a far serrar le saracine,
+									<lb/>perché gennaio non sudasse in corso. <lb/>Deh, udite bel
+									caso: le galline <lb/> sonorno un corno per i sagginali,
+									<lb/>che fu peggio ch[e] tor la pelle all'orso. <lb/>Piglia con
+									bocca un morso, <lb/>et poi di giorno su la mezza notte
+									<lb/>grida per tutto che l'uova son cotte.<milestone unit="lb"
+									/></seg>
+								<seg ana="genre_lyric">La luna andò per pesche in <name key="006692"
+										ana="func_place">Catalogna</name>, <lb/> quell'anno che
+										<name key="000226">Saturno</name> le rifesse, <lb/>e portò
+									nel carnier castagne lesse <lb/>per guarir <name key="000308"
+										>Marte</name> d'una grossa rogna. <lb/><name key="000821"
+										>Mercurio</name> prese all'amo una cicogna, <lb/>et fece
+									adottorar tre poetesse, <lb/>acciò che 'l fumo il dì non gli
+									dovesse <lb/>torre il muschio ch'aveva la sua carogna. <pb
+										n="196" corresp="img://afd-inferno_196.jpg"/><lb/>E uno
+									scapular d'un fra todesco <lb/>cantò compieta in tanto ad alta
+									voce <lb/>per un baston ch'andava sopra un legno. <lb/>Che dirà
+									'l pan bollito del pan fresco, se non che non ci vuoi per sal le
+									noce, <lb/>se già non ha cervel, danari o pegno. <lb/>Non ci
+									fate disegno, <lb/>per dir il vero, che <name key="000166"
+										>Giove</name> è nel Pesce <lb/>e 'l sogno della notte non
+									riesce.</seg> In tanto i satanassi dissero il nome della patria,
+									&#171;Ma<milestone unit="wb"/><lb/>raviglia&#187;, poi
+								tiraron fuori due bandiere, una dipinta a calabro<milestone
+									unit="wb"/><lb/>ni et l'altra a pecchie; il nome suo era
+								Assentio, et, quando <lb/>l'ebbero pesto et fiacco molto bene, lo
+								cavaron fuori del sacco, <lb/>ma a pena ebbe egli le gambe sciolte
+								et il sacco tirato in capo, che <lb/><name key="000877"
+									>Cerbero</name> fu sciolto et gli cominciò a correr dietro et
+								morderlo, et <lb/>in un subito sotto sopra se n'andaron tutti alla
+								malora et <lb/>al mal punto. <lb/><name key="006239"
+									ana="func_character">Sibil.</name> Andiamo a vedere il resto di
+								compagnia. </p>
+						</div>
+					</div>
+					<div type="letter" n="2">
+						<pb n="197" corresp="img://afd-inferno_197.jpg"/>
+						<head type="main">ALLO <name key="001447" ana="func_character"
+								>SMARRITO</name>
+							<lb/>ACADEMICO PEREGRINO <milestone unit="lb"/>IN PROPRIA MANO.
+								<milestone unit="lb"/></head>
+						<p><lb/>Legendo la vostra lettera fra la moltitudi<milestone unit="lb"
+							/><lb/>ne delle madame che sono qua giù nel regno nostro <lb/>(perché ce
+							ne abbiamo infinite, voi non ve lo po<milestone unit="wb"/><lb/>treste
+							imaginare tante sono), a dirvi il vero, ciascuna <lb/>si è
+							maravigl[i]ata del vostro (lo dirò pure) poco intelletto di
+								scri<milestone unit="wb"/><lb/>vere a una pari mia sì bassamente,
+							che son reina in questo luogo, <lb/>son la più bella et maggior che ci
+							fosse o sarà mai; ma faccia<milestone unit="wb"/><lb/>mo: a dire il
+							vero, ch'ho io da fare di cotesto branco di poeti che vo<milestone
+								unit="wb"/><lb/>gliono venire? Entrino o vadino più tosto nella
+							mandria de' ca<milestone unit="wb"/><lb/>stroni et delle pecore. Che
+							cosa è trattenersi con le mie pari? Deb<milestone unit="wb"/><lb/>bo
+							esser qualche buffona da trattener bestie? Quella cagione meri<milestone
+								unit="wb"/><lb/>terebbe bene, del non si commettere il capo da
+							quella frasca d'allo<milestone unit="wb"/><lb/>ro, ch'io mandasse una
+							lettiga non che un carro; ma una cosa gua<milestone unit="wb"/><lb/>sta
+							il loro et vostro disegno, che io ci ho un cavallo sferrato et
+								<lb/><name key="000819">Vulcano</name> ha male a un dito, che non
+							può lavorare né potrà di questo <lb/>pezzo riferrarlo. Ch'io sia tenuta
+							loro perché mi hanno posto in <lb/>canzona, non la concedo, conciosia
+							che le son cose che cento mi<milestone unit="wb"/><lb/>gliaia di volte
+							sono state dette et l'ho udite et riudite altretan<milestone unit="wb"
+							/><lb/>to. Di voi non dico nulla, che m'avete trattata da scoppiettera,
+							<lb/>dandomi della &#171;Madonna carissima&#187;, per avisarvi.
+							Sarei io forse la <lb/>vostra fante? Che incorporamento avete voi con
+							meco? Siate per <pb n="198" corresp="img://afd-inferno_198.jpg"
+							/><lb/>sorte mio amico, o mio nulla? Voi mi direte: &#171;Io ti
+							<lb/> mando un bel libro da leggere&#187;. O presso che io non
+							dissi, noi <lb/> abbiamo bisogno d'altro che di stare a leggere vostre
+							ciancie, qua <lb/> bisogna attendere ad altro che a frasche di cicaloni.
+							In effetto voi <lb/> avete il nome et i fatti, sète il &#171;Perduto
+							&#187; et per perduto vi <lb/>tengo, però perdete il tempo a
+							richiederci. Che avete voi a sta<milestone unit="wb"/><lb/>re a dirmi
+							che io vo a spasso tutto dì a veder le principesse in car<milestone
+								unit="wb"/><lb/>retta? Avetemi voi veduto forse? Vo' far quel che
+							piace a me; se <lb/>io non adoprassi ancora la caretta, non ve la
+							manderei, se non <lb/>mi tornasse bene. E' pare a voi ch'io sarò priva
+							di una gran con<milestone unit="wb"/><lb/>solatione, quando non ci avrò
+							cotesti poeti: tenetegli per voi, che <lb/>de' poeti goffi et manigoldi,
+							come quegli che ci volete man<milestone unit="wb"/><lb/>dare, noi siamo
+							forniti perfettissimamente; ci mancano gli <lb/>sciagurati et gli
+							ignoranti! Guarda a che proposito voi avete <lb/>preso questa gatta a
+							petinare. Ma io non avrei guardato alla <lb/>prosontione o semplicità
+							vostra ma alla mia ampia natura di far <lb/>piacere, se i cavalli
+							fussero stati bene, et vi avrei mandata la <lb/>carretta, che per vostre
+							novelle non mi moverei da sedere. Cir<milestone unit="wb"/><lb/>ca ai
+							cavalli et alla carretta d'<name key="006672">Anfiarao</name>, la non vi
+							si può man<milestone unit="wb"/><lb/>dare, perché nel cadere si roppe et
+							fracassò ogni cosa; egli poi, non <lb/>la volendo adoperare, l'ha
+							lasciata andare alla malora, sì che la <lb/>non è in essere. Noi ci
+							siamo preso piacere poi della vostra scioc<milestone unit="wb"
+							/><lb/>chezza a cometterci che la facciamo scaldare, acciò che non si
+								a<milestone unit="wb"/><lb/>ghiadino a fatto per la via. Crepar
+							possino eglino, per me non <lb/>ve ne darei un capello da venirci sani a
+							capitarci in pezzi; so <lb/>che non avremo una grande allegrezza di
+							poetacci: forse che <lb/>voi non ce la date con quel 'poetacci'? <lb/>Il
+							dir &#171;canaglia&#187;, non so se son modi da farci sbracare
+							per servirgli. <lb/>Non sapete voi che, se ben voi ci mandate della
+							canaglia, che an<pb n="199" corresp="img://afd-inferni_199.jpg"
+								/><milestone unit="wb"/><lb/>cora ci vien de' grandi uomini? Egli ci
+							è tale che ci corteggia et <lb/>ci trattiene, che se voi lo vedessi
+							stupireste. Questo reame non è <lb/>
+							<figure xml:id="p013f004">
+								<graphic url="img://afd-inferni_199_pw.jpg"/>
+								<figDesc>Immagine infernale</figDesc>
+							</figure>
+							<lb/>così da farsene beffe come voi altri poeti fate. Et per venire alla
+							<lb/> conclusione, perciò che egli è vero quello che scrivete in parte,
+								<pb n="200" corresp="img://afd-inferno_200.jpg"/><lb/>perché tali
+							son come il carbone, noi non ce ne vogliamo impacciare. <lb/>Provedete
+							ora voi per qual via vi piace. Del mio venire di qua <lb/>giù a voi che
+							sète costassù, ancora che tal volta me ne sia venu<milestone unit="wb"
+							/><lb/>to voglia, non me ne curo per adesso. Il serpente che porta i
+								dot<milestone unit="wb"/><lb/>tori ci mena a spasso nel lago grande
+							per una fiumana freschissi<milestone unit="wb"/><lb/>ma et ci scusa
+							barca et navilio, dalla qual gita ne abbiamo <lb/>una bella veduta,
+							massime nell'<name key="001115" ana="func_place">Inferno</name> de'
+							lussuriosi, dove <lb/>giacciono nelle fiamme et ricevano tanto dolore
+							quanto ebbero <lb/>diletto. Quella è una veduta d'altro che di paesi!
+							Voi vi spa<milestone unit="wb"/><lb/>ventareste, ma noi n'abbiamo quel
+							piacere che ha uno quando <lb/>facendo male si vendica dell'ingiuria
+							ricevuta. Vo' dire adunque <lb/>in mio linguaggio che, se quel serpente
+							potesse così condurci all'in<milestone unit="wb"/><lb/>sù come egli è
+							abile a menarci all'ingiù, ch'io verrei. Ma se vi <lb/>preme o se
+							l'afettione et il nostro amore vi stimola, venite da noi, <lb/>che
+							troverrete una strada larghissima et facile a venirci, et av<milestone
+								unit="wb"/><lb/>rete compagnia
+							<!-- cinquecentina: 'compaggnia' -->d'ogni sorte. Non è mai giorno che
+							non ce ne <lb/>venga le migliaia dell'anime de' dotti, de' begli, de'
+							brutti, de gli <lb/>ignoranti, de' vecchi, de' poveri,  de' ricchi et
+							d'altre sorte infi<milestone unit="wb"/><lb/>nite. Altro non ho che
+							dirvi, se almanco non v'ho sodisfatto <lb/>in tutto, in parte v'ho
+							contentato, perché mi son degnata di rispon<milestone unit="wb"
+							/><lb/>dervi et con più modestia che voi a me non avete  scritto. Di
+							<lb/> cotesti poetacci non ne vogliamo tener conto alcuno, et  voi, se
+								cre<milestone unit="wb"/><lb/>dete farci piacere, farete il simile;
+							et mi raccomando. <lb/> Dal regno di <name key="000824">Plutone</name>
+							<lb/><name key="000925">Proserpina</name> di sua mano scrisse.
+								<milestone unit="lb"/></p>
+					</div>
+					<div type="colophon">
+						<p><lb/>FINE <lb/>della prima parte dell'<bibl>
+								<title>Inferno de' poeti et componitori</title>
+							</bibl>.</p>
+					</div>
+				</div>
+
+
+				<!-- END -->
+				<!-- %END% -->
+				<!-- NON MODIFICARE LA PARTE OLTRE IL PUNTO "END" -->
+			</div>
+		</body>
+		<back>
+			<div type="part"/>
+		</back>
+	</text>
+</TEI>

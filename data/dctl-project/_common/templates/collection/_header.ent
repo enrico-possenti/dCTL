@@ -1,0 +1,17 @@
+<!-- # CTL # -->
+<!ENTITY dctl_ctl "CTL">
+<!-- # -->
+<!-- # COLLECTION INFORMATION # -->
+<!ENTITY collection_id "">
+<!ENTITY collection_short "">
+<!ENTITY collection_work "">
+<!ENTITY collection_year_created "">
+<!ENTITY collection_year_updated "">
+<!ENTITY collection_resp "">
+<!ENTITY collection_packageCount "">
+<!ENTITY collection_summary_it "">
+<!ENTITY collection_summary_en "">
+<!ENTITY collection_desc_it "">
+<!ENTITY collection_desc_en "">
+<!ENTITY collection_editorial_it "">
+<!ENTITY collection_editorial_en "">

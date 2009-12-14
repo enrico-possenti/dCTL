@@ -1,0 +1,89 @@
+<teiHeader xml:id="&collection_id;.header">
+	<fileDesc>
+		<titleStmt>
+			<title type="main">&collection_work; (electronic edition)</title>
+			<author>&dctl_ctl;</author>
+			<editor>
+				<name type="ctl" key="ctl">&dctl_ctl;</name>
+				<date value="&collection_year_updated;-00-00">&collection_year_updated;</date>
+			</editor>
+			<sponsor>&dctl_ctl;</sponsor>
+			<funder>Scuola Normale Superiore - Italy</funder>
+			<principal>dCTL Project by CTL</principal>
+			<respStmt>
+				<resp>Digitization, Transcription and TEI Markup by</resp>
+				<name key="ctl" type="person">CTL</name>
+			</respStmt>
+			<respStmt>
+				<resp>Collection responsible is</resp>
+				<name type="ctl" key="ctl">&collection_resp;</name>
+			</respStmt>
+			<respStmt>
+				<resp>Supervisor</resp>
+				<name key="ctl" type="person">Lina Bolzoni</name>
+			</respStmt>
+			<respStmt>
+				<resp>Technical advisor</resp>
+				<name key="ctl" type="person">Enrico Possenti</name>
+			</respStmt>
+		</titleStmt>
+		<editionStmt>
+			<edition> Electronic edition since <date value="&collection_year_created;-00-00"
+					>&collection_year_created;</date>
+			</edition>
+		</editionStmt>
+		<extent>
+			<term type="fileCount">&collection_packageCount;</term>
+			<term type="filesize">100 kb</term>
+			<term type="encoding">XML TEI P5 (TEi Lite), following dCTL Guidelines</term>
+		</extent>
+		<publicationStmt>
+			<publisher>&dctl_ctl;</publisher>
+			<pubPlace>Pisa</pubPlace>
+			<pubPlace>Italy</pubPlace>
+			<date value="&collection_year_updated;-00-00">&collection_year_updated;</date>
+			<address><addrLine>info@ctl.sns.it</addrLine></address>
+			<distributor role="location">&dctl_ctl;</distributor>
+			<availability status="free">
+				<p>Some rights reserved.</p>
+			</availability>
+		</publicationStmt>
+		<sourceDesc>
+			<bibl />
+		</sourceDesc>
+	</fileDesc>
+	<encodingDesc>
+		<projectDesc>
+			<p n="id">&collection_id;</p>
+			<p n="short">&collection_short;</p>
+			<p n="long">&collection_work;</p>
+			<p n="desc" xml:lang="it">&collection_desc_it;</p>
+			<p n="desc" xml:lang="en">&collection_desc_en;</p>
+		</projectDesc>
+		<samplingDecl>
+			<p />
+		</samplingDecl>
+		<editorialDecl>
+			<p xml:lang="it">&collection_editorial_it;</p>
+			<p xml:lang="en">&collection_editorial_it;</p>
+		</editorialDecl>
+		<refsDecl>
+			<p>Please refer to dCTL Guidelines for any issue.</p>
+		</refsDecl>
+	</encodingDesc>
+	<profileDesc>
+		<creation>
+			<date value="&collection_year_created;-00-00">&collection_year_created;</date>
+			<name key="ctl">CTL, SNS, Pisa (IT)</name>
+		</creation>
+		<langUsage>
+			<!-- () NEEDS TO BE FILLED WITH LANGUAGES USED IN THE TEXT -->
+			<language ident="en" />
+			<language ident="it" />
+		</langUsage> &TEI.header.profileDesc.textClass; </profileDesc>
+	<revisionDesc>
+		<change date="&collection_year_created;-00-00" who="&dctl_ctl;" n="file creation" />
+		<!-- () NEEDS TO BE FILLED WITH UPDATES (FROM CMS) -->
+		<!-- <change date="&collection_year_updated;-00-00" who="&collection_resp;" n="update" /> -->
+	</revisionDesc>
+</teiHeader>

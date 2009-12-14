@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+ <menu label="Edizione" xslt="menu_edition.xsl" icon="edition" tooltip="Edizione" />
+ <!-- <menu label="Canti" xslt="menu_div.xsl" icon="div" tooltip="Canti">
+  <div class="h2_detail">In questa sezione è possibile navigare i canti del poema</div>
+ </menu>
+-->
+ <menu label="Personaggi" xslt="menu_character.xsl" icon="character" tooltip="Personaggi">
+  <div class="h2_detail">In questa sezione è possibile navigare i personaggi descritti nel
+   testo</div>
+ </menu>
+ <menu label="Luoghi" xslt="menu_place.xsl" icon="place" tooltip="Luoghi">
+  <div class="h2_detail">In questa sezione è possibile navigare i luoghi descritti nel testo</div>
+ </menu>
+ <menu label="Ecphrasis" xslt="menu_ecphrasis.xsl" icon="ecphrasis" tooltip="Ecphrasis">
+  <div class="h2_detail">In questa sezione è possibile navigare le ecphrasis presenti nel
+   testo</div>
+ </menu>
+</config>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+ <head>
+  <title/>
+ </head>
+ <body>
+  <!-- BEGIN CONTENT-->
+  <div class="news">
+   <ul>
+    <li/>
+    <!--		<li class="news_last"><a href="this.php?#D070904-03" title="(...)"><span class="news_head">4 Set 2007</span>: abilitato Stato di Pubblicazione »</a></li>
+				-->
+   </ul>
+   <!--  -->
+   <ul>
+    <li class="help">
+     <a href="this.php" title="(To Do &amp; Done List)">To Do &amp; Done List »</a>
+    </li>
+    <li class="news_last">
+     <a href="this.php?#D080603" title="(...)"><span class="news_head">6 Giu 2008</span>:
+      nuovo sistema (v3) on-line »</a>
+    </li>
+   </ul>
+  </div>
+  <!-- END CONTENT -->
+ </body>
+</html>

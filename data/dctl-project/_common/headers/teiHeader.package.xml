@@ -1,0 +1,127 @@
+<teiHeader xml:id="&collection_id;-&package_id;.header">
+ <fileDesc>
+  <titleStmt>
+   <title type="main">&source_title_main; (electronic edition)</title>
+   <title type="sub">&source_title_sub;</title>
+   <title type="alt">&source_title_parallel;</title>
+   <author>&source_author;</author>
+   <editor>
+    <name type="ctl" key="ctl">&dctl_ctl;</name>
+    <date value="&package_year_updated;-00-00">&package_year_updated;</date>
+   </editor>
+   <sponsor>&dctl_ctl;</sponsor>
+   <funder>Scuola Normale Superiore - Italy</funder>
+   <principal>dCTL Project by CTL</principal>
+   <respStmt>
+    <resp>Digitization, Transcription and TEI Markup by</resp>
+    <name key="ctl" type="person">&package_encoder;</name>
+   </respStmt>
+   <respStmt>
+    <resp>Supervisor</resp>
+    <name key="ctl" type="person">Lina Bolzoni</name>
+   </respStmt>
+   <respStmt>
+    <resp>Technical advisor</resp>
+    <name key="ctl" type="person">Enrico Possenti</name>
+   </respStmt>
+  </titleStmt>
+  <editionStmt>
+   <edition> Electronic edition since <date value="&package_year_created;-00-00"
+     >&package_year_created;</date>
+   </edition>
+  </editionStmt>
+  <extent>
+   <term type="filesize">&package_fileSize;</term>
+   <term type="encoding">XML TEI P5 (TEi Lite), following dCTL Guidelines</term>
+  </extent>
+  <publicationStmt>
+   <publisher>&dctl_ctl;</publisher>
+   <pubPlace>Pisa</pubPlace>
+   <pubPlace>Italy</pubPlace>
+   <date value="&package_year_updated;-00-00">&package_year_updated;</date>
+   <address><addrLine>info@ctl.sns.it</addrLine></address>
+   <distributor role="location">&dctl_ctl;</distributor>
+   <availability n="&package_type;" status="free">
+    <p>Some rights reserved.</p>
+   </availability>
+  </publicationStmt>
+  <sourceDesc>
+   <biblFull n="source">
+    <titleStmt>
+     <title type="main">&source_title_main;</title>
+     <title type="sub">&source_title_sub;</title>
+     <title type="alt">&source_title_parallel;</title>
+     <author>&source_author;</author>
+     <editor>&source_edition_editor;</editor>
+    </titleStmt>
+    <editionStmt>
+     <edition> Source work used by CTL staff for the electronic version. </edition>
+    </editionStmt>
+    <extent>&source_edition_pages; pages</extent>
+    <publicationStmt>
+     <publisher>&source_edition_publisher;</publisher>
+     <pubPlace>&source_edition_place;</pubPlace>
+     <date value="&source_edition_year;-00-00">&source_edition_year;</date>
+    </publicationStmt>
+   </biblFull>
+   <biblFull n="reference">
+    <titleStmt>
+     <title type="main">&reference_title_main;</title>
+     <title type="sub">&reference_title_sub;</title>
+     <title type="alt">&reference_title_parallel;</title>
+     <author>&reference_author;</author>
+    </titleStmt>
+    <editionStmt>
+     <edition> Original work, referenced by the source document used by CTL staff for the electronic
+      version. </edition>
+    </editionStmt>
+    <extent>&reference_edition_pages; pages</extent>
+    <publicationStmt>
+     <publisher>&reference_edition_publisher;</publisher>
+     <pubPlace>&reference_edition_place;</pubPlace>
+     <date value="&source_edition_year;-00-00">&reference_edition_year;</date>
+    </publicationStmt>
+   </biblFull>
+  </sourceDesc>
+ </fileDesc>
+ <encodingDesc>
+  <projectDesc>
+   <p n="id">&collection_id;</p>
+   <p n="short">&collection_short;</p>
+   <p n="long">&collection_work;</p>
+   <p n="desc" xml:lang="it">&collection_desc_it;</p>
+   <p n="desc" xml:lang="en">&collection_desc_en;</p>
+  </projectDesc>
+  <samplingDecl>
+   <p n="id">&package_id;</p>
+   <p n="short">&package_short;</p>
+   <p n="long">&package_work;</p>
+   <p n="desc" xml:lang="it">&package_desc_it;</p>
+   <p n="desc" xml:lang="en">&package_desc_en;</p>
+  </samplingDecl>
+  <editorialDecl>
+   <p n="package" xml:lang="it">&package_editorial_it;</p>
+   <p n="package" xml:lang="en">&package_editorial_en;</p>
+   <p n="collection" xml:lang="it">&collection_editorial_it;</p>
+   <p n="collection" xml:lang="en">&collection_editorial_en;</p>
+  </editorialDecl>
+  <refsDecl>
+   <p>Please refer to dCTL Guidelines for any issue.</p>
+  </refsDecl>
+ </encodingDesc>
+ <profileDesc>
+  <creation>
+   <date value="&package_year_created;-00-00">&package_year_created;</date>
+   <name key="ctl">CTL, SNS, Pisa (IT)</name>
+  </creation>
+  <langUsage>
+   <!-- () NEEDS TO BE FILLED WITH LANGUAGES USED IN THE TEXT (FROM CMS) -->
+   <!-- <language ident=" ISO 639:1988 " /> -->
+   <language ident="&source_lang;" />
+  </langUsage>&TEI.header.profileDesc.textClass;</profileDesc>
+ <revisionDesc>
+  <change date="&package_year_created;-00-00" who="&package_encoder;" n="file creation" />
+  <!-- () NEEDS TO BE FILLED WITH UPDATES (FROM CMS) -->
+  <!-- <change date="&package_year_updated;-00-00" who="&package_encoder;" n="update" /> -->
+ </revisionDesc>
+</teiHeader>

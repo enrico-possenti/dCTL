@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<!DOCTYPE TEI SYSTEM "../../_common/dtd/dctl.core.dtd" [
+<!ENTITY % TEI.extension.dtd SYSTEM "../../_common/dtd/dctl.extension.dtd">
+<!ENTITY % collection.header.ent SYSTEM "../_header.ent">
+<!ENTITY % package.header.ent SYSTEM "_header.ent">
+<!ENTITY TEI.header SYSTEM "../../_common/headers/teiHeader.package.xml">
+<!ENTITY TEI.header.profileDesc.textClass SYSTEM "../../_common/add-ons/teiHeader.profileDesc.textClass.xml">
+%TEI.extension.dtd;
+%collection.header.ent;
+%package.header.ent;
+]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&package_id;"
+	n="&source_author; - &source_title_main;"> &TEI.header; <text
+		xml:lang="&source_lang;" xml:id="&package_id;.package" ana="&source_genre;">
+		<front>
+			<div type="part"/>
+		</front>
+		<body>
+			<div type="part">
+				<!-- NON MODIFICARE LA PARTE PRECEDENTE IL PUNTO "BEGIN" -->
+				<!-- %BEGIN% -->
+				<!-- BEGIN -->
+				<!-- -->
+
+				<div type="part" n="4">
+					<div type="frontispiece">
+						<pb n="105" corresp="anastatica"/>
+						<head type="main"><lb/>INFERNI <lb/>DEL <name key="000617">DONI</name>.
+							<lb/>QUARTO INFERNO <lb/>DEL <name key="001598">SAVIO</name>
+							<lb/>ACADEMICO PEREGRINO. <lb/>
+							<figure xml:id="p011f001">
+								<p type="motto">SPESSO LA VERIT&#192; <lb/>PARTORISCE ODIO.</p>
+								<graphic url="img://afd-inferni_105_pw.jpg"/>
+								<figDesc>Marca doniana</figDesc>
+							</figure>
+						</head>
+						<head type="sub">IN <name key="000568" ana="func_place">VINEGIA</name>
+							<lb/> NELL'ACADEMIA PEREGRINA <lb/>PER <name key="001245">FRANCESCO
+								MARCOLINI</name>
+							<lb/><date value="1553-00-00">M D L III</date>. </head>
+					</div>
+					<div type="dedication">
+						<pb n="116"/>
+						<pb n="117" corresp="anastatica"/>
+						<head type="main">AL MOLTO MAGNIFICO <lb/>signore il signor <name
+								key="006604">Marsilio Andreasio</name>, <lb/>nobilissimo gentiluomo
+							mantovano, cortese et splendido. <lb/></head>
+						<p>
+							<lb/>Assai era, generoso signore, l'aver fatto <lb/>degno il <name
+								key="000617">Doni</name> nostro academico, di sì grata <lb/> et
+							onorata lettera di vostra mano, senza ag<milestone unit="wb"
+							/><lb/>giungere il presente del velluto et del raso <lb/>che gli avete
+							mandato. Sappiate certo, pa<milestone unit="wb"/><lb/>tron nostro
+							liberalissimo, che quando egli vi dedicò il suo libro del<milestone
+								unit="wb"/><lb/>le <bibl>
+								<title>Epistole</title>
+							</bibl>, et che vi mandò l'altro, che non lo fece ad altro fi<milestone
+								unit="wb"/><lb/>ne che ricevere una vostra lettera assai gli
+							bastava; et era pur <lb/>reoppo, et di tanto si contentava, ma la
+							signoria vostra, che fu <lb/>sempre di animo reale in tutte le sue
+							imprese, non ha voluto guar<milestone unit="wb"/><lb/>dare al merito del
+								<name key="000617">Doni</name>, che era a pena d'una risposta, ma al
+							<lb/> procedere, <name key="006604">Andreasio</name>; però avete
+							dimostrato con sì fatto presen<milestone unit="wb"/><lb/>te quanto possa
+							l'amore del vostro animo inverso di coloro che si <lb/>dilettano (ardirò
+							dir così) di spender il tempo in qualche virtuoso <lb/>essercitio. I
+							nostri Academici, che v'hanno obligo di tanta realità, <lb/>vi
+							ringratiano sommamente, et nel ringratiarvi vi dedicano que<milestone
+								unit="wb"/><lb/>ste poche carte del presente <bibl>
+								<title>Inferno</title>
+							</bibl> del <name key="001598">Savio</name>, nostro acade<milestone
+								unit="wb"/><lb/>mico, aspettando con il tempo di farne più segnalata
+							memoria, et <lb/>vi donano alcuni altri libri del <name key="000617"
+								>Doni</name>, il quale, ringratiandovi, pre<milestone unit="wb"
+							/><lb/>para la sua penna a spandere per i cieli, per il mondo et per
+								<lb/>gl'<name key="001115" ana="func_place">Inferni</name> non manco
+							i vostri meriti che la vostra cortesia. <lb/>
+							<date value="1553-01-15">A' dì XV di gennaio M D L III</date>,
+							<lb/>dell'Academia nostra di <name key="000568" ana="func_place"
+								>Vinegia</name>, affettionatissi[mi] amici <lb/>il Presidente et
+								<name key="002471">Academici Peregrini</name>. </p>
+					</div>
+					<div type="argument" n="1">
+						<pb n="108" corresp="anastatica"/>
+						<head type="main">
+							<lb/>IL <name key="001598">SAVIO</name>
+							<lb/>ACADEMICO PEREGRINO <lb/> A I LETTORI. <milestone unit="lb"
+							/></head>
+						<p><lb/><name key="006043">Menippo</name> , quando egli andò all'<name
+								key="001115" ana="func_place">Inferno</name>, ne fu cagio<milestone
+								unit="wb"/><lb/>ne il voler parlare a <name key="006607"
+								>Tiresia</name> principalmente, per risol<milestone unit="wb"
+							/><lb/>versi d'alcuni dubbii che li erano venuti nella fantasia.
+							<lb/>Ora ve lo voglio rimenare io, o, per dir meglio, che <lb/>sia mio
+							compagno a ritornarvi un'altra volta, che sia mio compagno a ritornarvi
+							un'altra volta, per risolver<milestone unit="wb"/><lb/>mi che pena hanno
+							gli avari. Di ragione la debbe esser <lb/>grande fuor di misura, perché,
+							quando io vo ricercando <lb/>fra i savii per saper che mal, che peccato
+							è questa avaritia, ne sento dir gran<milestone unit="wb"/><lb/>dissimo
+							male. Vogliono alcuni Academici che la sia una ingordigia d'avere,
+							<lb/>una fame insatiabile et sete di quanta roba l'uomo vede et
+							s'imagina, un deside<milestone unit="wb"/><lb/>rio da non s'empier mai.
+								L'<name key="001122">Ardito</name> particularmente ha detto che l'è
+							una voragine po<milestone unit="wb"/><lb/>sta nel cuor dell'uomo, larga
+							nell'entrata et stretta nell'uscita, onde tanto quan<milestone unit="wb"
+							/><lb/>to più ampiamente cerca di ricevere, tanto più strettamente
+							desidera lasciare (o <lb/>buona distinzione!). <q ana="quotation_simple"
+								>&#171;Maledetto sia colui - è scritto nel <bibl>
+									<title>Deuteronomio</title>
+								</bibl> - che passa il <lb/>termine del prossimo suo&#187;</q>,
+							che, al parere del <name key="006609">Malinconico</name> Accademico
+							nostro, <lb/>vuol dire che si desidera di torre et d'aver quel del
+							prossimo, che non mandi <lb/>la misura giusta tanto per altri quanto per
+							sé. <name key="000110">Salamone</name> avertisce gli avaroni <lb/>ricchi
+							(che desiderano, avendo piena la campagna delle gran possessioni),
+								scriven<milestone unit="wb"/><lb/>do queste parole (conoscendo che
+							son per voler torre in tutti i modi et uni<milestone unit="wb"/><lb/>re
+							alla lor massa una minima parte di terra del poveretto): &#171;Non
+							toccate i pic<milestone unit="wb"/><lb/>coli termini de' poveri et non
+							entrate ne' campi de' pupilli, perché colui che può, <lb/>colui che è
+							fortissimo ti darà contro la sentetzia, perché egli è fra te et loro
+							<lb/>giudice&#187;. O che sentenza di danno è questa: l'avaro ha
+							d'aver per pena conti<milestone unit="wb"/><lb/>nua di non si satiar mai
+							de' danari (et è vero), et colui che i frutti d'altri <pb n="109"
+								corresp="anastatica"/><lb/>desidera godere non è per averne. Non è
+							più brutta cosa dell'avaritia, non <lb/>si può aver più brutta affezione
+							che amare cosa sì vile, quanto è tesoro ter<milestone unit="wb"
+							/><lb/>reno. Egli è nell'<bibl>
+								<title>Ecclesiastico</title>
+							</bibl> questa sentenza: <q ana="quotation_reference">&#171;Qui
+								aurum diligit non iustificabi<milestone unit="wb"
+								/><lb/>tur&#187;</q>. Beato a quel ricco che sarà trovato senza
+							macchia, che non avrà segui<milestone unit="wb"/><lb/>tato l'oro né
+							sperato ne' danari. Dove è egli costui? Se ci fia alcuno, si può
+							<lb/>dir che egli abbi fatto prove mirabili in vita sua. <name
+								key="001722">Ieremia</name> profeta, che ve<milestone unit="wb"
+							/><lb/>deva questo vizio in tutti, gridava (cap. IV): <q
+								ana="quotation_reference">&#171;A minore usque ad maiorem,
+								<lb/>omnes avaritiae student, et a propheta usque ad sacerdotem,
+								cuncti faciunt do<milestone unit="wb"/><lb/>lum&#187;</q>. Guai
+							a colui che raguna per sé quel d'altrui, perché si convertirà in tanto
+							<lb/>fango. Non vedete voi che questo non è tesoro da spendere in Cielo,
+							che le <lb/>son cose che si consumano dal vermine degli anni?
+							Nascondetele pure queste vo<milestone unit="wb"/><lb/>stre entrate,
+							serrate pure i danari a chiave, che 'l tempo ladro spezzerà le
+								cas<milestone unit="wb"/><lb/>se et ve gli torrà, et la morte farà
+							venire in palese ciò ch'è ascosto secreta<milestone unit="wb"
+							/><lb/>mente dalla vostra avara mano. Quanto è difficile al ricco salire
+							quei gradi <lb/>della scala sì facili, che conducono al cielo! Coloro
+							che si voglion far ricchi <lb/>caggion nelle tentazioni del Nimico et ne
+							i lacci del <name key="000898">Diavolo</name>. I gran desiderii et
+							<lb/>molti sono inutili et son di danno all'uomo, perché l'affondano et
+							lo tuffano <lb/>nel lago delle cupidità, dove son le barbe di tutti i
+							mali. Quanti sono usciti <lb/>della strada della fede, et si sono
+							invilupati da non si sviluppar mai in questi <lb/>cappi stretti del
+							desiderio ingordo d'avere! O quanti dolor ne son seguiti! Cias<milestone
+								unit="wb"/><lb/>cuno che vuole esser uomo di <name key="000344"
+								>Dio</name> gli debbe fuggire. <milestone unit="lb"/>Voi vi
+							maraviglierete, lettori onorati, che io favelli d'un'altra maniera che
+							<lb/>non hanno fatto gli altri: perché? non è egli differenza dal pazzo
+							al savio? Quan<milestone unit="wb"/><lb/>do il <name key="001597"
+								>Pazzo</name> studiava del suo <bibl>
+								<title>Inferno</title>
+							</bibl>, andava dietro a pazzie, et però è dove<milestone unit="wb"
+							/><lb/>re che io cerchi di dir saviezze. Se poi non le dirò, avrò
+							almanco avuto animo <lb/> di dirle et mi sarà paruto dirle. La mia
+							opinione è che questo peccato dell'a<milestone unit="wb"/><lb/>varitia,
+							questo male che ha l'uomo in sé et questa pesta maledetta, non sia
+								tan<milestone unit="wb"/><lb/>to il desiderar le cose, il metterle
+							insieme, accumulare et fare un fardello di <lb/>quel d'altri et del suo,
+							quanto il male del non voler distribuire dove bisogna, <lb/>dove si
+							debbe debitamente fare. Io qua metterei un essempio o due volentieri a
+							campo <lb/>per dire gli uomini et l'opere loro bestiali et amare, ma non
+							posso, ancora che sia <lb/>lecito, non debbo per non contradir a i
+							comandamenti; ma dirò generalmente. <lb/>Quanti ricchi avarissimi,
+							ricchi senza fine et senza fondo - infiniti ce ne sono! - <lb/>che non
+							ispendono a tenersi vestiti et miseramente vivere? A che effetto tanta
+							<lb/>strettezza? Non lo fanno per i figliuoli perché non hanno, non
+							parenti, ché <lb/>ne son privi, manco per amici né per fare impresa o
+							cosa buona; per che cagione <lb/>adunque, se non che, cacciati dalla
+							lupa ingorda dell'avaritia, si lasciano preci<pb n="110"
+								corresp="anastatica"/><milestone unit="wb"/><lb/>pitare nelle
+							tenebre dell'ignoranza, tenendo poco conto di <name key="000344"
+								>Dio</name>, del prossimo et <lb/>di lor medesimi? <name
+								key="000414">Santo Agostino</name> mostra che questa autorità va di
+							pari con l'e<milestone unit="wb"/><lb/>resia, et se vantaggio di
+							scelleratezza ci perviene, l'avaritia lo guadagna. Ec<milestone
+								unit="wb"/><lb/>covi le parole formate: <q ana="quotation_simple"
+								>&#171;Quaere ergo quis peccet gravius, aut qui nesciens
+									haere<milestone unit="wb"/><lb/>sim incurrerit aut qui sciens ab
+								avaritia, idest ab idolatria, recesserit, secun<milestone unit="wb"
+								/><lb/>dum illam regulam qua peccata scientium peccatis ignorantiae
+								praeponuntur. Ava<milestone unit="wb"/><lb/>rum conscientia vincit
+								in scelere. Sed si forte hoc faciat in heresi ipsius sceleris<!-- cinquecentina: 'scelersi' -->
+								<lb/>magnitudo, quid faciat in avaritia scientis amissio? Haereticus
+								nesciens avaro scien<milestone unit="wb"/><lb/>ti
+								coaequatur&#187;</q>. Greci la chiamarono phylargyria (per fare
+							un poco del dotto), <lb/>composta da filos, che è amare, et argiton,
+							cioè argento; così credo che dall'ar<milestone unit="wb"/><lb/>gento la
+							si distenda in tutte l'altre cose, et che l'avaritia sia una sfrenata
+								vo<milestone unit="wb"/><lb/>glia desiderosa et affetata d'avere
+							ogni cosa. O che fiera insatiabile: <lb/><q ana="quotation_simple">E ha natura
+								sì malvagia et ria <lb/>che mai non empie la bramosa voglia, <lb/>et
+								dopo il pasto ha più fame che pria</q>. <lb/>Ciascuno doverebbe
+							fuggir queste bestie (non uomini) et lasciarli scoppiare su <lb/>quelle
+							casse piene di danari et alla morte mettergnene tutti inanzi, fargli un
+							<lb/> cerchio di tutta la sua roba atorno, con dirgli: &#171;Portala
+							con teco, noi non la v[o<milestone unit="wb"
+							/><lb/>gli]amo<!-- cinquecentina: 'vamo' -->, il <name key="000898"
+								>Diavol</name> t'aspetta con essa, perché tu sei stato peggior di
+							lui&#187;; questi uo<milestone unit="wb"/><lb/>mini non avrebbono
+							avere mai alcun soccorso da gli altri: <lb/><q ana="quotation_simple">Gente
+								avara, invida et superba, <lb/>da' lor costumi fa' che tu ti
+								forbi</q>. <lb/>Questa avaritia è una massa di terra terribilissima,
+							un monte altissimo che fa <lb/>tanta ombra ch'egli non lascia nascere
+							seme alcuno nel campo dell'anima <lb/>nostra, perché l'entra in mezzo
+							fra <name key="000344">Iddio</name> et l'anima. (<name key="000309"
+								>Matt.</name>, 13): <q ana="quotation_reference"
+								>&#171;Sollicitudo <lb/>seculi istius et fallacia divitiarum
+								suffocat verbum&#187;</q>: non può la parola di <name
+								key="000344">Dio</name>, <lb/>quel seme buono, per amor di questa
+							ombra far frutto di cento o diece per uno. <lb/>La fa più ombra che la
+							terra quando si contrapone fra il sole et la luna, per<milestone
+								unit="wb"/><lb/>ciò che l'eclipse dura poco spatio, ma l'avaritia
+							che si pone in mezzo fra l'uma<milestone unit="wb"/><lb/>nità nostra et
+							la divinità di <name key="000344">Dio</name> non si muove mai. (<bibl>
+								<title>Ps.</title>
+							</bibl>): <q ana="quotation_reference">&#171;Repleti sunt qui
+								<lb/>obscurati sunt terrae domibus iniquitatum&#187;</q>. Disse
+							ben <name key="002097">san Gregorio</name>: <q ana="quotation_reference"
+								>&#171;Le tenebre, <lb/>l'oscurità dell'anima è il desiderio
+								delle ricchezze&#187;</q>. L'ombra che deriva da que<pb n="111"
+								corresp="anastatica"/><milestone unit="wb"/><lb/>sta machina di
+							terra dell'avaritia fa quell'effetto contro al calore della carità
+							<lb/>che fa l'altra ombra che impedisce il sole, il caldo de' suoi
+							razzi, onde le pian<milestone unit="wb"/>te non fanno frutto; né ancora
+							il seme della parola di <name key="000344">Dio</name> seminato in noi,
+								op<milestone unit="wb"/><lb/>presso dall'avaritia (ombra crudele)
+							può crescere in perfetione. O inamorati <lb/>di questa lupa, voi amate
+							troppo queste cose del mondo, che sono ombra et fu<milestone unit="wb"
+							/><lb/>mo, et chi ama il mondo di questa sorte, non ha la carità di
+								<name key="000344">Dio</name> in lui. (<name key="000306"
+								>Luc.</name>, <lb/>6): <q ana="quotation_reference">&#171;Guai a
+								voi, ricchi, che avete la vostra consolatione in questo
+								mondo!&#187;</q>. <lb/>Troppo piacere hanno posto gli avari in
+							cose temporali, et questo aviene perché <lb/>non mirano all'eterne; le
+							quali sprezzerebbono, considerandole in quel modo che <lb/>sarebbe il
+							dovere. Io non voglio stare a narrare, in questo mio discorso, che
+								l'abon<milestone unit="wb"/><lb/>danza della roba di <name
+								key="000294">Abramo</name> e <name key="000355">Lot</name> facesse
+							pensare all'avaritia i lor pastori, <lb/> né allegare ancora la istoria
+							di <name key="005690">Dalida</name> o il tradimento di <name
+								key="003814">Giuda</name>, perché en<milestone unit="wb"
+							/><lb/>trarei nell'infinito delle gran cose che per l'avaritia son
+							seguite; una sola mi <lb/>par di dire, et è questa. Che al tempo di
+								<name key="006617">Neemia</name> vi furono alcuni de' prin<milestone
+								unit="wb"/><lb/>cipali della città che erano tanto oppressi
+							dall'usura (madre dell'avaritia) che <lb/>volevano vendere i figliuoli
+							et le figliuole per servi et per fanti, et gravemen<milestone unit="wb"
+							/><lb/>te per questo furon ripresi da <name key="006617">Neemia</name>.
+							Noi per avaritia vendiamo lo spirito et <lb/>l'anima al <name
+								key="000898">Diavolo</name>, per un vii tesoro, il quale non è
+							nostro ma come in pre<milestone unit="wb"/><lb/>sto lo tenghiamo,
+							credendoci di riceverlo in luogo di pagamento, et alla fine ce <lb/>lo
+							conviene render per forza nelle mani del mondo, depositario del tempo.
+								Potre<milestone unit="wb"/><lb/>mo concludere che siamo nel mare
+							dell'avaritia, nel desiderio che è una periglio<milestone unit="wb"
+							/><lb/>sa acqua, et anneghiamo apiccandoci a ogni cosa, sperando che le
+							ci scampino <lb/>dal pericolo della morte; ma all'estremo de i giorni
+							nostri affondiamo con esse et <lb/>nel fondo delle pene infernali in
+							sempiterno ci posiamo, ricevendo pena, vergo<milestone unit="wb"
+							/><lb/>gna et danno dell'avarissimo nostro vivere et miserissima
+							vita.</p>
+					</div>
+					<div type="letter" n="1">
+						<pb n="112" corresp="anastatica"/>
+						<head type="main"><lb/>A <name key="002349">RADAMANTO</name>
+							<lb/>IL <name key="001598">SAVIO</name>
+							<lb/>ACADEMICO PEREGRINO. <milestone unit="lb"/></head>
+						<p><lb/>A voi ne vengo io, potente <name key="002349">Rada<milestone
+									unit="wb"/><lb/>manto</name>, con un'altra sorte di favellare
+							<lb/>et con altro stile di parole che non hanno <lb/>fatto gli altri
+							nostri <name key="002471">Academici</name>. A me non <lb/>conviene di
+							grattarvi gli orecchi della gratitu<milestone unit="wb"/><lb/>dine con
+							la lingua dell'adulatione, né corrompere la severità della
+							<lb/>giustitia con la pompa del fausto d'un presente più ornato
+								d'a<milestone unit="wb"/><lb/>fetione che cinto di merito. Ecco già
+							che io lascio nel campo del<milestone unit="wb"/><lb/>l'oblio delle
+							soprascritte la corona del principato, et non vi <lb/>pongo inanzi agli
+							occhi titoli che sien composti di fumo amirativo, <lb/>ma solo ho
+							fregiato la carta onorata con l'inchiostro reale, atten<milestone
+								unit="wb"/><lb/>dendo più allo stupore che voi date al regno che
+							alla grandezza <lb/>che vi dà lo stato; et concludo che il dominio
+							vostro riceve più <lb/>tosto da voi il nome d'alterezza che egli vi dia
+							fama di maggio<milestone unit="wb"/><lb/>ranza. Io sono il <name
+								key="001598">Savio</name>, et suplico per tutti i bisognosi et <lb/>
+							afflitti dal potente superbo et stretto dell'avaritia de gli uomini,
+							<lb/>non meno infangati nel vituperio che vituperati nella fama del lor
+							<lb/> proceder vile; et vengo a chieder aiuto allo scettro della vostra
+							<lb/> punitione et vendetta alla spada del vostro gastigo, acciò che,
+								<pb n="113" corresp="anastatica"/><lb/>togliendo loro per
+							giusti[ti]a il potere della ricchezza con una mano, <lb/>con l'altra sia
+							distribuito per i seni di chi patisce et ha patito, sem<milestone
+								unit="wb"/><lb/>pre vivendo l'afflittione, di stento nutrita et
+							pasciuta per tanti <lb/>anni sterili miseramente. Conciosia che
+							conosceranno il furor vo<milestone unit="wb"/><lb/>stro in questo,
+							quanto vaglia et quanto sia di giovamento, et <lb/>conoscendolo vi si
+							faranno schiavi, talmente che 'l regno vostro cre<milestone unit="wb"
+							/><lb/>scerà per due strade: una dal tremendo gastigo, l'altro dal
+								libe<milestone unit="wb"/><lb/>ral donativo, perché l'amore largito
+							della spontanea volontà <lb/>passa ogni presente, et la giustitia messa
+							in effetto ne' tempi più <lb/>bisognosi conserva la servitù libera. Le
+							mie parole non gireran<milestone unit="wb"/><lb/>no altrimenti per la
+							ruota rettorica né svilupperanno intorno <lb/>alla cirimonia de' baci,
+							inchini et raccomandazioni, perché a un <lb/>pari vostro si farebbe
+							ingiuria inremissibile ogni volta che si potes<milestone unit="wb"
+							/><lb/> se sospettare che aveste grato proceder tanto corrotto. Date
+								orec<milestone unit="wb"/><lb/>chia a chi chiama debitamente, et
+							commettete al Fato che esseguisca <lb/>il premio et il gastigo secondo i
+							meriti et i peccati. </p>
+					</div>
+					<div type="chapter" n="1">
+						<pb n="114" corresp="anastatica"/>
+						<head type="main"><lb/>INFERNO DE' RICCHI <lb/>AVARI ET DE' POVERI
+							<lb/>LIBERALI, DEL <name key="001598">SAVIO</name> ACADEMICO
+							PEREGRINO.</head>
+						<div type="section" n="1.1">
+							<head type="main"><lb/>IL <name key="001598" ana="func_character"
+									>SAVIO</name>, <name key="006043" ana="func_character"
+									>MENIPPO</name> ET <name key="000834" ana="func_character"
+									>MOMO</name>.</head>
+							<p><lb/><name key="001598" ana="func_character">[Savio]</name> L'esser
+								tanto curioso come sei stato tu non mi <lb/>va per fantasia. Che
+								accadeva far quei trovati d'a<milestone unit="wb"/><lb/>le et dir di
+								essere stato in cielo, se non era vero? <lb/>Poi finger d'andare
+									all'<name key="001115" ana="func_place">Inferno</name> per sì
+								poca cosa <lb/>non era credibile né poco né assai. <lb/><name
+									key="006043" ana="func_character">Men.</name> Per ora non vo'
+								rispondervi al carico che mi fate, guidatemi dove m'avete <lb/>promesso.<lb/>
+								<name key="001598" ana="func_character">Savio</name> Camina, che
+								tosto vi giugneremo. <lb/><name key="000834" ana="func_character"
+									>Momo</name> Di gratia, non m'aggirate più, che io sono stracco. <lb/>
+								<name key="001598" ana="func_character">Savio</name> Eccoci appresso
+									all'<name key="001115" ana="func_place">Inferno</name> dove io
+								vi voglio menare, et qui vi fa<milestone unit="wb"/><lb/>rò vedere
+								pene infinite che sopportano gli afflitti spiriti, sì de'
+								<lb/>ricchi avari come de' poveri liberali. Fatevi qua sopra;
+									vede<milestone unit="wb"/><lb/>te questa gabbia con le gretole
+								di ferro, quanti poveri uomini la <lb/>serra dentro? Costoro hanno
+								gran pena, hanno gran dolore nel<milestone unit="wb"/><lb/>l'animo,
+								il corpo patisce bene (perché sono uniti al corpo questi
+								<lb/>spiriti) ma non tanto quanto lo spirito. La liberalità gli ha
+									con<milestone unit="wb"/><lb/>dotti a tal fine. <pb n="115"
+									corresp="anastatica"/><lb/>
+								<name key="000834" ana="func_character">Men.</name> La mi pare una
+								sepoltura piena di morti, la puzza a uso d'avello; loro sono in
+									ter<milestone unit="wb"/><lb/>ra, chi volto per un verso,
+								l'altro per un altro, tale è mezzo coperto, tal <lb/>non si può
+								vedere, chi nudo et chi vestito; ma quanto ci staranno? <lb/><name
+									key="001598" ana="func_character">Savio</name> Non so già di
+								questo. Vedi quanta infinità di gabbie: una gran<milestone unit="wb"
+								/><lb/>de, una piccola, una mezzana, quell'è estremamente misera.
+								<lb/>Vedi colui che ha impedito il caminar da sì grave peso,
+								quell'altro <lb/>che non si può muover per la strettezza del luogo?
+								et tanti altri di <lb/>qua et di là similmente tormentati? Tutti son
+								poveri liberali: pove<milestone unit="wb"/><lb/>ri di bontà et
+								liberali di tristizie. <lb/><name key="000834" ana="func_character"
+									>Momo</name> Io comincio a intendere, mi stupiva che i poveri
+								fussero all'<name key="001115" ana="func_place">Inferno</name>.
+									<lb/><name key="001598" ana="func_character">Savio</name> Le
+								spetie della povertà sono molte, ma hanno tre capi (et cen<milestone
+									unit="wb"/><lb/>to code): uno è l'esser povero di roba, l'altro
+								di virtù et il <lb/>terzo di spirito, de i quali sarebbe lungo il
+								discorrere, se tutto s'a<milestone unit="wb"/><lb/>vesse a dire.
+									<lb/><name key="000834" ana="func_character">Momo</name> S'io
+								fossi ricco di danari, so ben che io vi lascerei cicalar con i libri
+								di povertà a <lb/>vostra posta et mi farei beffe di voi. <lb/><name
+									key="001598" ana="func_character">Savio</name> Un par tuo
+								farebbe da suo pari, et un altro altrimenti. Coloro <lb/>che son
+								poveri di roba si danno spesso al disperato et per aver<milestone
+									unit="wb"/><lb/>ne fanno ogni male, et disperati capitano male,
+								onde vanno al <lb/> centro de' dannati. Chi non ha virtù non ha da
+								vivere et mal <lb/>vive con ragione, et senza ragione si muore et è
+								sepulto all'<name key="001115" ana="func_place">In<milestone
+										unit="wb"/><lb/>ferno</name>. Il povero di spirito buono, ma
+								ricco di cattivo si danna <lb/>senz'altro. <lb/><name key="000834"
+									ana="func_character">Momo</name> Poiché noi siamo in questo
+									<name key="001115" ana="func_place">Inferno</name>, lasciaci, o
+									<name key="001598">Savio</name>, andare <name key="006043"
+									>Menippo</name> et io, da noi <lb/>soli ricercando più profondo
+								che noi potremo; intanto riposeratti, et, come saremo <lb/>tornati,
+								andremo a vedere il resto. <lb/><name key="001598"
+									ana="func_character">Savio</name> Andate al piacere et comodo
+								vostro.</p>
+						</div>
+						<div type="section" n="1.2">
+							<head type="main"><lb/><name key="001598" ana="func_character"
+									>SAVIO</name> SOLO.</head>
+							<p><lb/>Costoro non hanno gusto delle mie parole, ma, s'io avesse potuto
+									ragiona<milestone unit="wb"/><lb/>re  con gente che
+								intendessero, non gli lasciava andare, et la cagio<pb n="116"
+									corresp="anastatica"/><milestone unit="wb"/><lb/>ne è  questa:
+								che tornando mi diranno mille pazzie, che si saranno
+								<lb/>imaginati,  d'avari et liberali, et la mia professione è tutta
+								il con<milestone unit="wb"/><lb/>trario della  loro. Ma pur che io
+								conoschi me medesimo, che, <lb/>credendomi esser savio et  loro
+								stolti, la vadi a roverscio. Io vo<milestone unit="wb"/><lb/>glio,
+								poiché mi trovo solo in  questo <name key="001115" ana="func_place"
+									>Inferno</name> (che certo non c'è <lb/>altri savii che me, et
+								lo mostrerò, se  non ora, un'altra volta con <lb/>buone ragioni),
+								ricercarmi et essaminarmi<!-- cinquecentina: 'examinarmi' -->  molto
+								bene s'io mi <lb/>posso chiamar savio, et, ritrovandomi tale, s'io
+								debbo  come savio <lb/>andare più inanzi per questo <name
+									key="001115" ana="func_place">Inferno</name>. Ultimamente,
+								quando mi <lb/> sarò risoluto d'ogni cosa bene, vedere se fia ben
+								fatto scriver qual<milestone unit="wb"/><lb/>cosa  di questo <name
+									key="001115" ana="func_place">Inferno</name> che sia utile.
+								Prima, io so certo che colui <lb/>non
+								può <!-- cinquecentina: 'non si può'; la lezione a testo sembra quella corretta -->
+								pervenire alla vera sapienza che si lascia ingannare <lb/>dal suo
+								sciocco  sapere, so che la prima sapienza dell'uomo ha da
+								<lb/>essere la vita lodata  appresso a gli uomini et la pura mente
+									appres<milestone unit="wb"/><lb/>so <name key="000344"
+									>Iddio</name>. A che siamo, o  <name key="001598">Savio</name>?
+								Andiamo più innanzi. La chia<milestone unit="wb"/><lb/>ra sapienza
+								non è quella che porta la  fama attorno in parole, ma <lb/>quella
+								che si conosce in fatti. Certo che io  conosco molti gran
+									let<milestone unit="wb"/><lb/>terati (et questo mi fia uno
+								specchio) che quanto  più sanno <lb/>più gonfia lor l'animo
+								d'arroganza, et con quel fasto di boria  si <lb/>lasciano legar
+								dalla pazzia. Egli è vero ch'io ho del sapiente in <lb/>un  certo
+								che, che non si può da me esprimere, come sarebbe a dire <lb/>che
+								io  non mi maraviglio di cose che accaggia, perché sempre ho
+								<lb/>veduto inanzi  ciò che si può vedere et non m'è nuova materia
+								<lb/>alcuna che succeda al  mondo. Un altro buon segnale ho d'esser
+								<lb/>sapiente: il non aver bene, il  non aver nulla et esser tenuto
+								<lb/>da' ricchi in poco conto. Questa sapienza  non credo (per
+								un'altra <lb/>ragione) che la sia meco, anzi ho per fermo che  la si
+								stia su per i <lb/>libri et alberghi nelle lettere, perché a regger
+								una  republica bi<milestone unit="wb"/><lb/>sogna studiar libri et
+								lettere, se conservar l'amicitia,  legger scar<pb n="117"
+									/><milestone unit="wb"/><lb/>tabegli, al governare esserciti ci
+								va lettere, a far  castelli, fondar <lb/>città, rizzar machine,
+								conservarsi sano, intendere ciò  che si <lb/>favella, giudicare,
+								sententiare et regnare, a tutte queste cose  <lb/>bisogna libri et
+								lettere. Et i principi avrebbono ad essere i primi <lb/>a  darsi in
+								preda alla sapienza, perché un signore senza dottrina è, 
+								<lb/>verbigratia, come una nave senza remi o un falcon senza penne
+								<lb/>nell'alie.  Adunque, non essendo savio perché non sono un
+								libro, <lb/>starei bene per un  di quei signori senza lettere. Ma
+								come potrò <lb/>io giudicar da me medesimo  s'io son savio o no?
+									<seg ana="genre_short">Quei Greci che <lb/>fecero quella novella
+									della  sapienza furono molto aveduti a fare <lb/>che la <name
+										key="006620">Sapienza</name> aparisse una volta  in aere et
+									portasse tutta la <lb/>saviezza in uno anello, onde ciascuno lo 
+									voleva. Ella, che desi<milestone unit="wb"/><lb/>derava darlo a
+									più persone, lo pose fra parecchie  migliaia di anelli, <lb/>poi
+									gli sparse per il mondo dicendo che egli era fra  quelli
+										l'a<milestone unit="wb"/><lb/>nello della saviezza, et chi
+									lo trovava, buon per lui. Ciascuno  <lb/>corse a empiersi le
+									dita d'anella, et ogni dottore ne porta in dito <lb/>uno,  per
+									mostrare che ancora egli ricolse l'anello et che potrebbe <lb/>a
+									un bel  bisogno esser quello; ma di certezza, fra tante
+									migliaia, <lb/>un solo ce n'è  savio, et è colui che ha l'anello
+									veramente</seg>. Forse <lb/>che egli è questo che  io porto in
+								dito? se questo fosse, solo io sarei <lb/>savio et potrei dire 
+								così: <lb/>
+								<q ana="quotation_simple">O voi ch'avete gl'intelletti sani, <lb/>mirate
+									la dotrina che s'asconde  <lb/>sotto 'l velame de gli versi
+									strani</q>. <lb/>Ecci poi un'altra cosa che mi  guasta: costoro
+								dicono che questa <lb/>sapienza non si può acquistare senza  un
+								grande studio, senza una <lb/>gran fatica. Io, che poco studio et
+								manco  fatica duro, che sia <lb/>possibile a imparare pensate come
+								ella va.  Un'altra mi raccon<milestone unit="wb"/><lb/>cia la bocca,
+								che è ragione per me: quando son  biasimato non do <pb n="118"
+									corresp="anastatica"/><lb/>nella collera né nella furia et non
+								m'attristo, et quando  son lo<milestone unit="wb"/><lb/>dato non
+								gonfio et alzo la coda. Mi sa male che quegli anti<milestone
+									unit="wb"/><lb/>chi  (non so s'erano più savi di me)
+								comparassino la sapienza al<milestone unit="wb"/><lb/>l'oro, che è 
+								il polso dell'avaritia. Vedete che paragone, a una co<milestone
+									unit="wb"/><lb/>sa sì bassa  imperfetta a una alta e
+								perfettissima; pure, diremo come <lb/>loro. Eglino  hanno detto che
+								per amor della chiarezza si fa que<milestone unit="wb"/><lb/>sta
+								comparatione. Fra  tutti i metalli l'oro luce, et la sua luce
+								<lb/>risplende fortemente in quel  luogo dove ella ribatte; gli
+								uomini <lb/>sapienti similmente sono illustri et  con la lor
+								dottrina
+								risplendono<!-- cinquecentina: 'risplende'; la correzione sembra adeguata -->
+									mi<milestone unit="wb"/><lb/>rabilmente. Onde di questa sapienza
+								si  favella così: <q ana="quotation_reference">&#171;Habebo
+									<lb/>propter hanc claritatem ad turbas. In multitudine  videbor
+									bonus&#187;</q>. <lb/>Di quest'oro parla <name key="000779"
+									>Daniello</name>: <q ana="quotation_reference">&#171;Ecce
+									vir unus vestitis  lineis et re<milestone unit="wb"/><lb/>nes
+									eius accincti sunt auro obrizo&#187;</q> etc. Al mio
+								giuditio,  non pos<milestone unit="wb"/><lb/>so far io alcuna di
+								queste prove; del risplender poi lontano,  come <lb/> fecero quegli
+								scudi d'oro che son scritti ne' <bibl>
+									<title>Maccabei</title>
+								</bibl>, 6:  <q ana="quotation_reference">&#171;Re<milestone
+										unit="wb"/><lb/>fulsit sol in clipeos aureos et
+									resplenduerunt montes&#187;</q>, cioè che <lb/>la  mia
+								saviezza sia più utile ad altri che a me, non so ciò che io <lb/>me
+								ne  debba credere; se 'l sole non dava ne gli scudi, non
+									avreb<milestone unit="wb"/><lb/>bon fatto mai  quello effetto.
+								Così voglio dir io: allora si ve<milestone unit="wb"/><lb/>drebbe la
+								mia sapienza et  si conoscerebbe s'io fosse savio o no, <lb/>quando
+								mi venisse occasione di  far cosa onorevole, perché egli è
+								<lb/>scritto dal savio <name key="000110">Salamone</name>: <q
+									ana="quotation_reference">&#171;Da  occasionem sapientiae et
+										ad<milestone unit="wb"/><lb/>detur ei
+									sapientia<!-- cinquecentina: 'sapientiam' -->&#187;</q>. Chi
+								l'intende  altrimenti esponga in un altro <lb/>modo, come gli piace,
+								io ho tirato  l'acqua al mio mulino. Vo<milestone unit="wb"
+								/><lb/>glion poi quei dotti che, sì come l'oro pesa,  ch'ancora
+								l'uomo sa<milestone unit="wb"/><lb/>piente sia grave nel procedere
+								ne' suoi maturi  consigli (o che tro<milestone unit="wb"/><lb/>vati
+								di poca sustanza, cose da dar pasto a' plebei),  dicendo per
+									let<milestone unit="wb"/><lb/>tera: <q ana="quotation_reference"
+									>&#171;Non enim sine pondere loquitur, nec sine pondere 
+										gratui<milestone unit="wb"/><lb/>tur, nec sine pondere
+									debito aliquid operatur&#187;</q>. Son di parere  an<pb
+									n="119" corresp="anastatica"/><milestone unit="wb"/><lb/>cora
+								tali che, sì come l'oro è utile per tenere il principato fra <lb/>
+								tutti i metalli di virtù, di bontà et altre cose, che la dottrina,
+								<lb/>il  savio et la sapienza facci similmente questo. Onde il
+								sapiente <lb/>non fa  cosa cattiva: <q ana="quotation_reference"
+									>&#171;Sapientia sobrietatem docet. Sapiens timet <lb/>et
+									declinat  a malo. Sapientia confortat sapientem, super decem
+									<lb/>principes  civitatis&#187;</q>. Vorrei dir qui la mia
+								opinione circa qual cosa <lb/>sia meglio  oggi, o aver la cosa in sé
+								o la comparata a la cosa, <lb/>come sarebbe a dire  o l'oro o la
+								sapienza; per essere il <name key="001598">Savio</name>
+								<lb/>non voglio dare il mio  parere, acciò che i pazzi non
+								pigliassino la <lb/>mia opinione, la qual  sarebbe forse contraria a
+								quello che scrisse <lb/><name key="000110">Salamone</name> (<bibl>
+									<title>Prover.</title>
+								</bibl>, 16):  <q ana="quotation_reference">&#171;Posside
+									sapientiam quae auro
+									<lb/>meglior<!-- sic nella cinquecentina --> est&#187;</q>.
+								S'egli s'avesse a dare l'eletione  in libertà di ciascu<milestone
+									unit="wb"/><lb/>no che pigliassero o oro o sapienza, noi ci
+								averemmo  pochi sa<milestone unit="wb"/><lb/>vi. Insino a <name
+									key="001073">Paride</name> lasciò andar la sapienza, et perché?
+								per <lb/>una  bella donna. Certamente che i savi ci son rari, perché
+								chi è sa<milestone unit="wb"/><lb/>piente  non si lascia viluppare
+								da' peccati (<bibl>
+									<title>Ecc.</title>
+								</bibl>, III): <q ana="quotation_reference">&#171;Sapiens
+									<lb/>cor et  intelligibile abstinebit se a peccatis et in
+									operibus iu<milestone unit="wb"/><lb/>stitiae  successus
+									habebit&#187;</q>. Io ho quasi voglia di distinguer questa
+								<lb/>scienza  umana, o sapienza che io mi voglia dire, in tre capi,
+								<lb/>scienza  superstitiosa, scienza utile et scienza mirabile,
+								<lb/>ma penso ch'io starei  troppo a disagio. Ma come si può egli il
+									cam<milestone unit="wb"/><lb/>po seminare senza seme?  Senza
+								dottrina come favellerò io di que<milestone unit="wb"/><lb/>sto? <q
+									ana="quotation_reference">&#171;Ut ager quamvis fertilis 
+									sine cultura fructuosus esse non po<milestone unit="wb"
+									/><lb/>test, sic sine doctrina animus&#187;</q>.  Credo
+								ch'io averei da dire delle <lb/>cose assai contro di me et assai in
+								mio  favore; s'io favellerò da <lb/> filosofo, dirò come loro: <q
+									ana="quotation_reference">&#171;Labia nostra a  nobis
+									sumus&#187;</q>, onde <lb/>mi farò savio da me medesimo;
+								s'io vorrò seguitare  il vero, dirò <lb/>che <name key="000344"
+									>Dio</name> mi dà la sapienza: <q ana="quotation_reference"
+									>&#171;Ego dabo vobis os et  sapientiam&#187;</q>.
+								<lb/>Il principio di quella è il timor di <name key="000344"
+									>Dio</name>: se io da  questo capo non <pb n="120"
+								/><lb/>comincio, penso di caminar poco inanzi per quella, che  mai
+									impa<milestone unit="wb"/><lb/>rerò nulla. Udite quel che fu
+								detto da chi era nella via vera  del<milestone unit="wb"/><lb/>la
+								sapienza: <q ana="quotation_reference">&#171;Semper quidem
+									discentes (stultam fecit
+									sapientiam<!-- cinquecentina: 'sapientia' -->  <lb/>huius mundi)
+									et nunquam ad scientiam veritatis pervenientes&#187;</q>.
+								<lb/>Sarei  forse per cattiva strada a voler saper i secreti
+								infernali? Sa<milestone unit="wb"/><lb/>rebbe ella  forse pazzia la
+								mia a credermi d'andare all'<name key="001115">Inferno</name>
+									vi<milestone unit="wb"/><lb/>vendo? Son io  entrato a un bisogno
+								per la falsa via della poesia, <lb/>delle fintioni?  Certo sì, non
+								son adunque savio, perché cerco di sa<milestone unit="wb"/><lb/>pere
+								più che non è  dovere ch'io sappia: <q ana="quotation_reference"
+									>&#171;Non plus sapere quam <lb/>oportet
+									sapere&#187;</q>. <bibl>
+									<title>Eccl.</title>
+								</bibl>, III:  <q ana="quotation_reference">&#171;In supervacuis
+									rebus noli scru<milestone unit="wb"/><lb/>tari multipliciter, et
+									in pluribus  operibus eius ne fueris curiosus&#187;</q>.
+								<lb/>Questa tocca a me, che voglio  sapere i secreti dell'infernal
+									puni<milestone unit="wb"/><lb/>tioni. Troppo son curioso
+									certamente: <q ana="quotation_reference">&#171;Altiora te ne
+									quaesieris&#187;</q>, <lb/>disse <name key="000110"
+									>Salamone</name>. Ma mettiamo, per caso, che  io passassi il
+								mare di l<lb/>questi sogni a bene, ha egli però a uscir della  mia
+								bocca baie? Quando <lb/>la mia lingua affermasse simil trovati per
+								via di  poesie, sarebbe egli <lb/>poi giusta impresa? sarei io il
+									<name key="001598">Savio</name>? No  certamente. Perché?
+								<lb/>Udite <name key="001097">Davitte</name>: <q
+									ana="quotation_reference">&#171;Os iusti meditabitur
+									sapientiam et  lingua eius <lb/>loquetur iudicium&#187;</q>.
+								Le mie lettere, la mia poca scienza  male im<milestone unit="wb"
+								/><lb/>piegata farebbe apparire le mie opere mostri al mondo, 
+									dimostre<milestone unit="wb"/><lb/>rebbe che io tenesse mezzo
+								del ragionevole et mezzo del bestia<milestone unit="wb"/><lb/>le. 
+								Però <name key="005718">Issidoro</name> con queste parole ci fa
+								avertiti: <q ana="quotation_reference">&#171;Talis est
+										ho<milestone unit="wb"/><lb/>mo  litteratus et voluptuosus,
+									quia ex una parte est rationalis et ex <lb/> alia  bestialis. In
+									malivolam animam non intrabit sapientia&#187;</q>.
+									<lb/><name key="006043" ana="func_character">Menip.</name> Il 
+								nostro <name key="001598">Savio</name>, o <name key="000834"
+									>Momo</name>, favella solo et favella d'un'altra lingua; 
+								domine, se per sorte egli si fosse scordata la sua? Egli ci ha
+								veduto.  <lb/><name key="000834" ana="func_character">Momo</name>
+								Debbe allegar qualche sentenza, perché altrimenti la cosa non 
+									an<milestone unit="wb"/><lb/>drebbe da savio. <lb/><name
+									key="001598" ana="func_character">Savio</name> Voi sète dimorati
+								tanto? <pb n="121" corresp="anastatica"/><lb/><name key="006043"
+									ana="func_character">Meni.</name> Perché siamo passati  molti
+								inanzi, et se voi venivi, avreste avuto <lb/>gran piacere a vedere
+								il  gioco de gli avari. <lb/><name key="001598" ana="func_character"
+									>Savio</name> Fia qualche vostra novella solita o inventione 
+								risibile. <lb/><name key="000834" ana="func_character">Momo</name>
+								Verissima, sì come l'udirete. <lb/><name key="001598"
+									ana="func_character">Savio</name> L'ascolterò, per ridermi 
+								delle vostre stoltitie. <lb/>
+								<figure xml:id="p011f002">
+									<graphic url="img://afd-inferni_121_pw.jpg"/>
+									<figDesc>immagine infernale</figDesc>
+								</figure>
+								<lb/><name key="006043" ana="func_character">Meni.</name> Or udite.
+								Noi entrammo in un cerchio dov'era  in mezo <name key="000898"
+									>Lucifero</name>
+								<pb n="122" corresp="anastatica"/>et tutto il vano era pien d'acque,
+								nelle quali stavano  a galla tut<milestone unit="wb"/><lb/>te teste
+								d'uomini. Noi dimandammo che capi eran quegli: ci fu  <lb/>risposto
+								esser tutti d'avari; et <name key="000898">Lucifero</name>,
+								pigliando costoro, non  <lb/>divorava altro che il capo. In questo
+								che noi stavamo a vedere, ci  <lb/>venne volti gli occhi nelle acque
+								per vedervi dentro, onde noi  scor<milestone unit="wb"/><lb/>gevamo
+								insino nel fondo benissimo. Su quel fondo si faceva  con<milestone
+									unit="wb"/><lb/>tinuamente un gioco, che si chiamava degli
+								avari. A' piedi del  <lb/><name key="000898">Diavolo</name> era
+								fermata una catena, dove era legato un porco che pa<milestone
+									unit="wb"/><lb/>reva  d'oro et d'argento et girava attorno
+								attorno, et nel gi<milestone unit="wb"/><lb/>rare v'erano una  gran
+								moltitudine d'anime atorno, assetate d'a<milestone unit="wb"
+								/><lb/>mazzar quel porco d'oro, e t altre anime chiudevano loro con
+								<lb/>una benda nera gli occhi, legandogli  strettamente la testa, et
+									da<milestone unit="wb"/><lb/>vano loro un mazzo di ferro come da
+								botte,  et ciascuno a quel <lb/>modo, alla cieca, andava alla volta
+								di quel porco per  amazzarlo; <lb/>onde, in cambio suo, bene spesso
+								(perché il porco girava) si  da<milestone unit="wb"/><lb/>vano l'uno
+								all'altro su la testa, et così stramazzati ritornavano <lb/>a 
+								galla, et la testa che aveva tocco il colpo era divorata dal
+									<lb/><name key="000898">Demonio</name>. <lb/><name key="001598"
+									ana="func_character">Savio</name>  Non vi fu egli alcuno che vi
+								dicesse chi erano coloro? <lb/><name key="000834"
+									ana="func_character">Momo</name> Avari. <lb/><name key="001598"
+									>Savio</name> Bisogna passare più inanzi. Io credo che il porco
+								d'oro e d'argento sia  la ricchezza <lb/> degli avari, che amaron
+								cosa di fango et spurcissima, et  coloro che lo vogliono
+								<lb/>usurpandolo amazzare non sieno altri che gli  avari assetati di
+								tesoro; ma i mes<milestone unit="wb"/><lb/>chini si danno su la
+								testa l'un  l'altro, perché così permette <name key="000344"
+									>Iddio</name> alla fine. Coloro <lb/>che velano loro  gli occhi
+								debbono essere (credo io) i poveri liberali. Et quel <lb/> devorar
+								la  testa sola che fa <name key="000898">Lucifero</name> debbe aver
+								qualche gran significato. <lb/><name key="006043"
+									ana="func_character">Meni.</name> Egli  mi duole ch'io non mi
+								feci dir l'intero a due grandi uomini <lb/>che si  trovarono sopra
+								l'acque poco lontani da noi. <lb/><name key="000344"
+									ana="func_character">Momo</name> Se vale a dare  interpretationi
+								sopra quegli avari, ancora io vo' dir la mia. <lb/><name
+									key="006043" ana="func_character">Meni.</name>
+								<name key="000834">Momo</name>,  per ora noi non vogliamo tue
+								allegorie, un'altra volta <lb/>più agiatamente  ne ragionerai. <pb
+									n="123" corresp="anastatica"/><lb/><name key="000834"
+									ana="func_character">Momo</name> Poich'io non posso dir nulla,
+								mi ritrarrò da parte.  <lb/><name key="001598" ana="func_character"
+									>Savio</name> Andate dove vi piace, perché mi son mutato
+								d'opinione di passar <lb/>così  inanzi, perciò che mi pare d'aver
+								trovato un'altra sorte d'a<milestone unit="wb"/><lb/>vari et altra 
+								maniera de poveri liberali. <lb/><name key="006043"
+									ana="func_character">Men.</name> Vorrei averne qualche
+								cognitione  anch'io. <lb/><name key="001598" ana="func_character"
+									>Savio</name> Andremo discorrendo sopra di questo qualcosa.
+									L'<name key="001115" ana="func_place">Inferno</name> che 
+								<lb/>io voglio vedere et mostrarvi ha da essere nuova cosa et nuova
+								<lb/>avaritia et  novissima liberalità. Avari chiamerò io i virtuosi
+								<lb/>ricchi, che non  vogliono cavare il tesoro della virtù loro
+								fuori <lb/>et far partecipe il  povero di qualche bella scienza,
+								verbi gratia. <lb/>Uno eccellente dottore in  medicina, perché non
+								insegna egli <lb/>ad altri sì fatta scienza, ogni volta  che s'è
+								fatto ricco per quella? <lb/>Meglio, perché non medica egli per
+								amor  di <name key="000344">Dio</name> i poveri? <lb/><name
+									key="000834" ana="func_character">Momo</name> Farei per cotali
+								medici mille risposte. <lb/><name key="001598" ana="func_character"
+									>Savio</name> Mille  scuse troveresti, ma diffese nessuna.
+								&#171;O troppo avrebbe <lb/>che fare! A pena  può egli attendere
+								a gli uomini d'importanza che <lb/>muoiono, che la perdita  loro
+								nuocerebbe a qualcosa; non che <lb/>visitare coloro che morendo
+								fanno  utile&#187;, direbbono alcuni. <lb/><name key="000834"
+									ana="func_character">Momo</name> Et miglior ragioni assai.
+									<lb/><name key="001598" ana="func_character">Savio</name> Or
+								via,  passiamo inanzi, et poi le disputaremo tutte insieme.
+									Per<milestone unit="wb"/><lb/>ché non legge un  letterato et
+								insegna per carità, senza aspetta<milestone unit="wb"/><lb/>re
+								(essendo ricco) gran  pagamento? <lb/><name key="006043"
+									ana="func_character">Men.</name> Perché, quando imparava lui,
+								gli conveniva pagare. <lb/><name key="001598" ana="func_character"
+									>Savio</name>  Non debbe adunque mai un cattivo et pessimo uso
+								lasciar sì fat<milestone unit="wb"/><lb/>ta via? <lb/><name
+									key="000834" ana="func_character">Momo</name>  Non pare a me.
+									<lb/><name key="001598" ana="func_character">Savio</name> Perché
+								si vende egli la virtù? <lb/><name key="006043" ana="func_character"
+									>Men.</name> Perché tutti i  virtuosi son poveri; et è bene,
+								perché, se i virtuosi fussin ricchi, la <lb/> cosa andrebbe mal per
+								gli ignoranti, che si morrebbon di fame. <lb/><name key="001598"
+									ana="func_character">Savio</name>  Adunque è ben fatto che i
+								ricchi ignoranti lascin morire i poveri  <lb/>virtuosi, ora che son
+								su la gruccia loro. <pb n="124" corresp="anastatica"/><lb/><name
+									key="000834" ana="func_character">Momo</name> Egli è ben
+								dispensato il  mondo, cioè che uno abbia la virtù, l'altro la roba,
+								la <lb/>virtù fa la roba  et la roba fa la virtù, talmente che
+								ciascuna parte ha il suo <lb/>vermine che  rode. Chi ha roba rinega
+								la patienza, perché non ha virtù, et chi <lb/>ha  virtù si da alla
+								versiera, perché non ha roba. <lb/><name key="001598"
+									ana="func_character">Savio</name> E chi non ha né  l'una né
+								l'altra cosa, sta come <name key="000344">Dio</name> vuole.
+									<lb/><name key="006043" ana="func_character">Men.</name> Se non
+								fosse ancora al  mondo, importerebbe poco. <lb/><name key="001598"
+									ana="func_character">Savio</name> Quanti sarebbon da qualcosa,
+								se la virtù  si potesse imparare sen<milestone unit="wb"/><lb/>za
+								pagare; molti non mandano i figliuoli alla  scuola per la povertà.
+									<lb/><name key="000834" ana="func_character">Momo</name> Et
+								assai per la ricchezza non ve gli mandano.  <lb/><name key="001598"
+									ana="func_character">Savio</name> Noi ce ne andremmo in parole
+								vane, et io intendo di ragionare <lb/>con  qualche utile et
+								mostrarvi quanto i poveri virtuosi sien libe<milestone unit="wb"
+								/><lb/>rali inverso  i ricchi avari, del qual peccato (perché è
+								peccato a <lb/>donar a sì fatti  uomini) ne son puniti. Et son
+								puniti gli avari <lb/>virtuosi a non ispender la  lor virtù, et vi
+								farò vedere ultima<milestone unit="wb"/><lb/>mente che chi muore con
+								qualche  secreto utile alla creatura u<milestone unit="wb"
+								/><lb/>mana, ne patisce nell'<name key="001115" ana="func_place"
+									>Inferno</name> assai.  Nominerovvi gli uomini, <lb/>ve gli farò
+								vedere, scoprirò il lor peccato,  saperete la pena; e tu, <lb/><name
+									key="000834">Momo</name>, lo bandirai per tutto, et <name
+									key="006043">Menippo</name> ne farà  ricordo. In <lb/>tanto
+								andate dove vi piace, che io resterò a fare alcuna  altra
+									co<milestone unit="wb"/><lb/>sa non manco onorevole che utile.
+									<lb/><name key="000834" ana="func_character">Momo</name> Restate
+								con riposo. </p>
+						</div>
+						<div type="section" n="1.3">
+							<pb n="125" corresp="anastatica"/>
+							<head type="main"><lb/>IL <name key="001598">SAVIO</name> SOLO.</head>
+							<p><lb/>Certamente che sarebbe una bella cosa il <lb/>viver nostro et
+								saremmo sicuri  (se noi facessimo <lb/>quello che io dirò) di non
+								andare così facilmente  al<milestone unit="wb"/><lb/>l'<name
+									key="001115" ana="func_place">Inferno</name>. Egli è pure in
+								libertà nostra il render <lb/>ben per male, noi  abbiamo pure,
+								nell'arbitrio nostro, amare chi ci <lb/>odia; il dare a i  bisognosi
+								posti in estrema miseria quello che ci so<milestone unit="wb"
+								/><lb/>pravanza, che noi  sotteriamo o gettiamo via, sarebbe
+								ottimamente <lb/>fatto. Quanti letterati  et savii uomini potrebbon
+								giovare con gli <lb/>scritti loro? Et non fanno: chi,  dalla paura
+								di digradare quel<milestone unit="wb"/><lb/>la opinione che vien
+								cre duta di lui, si  ritiene, altri aspettano <lb/>premii grandi,
+								conservano i libri  loro et  voglion fare
+								della<!-- cinquecentina: 'dalla' --> sibil<milestone unit="wb"
+								/><lb/>la. Et io, povero Academico, che scri vo et  ragiono tutto
+								quello <lb/>che io so et posso, che premio avrò? Non al tro se  non
+								quello che io <lb/>aspetto; da gli ignoranti (che non sanno
+								far tanto  quanto biasima<milestone unit="wb"/><lb/>no) una gran
+								rimesta: chi dirà che ho comin ciato troppo  grande <lb/>edificio,
+								chi vorrebbe vedere di questa mia comedia tutti gli  atti a
+								<lb/>un'otta et non il primo solo, o saper la risolu tione almanco;
+								e t <lb/>qui, inanzi che sappino l'uscita, faranno mille giu ditii.
+								Questi so<milestone unit="wb"/><lb/>no  i liberali di parole
+								maladette, perché doverebbon  più tosto tor <lb/>la penna  et
+								insegnare a fare, et dire: &#171;Così si fa a dar  principio
+								<lb/>a un <bibl>
+									<title>Inferno</title>
+								</bibl>:  questo è il suggetto, questa è la materia, et
+									 que<milestone unit="wb"/><lb/>sto avrebbe a esser 
+								l'ordine&#187;, et amaestrare con i fatti buoni et <lb/>non
+								 morder con la lingua  cattiva. Da' dotti (in opinione,
+									s'inten<milestone unit="wb"/><lb/>de)  aspetto un farsi beffe
+								di  ciò che io scrivo, un dire: &#171;Che pensa <pb n="126"
+									corresp="anastatica"/><lb/>di far  costui, a metter mano per 
+								tutto?&#187; I religiosi vorrebbon ve<milestone unit="wb"
+								/><lb/>dere qual che cosa per loro; a questi  risponderei io (ma non
+								mi di<milestone unit="wb"/><lb/>con nulla) che il medico non visita
+								i sani,  loro ne scrivano del <lb/>continuo per nostro
+								amaestramento, et predicano  sante letioni sem<milestone unit="wb"
+								/><lb/>pre; pure per compiacere a chi avesse questa fantasia, 
+								faremo la <lb/><bibl>
+									<title>Quaresima</title>
+								</bibl>, che si potrà leggere ancora questa Quare<milestone
+									unit="wb"/><lb/>sima.  <name key="000344">Iddio</name> può ben,
+								per sua pura bontà, rimunerarmi, ma non mi <lb/>pare d'aver  fatto
+								riga di scrittura che sia degna dell'occhio della <lb/>sua gratia.
+								Se  la Maestà sua non si muove a<!-- cinquecentina: 'da' --> pietà,
+								dal mio <lb/> canto non c'è nulla di  merito. Dai signori del mondo,
+								da quel<milestone unit="wb"/><lb/>li, dico, che sono ubligati 
+								d'aiutare chi per far loro onore s'affati<milestone unit="wb"
+								/><lb/>ca, aspetto da alcuni con una  speranza viva viva, che son
+								certo <lb/>che non mi mancheranno, et da certi altri  credo avere
+								tanto <lb/>quanto ho scritto su' miei giornali; lor son debitori  et
+								son cer<milestone unit="wb"/><lb/>to che rimarranno accesi, et così
+								debitori gli metterò poi una  vol<milestone unit="wb"/><lb/>ta in quell'<bibl>
+									<title>Inferno de' prosontuosi, de gli arroganti et de gli
+										<lb/>  ignoranti</title>
+								</bibl>. La qual opera, per esser utile, spero che si stamperà
+								<lb/>  ancora ella. Io veggo certi in questo punto che,
+								lambiccandosi il <lb/>  cervello, non si possono imaginare come io
+								facci a imbrattar tan<milestone unit="wb"/><lb/>ta  carta. Non vi
+								stupite altrimenti, perché le cagioni che fanno <lb/> scrivere  alle
+								persone sono assai. Prima c'è il capriccio, il furore,
+								<lb/>l'abondanza  delle parole et la materia. Poi c'è l'amore,
+									l'o<milestone unit="wb"/><lb/>dio et la necessità. La  terza è
+								la pazzia, il fummo et l'o<milestone unit="wb"/><lb/>pinione di
+								sapere. Tutte queste  girandole hanno fatto inalberare <lb/>i nostri
+								compagni <name key="002471">Academici</name>: il  capriccio fece
+								fare al <name key="006228">Pelle<milestone unit="wb"
+									/><lb/>grino</name> la <bibl>
+									<title>Zucca</title>
+								</bibl> etc., il furore le <bibl>
+									<title>Medaglie</title>
+								</bibl>  allo <name key="001316">Svegliato</name>, l'a<milestone
+									unit="wb"/><lb/>bondanza delle parole spinse il <name
+									key="001142">Perduto</name> a scriver il  <bibl>
+									<title>Disegno</title>
+								</bibl>, la <lb/><bibl>
+									<title>Fortuna di <name key="000119">Cesare</name></title>
+								</bibl> et la <bibl>
+									<title>Prima Libraria</title>
+								</bibl>; la materia lo tirò  <lb/>poi a schizzar la <bibl>
+									<title>Seconda</title>
+								</bibl>. L'amore mosse molti altri a dare in <pb n="127"
+									corresp="anastatica"/><lb/>luce i  <bibl>
+									<title>Mondi</title>
+								</bibl>, l'odio ha astretto lo <name key="001450">Stucco</name> a
+								fare i <bibl>
+									<title>Pistolotti</title>
+								</bibl>. <lb/>La necessità,  per forza, ha disposto quasi tutti a
+								cicalare a' <bibl>
+									<title>Mar<milestone unit="wb"/><lb/>mi</title>
+								</bibl>. La pazzia, come  vedete, ci ha messo per la via ad andare
+									<lb/><seg ana="syntexp_idiomatic">a casa il diavolo</seg>; il
+								fumo ha  fatto al <name key="006228">Pellegrino</name> rassettar <bibl>
+									<title>Tre <lb/> libri di lettere</title>
+								</bibl>, et l'opinione di  sapere farà sbucar fuori la <bibl>
+									<title>Qua<milestone unit="wb"/><lb/>resima</title>
+								</bibl>. Poi ultimamente per debito, per  il dovere, verrà a luce
+								<lb/>il <bibl>
+									<title>Giornale</title>
+								</bibl>. Ora queste cagioni, vi torno a  dire, sono ot<milestone
+									unit="wb"/><lb/>timi sproni a fare scriver le persone. Male
+								andrebbe la  cosa, se 'l <lb/><name key="005706">Disperato</name>
+								desse alle mani del vulgo il <bibl>
+									<title>Fulgure</title>
+								</bibl>, la <bibl>
+									<title>Saetta</title>
+								</bibl>,  il <lb/><bibl>
+									<title>Tuono</title>
+								</bibl>, o il <name key="001142">Perduto</name> le <bibl>
+									<title>Lettere di fuoco</title>
+								</bibl>. Queste quattro ope<milestone unit="wb"/><lb/>re  stanno
+								meglio, al mio giudizio, nella cassa, perché darebbon più 
+								<lb/>vergogna agli <name key="002471">Academici</name> a darli fuori
+								che altrimenti, non per <lb/>altro se  non perché le favellano di
+								persone tanto infami che <lb/>chi ne ragiona si  viene a infamare,
+								con il vitupero di sì vitupera<milestone unit="wb"/><lb/>ti uomini
+								che vi sono  registrati sopra. La chiave della cosa et <lb/>il
+								suggello fia <bibl>
+									<title xml:id="p011t001.001">Inferno</title>
+								</bibl>, come  ho detto, <bibl>
+									<title xml:id="p011t001.002">de' prosontuosi, arro<milestone
+											unit="wb"/><lb/>ganti e ignoranti</title>
+								</bibl>. Quanti ci son poi (per  tornare a casa dal <lb/>principio
+								dove mi mossi) che scrivendo nuocono? O  <name key="000344"
+									>Dio</name>, quan<milestone unit="wb"/><lb/>ti volumi, quanti
+								scartabelli et quanti stracciafogli,  quinter<milestone unit="wb"
+								/><lb/>netti, libriccini, et altre velenose leggende son per le
+								mani  de' ple<milestone unit="wb"/><lb/>bei, che sotto carità et
+								santità finta si leggono in danno del<milestone unit="wb"/><lb/>la 
+								religion cristiana? Mercé degli uomini luterani, che, per
+								<lb/>usurpare quel  d'altri, si son dati a far bottino di tutte
+								l'anime. <lb/>Chi sente questi  novelli cristiani, e' paion tanti
+									<name key="003848">Ilarioni</name>, guar<milestone unit="wb"
+								/><lb/>da poi i fatti e t vedrai se ti riusciranno peggio che bestie
+								et <lb/>satanassi. In carità di  parole fanno ogni cosa dove va
+									paro<milestone unit="wb"/><lb/>le, ma dove entra l'oncino del 
+								rubare, assassinare il prossimo, <lb/> vituperare et offendere
+								insino  all'osso, non te la perdonarebbo<milestone unit="wb"
+								/><lb/>no se tu gli apiccassi. Ma per non far  satira, vengo a
+								concludere <pb n="128" corresp="anastatica"/><lb/>che poca fatica
+								sarebbe a viver bene, lasciar  le vendette in mano <lb/>a chi ha
+								cura di noi et che disponesse ogni cosa,  vestirsi di pa<milestone
+									unit="wb"/><lb/>tienza per tutte le cose che può il mondo
+								tormentarci,  usare in<milestone unit="wb"/><lb/>verso ciascuno una
+								ragione amorevole non una forza disone<milestone unit="wb"
+								/><lb/>sta,  far che la pietà vincesse, et operare sì fattamente che
+								non <lb/>solamente noi  non fussimo ripresi ma lodati in tutto il
+								procedere <lb/>della nostra vita.  Ma chi fia colui che dia
+								principio? Di donde <lb/>verrà quell'uomo che  cominci a far questa
+								strada? Comincino i <lb/>buoni a confusione de' cattivi  a
+								insegnare, amaestrare, gio<milestone unit="wb"/><lb/>vare, fare
+								utile, onorare, premiare, sollevare  et guidare per <lb/>buona via
+								tutte le nostre opere; sì come un'altra volta  meglio et <lb/>con
+								più comodità ne ragionerò altrove, che in questo luogo dove 
+								<lb/>sono avari assai per giovar poco et liberali per
+									nuoce<milestone unit="wb"/><lb/>re  infinitamente.</p>
+						</div>
+						<div type="letter" n="2">
+							<pb n="129" corresp="anastatica"/>
+							<head type="main">AL <name key="001598">SAVIO</name> ACADEMICO
+								<lb/>NOSTRO COME <lb/>FRATEL CARISSIMO <milestone unit="lb"/><lb/>IL
+									<name key="002408">DIVOTO</name> DICE SALUTE.</head>
+							<p><lb/>Penso che voi non vi scordarete mille belle cose  <lb/>nel
+								restante de gli altri <bibl>
+									<title>Inferni</title>
+								</bibl>, perciò che io ho <lb/>veduto tutti i  fondamenti fatti da
+								voi et compren<milestone unit="wb"/><lb/>do luogo per luogo finito. 
+								Realissimamente voi sè<milestone unit="wb"/><lb/>te copioso
+								inventore: se voi foste stato un  pittore, unico avreste di
+								<lb/>stupendi disegni ripieno il mondo. Le materie  son bellissime,
+								ma <lb/>questa de' ricchi avari e de' poveri liberali (a  quella
+								strada che <lb/>io veggo che caminate) fia nuova materia. Voi
+								avrete  da dire <lb/>di belle cose veramente, perché tutte le
+								facende di questo  nostro <lb/>uomo portano una certa bilancia con
+								loro da pesare equale, che  <lb/>tutti non la conoscono. Chi vuole
+								ragunare (per non dire aduna<milestone unit="wb"/><lb/>re) danari 
+								da una parte della bilancia ponendogli, dall'altra su<milestone
+									unit="wb"/><lb/>bito vi troverà  dentro, come egli è forza, che
+								gli rapisca delle mani <lb/>altrui. Un altro  pesa da un canto la
+								dignità et altezza che <lb/>vuole, eccoti subito ch'egli  ha posto
+								l'umiltà in oblio per con<milestone unit="wb"/><lb/>trapeso. Io
+								voglio la potenza et  superiorità, lasciami metterti
+								<lb/>all'incontro subito il pericolo della  tirannia, i lacci che tu
+									ten<milestone unit="wb"/><lb/>derai a' tuoi sudditi, et come tu
+								gli  priverai di libertà comodamen<milestone unit="wb"/><lb/>te et
+								così ti sottometti a sì cattive opere  non lo credendo. Tu
+									di<milestone unit="wb"/><lb/>mandi fama gloriosa, l'infamia
+								subito viene a fare  il paragone, <pb n="130" corresp="anastatica"
+								/><lb/>sì che facilmente potrete empier l'<name key="001115"
+									ana="func_place">Inferno</name>. Abbiatevi poi  cu<milestone
+									unit="wb"/><lb/>ra voi perché, avendo a far con il <name
+									key="000898">Diavolo</name>, egli in questo <lb/>scrivere e 
+								riscrivere (così avertirete gli altri <name key="002471"
+									>Academici</name>) non <lb/>vi mescolasse certi  lacci coperti,
+								dove rimaneste o voi o gli altri <lb/>fratelli presi alla 
+								sprovista. Egli è un terribile ingannatore: nel <lb/>Cielo, dove era
+								pace, vi  messe guerra, nel <name key="002068" ana="func_place"
+									>Paradiso</name> essercitò la <lb/>fraude, fra ' primi frategli 
+								scagliò l'odio, et brevemente, se voi <lb/>andrete con il piè del
+								piombo, voi  troverrete che si ficca per tut<milestone unit="wb"
+								/><lb/>to. Quando vide che egli era forza che si  mangiasse per
+								vivere, <lb/>per aver che tirare anch'egli, vi tese l'archetto 
+								della gola. Fu <lb/>poi chiaro che alla generatione necessariamente
+								bisognava  concor<milestone unit="wb"/><lb/>rere, et egli v'aviluppò
+								in un tratto la lussuria. Il conversare  in<milestone unit="wb"
+								/><lb/>sieme non si poteva far di manco, ecco che v'aggiunse la
+								coda  <lb/>dell'invidia. Non si potette far di manco di non entrare
+								nel go<milestone unit="wb"/><lb/>verno et  nel maneggio del tuo et
+								del mio, e 'l <name key="000898">Diavolo</name>, che se<milestone
+									unit="wb"/><lb/>guitava l'orme de'  nostri passi, ci messe sopra
+								il zucchero (brusco) <lb/>dell'avaritia subito.  Nel corregere (che
+								s'aveva a usar ca<milestone unit="wb"/><lb/>rità et amore) apiccò
+								l'odio et l'ira  nel petto del corretto<milestone unit="wb"
+								/><lb/>re. O quanti inganni ci sono! bisognerà ben seco  esser savio
+								da <lb/>dovero. Il principato parve all'uomo che fosse di gran 
+								frutto, et <lb/>egli pose la superbia per corona di quello. Nel
+								cuore che  pensa<milestone unit="wb"/><lb/>va alle cose perfette,
+								con astutia serpentina vi piantò in mezzo  <lb/>mille radice di
+								concetti cattivi. Le membra nostre, che per util no<milestone
+									unit="wb"/><lb/>stro  si dovevano essercitare, furono
+								accompagnate da molte opera<milestone unit="wb"/><lb/>tioni di 
+								danno et di vergogna. Vedete s'io dico il vero: la lin<milestone
+									unit="wb"/><lb/>gua parla il falso,  l'occhio riguarda con
+								avidità di contento il <lb/>mal fare, le mani sono  piene di sangue,
+								il nostro camino ci gui<milestone unit="wb"/><lb/>da al peccato, il
+								corpo  s'essercita in viltà di pericoli terribili. Se <lb/>noi
+								dormiamo, il sonno ci  mostra vituperii, se vegliamo, ci di<pb
+									n="131" corresp="anastatica"/><milestone unit="wb"
+								/><lb/>sponghiamo col pensiero a fatti  pessimi; l'allegrezze ci
+								fanno <lb/>venir dissoluti, et gli affanni ci  precipitano nella
+								disperatione. <lb/>O povera terra di <name key="002273"
+								>Adamo</name>, seminata di  buon seme! il nimico tuo <lb/>è
+								sopragiuntoti sopra et v'ha di nuovo seminato  ancora. Et <lb/> che
+								seme? Non è grano buono, ma è zizania. La è peste  dell'a<milestone
+									unit="wb"/><lb/>nima, sceglila, uomo, con la mano della dottrina dell'<bibl>
+									<title>Evangelio</title>
+								</bibl>, et  <lb/>con l'altra della carità gettala nel fuoco. Voi
+								adunque tene<milestone unit="wb"/><lb/>te la  bilancia pari, et se
+								ponete da un canto la riprensione, non <lb/>lasciate il  nemico
+								contrapesar con ira, ma mettetivi tosto la mano del<milestone
+									unit="wb"/><lb/>la carità. Se  pensate d'insegnare, fate che
+								l'opinione falsa non <lb/>vadi per contrapeso,  ma la legge dell'<bibl>
+									<title>Evangelio</title>
+								</bibl> et i divini ama<milestone unit="wb"/><lb/>estramenti della
+								Santa Romana  Chiesa. Voi sète savio, et da <lb/>savio so che vi
+								governarete. Iddio vi doni  la sua gratia. <milestone unit="lb"
+								/><lb/>Post scritta. <milestone unit="lb"/><lb/>Ricordatevi di far
+								(per aviso caritativo)  quella distintione de' ric<milestone
+									unit="wb"/><lb/>chi et de' poveri che io vi dissi 
+								nell'Academia, che il ricco stava nelle fiam<milestone unit="wb"
+								/><lb/>me et il povero nel seno di  <name key="000294"
+								>Abramo</name>, acciò che i ricchi non si pensassino d'an<milestone
+									unit="wb"/><lb/>dar tutti a casa  calda et i poveri tutti in
+									<name key="002068" ana="func_place">Paradiso</name>, perché
+									<name key="000294">Abramo</name> fu ricco <lb/>anch'egli et  il
+								povero stava nel suo seno; come dire, furon ricchi egualmente a
+									<lb/><name key="000344">Dio</name> et  poveri di desiderio
+								parimente. Et l'allegoria farò poi io quando avre<milestone
+									unit="wb"/><lb/>te  scritto tutto l'<bibl>
+									<title>Inferno</title>
+								</bibl>, et farò vedere a' ricchi che, se vogliono  an<milestone
+									unit="wb"/><lb/>dare in <name key="002068" ana="func_place"
+									>Paradiso</name>, che bisogna che i poveri stieno del continuo
+								loro in  se<milestone unit="wb"/><lb/>no, et raccomandare il meglio
+								che io saprò i poveri a i ricchi. Che <name key="000344">Dio</name> 
+								gli illu<milestone unit="wb"/><lb/>mini oggi, che certamente e'
+								n'hanno necessità non che bisogno.  <lb/>Il <name key="002408"
+									>Divoto</name> vostro scrisse. </p>
+						</div>
+						<div type="letter" n="3">
+							<pb n="132" corresp="anastatica"/>
+							<head type="main"><name key="002349">RADAMANTO</name>, UN DE'
+								<lb/>PRINCIPI (MERITAMENTE) <lb/>del regno  grandissimo delle
+								Tenebre <lb/>al <name key="001598">Savio</name> peregrino nell'altro
+								mondo. <milestone unit="lb"/></head>
+							<p><lb/>Fu sempre mai costume della nostra coro<milestone unit="wb"
+								/><lb/>na d'esser cortese in tutte  le cose, mentre che noi
+								<lb/>fummo dove sète voi ora. Piacque a voi altri,  che
+								<lb/>scrivete ciò che vi viene in fantasia, di confinarci <lb/>in
+								questi  centri senza lume a far giustitia et far <lb/>gastigare
+								coloro che passon  dalla vita alla morte carichi di peccati, et
+								<lb/>non per altro ci  condannarono a questo, se non perché noi
+								tenemmo la bi<milestone unit="wb"/><lb/>lancia pari.  Guardate se
+								noi meritavamo questa stanza sì crudele <lb/> per aver fatto opere 
+								sì giuste. Tutti voi altri ve lo sète creduto <lb/> et credetelo, a
+								quel che io  veggo. Degli altri, che per la maggior <lb/> parte son
+								pazzi, non è da  maravigliarsi, ma bene è da stupire di voi <lb/>che
+								vi chiamate <name key="001598">Savio</name>. La  lettera vostra ha
+								bene avuto un certo <lb/>che di rispetto et un'altra cosa,  or
+								basta. Io vi voglio esser corte<milestone unit="wb"/><lb/>se d'una
+								risposta, et per ora non vi  voglio dire  se io sono nel
+									ma<milestone unit="wb"/><lb/>neggio che si crede, et a fare (per
+								dirla  largamente) il boia in <lb/> quel modo ch'io da molte pene
+								son dipinto. Se  loro adun que si <lb/>sono imaginati una cosa et
+								l'hanno scritta, noi ancora  per trat te<milestone unit="wb"
+								/><lb/>nimento vostro vi scriveremo nuove inventioni. Io vi mando 
+								una <lb/> ruota disegnata di mia mano (perché in vita me ne delettai
+								di sì  <lb/>fatta  virtù), nella quale sono acque che già furon
+								d'oro, d'argento, <lb/>di  gioie  et di moneta, et tutte per forza
+								di fuoco son distrutte <lb/>queste cose  et co sì ardenti si stanno
+								sempre; quando un usuraio, <pb n="133"
+									corresp="img://afd-inferni_133.jpg"/><lb/>un avaro, o un  altro
+								 che tristamente abbia gettato via in vitii le <lb/>ricchezze, noi
+								lo gettia mo là dentro et là si distrugge, et di <lb/>
+								<figure xml:id="p011f003">
+									<graphic url="img://afd-inferni_133_pw.jpg"/>
+									<figDesc>immagine infernale</figDesc>
+								</figure>
+								<lb/>nuovo ritorna intiero  fuggendo  fuori della ruota, et noi, che
+									fac<milestone unit="wb"/><lb/>ciamo starvi la guardia di 
+								diavoli, lo  facciamo ripigliare et den<pb n="134"
+									corresp="anastatica"/><milestone unit="wb"/><lb/>tro un'altra
+								volta scagliare a  fondersi, et così  in perpetuo sarà
+								<lb/>tormentato. Ma inanzi che capiti al  tormento eter no, per
+								dirvi <lb/>tutta la nostra inventione, noi abbiamo un  monte
+								altissimo, fat<milestone unit="wb"/><lb/>to tutto delle cose simili
+								a quelle che ciascuno  avaro amò al mondo, <lb/>onde, subito che
+								egli muore, si ritrova in una  spatiosissima cam<milestone unit="wb"
+								/><lb/>pagna a presso a questo monte. Ben sapete che, subito  che
+								egli rico<milestone unit="wb"/><lb/>nosce le cose che pensava
+								morendo aver perdute, corre et  sale al<milestone unit="wb"/><lb/>la
+								montagna, et quivi si carica apunto di quelle cose che lasciò 
+								<lb/>nel punto della morte sì mal volentieri; et nello scendere ei
+								vede <lb/>la  ruggine che gli consuma l'oro, vede le tignole che gli
+								rodano <lb/>i tanti  vestimenti, et se gli scuoprono molti ladri
+								adosso et gli
+								<lb/>tolgano<!-- cinquecentina: 'toggano'; controlla Sberlati -->
+								le  gioie talmente che disperato scende in tutto, et ritro<milestone
+									unit="wb"/><lb/>vasi nudo nudo.  Nel rimirare poi di nuovo il
+								monte, di nuovo gli <lb/>vede le sue cose et fa  subito pensiero
+								(per l'amore che egli ha <lb/>loro) di tornare per esse. Ma  eccoti
+								che di sotto a questo monte <lb/>escono fuori griffoni, leopardi, 
+								tigri et pantere, et van<milestone unit="wb"/><lb/>no alla volta
+								sua; egli con il grido fa  grandissimo strepito, et le <lb/>fiere
+								romore terribile, spaventoso et  risonante. Onde corrono <lb/>subito
+								i nostri satelliti et lo pigliano et, come  v'ho detto, lo
+									get<milestone unit="wb"/><lb/>tano nella ruota de gli avari, che
+								disegnata è con  questo foglio. <lb/>Questa fia adunque in
+								ricompensa della lettera, né altro  vi dico. <milestone unit="lb"
+									/><lb/><name key="002349">Radamanto</name> re de' dannati. </p>
+						</div>
+						<div type="section" n="1.4">
+							<pb n="135" corresp="anastatica"/>
+							<head type="main">ALLEGORIA DEL <name key="001216">DUBBIOSO</name>.
+									<milestone unit="lb"/></head>
+							<p><lb/>Vede l'avaro il monte delle ricchezze del mondo et
+									s'af<milestone unit="wb"/><lb/>fatica a salirvi:  <seg
+									ana="quotation_reference" xml:id="p011s001.001"
+									>&#171;Laboravit dives,</seg> - <bibl>
+									<title>Ecc.</title>
+								</bibl>, 31 - <seg ana="quotation_reference" xml:id="p011s001.002"
+									>in con<milestone unit="wb"/><lb/>gregatione
+									substantiae&#187;</seg>; ma nello  scendere al piano d'una
+									sepoltu<milestone unit="wb"/><lb/>ra conosce che egli non ha
+								fatto preda di  tesoro perfetto ma <lb/>imperfetto, perché non è
+								celeste ma terreno, et  vorrebbe <lb/>portarlo seco ma non può;
+								perché, mentre che il grifone se gli  para inanzi, in<milestone
+									unit="wb"/><lb/>terpetrato per la violenza de gli eredi che son
+								fatti  possessori del monte, men<milestone unit="wb"/><lb/>tre che
+								il leopardo s'affaccia incontrogli, che  significa le varie fraude
+								et mac<milestone unit="wb"/><lb/>chie delle sue facende et debiti
+								che egli  ha, mentre che il tigre aparisce alla <lb/>sua presenza,
+								che altro non vuol  dire che la velocità di ciascuno che cerca di
+								<lb/>predare ciò che egli aveva  per diverse vie, mentre, dico, che
+								la pantera s'a<milestone unit="wb"/><lb/>prossima a lui, che in 
+								questo caso s'espone per la paura della morte, eccoti i
+								<lb/>satelliti,  eccoti i peccati che hanno sentito i quattro
+								animali gridare, cioè i  quat<milestone unit="wb"/><lb/>tro elementi
+								che danno la fuga all'anima (perché il corpo si risolve  in quelli),
+								<lb/>i peccati, dico, lo danno nelle mani del <name key="000898"
+									>Diavolo</name>, che nella  ruota delle pene lo getta
+								<lb/>subitamente, la qual ruota gira del continuo et  non ha mai
+								termine né <lb/>FINE. </p>
+						</div>
+					</div>
+					<div type="colophon">
+						<p><lb/>[Fine] della prima parte dell'<bibl>
+								<title>Inferno de gli avari ricchi, <lb/>et liberali poveri</title>
+							</bibl>.</p>
+					</div>
+					<div type="cover">
+						<pb n="136" corresp="img://afd-inferni_136.jpg"/>
+						<figure xml:id="p011f004">
+							<p>
+								<seg ana="quotation_simple" xml:id="p011s002.001">PER CORRER MIGLIOR
+									ACQUA <lb/>ALZA LE VELE.</seg>
+							</p>
+							<lb/>
+							<graphic url="img://afd-inferni_136_pw.jpg"/>
+							<figDesc>Le Tre Corone in riva al fiume Arno</figDesc>
+							<p><lb/><seg ana="quotation_simple" xml:id="p011s002.002">OMAI LA
+									NAVICELLA <lb/>DEL MIO INGEGNO.</seg>.</p>
+						</figure>
+					</div>
+				</div>
+
+				<!-- -->
+				<!-- END -->
+				<!-- %END% -->
+				<!-- NON MODIFICARE LA PARTE OLTRE IL PUNTO "END" -->
+			</div>
+		</body>
+		<back>
+			<div type="part"/>
+		</back>
+	</text>
+</TEI>

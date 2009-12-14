@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+ <menu package_kind="_ptx,_img" label="La Collezione" xslt="collection_by_package" icon="collection_by_package"
+  tooltip="La Collezione">
+  <div class="h2_detail">La collezione digitale "L'Orlando Furioso e la sua traduzione in immagini"
+   raccoglie i risultati delle indagini svolte sugli apparati iconografici e paratestuali delle
+   edizioni <ul>
+    <li>- Zoppino 1536,</li>
+    <li>- Giolito 1542,</li>
+    <li>- Valvassori 1553</li>
+   </ul> così da arricchire la storia della ricezione del "Furioso" nel corso del XVI secolo</div>
+ </menu>
+ <menu package_kind="_img" label="Illustrazioni per edizione" xslt="image_by_package" icon="image_by_package"
+  tooltip="Illustrazioni per edizione">
+  <div class="h2_detail">In questa sezione è possibile navigare le illustrazioni presenti nelle
+   singole edizioni e relative schede</div>
+ </menu>
+ <menu package_kind="_img" label="Illustrazioni per canto" xslt="image_by_div" icon="image_by_div"
+  tooltip="Illustrazioni per canto">
+  <div class="h2_detail">In questa sezione è possibile navigare simultaneamente le illustrazioni
+   delle tre edizioni divise per canto</div>
+ </menu>
+ <menu package_kind="_img" label="Scene nelle illustrazioni" xslt="scene_by_package.1" icon="scene_by_package_img"
+  tooltip="Scene nelle illustrazioni">
+  <div class="h2_detail">In questa sezione è possibile navigare le scene rappresentate nelle
+   illustrazioni delle singole edizioni</div>
+ </menu>
+ <menu package_kind="_ptx" label="Episodi nelle allegorie" xslt="scene_by_package.2" icon="scene_by_package_ptx"
+  tooltip="Episodi nelle allegorie">
+  <div class="h2_detail">In questa sezione è possibile navigare gli episodi citati nelle allegorie
+   delle singole edizioni</div>
+ </menu>
+ <menu package_kind="" label="Personaggi" xslt="index_by_character" icon="index_by_character" tooltip="Personaggi">
+  <div class="h2_detail">In questa sezione è possibile navigare i personaggi rappresentati nelle
+   immagini e citati nelle allegorie</div>
+ </menu>
+ <menu package_kind="" label="Ambientazioni" xslt="index_by_setting" icon="index_by_setting" tooltip="Ambientazioni">
+  <div class="h2_detail">In questa sezione è possibile navigare le ambientazioni rappresentate nelle
+   immagini e citate nelle allegorie</div>
+ </menu>
+ <menu package_kind="_txt" label="Ecphrasis" xslt="ecphrasis_by_div" icon="ecphrasis_by_div" tooltip="Ecphrasis">
+  <div class="h2_detail">In questa sezione è possibile navigare le ecphrasis presenti nel
+   testo</div>
+ </menu>
+ <menu package_kind="" label="Ricerca" xslt="query_by_block" icon="query_by_block" tooltip="Ricerca">
+  <div class="h2_detail">In questa sezione è possibile effettuare la ricerca di tipo full-text o
+   secondo criteri specifici</div>
+ </menu>
+</config>

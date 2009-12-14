@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<!DOCTYPE TEI SYSTEM "../../_common/dtd/dctl.core.dtd" [
+<!ENTITY % TEI.extension.dtd SYSTEM "../../_common/dtd/dctl.extension.dtd">
+<!ENTITY % collection.header.ent SYSTEM "../_header.ent">
+<!ENTITY % package.header.ent SYSTEM "_header.ent">
+<!ENTITY TEI.header SYSTEM "../../_common/headers/teiHeader.package.xml">
+<!ENTITY TEI.header.profileDesc.textClass SYSTEM "../../_common/add-ons/teiHeader.profileDesc.textClass.xml">
+%TEI.extension.dtd;
+%collection.header.ent;
+%package.header.ent;
+]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&package_id;"
+ n="&source_author; - &source_title_main;"> &TEI.header; <text
+  xml:lang="&source_lang;" xml:id="&package_id;.package" ana="&source_genre;">
+  <front>
+   <div type="part" />
+  </front>
+  <body>
+   <div type="part">
+    <!-- NON MODIFICARE LA PARTE PRECEDENTE IL PUNTO "BEGIN" -->
+    <!-- %BEGIN% -->
+    <!-- BEGIN -->
+    <!-- -->
+    <!-- -->
+    <!-- [ CASO IMMAGINE IN PAGINA ] -->
+    <!-- l'elemento TEI:DIV deve essere di tipo "dctlObject" in quanto scheda e non testo continuo -->
+    <!-- l'attributo XML:ID deve comunque iniziare con la sintassi "pNNN" coincidente con il nome della partizione di package (nome del file precedente l'estensione ".xml") -->
+    <!-- l'attributo N dovrebbe contenere un'etichetta identificativa della scheda, da utilizzare come ultima risorsa in caso di visualizzazione -->
+    <!-- l'attributo CORRESP contiene, se presente, l'URI relativo all'anastatica -->
+    <div type="dctlObject" xml:id="p007mn001cc006" n="Mondo piccolo, c. 6r" corresp="img://afd-mondi_006v.jpg">
+     <!-- l'elemento TEI:PB, come TEI:LB, deve essere all'interno dell'elemento di cui eventualmente si vuole ricreare il riferimento -->
+     
+     <pb label="c" n="6r" />
+     <!-- l'elemento TEI:HEAD marca l'intestazione della scheda, ma è importante l'elemento INDEX/TERM che marca l'etichetta da utilizzare nella costruzione degli indici e dei riferimenti -->
+     <head>
+      <index>
+       <term>Mondo piccolo, c. 6r</term>
+      </index>
+     </head>
+     <!-- l'elemento TEI:BIBL (la cui sottostruttura di elementi è descritta nella documentazione TEI) definisce il "record bibliografico" della scheda -->
+     <bibl>
+      <publisher>Marcolini, Francesco</publisher>
+      <pubPlace>Venezia</pubPlace>
+      <date value="1552/1553-00-00">1552-1553</date>
+      <distributor role="location">Biblioteca Universitaria, Bologna</distributor>
+     </bibl>
+     <!-- l'elemento TEI:FIGURE contiene l'elemento TEI:GRAPHIC (immagine) e l'elemento DCTL:STUDIO -->
+     <figure>
+      <graphic url="img://afd-mondi_006v_pw.jpg" />
+      <!-- l'elemento TEI:FIGDESC (obbligatorio) contiene l'etichetta che appare solo passando con il mouse sull'immagine -->
+      <figDesc>Aristotele</figDesc>
+      <!-- l'elemento DCTL:STUDIO -->
+      <dctl:studio>
+       <!-- l'elemento DCTL:DESC deve contenere la descrizione dettagliata dell'immagine -->
+       <dctl:desc>Aristotele, barbuto, è raffigurato nell'atto di leggere. Il filosofo, circondato da libri giacenti per terra, è posto sullo sfondo di un paesaggio campestre e collinare</dctl:desc>
+       <!-- l'elemento DCTL:MEANING con attributo TYPE="original" deve contenere la descrizione del significato originario dell'immagine -->
+       <dctl:meaning type="original">Aristotele</dctl:meaning>
+       <!-- l'elemento DCTL:MEANING con attributo TYPE="context" deve contenere la descrizione del significato contestuale dell'immagine -->
+       <dctl:meaning type="context">Richiamo alla necessità di confrontare le riflessioni sui mondi con il testo della Scrittura, intesa come l'unica garanzia di conoscenza dotata di solide basi. Ma forse anche l'allusione all'ispirazione aristotelica del testo doniano incentrato sui rapporti tra microcosmo e macrocosmo</dctl:meaning>
+       <!-- l'elemento DCTL:TRANSCRIPTION deve contenere la trascrizione del testo presente nell'immagine -->
+       <dctl:transcription><lb/>Vegniamo ora all'interpetratione di esso uomo, il quale si <lb/>chiama il minor mondo, detto
+        da' Greci in un sol nome <foreign xml:lang="gr">microcosmus</foreign>, et <lb/>il maggior
+        mondo lo chiamarono <foreign xml:lang="gr">megacosmus</foreign>; onde, da questi variati
+        no<milestone unit="wb"/>
+        <lb/>mi, <seg ana="key_item" xml:id="p007ki001">chi n'ha saputo più di me</seg> gli ha distinti così.</dctl:transcription>
+       <!-- l'elemento DCTL:TYPOLOGY contiene la tipologia di immagine -->
+       <dctl:typology type="print" />
+       <!-- l'elemento DCTL:TECHNIQUE contiene la tecnica di realizzazione dell'immagine -->
+       <dctl:technique type="woodcut">xilografia</dctl:technique>
+       <!-- l'elemento DCTL:MATERIAL contiene il materiale di supporto dell'immagine -->
+       <dctl:material type="paper" />
+       <!-- l'elemento DCTL:MEASURE contiene le misure dell'immagine -->
+       <dctl:measure>mm 62 x 94</dctl:measure>
+       <!-- l'elemento DCTL:POSITION contiene il posizionamento dell'immagine -->
+       <dctl:position>Nella parte superiore della pagina, prima del testo ad essa ispirato</dctl:position>
+       <!-- l'elemento DCTL:FRAME contiene la descrizione dell'eventuale cornice -->
+       <dctl:frame>
+        <dctl:measure>mm 10 x 93</dctl:measure>
+        <dctl:desc>fregio xilografico con basamento architettonico e un viso umano</dctl:desc>
+        <dctl:measure>mm 14 x 93</dctl:measure>
+        <dctl:desc>fregio architettonico e un volto angelico</dctl:desc>
+       </dctl:frame>
+       <!-- l'elemento DCTL:MATRIX contiene la descrizione dell'eventuale matrice -->
+       <dctl:matrix>
+        <dctl:desc></dctl:desc>
+        <dctl:material type="wood" />
+        <dctl:technique type="woodcut" />
+        <dctl:measure><!-- mm ??? x ??? --></dctl:measure>
+        <note place="apparatus" resp="editor" type="desc"><!-- eventuali note descrittive --></note>
+        <bibl>
+         <author><!-- opzionale --></author>
+         <distributor role="location"><!-- XXX, YYY --></distributor>
+        </bibl>
+       </dctl:matrix>
+       <!-- l'elemento DCTL:REUSELIST contiene l'elenco dei (ri)usi dell'immagine -->
+       <!-- l'attributo TYPE="PRECEDING" identifica il gruppo di (ri)usi precedenti -->
+       <dctl:reuseList type="preceding">
+        <!-- l'elemento DCTL:REUSE è un (ri)uso dell'immagine da collegare tramite XML:ID con altro XML:ID secondo il metodo dei collegamenti già definito -->
+        <!-- l'attributo TYPE="SELF" identifica il (ri)uso dell'immagine nello stesso "contesto" (autore) -->
+        <dctl:reuse xml:id="p007rp001" type="other">F. Marcolini, Le ingeniose sorti, Venezia, Marcolini, 1550, c. D3v</dctl:reuse>
+        <dctl:reuse xml:id="p007rp002" type="self">A.F. Doni, La moral filosofia del Doni, tratta da gli antichi scrittori, Venezia, Marcolini, 1552,
+         p. 101</dctl:reuse>
+       </dctl:reuseList>
+       <!-- l'attributo TYPE="FOLLOWING" identifica il gruppo di (ri)usi successivi -->
+       <dctl:reuseList type="following">
+        <!-- l'elemento DCTL:REUSE è un (ri)uso dell'immagine da collegare tramite XML:ID con altro XML:ID secondo il metodo dei collegamenti già definito -->
+        <!-- l'attributo TYPE="SELF" identifica il (ri)uso dell'immagine nello stesso "contesto" (autore) -->
+        <dctl:reuse xml:id="pNNNYYYY" type="self" />
+        <!-- l'attributo TYPE="OTHER" identifica il (ri)uso dell'immagine in altri "contesti" (autori) -->
+        <dctl:reuse xml:id="pNNNYYYYZZZZ" type="other" />
+       </dctl:reuseList>
+       <!-- l'elemento DCTL:SOURCE identifica la fonte testuale -->
+       <dctl:source>
+        <bibl>
+         <author>Diogenes Laertius</author>
+         <publisher>Bompiani</publisher>
+         <pubPlace>Milano</pubPlace>
+         <date value="2005-00-00">2005</date>
+         <title>Vite e dottrine dei più celebri filosofi</title>
+         <editor>a cura di Giovanni Reale</editor>
+         <extent>Libro V, cap. I, &#167;&#167; 1-35, pp. 497-533</extent>
+         <note place="foot" resp="editor">Di difficile interpretazione appare il passo delle "Vite" che ha ispirato l'immagine</note>
+        </bibl>
+       </dctl:source>
+       <!-- l'elemento DCTL:ICONTERM contiene la codifica dei codici Iconclass -->
+       <dctl:iconTerm key="000444">Aristotele</dctl:iconTerm>
+       <dctl:iconTerm key="000013">uomo</dctl:iconTerm>
+       <dctl:iconTerm key="000382">barba</dctl:iconTerm>
+       <dctl:iconTerm key="000017">libri</dctl:iconTerm>
+       <dctl:iconTerm key="000393">paesaggio</dctl:iconTerm>
+       <dctl:iconTerm key="000247">colline</dctl:iconTerm>
+       <dctl:iconTerm key="000442">lettura</dctl:iconTerm>
+       </dctl:studio>
+     </figure>
+     <!-- l'elemento TEI:NOTE contiene le note -->
+     <note type="desc" resp="editor" place="apparatus"><!-- note descrittive --></note>
+     <!-- l'elemento TEI:NOTE contiene le note -->
+     <note type="studio" resp="editor" place="apparatus"><!-- note di studio --></note>
+     <!-- l'elemento TEI:LISTBIBL contiene l'elenco degli elementi TEI:BIBL per la bibliografia -->
+     <listBibl>
+      <!-- l'elemento TEI:BIBL contiene un record della bibliografia -->
+      <bibl>
+       <author>Giovanna Rizzarelli</author>
+       <title>&#171;Se le parole si potessero scorgere&#187;. I Mondi di Doni tra Italia e
+        Francia</title>
+       <pubPlace>Manziana</pubPlace>
+       <publisher>Vecchiarelli</publisher>
+       <date value="2007-00-00">2007</date>
+       <extent>pp. 74-86</extent>
+      </bibl>
+     </listBibl>
+    </div>
+    <!-- -->
+    <!-- END -->
+    <!-- %END% -->
+    <!-- NON MODIFICARE LA PARTE OLTRE IL PUNTO "END" -->
+   </div>
+  </body>
+  <back>
+   <div type="part" />
+  </back>
+ </text>
+</TEI>

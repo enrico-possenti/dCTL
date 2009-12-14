@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<!DOCTYPE TEI SYSTEM "../../_common/dtd/dctl.core.dtd" [
+<!ENTITY % TEI.extension.dtd SYSTEM "../../_common/dtd/dctl.extension.dtd">
+<!ENTITY % collection.header.ent SYSTEM "../_header.ent">
+<!ENTITY % package.header.ent SYSTEM "_header.ent">
+<!ENTITY TEI.header SYSTEM "../../_common/headers/teiHeader.package.xml">
+<!ENTITY TEI.header.profileDesc.textClass SYSTEM "../../_common/add-ons/teiHeader.profileDesc.textClass.xml">
+%TEI.extension.dtd;
+%collection.header.ent;
+%package.header.ent;
+]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&package_id;"
+ n="&source_author; - &source_title_main;"> &TEI.header; <text
+  xml:lang="&source_lang;" xml:id="&package_id;.package" ana="&source_genre;">
+  <front>
+   <div type="part" />
+  </front>
+  <body>
+   <div type="part">
+    <!-- NON MODIFICARE LA PARTE PRECEDENTE IL PUNTO "BEGIN" -->
+    <!-- %BEGIN% -->
+    <!-- BEGIN -->
+    <!-- -->
+    <!-- -->
+    <!-- [ CASO IMMAGINE IN PAGINA ] -->
+    <!-- l'elemento TEI:DIV deve essere di tipo "dctlObject" in quanto scheda e non testo continuo -->
+    <!-- l'attributo XML:ID deve comunque iniziare con la sintassi "pNNN" coincidente con il nome della partizione di package (nome del file precedente l'estensione ".xml") -->
+    <!-- l'attributo N dovrebbe contenere un'etichetta identificativa della scheda, da utilizzare come ultima risorsa in caso di visualizzazione -->
+    <!-- l'attributo CORRESP contiene, se presente, l'URI relativo all'anastatica -->
+    <div type="dctlObject" xml:id="p044mn004cc069" n="Mondo misto, c. 69v" corresp="img://afd-mondi_070r.jpg">
+     <!-- l'elemento TEI:PB, come TEI:LB, deve essere all'interno dell'elemento di cui eventualmente si vuole ricreare il riferimento -->
+     
+     <pb label="c" n="69v" />
+     <!-- l'elemento TEI:HEAD marca l'intestazione della scheda, ma è importante l'elemento INDEX/TERM che marca l'etichetta da utilizzare nella costruzione degli indici e dei riferimenti -->
+     <head>
+      <index>
+       <term>Mondo misto, c. 69v</term>
+      </index>
+     </head>
+     <!-- l'elemento TEI:BIBL (la cui sottostruttura di elementi è descritta nella documentazione TEI) definisce il "record bibliografico" della scheda -->
+     <bibl>
+      <publisher>Marcolini, Francesco</publisher>
+      <pubPlace>Venezia</pubPlace>
+      <date value="1552/1553-00-00">1552-1553</date>
+      <distributor role="location">Bologna, Biblioteca Universitaria</distributor>
+     </bibl>
+     <!-- l'elemento TEI:FIGURE contiene l'elemento TEI:GRAPHIC (immagine) e l'elemento DCTL:STUDIO -->
+     <figure>
+      <graphic url="img://afd-mondi_070r_pw.jpg" />
+      <!-- l'elemento TEI:FIGDESC (obbligatorio) contiene l'etichetta che appare solo passando con il mouse sull'immagine -->
+      <figDesc>Illustrazione dei Mondi, Mondo misto, c. 69v</figDesc>
+      <!-- l'elemento DCTL:STUDIO -->
+      <dctl:studio>
+       <!-- l'elemento DCTL:DESC deve contenere la descrizione dettagliata dell'immagine -->
+       <dctl:desc>la xilografia ritrae il momento in cui Empedocle viene schiacciato dal carro trainato da una coppia di cavalli</dctl:desc>
+       <!-- l'elemento DCTL:MEANING con attributo TYPE="original" deve contenere la descrizione del significato originario dell'immagine -->
+       <dctl:meaning type="original">l'incidente avvenuto a Empedocle</dctl:meaning>
+       <!-- l'elemento DCTL:MEANING con attributo TYPE="context" deve contenere la descrizione del significato contestuale dell'immagine -->
+       <dctl:meaning type="context">la morte di Empedocle</dctl:meaning>
+       <!-- l'elemento DCTL:TRANSCRIPTION deve contenere la trascrizione del testo presente nell'immagine -->
+       <dctl:transcription><lb/>Mo. [...] Attendete, anime, a
+        <lb/>rimirar le vostre passate miserie et i piaceri che avete nel
+        mon<milestone unit="wb"/>
+        <lb/>do avuti, et chi vuoi tornare si facci inanzi. Sarebbe mai
+        <lb/>il mondo alla fine, poiché alcuno non ci vuole andare? Vien
+        quà, <lb/>giovane, tu m'hai un buono aspetto, tu saresti il
+        proposito a ri<milestone unit="wb"/>
+        <lb/>tornare al mondo? <lb/>Ani. Io <seg ana="key_item" xml:id="p044ki001">mi amazzai</seg>, quando conobbi esser
+         l'anima immortale, guarda s'io voglio an<milestone unit="wb"/>
+         <lb/>dare a tormentarmi un'altra volta. <lb/>Mo. Chi sei tu?
+        <lb/>Ani. <seg ana="key_item" xml:id="p044ki002">Empedocle</seg> fui chiamato, fui inventor dell'arte oratoria.</dctl:transcription>
+       <!-- l'elemento DCTL:TYPOLOGY contiene la tipologia di immagine -->
+       <dctl:typology type="print" />
+       <!-- l'elemento DCTL:TECHNIQUE contiene la tecnica di realizzazione dell'immagine -->
+       <dctl:technique type="woodcut">xilografia</dctl:technique>
+       <!-- l'elemento DCTL:MATERIAL contiene il materiale di supporto dell'immagine -->
+       <dctl:material type="paper" />
+       <!-- l'elemento DCTL:MEASURE contiene le misure dell'immagine -->
+       <dctl:measure>mm 62 x 94</dctl:measure>
+       <!-- l'elemento DCTL:POSITION contiene il posizionamento dell'immagine -->
+       <dctl:position>illustrazione posta nella parte superiore della pagina, prima del testo da essa ispirato</dctl:position>
+       <!-- l'elemento DCTL:FRAME contiene la descrizione dell'eventuale cornice -->
+       <dctl:frame>
+        <!-- opzionale -->
+        <dctl:desc>... (mm ??? x ???)</dctl:desc>
+       </dctl:frame>
+       <!-- l'elemento DCTL:MATRIX contiene la descrizione dell'eventuale matrice -->
+       <dctl:matrix>
+        <dctl:desc>...</dctl:desc>
+        <dctl:material type="wood" />
+        <dctl:technique type="woodcut" />
+        <dctl:measure><!-- mm ??? x ??? --></dctl:measure>
+        <note place="apparatus" resp="editor" type="desc"><!-- eventuali note descrittive --></note>
+        <bibl>
+         <author><!-- opzionale --></author>
+         <distributor role="location"><!-- XXX, YYY --></distributor>
+        </bibl>
+       </dctl:matrix>
+       <!-- l'elemento DCTL:REUSELIST contiene l'elenco dei (ri)usi dell'immagine -->
+       <!-- l'attributo TYPE="PRECEDING" identifica il gruppo di (ri)usi precedenti -->
+       <dctl:reuseList type="preceding">
+        <!-- l'elemento DCTL:REUSE è un (ri)uso dell'immagine da collegare tramite XML:ID con altro XML:ID secondo il metodo dei collegamenti già definito -->
+        <!-- l'attributo TYPE="SELF" identifica il (ri)uso dell'immagine nello stesso "contesto" (autore) -->
+        <dctl:reuse xml:id="p044rp001" type="other">F. Marcolini, Sorti, Venezia, Marcolini, 1550, c. I1v</dctl:reuse>
+       </dctl:reuseList>
+       <!-- l'attributo TYPE="FOLLOWING" identifica il gruppo di (ri)usi successivi -->
+       <dctl:reuseList type="following">
+        <!-- l'elemento DCTL:REUSE è un (ri)uso dell'immagine da collegare tramite XML:ID con altro XML:ID secondo il metodo dei collegamenti già definito -->
+        <!-- l'attributo TYPE="SELF" identifica il (ri)uso dell'immagine nello stesso "contesto" (autore) -->
+        <dctl:reuse xml:id="p044rf001" type="other" >D. Laerzio, Compendio delle vite, Venezia, Brugnolo, 1598, c. O3r</dctl:reuse>
+       </dctl:reuseList>
+       <!-- l'elemento DCTL:SOURCE identifica la fonte testuale -->
+       <dctl:source>
+        <bibl>
+         <author>Diogenes Laertius</author>
+         <publisher>Bompiani</publisher>
+         <pubPlace>Milano</pubPlace>
+         <date value="2005-00-00">2005</date>
+         <title>Vite e dottrine dei più celebri filosofi</title>
+         <editor>a cura di Giovanni Reale</editor>
+         <extent>Libro VIII, cap. II, &#167;&#167; 73, 74-75, pp. 1003-1005</extent>
+         <seg><lb/>[Altra versione sulla morte di Empedocle]
+         <lb/>Successivamente, mentre stava viaggiando sul carro alla volta di Messina per <lb/>partecipare a una festa, cadde e si ruppe una gamba: amma<milestone unit="wb"/>
+         <lb/>latosi per questo, morì a settantasette anni. La sua tomba <lb/>sarebbe a Megara [...].
+         <lb/>[Due epigrammi di Diogene Laerzio]
+         <lb/>Si dice, sì, che Empedocle morì quando, una volta, giù dal carro
+         <lb/>cadde e su fratturò la gamba destra;
+         <lb/>se, invece, saltò nei crateri di fuoco e bevve la vita,
+         <lb/>come mai la sua tomba si vede ancora a Megara?</seg>
+        </bibl>
+       </dctl:source>
+       <!-- l'elemento DCTL:ICONTERM contiene la codifica dei codici Iconclass -->
+       <dctl:iconTerm key="000548">Empedocle</dctl:iconTerm>
+       <dctl:iconTerm key="000243">uomo</dctl:iconTerm>
+       <dctl:iconTerm key="000121">carro</dctl:iconTerm>
+       <dctl:iconTerm key="000458">cavalli</dctl:iconTerm>
+       <dctl:iconTerm key="000550">morte violenta per schiacciamento</dctl:iconTerm>
+       <dctl:iconTerm key="000034">monti</dctl:iconTerm>
+       </dctl:studio>
+     </figure>
+     <!-- l'elemento TEI:NOTE contiene le note -->
+     <note type="desc" resp="editor" place="apparatus"><!-- note descrittive --></note>
+     <!-- l'elemento TEI:NOTE contiene le note -->
+     <note type="studio" resp="editor" place="apparatus"><!-- note di studio --></note>
+     <!-- l'elemento TEI:LISTBIBL contiene l'elenco degli elementi TEI:BIBL per la bibliografia -->
+     <listBibl>
+      <!-- l'elemento TEI:BIBL contiene un record della bibliografia -->
+      <bibl>
+       <author>Giovanna Rizzarelli</author>
+       <title>&#171;Se le parole si potessero scorgere&#187;. I Mondi di Doni tra Italia e
+        Francia</title>
+       <publisher>Vecchiarelli</publisher>
+       <pubPlace>Manziana</pubPlace>
+       <date value="2007-00-00">2007</date>
+       <extent>pp. 29, 32, 34-36, 81, 84-85</extent>
+      </bibl>
+     </listBibl>
+    </div>
+    <!-- -->
+    <!-- END -->
+    <!-- %END% -->
+    <!-- NON MODIFICARE LA PARTE OLTRE IL PUNTO "END" -->
+   </div>
+  </body>
+  <back>
+   <div type="part" />
+  </back>
+ </text>
+</TEI>

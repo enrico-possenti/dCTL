@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+ <menu label="Edizione" xslt="menu_edition.xsl" icon="edition" tooltip="Edizione"> </menu>
+ <menu label="Illustrazioni" xslt="menu_image.xsl" icon="image" tooltip="Illustrazioni">
+  <div class="h2_detail">In questa sezione è possibile navigare le illustrazioni presenti nell'edizione</div>
+ </menu>
+ <menu label="Scene" xslt="menu_scene.xsl" icon="scene" tooltip="Scene">
+  <div class="h2_detail">In questa sezione è possibile navigare le scene rappresentate nelle
+   illustrazioni</div>
+ </menu>
+ <menu label="Personaggi" xslt="menu_character.xsl" icon="character" tooltip="Personaggi">
+  <div class="h2_detail">In questa sezione è possibile navigare i personaggi rappresentati nelle
+   illustrazioni</div>
+ </menu>
+ <menu label="Ambientazioni" xslt="menu_setting.xsl" icon="setting" tooltip="Ambientazioni">
+  <div class="h2_detail">In questa sezione è possibile navigare le ambientazioni rappresentate nelle
+   illustrazioni</div>
+ </menu>
+</config>

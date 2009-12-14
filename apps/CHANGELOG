@@ -1,0 +1,59 @@
+/**
+ +----------------------------------------------------------------------+
+ | A digital tale (C) 2009 Enrico Possenti :: dCTL                      |
+ +----------------------------------------------------------------------+
+ | Author:  NoveOPiu di Enrico Possenti <info@noveopiu.com>             |
+ | License: Creative Commons License v3.0 (Attr-NonComm-ShareAlike      |
+ |          http://creativecommons.org/licenses/by-nc-sa/3.0/           |
+ +----------------------------------------------------------------------+
+ | A changes log file                                                   |
+ +----------------------------------------------------------------------+
+*/
+
+Version 0.8.00RC1 (2009-12-14)
+>[*]
+ Modificato "init.inc.php" in "config.inc.php".
+ Introdotto "config-default.inc.php".
+ Aggiornato README in "apps" con le nuove direttive.
+ Modificato i nomi di quasi tutti i file.
+ Aggiunto controllo "_INCLUDE".
+ Aggiunti file "index.php" per redirect.
+>[engine]
+ Corretti problemi di namespace in XQuery.
+ Introdotto namespace "tei" in <fragment>.
+>[engine-api]
+ Introdotti altri Test Units in "engine-api/tester.php".
+
+Version 0.7.02a (2009-12-11)
+>[engine-api]
+ Aggiunto SyntaxHighlighter.
+ Introdotti Test Units.
+
+Version 0.7.02 (2009-12-07)
+>[*]
+ Parametrizzata "functions.inc.xq in "config.inc.php".
+ Aggiunto default namespace in xquery.
+ Aggiornato README di "tools" con indicazioni e considerazioni per l'ottimizzazione di eXist.
+>[commodoro]
+ Eliminato <pb fake/> (se non in <div>) in "tei_publisher_2.xsl". Eliminato l'errore di namespace.
+ Introdotto il namespace sul primo elemento di ogni risposta.
+>[engine]
+ Introdotto dCTL::disconnect(force) per connessioni persistenti.
+ Verificata la diminuzione di GC in Java con persistent connection per classe dCTL.
+
+
+Version 0.7.01a (2009-12-06)
+>[*]
+ Aggiunti commenti in "init.inc.php" per una migliore comprensione dei parametri di inizializzazione.
+ Eliminati (per il momento) i resource fork dei file su Mac OSX (oltre 127kb per file "rubati").
+
+Version 0.7.01 (2009-12-05)
+>[*]
+ Aggiornati i README con le nuove direttive per utenti e diritti su folder e applicazioni.
+ Aggiunte le variabili XMLDB_HOST, XMLDB_PORT, MYSQL_HOST_PN, MYSQL_PORT_PN, MYSQL_HOST_IC, MYSQL_PORT_IC e WWW_PORT.
+ Modificata variabile DCTL_HOST in WWW_HOST.
+ Inserito check abortivo per presenza dei folder necessari (tools, data, repo).
+>[commodoro]
+ Corretta variabile errata XMLDB_DBCTL in XMLDB_DBCTL_PUB.
+ tei_publisher_2.xsl: Corretta creazione di <pb> mancante a inizio <div>.
+

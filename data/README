@@ -1,0 +1,70 @@
+/**
+ +----------------------------------------------------------------------+
+ | A digital tale (C) 2009 Enrico Possenti :: dCTL                      |
+ +----------------------------------------------------------------------+
+ | Author:  NoveOPiu di Enrico Possenti <info@noveopiu.com>             |
+ | License: Creative Commons License v3.0 (Attr-NonComm-ShareAlike      |
+ |          http://creativecommons.org/licenses/by-nc-sa/3.0/           |
+ +----------------------------------------------------------------------+
+ | A read-me file                                                       |
+ +----------------------------------------------------------------------+
+*/
+
+// +----------------------------------------------------------------------+
+// | HOW-TO :: DB 4 MYSQL INSTALLATION                                    |
+// +----------------------------------------------------------------------+
+
+Basepath:
+ DATA_HOME = "/your/path/to/folder"
+ DCTL_HOME = "$DATA_HOME/dctl-mysql"
+
+Create a new user and grant access:
+ CREATE USER 'ctl'@'%'IDENTIFIED BY 'sirena';
+ GRANT ALL PRIVILEGES ON dctl_*.* TO 'ctl'@'%';
+ CREATE USER 'ctl'@'localhost'IDENTIFIED BY 'sirena';
+ GRANT ALL PRIVILEGES ON dctl_*.* TO 'ctl'@'%';
+
+Create a new database in MySQL for dctl_name:
+ CREATE DATABASE `dctl_name`
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+
+Import table definition in dctl_name database:
+ MYSQL -u ctl dctl_name -p sirena < $DCTL_HOME/dctl_name.sql
+
+Create a new database in MySQL for dctl_iconclass:
+ CREATE DATABASE `dctl_iconclass`
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+
+Import table definition in dctl_iconclass database:
+ MYSQL -u ctl dctl_name -p sirena < $DCTL_HOME/dctl_iconclass.sql
+
+You can also import existing data in dctl_name database, obtaining a dump from a repository:
+ MYSQL -u ctl dctl_name -p sirena < /your/path/to/dumped_dctl_name.sql
+
+You can also import existing data in dctl_iconclass database, obtaining a dump from a repository:
+ MYSQL -u ctl dctl_name -p sirena < /your/path/to/dumped_dctl_iconclass.sql
+
+As an alternative to shell commands, you could use a GUI administration tool to MySQL (i.e. phpMyAdmin: http://www.phpmyadmin.net/).
+
+// +----------------------------------------------------------------------+
+// | HOW-TO :: DATA INSTALLATION                                          |
+// +----------------------------------------------------------------------+
+
+Basepath:
+ DATA_HOME = "/your/path/to/folder/"
+ DCTL_HOME = "$DATA_HOME/dctl-project/"
+
+Add your user to Apache group:
+	useradd -G apache-grp you-usr
+
+Ensure access to folder
+	chown -R apache-usr:apache-grp $DATA_HOME
+	chmod -R 0775 $DATA_HOME
+
+This base contains just "test" collection. You can get fresh data from existing repository.
+
+// +----------------------------------------------------------------------+
+// | That's it!                                                           |
+// +----------------------------------------------------------------------+
