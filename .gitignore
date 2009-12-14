@@ -1,1 +1,4 @@
 apps/config.inc.php
+*~
+.htaccess
+.htpasswd
