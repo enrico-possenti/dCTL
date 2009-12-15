@@ -1,6 +1,7 @@
 <?php
  if (!defined('_INCLUDE')) die('"'.__FILE__.'" not executable... me, i abort.');
  $returnText = '';
+ $returnText .= '<br />';
  $returnText .= '<hr />';
  $returnText .= '<em>end of page (<a href="#main">go top</a>)</em>';
  $returnText .= '<hr />';

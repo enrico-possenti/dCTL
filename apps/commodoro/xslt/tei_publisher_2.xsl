@@ -116,12 +116,43 @@
 							</xsl:if>
 							<!-- - - - - - - - - - - - - - - - -->
 							<!-- ADD FAKE PB -->
-							<!-- 
 							<xsl:choose>
-								<xsl:when test="false() and self::tei:div[not(./tei:pb) and (.//tei:pb)]">
+								<xsl:when test="self::tei:div and not(child::tei:pb)">
 									<xsl:apply-templates select="@*" />
 									<pb ed="fake">
-										<xsl:for-each select="(.//tei:pb)[1]/@*">
+										<xsl:choose>
+											<xsl:when test="(preceding::tei:pb) ">
+												<xsl:for-each select="preceding::tei:pb[1]/@*">
+													<xsl:if test="local-name(.) != 'ed'">
+														<xsl:attribute name="{local-name(.)}">
+															<xsl:value-of select="." />
+														</xsl:attribute>
+													</xsl:if>
+												</xsl:for-each>
+											</xsl:when>
+											<xsl:when test="(descendant::tei:pb)">
+												<xsl:for-each select="descendant::tei:pb[1]/@*">
+													<xsl:if test="local-name(.) != 'ed'">
+														<xsl:attribute name="{local-name(.)}">
+															<xsl:value-of select="." />
+														</xsl:attribute>
+													</xsl:if>
+												</xsl:for-each>
+											</xsl:when>
+											</xsl:choose>
+									</pb>
+									<xsl:apply-templates select="node()" />
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:apply-templates select="@* | node()" />
+								</xsl:otherwise>
+							</xsl:choose>
+							<!-- - - - - - - - - - - - - - - - -->
+							<!-- ADD FAKE PB -->
+							<xsl:if test="local-name(.) = 'div'">
+								<xsl:if test="not(parent::tei:div) and (.//tei:pb)">
+									<pb ed="fake">
+										<xsl:for-each select="(.//tei:pb)[position()=last()]/@*">
 											<xsl:if test="local-name(.) != 'ed'">
 												<xsl:attribute name="{local-name(.)}">
 													<xsl:value-of select="." />
@@ -129,28 +160,6 @@
 											</xsl:if>
 										</xsl:for-each>
 									</pb>
-									<xsl:apply-templates select="node()" />
-								</xsl:when>
-								<xsl:otherwise>
-							-->
-							<xsl:apply-templates select="@* | node()" />
-							<!-- 
-								</xsl:otherwise>
-							</xsl:choose>
-		     -->
-		     <!-- - - - - - - - - - - - - - - - -->
-							<!-- ADD FAKE PB -->
-							<xsl:if test="local-name(.) = 'div'">
-								<xsl:if test="not(parent::tei:div) and (.//tei:pb)">
-										<pb ed="fake">
-										<xsl:for-each select="(.//tei:pb)[position()=last()]/@*">
-											<xsl:if test="local-name(.) != 'ed'">
-												<xsl:attribute name="{local-name(.)}">
-												<xsl:value-of select="." />
-											</xsl:attribute>
-											</xsl:if>
-										</xsl:for-each>
-										</pb>
 								</xsl:if>
 							</xsl:if>
 							<!-- - - - - - - - - - - - - - - - -->

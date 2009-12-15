@@ -7,7 +7,11 @@
 </div>
 
 <!-- footer-->
-<div id='footer'> </div>
+<div id='footer'>
+
+Per ogni comunicazione: <a href="mailto:info@noveopiu.com" title="mailto">info@noveopiu.com</a>
+
+</div>
 <!-- / container-->
 </div>
 

@@ -10,14 +10,15 @@
 	<h2>Web Apps</h2>
 
 <ul class="menu">
-
  <li><a href="<?php echo '../'.COMMODORO.'/';?>" title="Gestione Contenuti">dctl::commodoro</a></li>
  <li><a href="<?php echo '../'.DCTL_DB_NAME.'/';?>" title="db Nomi Propri">db::name</a></li>
 	<li><a href="<?php echo '../'.DCTL_DB_ICONCLASS.'/';?>" title="db Codici Iconclass">db::iconclass</a></li>
-	<li><hr/></li>
+  </ul>
+
+<ul class="menu">
+ <li><a href="<?php echo 'http://localhost:8080/exist/admin/admin.xql';?>" title="Gestione eXist" class="external" target="exist" >dbxml::eXist</a></li>
   </ul>
 	<br />
-
 
 <?php
 	$resultText = '';

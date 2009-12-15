@@ -81,7 +81,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				function Test_RepoHasStructure() {
      global $dCTL;
      $tChk = $dCTL->__get('web_publish_path');
-     $tRes = UnitTestCase::assertPattern('/http:\/\/.+\/data\/db\/.+/', $tChk);
+     $tRes = UnitTestCase::assertPattern('/http:\/\/.+\/db\/.+/', $tChk);
      echo '- [www] '.$tChk.'<br />';
 				}
 				//
@@ -94,12 +94,30 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 			}
 // +----------------------------------------------------------------------+
 		class CoreTester_getStructure extends WebTestCase {
-			function __construct () { echo '<hr/><b>dCTL : AFD </b>'.'<br />'; }
+		 public $testIt = FALSE;
+			function __construct () {
+				global $dCTL;
+			 echo '<hr/><b>dCTL : AFD </b>'.'<br />';
+				// 	• getStructure ("afd"); // collection esistente => risultato
+				$tChk = 'afd';
+				$tXPath = 'resource[kind="collection"]';
+				$tCmd = $dCTL->getStructure($tChk);
+    $tXml = simplexmlloadstring($tCmd);
+				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
+				$t = count($tRes);
+				$this->testIt = $t;
+    if (!$t) {
+     echo '<span class="error">Collection "AFD" not published...untested!</span><br/>';
+    };
+			}
+			public function __destruct() {
+				unset($this);
+			}
 			// getStructure
 			// > getStructure() vuole uno o piu URI del tipo xml://collection/ oppure  xml://collection/package/ oppure xml://collection/package/id
 			function Test_getStructure() {
+    if ($this->testIt) {
 				global $dCTL;
-
 				//
 				echo '[1] "collection" level (xml://collection/) <br/>';
 
@@ -334,7 +352,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 				// 	• getStructure ("afd/marmi_txt#_ERR_"); // richiesta non riconosciuta => richiesta ignorata, equivale alla richiesta con #div
 				$tChk = 'afd/marmi_txt#div';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -344,7 +362,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 				$t2 = count($tRes);
 				$tChk = 'afd/marmi_txt#_ERR_';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -360,7 +378,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 				// 	• getStructure ("afd/marmi_txt#div"); // nodo trovato => risultato in <fragment />
 				$tChk = 'afd/marmi_txt#div';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -371,7 +389,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 				// 	• getStructure ("afd/marmi_txt#div1"); // nodo trovato => risultato in <fragment />
 				$tChk = 'afd/marmi_txt#div1';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -382,7 +400,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 				// 	• getStructure ("afd/marmi_txt#div2"); // nodo trovato => risultato in <fragment />
 				$tChk = 'afd/marmi_txt#div2';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -404,7 +422,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 			// 	• getStructure ("afd/marmi_txt#div@1"); // nodo trovato => risultato in <fragment />
 				$tChk = 'afd/marmi_txt#div@1';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -426,7 +444,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 			// 	• getStructure ("afd/marmi_txt#div1@3"); // richiesta non riconosciuta => richiesta ignorata, equivale alla richiesta senza @3
 				$tChk = 'afd/marmi_txt#div1@3';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -436,7 +454,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 				$t2 = count($tRes);
 				$tChk = 'afd/marmi_txt#div1';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -452,7 +470,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 			// 	• getStructure ("afd/marmi_txt#div@1;3"); // nodo trovato => risultato in <fragment />
 				$tChk = 'afd/marmi_txt#div@1;3';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -463,7 +481,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 			// 	• getStructure ("afd/marmi_txt#div@1;-1"); // equivale alla richiesta senza @1;-1
 				$tChk = 'afd/marmi_txt#div';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -473,7 +491,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 				$t2 = count($tRes);
 				$tChk = 'afd/marmi_txt#div@1;-1';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -489,7 +507,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 			// 	• getStructure ("afd/marmi_txt#div@1;100"); // equivale alla richiesta senza @1;100
 				$tChk = 'afd/marmi_txt#div';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -499,7 +517,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 				$t2 = count($tRes);
 				$tChk = 'afd/marmi_txt#div@1;100';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -515,7 +533,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 				// 	• getStructure ("afd/marmi_txt#pb"); // nodo trovato => risultato in <fragment />
 				$tChk = 'afd/marmi_txt#pb';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:pb';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -526,7 +544,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 				// 	• getStructure ("afd/marmi_txt#pb1");  // richiesta non riconosciuta => richiesta ignorata, equivale alla richiesta senza #pb1 ma con #div
 				$tChk = 'afd/marmi_txt#div';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -536,7 +554,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 				$t2 = count($tRes);
 				$tChk = 'afd/marmi_txt#pb1';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -552,7 +570,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 			// 	• getStructure ("afd/marmi_txt#pb@1"); // nodo trovato => risultato in <fragment />
 				$tChk = 'afd/marmi_txt#pb@1';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:pb';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -574,7 +592,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 			// 	• getStructure ("afd/marmi_txt#pb@1;3"); // nodo trovato => risultato in <fragment />
 				$tChk = 'afd/marmi_txt#pb@1;3';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:pb';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -585,7 +603,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 			// 	• getStructure ("afd/marmi_txt#pb@1;-1"); // equivale alla richiesta senza @1;-1
 				$tChk = 'afd/marmi_txt#pb';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:pb';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -595,7 +613,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 				$t2 = count($tRes);
 				$tChk = 'afd/marmi_txt#pb@1;-1';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:pb';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -611,7 +629,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 			// 	• getStructure ("afd/marmi_txt#pb@1;100"); // equivale alla richiesta senza @1;100
 				$tChk = 'afd/marmi_txt#pb';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:pb';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -621,7 +639,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 				$t2 = count($tRes);
 				$tChk = 'afd/marmi_txt#pb@1;100000';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:pb';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -642,6 +660,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 */
 
    }
+		}
 		}
 // +----------------------------------------------------------------------+
 
@@ -715,9 +734,29 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 // +----------------------------------------------------------------------+
 			class CoreTester_Simone extends WebTestCase {
  // |
- 		 function __construct () { echo '<hr/><b>Simone : TEST </b>'.'<br />'; }
+			function __construct () {
+				global $dCTL;
+			 echo '<hr/><b>Simone : TEST </b>'.'<br />';
+				// 	• getStructure ("afd"); // collection esistente => risultato
+				$tChk = 'test';
+				$tXPath = 'resource[kind="collection"]';
+				$tCmd = $dCTL->getStructure($tChk);
+    $tXml = simplexmlloadstring($tCmd);
+				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
+				$t = count($tRes);
+				$this->testIt = $t;
+    if (!$t) {
+     echo '<span class="error">Collection "TEST" not published...untested!<br/>';
+     $this->__destruct();
+     unset($this);
+    };
+			}
+			public function __destruct() {
+				unset($this);
+			}
  // |
 				function Test_getStructure() {
+    if ($this->testIt) {
 				global $dCTL;
 				// Lista delle risorse presenti nella collection di test ::: xml://test/_txt
 				$tChk = 'xml://test/_txt';
@@ -741,7 +780,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Prima pb dei marmi ::: xml://test/marmi_txt/#pb@1
 				$tChk = 'xml://test/marmi_txt/#pb@1';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:pb[@id="xpb000001"]';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb[@id="xpb000001"]';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -771,7 +810,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Primo livello dell\'indice dei marmi: parti in cui son divisi i marmi ::: xml://test/marmi_txt/#div
 				$tChk = 'xml://test/marmi_txt/#div';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -781,7 +820,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Secondo livello indice dei marmi: capitoli in cui e\' divisa la prima parte ::: xml://test/marmi_txt/xdv000003#div
 				$tChk = 'xml://test/marmi_txt/xdv000003#div';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -791,7 +830,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Terzo livello dell\'indice dei marmi: sezioni in cui e\' diviso il primo capitolo ::: xml://test/marmi_txt/xdv000006#div
 				$tChk = 'xml://test/marmi_txt/xdv000006#div';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -801,7 +840,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Quarto livello (ed ultimo) dell\'indice dei marmi: cerco prima delle div, se non le trovo cerco dei pb ::: xml://test/marmi_txt/xdv000007#div
 				$tChk = 'xml://test/marmi_txt/xdv000007#div';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -812,7 +851,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Quinto livello (foglie) dell\'indice dei marmi: non trovando div, cerco pb ::: xml://test/marmi_txt/xdv000007#pb
 				$tChk = 'xml://test/marmi_txt/xdv000007#pb';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:pb';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -822,7 +861,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Primo livello dell\'indice dei marmi per genere novella (short): lista delle parti ::: xml://test/marmi_txt/?//*[@ana &= "genre_short"]#div1
 				$tChk = 'xml://test/marmi_txt/?//*[@ana &= "genre_short"]#div1';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -832,7 +871,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Secondo livello dell\'indice dei marmi per genere novella (short): lista dei capitoli della parte 1 ::: xml://test/marmi_txt/xdv000003?//*[@ana &= "genre_short"]#div2
 				$tChk = 'xml://test/marmi_txt/xdv000003?//*[@ana &= "genre_short"]#div2';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -842,7 +881,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Terzo livello dell\'indice dei marmi per genere novella (short): lista delle sezioni del capitolo 1 ::: xml://test/marmi_txt/xdv000006?//*[@ana &= "genre_short"]#div3
 				$tChk = 'xml://test/marmi_txt/xdv000006?//*[@ana &= "genre_short"]#div3';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -852,7 +891,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Quarto livello dell\'indice dei marmi per genere novella (short): lista delle div dentro alla sezione 1.1. Non trovando piu\' div, si cercano i pb ::: xml://test/marmi_txt/xdv000007?//*[@ana &= "genre_short"]#div4
 				$tChk = 'xml://test/marmi_txt/xdv000007?//*[@ana &= "genre_short"]#div4';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -862,7 +901,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Ultimo livello indice dei marmi per genere novella: pagine dentro a parte1, cap 1, sez 1.1 ::: xml://test/marmi_txt/xdv000007?//*[@ana &= "genre_short"]#pb
 				$tChk = 'xml://test/marmi_txt/xdv000007?//*[@ana &= "genre_short"]#pb';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:pb';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -872,7 +911,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Indice dei marmi per genere facezia: vista appiattita ::: xml://test/marmi_txt?//*[@ana &= "genre_anecdote"]#pb$(hier)
 				$tChk = 'xml://test/marmi_txt?//*[@ana &= "genre_anecdote"]#pb$(hier)';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//tei:div[tei:pb]/tei:pb';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//div[pb]/pb';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -889,7 +928,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 
 				// La prima pagina dei marmi ::: xml://test/marmi_txt/xpb000001
 				$tChk = 'xml://test/marmi_txt/xdv000099';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id = "xdv000099"][(descendant-or-self::tei:pb) or (ancestor-or-self::tei:pb or preceding::tei:pb or preceding-sibling::tei:pb)]';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id = "xdv000099"][(descendant-or-self::pb) or (ancestor-or-self::pb or preceding::pb or preceding-sibling::pb)]';
     $tCmd = $dCTL->getBlock($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -899,7 +938,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getBlock', $tChk, $t, $tRes);
 				// La prima pagina dei marmi ::: xml://test/marmi_txt/xpb000001
 				$tChk = 'xml://test/marmi_txt/xpb000001';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id = "xpb000001"][(descendant-or-self::tei:pb) or (ancestor-or-self::tei:pb or preceding::tei:pb or preceding-sibling::tei:pb)]';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id = "xpb000001"][(descendant-or-self::pb) or (ancestor-or-self::pb or preceding::pb or preceding-sibling::pb)]';
 				$tCmd = $dCTL->getBlock($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -909,7 +948,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getBlock', $tChk, $t, $tRes);
 				// Una scheda immagine ::: xml://test/marmi_img/p002pt001pg008
 				$tChk = 'xml://test/marmi_img/p002pt001pg008';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id="p002pt001pg008"][(descendant-or-self::tei:pb) or (ancestor-or-self::tei:pb or preceding::tei:pb or preceding-sibling::tei:pb)]';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id="p002pt001pg008"][(descendant-or-self::pb) or (ancestor-or-self::pb or preceding::pb or preceding-sibling::pb)]';
 				$tCmd = $dCTL->getBlock($tChk);
 				$tXml = simplexmlloadstring($tCmd);
     $tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -919,7 +958,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getBlock', $tChk, $t, $tRes);
 				// Scheda immagine Marmi, parte 1, pag 16 ::: xml://test/marmi_img/p003pt001pg016
 				$tChk = 'xml://test/marmi_img/p003pt001pg016';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id="p003pt001pg016"][(descendant-or-self::tei:pb) or (ancestor-or-self::tei:pb or preceding::tei:pb or preceding-sibling::tei:pb)]';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id="p003pt001pg016"][(descendant-or-self::pb) or (ancestor-or-self::pb or preceding::pb or preceding-sibling::pb)]';
 				$tCmd = $dCTL->getBlock($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -929,7 +968,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getBlock', $tChk, $t, $tRes);
 				// Una scheda immagine nei Mondi, collegata alla figura di marmi pag 16 ::: xml://test/mondi_img/p015mn001cc017
 				$tChk = 'xml://test/mondi_img/p015mn001cc017';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id="p015mn001cc017"][(descendant-or-self::tei:pb) or (ancestor-or-self::tei:pb or preceding::tei:pb or preceding-sibling::tei:pb)]';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id="p015mn001cc017"][(descendant-or-self::pb) or (ancestor-or-self::pb or preceding::pb or preceding-sibling::pb)]';
 				$tCmd = $dCTL->getBlock($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -940,12 +979,33 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				//
     }
 			}
+			}
 // +----------------------------------------------------------------------+
 			class CoreTester_SimoneFixed extends WebTestCase {
  // |
- 		 function __construct () { echo '<hr/><b>Simone : TEST =&gt; AFD </b>'.'<br />'; }
+			function __construct () {
+				global $dCTL;
+			 echo '<hr/><b>dCTL : Simone Test => AFD </b>'.'<br />';
+				// 	• getStructure ("afd"); // collection esistente => risultato
+				$tChk = 'afd';
+				$tXPath = 'resource[kind="collection"]';
+				$tCmd = $dCTL->getStructure($tChk);
+    $tXml = simplexmlloadstring($tCmd);
+				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
+				$t = count($tRes);
+				$this->testIt = $t;
+    if (!$t) {
+     echo '<span class="error">Collection "AFD" not published... untested!</span><br/>';
+     $this->__destruct();
+     unset($this);
+    };
+			}
+			public function __destruct() {
+				unset($this);
+			}
  // |
 				function Test_getStructure() {
+    if ($this->testIt) {
 				global $dCTL;
 				// Lista delle risorse presenti nella collection di afd ::: xml://afd/_txt
 				$tChk = 'xml://afd/_txt';
@@ -969,7 +1029,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Prima pb dei marmi ::: xml://afd/marmi_txt/#pb@1
 				$tChk = 'xml://afd/marmi_txt/#pb@1';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:pb[@id="xpb000001"]';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb[@id="xpb000001"]';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -999,7 +1059,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Primo livello dell\'indice dei marmi: parti in cui son divisi i marmi ::: xml://afd/marmi_txt/#div
 				$tChk = 'xml://afd/marmi_txt/#div';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1009,7 +1069,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Secondo livello indice dei marmi: capitoli in cui e\' divisa la prima parte ::: xml://afd/marmi_txt/xdv000003#div
 				$tChk = 'xml://afd/marmi_txt/xdv000003#div';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1019,7 +1079,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Terzo livello dell\'indice dei marmi: sezioni in cui e\' diviso il primo capitolo ::: xml://afd/marmi_txt/xdv000006#div
 				$tChk = 'xml://afd/marmi_txt/xdv000006#div';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1029,7 +1089,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Quarto livello (ed ultimo) dell\'indice dei marmi: cerco prima delle div, se non le trovo cerco dei pb ::: xml://afd/marmi_txt/xdv000007#div
 				$tChk = 'xml://afd/marmi_txt/xdv000007#div';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
     $tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1040,7 +1100,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Quinto livello (foglie) dell\'indice dei marmi: non trovando div, cerco pb ::: xml://afd/marmi_txt/xdv000007#pb
 				$tChk = 'xml://afd/marmi_txt/xdv000007#pb';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:pb';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1050,7 +1110,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Primo livello dell\'indice dei marmi per genere novella (short): lista delle parti ::: xml://afd/marmi_txt/?//*[@ana &= "genre_short"]#div1
 				$tChk = 'xml://afd/marmi_txt/?//*[@ana &= "genre_short"]#div1';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1060,7 +1120,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Secondo livello dell\'indice dei marmi per genere novella (short): lista dei capitoli della parte 1 ::: xml://afd/marmi_txt/xdv000003?//*[@ana &= "genre_short"]#div2
 				$tChk = 'xml://afd/marmi_txt/xdv000003?//*[@ana &= "genre_short"]#div2';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1070,7 +1130,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Terzo livello dell\'indice dei marmi per genere novella (short): lista delle sezioni del capitolo 1 ::: xml://afd/marmi_txt/xdv000006?//*[@ana &= "genre_short"]#div3
 				$tChk = 'xml://afd/marmi_txt/xdv000006?//*[@ana &= "genre_short"]#div3';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1080,7 +1140,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Quarto livello dell\'indice dei marmi per genere novella (short): lista delle div dentro alla sezione 1.1. Non trovando piu\' div, si cercano i pb ::: xml://afd/marmi_txt/xdv000007?//*[@ana &= "genre_short"]#div4
 				$tChk = 'xml://afd/marmi_txt/xdv000007?//*[@ana &= "genre_short"]#div4';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:div';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1090,7 +1150,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Ultimo livello indice dei marmi per genere novella: pagine dentro a parte1, cap 1, sez 1.1 ::: xml://afd/marmi_txt/xdv000007?//*[@ana &= "genre_short"]#pb
 				$tChk = 'xml://afd/marmi_txt/xdv000007?//*[@ana &= "genre_short"]#pb';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/tei:pb';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1100,7 +1160,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getStructure', $tChk, $t, $tRes);
 				// Indice dei marmi per genere facezia: vista appiattita ::: xml://afd/marmi_txt?//*[@ana &= "genre_anecdote"]#pb$(hier)
 				$tChk = 'xml://afd/marmi_txt?//*[@ana &= "genre_anecdote"]#pb$(hier)';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//tei:div[tei:pb]/tei:pb';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//div[pb]/pb';
 				$tCmd = $dCTL->getStructure($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1109,15 +1169,14 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				$t &= UnitTestCase::assertTrue(count($tRes));
 				formatIt('getStructure', $tChk, $t, $tRes);
 			}
+			}
  // |
 			function Test_getBlock() {
+    if ($this->testIt) {
 				global $dCTL;
-				global $resultXML;
-				$resultXML .= '<?xml ?>';
-
 				// La prima pagina dei marmi ::: xml://afd/marmi_txt/xpb000001
 				$tChk = 'xml://afd/marmi_txt/xdv000099';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id = "xdv000099"][(descendant-or-self::tei:pb) or (ancestor-or-self::tei:pb or preceding::tei:pb or preceding-sibling::tei:pb)]';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id = "xdv000099"][(descendant-or-self::pb) or (ancestor-or-self::pb or preceding::pb or preceding-sibling::pb)]';
     $tCmd = $dCTL->getBlock($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1127,7 +1186,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getBlock', $tChk, $t, $tRes);
 				// La prima pagina dei marmi ::: xml://afd/marmi_txt/xpb000001
 				$tChk = 'xml://afd/marmi_txt/xpb000001';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id = "xpb000001"][(descendant-or-self::tei:pb) or (ancestor-or-self::tei:pb or preceding::tei:pb or preceding-sibling::tei:pb)]';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id = "xpb000001"][(descendant-or-self::pb) or (ancestor-or-self::pb or preceding::pb or preceding-sibling::pb)]';
 				$tCmd = $dCTL->getBlock($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1137,7 +1196,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getBlock', $tChk, $t, $tRes);
 				// Una scheda immagine ::: xml://afd/marmi_img/p002pt001pg008
 				$tChk = 'xml://afd/marmi_img/p002pt001pg008';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id="p002pt001pg008"][(descendant-or-self::tei:pb) or (ancestor-or-self::tei:pb or preceding::tei:pb or preceding-sibling::tei:pb)]';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id="p002pt001pg008"][(descendant-or-self::pb) or (ancestor-or-self::pb or preceding::pb or preceding-sibling::pb)]';
 				$tCmd = $dCTL->getBlock($tChk);
 				$tXml = simplexmlloadstring($tCmd);
     $tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1147,7 +1206,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getBlock', $tChk, $t, $tRes);
 				// Scheda immagine Marmi, parte 1, pag 16 ::: xml://afd/marmi_img/p003pt001pg016
 				$tChk = 'xml://afd/marmi_img/p003pt001pg016';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id="p003pt001pg016"][(descendant-or-self::tei:pb) or (ancestor-or-self::tei:pb or preceding::tei:pb or preceding-sibling::tei:pb)]';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id="p003pt001pg016"][(descendant-or-self::pb) or (ancestor-or-self::pb or preceding::pb or preceding-sibling::pb)]';
 				$tCmd = $dCTL->getBlock($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1157,7 +1216,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getBlock', $tChk, $t, $tRes);
 				// Una scheda immagine nei Mondi, collegata alla figura di marmi pag 16 ::: xml://afd/mondi_img/p015mn001cc017
 				$tChk = 'xml://afd/mondi_img/p015mn001cc017';
-				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id="p015mn001cc017"][(descendant-or-self::tei:pb) or (ancestor-or-self::tei:pb or preceding::tei:pb or preceding-sibling::tei:pb)]';
+				$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id="p015mn001cc017"][(descendant-or-self::pb) or (ancestor-or-self::pb or preceding::pb or preceding-sibling::pb)]';
 				$tCmd = $dCTL->getBlock($tChk);
 				$tXml = simplexmlloadstring($tCmd);
 				$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
@@ -1167,6 +1226,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/simpletest/
 				formatIt('getBlock', $tChk, $t, $tRes);
 				//
     }
+			}
 			}
 // +----------------------------------------------------------------------+
 ?>

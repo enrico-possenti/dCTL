@@ -13,7 +13,8 @@
  $returnText .= '<script type="text/javascript" language="javascript">';
  $returnText .= '$().ready(function () {';
  $returnText .= ' $("input:text").change(function () { ';
- $returnText .= '  $(this).siblings("input:button").get(0).click();';
+ $returnText .= '  idx = "b"+$(this).attr("id").replace("uri","").replace("xpath","") ;';
+ $returnText .= '  $("#"+idx).click();';
  $returnText .= ' });';
  $returnText .= '});';
  $returnText .= ' function refreshMe() { ';
@@ -49,50 +50,62 @@
  $returnText .= '<hr />';
   $returnText .= '<div id="s" class="code"></div>';
  // |
+ $returnText .= '<p>';
  $returnText .= '<hr />';
  $returnText .= '<h2>Check suite</h2>';
  $returnText .= '<h3 id="unitTest">unitTest()</h3><em>launch tests</em><br />';
- $returnText .= '<input type="button" value="Run the test" onclick="doProgress();';
+ $returnText .= '<input id="b0" type="button" value="Run the test" onclick="doProgress();';
  $returnText .= "$('#s').html('loading...');$('#s').load('".AJAX."', { method: 'unitTest', debug: debug, private: private}, function() { refreshMe(); } );";
  $returnText .= ' return false;"/>';
+ $returnText .= '</p>';
  // |
+ $returnText .= '<p>';
  $returnText .= '<hr />';
  $returnText .= '<h2>Browsing/Searching</h2>';
  $returnText .= '<h3 id="getStructure">getStructure()</h3><em>returns description records for each resource as a structure</em><br />';
  $returnText .= '<label class="label">rsrc:</label>&#160;<input type="text" id="uri1" size="80"/><br/>';
- $returnText .= '<input type="button" value="Try" onclick="doProgress();';
+ $returnText .= '<input id="b1" type="button" value="Try" onclick="doProgress();';
  $returnText .= "$('#s').html('loading...');$('#s').load('".AJAX."', { method: 'getStructure', rsrc: $('#uri1').val(), debug: debug, private: private}, function() { refreshMe(); } );";
  $returnText .= ' return false;"/>';
+ $returnText .= '</p>';
  // |
+ $returnText .= '<p>';
  $returnText .= '<hr />';
  $returnText .= '<h3 id="getOptions">getOptions()</h3><em>returns description records of retrieved values for each resource</em><br />';
  $returnText .= '<label>rsrc:</label>&#160;<input type="text" id="uri3" size="80"/><br/>';
  $returnText .= '<label>xpath:</label>&#160;<input type="text" id="xpath3" size="80"/><br/>';
- $returnText .= '<input type="button" value="Try" onclick="doProgress();';
+ $returnText .= '<input id="b3" type="button" value="Try" onclick="doProgress();';
  $returnText .= "$('#s').html('loading...');$('#s').load('".AJAX."', { method: 'getOptions', rsrc: $('#uri3').val(), xpath: $('#xpath3').val(), debug: debug, private: private}, function() { refreshMe(); } );";
  $returnText .= ' return false;"/>';
+ $returnText .= '</p>';
  // |
+ $returnText .= '<p>';
  $returnText .= '<hr />';
  $returnText .= '<h2>Visualizing</h2>';
  $returnText .= '<h3 id="getBlock">getBlock()</h3><em>returns description records for each resource as a single block</em><br />';
  $returnText .= '<label>rsrc:</label>&#160;<input type="text" id="uri2" size="80"/><br/>';
- $returnText .= '<input type="button" value="Try" onclick="doProgress();';
+ $returnText .= '<input id="b2" type="button" value="Try" onclick="doProgress();';
  $returnText .= "$('#s').html('loading...');$('#s').load('".AJAX."', { method: 'getBlock', rsrc: $('#uri2').val(), debug: debug, private: private}, function() { refreshMe(); } );";
  $returnText .= ' return false;"/>';
+ $returnText .= '</p>';
  // |
+ $returnText .= '<p>';
  $returnText .= '<hr />';
  $returnText .= '<h3 id="getLinks">getLinks()</h3><em>returns description records of retrieved values for each resource as a link</em><br />';
  $returnText .= '<label>rsrc:</label>&#160;<input type="text" id="uri4" size="80"/><br/>';
- $returnText .= '<input type="button" value="Try" onclick="doProgress();';
+ $returnText .= '<input id="b4" type="button" value="Try" onclick="doProgress();';
  $returnText .= "$('#s').html('loading...');$('#s').load('".AJAX."', { method: 'getLinks', rsrc: $('#uri4').val(), debug: debug, private: private}, function() { refreshMe(); } );";
  $returnText .= ' return false;"/>';
+ $returnText .= '</p>';
  // |
+ $returnText .= '<p>';
  $returnText .= '<hr />';
  $returnText .= '<h3 id="getMaps">getMaps()</h3><em>returns description records of retrieved values for each resource as a map</em><br/>';
  $returnText .= '<label>rsrc:</label>&#160;<input type="text" id="uri5" size="80"/><br/>';
- $returnText .= '<input type="button" value="Try" onclick="doProgress();';
+ $returnText .= '<input id="b5" type="button" value="Try" onclick="doProgress();';
  $returnText .= "$('#s').html('loading...');$('#s').load('".AJAX."', { method: 'getMaps', rsrc: $('#uri5').val(), debug: debug, private: private}, function() { refreshMe(); } );";
  $returnText .= ' return false;"/>';
+ $returnText .= '</p>';
  // |
  $returnText .= '</form>';
  // | end BODY
