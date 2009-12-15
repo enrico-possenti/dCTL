@@ -900,6 +900,7 @@
 			if (! $recursion) {
 			 $return .= '</dctl>';
 			};
+			$return = preg_replace('/xmlns\s*=\s*"\s*'.preg_quote(XMLDB_TEI_S, '/').'\s*"/', '', $return);
    return $return;
 		}
 		// +----------------------------------------------------------------------+
