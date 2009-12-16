@@ -1,3 +1,4 @@
+apps/engine/xquery_debug.xq
 apps/config.inc.php
 *~
 .htaccess
