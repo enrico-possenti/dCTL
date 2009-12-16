@@ -35,53 +35,37 @@ function getFlashObject(movieName) {
 	}
 }
 
-function jsapi_initializeIMT(xmldata) {
-	var text = "";
-	text = Base64.decode(xmldata);
-	if (xmldata != "") {
-	 var examplesData = new Array();
-  xmldata = "";
-  textx = "<a href=\'javascript:void(0);\' onclick=\'";
-  textx += "\'>fake saving</a><hr/>" + text;
-	}
-	$("#xml_chunk").text(text);
-	getFlashObject("'.DCTL_EXT_IMT_CBP.'").initialize(xmldata);
+function commdodoro_initializeIMT(xmldata) {
+ getFlashObject("'.DCTL_EXT_IMT_CBP.'").initialize(xmldata);
+'.(NOVEOPIU ? '
+ $("#xml_chunk").val(Base64.decode(xmldata));
+	$(".lnk_result").empty();
+' : ''). '
 }
 
-function jsapi_dataSaving(dataStr) {
-	$("#xml_chunk").text(Base64.decode(dataStr));
-	alert("Y");
-	jsapi_showMessage("Saving...");
-}
-
-function jsapi_dataSaved(dataStr) {
-	$("#xml_chunk").text(Base64.decode(dataStr));
-	alert("X");
-	jsapi_showMessage("Saved ");
-}
-
-function jsapi_showMessage(dataMsg) {
-	var obj = document.getElementById("outfield");
-	obj.value = dataMsg;
+function jsapi_dataSaved(xmldata) {
+'.(NOVEOPIU ? '
+	$("#xml_chunk").val(Base64.decode(xmldata));
+' : ''). '
 }
 
 	</script>
 	    	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
 				codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" name="'.DCTL_EXT_IMT_CBP.'" width="100%" height="400"
 				id="'.DCTL_EXT_IMT_CBP.'">
-		      <param name="movie" value="'.DCTL_EXT_IMT_BASE.'ImageMapper.swf?xml_url=Commodoro-IMT.xml&js_prefix=jsapi_" />
+		      <param name="movie" value="'.DCTL_EXT_IMT_BASE.'ImageMapper.swf?js_prefix=jsapi_" />
 		      <param name="quality" value="high" />
 		      <param name="bgcolor" value="#323232" />
 		      <param name="allowScriptAccess" value="sameDomain" />
-		      <param name=allowFullScreen value="true">
-		      <embed src="'.DCTL_EXT_IMT_BASE.'ImageMapper.swf" quality="high" bgcolor="#323232"
+		      <param name="allowFullScreen" value="true" />
+		      <embed src="'.DCTL_EXT_IMT_BASE.'ImageMapper.swf?js_prefix=jsapi_" quality="high" bgcolor="#323232"
 						width="100%" height="400" name="'.DCTL_EXT_IMT_CBP.'" align="middle"
 						play="true"
 						loop="false"
 						allowscriptaccess="sameDomain"
 						allowfullscreen="true"
 						type="application/x-shockwave-flash"
-						pluginspage="http://www.adobe.com/go/getflashplayer"> </embed>
+						pluginspage="http://www.adobe.com/go/getflashplayer" />
 		    </object>
 ';
 	$returnText .='<div class="lnk_left">';
@@ -103,22 +87,28 @@ function jsapi_showMessage(dataMsg) {
 	$returnText .='</div>';
 
 	$returnText .= $js;
-	$returnText .= '<div class="lineH1">Codice XML</div>';
-//	$returnText .= '<a href="javascript:void(0);" onclick="jsapi_initializeIMT(\'\')">reset IMT</a>';
-	$returnText .='<div id="xml_chunk">';
-	$returnText .='</div>';
-
+	if (NOVEOPIU) {
+		$returnText .= '<div class="lineH1">Test POST</div>';
+		$returnText .='<div id="xml_test">
+		<a href="javascript:void(0);" onclick="$(\'#lnk_result\').load(\''.DCTL_EXT_IMT_CB.'\', {'.DCTL_EXT_IMT_CBP.': Base64.encode($(\'#xml_chunk\').val())});">test POST</a><hr/>
+		</div>';
+		$returnText .= '<div class="lineH1">Codice XML</div>';
+		$returnText .='<textarea id="xml_chunk">...</textarea>';
+	};
 	$returnText .='</div>';
 
 	$returnText .='<div class="lnk_right">';
+
  $returnText .='<div class="src_col">';
 	$returnText .= '<div class="lineH1">Selettore Part</div>';
 	$returnText .= '<div id="xml_tree1" class="src_tree"></div>';
 	$returnText .='</div>';
+	if (NOVEOPIU) {
+  $returnText .= '<div id="lnk_result" class="lnk_result"></div>';
+	};
 
 	$returnText .= '<div class="imt">'.$flashMarkup.'</div>';
 
-	$returnText .= '<div id="lnk_result" class="lnk_result"></div>';
 
 	$returnText .='</div>';
 
@@ -142,8 +132,7 @@ function jsapi_showMessage(dataMsg) {
 	$returnText .='</div>';
 
 	$returnText .= '<div class="lineH1">Codice XML</div>';
-	$returnText .='<div id="xml_chunk">';
-	$returnText .='</div>';
+	$returnText .='<div id="xml_chunk"></div>';
 
 	$returnText .='</div>';
 

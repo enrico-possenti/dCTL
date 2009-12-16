@@ -4,8 +4,11 @@
 #  +----------------------------------------------------------------------+
 #  | dCTL LOGIN                                                           |
 #  +----------------------------------------------------------------------+
+#
+# Access to any file requires authentication
+#
 AuthName "Login to dCTL"
 AuthType Basic
-AuthUserFile your/path/to/.htpasswd
+AuthUserFile /your/path/to/.htpasswd
 AuthGroupFile /dev/null
 Require valid-user

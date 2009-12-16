@@ -1,0 +1,14 @@
+#  +----------------------------------------------------------------------+
+#  | Mastered by (C) 2009 NoveOPiu di Enrico Possenti                     |
+#  | Author: Enrico Possenti <info@noveopiu.com>                          |
+#  +----------------------------------------------------------------------+
+#  | dCTL LOGIN                                                           |
+#  +----------------------------------------------------------------------+
+#
+# Access to any file requires authentication
+#
+AuthName "Login to dCTL"
+AuthType Basic
+AuthUserFile /your/path/to/.htpasswd
+AuthGroupFile /dev/null
+Require valid-user

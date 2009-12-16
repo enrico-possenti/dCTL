@@ -29,14 +29,17 @@
 	externalLinks();
 	hideUnvisible();
 	var what = $(this).getCASE();
+	$('#xml_chunk').empty();
+	$('#xml_chunk').val("");
+	$('.lnk_result').empty();
 	switch(what) {
 		case 'lnk':
 			$('#manager_lnk [name*=\'collection_id\']').click(function(){
 				$('.src_tree').empty();
 				$('.src_tree2').empty();
 				$('#xml_chunk').empty();
+				$('#xml_chunk').val("");
 				$('.lnk_result').empty();
-				$('#xml_chunk').empty();
 				var collection_id = this.value;
 				doProgress();
 				$('#xml_tree1').load('indexAjax.php',{action:'ajax_loadTree', selector:'1', collection_id:collection_id, what:what},function(){
@@ -56,8 +59,8 @@
 				$('.src_tree').empty();
 				$('.src_tree2').empty();
 				$('#xml_chunk').empty();
+				$('#xml_chunk').val("");
 				$('.lnk_result').empty();
-				$('#xml_chunk').empty();
 				var collection_id = this.value;
 				doProgress();
 				$('#xml_tree1').load('indexAjax.php',{action:'ajax_loadTree', selector:'1', collection_id:collection_id, what:what}, function(){

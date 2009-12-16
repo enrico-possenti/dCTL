@@ -32,7 +32,7 @@
 										while($line=fgets($fp)){
 											// for each line in the file remove line endings
 											$line=preg_replace('`[\r\n]$`','',$line);
-											list($key,$value) = explode(' ',$line);
+											@list($key,$value) = explode(' ',$line);
 											if (strtolower($key) == 'authuserfile') {
 												$pass_file = $value;
 											};

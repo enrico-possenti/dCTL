@@ -94,76 +94,92 @@ function getNiceId ($id, $niceId) {
 	return $id;
 };
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-function ajax_deleteLink($id1='', $id2='', $label='', $what='')  {
+function ajax_deleteLink($id1='', $id2='', $label='', $what='', $overwrite=TRUE)  {
  $resultText = '';
 	$resultOK = '';
 	$resultKO = '';
-	$collection_id = explode('-', $id1);
-	$collection_id = $collection_id	[0];
-	$thePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR;
+	$collection_id = '';
 	switch ($what) {
-  case 'lnk':
-			$thePath .= DCTL_FILE_LINKER;
+		case 'lnk':
+			$collection_id = explode('-', $id1);
 		break;
-  case 'map':
-			$thePath .= DCTL_FILE_MAPPER;
+		case 'map':
+			$collection_id = explode('/',str_ireplace('xml://','',$id2));
 		break;
-  default:
-				$resultKO .= 'ERROR: CASE UNIMPLEMENTED IN '.__FUNCTION__;
-  break;
- };
-	if (is_file($thePath)) {
-		$file_content = file_get_contents($thePath);
-		$file_content = preg_replace('/'.WHITESPACES.'+/',' ',$file_content);
-		$text_head = substr($file_content,0,stripos($file_content,'%BEGIN%')).'%BEGIN% -->';
-		$text_foot = '<!-- '.substr($file_content,stripos($file_content,'%END%'));
-		$dom = new DOMDocument('1.0', 'UTF-8');
-		$dom->preserveWhiteSpace = false;
-		forceUTF8($thePath);
-		if ($dom->load($thePath, DCTL_XML_LOADER)) {
-			$xpath = new DOMXPath($dom);
-		 switch ($id2) {
-    case '': // elimina un collegamento intero
-					$query = 'id("'.$id1.'")';
-					$entries = $xpath->query($query);
-					foreach ($entries as $entry) {
-						$entry->parentNode->removeChild($entry);
-					};
-    break;
-    default: // elimina un id
-					$query = 'id("'.$id1.'")';
-					$entries = $xpath->query($query);
-					foreach ($entries as $entry) {
-						$target = $entry->getAttribute('target');
-						$target = str_ireplace($id2,'',$target);
-      if (substr_count($target,'://')<2) { // elimina un collegamento intero
-       $entry->parentNode->removeChild($entry);
-						} else {
-							$entry->setAttribute('target', $target);
+	};
+	$collection_id = $collection_id	[0];
+ if ($collection_id != '') {
+		$thePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR;
+		switch ($what) {
+			case 'lnk':
+				$thePath .= DCTL_FILE_LINKER;
+			break;
+			case 'map':
+				$thePath .= DCTL_FILE_MAPPER;
+			break;
+			default:
+					$resultKO .= 'ERROR: CASE UNIMPLEMENTED IN '.__FUNCTION__;
+			break;
+		};
+		if (is_file($thePath)) {
+			$file_content = file_get_contents($thePath);
+			$file_content = preg_replace('/'.WHITESPACES.'+/',' ',$file_content);
+			$text_head = substr($file_content,0,stripos($file_content,'%BEGIN%')).'%BEGIN% -->';
+			$text_foot = '<!-- '.substr($file_content,stripos($file_content,'%END%'));
+			$dom = new DOMDocument('1.0', 'UTF-8');
+			$dom->preserveWhiteSpace = false;
+			forceUTF8($thePath);
+			if ($dom->load($thePath, DCTL_XML_LOADER)) {
+				$xpath = new DOMXPath($dom);
+				switch ($id2) {
+					case '': // elimina un collegamento intero
+						$query = 'id("'.$id1.'")';
+						$entries = $xpath->query($query);
+						foreach ($entries as $entry) {
+							$entry->parentNode->removeChild($entry);
 						};
-					};
-    break;
-   };
-			if ($resultKO == '') {
-				$file_content = $dom->saveXML();
-				$file_content = preg_replace('/'.WHITESPACES.'+/',' ',$file_content);
-				$from = stripos($file_content,'%BEGIN%')+strlen('%BEGIN% -->');
-				$to = stripos($file_content,'%END%')-strlen('<-- ') - $from -1;
-				$text_content = substr($file_content,$from,$to);
-				$file_content = $text_head.$text_content.$text_foot;
-				doBackup($thePath);
-				if (file_put_contents($thePath, $file_content, LOCK_EX) === false) {
-					$resultKO .= 'Impossibile scrivere il file '.basename($thePath).'...';
-				} else {
-					@chmod($thePath, CHMOD);
-					$resultOK .= 'Modifica eseguita con successo...';
+					break;
+					default: // elimina un id
+						$query = 'id("'.$id1.'")';
+						$entries = $xpath->query($query);
+						foreach ($entries as $entry) {
+							$target = $entry->getAttribute('target');
+							$target = str_ireplace($id2,'',$target);
+							if (substr_count($target,'://')<2) { // elimina un collegamento intero
+								$entry->parentNode->removeChild($entry);
+							} else {
+								$entry->setAttribute('target', $target);
+							};
+						};
+					break;
 				};
+				if ($resultKO == '') {
+					$file_content = $dom->saveXML();
+					$file_content = preg_replace('/'.WHITESPACES.'+/',' ',$file_content);
+					$from = stripos($file_content,'%BEGIN%')+strlen('%BEGIN% -->');
+					$to = stripos($file_content,'%END%')-strlen('<-- ') - $from -1;
+					$text_content = substr($file_content,$from,$to);
+					$file_content = $text_head.$text_content.$text_foot;
+					if ($overwrite) {
+						doBackup($thePath);
+						if (file_put_contents($thePath, forceUTF8($file_content), LOCK_EX) === false) {
+							$resultKO .= 'Impossibile scrivere il file "'.basename($thePath).'"';
+						} else {
+							@chmod($thePath, CHMOD);
+							$resultOK .= 'Modifica eseguita con successo ("'.$label.'")';
+						};
+					} else {
+						$resultOK .= 'Simulazione eseguita con successo ("'.$label.'")';
+					};
+				};
+			} else {
+				$resultKO .= 'Impossibile leggere il file "'.basename($thePath).'"';
 			};
 		} else {
-			$resultKO .= 'Impossibile leggere il file '.basename($thePath).'...';
+			$resultKO .= 'Impossibile trovare "'.basename($thePath).'"';
 		};
- } else {
-	 $resultKO .= "Impossibile trovare ".basename($thePath).'...';
+	} else {
+		$resultKO .= 'Impossibile trovare la collection...';
 	};
 	if ($resultKO !='') {
 		$resultText .= '<span class="error">'.cleanWebString($resultKO).'</span>';
@@ -173,108 +189,125 @@ function ajax_deleteLink($id1='', $id2='', $label='', $what='')  {
  return $resultText;
 };
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-function ajax_saveLink($selector = 'new', $id1='', $id2='', $label='', $what='')  {
+function ajax_saveLink($selector = 'new', $id1='', $id2='', $label='', $what='', $overwrite=TRUE)  {
 	$resultText = '';
 	$resultOK = '';
 	$resultKO = '';
 	$collection_id = explode('/',str_ireplace('xml://','',$id1));
 	$collection_id = $collection_id	[0];
-	$label = ($label);
- $thePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR;
- switch ($what ) {
-  case 'lnk':
-			$thePath .= DCTL_FILE_LINKER;
-  break;
-  case 'map':
-			$thePath .= DCTL_FILE_MAPPER;
-  break;
-  default:
-				$resultKO .= 'ERROR: CASE UNIMPLEMENTED IN '.__FUNCTION__;
-  break;
- };
-	if (is_file($thePath)) {
-		switch ($selector) {
-			case 'new':
-			case 'add':
-			case 'mod':
-				$file_content = file_get_contents($thePath);
-				$file_content = preg_replace('/'.WHITESPACES.'+/',' ',$file_content);
-				$text_head = substr($file_content,0,stripos($file_content,'%BEGIN%')).'%BEGIN% -->';
-				$text_foot = '<!-- '.substr($file_content,stripos($file_content,'%END%'));
-				$dom = new DOMDocument('1.0', 'UTF-8');
-				$dom->preserveWhiteSpace = false;
-				forceUTF8($thePath);
-				if ($dom->load($thePath, DCTL_XML_LOADER)) {
-					$xpath = new DOMXPath($dom);
-					switch ($selector) {
-						case 'new':
-							$type = 'link';
-							$thisID = $collection_id.'-'.generateId();
-							$head = $label;
-							$query = 'id("placeholder")';
-							$entries = $xpath->query($query);
-							foreach ($entries as $entry) {
-								$newNode = $dom->createElement('ref', $head);
-								$newNode = $entry->parentNode->insertBefore($newNode,$entry);
-								$newNode->setAttribute('xml:id',$thisID);
-								$newNode->setAttribute('type',$type);
-								$newNode->setAttribute('n',$label);
-								$newNode->setAttribute('target',$id1.' '.$id2);
-								$newNode = $dom->createComment(' ');
-								$newNode = $entry->parentNode->insertBefore($newNode,$entry);
-							};
-						break;
-						case 'add':
-							$query = 'id("'.$id2.'")';
-							$entries = $xpath->query($query);
-							foreach ($entries as $entry) {
-								$target = $entry->getAttribute('target');
-								if (stripos($target, $id1)=== FALSE) {
-									$entry->setAttribute('target', $id1.' '.$target);
-								} else {
-									$resultKO .= 'L\'ID '.$id1.' è gia nel collegamento...';
-								};
-							};
-						break;
-						case 'mod':
-							$query = 'id("'.$id2.'")';
-							$entries = $xpath->query($query);
-							foreach ($entries as $entry) {
-								$entry->setAttribute('n', $label);
-								$entry->nodeValue = $label;
-							};
-						break;
-					};
-					if ($resultKO == '') {
-						$file_content = $dom->saveXML();
-						$file_content = preg_replace('/'.WHITESPACES.'+/',' ',$file_content);
-						$from = stripos($file_content,'%BEGIN%')+strlen('%BEGIN% -->');
-						$to = stripos($file_content,'%END%')-strlen('<-- ') - $from -1;
-						$text_content = substr($file_content,$from,$to);
-						$file_content = $text_head.$text_content.$text_foot;
-						doBackup($thePath);
-						if (file_put_contents($thePath, forceUTF8($file_content), LOCK_EX) === false) {
-							$resultKO .= 'Impossibile scrivere il file '.basename($thePath).'...';
-						} else {
-							@chmod($thePath, CHMOD);
-							$resultOK .= 'Modifica eseguita con successo...';
-						};
-					};
-				} else {
-					$resultKO .= 'Impossibile leggere il file '.basename($thePath).'...';
-				};
+ if ($collection_id != '') {
+		$thePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR;
+		switch ($what ) {
+			case 'lnk':
+				$thePath .= DCTL_FILE_LINKER;
+			break;
+			case 'map':
+				$thePath .= DCTL_FILE_MAPPER;
 			break;
 			default:
-				$resultKO .= '?'.$selector.'?';
+					$resultKO .= 'ERROR: CASE UNIMPLEMENTED IN '.__FUNCTION__;
 			break;
 		};
+		if (is_file($thePath)) {
+			switch ($selector) {
+				case 'new':
+				case 'add':
+				case 'mod':
+				case 'ovw':
+					$file_content = file_get_contents($thePath);
+					$file_content = preg_replace('/'.WHITESPACES.'+/',' ',$file_content);
+					$text_head = substr($file_content,0,stripos($file_content,'%BEGIN%')).'%BEGIN% -->';
+					$text_foot = '<!-- '.substr($file_content,stripos($file_content,'%END%'));
+					$dom = new DOMDocument('1.0', 'UTF-8');
+					$dom->preserveWhiteSpace = false;
+					forceUTF8($thePath);
+					if ($dom->load($thePath, DCTL_XML_LOADER)) {
+						$xpath = new DOMXPath($dom);
+						switch ($selector) {
+							case 'new':
+								$type = 'link';
+								$thisID = $collection_id.'-'.generateId();
+								$head = $label;
+								$query = 'id("placeholder")';
+								$entries = $xpath->query($query);
+								foreach ($entries as $entry) {
+									$newNode = $dom->createElement('ref', $head);
+									$newNode = $entry->parentNode->insertBefore($newNode,$entry);
+									$newNode->setAttribute('xml:id',$thisID);
+									$newNode->setAttribute('type',$type);
+									$newNode->setAttribute('n',$label);
+									$newNode->setAttribute('target',$id1.' '.$id2);
+									$newNode = $dom->createComment(' ');
+									$newNode = $entry->parentNode->insertBefore($newNode,$entry);
+								};
+							break;
+							case 'add':
+								$query = 'id("'.$id2.'")';
+								$entries = $xpath->query($query);
+								foreach ($entries as $entry) {
+									$target = $entry->getAttribute('target');
+									if (stripos($target, $id1)=== FALSE) {
+										$entry->setAttribute('target', $id1.' '.$target);
+									} else {
+										$resultKO .= 'L\'ID "'.$id1.'" è gia nel collegamento';
+									};
+								};
+							break;
+							case 'mod':
+								$query = 'id("'.$id2.'")';
+								$entries = $xpath->query($query);
+								foreach ($entries as $entry) {
+									$entry->setAttribute('n', $label);
+									if ((string)$entry->nodeValue =='')  $entry->nodeValue = $label;
+								};
+							break;
+							case 'ovw':
+								$query = 'id("'.$id2.'")';
+								$entries = $xpath->query($query);
+								foreach ($entries as $entry) {
+									$entry->setAttribute('n', $label);
+									$entry->setAttribute('target',$id1);
+									if ((string)$entry->nodeValue == '')  $entry->nodeValue = $label;
+								};
+							break;
+						};
+						if ($resultKO == '') {
+							$file_content = $dom->saveXML();
+							$file_content = preg_replace('/'.WHITESPACES.'+/',' ',$file_content);
+							$from = stripos($file_content,'%BEGIN%')+strlen('%BEGIN% -->');
+							$to = stripos($file_content,'%END%')-strlen('<-- ') - $from -1;
+							$text_content = substr($file_content,$from,$to);
+							$file_content = $text_head.$text_content.$text_foot;
+							if ($overwrite) {
+								doBackup($thePath);
+								if (file_put_contents($thePath, forceUTF8($file_content), LOCK_EX) === false) {
+									$resultKO .= 'Impossibile scrivere il file "'.basename($thePath).'"';
+								} else {
+									@chmod($thePath, CHMOD);
+									$resultOK .= 'Modifica eseguita con successo ("'.$label.'")';
+								};
+							} else {
+								$resultOK .= 'Simulazione eseguita con successo ("'.$label.'")';
+							};
+						};
+					} else {
+						$resultKO .= 'Impossibile leggere il file "'.basename($thePath).'"';
+					};
+				break;
+				default:
+					$resultKO .= '?'.$selector.'?';
+				break;
+			};
+		} else {
+			$resultKO .= 'Impossibile trovare "'.basename($thePath).'"';
+		};
 	} else {
-		$resultKO .= "Impossibile trovare ".basename($thePath).'...';
+		$resultKO .= 'Impossibile trovare la collection...';
 	};
 	if ($resultKO !='') {
 		$resultText .= '<span class="error">'.cleanWebString($resultKO).'</span>';
 	} else {
-		$resultText .= '<span class="ok">'.cleanWebString($resultOK).'</span>';
+ 	$resultText .= '<span class="ok">'.cleanWebString($resultOK).'</span>';
 	};
  return $resultText;
 };
@@ -651,7 +684,7 @@ function ajax_loadTree ($selector = 1, $collection_id='', $package_id='', $part_
 						if (DCTL_EXT_IMT && $what=='map') {
 							$resultText .= '<span class="text"><a href="javascript:void(0);" onclick="';
 							$resultText .= 'doProgress();$.post(\'indexAjax.php\',{action:\'ajax_loadTree\', selector:\''.$selector.'\', collection_id:\''.$collection_id.'\', package_id:\''.$package_id.'\', part_id:\''.$partRecord['part_id'].'\', what:\''.$what.'\'},';
-							$resultText .= ' function('.DCTL_EXT_IMT_CBP.'){ jsapi_initializeIMT('.DCTL_EXT_IMT_CBP.'); killProgress();});';
+							$resultText .= ' function('.DCTL_EXT_IMT_CBP.'){ commdodoro_initializeIMT('.DCTL_EXT_IMT_CBP.'); killProgress();});';
 							$resultText .= '">'.cleanWebString($partRecord['part_short'].': '.$partRecord['part_work'], FIELD_STRING_LENGTH). '&#160;</a></span>';
 						} else {
 							$resultText .= '<span class="text" onclick="doProgress();$(this).next().load(\'indexAjax.php\',{action:\'ajax_loadTree\', selector:\''.$selector.'\', collection_id:\''.$collection_id.'\', package_id:\''.$package_id.'\', part_id:\''.$partRecord['part_id'].'\', what:\''.$what.'\'},function(){

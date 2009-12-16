@@ -10,7 +10,12 @@
  +----------------------------------------------------------------------+
 */
 
-Version 0.8.00RC2 ()
+Version 0.8.00RC3 (2009-12-17)
+>[*]
+ Concluso IMT (Enrico G deve fornire l'ultima versione).
+ Modificato .htaccess per libero accesso a "commodoro/core.php".
+
+Version 0.8.00RC2 (2009-12-16)
 >[*]
  Aggiunta variabile WWW_NAME.
 >[commodoro]

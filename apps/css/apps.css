@@ -672,6 +672,9 @@ pre .highlight {
 .lnk_result {
 	clear: both;
 	padding: 3px;
+	width: 100%;
+    border: 1px dotted #ccc;
+    overflow: auto;
 }
 
 div.imt {
@@ -691,6 +694,11 @@ padding: 0;
 }
 
 #manager_map.imt #xml_chunk {
+	width: 100%;
+    border: 1px dotted #ccc;
+}
+
+#manager_map.imt #xml_test {
 	width: 100%;
     border: 1px dotted #ccc;
 }

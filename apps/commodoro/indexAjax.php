@@ -49,7 +49,7 @@
 	if (isset($_REQUEST['url'])) $url = $_REQUEST['url'];
 
 	$imt = '';
-	if (isset($_REQUEST['imt'])) $imt = $_REQUEST['imt'];
+	if (isset($_REQUEST[DCTL_EXT_IMT_CBP])) $imt = $_REQUEST[DCTL_EXT_IMT_CBP];
 
 	$linkersList = array();
 
@@ -57,7 +57,38 @@
 
  switch ($action) {
   case 'update_imt':
-   $returnText .= '? AJAX ACTION ('.$action.') :: NOT YET IMPLEMENTED ('.$imt.') ?';
+   $xml = base64_decode($imt);
+   $simplexml = simplexml_load_string($xml);
+   if ($simplexml) {
+    $returnText .= '<ul>';
+    foreach ($simplexml->xml->a as $xml) {
+     $ref = (string)$xml['r']; // => @xml:id
+     $src = (string)$xml['s']; // => @target[1]
+     $tgt = (string)$xml['t']; // => @target[2]
+     $lbl = (string)$xml['l']; // => @n
+// <ref xml:id="afd-1xvJpQG8U5" type="link" n="pallonzoli" target="xml://afd/marmi_img/p004ki001 img://afd-marmi_p1_08_pw.jpg@0.1160:0:4520:0.4030:0:4520:0.4030:0.7300:0.1160:0.7300">palle di cerchi</ref>
+     $returnText .= '<li>';
+     if ($tgt == '') {
+      if ($ref == '') {
+       $returnText .= ''; // IGNORED
+      } else {
+       $returnText .= ajax_deleteLink($ref, $src, $lbl, 'map', true);
+      };
+     } else {
+      if ($ref == '') {
+       $returnText .= ajax_saveLink('new', $src, $tgt, $lbl, 'map', true);
+      } else {
+       $returnText .= ajax_saveLink('ovw', $src.' '.$tgt, $ref, $lbl ,'map', true);
+      };
+     };
+     $returnText .= NOVEOPIU ? htmlspecialchars($xml->asXML()) : '';
+     $returnText .= '</li>';
+    };
+    $returnText .= '</ul>';
+   } else {
+    $returnText .= '<span class="warning">niente da interpretare</span><br/>';
+   };
+
    break;
 
   case 'ajax_loadTree':

@@ -16,7 +16,7 @@
   </ul>
 
 <ul class="menu">
- <li><a href="<?php echo 'http://localhost:8080/exist/admin/admin.xql';?>" title="Gestione eXist" class="external" target="exist" >dbxml::eXist</a></li>
+ <li><a href="<?php echo XMLDB_HOST.':'.XMLDB_PORT.'/exist/admin/admin.xql';?>" title="Gestione eXist" class="external" target="exist" >dbxml::eXist</a></li>
   </ul>
 	<br />
 
@@ -27,6 +27,7 @@
 	$resultText .= '<li><a target="'.MASTRO.'" class="external" href="http://ctl-prova.sns.it/~fonda/svn_trunk/frontend.html" title="Accedi"><img src="'.DCTL_IMAGES.'folder-orange.gif" />&nbsp;AFD</a></li>';
 	$resultText .= '</ul><br />';
  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ if (NOVEOPIU) {
  define('PATH_TO_ENGINE', str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'..'.SYS_PATH_SEPARATOR.ENGINE.SYS_PATH_SEPARATOR.'core.php');
  require_once(PATH_TO_ENGINE);
  if ($dCTL = dCTLRetriever::singleton()) {
@@ -65,6 +66,7 @@
 			$resultText .= '<h2>Archivi dCTL</h2><ul class="menu">';
 			$resultText .= '<li class="ko">Can\'t connect to dCTL engine...</li>';
 			$resultText .= '</ul><br />';
+ };
  };
  echo $resultText;
 ?>
