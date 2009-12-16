@@ -103,6 +103,7 @@ if (TEMPORARY_SYSTEM) {
 // + - - - - - - - - - - - - - - - - - -
 // | COMMODORO ENVIRONMENT
 define('COMMODORO', 'commodoro');
+define('ENGINE', 'engine');
 define('DCTL_IMAGES', '..'.SYS_PATH_SEPARATOR.'img'.SYS_PATH_SEPARATOR);
 if (!defined('DCTL_USER_ID')) define('DCTL_USER_ID', 'guest');
 if (!defined('DCTL_USER_NAME')) define('DCTL_USER_NAME', 'Sconosciuto');
@@ -197,7 +198,8 @@ if (TEMPORARY_SYSTEM) {
 // | WEB ENVIRONMENT
 define('WEB_PATH_SEPARATOR', '/');
 if (!defined('WWW_PORT')) define('WWW_PORT', '80');
-if (!defined('WWW_HOST')) define('WWW_HOST', 'http://'.$_SERVER['SERVER_NAME']);
+if (!defined('WWW_NAME')) define('WWW_NAME', 'http://'.$_SERVER['SERVER_NAME'].':'.WWW_PORT);
+if (!defined('WWW_HOST')) define('WWW_HOST', WWW_NAME.'');
 define('HOST_BASE_PATH', dirname(dirname(dirname($_SERVER['PHP_SELF']))).WEB_PATH_SEPARATOR);
 define('DCTL_QUERY_STRING', htmlspecialchars($_SERVER['QUERY_STRING']));
 define('DCTL_REQUEST_URI', htmlspecialchars($_SERVER['REQUEST_URI']));

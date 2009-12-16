@@ -10,6 +10,16 @@
  +----------------------------------------------------------------------+
 */
 
+Version 0.8.00RC2 ()
+>[*]
+ Aggiunta variabile WWW_NAME.
+>[commodoro]
+ Aggiornamento del Mapper (ancora non funziona completamente).
+ Inserito nuovo <pb fake/> (se non in <div>) in "tei_publisher_2.xsl".
+>[engine]
+ Riportato "core.php" in "engine" per questioni di AUTH.
+ Corretti i test di Simone con aggiornamento di "prova.php".
+
 Version 0.8.00RC1 (2009-12-14)
 >[*]
  Modificato "init.inc.php" in "config.inc.php".

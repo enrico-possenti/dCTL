@@ -47,7 +47,7 @@ require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__
 
 	} else {
 		$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\').'/searchByName.php';
-		header('Location: http://'.WWW_HOST.':'.WWW_PORT.$uri);
+		header('Location: '.WWW_NAME.$uri);
 		exit();
 	};
 ?>

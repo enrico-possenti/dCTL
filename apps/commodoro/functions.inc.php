@@ -651,7 +651,7 @@ function ajax_loadTree ($selector = 1, $collection_id='', $package_id='', $part_
 						if (DCTL_EXT_IMT && $what=='map') {
 							$resultText .= '<span class="text"><a href="javascript:void(0);" onclick="';
 							$resultText .= 'doProgress();$.post(\'indexAjax.php\',{action:\'ajax_loadTree\', selector:\''.$selector.'\', collection_id:\''.$collection_id.'\', package_id:\''.$package_id.'\', part_id:\''.$partRecord['part_id'].'\', what:\''.$what.'\'},';
-							$resultText .= ' function('.DCTL_EXT_IMT_CBP.'){ initializeIMT('.DCTL_EXT_IMT_CBP.'); killProgress();});';
+							$resultText .= ' function('.DCTL_EXT_IMT_CBP.'){ jsapi_initializeIMT('.DCTL_EXT_IMT_CBP.'); killProgress();});';
 							$resultText .= '">'.cleanWebString($partRecord['part_short'].': '.$partRecord['part_work'], FIELD_STRING_LENGTH). '&#160;</a></span>';
 						} else {
 							$resultText .= '<span class="text" onclick="doProgress();$(this).next().load(\'indexAjax.php\',{action:\'ajax_loadTree\', selector:\''.$selector.'\', collection_id:\''.$collection_id.'\', package_id:\''.$package_id.'\', part_id:\''.$partRecord['part_id'].'\', what:\''.$what.'\'},function(){

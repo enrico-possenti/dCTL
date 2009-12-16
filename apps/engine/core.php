@@ -187,7 +187,7 @@
 		protected function _set_archive_to_use() {
 		 $this->_db_publish_path = $this->_use_private_db ? XMLDB_DBCTL_TMP : XMLDB_DBCTL_PUB;
    $this->_fs_publish_path = $this->_use_private_db ? DCTL_DBCTL_TMP : DCTL_DBCTL_PUB;
-   $this->_web_publish_path = WWW_HOST.':'.WWW_PORT.($this->_use_private_db ? WEB_DBCTL_TMP : WEB_DBCTL_PUB);
+   $this->_web_publish_path = WWW_HOST.($this->_use_private_db ? WEB_DBCTL_TMP : WEB_DBCTL_PUB);
 			// | initialize
 		 if ($this->_db = dctl_xmldb_connect('admin', true)) {
     try {
@@ -578,7 +578,7 @@
 											$withPage = false;
            if (preg_match('/(\$\(*(.*)\)*)/', $parsed['anchor'], $matchesX)) {
 												$parsed['anchor'] = preg_replace('/'.escapeshellcmd($matchesX[0]).'/', '', $parsed['anchor']);
-												$extenders = explode(':', preg_replace('/[\$\(\)]/', '', $matchesX[0]));
+												$extenders = explode('&', preg_replace('/[\$\(\)]/', '', $matchesX[0]));
 												$withHierarchy = array_search('hier', $extenders) !== FALSE;
 												$withPage = array_search('page', $extenders) !== FALSE;
 											};

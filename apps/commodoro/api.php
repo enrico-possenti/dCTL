@@ -38,7 +38,7 @@
 	require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'./config.inc.php');
  // +----------------------------------------------------------------------+
  // | INCLUDE THE CORE
- require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'./core.php');
+ require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'..'.SYS_PATH_SEPARATOR.ENGINE.SYS_PATH_SEPARATOR.'core.php');
 	// +----------------------------------------------------------------------+
  // | HTTP REQUEST (POST or GET)
 	$debug = isset($_REQUEST['debug']) ? $_REQUEST['debug'] : false;

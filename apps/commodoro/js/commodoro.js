@@ -63,9 +63,9 @@
 				$('#xml_tree1').load('indexAjax.php',{action:'ajax_loadTree', selector:'1', collection_id:collection_id, what:what}, function(){
 				$(' .simpleTree',this).simpleTree();
 				});
-				$('#xml_tree2').load('indexAjax.php', {action:'ajax_loadTree', selector:'2', collection_id:'', what:what}, function(){
-					killProgress();
-				});
+// 				$('#xml_tree2').load('indexAjax.php', {action:'ajax_loadTree', selector:'2', collection_id:'', what:what}, function(){
+// 					killProgress();
+// 				});
 			});
 			$('img#img_edit').imgAreaSelect({ handles: true, outerColor: "red", borderWidth: 2 });
 			$('form').clearForm();

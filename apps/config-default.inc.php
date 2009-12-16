@@ -25,8 +25,9 @@ $_DCTL_REPO_FOLDER = '';
 // | YOUR WWW CONFIG
 // + - - - - - - - - - - - - - - - - - -
 // | your www domain URL & port
-if (!defined('WWW_HOST')) define('WWW_HOST', 'http://'.$_SERVER['SERVER_NAME']); // Apache host
 if (!defined('WWW_PORT')) define('WWW_PORT', 80); // Apache port
+if (!defined('WWW_NAME')) define('WWW_NAME', 'http://'.$_SERVER['SERVER_NAME'].':'.WWW_PORT); // Apache host
+if (!defined('WWW_HOST')) define('WWW_HOST', WWW_NAME.''); // hosted dir
 if (!defined('WWW_DATA')) define('WWW_DATA', ''); // "repo" relative url
 // + - - - - - - - - - - - - - - - - - -
 // + - - - - - - - - - - - - - - - - - -

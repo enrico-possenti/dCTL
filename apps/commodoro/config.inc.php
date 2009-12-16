@@ -5,7 +5,7 @@ require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__
 
 	if (!defined('DCTL_EXT_IMT')) define('DCTL_EXT_IMT', true); // use Image Tool Mapper
 	if (!defined('DCTL_EXT_IMT_CBP')) define('DCTL_EXT_IMT_CBP', 'imt');
-	if (!defined('DCTL_EXT_IMT_CB')) define('DCTL_EXT_IMT_CB', WWW_HOST.$_SERVER['PHP_SELF'].'?action=update_imt'); //
+	if (!defined('DCTL_EXT_IMT_CB')) define('DCTL_EXT_IMT_CB', WWW_NAME.$_SERVER['PHP_SELF'].'?action=update_imt'); //
 
 	define('DCTL_EXT_URL', dirname(DCTL_EXT_IMT_CB));
 	define('DCTL_EXT_IMT_BASE', DCTL_EXT_URL.'/tools/imt/');

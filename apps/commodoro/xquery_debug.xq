@@ -160,9 +160,9 @@ declare function functx:is-node-in-sequence-deep-equal
 let $highlight := util:function(xs:QName("tei:highlight"), 3)
 let $shrink := util:function(xs:QName("tei:shrink"), 3)
 
- let $base := xmldb:document("/db/dctl-temp/afd/afd-marmi_txt.xml")//tei:text 
+ let $base := xmldb:document("/db/dctl-temp/test/test-marmi_txt.xml")//tei:text 
  for $node in 
- $base/*/tei:div[child::text() or child::node()] 
+ $base/*//*[@ana &= "genre_short"]/ancestor-or-self::tei:div[count(ancestor::tei:div)=0][child::text() or child::node()] 
  let $kwic := if ($node//text() != "") then text:kwic-display($node//text(), 80, $highlight, ()) else text:kwic-display(subsequence($node/parent::*/descendant::text(), 1)[. >> $node][position() < 5], 80, $highlight, ()) 
  let $nodeT := element {node-name($node)} {$node/@*, text {$kwic}} 
  return 

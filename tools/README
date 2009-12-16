@@ -49,10 +49,10 @@ Ensure access to folder
 
 Edit "$EXIST_HOME/conf.xml".
  => Increment eXist Cache
-  on line: <db-connection cacheSize="48M" collectionCache="24M" database="native" files="webapp/WEB-INF/data" pageSize="4096">
+  at line: <db-connection cacheSize="48M" collectionCache="24M" database="native" files="webapp/WEB-INF/data" pageSize="4096">
   change @cacheSize from "48M" to "176M" ; should be 1/3 (not more than 1/2) of Xmx (512/3=176)
  => Setup Indexes:
-  on line: <indexer caseSensitive="yes" index-depth="5" preserve-whitespace-mixed-content="no" stemming="no"
+  at line: <indexer caseSensitive="yes" index-depth="5" preserve-whitespace-mixed-content="no" stemming="no"
 		suppress-whitespace="none" tokenizer="org.exist.storage.analysis.SimpleTokenizer"
 		track-term-freq="yes">
   change @caseSensitive from "yes" to "no" ;
