@@ -36,7 +36,15 @@ function getFlashObject(movieName) {
 }
 
 function jsapi_initializeIMT(xmldata) {
-	$("#xml_chunk").text(Base64.decode(xmldata));
+	var text = "";
+	text = Base64.decode(xmldata);
+	if (xmldata != "") {
+	 var examplesData = new Array();
+  xmldata = "";
+  textx = "<a href=\'javascript:void(0);\' onclick=\'";
+  textx += "\'>fake saving</a><hr/>" + text;
+	}
+	$("#xml_chunk").text(text);
 	getFlashObject("'.DCTL_EXT_IMT_CBP.'").initialize(xmldata);
 }
 
@@ -96,7 +104,7 @@ function jsapi_showMessage(dataMsg) {
 
 	$returnText .= $js;
 	$returnText .= '<div class="lineH1">Codice XML</div>';
-	$returnText .= '<a href="javascript:void(0);" onclick="initializeIMT()">reset IMT</a>';
+//	$returnText .= '<a href="javascript:void(0);" onclick="jsapi_initializeIMT(\'\')">reset IMT</a>';
 	$returnText .='<div id="xml_chunk">';
 	$returnText .='</div>';
 

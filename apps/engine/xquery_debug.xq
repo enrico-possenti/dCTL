@@ -1,3 +1,14 @@
+xquery version "1.0";
+declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare namespace dctl="http://www.ctl.sns.it/ns/1.0";
+declare namespace util="http://exist-db.org/xquery/util";
+declare namespace exist="http://exist.sourceforge.net/NS/exist";
+declare namespace transform="http://exist-db.org/xquery/transform";
+declare namespace functx = "http://www.functx.com";
+declare option exist:timeout "60000";
+declare option exist:output-size-limit "-1";
+declare option exist:serialize "method=xhtml";
+declare option exist:serialize "highlight-matches=both";
 
 (: http://wiki.tei-c.org/index.php/Milestone-chunk.xquery :)
 
@@ -149,3 +160,13 @@ declare function functx:is-node-in-sequence-deep-equal
 
 let $highlight := util:function(xs:QName("tei:highlight"), 3)
 let $shrink := util:function(xs:QName("tei:shrink"), 3)
+
+ let $base := xmldb:document("/db/dctl-temp/test/test-marmi_txt.xml")//tei:text 
+ for $node in 
+ $base/*/id("xdv000028") 
+ let $kwic := if ($node//text() != "") then text:kwic-display($node//text(), 80, $highlight, ()) else text:kwic-display(subsequence($node/parent::*/descendant::text(), 1)[. >> $node][position() < 5], 80, $highlight, ()) 
+ let $nodeT := element {node-name($node)} {$node/@*, text {$kwic}} 
+ let $nodeT := functx:add-attributes($nodeT, xs:QName("synch"), tei:getPage($node, 1)) 
+ return 
+ $nodeT 
+ 
