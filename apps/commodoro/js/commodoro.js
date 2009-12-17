@@ -32,7 +32,10 @@
 	$('#xml_chunk').empty();
 	$('#xml_chunk').val("");
 	$('.lnk_result').empty();
-	switch(what) {
+ $('.src_tree').click(function() {
+		$('.lnk_result').empty();
+ });
+ switch(what) {
 		case 'lnk':
 			$('#manager_lnk [name*=\'collection_id\']').click(function(){
 				$('.src_tree').empty();

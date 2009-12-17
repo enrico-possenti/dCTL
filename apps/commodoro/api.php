@@ -38,7 +38,7 @@
 	require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'./config.inc.php');
  // +----------------------------------------------------------------------+
  // | INCLUDE THE CORE
- require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'..'.SYS_PATH_SEPARATOR.ENGINE.SYS_PATH_SEPARATOR.'core.php');
+ require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'..'.SYS_PATH_SEPARATOR.COMMODORO.SYS_PATH_SEPARATOR.'core.php');
 	// +----------------------------------------------------------------------+
  // | HTTP REQUEST (POST or GET)
 	$debug = isset($_REQUEST['debug']) ? $_REQUEST['debug'] : false;
@@ -74,8 +74,8 @@
 	$goBack .= 'goto <a href="#'.$method.'" title="go back">'.$method.'()</a> again ';
 	$goBack .= 'or <a href="#" onclick="';
 	$goBack .= "$('#s').html('loading...');$('#s').load('".basename(__FILE__)."', { method: '".$method."'";
-	if ($rsrc) $goBack .= ", rsrc: '".$rsrc."' ";
-	if ($xpath) $goBack .= ", xpath: '".$xpath."' ";
+	if ($rsrc) $goBack .= ", rsrc: '".htmlspecialchars($rsrc)."' ";
+	if ($xpath) $goBack .= ", xpath: '".htmlspecialchars($xpath)."' ";
 	$goBack .= ", debug: debug, private: private}, function() { refreshMe(); } );return false;";
 	$goBack .= '" title="reload">reload it</a>';
 	$goBack .= ' [pid:'.$dCTL->db->pid.']<br/>';

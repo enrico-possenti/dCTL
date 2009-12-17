@@ -36,11 +36,27 @@ function getFlashObject(movieName) {
 }
 
 function commdodoro_initializeIMT(xmldata) {
- getFlashObject("'.DCTL_EXT_IMT_CBP.'").initialize(xmldata);
+ var txt = Base64.decode(xmldata);
+
 '.(NOVEOPIU ? '
- $("#xml_chunk").val(Base64.decode(xmldata));
-	$(".lnk_result").empty();
-' : ''). '
+	$("#xml_chunk").val(txt);
+	' : ''). '
+ var rex = /xml>\s*<a/i
+ var rem = /img>\s*<a/i
+ if (rex.test(txt) && rem.test(txt)) { //if match pass
+		$(".lnk_result").empty();
+ } else {
+  var msg = "";
+  xmldata = "";
+		if (!rex.test(txt)) msg += "- Nessuna chiave";
+		if (!rem.test(txt)) msg += "- Nessuna immagine";
+		$(".lnk_result").html("<span class=\'warning\'>"+msg+"</span>");
+ }
+	getFlashObject("'.DCTL_EXT_IMT_CBP.'").initialize(xmldata);
+}
+
+function jsapi_saveReply(xmldata) {
+	$("#lnk_result").html(xmldata);
 }
 
 function jsapi_dataSaved(xmldata) {
@@ -103,9 +119,7 @@ function jsapi_dataSaved(xmldata) {
 	$returnText .= '<div class="lineH1">Selettore Part</div>';
 	$returnText .= '<div id="xml_tree1" class="src_tree"></div>';
 	$returnText .='</div>';
-	if (NOVEOPIU) {
-  $returnText .= '<div id="lnk_result" class="lnk_result"></div>';
-	};
+ $returnText .= '<div id="lnk_result" class="lnk_result"></div>';
 
 	$returnText .= '<div class="imt">'.$flashMarkup.'</div>';
 

@@ -103,7 +103,6 @@ if (TEMPORARY_SYSTEM) {
 // + - - - - - - - - - - - - - - - - - -
 // | COMMODORO ENVIRONMENT
 define('COMMODORO', 'commodoro');
-define('ENGINE', 'engine');
 define('DCTL_IMAGES', '..'.SYS_PATH_SEPARATOR.'img'.SYS_PATH_SEPARATOR);
 if (!defined('DCTL_USER_ID')) define('DCTL_USER_ID', 'guest');
 if (!defined('DCTL_USER_NAME')) define('DCTL_USER_NAME', 'Sconosciuto');

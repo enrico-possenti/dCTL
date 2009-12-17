@@ -550,17 +550,20 @@
 										};
 									};
 									if (($parsed['locator'] != '') || ($parsed['query'] != '') || ($parsed['anchor'] != '') || ($asOptions)) {
-         $packageList = $resList;
+          $packageList = $resList;
 										unset($resList);
 										$resList = array();
  									foreach ($packageList as $key4package=>$package) {
+											$parsed_locator = $parsed['locator'];
+											$parsed_query = $parsed['query'];
+											$parsed_anchor = $parsed['anchor'];
 											$xml_resource = $package['path'];
 											$db_resource = '';
 											$partial = false;
 											$context = '';
-											$context .= (($parsed['locator'] == '') && ($parsed['query'] == '')) ? '/' : ''; // per errore: un solo & !!!
-											$context .= ($parsed['locator'] != '') ? '/id("'.$parsed['locator'].'")' : '';
-											$context .= ($parsed['query']) ? $parsed['query'] : '';
+											$context .= (($parsed_locator == '') && ($parsed_query == '')) ? '/' : ''; // per errore: un solo & !!!
+											$context .= ($parsed_locator != '') ? '/id("'.$parsed_locator.'")' : '';
+											$context .= ($parsed_query) ? $parsed_query : '';
 											$last_attr = '';
 											$last_val = '';
 											if (preg_match('/\@(\w+)'.WHITESPACES.'*.?'.WHITESPACES.'*='.WHITESPACES.'*"'.WHITESPACES.'*(.*)'.WHITESPACES.'*"'.WHITESPACES.'*/', $context, $matches)) {
@@ -577,21 +580,21 @@
 											$jolly = false;
 											$withHierarchy = false;
 											$withPage = false;
-           if (preg_match('/(\$\(*(.*)\)*)/', $parsed['anchor'], $matchesX)) {
-												$parsed['anchor'] = preg_replace('/'.escapeshellcmd($matchesX[0]).'/', '', $parsed['anchor']);
+           if (preg_match('/(\$\(*(.*)\)*)/', $parsed_anchor, $matchesX)) {
+												$parsed_anchor = preg_replace('/'.escapeshellcmd($matchesX[0]).'/', '', $parsed_anchor);
 												$extenders = explode('&', preg_replace('/[\$\(\)]/', '', $matchesX[0]));
 												$withHierarchy = array_search('hier', $extenders) !== FALSE;
 												$withPage = array_search('page', $extenders) !== FALSE;
 											};
 											if ($asOptions) {
-												if ($parsed['query'] != '') {
+												if ($parsed_query != '') {
 													if (preg_match('/^'.WHITESPACES.'*\@'.WHITESPACES.'*(\w+)'.WHITESPACES.'*\&*\|*'.WHITESPACES.'*\='.WHITESPACES.'*\".*\"'.WHITESPACES.'*$/', $context, $matchesX) ) {
 															$forced = true;
 															$context = '//*['.$context.']';
 													};
 												};
 	           switch (true) {
-													case preg_match('/^'.WHITESPACES.'*(\w*)'.WHITESPACES.'*(\@'.WHITESPACES.'*\"'.WHITESPACES.'*((\w|\*)*)'.WHITESPACES.'*(\+*)'.WHITESPACES.'*(.*)'.WHITESPACES.'*\"'.WHITESPACES.'*(\;'.WHITESPACES.'*(\-*\d+)'.WHITESPACES.'*)?)/', $parsed['anchor'], $matches):
+													case preg_match('/^'.WHITESPACES.'*(\w*)'.WHITESPACES.'*(\@'.WHITESPACES.'*\"'.WHITESPACES.'*((\w|\*)*)'.WHITESPACES.'*(\+*)'.WHITESPACES.'*(.*)'.WHITESPACES.'*\"'.WHITESPACES.'*(\;'.WHITESPACES.'*(\-*\d+)'.WHITESPACES.'*)?)/', $parsed_anchor, $matches):
               $tag = isset($matches[1]) ? $matches[1] : $tag;
 														$startAt = isset($matches[3]) ? $matches[3] : $startAt;
 														$upTo = isset($matches[5]) ? (($matches[5] != '') ? $startAt : '') : '';
@@ -612,12 +615,12 @@
 														$startAt = 1;
 													break;
 													default:
-														if ($parsed['query'] != '') {
+														if ($parsed_query != '') {
 													 if ($forced) {
 														  $context .= '/@'.$matchesX[1];
 														 };
 														} else {
-															$context .= ($parsed['locator'] == '') ? 'tei:div[.//text()]' : '';
+															$context .= ($parsed_locator == '') ? 'tei:div[.//text()]' : '';
 														};
 													// $context = '/'.$context;
 													break;
@@ -625,7 +628,7 @@
 											} else {
 												switch (true) {
 												 // #divX : la <div> di livello assoluto X che contiene il nodo
-													case preg_match('/^'.WHITESPACES.'*(div)'.WHITESPACES.'*(\-*\d+)/', $parsed['anchor'], $matches):
+													case preg_match('/^'.WHITESPACES.'*(div)'.WHITESPACES.'*(\-*\d+)/', $parsed_anchor, $matches):
 														$tag = isset($matches[1]) ? $matches[1] : $tag;
 														$absLevel = isset($matches[2]) ? abs(strval($matches[2])) : '';
 														$context .= '/ancestor-or-self::tei:'.$tag.'[count(ancestor::tei:'.$tag.')='.($absLevel-1).']'.'[child::text() or child::node()]';
@@ -633,27 +636,27 @@
  											 // #div : le <div> children del nodo
 												 // #div@X
 												 // #div@X;Z
-													case preg_match('/^'.WHITESPACES.'*(div)'.WHITESPACES.'*($|\@'.WHITESPACES.'*(\-*\d+)'.WHITESPACES.'*(\;'.WHITESPACES.'*(\-*\d+))?)/', $parsed['anchor'], $matches):
+													case preg_match('/^'.WHITESPACES.'*(div)'.WHITESPACES.'*($|\@'.WHITESPACES.'*(\-*\d+)'.WHITESPACES.'*(\;'.WHITESPACES.'*(\-*\d+))?)/', $parsed_anchor, $matches):
 														$tag = isset($matches[1]) ? $matches[1] : $tag;
 														$startAt =  isset($matches[3]) ? abs(intval($matches[3])) : $startAt;
 														$howMany =  isset($matches[5]) ? intval($matches[5]) : (($startAt) ? 1 : $startAt);
-														$context .= (($parsed['locator'] != '') | ($parsed['query'] != '')) ? '/' : '';
+														$context .= (($parsed_locator != '') | ($parsed_query != '')) ? '/' : '';
 														$context .= 'tei:'.$tag.'[child::text() or child::node()]';
 													break;
  											 // #pb : le <pb> children del nodo
 												 // #pb@X
 												 // #pb@X;Z
-													case preg_match('/^'.WHITESPACES.'*(pb)'.WHITESPACES.'*($|\@'.WHITESPACES.'*(\-*\d+)'.WHITESPACES.'*(\;'.WHITESPACES.'*(\-*\d+))?)/', $parsed['anchor'], $matches):
+													case preg_match('/^'.WHITESPACES.'*(pb)'.WHITESPACES.'*($|\@'.WHITESPACES.'*(\-*\d+)'.WHITESPACES.'*(\;'.WHITESPACES.'*(\-*\d+))?)/', $parsed_anchor, $matches):
 														$tag = isset($matches[1]) ? $matches[1] : $tag;
 														$startAt =  isset($matches[3]) ? abs(intval($matches[3])) : $startAt;
 														$howMany =  isset($matches[5]) ? intval($matches[5]) : (($startAt) ? 1 : $startAt);
-														$context .= (($parsed['locator'] != '') | ($parsed['query'] != '')) ? '/' : '';
+														$context .= (($parsed_locator != '') | ($parsed_query != '')) ? '/' : '';
 														$context .= '/tei:'.$tag.'[not(@ed = "fake")]';
 													break;
 													default:
-														if ($parsed['query'] != '') {
+														if ($parsed_query != '') {
 														} else {
-															$context .= ($parsed['locator'] == '') ? 'tei:div[child::text() or child::node()]' : '';
+															$context .= ($parsed_locator == '') ? 'tei:div[child::text() or child::node()]' : '';
 														};
 													break;
 												};
@@ -715,7 +718,7 @@
 // $this->_getDebug($context);
 // $this->_getDebug($xquery);
 											if ($this->_debug && NOVEOPIU) {
-												$xq = str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'xquery_debug.xq';
+												$xq = str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'xquery_dbg'.basename($xml_resource).'.xq';
 												@file_put_contents($xq, DCTL_XQUERY_BASE.str_ireplace('  ', ' '."\n".' ', $xquery));
 											};
 											$result = $this->_db->xquery(DCTL_XQUERY_BASE.$xquery);
@@ -728,7 +731,7 @@
 											$this->_get_package_record ($justRefs, $xml_resource, &$resList[$key4package]);
 											$resList[$key4package]['xquery'] = htmlentities($context);
 											if ($resList[$key4package]['ref'] != '') {
-												if ($parsed['locator'] != '') $resList[$key4package]['ref'] .= DB_PATH_SEPARATOR.$parsed['locator'];
+												if ($parsed_locator != '') $resList[$key4package]['ref'] .= DB_PATH_SEPARATOR.$parsed_locator;
 											};
 // 											if (preg_match('/\w+/', $db_resource)) {
 //             $resList[$key4package]['check'] = preg_match_all('/\<\w+/', $db_resource, $matches);
@@ -835,7 +838,7 @@
 						};
 						$xquery .= "\n".' return ';
 						$xquery .= "\n".' if ($target = "'.$fullItem.'") then () else ';
-						if (preg_match('/^_\w{3}$/', $parsed['query'])) { // $parsed['anchor']
+						if (preg_match('/^_\w{3}$/', $parsed['query'])) {
 							$xquery .= "\n".' if (not(substring-before($id[4], "'.$parsed['query'].'"))) then () else ';
 						};
 						$xquery .= "\n".' ("<anchor target=&quot;", $target, "&quot; status=&quot;", ';

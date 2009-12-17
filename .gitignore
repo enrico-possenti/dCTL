@@ -3,8 +3,9 @@ apps/_shared/exist.Admin.wsdl
 apps/_shared/exist.Query.wsdl
 apps/_shared/exist.pid
 apps/commodoro/core.bkp.zip
-apps/commodoro/xquery_debug.xq
-apps/engine/xquery_debug.xq
+apps/commodoro/xquery_dbg*.xq
+docs/
+libs/
 *~
 .htaccess
 .htpasswd

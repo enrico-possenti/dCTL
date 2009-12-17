@@ -10,6 +10,13 @@
  +----------------------------------------------------------------------+
 */
 
+Version 0.8.00RC4 (2009-12-17)
+>[*]
+ Concluso IMT.
+ Correzioni al "core.php" per errori in $(hier).
+ Correzioni al "publisher" per errori in $(hier).
+ <pb fake/> ora ha solo @n e @label.
+
 Version 0.8.00RC3 (2009-12-17)
 >[*]
  Concluso IMT (Enrico G deve fornire l'ultima versione).
