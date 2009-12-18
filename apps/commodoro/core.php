@@ -718,7 +718,7 @@
 // $this->_getDebug($context);
 // $this->_getDebug($xquery);
 											if ($this->_debug && NOVEOPIU) {
-												$xq = str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'xquery_dbg'.basename($xml_resource).'.xq';
+												$xq = DCTL_TMP_PATH.'xquery_dbg'.basename($xml_resource).'.xq';
 												@file_put_contents($xq, DCTL_XQUERY_BASE.str_ireplace('  ', ' '."\n".' ', $xquery));
 											};
 											$result = $this->_db->xquery(DCTL_XQUERY_BASE.$xquery);

@@ -23,8 +23,19 @@ function loadXML($thePath) {
  return $xml_resource;
 };
 /* - - - - - - - - - - - - - - - - - */
-function forceUTF8 ($fullsrc) {
+function checkUTF8Encoding ( $string, $string_encoding ) {
+	$fs = $string_encoding == 'UTF-8' ? 'UTF-32' : $string_encoding;
+	$ts = $string_encoding == 'UTF-32' ? 'UTF-8' : $string_encoding;
+	return $string === mb_convert_encoding ( mb_convert_encoding ( $string, $fs, $ts ), $ts, $fs );
+};
+/* - - - - - - - - - - - - - - - - - */
+function encodeToUTF8($string) {
+ return mb_convert_encoding($string, "UTF-8", mb_detect_encoding($string, "UTF-8, ISO-8859-1, ISO-8859-15", true));
+};
+/* - - - - - - - - - - - - - - - - - */
+function forceUTF8 ($fullsrc, $fPath="", $dumpIt=true) {
 	if (is_file($fullsrc)) {
+	 $fPath = $fullsrc;
 	 $content = file_get_contents($fullsrc);
 	 $src = dirname($fullsrc).SYS_PATH_SEPARATOR.basename($fullsrc);
 	} else {
@@ -32,13 +43,15 @@ function forceUTF8 ($fullsrc) {
 	 $src = substr($fullsrc, 0, 30);
 	};
 	$encoding = mb_detect_encoding($content, 'UTF-8, ISO-8859-1, ASCII, UTF-7', true);
+ $contentUTF8 = $content;
+ // TEST #1
  switch ($encoding) {
 		case 'UTF-8':
 		 break;
 		default:
-			$content = iconv($encoding, "UTF-8", $content);
+			$contentUTF8 = iconv($encoding, "UTF-8", $content);
 // 			if (is_file($fullsrc)) {
-dump('UTF-8 error in "'.$src.'": seems to be '.$encoding.'... please check and fix!');
+   if ($dumpIt) dump('#1) UTF-8 warning in "'.$src.'" '.($fPath?('('.basename($fPath).')'):'').': seems to be '.$encoding.'... please check and fix!');
 // 				$chown = fileowner($fullsrc);
 // 				$chgrp = filegroup($fullsrc);
 // 				$@chmod = fileperms($fullsrc);
@@ -49,7 +62,12 @@ dump('UTF-8 error in "'.$src.'": seems to be '.$encoding.'... please check and f
 // 			};
 			break;
 	};
-	return $content;
+// TEST #2
+// 	if (! checkUTF8Encoding($content, 'UTF-8')) {
+// 		dump('#2) UTF-8 warning in "'.$src.'" '.($fPath?('('.basename($fPath).')'):'').': seems to be '.$encoding.'... please check and fix!');
+//  }
+
+	return $contentUTF8;
 };
 /* - - - - - - - - - - - - - - - - - */
 

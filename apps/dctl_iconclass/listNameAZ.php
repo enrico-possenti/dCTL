@@ -20,7 +20,7 @@ $connection = dctl_sql_connect(DCTL_DB_ICONCLASS);
 	 echo '</div>';
 	 echo '<br />';
 
- echo '<h3>Consulta la banca dati Iconclass...<a class="external" href="http://www.iconclass.nl/libertas/ic" title="">www.iconclass.nl</a></h3>';
+ echo '<h3>Consulta la banca dati Iconclass...<a class="external" href="http://www.iconclass.org/rkd/9/" title="">http://www.iconclass.org</a></h3>';
 
 		echo '<table>';
 		echo '<tr>';
@@ -52,7 +52,7 @@ $connection = dctl_sql_connect(DCTL_DB_ICONCLASS);
 			echo '<td>';
 			echo '<strong>'.$row['iconclass'].'</strong>';
 			echo '<a class="external" title="vedi Iconclass" ';
-			echo 'href="http://www.iconclass.nl/libertas/ic?style=notationbb.xsl&task=getnotation&taal=it&datum='.convert2ic($row['iconclass']).'"';
+			echo 'href="http://www.iconclass.org/rkd/9/?q_s=1&amp;lang=it&amp;show_notations=1&amp;q='.convert2ic($row['iconclass']).'"';
 			echo '>';
 			echo '</a>';
 			echo '</td>';

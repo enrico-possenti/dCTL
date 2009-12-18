@@ -36,7 +36,7 @@ class exist {
 				$this->_user = $user;
 				$this->_password = $password;
 				$this->_wsdl = $wsdl;
-	   $this->_pidfn = str_replace('//','/',dirname(__FILE__).'/')."exist.pid";
+	   $this->_pidfn = DCTL_TMP_PATH."exist.pid";
 	   $this->_session = NULL;
 	   $this->_pSession = $persistentConnection;
 	   if ($this->_pSession) {

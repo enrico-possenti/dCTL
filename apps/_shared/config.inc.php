@@ -32,7 +32,7 @@ ini_set('post_max_size', '100M');
 define('CHMOD', 0775);
 ini_set('mbstring.language', 'Neutral');
 ini_set('mbstring.internal_encoding', 'UTF-8');
-ini_set('mbstring.detect_order', 'auto');
+ini_set('mbstring.detect_order', 'UTF-8, ISO-8859-1, ASCII, UTF-7'); //'auto'
 ini_set('mbstring.strict_detection', true);
 define('DCTL_XML_LOADER', LIBXML_DTDLOAD | LIBXML_DTDATTR | LIBXML_NOENT | LIBXML_NSCLEAN | LIBXML_COMPACT | LIBXML_NOCDATA); //  LIBXML_DTDVALID |
 define('WHITESPACES', '[ \t\r\n]');
@@ -68,6 +68,9 @@ define('DCTL_APPS_PATH', FS_BASE_PATH.'apps'.SYS_PATH_SEPARATOR);
 define('DCTL_TOOL_PATH', ($_DCTL_TOOL_FOLDER ? $_DCTL_TOOL_FOLDER : (FS_BASE_PATH.'tool'.SYS_PATH_SEPARATOR.'exist'.SYS_PATH_SEPARATOR)));
 define('DCTL_REPO_PATH', ($_DCTL_REPO_FOLDER ? $_DCTL_REPO_FOLDER : (FS_BASE_PATH.'data'.SYS_PATH_SEPARATOR)));
 define('DCTL_DATA_PATH', ($_DCTL_DATA_FOLDER ? $_DCTL_DATA_FOLDER : (FS_BASE_PATH.'data'.SYS_PATH_SEPARATOR)));
+define('DCTL_TMP_PATH', DCTL_APPS_PATH.'tmp'.SYS_PATH_SEPARATOR);
+if(!is_dir(DCTL_TMP_PATH)) mkdir(DCTL_TMP_PATH, CHMOD);
+@chmod(DCTL_TMP_PATH, CHMOD);
 // + - - - - - - - - - - - - - - - - - -
 // | DATA (SOURCE) ENVIRONMENT
 define('DCTL_PROJECT_PATH', DCTL_DATA_PATH.'dctl-project'.SYS_PATH_SEPARATOR);

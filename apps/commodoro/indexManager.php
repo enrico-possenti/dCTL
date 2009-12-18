@@ -251,7 +251,7 @@ if ($isCreateCollection) {
     $contents = cleanUpIndentation(file_get_contents($header));
     $contents = str_ireplace('collection_id ""', 'collection_id "'.$collection_id.'"', $contents);
     $contents = str_ireplace('collection_short ""', 'collection_short "'.$collection_short.'"', $contents);
-    if (file_put_contents($header, forceUTF8($contents)) !== FALSE) {
+    if (file_put_contents($header, forceUTF8($contents, $header)) !== FALSE) {
 					@chmod($header, CHMOD);
      getCollectionList(DCTL_PROJECT_PATH, &$collectionList, true);
      $prosecute = array_search($collection_short, $collectionList['collection_short']) !== FALSE;
@@ -293,7 +293,7 @@ if ($isSaveCollection) {
     };
    };
    doBackup($header2);
-   if (file_put_contents($header2, forceUTF8($contents)) !== FALSE) {
+   if (file_put_contents($header2, forceUTF8($contents, $header2)) !== FALSE) {
 				@chmod($header2, CHMOD);
     $resultMsg .= '<span class="ok">Ho aggiornato le informazioni per "'.$collection_short.'"</span><br />';
    } else {
@@ -486,7 +486,7 @@ if ($prosecute) {
 						$contents = cleanUpIndentation(file_get_contents($header));
 						$contents = str_ireplace('package_id ""', 'package_id "'.$package_id.'"', $contents);
 						$contents = str_ireplace('package_short ""', 'package_short "'.$package_short.'"', $contents);
-						if (file_put_contents($header, forceUTF8($contents)) !== FALSE) {
+						if (file_put_contents($header, forceUTF8($contents, $header)) !== FALSE) {
 							@chmod($header, CHMOD);
 							getPackageList($collectionPath, &$packageList, true);
 							$prosecute = array_search($package_short, $packageList['package_short']) !== FALSE;
@@ -540,7 +540,7 @@ if ($prosecute) {
 						};
 					};
 					doBackup($header2);
-					if (file_put_contents($header2, forceUTF8($contents)) !== FALSE) {
+					if (file_put_contents($header2, forceUTF8($contents, $header2)) !== FALSE) {
 					 @chmod($header2, CHMOD);
 						$resultMsg .= '<span class="ok">Ho aggiornato le informazioni per "'.$package_short.'"</span><br />';
 					} else {

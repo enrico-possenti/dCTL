@@ -2311,7 +2311,7 @@ function publish_SendToXDB ($exist, $collName, $packName, $partName, &$operation
 																		$text = str_ireplace('xmlns=""','', $text);
 																		try {
 																			$fd = fopen ($fulldst, "wb");
-																			$out = fwrite ($fd, forceUTF8($text));
+																			$out = fwrite ($fd, forceUTF8($text, $fulldst));
 																			fclose ($fd);
 																			@chmod($fulldst, CHMOD);
 																			$operationsPublish .= 'ok<br/>';
@@ -2648,7 +2648,7 @@ function get_dbName ($theKey, $theAttribute) {
 			};
 		};
 	};
-return strval(ucfirst(trim($text)));
+ return forceUTF8(strval(ucfirst(trim($text))), '', false);
 };
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 function get_dbIconclass ($theKey, $theAttribute) {
@@ -2657,23 +2657,23 @@ function get_dbIconclass ($theKey, $theAttribute) {
 	$text = '';
 	if ($theKey != '') {
 		$query = 'SELECT  * FROM tNAME WHERE tNAME.id="'.$theKey.'"';
-$result = mysql_query($query, $mysql_dbIconclass) or die ("Error in query: $query.  ".mysql_error());
-if (mysql_num_rows($result) == 1) {
-	$row = mysql_fetch_array($result, MYSQL_ASSOC);
-	switch ($theAttribute) {
-		case 'name':
-			$text = $row['name'];
-			break;
-		case 'iconclass':
-			$text = $row['iconclass'];
-			break;
-		default:
-			$text = '???';
-			break;
+		$result = mysql_query($query, $mysql_dbIconclass) or die ("Error in query: $query.  ".mysql_error());
+		if (mysql_num_rows($result) == 1) {
+			$row = mysql_fetch_array($result, MYSQL_ASSOC);
+			switch ($theAttribute) {
+				case 'name':
+					$text = $row['name'];
+					break;
+				case 'iconclass':
+					$text = $row['iconclass'];
+					break;
+				default:
+					$text = '???';
+					break;
+			};
+		};
 	};
-};
-	};
-return strval(ucfirst(trim($text)));
+	return forceUTF8(strval(ucfirst(trim($text))), '', false);
 };
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
