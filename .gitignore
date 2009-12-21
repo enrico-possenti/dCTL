@@ -2,6 +2,7 @@ apps/config.inc.php
 apps/tmp/
 
 dev-*/
+nbproject/
 
 *~
 .htaccess

@@ -10,6 +10,11 @@
  +----------------------------------------------------------------------+
 */
 
+Version 0.8.00RC5 (2009-12-21)
+>[Core]
+	Aggiunto strip out di <pb ed="fake" />.
+	Modificata getMaps(): ora supporta anche MEDIA_URI per avere le mappature su XML_URI.
+
 Version 0.8.00RC4 (+1) (2009-12-18)
 >[*]
 	Creato path "apps/tmp/".
