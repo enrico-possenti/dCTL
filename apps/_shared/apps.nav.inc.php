@@ -23,10 +23,17 @@ if (!defined('_INCLUDE')) die('"'.__FILE__.'" not executable... me, i abort.');
 
 	if (NOVEOPIU) {
 
-		$resultText .= '<h2>Sviluppo</h2><ul class="menu">
-	<li><a target="trac" class="external" href="http://net7sviluppo.com/trac/ctl/wiki" title="trac">trac::net7</a></li>
- <li><a target="simone1" class="external" href="../../../dctl-doni/test/prova.php" title="Accedi">test.local</a></li>
-<li><a target="simone2" class="external" href="../../../dctl-doni/frontend.html" title="Accedi">frontend.local</a></li>
+		$resultText .= '<h2>Locale</h2><ul class="menu">
+ <li><a target="simone.local.1" class="external" href="../../../dctl-doni/test/prova.php" title="Accedi">Test</a></li>
+ <li><a target="simone.local.2" class="external" href="../../../dctl-doni/frontend.html" title="Accedi">Front-End</a></li>
+ <li><a target="mysql.local" class="external" href="http://localhost/MAMP/phpmyadmin/" title="Accedi">MySQL</a></li>
+
+</ul>
+';
+		$resultText .= '<h2>Remote</h2><ul class="menu">
+	<li><a target="trac.remote" class="external" href="http://net7sviluppo.com/trac/ctl/wiki" title="trac">trac::net7</a></li>
+	<li><a target="git.remote" class="external" href="http://github.com/noveopiu/dCTL" title="git">git::github</a></li>
+ <li><a target="simone.remote.1" class="external" href="http://dev.doni.netseven.it/test/prova.php" title="Accedi">Test::net7</a></li>
 </ul>
 ';
 		$resultText .= '<br />';

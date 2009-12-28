@@ -583,6 +583,7 @@ class dCTL {
 												$jolly = false;
 												$withHierarchy = false;
 												$withPage = false;
+												$atPage = false;
 												if (preg_match('/(\$\(*(.*)\)*)/', $parsed_anchor, $matchesX)) {
 													$parsed_anchor = preg_replace('/'.escapeshellcmd($matchesX[0]).'/', '', $parsed_anchor);
 													$extenders = explode('&', preg_replace('/[\$\(\)]/', '', $matchesX[0]));
@@ -630,6 +631,10 @@ class dCTL {
 													};
 												} else {
 													switch (true) {
+														// #page : la <pb> precedente il nodo
+														case preg_match('/^'.WHITESPACES.'*(page)'.WHITESPACES.'*/', $parsed_anchor, $matches):
+														 $atPage = true;
+															break;
 														// #divX : la <div> di livello assoluto X che contiene il nodo
 														case preg_match('/^'.WHITESPACES.'*(div)'.WHITESPACES.'*(\-*\d+)/', $parsed_anchor, $matches):
 															$tag = isset($matches[1]) ? $matches[1] : $tag;
@@ -656,6 +661,7 @@ class dCTL {
 															$context .= (($parsed_locator != '') | ($parsed_query != '')) ? '/' : '';
 															$context .= '/tei:'.$tag.'[not(@ed = "fake")]';
 															break;
+														//
 														default:
 															if ($parsed_query != '') {
 															} else {
@@ -699,10 +705,13 @@ class dCTL {
 													$xquery .= "\n".' $base/*'.$context.' ';
 													if ($howMany) $xquery .= ', '.$startAt.', '.$howMany.' ) ';
 													if ($justRefs) {
-														$xquery .= "\n".' let $kwic := if ($node//text() != "") then text:kwic-display($node//text(), 80, $highlight, ()) else text:kwic-display(subsequence($node/parent::*/descendant::text(), 1)[. >> $node][position() < 5], 80, $highlight, ()) ';
+														$xquery .= "\n".' let $kwic := if ($node/descendant::text() != "") then text:kwic-display($node/descendant::node()[not(self::tei:figDesc)]/descendant::text(), 80, $highlight, ()) else text:kwic-display(subsequence($node/parent::node()[not(self::tei:figDesc)]/descendant::text(), 1)[. >> $node][position() < 5], 80, $highlight, ()) ';
+														if ($atPage) {
+															$xquery .= "\n".' let $node := tei:getPage($node, 2) ';
+														};
 														$xquery .= "\n".' let $nodeT := element {node-name($node)} {$node/@*, text {$kwic}} ';
 														if ($withPage) {
-															$xquery .= "\n".' let $nodeT := functx:add-attributes($nodeT, xs:QName("synch"), tei:getPage($node, 1)) ';
+														 $xquery .= "\n".' let $nodeT := functx:add-attributes($nodeT, xs:QName("synch"), tei:getPage($node, 1)) ';
 														};
 														$xquery .= "\n".' return ';
 														if ($withHierarchy) {
@@ -712,7 +721,7 @@ class dCTL {
 														};
 													} else {
 														$xquery .= "\n".' return ';
-														$xquery .= "\n".' if (not($base//dctl:*[1])) ';
+														$xquery .= "\n".' if (not($base/descendant::dctl:*[1])) ';
 														$xquery .= "\n".' then tei:getPage($node, 0) ';
 														$xquery .= "\n".' else tei:getBlock($node) ';
 													};
@@ -729,6 +738,9 @@ class dCTL {
 												$resultXML = (array) $result["XML"];
 												foreach ($resultXML as $node) {
 													$node = preg_replace('/<pb.*ed\s*=\s*".*fake.*".*>/', '', $node); // strip out <pb ed="fake" />
+													if ($withHierarchy) {
+													 $node = preg_replace('/(<div.*)xml:id(\s*=\s*".*".*>)/', '$1sameAs$2', $node); // strip out <pb ed="fake" />
+													};
 													$db_resource .= $node;
 												};
 												// $this->_getDebug($db_resource);

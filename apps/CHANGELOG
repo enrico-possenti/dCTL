@@ -9,6 +9,12 @@
  | A changes log file                                                   |
  +----------------------------------------------------------------------+
 */
+Version 0.8.00RC6 (2009-12-27)
+>[Core]
+	Eliminato <figDesc> dai risultati KWIC.
+	Corretta presenza di riferimenti a <pb ed="fake" /> in tei:getPage (xquery).
+	Sostituiti @xml:id ripetuti in $(hier) con @sameAs.
+	Aggiunto #page per ottenere il <pb/> di un nodo.
 
 Version 0.8.00RC5 (2009-12-21)
 >[Core]

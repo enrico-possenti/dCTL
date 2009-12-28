@@ -55,12 +55,16 @@ declare function tei:getPage($node as node(), $justRefs as xs:integer) as node()
 				 then $parent
 		   (: no, becca il blocco del blocco :)
 				 else $parent/ancestor::tei:div[count((./descendant::tei:pb[. >> $node])) > 0][1]
-			let $ms1 := (subsequence($parent/descendant::tei:pb, 1)[. << $node])[position()=last()]
+			let $ms1 := (subsequence($parent/descendant::tei:pb[not(string(attribute::ed) = "fake")], 1)[. << $node])[position()=last()]
 			let $ms1 := if ($ms1) then $ms1 else $parent/descendant::tei:pb[1]
 			return
 			if ($justRefs = 1)
 				then $ms1/@xml:id
-				else tei:getFullPage($ms1, $parent)
+			else
+			 if ($justRefs = 2)
+				 then $ms1 (: usa solo $ms1 per <pb/> :)
+				else
+				 tei:getFullPage($ms1, $parent)
 };
 
 declare function tei:getBlock($node as node()) as node() {
