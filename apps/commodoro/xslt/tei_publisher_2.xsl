@@ -45,11 +45,11 @@
 			<xsl:when test="ancestor::tei:text">
 				<!-- - - - - - - - - - - - - - - - -->
 				<!-- ADD A FAKE SPACE FOR READABILITY -->
-				<xsl:if
+		<!--		<xsl:if
 					test="(local-name(.)='lb' and not(local-name(./preceding-sibling::node()[1])='milestone')) or      (local-name(.)='pb' and not(local-name(./preceding-sibling::node()[1])='milestone'))">
 					<xsl:text> </xsl:text>
 				</xsl:if>
-				<!-- - - - - - - - - - - - - - - - -->
+		-->		<!-- - - - - - - - - - - - - - - - -->
 				<xsl:choose>
 					<xsl:when test="(local-name(.)='id') and not(node())">
 						<xsl:attribute name="xml:id">
@@ -165,16 +165,17 @@
 									<xsl:apply-templates select="@*" />
 									<!-- - - - - - - - - - - - - - - - -->
 									<!-- ADD A FAKE SPACE FOR READABILITY -->
-									<xsl:if
+		<!--							<xsl:if
 										test="           (local-name(.)='p') or           (local-name(.)='head') or           (local-name(.)='div')">
 										<xsl:text> </xsl:text>
 									</xsl:if>
-									<!-- - - - - - - - - - - - - - - - -->
+	-->								<!-- - - - - - - - - - - - - - - - -->
 									<xsl:apply-templates select="node()" />
 									<!-- - - - - - - - - - - - - - - - -->
 									<!-- ADD A FAKE SPACE FOR READABILITY -->
 									<xsl:if
-										test="           (local-name(.)='p') or           (local-name(.)='head') or           (local-name(.)='div')">
+										test="self::tei:p or self::tei:div or self::tei:head or self::tei:name or self::tei:rs or
+										self::tei:figure">
 										<xsl:text> </xsl:text>
 									</xsl:if>
 									<!-- - - - - - - - - - - - - - - - -->

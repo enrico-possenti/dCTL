@@ -705,7 +705,7 @@ class dCTL {
 													$xquery .= "\n".' $base/*'.$context.' ';
 													if ($howMany) $xquery .= ', '.$startAt.', '.$howMany.' ) ';
 													if ($justRefs) {
-														$xquery .= "\n".' let $kwic := if ($node/descendant::text() != "") then text:kwic-display($node/descendant::node()[not(self::tei:figDesc)]/descendant::text(), 80, $highlight, ()) else text:kwic-display(subsequence($node/parent::node()[not(self::tei:figDesc)]/descendant::text(), 1)[. >> $node][position() < 5], 80, $highlight, ()) ';
+														$xquery .= "\n".' let $kwic := if ($node//text() != "") then text:kwic-display($node/descendant::text()[not(self::tei:figDesc)], 80, $highlight, ()) else text:kwic-display(subsequence($node/parent::*/descendant::text()[not(self::tei:figDesc)], 1)[. >> $node][position() < 5], 80, $highlight, ()) ';
 														if ($atPage) {
 															$xquery .= "\n".' let $node := tei:getPage($node, 2) ';
 														};

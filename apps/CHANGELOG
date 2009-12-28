@@ -9,6 +9,11 @@
  | A changes log file                                                   |
  +----------------------------------------------------------------------+
 */
+Version 0.8.00RC6 (+1) (2009-12-28)
+>[Core]
+ Aggiunto spazi correttivi in tei_publisher_2.xsl.
+ Corretta costruzione del KWIC.
+
 Version 0.8.00RC6 (2009-12-27)
 >[Core]
 	Eliminato <figDesc> dai risultati KWIC.
