@@ -10,9 +10,25 @@ function initializeUser ($user_id) {
 
  $user_name = '';
  switch ($user_id) {
+  case 'noveopiu':
+			$user_name = 'NoveOPiu';
+			$user_kind = DCTL_USER_GURU;
+			$sql_user = 'ctl';
+			$sql_pswd = 'sirena';
+			$xmldb_user = DCTL_XMLDB_USER_ADMIN;
+			$xmldb_pswd = DCTL_XMLDB_PSWD_ADMIN;
+   break;
+  case 'net7':
+			$user_name = 'Net7';
+			$user_kind = DCTL_USER_ADMIN;
+			$sql_user = 'ctl';
+			$sql_pswd = 'sirena';
+			$xmldb_user = DCTL_XMLDB_USER_ADMIN;
+			$xmldb_pswd = DCTL_XMLDB_PSWD_ADMIN;
+   break;
   case 'ctl':
 			$user_name = 'Amministratore';
-			$user_kind = DCTL_USER_GURU;
+			$user_kind = DCTL_USER_ADMIN;
 			$sql_user = 'ctl';
 			$sql_pswd = 'sirena';
 			$xmldb_user = DCTL_XMLDB_USER_ADMIN;

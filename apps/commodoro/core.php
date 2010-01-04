@@ -598,7 +598,7 @@ class dCTL {
 														};
 													};
 													switch (true) {
-														case preg_match('/^'.WHITESPACES.'*(\w*)'.WHITESPACES.'*(\@'.WHITESPACES.'*\"'.WHITESPACES.'*((\w|\*)*)'.WHITESPACES.'*(\+*)'.WHITESPACES.'*(.*)'.WHITESPACES.'*\"'.WHITESPACES.'*(\;'.WHITESPACES.'*(\-*\d+)'.WHITESPACES.'*)?)/', $parsed_anchor, $matches):
+														case preg_match('/^'.WHITESPACES.'*(\w*|\.)'.WHITESPACES.'*(\@'.WHITESPACES.'*\"'.WHITESPACES.'*((\w|\W|\*)*)'.WHITESPACES.'*(\+*)'.WHITESPACES.'*(.*)'.WHITESPACES.'*\"'.WHITESPACES.'*(\;'.WHITESPACES.'*(\-*\d+)'.WHITESPACES.'*)?)/', $parsed_anchor, $matches):
 															$tag = isset($matches[1]) ? $matches[1] : $tag;
 															$startAt = isset($matches[3]) ? $matches[3] : $startAt;
 															$upTo = isset($matches[5]) ? (($matches[5] != '') ? $startAt : '') : '';
@@ -613,9 +613,16 @@ class dCTL {
 																if (!isset($matches[8])) $howMany = '';
 																++$jolly;
 															};
-															$context .= '[lower-case(@'.$tag.') >= "'.strtolower($startAt).'"]';
-															if ($upTo != '') $context .= '[matches(@'.$tag.', "^'.$upTo.'", "si")]';
-															$context .= '/@'.$tag;
+															if ($tag == '.') {
+															 $tag2 = '/text()';
+															 $tag = './/text()[normalize-space(.) != ""][position() = 1]';
+															} else {
+															 $tag2 = '/'.$tag;
+															 $tag = '@'.$tag;
+															};
+															$context .= '[lower-case('.$tag.') >= "'.strtolower($startAt).'"]';
+															if ($upTo != '') $context .= '[matches('.$tag.', "^'.$upTo.'", "si")]';
+															$context .= '/'.$tag2;
 															$startAt = 1;
 															break;
 														default:
