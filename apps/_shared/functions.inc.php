@@ -150,6 +150,9 @@ function dctl_xmldb_disconnect ($exist = FALSE, $forceClose = false) {
 };
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 function dctl_xmldb_connect ($mode = 'query', $persistent = false) {
+//
+$persistent = false; // force to check if eXist works fine without pid
+//
 $exist = FALSE;
 require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'..'.SYS_PATH_SEPARATOR.'_shared'.SYS_PATH_SEPARATOR.'exist-api.inc.php');
  try {

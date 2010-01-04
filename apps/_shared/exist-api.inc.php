@@ -140,22 +140,22 @@ class exist {
   }
 		// +----------------------------------------------------------------------+
   public function disconnect($forceClose = false) {
-	  if ( $this->getError() ) return false;
-				$forceClose = ($this->_pSession) ? $forceClose : true;
-				if ($forceClose) {
-					try {
-						$parameters = array('sessionId' => $this->_session);
-						$this->_session = $this->soapCall('disconnect', $parameters);
-		    if ($this->_pSession) {
-	      if (is_file($this->_pidfn)) {
-						  if (@file_get_contents($this->_pidfn) == $this->pid) unlink($this->_pidfn);
-	 					};
+	  if ( $this->getError()) return false;
+			$forceClose = ($this->_pSession) ? $forceClose : true;
+			if ($forceClose) {
+				try {
+					$parameters = array('sessionId' => $this->_session);
+					$this->_session = $this->soapCall('disconnect', $parameters);
+					if ($this->_pSession) {
+						if (is_file($this->_pidfn)) {
+							if (@file_get_contents($this->_pidfn) == $this->pid) unlink($this->_pidfn);
 						};
-				 $this->pid = $this->_session;
-					} catch( SoapFault $e ) {
-						$this->setError($e->faultstring);
 					};
+				$this->pid = $this->_session;
+				} catch( SoapFault $e ) {
+					$this->setError($e->faultstring);
 				};
+			};
   }
 		// +----------------------------------------------------------------------+
 		// | Query.wsdl (http://exist.sourceforge.net/api/org/exist/soap/Query.html)

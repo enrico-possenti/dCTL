@@ -9,6 +9,13 @@
  | A changes log file                                                   |
  +----------------------------------------------------------------------+
 */
+Version 0.8.00RC7 (2010-01-04)
+>[Core]
+ Eliminate connessioni persistenti a eXist, non funzionano bene.
+ Corretta getOptions() per il contenuto.
+ Aggiunto escapeshellcmd() in getOptions().
+ Modificato $kwic in $chunk.
+
 Version 0.8.00RC6 (+1) (2009-12-28)
 >[Core]
  Aggiunto spazi correttivi in tei_publisher_2.xsl.

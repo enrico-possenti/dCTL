@@ -12,7 +12,6 @@ $isInclude = TRUE;
 	*  @version   $Id: core.php 2009-12-05 noveopiu $
 	*/
 // +----------------------------------------------------------------------+
-// define('CORE_VERSION', '0.7.01');
 // $Id: core.php,v 0.x 2009/11/30 $
 /**
 	* dCTL class provides a way to perform queries on an XML database of
@@ -185,6 +184,7 @@ class dCTL {
 	}
 	// +----------------------------------------------------------------------+
 	public function __destruct() {
+  dctl_xmldb_disconnect($this->_db);
 		unset($this);
 	}
 	// +----------------------------------------------------------------------+
@@ -609,7 +609,7 @@ class dCTL {
 															$jolly = stripos($startAt, '*');
 															if ($jolly !== false) {
 																$startAt = substr($startAt,0,$jolly);
-																$upTo = $startAt.'.';
+																$upTo = escapeshellcmd($startAt).'.';
 																if (!isset($matches[8])) $howMany = '';
 																++$jolly;
 															};
@@ -678,10 +678,11 @@ class dCTL {
 													$xquery .= "\n".' xmldb:document("';
 													$xquery .= $xml_resource.'")//tei:text/*'.$context.' ';
 //												if ($howMany) $xquery .= "\n".', '.$startAt.', '.$howMany.' ) ';
+													$xquery .= "\n".' let $chunk := $node//text() ';
 													$xquery .= "\n".' return ';
 													$xquery .= "\n".' if ($node/node()) ';
 													$xquery .= "\n".' then ';
-													$xquery .= "\n".' ("<item><", name($node), for $att in $node/@* return (" ", name($att), "=&quot;", $att, "&quot;"), ">", "</", name($node), "></item>") ';
+													$xquery .= "\n".' ("<item><", name($node), for $att in $node/@* return (" ", name($att), "=&quot;", $att, "&quot;"), ">", $chunk, "</", name($node), "></item>") ';
 													$xquery .= "\n".' else ';
 													$xquery .= "\n".' let $what := if (/id($node)) then tokenize(tokenize($node, "'.WHITESPACES.'"), "'.WHITESPACES.'") else $node ';
 													$xquery .= "\n".' for $item in distinct-values( ';
@@ -702,14 +703,25 @@ class dCTL {
 													$xquery .= "\n".' let $base := xmldb:document("'.$xml_resource.'")//tei:text ';
 													$xquery .= "\n".' for $node in ';
 													if ($howMany) $xquery .= ' subsequence(';
-													$xquery .= "\n".' $base/*'.$context.' ';
+													$xquery .= "\n".' $base/*';
+													$xquery .= $context;
+													$xquery .= ' ';
 													if ($howMany) $xquery .= ', '.$startAt.', '.$howMany.' ) ';
 													if ($justRefs) {
-														$xquery .= "\n".' let $kwic := if ($node//text() != "") then text:kwic-display($node/descendant::text()[not(self::tei:figDesc)], 80, $highlight, ()) else text:kwic-display(subsequence($node/parent::*/descendant::text()[not(self::tei:figDesc)], 1)[. >> $node][position() < 5], 80, $highlight, ()) ';
-														if ($atPage) {
+														$xquery .= "\n".' let $chunk := ';
+														$xquery .= ' if (local-name($node) = "figure") then ';
+														$xquery .= ' $node/tei:figDesc/text() else ';
+														$xquery .= ' if (local-name($node) = "graphic") then ';
+														$xquery .= ' $node/parent::tei:figure/tei:figDesc/text() else ';
+														$xquery .= ' if ($node//text() != "") then ';
+														$xquery .= ' $node//text() else '; ///*[not(self::tei:figDesc)]
+														$xquery .= ' if ($node/parent::*//text() != "") then ';
+														$xquery .= ' subsequence($node/parent::*//text(), 1)[. >> $node][position() < 5] else ';
+														$xquery .= ' $node//text() ';
+			 										if ($atPage) {
 															$xquery .= "\n".' let $node := tei:getPage($node, 2) ';
 														};
-														$xquery .= "\n".' let $nodeT := element {node-name($node)} {$node/@*, text {$kwic}} ';
+														$xquery .= "\n".' let $nodeT := element {node-name($node)} {$node/@*, text {text:kwic-display($chunk, 80, $highlight, ())}} ';
 														if ($withPage) {
 														 $xquery .= "\n".' let $nodeT := functx:add-attributes($nodeT, xs:QName("synch"), tei:getPage($node, 1)) ';
 														};
@@ -717,7 +729,7 @@ class dCTL {
 														if ($withHierarchy) {
 															$xquery .= "\n".' tei:getTree($node, $nodeT) ';
 														} else {
-															$xquery .= "\n".' $nodeT  ';
+															$xquery .= "\n".' $nodeT ';
 														};
 													} else {
 														$xquery .= "\n".' return ';
@@ -994,8 +1006,9 @@ class dCTL {
 		if (! $recursion) {
 			$return .= '</dctl>';
 		};
+		$return = preg_replace('/\s\s+/imu', ' ', $return);
 		$return = preg_replace('/xmlns\s*=\s*"\s*'.preg_quote(XMLDB_TEI_S, '/').'\s*"/', '', $return);
-		return $return;
+  return $return;
 	}
 	// +----------------------------------------------------------------------+
 	protected function _comma2pipe($a) {
