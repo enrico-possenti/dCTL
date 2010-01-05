@@ -9,6 +9,10 @@
  | A changes log file                                                   |
  +----------------------------------------------------------------------+
 */
+Version 0.8.00RC10 (2010-01-05)
+>[Core]
+ Corretta getLinks().
+
 Version 0.8.00RC9 (2010-01-05)
 >[*]
  Modificati permessi utenti in Commodoro.

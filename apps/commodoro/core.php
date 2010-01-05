@@ -621,7 +621,7 @@ class dCTL {
 															 $tag2 = $tag;
 															};
 															$context .= '[lower-case('.$tag.') >= "'.strtolower($startAt).'"]';
-															if ($upTo != '') $context .= '[matches('.$tag.', "^'.$upTo.'", "si")]';
+															if ($upTo != '') $context .= '[matches('.$tag.', "^'.$upTo.'", "msi")]';
 															$context .= '/'.$tag2;
 															$startAt = 1;
 															break;
@@ -850,14 +850,14 @@ class dCTL {
 					$s1 = ' '.$fullItem;
 					$s2 = $fullItem.' ';
 					$s3 = ' '.$fullItem.' ';
-					$context = '//tei:ref[(@target = "'.$s1.'") or contains(@target, "'.$s2.'") or contains(@target, "'.$s3.'") or (@target = "'.$fullItem.'")]';
+					$context = '//tei:ref[index-of(distinct-values(tokenize(@target, "\s+", "msi")), "'.$fullItem.'") > 0]';
 					$xquery = '';
 					$xquery .= "\n".' for $node in ';
 					$xquery .= "\n".' xmldb:document("';
 					$xquery .= $xml_resource.'")/tei:TEI/tei:text/*'.$context.' ';
 					$xquery .= "\n".' return ';
 					$xquery .= "\n".' ("<group n=&quot;", $node/@n, "&quot;>", ';
-					$xquery .= "\n".' for $target in distinct-values(tokenize($node/@target, " ")) ';
+					$xquery .= "\n".' for $target in distinct-values(tokenize($node/@target, "\s+")) ';
 					$xquery .= "\n".' let $id := tokenize ($target, "/") ';
 					$xquery .= "\n".' let $doc := concat("'.$this->_db_publish_path.'", $id[3], "/", $id[3], "-", $id[4], ".xml") ';
 					$xquery .= "\n".' return ';
