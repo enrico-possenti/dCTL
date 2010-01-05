@@ -598,10 +598,10 @@ class dCTL {
 														};
 													};
 													switch (true) {
-														case preg_match('/^'.WHITESPACES.'*(\w*|\.)'.WHITESPACES.'*(\@'.WHITESPACES.'*\"'.WHITESPACES.'*((\w|\W|\*)*)'.WHITESPACES.'*(\+*)'.WHITESPACES.'*(.*)'.WHITESPACES.'*\"'.WHITESPACES.'*(\;'.WHITESPACES.'*(\-*\d+)'.WHITESPACES.'*)?)/', $parsed_anchor, $matches):
+														case preg_match('/^'.WHITESPACES.'*(\w*|\.)'.WHITESPACES.'*(\@'.WHITESPACES.'*\"'.WHITESPACES.'*((\w|\W|\*)(?:\+*)*)'.WHITESPACES.'*(\+*)'.WHITESPACES.'*(.*)'.WHITESPACES.'*\"'.WHITESPACES.'*(\;'.WHITESPACES.'*(\-*\d+)'.WHITESPACES.'*)?)/', $parsed_anchor, $matches):
 															$tag = isset($matches[1]) ? $matches[1] : $tag;
 															$startAt = isset($matches[3]) ? $matches[3] : $startAt;
-															$upTo = isset($matches[5]) ? (($matches[5] != '') ? $startAt : '') : '';
+															$upTo = isset($matches[4]) ? (($matches[4] != '') ? escapeshellcmd($startAt) : '') : '';
 															$startAt = isset($matches[6]) ? $startAt.$matches[6] : $startAt;
 															$howMany = ($startAt) ? 1 : $startAt;
 															$howMany = isset($matches[8]) ? (($matches[8] != '') ? intval($matches[8]) : $howMany) : $howMany;
@@ -614,11 +614,11 @@ class dCTL {
 																++$jolly;
 															};
 															if ($tag == '.') {
-															 $tag2 = '/text()';
 															 $tag = './/text()[normalize-space(.) != ""][position() = 1]';
+															 $tag2 = '/text()';
 															} else {
-															 $tag2 = '/'.$tag;
 															 $tag = '@'.$tag;
+															 $tag2 = $tag;
 															};
 															$context .= '[lower-case('.$tag.') >= "'.strtolower($startAt).'"]';
 															if ($upTo != '') $context .= '[matches('.$tag.', "^'.$upTo.'", "si")]';
@@ -698,9 +698,9 @@ class dCTL {
 													$xquery .= "\n".' return if ($include) then $token else () ';
 													$xquery .= "\n".' ) ';
 													if ($jolly) {
-														$xquery .= "\n".' return substring($item,1,'.$jolly.') ';
+														$xquery .= "\n".' return lower-case(substring($item,1,'.$jolly.')) ';
 													} else {
-														$xquery .= "\n".' return $item ';
+														$xquery .= "\n".' return lower-case($item) ';
 													};
 													$xquery .= "\n".' return ';
 													if ($howMany) $xquery .= "\n".' for $final in subsequence(';

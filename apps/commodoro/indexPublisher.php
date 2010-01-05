@@ -223,7 +223,7 @@ $returnText .= '<td>(!!!) Pubblicazione momentaneamente disabilitata...</td>';
 // 	if ($isPublished_pub) {
 // 		$returnText .= '<td>--</td>';
 // 	} else {
-				if (true) {//DCTL_USER_IS_ADMIN
+				if (DCTL_USER_IS_ADMIN) {
 	 $returnText .= '<td><a onclick="javascript:doProgress();" href="'.$_SERVER['PHP_SELF'].'?posx='.$fDiv0.'&amp;action=publish&amp;what=collection&amp;collection_id='.$collection_id.'" title="(Pubblica tutta la Collection)">Pubblica "'.$collection_short.'" on-line...</a></td>';
 } else {
 $returnText .= '<td>(!!!) Pubblicazione momentaneamente disabilitata...</td>';
@@ -359,7 +359,7 @@ $returnText .= '<td>(!!!) Pubblicazione momentaneamente disabilitata...</td>';
 // 		if ($isPublished_pub) {
 // 			$returnText .= '<td>--</td>';
 // 		} else {
-				if (true) {//DCTL_USER_IS_ADMIN
+				if (DCTL_USER_IS_ADMIN) {
 		$returnText .= '<td><a onclick="javascript:doProgress();" href="'.$_SERVER['PHP_SELF'].'?posx='.$fDiv0.'&amp;action=publish&amp;what=package&amp;collection_id='.$collection_id.'&amp;package_id='.$package_id.'" title="(Pubblica il Package)">Pubblica "'.$package_short.'" on-line...</a></td>';
 		} else {
  $returnText .= '<td>(!!!) Pubblicazione momentaneamente disabilitata...</td>';

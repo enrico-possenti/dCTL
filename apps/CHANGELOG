@@ -9,6 +9,12 @@
  | A changes log file                                                   |
  +----------------------------------------------------------------------+
 */
+Version 0.8.00RC9 (2010-01-05)
+>[*]
+ Modificati permessi utenti in Commodoro.
+>[Core]
+ Corretta getOptions().
+
 Version 0.8.00RC8 (2010-01-04)
 >[Core]
  Aggiunto "." in getOptions() come selettore di nodo (oltre che di attributo).

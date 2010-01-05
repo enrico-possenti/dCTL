@@ -942,7 +942,7 @@ function ajax_loadTree ($selector = 1, $collection_id='', $package_id='', $part_
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 function putEdit ($param = '') {
 	$resultText = '';
-	if (DCTL_USER_IS_SUPER) {
+	if (DCTL_USER_IS_EDITOR) {
 		$resultText .= '<a onclick="javascript:doProgress();" class="edit" href="'.$_SERVER['PHP_SELF'].'?';
 		foreach ($_REQUEST as $k=>$v) {
 			if ($k == $param) $v = 'true';

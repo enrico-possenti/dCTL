@@ -116,8 +116,8 @@ function initializeUser ($user_id) {
 		define('DCTL_XMLDB_USER', $xmldb_user);
 		define('DCTL_XMLDB_PSWD', $xmldb_pswd);
  	define('DCTL_USER_IS_EDITOR', $user_kind >= DCTL_USER_EDITOR);
- 	define('DCTL_USER_IS_SUPER', $user_kind >= DCTL_USER_ADMIN);
- 	define('DCTL_USER_IS_ADMIN', $user_kind >= DCTL_USER_GURU);
+ 	define('DCTL_USER_IS_ADMIN', $user_kind >= DCTL_USER_ADMIN);
+ 	define('DCTL_USER_IS_GURU', $user_kind >= DCTL_USER_GURU);
 	};
 };
 

@@ -306,7 +306,7 @@ if ($isSaveCollection) {
 };
 //
 // NEW COLLECTION
-if (DCTL_USER_IS_SUPER) {
+if (DCTL_USER_IS_ADMIN) {
  $fDiv0 = 'divCreateCollection';
  $returnText .= putOpenCloseLevel($fDiv0, $loc4msg, false, 'Crea nuova Collection', &$resultMsg);
  $returnText .= '<form id="form'.$fDiv0.'" action="'.$_SERVER['PHP_SELF'].'" method="'.DCTL_FORM_METHOD.'" enctype="'.DCTL_FORM_ENCTYPE.'">';
@@ -587,7 +587,7 @@ if ($prosecute) {
 	};
 	//
 	// NEW PACKAGE
- if (DCTL_USER_IS_SUPER) {
+ if (DCTL_USER_IS_ADMIN) {
   $fDiv0 = 'divCreatePackage';
   $returnText .= putOpenCloseLevel($fDiv0, $loc4msg, false, 'Crea nuovo Package di "'.$collection_short.'"', &$resultMsg);
   $returnText .= '<form id="form'.$fDiv0.'" action="'.$_SERVER['PHP_SELF'].'" method="'.DCTL_FORM_METHOD.'" enctype="'.DCTL_FORM_ENCTYPE.'">';
