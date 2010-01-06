@@ -9,6 +9,10 @@
  | A changes log file                                                   |
  +----------------------------------------------------------------------+
 */
+Version 0.8.00RC10 (+1) (2010-01-05)
+>[Core]
+ Modificata getOptions() per <title>.
+
 Version 0.8.00RC10 (2010-01-05)
 >[Core]
  Corretta getLinks().

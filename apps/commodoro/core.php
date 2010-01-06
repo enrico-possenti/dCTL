@@ -613,16 +613,23 @@ class dCTL {
 																if (!isset($matches[8])) $howMany = '';
 																++$jolly;
 															};
-															if ($tag == '.') {
+														 $justContent = ($tag == '.');
+															if ($justContent) {
 															 $tag = './/text()[normalize-space(.) != ""][position() = 1]';
-															 $tag2 = '/text()';
 															} else {
 															 $tag = '@'.$tag;
-															 $tag2 = $tag;
 															};
 															$context .= '[lower-case('.$tag.') >= "'.strtolower($startAt).'"]';
 															if ($upTo != '') $context .= '[matches('.$tag.', "^'.$upTo.'", "msi")]';
-															$context .= '/'.$tag2;
+															if ($justContent) {
+																if ($jolly) {
+																 $context .= '//text()'; // cosi ritorna le iniziali ma non dioscoride
+															 } else {
+															  $context .= ''; // cosi ritorna dioscoride ma non le iniziali
+															 };
+															} else {
+															 $context .= '/'.$tag;
+															};
 															$startAt = 1;
 															break;
 														default:
@@ -633,7 +640,6 @@ class dCTL {
 															} else {
 																$context .= ($parsed_locator == '') ? 'tei:div[.//text()]' : '';
 															};
-															// $context = '/'.$context;
 															break;
 													};
 												} else {
@@ -681,17 +687,23 @@ class dCTL {
 												if ($howMany < 0) $howMany = PHP_INT_MAX;
 												if ($asOptions) { // from getOptions
 													$xquery .= "\n".' let $e := for $node in ';
-//												if ($howMany) $xquery .= "\n".' subsequence(';
 													$xquery .= "\n".' xmldb:document("';
 													$xquery .= $xml_resource.'")//tei:text/*'.$context.' ';
-//												if ($howMany) $xquery .= "\n".', '.$startAt.', '.$howMany.' ) ';
-													$xquery .= "\n".' let $chunk := $node//text() ';
+													$xquery .= "\n".' let $chunk := ';
+													$xquery .= "\n".' if ($node instance of text()) then $node else $node//text() ';
 													$xquery .= "\n".' return ';
 													$xquery .= "\n".' if ($node/node()) ';
 													$xquery .= "\n".' then ';
-													$xquery .= "\n".' ("<item><", name($node), for $att in $node/@* return (" ", name($att), "=&quot;", $att, "&quot;"), ">", $chunk, "</", name($node), "></item>") ';
+													$xquery .= "\n".' ("<item><", node-name($node), for $att in $node/@* return (" ", node-name($att), "=&quot;", $att, "&quot;"), ">",';
+													$xquery .= "\n".' $chunk, "</", node-name($node), "></item>") ';
 													$xquery .= "\n".' else ';
-													$xquery .= "\n".' let $what := if (/id($node)) then tokenize(tokenize($node, "'.WHITESPACES.'"), "'.WHITESPACES.'") else $node ';
+													$xquery .= "\n".' let $what := if (/id($node)) then ';
+													$xquery .= "\n".' tokenize(tokenize($node, "'.WHITESPACES.'"), "'.WHITESPACES.'") else ';
+													if ($jolly) {
+														$xquery .= "\n".' $node ';
+														} else {
+														$xquery .= "\n".' element {node-name($node)} {$node/@*, text {$node//text()}} ';
+													};
 													$xquery .= "\n".' for $item in distinct-values( ';
 													$xquery .= "\n".' for $token in $what ';
 													$xquery .= "\n".' let $include := if ($node/node() or ('.!$last_val.') or name($node) != "'.$last_attr.'") then true() else contains($token, tokenize("'.$match.'", "'.WHITESPACES.'")) ';
