@@ -2,6 +2,13 @@
  if (!defined('_INCLUDE')) die('"'.__FILE__.'" not executable... me, i abort.');
 
 /* - - - - - - - - - - - - - - - - - */
+function xml_character_encode($string, $trans='') {
+	$trans = (is_array($trans)) ? $trans : get_html_translation_table(HTML_ENTITIES, ENT_QUOTES);
+	foreach ($trans as $k=>$v)
+		$trans[$k]= "&#".ord($k).";";
+	return strtr($string, $trans);
+};
+/* - - - - - - - - - - - - - - - - - */
 function fixLabel($label) {
  return trim(addslashes(preg_replace('/'.WS.'+/', ' ',$label)));
 };

@@ -624,7 +624,7 @@ class dCTL {
 															if ($upTo != '') $context .= '[matches('.$tag.', "^'.$upTo.'", "msi")]';
 															if ($justContent) {
 																if ($jolly) {
-																 $context .= '//text()'; // cosi ritorna le iniziali ma non dioscoride
+																 $context .= '//text()[1]'; // cosi ritorna le iniziali ma non dioscoride
 															 } else {
 															  $context .= ''; // cosi ritorna dioscoride ma non le iniziali
 															 };
@@ -723,7 +723,7 @@ class dCTL {
 													$xquery .= "\n".' return ';
 													if ($howMany) $xquery .= "\n".' for $final in subsequence(';
 // 													$xquery .= "\n".' if (matches($e, "<\w+")) then $e else for $x in distinct-values($e) order by $x return <item>{$x}</item> ';
-													$xquery .= "\n".'  for $x in distinct-values($e) order by $x return element item {normalize-space($x)} ';
+													$xquery .= "\n".'  for $x in distinct-values($e) order by $x return if (normalize-space($x) ne "") then element item {normalize-space($x)} else ()';
 													if ($howMany) $xquery .= ', '.$startAt.', '.$howMany.' ) return $final ';
 												} else {
 													$xquery .= "\n".' let $base := xmldb:document("'.$xml_resource.'")//tei:text ';
@@ -783,7 +783,10 @@ class dCTL {
 												};
 												// $this->_getDebug($db_resource);
 												$this->_get_package_record ($justRefs, $xml_resource, &$resList[$key4package]);
-												$resList[$key4package]['xquery'] = htmlentities($context);
+// 												$encoded_xquery = htmlentities($context, ENT_QUOTES, "UTF-8", false);
+// 												$encoded_xquery = xml_character_encode(htmlentities($context, ENT_NOQUOTES, "UTF-8", false));
+												$encoded_xquery = htmlspecialchars($context);
+												$resList[$key4package]['xquery'] = $encoded_xquery;
 												if ($resList[$key4package]['ref'] != '') {
 													if ($parsed_locator != '') $resList[$key4package]['ref'] .= DB_PATH_SEP.$parsed_locator;
 												};

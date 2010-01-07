@@ -9,6 +9,11 @@
  | A changes log file                                                   |
  +----------------------------------------------------------------------+
 */
+Version 0.8.00RC12 (2010-01-07)
+>[Core]
+ Modificata getOptions().
+ Corretti caratteri accentati su <xquery>.
+
 Version 0.8.00RC11 (2010-01-06)
 >[Core]
  Modificata getOptions().
