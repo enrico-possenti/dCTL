@@ -98,7 +98,7 @@ if ($isReset) {
 	$dirToUpload = str_ireplace($ftp_path, '', $dirToUpload);
 	$dirToUpload = str_ireplace('..','',$dirToUpload);
 	$dirToUpload = str_ireplace('.','',$dirToUpload);
-	$dirToUpload = str_ireplace(SYS_PATH_SEPARATOR.SYS_PATH_SEPARATOR,SYS_PATH_SEPARATOR,$dirToUpload);
+	$dirToUpload = str_ireplace(SYS_PATH_SEP.SYS_PATH_SEP,SYS_PATH_SEP,$dirToUpload);
 	$dirToUpload = $ftp_path.$dirToUpload;
 	$ext = explode('.', $pathToUpload);
 	$extToUpload = $ext[count($ext)-1];
@@ -150,11 +150,11 @@ if ($isUpload) {
    $pathToUpload = $pathToUpload0;
    $fileNameUpload = strtolower(normalize($v['name']));
    $fileNameTemp = $v['tmp_name'];
-   $dirToUpload = dirname($pathToUpload).SYS_PATH_SEPARATOR;
+   $dirToUpload = dirname($pathToUpload).SYS_PATH_SEP;
    $dirToUpload = str_ireplace($ftp_path, '', $dirToUpload);
    $dirToUpload = str_ireplace('..', '', $dirToUpload);
    $dirToUpload = str_ireplace('.', '', $dirToUpload);
-   $dirToUpload = str_ireplace(SYS_PATH_SEPARATOR, SYS_PATH_SEPARATOR, $dirToUpload);
+   $dirToUpload = str_ireplace(SYS_PATH_SEP, SYS_PATH_SEP, $dirToUpload);
    $dirToUpload = $ftp_path.$dirToUpload;
    $fileToUpload = basename($pathToUpload);
    $isMedia = (($fileToUpload) == basename(DCTL_MEDIA_BIG));
@@ -163,7 +163,7 @@ if ($isUpload) {
    if (in_array($extToUpload, $array_estensioni_ammesse)) {
     if (is_dir($dirToUpload)) {
      if ($isMedia) {
-      $fileToUpload .= SYS_PATH_SEPARATOR;
+      $fileToUpload .= SYS_PATH_SEP;
       if ($isUpdateimg) {
        $fileNameUpload = basename($fOperationImg);
        if (is_file($fOperationImg))unlink($fOperationImg);
@@ -244,7 +244,7 @@ if ($isCreateCollection) {
   $collection_id = strtolower(normalize($collection_short));
   if (array_search($collection_id, $collectionList['collection_id']) === FALSE) {
    $collectionTemplate = DCTL_SETTINGS_TEMPLATES_COLLECTION;
-			$collectionPath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR;
+			$collectionPath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEP;
    dircopy($collectionTemplate, $collectionPath);
    $header = $collectionPath.DCTL_FILE_HEADER;
    if (is_file($header)) {
@@ -278,7 +278,7 @@ if ($isCreateCollection) {
 // SAVE COLLECTION
 if ($isSaveCollection) {
  if ($collection_id != '') {
-  $collectionPath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR;
+  $collectionPath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEP;
   $header1 = DCTL_SETTINGS_TEMPLATES_COLLECTION.DCTL_FILE_HEADER;
   $header2 = $collectionPath.DCTL_FILE_HEADER;
   if (is_file($header1)) {
@@ -331,7 +331,7 @@ if (DCTL_USER_IS_ADMIN) {
 
 // SELEZIONA COLLECTION
 $fDiv0 = 'divSelectCollection';
-$collectionPath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR;
+$collectionPath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEP;
 getCollectionList(DCTL_PROJECT_PATH, &$collectionList, true);
 $returnText .= putOpenCloseLevel($fDiv0, $loc4msg, $collection_id != '', 'Seleziona una Collection ('.(count($collectionList['path'])-1).')', &$resultMsg);
 $returnText .= '<form id="form'.$fDiv0.'" action="'.$_SERVER['PHP_SELF'].'" method="'.DCTL_FORM_METHOD.'" enctype="'.DCTL_FORM_ENCTYPE.'">';
@@ -474,7 +474,7 @@ if ($prosecute) {
 				$package_id = strtolower(normalize($package_short));
 				if (array_search($package_id, $packageList['package_id']) === FALSE) {
 					$packageTemplate = DCTL_SETTINGS_TEMPLATES_PACKAGE;
-					$packagePath = $collectionPath.$package_id.SYS_PATH_SEPARATOR;
+					$packagePath = $collectionPath.$package_id.SYS_PATH_SEP;
 					dircopy($packageTemplate, $packagePath);
 					$idx = 0;
 					$idx = sprintf("%03d", $idx+1);
@@ -519,7 +519,7 @@ if ($prosecute) {
 			if (!in_array($package_ext, $EXTENSION_PACKAGE)) {
 				$resultMsg .= '<span class="error">ERRORE: correggere il package "'.$package_id.'" ... estensione non riconosciuta!</span><br />';
 			} else {
-				$packagePath = $collectionPath.$package_id.SYS_PATH_SEPARATOR;
+				$packagePath = $collectionPath.$package_id.SYS_PATH_SEP;
 				$header1 = DCTL_SETTINGS_TEMPLATES_PACKAGE.DCTL_FILE_HEADER;
 				$header2 = $packagePath.DCTL_FILE_HEADER;
 				if (is_file($header1)) {
@@ -532,9 +532,9 @@ if ($prosecute) {
 								$value = $_REQUEST['source_author'].' - '.$_REQUEST['source_title_main'];
 							};
 							$value = stripslashes($value);
-							$value = trim(preg_replace('/'.WHITESPACES.'+/', ' ', $value));
+							$value = trim(preg_replace('/'.WS.'+/', ' ', $value));
 							$value = htmlentities($value);
-							$value = preg_replace('/'.WHITESPACES.'+/', '<lb />', $value);
+							$value = preg_replace('/'.WS.'+/', '<lb />', $value);
 							$value = stripslashes($value);
 							$contents = str_ireplace($field.' ""', $field.' "'.$value.'"', $contents);
 						};
@@ -558,7 +558,7 @@ if ($prosecute) {
 		if ($package_id != '') {
    $from = DCTL_SETTINGS_TEMPLATES_PACKAGE.DCTL_PACKAGE_BODY;
 		 if (is_file($from)) {
-				$dPath = $collectionPath.$package_id.SYS_PATH_SEPARATOR;
+				$dPath = $collectionPath.$package_id.SYS_PATH_SEP;
 				$fSelectorX = DCTL_PACKAGE_BODY;
 				$regexp = str_ireplace(DCTL_PACKAGE_BODY_REGEXP1, DCTL_PACKAGE_BODY_REGEXP2, $fSelectorX);
 				$variants = array();
@@ -620,7 +620,7 @@ if ($prosecute) {
  //
  // SELEZIONA PACKAGE
  $fDiv0 = 'divSelectPackage';
-	$packagePath = $collectionPath.$package_id.SYS_PATH_SEPARATOR;
+	$packagePath = $collectionPath.$package_id.SYS_PATH_SEP;
 	getPackageList($collectionPath, &$packageList, true);
  $returnText .= putOpenCloseLevel($fDiv0, $loc4msg, $package_id != '', 'Seleziona un Package di "'.$collection_short.'" ('.(count($packageList['path'])-1).')', &$resultMsg);
 	$returnText .= '<form id="form'.$fDiv0.'" action="'.$_SERVER['PHP_SELF'].'" method="'.DCTL_FORM_METHOD.'" enctype="'.DCTL_FORM_ENCTYPE.'">';

@@ -16,7 +16,7 @@ function generateVerticalString($string, $id, $doc, $invert=false) {
 	$dest .= DCTL_DBCTL_BASEPATH.'coste';
 	if (!is_dir($dest)) mkdir($dest, CHMOD);
  @chmod($dest, CHMOD);
- $dest .= SYS_PATH_SEPARATOR.$doc.'-'.$id.'.gif';
+ $dest .= SYS_PATH_SEP.$doc.'-'.$id.'.gif';
 	$font = 'font/Georgia.ttf';
 	$fontsize = 12;
 	$bolder = false;
@@ -125,7 +125,7 @@ function getRetrievePalette ($doc, $where) {
  $db_collection = isset($doc_exploded[0]) ? $doc_exploded[0]: '';
  $config = DCTL_MASTRO_RETRIEVE_XSLT.'config.xml';
  if ($db_collection) {
-  $config2 = str_ireplace(DCTL_MASTRO_RETRIEVE_XSLT, DCTL_MASTRO_RETRIEVE_XSLT.$db_collection.SYS_PATH_SEPARATOR, $config);
+  $config2 = str_ireplace(DCTL_MASTRO_RETRIEVE_XSLT, DCTL_MASTRO_RETRIEVE_XSLT.$db_collection.SYS_PATH_SEP, $config);
   if (is_file($config2)) $config = $config2;
 		forceUTF8($config);
 		$configFile = simplexml_load_file($config, 'SimpleXMLElement', DCTL_XML_LOADER);
@@ -615,7 +615,7 @@ function getDisplayPalette ($doc, $where, $what, $block, $at, $high, $label, $te
 	$ext = substr($ext, -4, 4);
  $config = DCTL_MASTRO_DISPLAY_XSLT.'config'.$ext.'.xml';
  if ($db_collection) {
-  $config2 = str_ireplace(DCTL_MASTRO_DISPLAY_XSLT, DCTL_MASTRO_DISPLAY_XSLT.$db_collection.SYS_PATH_SEPARATOR, $config);
+  $config2 = str_ireplace(DCTL_MASTRO_DISPLAY_XSLT, DCTL_MASTRO_DISPLAY_XSLT.$db_collection.SYS_PATH_SEP, $config);
   if (is_file($config2)) $config = $config2;
 		forceUTF8($config);
 		$configFile = simplexml_load_file($config, 'SimpleXMLElement', DCTL_XML_LOADER);
@@ -676,12 +676,12 @@ function queryXML ($mastro= '', $doc='', $xslt='', $query=array(), $label='', $m
 		$terms = preg_match('/(.{3})+/', $terms) ? $terms : '';
 		$terms = trim($terms);
 		$count_words = 0;
-		if (strlen(preg_replace('/'.WHITESPACES.'[\?\*]/', '', $terms)) > 2) {
-			$terms = preg_replace('/'.WHITESPACES.''.WHITESPACES.'+/', ' ', $terms);
+		if (strlen(preg_replace('/'.WS.'[\?\*]/', '', $terms)) > 2) {
+			$terms = preg_replace('/'.WS.''.WS.'+/', ' ', $terms);
 			$terms = preg_replace('/\*+/', '*', $terms);
-			$terms = preg_replace('/[^a-zA-Z0-9\?\*\']'.WHITESPACES.'/', '?', $terms);
+			$terms = preg_replace('/[^a-zA-Z0-9\?\*\']'.WS.'/', '?', $terms);
 			$terms = preg_replace('/\?+/', '?', $terms);
-			$terms = preg_split('/'.WHITESPACES.'/', $terms);
+			$terms = preg_split('/'.WS.'/', $terms);
 			$count_words = count($terms);
 			$terms = join(' ', $terms);
 		};
@@ -861,7 +861,7 @@ function transformXMLwithXSLT ($mastro= '', $doc='', $where='', $xslt='', $block
 				// IDENTIFICA IL DOC
 				$doc_exploded = explode(DCTL_RESERVED_INFIX, $doc);
 				$db_collection = isset($doc_exploded[0]) ? $doc_exploded[0]: '';
-				$xml_resource = XMLDB_PATH_BASE.$db_collection.DB_PATH_SEPARATOR.$doc;
+				$xml_resource = XMLDB_PATH_BASE.$db_collection.DB_PATH_SEP.$doc;
 				$ext = substr(str_ireplace('.xml', '', $doc), -4, 4);
 				// CARICA IL DOC
 				$debugTime = microtime(true);
@@ -1124,7 +1124,7 @@ function transformXMLwithXSLT ($mastro= '', $doc='', $where='', $xslt='', $block
 		$base = str_ireplace($xslt_path, '', $xslt);
 		$xslt = $xslt_path.$base;
 		if ($db_collection) {
-			$xslt2 = str_ireplace($base, $db_collection.SYS_PATH_SEPARATOR.$base, $xslt);
+			$xslt2 = str_ireplace($base, $db_collection.SYS_PATH_SEP.$base, $xslt);
 			if (is_file($xslt2)) $xslt = $xslt2;
 		};
 		if (is_file($xslt)) {
@@ -1213,7 +1213,7 @@ function preloadCLASS(&$xml_resource) {
 /* - - - - - - - - - - - - - - - - - */
 function dctl_getDistincts ($theVar, $sep, $putCount=true) {
  $returnText = '';
- $theVar = preg_replace ('/'.WHITESPACES.'+/', ' ', (string)$theVar);
+ $theVar = preg_replace ('/'.WS.'+/', ' ', (string)$theVar);
  $theVar = explode ($sep.' ', $sep.' '.$theVar);
  $theVar2 = array_unique($theVar);
  if ($putCount) {
@@ -1227,8 +1227,8 @@ function dctl_getDistincts ($theVar, $sep, $putCount=true) {
   };
  };
  $returnText = implode ($sep.' ', $theVar2);
- $returnText = preg_replace('/'.WHITESPACES.''.$sep.'/', $sep, $returnText);
- $returnText = preg_replace('/^('.$sep.''.WHITESPACES.')/', '', $returnText);
+ $returnText = preg_replace('/'.WS.''.$sep.'/', $sep, $returnText);
+ $returnText = preg_replace('/^('.$sep.''.WS.')/', '', $returnText);
  return trim($returnText);
 };
 /* - - - - - - - - - - - - - - - - - */
@@ -1330,7 +1330,7 @@ function dctl_putLink($theContent, $doc, $where, $selector='', $label='', $docBa
 				$doc_exploded = explode(DCTL_RESERVED_INFIX, $doc);
 				$db_collection = isset($doc_exploded[0]) ? $doc_exploded[0]: '';
 				$doc = str_ireplace('.xml','', $doc_exploded[1]);
-				$fullItem = 'xml://'.$db_collection.DB_PATH_SEPARATOR.$doc.DB_PATH_SEPARATOR.$fullItem;
+				$fullItem = 'xml://'.$db_collection.DB_PATH_SEP.$doc.DB_PATH_SEP.$fullItem;
 				$s1=' '.$fullItem;
 				$s2=$fullItem.' ';
 				$resultXML = $cachedID->xpath('//*[contains(@target, \''.$s1.'\') or contains(@target, \''.$s2.'\') or (@target = \''.$fullItem.'\')]');
@@ -1345,7 +1345,7 @@ function dctl_putLink($theContent, $doc, $where, $selector='', $label='', $docBa
 							foreach($targets as $k=>$v) {
 								if ($v!=''){
 									if ($v != $fullItem) {
-										$parsed = explode(SYS_PATH_SEPARATOR,$v);
+										$parsed = explode(SYS_PATH_SEP,$v);
 										$lnk_coll =$parsed[2];
 										$lnk_pack = isset($parsed[3]) ? $parsed[3] : '';
 										$lnk_item = isset($parsed[4]) ? $parsed[4] : '';
@@ -1368,7 +1368,7 @@ function dctl_putLink($theContent, $doc, $where, $selector='', $label='', $docBa
 									if ($ext == $v) {
 										++$kk;
 										$item = $links2[$k1]['item'];
-										$parsed = explode(SYS_PATH_SEPARATOR, $item);
+										$parsed = explode(SYS_PATH_SEP, $item);
 										$lnk_coll =$parsed[2];
 										$lnk_pack = $parsed[3];
 										$lnk_item = $parsed[4];
@@ -1376,7 +1376,7 @@ function dctl_putLink($theContent, $doc, $where, $selector='', $label='', $docBa
 										$doc = $lnk_coll.DCTL_RESERVED_INFIX.$lnk_pack.'.xml';
 										$doc_exploded = explode(DCTL_RESERVED_INFIX, $doc);
 										$db_collection = isset($doc_exploded[0]) ? $doc_exploded[0]: '';
-										$xml_resource = XMLDB_PATH_BASE.$db_collection.DB_PATH_SEPARATOR.$doc;
+										$xml_resource = XMLDB_PATH_BASE.$db_collection.DB_PATH_SEP.$doc;
 										$packageRecord = array();
 										getPackageRecord($exist, $xml_resource, &$packageRecord);
 										$links[$kk]['date'] = $packageRecord['date'];
@@ -1406,7 +1406,7 @@ function dctl_putLink($theContent, $doc, $where, $selector='', $label='', $docBa
 											$closeIt = true;
 										};
 									};
-									$parsed = explode(SYS_PATH_SEPARATOR,$v['item']);
+									$parsed = explode(SYS_PATH_SEP,$v['item']);
 									$lnk_coll =$parsed[2];
 									$lnk_pack = $parsed[3];
 									$lnk_item = $parsed[4];
@@ -1414,7 +1414,7 @@ function dctl_putLink($theContent, $doc, $where, $selector='', $label='', $docBa
 									$doc = $lnk_coll.DCTL_RESERVED_INFIX.$lnk_pack.'.xml';
 									$doc_exploded = explode(DCTL_RESERVED_INFIX, $doc);
 									$db_collection = isset($doc_exploded[0]) ? $doc_exploded[0]: '';
-									$xml_resource = XMLDB_PATH_BASE.$db_collection.DB_PATH_SEPARATOR.$doc;
+									$xml_resource = XMLDB_PATH_BASE.$db_collection.DB_PATH_SEP.$doc;
 									$block = $lnk_item;
 									$db_resource = '';
 									$xquery = DCTL_XQUERY_BASE;
@@ -1499,7 +1499,7 @@ function getCollectionRecord ($exist, $thePath, &$collectionRecord, $filter= arr
  $collectionRecord['full'] = '';
  $collectionRecord['packages'] = array();
  $collection_id = basename($thePath);
- $thePath .= DB_PATH_SEPARATOR;
+ $thePath .= DB_PATH_SEP;
 	$xml_resource = $thePath.$collection_id.DCTL_RESERVED_INFIX.DCTL_RESERVED_PREFIX.$collection_id.'.xml';
  $xquery = DCTL_XQUERY_BASE;
  $xquery .= ' let $node := doc("'.$xml_resource.'")/tei:TEI ';
@@ -1559,7 +1559,7 @@ function getPackageList($exist, $thePath, &$packageList, $filter=array(), $sortB
    if($package_id[0] != DCTL_RESERVED_PREFIX) {
 				$ext = substr($package_id, -8,4);
 				if (count(array_filter($filter))==0 || in_array($ext, $filter)) {
-					$thePath2 = $thePath.DB_PATH_SEPARATOR.$package;
+					$thePath2 = $thePath.DB_PATH_SEP.$package;
 					$packageList[$key]['ref'] = $package;
 					getPackageRecord ($exist, $thePath2, &$packageRecord);
 					$packageList[$key]['path'] = $packageRecord['path'];
@@ -1614,7 +1614,7 @@ function getPackageRecord ($exist, $thePath, &$packageRecord) {
  $package_id = explode(DCTL_RESERVED_INFIX, $package_id);
  $collection_id = $package_id[0];
  $package_id = $package_id[1];
- $thePath = dirname($thePath).DB_PATH_SEPARATOR;
+ $thePath = dirname($thePath).DB_PATH_SEP;
  $xml_resource = $thePath.$collection_id.DCTL_RESERVED_INFIX.$package_id;
 	$ext = str_ireplace('.xml','', $package_id);
 	$ext = substr($ext, -4, 4);

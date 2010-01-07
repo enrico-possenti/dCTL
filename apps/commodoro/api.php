@@ -35,10 +35,10 @@
 	/* INITIALIZE */
 	DEFINE('ENGINE_TIMEOUT_MULTIPLIER', 30);
 	require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/config.inc.php');
-	require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'./config.inc.php');
+	require_once(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).'./config.inc.php');
  // +----------------------------------------------------------------------+
  // | INCLUDE THE CORE
- require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'..'.SYS_PATH_SEPARATOR.COMMODORO.SYS_PATH_SEPARATOR.'core.php');
+ require_once(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).'..'.SYS_PATH_SEP.COMMODORO.SYS_PATH_SEP.'core.php');
 	// +----------------------------------------------------------------------+
  // | HTTP REQUEST (POST or GET)
 	$debug = isset($_REQUEST['debug']) ? $_REQUEST['debug'] : false;

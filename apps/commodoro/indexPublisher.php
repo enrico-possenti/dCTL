@@ -62,7 +62,7 @@ $persistentConnection = true;
 			$dbPackageList = '';
    if ($collection_id != '') {
     if ($package_id == '') {
-					$path2load = XMLDB_DBCTL_PUB.$collection_id.DB_PATH_SEPARATOR.$collection_id.DCTL_RESERVED_INFIX.$collection_id.'.xml';
+					$path2load = XMLDB_DBCTL_PUB.$collection_id.DB_PATH_SEP.$collection_id.DCTL_RESERVED_INFIX.$collection_id.'.xml';
 					$xquery = '';
 					$xquery .= ' declare namespace xmldb="http://exist-db.org/xquery/xmldb"; ';
 					$xquery .= ' if (fn:doc-available("'.$path2load.'")) then ';
@@ -117,7 +117,7 @@ exit();
 //
 // SELEZIONA COLLECTION
 $fDiv0 = 'divSelectCollection';
-$collectionPath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR;
+$collectionPath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEP;
 getCollectionList(DCTL_PROJECT_PATH, &$collectionList, true);
 //putOpenCloseLevel
 $returnText .= putOpenLevel($fDiv0, $loc4msg, $collection_id != '', 'Seleziona una Collection ('.(count($collectionList['path'])-1).')', &$resultMsg);
@@ -160,7 +160,7 @@ if ($prosecute) {
  $collectionState = '';
  $collectionState .= '<img src="'.DCTL_IMAGES.'published_no.png" alt="(unpublished icon)" />';
  $collectionState .= '&#160;non pubblicato';
-	$path2load = XMLDB_DBCTL_PUB.$collection_id.DB_PATH_SEPARATOR.$collection_id.DCTL_RESERVED_INFIX.DCTL_RESERVED_PREFIX.$collection_id.'.xml';
+	$path2load = XMLDB_DBCTL_PUB.$collection_id.DB_PATH_SEP.$collection_id.DCTL_RESERVED_INFIX.DCTL_RESERVED_PREFIX.$collection_id.'.xml';
  $xquery = '';
 	$xquery .= ' declare namespace xmldb="http://exist-db.org/xquery/xmldb"; ';
 	$xquery .= ' if (fn:doc-available("'.$path2load.'")) then ';
@@ -191,7 +191,7 @@ if ($prosecute) {
 	$returnText .= '<img src="'.DCTL_IMAGES.'alert2.gif" alt="(alert)" />'.SYS_DBL_SPACE;
 
 	$lastUpdate = '&#160;non pubblicato';
-	$path2load = XMLDB_DBCTL_TMP.$collection_id.DB_PATH_SEPARATOR.$collection_id.DCTL_RESERVED_INFIX.DCTL_RESERVED_PREFIX.$collection_id.'.xml';
+	$path2load = XMLDB_DBCTL_TMP.$collection_id.DB_PATH_SEP.$collection_id.DCTL_RESERVED_INFIX.DCTL_RESERVED_PREFIX.$collection_id.'.xml';
 	$xquery = '';
 	$xquery .= ' declare namespace xmldb="http://exist-db.org/xquery/xmldb"; ';
 	$xquery .= ' if (fn:doc-available("'.$path2load.'")) then ';
@@ -256,7 +256,7 @@ $returnText .= '<td>(!!!) Pubblicazione momentaneamente disabilitata...</td>';
  //
  // SELEZIONA PACKAGE
  $fDiv0 = 'divSelectPackage';
-	$packagePath = $collectionPath.$package_id.SYS_PATH_SEPARATOR;
+	$packagePath = $collectionPath.$package_id.SYS_PATH_SEP;
 	getPackageList($collectionPath, &$packageList, true);
  $returnText .= putOpenCloseLevel($fDiv0, $loc4msg, $package_id != '', 'Seleziona un Package di "'.$collection_short.'" ('.(count($packageList['path'])-1).')', &$resultMsg);
 	$returnText .= '<form id="form'.$fDiv0.'" action="'.$_SERVER['PHP_SELF'].'" method="'.DCTL_FORM_METHOD.'" enctype="'.DCTL_FORM_ENCTYPE.'">';
@@ -298,7 +298,7 @@ $returnText .= '<td>(!!!) Pubblicazione momentaneamente disabilitata...</td>';
 		$packageState = '';
 		$packageState .= '<img src="'.DCTL_IMAGES.'published_no.png" alt="(unpublished icon)" />';
 		$packageState .= '&#160;non pubblicato';
-		$path2load = XMLDB_DBCTL_PUB.$collection_id.DB_PATH_SEPARATOR.$collection_id.DCTL_RESERVED_INFIX.$package_id.'.xml';
+		$path2load = XMLDB_DBCTL_PUB.$collection_id.DB_PATH_SEP.$collection_id.DCTL_RESERVED_INFIX.$package_id.'.xml';
 		$xquery = '';
 		$xquery .= ' declare namespace xmldb="http://exist-db.org/xquery/xmldb"; ';
 		$xquery .= ' if (fn:doc-available("'.$path2load.'")) then ';
@@ -328,7 +328,7 @@ $returnText .= '<td>(!!!) Pubblicazione momentaneamente disabilitata...</td>';
 		$returnText .= '<img src="'.DCTL_IMAGES.'alert2.gif" alt="(alert)" />'.SYS_DBL_SPACE;
 
 		$lastUpdate = '&#160;non pubblicato';
-		$path2load = XMLDB_DBCTL_TMP.$collection_id.DB_PATH_SEPARATOR.$collection_id.DCTL_RESERVED_INFIX.$package_id.'.xml';
+		$path2load = XMLDB_DBCTL_TMP.$collection_id.DB_PATH_SEP.$collection_id.DCTL_RESERVED_INFIX.$package_id.'.xml';
 		$xquery = '';
 		$xquery .= ' declare namespace xmldb="http://exist-db.org/xquery/xmldb"; ';
 		$xquery .= ' if (fn:doc-available("'.$path2load.'")) then ';

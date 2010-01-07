@@ -10,7 +10,7 @@
 	};
 	/* INITIALIZE */
 	require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/config.inc.php');
-	require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'./config.inc.php');
+	require_once(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).'./config.inc.php');
 	/* */
  $action = '';
  if (isset($_REQUEST['action'])) $action = $_REQUEST['action'];
@@ -116,8 +116,8 @@
    break;
 
   case 'get_file':
-    $icon = DCTL_APPS_PATH.'img'.SYS_PATH_SEPARATOR.'missing.gif';
-    $fPath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR.$url;
+    $icon = DCTL_APPS_PATH.'img'.SYS_PATH_SEP.'missing.gif';
+    $fPath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEP.$url;
     if (is_file($fPath)) {
 					$mime=getMIME($fPath);
 					$ext = strtolower(substr($fPath, -3, 3));

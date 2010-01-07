@@ -3,7 +3,7 @@
 
 /* - - - - - - - - - - - - - - - - - */
 function fixLabel($label) {
- return trim(addslashes(preg_replace('/'.WHITESPACES.'+/', ' ',$label)));
+ return trim(addslashes(preg_replace('/'.WS.'+/', ' ',$label)));
 };
 /* - - - - - - - - - - - - - - - - - */
 function loadXML($thePath) {
@@ -37,7 +37,7 @@ function forceUTF8 ($fullsrc, $fPath="", $dumpIt=true) {
 	if (is_file($fullsrc)) {
 	 $fPath = $fullsrc;
 	 $content = file_get_contents($fullsrc);
-	 $src = dirname($fullsrc).SYS_PATH_SEPARATOR.basename($fullsrc);
+	 $src = dirname($fullsrc).SYS_PATH_SEP.basename($fullsrc);
 	} else {
 		$content = $fullsrc;
 	 $src = substr($fullsrc, 0, 30);
@@ -154,7 +154,7 @@ function dctl_xmldb_connect ($mode = 'query', $persistent = false) {
 $persistent = false; // force to check if eXist works fine without pid
 //
 $exist = FALSE;
-require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'..'.SYS_PATH_SEPARATOR.'_shared'.SYS_PATH_SEPARATOR.'exist-api.inc.php');
+require_once(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).'..'.SYS_PATH_SEP.'_shared'.SYS_PATH_SEP.'exist-api.inc.php');
  try {
 		if ($mode == 'admin') {
 			$wsdl_url=XMLDB_HOST.':'.XMLDB_PORT.'/exist/services/Admin?wsdl';
@@ -240,13 +240,13 @@ function dctl_sql_connect ($db_name, $new=true) {
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 function doBackup ($fPath) {
  if (is_file($fPath)) {
-  $dPath = dirname($fPath).SYS_PATH_SEPARATOR.DCTL_RESERVED_PREFIX.'bkp';
+  $dPath = dirname($fPath).SYS_PATH_SEP.DCTL_RESERVED_PREFIX.'bkp';
   if(!is_dir($dPath)) mkdir($dPath, CHMOD);
   @chmod($dPath, CHMOD);
   $fName = basename($fPath);
   $fExt = substr($fName, -4, 4);
   $fBase = substr($fName, 0, strlen($fName)-4);
-  $fPath2 = $dPath.SYS_PATH_SEPARATOR.$fBase.'.'.date('ymdhms').'.'.DCTL_USER_ID.$fExt;
+  $fPath2 = $dPath.SYS_PATH_SEP.$fBase.'.'.date('ymdhms').'.'.DCTL_USER_ID.$fExt;
 		copy($fPath, $fPath2);
 		@chmod($fPath2, CHMOD);
  };
@@ -263,7 +263,7 @@ function checkIfLocked ($fPath, &$who, &$content) {
 	$handle = opendir($dPath);
 	while ($entry = readdir($handle)) {
 		if (substr($entry, 0, 1) != '.') {
-			$content[] = $dPath.SYS_PATH_SEPARATOR.$entry;
+			$content[] = $dPath.SYS_PATH_SEP.$entry;
 		};
 	};
 	$content = array_values(preg_grep('/x-.*'.basename($fPath).'/', $content));
@@ -283,11 +283,11 @@ function makePreview ($theLocation, $g_srcfile, $overwrite=TRUE, $forcedsize=200
 			$g_imgcomp = 100-$imgcomp;
 			$g_fw = $forcedsize;
 			$g_fh = $forcedsize;
-	  $g_srcpath = dirname(dirname(dirname($g_srcfile))).SYS_PATH_SEPARATOR.$theLocation;
+	  $g_srcpath = dirname(dirname(dirname($g_srcfile))).SYS_PATH_SEP.$theLocation;
    if(!is_dir($g_srcpath)) mkdir($g_srcpath, CHMOD);
    @chmod($g_srcpath, CHMOD);
 	  $g_srcname = basename($g_srcfile);
-			$g_dstfile = $g_srcpath.SYS_PATH_SEPARATOR.$g_srcname;
+			$g_dstfile = $g_srcpath.SYS_PATH_SEP.$g_srcname;
 			if ($overwrite || (!file_exists($g_dstfile))) {
 				$ext = strtolower(substr($g_srcname, -3, 3));
 				if (in_array($ext, $EXTENSION_PREVIEW)) {
@@ -337,7 +337,7 @@ function createPreview ($g_srcfile, $overwrite=TRUE, $forcedsize=200, $imgcomp=0
 		while ($entry = readdir($handle)) {
  	 if (substr($entry, 0, 1) != '.') {
  	  if (($entry != basename(DCTL_MEDIA_SML)) && ($entry != basename(DCTL_MEDIA_MED))) {
-				 createPreview ($g_srcfile.SYS_PATH_SEPARATOR.$entry, $overwrite, $forcedsize, $imgcomp);
+				 createPreview ($g_srcfile.SYS_PATH_SEP.$entry, $overwrite, $forcedsize, $imgcomp);
 				};
 	  };
 	 };
@@ -355,8 +355,8 @@ function dircopy ($srcdir, $dstdir, &$files=array()) {
 	$handle = opendir($srcdir);
 	while ($entry = readdir($handle)) {
 	 if (substr($entry, 0, 1) != '.') {
-	  $fullsrc = $srcdir.SYS_PATH_SEPARATOR.$entry;
-	  $fulldst = $dstdir.SYS_PATH_SEPARATOR.$entry;
+	  $fullsrc = $srcdir.SYS_PATH_SEP.$entry;
+	  $fulldst = $dstdir.SYS_PATH_SEP.$entry;
 	  if (is_dir ($fullsrc)) {
 				if(!is_dir($fulldst)) mkdir($fulldst, CHMOD);
     @chmod($fulldst, CHMOD);
@@ -412,11 +412,11 @@ function hardFlush(&$text = '') {
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 function cleanUpIndentation($theText) {
- $theText = preg_replace('/<(\w+)>('.WHITESPACES.'*)<\/(\w+)>/', '<$1 />', $theText);
- $theText = preg_replace('/('.WHITESPACES.'{2,})/', '$1', $theText);
- $theText = preg_replace('/'.WHITESPACES.'*\/>/', ' />', $theText);
- $theText = preg_replace('/'.WHITESPACES.'+/', ' ', $theText);
- $theText = preg_replace('/>'.WHITESPACES.'*</', '> <', $theText);
+ $theText = preg_replace('/<(\w+)>('.WS.'*)<\/(\w+)>/', '<$1 />', $theText);
+ $theText = preg_replace('/('.WS.'{2,})/', '$1', $theText);
+ $theText = preg_replace('/'.WS.'*\/>/', ' />', $theText);
+ $theText = preg_replace('/'.WS.'+/', ' ', $theText);
+ $theText = preg_replace('/>'.WS.'*</', '> <', $theText);
  return $theText;
 };
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -474,8 +474,8 @@ function my_soundex ($WordString, $LengthOption=0)
 	$WordString = my_strtoupper($WordString);
 	$WordStr = $WordString;
 	$WordStr = preg_replace ('/[^A-Z]/si', ' ', $WordStr);   # replace non-chars with space
-		$WordStr = preg_replace ('/^'.WHITESPACES.'/s', '', $WordStr);        # remove leading space
-			$WordStr = preg_replace ('/'.WHITESPACES.'$/s', '', $WordStr);        # remove trailing space
+		$WordStr = preg_replace ('/^'.WS.'/s', '', $WordStr);        # remove leading space
+			$WordStr = preg_replace ('/'.WS.'$/s', '', $WordStr);        # remove trailing space
 
 # Some of our own improvements
 				$WordStr = preg_replace ('/DG/s', '', $WordStr);          # Change DG to G
@@ -534,7 +534,7 @@ function my_soundex ($WordString, $LengthOption=0)
 													$WordStr = $TmpStr;
 
 													$WordStr = substr($WordStr,1);      # Drop first ltr code
-														$WordStr = preg_replace ('/'.WHITESPACES.'/s', '', $WordStr);               # remove spaces
+														$WordStr = preg_replace ('/'.WS.'/s', '', $WordStr);               # remove spaces
 															$WordStr = preg_replace ('/0/s', '', $WordStr);                # remove zeros
 																$WordStr .= "0000000000";           # pad w/0s on rght
 
@@ -555,7 +555,7 @@ function cleanWebString ($theMixed, $theLength=0, $theSpacer='') {
   $theString = (string) $theString;
   if ($theString != '') {
 			$theString = strip_html($theString);
-			$theString = preg_replace('/'.WHITESPACES.''.WHITESPACES.'+/', ' ', $theString);
+			$theString = preg_replace('/'.WS.''.WS.'+/', ' ', $theString);
 
 			$theString = preg_replace('/\"/', '&quot;', $theString);
 			$theString = preg_replace('/\'/', '&apos;', $theString);
@@ -591,7 +591,7 @@ function strip_html($text, $theSpacer='') {
  $search = array('@<script[^>]*?>.*?</script>@si',  // Strip out javascript
                  '@<[\/\!]*?[^<>]*?>@si',            // Strip out HTML tags
                  '@<style[^>]*?>.*?</style>@siU',    // Strip style tags properly
-                 '@<!['.WHITESPACES.'\S]*?--[ \t\n\r]*>@'        // Strip multi-line comments including CDATA
+                 '@<!['.WS.'\S]*?--[ \t\n\r]*>@'        // Strip multi-line comments including CDATA
                  );
  $text = preg_replace($search, $theSpacer, $text);
  return $text;
@@ -717,7 +717,7 @@ function dump ($text='** HERE **', $class='') {
  $returnText .= $text;
  foreach ($backtrace as $k=>$v) {
   $file = (isset($backtrace[$k]['file'])) ? $backtrace[$k]['file']: '???';
-		$returnText .= basename(dirname($file)).SYS_PATH_SEPARATOR.basename($file).' :: ';
+		$returnText .= basename(dirname($file)).SYS_PATH_SEP.basename($file).' :: ';
 		if (isset($backtrace[$k+1])) $returnText .= $backtrace[$k+1]['function'];
   $line = (isset($backtrace[$k]['line'])) ? $backtrace[$k]['line']: '???';
 		$returnText .= ' @ '.$line.'<br />';
@@ -924,12 +924,12 @@ class zipfile  {
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 function addToZip($item, &$zip, $zipdir="") {
 	if (is_dir($item)) {
-		$zipdir .= basename($item).SYS_PATH_SEPARATOR;
+		$zipdir .= basename($item).SYS_PATH_SEP;
 		$zip->add_dir($zipdir);
 		$handle = opendir($item);
 		while ($entry = readdir($handle)) {
 			if (substr($entry, 0, 1) != '.') {
-				addToZip($item.SYS_PATH_SEPARATOR.$entry, &$zip, $zipdir);
+				addToZip($item.SYS_PATH_SEP.$entry, &$zip, $zipdir);
 			};
 		};
 	} else {
@@ -958,13 +958,13 @@ class asPrettyXMLElement extends SimpleXMLElement {
      */
     public function asPrettyXML($level = 1)    {
         // get an array containing each XML element
-        $xml = explode("\n", preg_replace('/>'.WHITESPACES.'*</', ">\n<", preg_replace('/('.WHITESPACES.')'.WHITESPACES.'+/','$1',$this->asXML())));
+        $xml = explode("\n", preg_replace('/>'.WS.'*</', ">\n<", preg_replace('/('.WS.')'.WS.'+/','$1',$this->asXML())));
         // hold current indentation level
         $indent = 0;
         // hold the XML segments
         $pretty = array();
         // shift off opening XML tag if present
-        if (count($xml) && preg_match('/^<\?'.WHITESPACES.'*xml/', $xml[0])) {
+        if (count($xml) && preg_match('/^<\?'.WS.'*xml/', $xml[0])) {
             $pretty[] = array_shift($xml);
         };
         foreach ($xml as $el) {
@@ -1582,8 +1582,8 @@ if ($has_command2 !== false) {
 	$prefix = $prefix0[0];
 	if ($prefix != $what) {
 		$prev_prefix = basename(dirname($PHP_SELF));
-		$PHP_SELF = str_ireplace($prev_prefix.SYS_PATH_SEPARATOR, $prefix.SYS_PATH_SEPARATOR, $PHP_SELF);
-		require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).DCTL_DATA_PATH.$prefix.SYS_PATH_SEPARATOR.'config.inc.php');
+		$PHP_SELF = str_ireplace($prev_prefix.SYS_PATH_SEP, $prefix.SYS_PATH_SEP, $PHP_SELF);
+		require_once(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).DCTL_DATA_PATH.$prefix.SYS_PATH_SEP.'config.inc.php');
 		switch ($prefix) {
 			case WEB_WCTL_NAME:
 				$key = array_multi_search ($what, $area_c);
@@ -1624,8 +1624,8 @@ if (!($has_command2 === false)) {
 				$email = $_REQUEST['email'];
 			};
 			if (!(stripos($email, '@')) === false) {
-				require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared'.SYS_PATH_SEPARATOR.'config.inc.php');
-				require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE, SYS_PATH_SEPARATOR, dirname(__FILE__).SYS_PATH_SEPARATOR).'./config.inc.php');
+				require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared'.SYS_PATH_SEP.'config.inc.php');
+				require_once(str_replace(SYS_PATH_SEP_DOUBLE, SYS_PATH_SEP, dirname(__FILE__).SYS_PATH_SEP).'./config.inc.php');
 				$connection = dctl_sql_connect(WEB_NEWSLETTER);
 				if ($connection) {
 					$email = addslashes($email);
@@ -1771,7 +1771,7 @@ define('STR_HIGHLIGHT_STRIPLINKS', 8);
 	* @return      Text with needle highlighted
 	*/
 function str_highlight($text, $needle, $options = null, $highlight = null, $start = "<strong>", $end = "</strong>", &$refs) {
- $text = preg_replace('/'.WHITESPACES.''.WHITESPACES.'+/', ' ', $text);
+ $text = preg_replace('/'.WS.''.WS.'+/', ' ', $text);
  $refs = array();
  // Default highlighting
  if ($highlight === null) {
@@ -1783,7 +1783,7 @@ function str_highlight($text, $needle, $options = null, $highlight = null, $star
   $sl_pattern = '#(%s)#';
  } else {
   $pattern = '#(?!<.*?)(%s)(?![^<>]*?>)#';
-  $sl_pattern = '#<a'.WHITESPACES.'(?:.*?)>(%s)</a>#';
+  $sl_pattern = '#<a'.WS.'(?:.*?)>(%s)</a>#';
  }
  // Case sensitivity
  if (!($options & STR_HIGHLIGHT_CASESENS)) {
@@ -1848,7 +1848,7 @@ if (DVLP_USE_PAGINATION) {
 		$result = '';
 		$result .='javascript: indexAjax(\'load_package\', \''.DCTL_EXPLORER_1.'\', \''.$collection_id.'\', \''.$package_id.'\'';
 
-		$result .=', \'url='.$theNext.SYS_PATH_SEPARATOR.$theAnchor.'\'';
+		$result .=', \'url='.$theNext.SYS_PATH_SEP.$theAnchor.'\'';
 
 		foreach ($params as $param) {
 			$result .= ', \''.$param.'\'';

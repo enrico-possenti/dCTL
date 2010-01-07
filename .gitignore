@@ -3,6 +3,7 @@ apps/tmp/
 
 dev-*/
 nbproject/
+*-prev*
 
 *~
 .htaccess

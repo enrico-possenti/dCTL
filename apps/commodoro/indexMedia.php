@@ -75,11 +75,11 @@ if ($isUpload) {
    $pathToUpload = $pathToUpload0;
    $fileNameUpload = strtolower(normalize($v['name']));
    $fileNameTemp = $v['tmp_name'];
-   $dirToUpload = dirname($pathToUpload).SYS_PATH_SEPARATOR;
+   $dirToUpload = dirname($pathToUpload).SYS_PATH_SEP;
    $dirToUpload = str_ireplace($ftp_path, '', $dirToUpload);
    $dirToUpload = str_ireplace('..', '', $dirToUpload);
    $dirToUpload = str_ireplace('.', '', $dirToUpload);
-   $dirToUpload = str_ireplace(SYS_PATH_SEPARATOR, SYS_PATH_SEPARATOR, $dirToUpload);
+   $dirToUpload = str_ireplace(SYS_PATH_SEP, SYS_PATH_SEP, $dirToUpload);
    $dirToUpload = $ftp_path.$dirToUpload;
    $fileToUpload = basename($pathToUpload);
    $isMedia = (($fileToUpload) == basename(DCTL_MEDIA_BIG));
@@ -88,7 +88,7 @@ if ($isUpload) {
    if (in_array($extToUpload, $array_estensioni_ammesse)) {
     if (is_dir($dirToUpload)) {
      if ($isMedia) {
-      $fileToUpload .= SYS_PATH_SEPARATOR;
+      $fileToUpload .= SYS_PATH_SEP;
       if ($isUpdateimg) {
        $fileNameUpload = basename($fOperationImg);
        if (is_file($fOperationImg))unlink($fOperationImg);
@@ -166,7 +166,7 @@ $returnText .= '<h2>Gestione Collection & Media</h2>';
 //
 // SELEZIONA COLLECTION
 $fDiv0 = 'divSelectCollection';
-$collectionPath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR;
+$collectionPath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEP;
 getCollectionList(DCTL_PROJECT_PATH, &$collectionList, true);
 //putOpenCloseLevel
 $returnText .= putOpenLevel($fDiv0, $loc4msg, $collection_id != '', 'Seleziona una Collection ('.(count($collectionList['path'])-1).')', &$resultMsg);

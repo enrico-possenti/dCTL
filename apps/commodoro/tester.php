@@ -26,6 +26,12 @@ function formatIt ($p, $c, $t, $x) {
 	$returnText .= '</span><br />';
 	echo $returnText;
 };
+// +----------------------------------------------------------------------+
+function highlightIt ($method, $tChk, $tXPath, $resultXML) {
+		$simplexml = @simplexml_load_string($resultXML, 'asPrettyXMLElement', DCTL_XML_LOADER);
+		echo '<h2>'.$method.'(\''.$tChk.'\', \''.$tXPath.'\')</h2>';
+		echo '<script type="syntaxhighlighter" class="brush: xml"><![CDATA['.$simplexml->asPrettyXML(1).']]></script>';
+};
 // |
 /**
 	// +----------------------------------------------------------------------+
@@ -94,6 +100,112 @@ class CoreTester_Repository extends WebTestCase {
 	}
 }
 // +----------------------------------------------------------------------+
+class CoreTester_getOptions extends WebTestCase {
+	function Test_getOptions() {
+		global $dCTL;
+  $method = 'getOptions';
+
+		$tChk = 'afd/_txt';
+		$tXPath = '//(tei:name|tei:rs)[@ana &= "as_source"]#n@"*"';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/_txt';
+		$tXPath = '//(tei:name|tei:rs)[@ana &= "func_place"]#n@"*"';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/_txt';
+		$tXPath = '//(tei:name|tei:rs)[not(@ana)]#n@"*"';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/_txt';
+		$tXPath = '//tei:name[@ana &= "func_character"]#n@"*"';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/_txt';
+		$tXPath = '//tei:name[@ana &= "func_character"]#n@"a+";10';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/marmi_img';
+		$tXPath = '//*[@ana &= "key_item"]';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/marmi_img';
+		$tXPath = '//dctl:iconTerm';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/marmi_img';
+		$tXPath = '//dctl:iconTerm#n@"*"';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/marmi_txt';
+		$tXPath = '@ana &= "genre*"';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/marmi_txt';
+		$tXPath = '@ana &= "verbfig*"';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/marmi_txt';
+		$tXPath = '//tei:bibl[@type &= "artwork"]';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/marmi_txt';
+		$tXPath = '//tei:name[@ana &= "func_character"]#n@"a*"';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/marmi_txt';
+		$tXPath = '//tei:name[@ana &= "func_character"]#n@"b+"';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/marmi_txt';
+		$tXPath = '//tei:name[@ana &= "func_character"]#n@"Betussi, Giuseppe";10';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/marmi_txt';
+		$tXPath = '//tei:title#.@"*";0';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/marmi_txt';
+		$tXPath = '//tei:title#.@"c+";0';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+
+		$tChk = 'afd/mondi_img';
+		$tXPath = '//tei:title#.@"*";0';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+		$tChk = 'afd/mondi_img';
+		$tXPath = '//tei:title#.@"d+";0';
+		$tCmd = $dCTL->$method($tChk,$tXPath);
+		highlightIt($method, $tChk, $tXPath, $tCmd);
+
+
+//		$tXml = simplexmlloadstring($tCmd);
+// 		$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
+// 		$t = count($tRes);
+// 		formatIt('getOptions', $tChk, $t, $tRes);
+
+ }
+}
+// +----------------------------------------------------------------------+
+/*
 class CoreTester_getStructure extends WebTestCase {
 	public $testIt = FALSE;
 	function __construct () {
@@ -654,15 +766,15 @@ class CoreTester_getStructure extends WebTestCase {
 			$tRes = TRUE;
 			formatIt('getStructure', $tChk, $t, $tRes);
 
-			/** MISSING
-				"#" anchor "$(hier)" : returns all the nodes identified by anchor in their own <div> hierarchy
-				"#" anchor "$(page)" : returns all the nodes identified by anchor with page reference in @synch
-				"#" anchor "$(hier:page)" : returns all the nodes identified by anchor in their own <div> hierarchy with page reference in @synch
-				*/
+			// MISSING
+			//	"#" anchor "$(hier)" : returns all the nodes identified by anchor in their own <div> hierarchy
+			//	"#" anchor "$(page)" : returns all the nodes identified by anchor with page reference in @synch
+			//	"#" anchor "$(hier:page)" : returns all the nodes identified by anchor in their own <div> hierarchy with page reference in @synch
 
 		}
 	}
 }
+*/
 // +----------------------------------------------------------------------+
 
 /** MISSING
@@ -733,6 +845,7 @@ class CoreTester_getStructure extends WebTestCase {
 	}
 	*/
 // +----------------------------------------------------------------------+
+/*
 class CoreTester_Simone extends WebTestCase {
 	// |
 	function __construct () {
@@ -981,7 +1094,9 @@ class CoreTester_Simone extends WebTestCase {
 		}
 	}
 }
+*/
 // +----------------------------------------------------------------------+
+/*
 class CoreTester_SimoneFixed extends WebTestCase {
 	// |
 	function __construct () {
@@ -1229,5 +1344,6 @@ class CoreTester_SimoneFixed extends WebTestCase {
 		}
 	}
 }
+*/
 // +----------------------------------------------------------------------+
 ?>

@@ -15,8 +15,8 @@
 
 /* INITIALIZE */
 require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/config.inc.php');
-require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'../_shared/exist-api.inc.php');
-require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'./config.inc.php');
+require_once(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).'../_shared/exist-api.inc.php');
+require_once(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).'./config.inc.php');
 /* */
 $returnText = '';
 $returnText .= '<?xml version="1.0" encoding="UTF-8"?>';

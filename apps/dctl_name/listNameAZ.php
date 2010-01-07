@@ -106,5 +106,5 @@ $connection = dctl_sql_connect(DCTL_DB_NAME);
 	mysql_close($connection);
 		//
 	};
-require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'footer.php');
+require_once(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).'footer.php');
 ?>

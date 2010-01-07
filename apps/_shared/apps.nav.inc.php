@@ -40,7 +40,7 @@ if (!defined('_INCLUDE')) die('"'.__FILE__.'" not executable... me, i abort.');
 		// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 		if (false) {
-			define('PATH_TO_ENGINE', str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'..'.SYS_PATH_SEPARATOR.COMMODORO.SYS_PATH_SEPARATOR.'core.php');
+			define('PATH_TO_ENGINE', str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).'..'.SYS_PATH_SEP.COMMODORO.SYS_PATH_SEP.'core.php');
 			require_once(PATH_TO_ENGINE);
 			if ($dCTL = dCTLRetriever::singleton()) {
 				if ($dCTL->db) {

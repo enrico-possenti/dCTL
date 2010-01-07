@@ -10,7 +10,7 @@
 	};
 	/* INITIALIZE */
 require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/config.inc.php');
-require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'./config.inc.php');
+require_once(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).'./config.inc.php');
 
 	/* */
  $downloadPath = '';
@@ -43,10 +43,10 @@ $filePath = trim($filePath);
 $filePath0 = $filePath;
 $ftp_path = DCTL_PROJECT_PATH;
 $filePath = str_ireplace($ftp_path, '', $filePath);
-$filePath = str_ireplace('..'.SYS_PATH_SEPARATOR, SYS_PATH_SEPARATOR, $filePath);
-$filePath = str_ireplace('.'.SYS_PATH_SEPARATOR, SYS_PATH_SEPARATOR, $filePath);
+$filePath = str_ireplace('..'.SYS_PATH_SEP, SYS_PATH_SEP, $filePath);
+$filePath = str_ireplace('.'.SYS_PATH_SEP, SYS_PATH_SEP, $filePath);
 $filePath = $ftp_path.$filePath;
-$filePath = str_ireplace(SYS_PATH_SEPARATOR.SYS_PATH_SEPARATOR, SYS_PATH_SEPARATOR, $filePath);
+$filePath = str_ireplace(SYS_PATH_SEP.SYS_PATH_SEP, SYS_PATH_SEP, $filePath);
 $f = basename($_SERVER['PHP_SELF']);
 if (
 	(stripos($filePath, $f) === false)
@@ -82,7 +82,7 @@ if (
 					if ($lockIt) {
 						$downloadPath = getModel($filePath);
 						$current_user = $_REQUEST['user'];
-						$filePathH = dirname($filePath).SYS_PATH_SEPARATOR.'x-'.$current_user.'-'.basename($filePath);
+						$filePathH = dirname($filePath).SYS_PATH_SEP.'x-'.$current_user.'-'.basename($filePath);
 						copy($filePath, $filePathH);
 		 			@chmod($filePathH, CHMOD);
 					};
@@ -101,7 +101,7 @@ if (
 	 case $isGenerate:
 			$collection_id = basename(dirname($filePath));
 			$fName = basename($filePath);
-			$filePath = $ftp_path.$collection_id.SYS_PATH_SEPARATOR.$fName;
+			$filePath = $ftp_path.$collection_id.SYS_PATH_SEP.$fName;
 			$content = array();
 			$isLocked = checkIfLocked ($filePath, &$who, &$content);
 			if ($isLocked) {

@@ -24,7 +24,7 @@ class SimpleCollector {
      * @return string         Path without trailing slash.
      */
     function _removeTrailingSlash($path) {
-        if (substr($path, -1) == DIRECTORY_SEPARATOR) {
+        if (substr($path, -1) == DIRECTORY_SEP) {
             return substr($path, 0, -1);
         } elseif (substr($path, -1) == '/') {
             return substr($path, 0, -1);
@@ -46,7 +46,7 @@ class SimpleCollector {
                 if ($this->_isHidden($entry)) {
                     continue;
                 }
-                $this->_handle($test, $path . DIRECTORY_SEPARATOR . $entry);
+                $this->_handle($test, $path . DIRECTORY_SEP . $entry);
             }
             closedir($handle);
         }

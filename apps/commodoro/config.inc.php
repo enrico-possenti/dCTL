@@ -1,15 +1,15 @@
 <?php
  if (!defined('_INCLUDE')) die('"'.__FILE__.'" not executable... me, i abort.');
 
-require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR)."functions.inc.php");
+require_once(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP)."functions.inc.php");
 
 	if (!defined('DCTL_EXT_IMT')) define('DCTL_EXT_IMT', true); // use Image Tool Mapper
 	if (!defined('DCTL_EXT_IMT_CBP')) define('DCTL_EXT_IMT_CBP', 'imt');
-	if (!defined('DCTL_EXT_IMT_CB')) define('DCTL_EXT_IMT_CB', WWW_NAME.dirname($_SERVER['PHP_SELF']).WEB_PATH_SEPARATOR.'indexAjax.php?action=update_imt'); //
+	if (!defined('DCTL_EXT_IMT_CB')) define('DCTL_EXT_IMT_CB', WWW_NAME.dirname($_SERVER['PHP_SELF']).WEB_PATH_SEP.'indexAjax.php?action=update_imt'); //
 
 	define('DCTL_EXT_URL', dirname(DCTL_EXT_IMT_CB));
-	define('DCTL_EXT_IMT_BASE', DCTL_EXT_URL.WEB_PATH_SEPARATOR.'tools'.WEB_PATH_SEPARATOR.'imt'.WEB_PATH_SEPARATOR);
-	define('DCTL_EXT_IMT_CALL_TEST', DCTL_EXT_URL.WEB_PATH_SEPARATOR.'tools'.WEB_PATH_SEPARATOR.'test_imt.php');
+	define('DCTL_EXT_IMT_BASE', DCTL_EXT_URL.WEB_PATH_SEP.'tools'.WEB_PATH_SEP.'imt'.WEB_PATH_SEP);
+	define('DCTL_EXT_IMT_CALL_TEST', DCTL_EXT_URL.WEB_PATH_SEP.'tools'.WEB_PATH_SEP.'test_imt.php');
 	define('DCTL_EXT_IMT_CALL_REAL', DCTL_EXT_IMT_BASE.'index.php');
 
 

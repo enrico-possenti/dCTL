@@ -28,7 +28,7 @@ $isInclude = TRUE;
 // |
 // +----------------------------------------------------------------------+
 // $New: 0.7.01
-// - da ora in avanti tutte le modifiche in CHANGELOG
+// - da ora in avanti tutte le modifiche sono riportate in CHANGELOG
 // $New: 0.7.00
 // - modificate tutte le variabili path
 // - un sacco di cose, troppe da elencare (speriamo funzioni tutto)
@@ -65,7 +65,7 @@ require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/_protected/
 // 	};
 // | load config files
 require_once(str_replace('//','/',dirname(__FILE__).'/').'../_shared/config.inc.php');
-$config = (str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'./config.inc.php');
+$config = (str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).'./config.inc.php');
 if (is_file($config)) require_once($config);
 // +----------------------------------------------------------------------+
 // | MAIN CLASS DEFINITION
@@ -199,7 +199,7 @@ class dCTL {
 			} catch( SoapFault $e ) {
 				$chk = NULL;
 			};
-			if (($chk->name.DB_PATH_SEPARATOR) != $this->_db_publish_path) {
+			if (($chk->name.DB_PATH_SEP) != $this->_db_publish_path) {
 				$this->_db->createCollection($this->_db_publish_path);
 				$this->_db->setPermissions($this->_db_publish_path, DCTL_XMLDB_USER_ADMIN, DCTL_XMLDB_GROUP_ADMIN, DCTL_XMLDB_PERMISSIONS_ADMIN);
 			};
@@ -222,7 +222,7 @@ class dCTL {
 			$collectionRecord = array();
 			if ($collections = $this->_db->getCollections($thePath)) {
 				foreach ((array) @$collections->collections->elements as $key=>$collection) {
-					$thePath2 = $thePath.$collection.DB_PATH_SEPARATOR;
+					$thePath2 = $thePath.$collection.DB_PATH_SEP;
 					$this->_get_collection_record ($justRefs, $thePath2, &$collectionRecord);
 					$collectionList[$key]['kind'] = 'collection';
 					$collectionList[$key]['ref'] = $collectionRecord['ref'];
@@ -319,7 +319,7 @@ class dCTL {
 						$ext = substr($package_id, -8, 4); // _img
 						$name = substr($package_id, 0, -7); // marmi_
 						if ((count($filter)==0) || (in_array($ext, $filter)) || (preg_grep('/'.$name.'/', $filter))) {
-							$thePath2 = $thePath.DB_PATH_SEPARATOR.$package;
+							$thePath2 = $thePath.DB_PATH_SEP.$package;
 							$this->_get_package_record ($justRefs, $thePath2, &$packageRecord);
 							$packageList[$key]['kind'] = 'package';
 							$packageList[$key]['ref'] = $packageRecord['ref'];
@@ -395,7 +395,7 @@ class dCTL {
 		$collection_id = isset($package_id[0]) ? $package_id[0] : '';
 		$package_id = isset($package_id[1]) ? $package_id[1] : '';
 		if ($package_id != '') {
-			$thePath = dirname($thePath).DB_PATH_SEPARATOR;
+			$thePath = dirname($thePath).DB_PATH_SEP;
 			$xml_resource = $thePath.$collection_id.DCTL_RESERVED_INFIX.$package_id;
 			$ext = str_ireplace('.xml','', $package_id);
 			$ext = substr($ext, -4, 4);
@@ -434,7 +434,7 @@ class dCTL {
 					};
 					if ((string)$xml_node['ref'] != '') {
 						$packageRecord['kind'] = 'package';
-						$packageRecord['ref'] = 'xml://'.str_ireplace((string)$xml_node['collection_ref'].DCTL_RESERVED_INFIX, (string)$xml_node['collection_ref'].DB_PATH_SEPARATOR, (string)$xml_node['ref']);
+						$packageRecord['ref'] = 'xml://'.str_ireplace((string)$xml_node['collection_ref'].DCTL_RESERVED_INFIX, (string)$xml_node['collection_ref'].DB_PATH_SEP, (string)$xml_node['ref']);
 						$packageRecord['path'] = $xml_resource;
 						$packageRecord['short'] = (string)$xml_node['short'];
 						$packageRecord['type'] = (string)$xml_node['type'];
@@ -494,15 +494,15 @@ class dCTL {
 					case 'xml':
 					case 'img': {
 							$parsed['collection'] = $parsed['authority'];
-							$parsed['path'] = str_ireplace(DB_PATH_SEPARATOR.DB_PATH_SEPARATOR, DB_PATH_SEPARATOR, $parsed['path']);
-							$path = explode(DB_PATH_SEPARATOR, $parsed['path']);
+							$parsed['path'] = str_ireplace(DB_PATH_SEP.DB_PATH_SEP, DB_PATH_SEP, $parsed['path']);
+							$path = explode(DB_PATH_SEP, $parsed['path']);
 							$parsed['package'] = isset($path[1]) ? $path[1] : '';
-							$parsed['locator'] = str_ireplace(DB_PATH_SEPARATOR.$parsed['package'].DB_PATH_SEPARATOR, '', $parsed['path']);
+							$parsed['locator'] = str_ireplace(DB_PATH_SEP.$parsed['package'].DB_PATH_SEP, '', $parsed['path']);
 							$normalize = '';
-							$normalize .= DB_PATH_SEPARATOR.str_ireplace(DCTL_RESERVED_INFIX, DB_PATH_SEPARATOR, $parsed['collection']).DB_PATH_SEPARATOR;
-							$normalize .= str_ireplace(DCTL_RESERVED_INFIX, DB_PATH_SEPARATOR, $parsed['package']).DB_PATH_SEPARATOR;
-							$normalize = str_ireplace(DB_PATH_SEPARATOR.DB_PATH_SEPARATOR, DB_PATH_SEPARATOR, $normalize);
-							$rebuilt = array_filter(explode(DB_PATH_SEPARATOR, $normalize));
+							$normalize .= DB_PATH_SEP.str_ireplace(DCTL_RESERVED_INFIX, DB_PATH_SEP, $parsed['collection']).DB_PATH_SEP;
+							$normalize .= str_ireplace(DCTL_RESERVED_INFIX, DB_PATH_SEP, $parsed['package']).DB_PATH_SEP;
+							$normalize = str_ireplace(DB_PATH_SEP.DB_PATH_SEP, DB_PATH_SEP, $normalize);
+							$rebuilt = array_filter(explode(DB_PATH_SEP, $normalize));
 							$unwanted = '(\/$)*|(\*_+\*)*|(\*)*';
 							$parsed['collection'] = preg_replace('/'.$unwanted.'/', '', isset($rebuilt[1]) ? $rebuilt[1] : '');
 							$parsed['package'] = preg_replace('/'.$unwanted.'/', '', isset($rebuilt[2]) ? $rebuilt[2] : '');
@@ -535,7 +535,7 @@ class dCTL {
 									if ($parsed['collection'] == '') {
 										$this->_get_collection_list(false, $this->_db_publish_path, &$resList);
 									} else {
-										$xml_resource = $this->_db_publish_path.$parsed['collection'].DB_PATH_SEPARATOR;
+										$xml_resource = $this->_db_publish_path.$parsed['collection'].DB_PATH_SEP;
 										if ($parsed['package'] == '') {
 											$this->_get_collection_record(false, $xml_resource, &$resList[]);
 										} else {
@@ -547,7 +547,7 @@ class dCTL {
 												$this->_get_package_record(false, $xml_resource, &$resList[]);
 // per ritornare almeno la collezione, ma non mi pare coerente
 // 	          if (!$resList[0]['ref']) {
-// 	  									$xml_resource = $this->_db_publish_path.$parsed['collection'].DB_PATH_SEPARATOR;
+// 	  									$xml_resource = $this->_db_publish_path.$parsed['collection'].DB_PATH_SEP;
 //             $this->_get_collection_record(true, $xml_resource, &$resList[]);
 // 	          };
 											};
@@ -569,7 +569,7 @@ class dCTL {
 												$context .= ($parsed_query) ? $parsed_query : '';
 												$last_attr = '';
 												$last_val = '';
-												if (preg_match('/\@(\w+)'.WHITESPACES.'*.?'.WHITESPACES.'*='.WHITESPACES.'*"'.WHITESPACES.'*(.*)'.WHITESPACES.'*"'.WHITESPACES.'*/', $context, $matches)) {
+												if (preg_match('/\@(\w+)'.WS.'*.?'.WS.'*='.WS.'*"'.WS.'*(.*)'.WS.'*"'.WS.'*/', $context, $matches)) {
 													$last_attr = $matches[count($matches)-2];
 													$last_val = $matches[count($matches)-1];
 												};
@@ -592,13 +592,13 @@ class dCTL {
 												};
 												if ($asOptions) {
 													if ($parsed_query != '') {
-														if (preg_match('/^'.WHITESPACES.'*\@'.WHITESPACES.'*(\w+)'.WHITESPACES.'*\&*\|*'.WHITESPACES.'*\='.WHITESPACES.'*\".*\"'.WHITESPACES.'*$/', $context, $matchesX) ) {
+														if (preg_match('/^'.WS.'*\@'.WS.'*(\w+)'.WS.'*\&*\|*'.WS.'*\='.WS.'*\".*\"'.WS.'*$/', $context, $matchesX) ) {
 															$forced = true;
 															$context = '//*['.$context.']';
 														};
 													};
 													switch (true) {
-														case preg_match('/^'.WHITESPACES.'*(\w*|\.)'.WHITESPACES.'*(\@'.WHITESPACES.'*\"'.WHITESPACES.'*((\w|\W|\*)(?:\+*)*)'.WHITESPACES.'*(\+*)'.WHITESPACES.'*(.*)'.WHITESPACES.'*\"'.WHITESPACES.'*(\;'.WHITESPACES.'*(\-*\d+)'.WHITESPACES.'*)?)/', $parsed_anchor, $matches):
+														case preg_match('/^'.WS.'*(\w*|\.)'.WS.'*(\@'.WS.'*\"'.WS.'*((\w|\W|\*)(?:\+*)*)'.WS.'*(\+*)'.WS.'*(.*)'.WS.'*\"'.WS.'*(\;'.WS.'*(\-*\d+)'.WS.'*)?)/', $parsed_anchor, $matches):
 															$tag = isset($matches[1]) ? $matches[1] : $tag;
 															$startAt = isset($matches[3]) ? $matches[3] : $startAt;
 															$upTo = isset($matches[4]) ? (($matches[4] != '') ? escapeshellcmd($startAt) : '') : '';
@@ -615,7 +615,8 @@ class dCTL {
 															};
 														 $justContent = ($tag == '.');
 															if ($justContent) {
-															 $tag = './/text()[normalize-space(.) != ""][position() = 1]';
+															 //$tag = './/text()[normalize-space(.) != ""][position() = 1]';
+															 $tag = '.';
 															} else {
 															 $tag = '@'.$tag;
 															};
@@ -645,11 +646,11 @@ class dCTL {
 												} else {
 													switch (true) {
 														// #page : la <pb> precedente il nodo
-														case preg_match('/^'.WHITESPACES.'*(page)'.WHITESPACES.'*/', $parsed_anchor, $matches):
+														case preg_match('/^'.WS.'*(page)'.WS.'*/', $parsed_anchor, $matches):
 														 $atPage = true;
 															break;
 														// #divX : la <div> di livello assoluto X che contiene il nodo
-														case preg_match('/^'.WHITESPACES.'*(div)'.WHITESPACES.'*(\-*\d+)/', $parsed_anchor, $matches):
+														case preg_match('/^'.WS.'*(div)'.WS.'*(\-*\d+)/', $parsed_anchor, $matches):
 															$tag = isset($matches[1]) ? $matches[1] : $tag;
 															$absLevel = isset($matches[2]) ? abs(strval($matches[2])) : '';
 															$context .= '/ancestor-or-self::tei:'.$tag.'[count(ancestor::tei:'.$tag.')='.($absLevel-1).']'.'[child::text() or child::node()]';
@@ -657,7 +658,7 @@ class dCTL {
 														// #div : le <div> children del nodo
 														// #div@X
 														// #div@X;Z
-														case preg_match('/^'.WHITESPACES.'*(div)'.WHITESPACES.'*($|\@'.WHITESPACES.'*(\-*\d+)'.WHITESPACES.'*(\;'.WHITESPACES.'*(\-*\d+))?)/', $parsed_anchor, $matches):
+														case preg_match('/^'.WS.'*(div)'.WS.'*($|\@'.WS.'*(\-*\d+)'.WS.'*(\;'.WS.'*(\-*\d+))?)/', $parsed_anchor, $matches):
 															$tag = isset($matches[1]) ? $matches[1] : $tag;
 															$startAt =  isset($matches[3]) ? abs(intval($matches[3])) : $startAt;
 															$howMany =  isset($matches[5]) ? intval($matches[5]) : (($startAt) ? 1 : $startAt);
@@ -667,7 +668,7 @@ class dCTL {
 														// #pb : le <pb> children del nodo
 														// #pb@X
 														// #pb@X;Z
-														case preg_match('/^'.WHITESPACES.'*(pb)'.WHITESPACES.'*($|\@'.WHITESPACES.'*(\-*\d+)'.WHITESPACES.'*(\;'.WHITESPACES.'*(\-*\d+))?)/', $parsed_anchor, $matches):
+														case preg_match('/^'.WS.'*(pb)'.WS.'*($|\@'.WS.'*(\-*\d+)'.WS.'*(\;'.WS.'*(\-*\d+))?)/', $parsed_anchor, $matches):
 															$tag = isset($matches[1]) ? $matches[1] : $tag;
 															$startAt =  isset($matches[3]) ? abs(intval($matches[3])) : $startAt;
 															$howMany =  isset($matches[5]) ? intval($matches[5]) : (($startAt) ? 1 : $startAt);
@@ -689,34 +690,40 @@ class dCTL {
 													$xquery .= "\n".' let $e := for $node in ';
 													$xquery .= "\n".' xmldb:document("';
 													$xquery .= $xml_resource.'")//tei:text/*'.$context.' ';
-													$xquery .= "\n".' let $chunk := ';
-													$xquery .= "\n".' if ($node instance of text()) then $node else $node//text() ';
+// 													$xquery .= "\n".' let $chunk := ';
+// 													$xquery .= "\n".' if ($node instance of text()) then $node else $node//text() ';
 													$xquery .= "\n".' return ';
 													$xquery .= "\n".' if ($node/node()) ';
-													$xquery .= "\n".' then ';
-													$xquery .= "\n".' ("<item><", node-name($node), for $att in $node/@* return (" ", node-name($att), "=&quot;", $att, "&quot;"), ">",';
-													$xquery .= "\n".' $chunk, "</", node-name($node), "></item>") ';
-													$xquery .= "\n".' else ';
-													$xquery .= "\n".' let $what := if (/id($node)) then ';
-													$xquery .= "\n".' tokenize(tokenize($node, "'.WHITESPACES.'"), "'.WHITESPACES.'") else ';
+													$xquery .= "\n".'  then ';
+// 													$xquery .= "\n".' ("<item><", node-name($node), for $att in $node/@* return (" ", node-name($att), "=&quot;", $att, "&quot;"), ">",';
+// 													$xquery .= "\n".' $chunk, "</", node-name($node), "></item>") ';
+// 													$xquery .= "\n".' element item { element {node-name($node)} {$node/@*, text {$chunk}} } ';
+														$xquery .= "\n".'  $node ';
+
+													$xquery .= "\n".'  else ';
+													$xquery .= "\n".'   let $what := if (/id($node)) then ';
+													$xquery .= "\n".'    tokenize(tokenize($node, "'.WS.'"), "'.WS.'") else ';
+// 													if ($jolly) {
+													$xquery .= ' $node ';
+// 														} else {
+// 														$xquery .= "\n".' element {node-name($node)} {$node/@*, text {$chunk}} ';
+// 													};
+													$xquery .= "\n".'    for $item in distinct-values( ';
+ 													$xquery .= "\n".'     for $token in $what ';
+//													$xquery .= "\n".'     for $token in $node ';
+													$xquery .= "\n".'      let $include := if ($node/node() or ('.!$last_val.') or name($node) != "'.$last_attr.'") then true() ';
+													$xquery .= ' else contains($token, tokenize("'.$match.'", "'.WS.'")) ';
+													$xquery .= "\n".'      return if ($include) then $token else () ';
+													$xquery .= "\n".'    ) return ';
 													if ($jolly) {
-														$xquery .= "\n".' $node ';
-														} else {
-														$xquery .= "\n".' element {node-name($node)} {$node/@*, text {$node//text()}} ';
-													};
-													$xquery .= "\n".' for $item in distinct-values( ';
-													$xquery .= "\n".' for $token in $what ';
-													$xquery .= "\n".' let $include := if ($node/node() or ('.!$last_val.') or name($node) != "'.$last_attr.'") then true() else contains($token, tokenize("'.$match.'", "'.WHITESPACES.'")) ';
-													$xquery .= "\n".' return if ($include) then $token else () ';
-													$xquery .= "\n".' ) ';
-													if ($jolly) {
-														$xquery .= "\n".' return lower-case(substring($item,1,'.$jolly.')) ';
+														$xquery .= ' lower-case(substring($item,1,'.$jolly.')) ';
 													} else {
-														$xquery .= "\n".' return lower-case($item) ';
+														$xquery .= ' $item ';
 													};
 													$xquery .= "\n".' return ';
 													if ($howMany) $xquery .= "\n".' for $final in subsequence(';
-													$xquery .= "\n".' if (matches($e, "<\w+")) then $e else for $x in distinct-values($e) order by $x return <item>{$x}</item> ';
+// 													$xquery .= "\n".' if (matches($e, "<\w+")) then $e else for $x in distinct-values($e) order by $x return <item>{$x}</item> ';
+													$xquery .= "\n".'  for $x in distinct-values($e) order by $x return element item {normalize-space($x)} ';
 													if ($howMany) $xquery .= ', '.$startAt.', '.$howMany.' ) return $final ';
 												} else {
 													$xquery .= "\n".' let $base := xmldb:document("'.$xml_resource.'")//tei:text ';
@@ -729,9 +736,9 @@ class dCTL {
 													if ($justRefs) {
 														$xquery .= "\n".' let $chunk := ';
 														$xquery .= ' if (local-name($node) = "figure") then ';
-														$xquery .= ' $node/tei:figDesc/text() else ';
+														$xquery .= ' $node/tei:figDesc//text() else ';
 														$xquery .= ' if (local-name($node) = "graphic") then ';
-														$xquery .= ' $node/parent::tei:figure/tei:figDesc/text() else ';
+														$xquery .= ' $node/parent::tei:figure/tei:figDesc//text() else ';
 														$xquery .= ' if ($node//text() != "") then ';
 														$xquery .= ' $node//text() else '; ///*[not(self::tei:figDesc)]
 														$xquery .= ' if ($node/parent::*//text() != "") then ';
@@ -778,7 +785,7 @@ class dCTL {
 												$this->_get_package_record ($justRefs, $xml_resource, &$resList[$key4package]);
 												$resList[$key4package]['xquery'] = htmlentities($context);
 												if ($resList[$key4package]['ref'] != '') {
-													if ($parsed_locator != '') $resList[$key4package]['ref'] .= DB_PATH_SEPARATOR.$parsed_locator;
+													if ($parsed_locator != '') $resList[$key4package]['ref'] .= DB_PATH_SEP.$parsed_locator;
 												};
 // 											if (preg_match('/\w+/', $db_resource)) {
 //             $resList[$key4package]['check'] = preg_match_all('/\<\w+/', $db_resource, $matches);
@@ -854,11 +861,11 @@ class dCTL {
 		$docList = array();
 		foreach($resourceList as $key4docList=>$parsed) {
 			$resList = array();
-			$xml_resource = $this->_db_publish_path.$parsed['collection'].DB_PATH_SEPARATOR.$parsed['collection'].DCTL_RESERVED_INFIX.$resFile;
+			$xml_resource = $this->_db_publish_path.$parsed['collection'].DB_PATH_SEP.$parsed['collection'].DCTL_RESERVED_INFIX.$resFile;
 			$db_resource = '';
 			switch($resFile) {
 				case DCTL_FILE_LINKER:
-					$fullItem = $parsed['scheme'].'://'.$parsed['collection'].DB_PATH_SEPARATOR.$parsed['package'].DB_PATH_SEPARATOR.$parsed['locator'];
+					$fullItem = $parsed['scheme'].'://'.$parsed['collection'].DB_PATH_SEP.$parsed['package'].DB_PATH_SEP.$parsed['locator'];
 					$s1 = ' '.$fullItem;
 					$s2 = $fullItem.' ';
 					$s3 = ' '.$fullItem.' ';
@@ -892,11 +899,11 @@ class dCTL {
 					};
 					$key4package = 0;
 					$package = (preg_match('/\.xml$/i', $parsed['package']) ? $parsed['package'] : $parsed['package'].'.xml');
-					$xml_resource = $this->_db_publish_path.$parsed['collection'].DB_PATH_SEPARATOR.$parsed['collection'].DCTL_RESERVED_INFIX.$package;
+					$xml_resource = $this->_db_publish_path.$parsed['collection'].DB_PATH_SEP.$parsed['collection'].DCTL_RESERVED_INFIX.$package;
 					$this->_get_package_record (true, $xml_resource, &$resList[$key4package]);
 					$resList[$key4package]['xquery'] = htmlentities($context);
 					if ($resList[$key4package]['ref'] != '') {
-						if ($parsed['locator'] != '') $resList[$key4package]['ref'] .= DB_PATH_SEPARATOR.$parsed['locator'];
+						if ($parsed['locator'] != '') $resList[$key4package]['ref'] .= DB_PATH_SEP.$parsed['locator'];
 					};
 					$resList[$key4package]['kind'] = "link";
 					$resList[$key4package]['link'] = $db_resource;
@@ -904,16 +911,16 @@ class dCTL {
 				case DCTL_FILE_MAPPER:
 				 switch ($parsed['scheme']) {
 				  case 'xml':
-							$fullItem = $parsed['scheme'].'://'.$parsed['collection'].DB_PATH_SEPARATOR.$parsed['package'].DB_PATH_SEPARATOR.$parsed['locator'];
+							$fullItem = $parsed['scheme'].'://'.$parsed['collection'].DB_PATH_SEP.$parsed['package'].DB_PATH_SEP.$parsed['locator'];
 							$s1 = ' '.$fullItem;
 							$s2 = $fullItem.' ';
 							$s3 = ' '.$fullItem.' ';
 							$context = '//tei:ref[(@target = "'.$s1.'") or contains(@target, "'.$s2.'") or contains(@target, "'.$s3.'") or (@target = "'.$fullItem.'")]';
 				   break;
 				  case 'img':
-  					$fullItem = $parsed['scheme'].'://'.$parsed['collection'].DB_PATH_SEPARATOR.$parsed['package'].'@';
-							$s1 = str_ireplace($parsed['collection'].DB_PATH_SEPARATOR, $parsed['collection'].'-', $fullItem);
-							$s2 = str_ireplace($parsed['collection'].'-', $parsed['collection'].DB_PATH_SEPARATOR, $fullItem);
+  					$fullItem = $parsed['scheme'].'://'.$parsed['collection'].DB_PATH_SEP.$parsed['package'].'@';
+							$s1 = str_ireplace($parsed['collection'].DB_PATH_SEP, $parsed['collection'].'-', $fullItem);
+							$s2 = str_ireplace($parsed['collection'].'-', $parsed['collection'].DB_PATH_SEP, $fullItem);
 							$context = '//tei:ref[contains(@target, "'.$s1.'") or contains(@target, "'.$s2.'")]';
 							break;
 					};
@@ -979,15 +986,15 @@ class dCTL {
 				 switch ($parsed['scheme']) {
 				  case 'xml':
 							$package = (preg_match('/\.xml$/i', $parsed['package']) ? $parsed['package'] : $parsed['package'].'.xml');
-							$xml_resource = $this->_db_publish_path.$parsed['collection'].DB_PATH_SEPARATOR.$parsed['collection'].DCTL_RESERVED_INFIX.$package;
+							$xml_resource = $this->_db_publish_path.$parsed['collection'].DB_PATH_SEP.$parsed['collection'].DCTL_RESERVED_INFIX.$package;
 							$this->_get_package_record (true, $xml_resource, &$resList[$key4package]);
 							if ($resList[$key4package]['ref'] != '') {
-								if ($parsed['locator'] != '') $resList[$key4package]['ref'] .= DB_PATH_SEPARATOR.$parsed['locator'];
+								if ($parsed['locator'] != '') $resList[$key4package]['ref'] .= DB_PATH_SEP.$parsed['locator'];
 							};
 				   break;
 				  case 'img':
 							$collection = (preg_match('/\.xml$/i', $parsed['collection']) ? $parsed['collection'] : $parsed['collection'].'.xml');
-							$xml_resource = $this->_db_publish_path.$parsed['collection'].DB_PATH_SEPARATOR;
+							$xml_resource = $this->_db_publish_path.$parsed['collection'].DB_PATH_SEP;
        $this->_get_collection_record (true, $xml_resource, &$resList[]);
 				   break;
 				 };

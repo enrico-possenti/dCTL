@@ -35,11 +35,11 @@ ini_set('mbstring.internal_encoding', 'UTF-8');
 ini_set('mbstring.detect_order', 'UTF-8, ISO-8859-1, ASCII, UTF-7'); //'auto'
 ini_set('mbstring.strict_detection', true);
 define('DCTL_XML_LOADER', LIBXML_DTDLOAD | LIBXML_DTDATTR | LIBXML_NOENT | LIBXML_NSCLEAN | LIBXML_COMPACT | LIBXML_NOCDATA); //  LIBXML_DTDVALID |
-define('WHITESPACES', '[ \t\r\n]');
+define('WS', '[ \t\r\n]');
 // + - - - - - - - - - - - - - - - - - -
 // | SYS ENVIRONMENT
-define('SYS_PATH_SEPARATOR', '/');
-define('SYS_PATH_SEPARATOR_DOUBLE', SYS_PATH_SEPARATOR.SYS_PATH_SEPARATOR);
+define('SYS_PATH_SEP', '/');
+define('SYS_PATH_SEP_DOUBLE', SYS_PATH_SEP.SYS_PATH_SEP);
 // + - - - - - - - - - - - - - - - - - -
 // | PATH SETUP (custom)
 // | customize here location of folders
@@ -62,26 +62,26 @@ define('DCTL_DB_ICONCLASS', 'dctl_iconclass');
 if (!defined('DCTL_SQL_USER')) define('DCTL_SQL_USER', 'ctl');
 if (!defined('DCTL_SQL_PSWD')) define('DCTL_SQL_PSWD', 'sirena');
 // | PATH CONFIG
-define('FS_BASE_PATH', str_replace(SYS_PATH_SEPARATOR_DOUBLE, SYS_PATH_SEPARATOR, dirname(dirname(dirname(__FILE__))).SYS_PATH_SEPARATOR));
+define('FS_BASE_PATH', str_replace(SYS_PATH_SEP_DOUBLE, SYS_PATH_SEP, dirname(dirname(dirname(__FILE__))).SYS_PATH_SEP));
 define('DCTL_VERSION', ''); // folder extension after "dctl"
-define('DCTL_APPS_PATH', FS_BASE_PATH.'apps'.SYS_PATH_SEPARATOR);
-define('DCTL_TOOL_PATH', ($_DCTL_TOOL_FOLDER ? $_DCTL_TOOL_FOLDER : (FS_BASE_PATH.'tool'.SYS_PATH_SEPARATOR.'exist'.SYS_PATH_SEPARATOR)));
-define('DCTL_REPO_PATH', ($_DCTL_REPO_FOLDER ? $_DCTL_REPO_FOLDER : (FS_BASE_PATH.'data'.SYS_PATH_SEPARATOR)));
-define('DCTL_DATA_PATH', ($_DCTL_DATA_FOLDER ? $_DCTL_DATA_FOLDER : (FS_BASE_PATH.'data'.SYS_PATH_SEPARATOR)));
-define('DCTL_TMP_PATH', DCTL_APPS_PATH.'tmp'.SYS_PATH_SEPARATOR);
+define('DCTL_APPS_PATH', FS_BASE_PATH.'apps'.SYS_PATH_SEP);
+define('DCTL_TOOL_PATH', ($_DCTL_TOOL_FOLDER ? $_DCTL_TOOL_FOLDER : (FS_BASE_PATH.'tool'.SYS_PATH_SEP.'exist'.SYS_PATH_SEP)));
+define('DCTL_REPO_PATH', ($_DCTL_REPO_FOLDER ? $_DCTL_REPO_FOLDER : (FS_BASE_PATH.'data'.SYS_PATH_SEP)));
+define('DCTL_DATA_PATH', ($_DCTL_DATA_FOLDER ? $_DCTL_DATA_FOLDER : (FS_BASE_PATH.'data'.SYS_PATH_SEP)));
+define('DCTL_TMP_PATH', DCTL_APPS_PATH.'tmp'.SYS_PATH_SEP);
 if(!is_dir(DCTL_TMP_PATH)) mkdir(DCTL_TMP_PATH, CHMOD);
 @chmod(DCTL_TMP_PATH, CHMOD);
 // + - - - - - - - - - - - - - - - - - -
 // | DATA (SOURCE) ENVIRONMENT
-define('DCTL_PROJECT_PATH', DCTL_DATA_PATH.'dctl-project'.SYS_PATH_SEPARATOR);
+define('DCTL_PROJECT_PATH', DCTL_DATA_PATH.'dctl-project'.SYS_PATH_SEP);
 // + - - - - - - - - - - - - - - - - - -
 // | REPO (TARGET) ENVIRONMENT
 // data/db/
-define('DCTL_DBCTL_MAINPATH', DCTL_REPO_PATH.'db'.SYS_PATH_SEPARATOR);
+define('DCTL_DBCTL_MAINPATH', DCTL_REPO_PATH.'db'.SYS_PATH_SEP);
 if(!is_dir(DCTL_DBCTL_MAINPATH)) mkdir(DCTL_DBCTL_MAINPATH, CHMOD);
 @chmod(DCTL_DBCTL_MAINPATH, CHMOD);
 // data/db/version/; optional
-define('DCTL_DBCTL_BASEPATH', DCTL_DBCTL_MAINPATH.(DCTL_VERSION?DCTL_VERSION.SYS_PATH_SEPARATOR:''));
+define('DCTL_DBCTL_BASEPATH', DCTL_DBCTL_MAINPATH.(DCTL_VERSION?DCTL_VERSION.SYS_PATH_SEP:''));
 if(!is_dir(DCTL_DBCTL_BASEPATH)) mkdir(DCTL_DBCTL_BASEPATH, CHMOD);
 @chmod(DCTL_DBCTL_BASEPATH, CHMOD);
 // reserved or public?
@@ -90,11 +90,11 @@ define('DCTL_TMP_NAME', 'dctl-temp');
 define('DCTL_PUB_NAME', 'dctl-pub');
 // reserved or public?
 // data/db/dctl-pub/
-define('DCTL_DBCTL_PUB', DCTL_DBCTL_BASEPATH.DCTL_PUB_NAME.SYS_PATH_SEPARATOR);
+define('DCTL_DBCTL_PUB', DCTL_DBCTL_BASEPATH.DCTL_PUB_NAME.SYS_PATH_SEP);
 if(!is_dir(DCTL_DBCTL_PUB)) mkdir(DCTL_DBCTL_PUB, CHMOD);
 @chmod(DCTL_DBCTL_PUB, CHMOD);
 // data/db/dctl-temp/
-define('DCTL_DBCTL_TMP', DCTL_DBCTL_BASEPATH.DCTL_TMP_NAME.SYS_PATH_SEPARATOR);
+define('DCTL_DBCTL_TMP', DCTL_DBCTL_BASEPATH.DCTL_TMP_NAME.SYS_PATH_SEP);
 if(!is_dir(DCTL_DBCTL_TMP)) mkdir(DCTL_DBCTL_TMP, CHMOD);
 @chmod(DCTL_DBCTL_TMP, CHMOD);
 // data/db/dctl-???/
@@ -106,7 +106,7 @@ if (TEMPORARY_SYSTEM) {
 // + - - - - - - - - - - - - - - - - - -
 // | COMMODORO ENVIRONMENT
 define('COMMODORO', 'commodoro');
-define('DCTL_IMAGES', '..'.SYS_PATH_SEPARATOR.'img'.SYS_PATH_SEPARATOR);
+define('DCTL_IMAGES', '..'.SYS_PATH_SEP.'img'.SYS_PATH_SEP);
 if (!defined('DCTL_USER_ID')) define('DCTL_USER_ID', 'guest');
 if (!defined('DCTL_USER_NAME')) define('DCTL_USER_NAME', 'Sconosciuto');
 if (!defined('DCTL_USER_KIND')) define('DCTL_USER_KIND', 0);
@@ -129,19 +129,19 @@ define('DCTL_RESERVED_PREFIX', '_');
 define('DCTL_RESERVED_INFIX', '-');
 define('DCTL_TEXTCLASS', 'teiHeader.profileDesc.textClass.xml');
 define('CODE_LENGTH', 8);
-define('DCTL_TMP', 'temp'.SYS_PATH_SEPARATOR);
-define('DCTL_DTD', 'dtd'.SYS_PATH_SEPARATOR);
-define('DCTL_XSLT', 'xslt'.SYS_PATH_SEPARATOR);
-define('DCTL_COLLECTION', 'collection'.SYS_PATH_SEPARATOR);
-define('DCTL_PACKAGE', 'package'.SYS_PATH_SEPARATOR);
-define('DCTL_MEDIA', DCTL_RESERVED_PREFIX.'media'.SYS_PATH_SEPARATOR);
-define('DCTL_MEDIA_SML', DCTL_MEDIA.'sml'.SYS_PATH_SEPARATOR);
-define('DCTL_MEDIA_MED', DCTL_MEDIA.'med'.SYS_PATH_SEPARATOR);
-define('DCTL_MEDIA_BIG', DCTL_MEDIA.'big'.SYS_PATH_SEPARATOR);
-define('DCTL_COLLECTION_XSLT', DCTL_RESERVED_PREFIX.'xslt'.SYS_PATH_SEPARATOR);
-define('DCTL_ADDONS', 'add-ons'.SYS_PATH_SEPARATOR);
-define('DCTL_COMMON', DCTL_RESERVED_PREFIX.'common'.SYS_PATH_SEPARATOR);
-define('DCTL_TEMPLATES', 'templates'.SYS_PATH_SEPARATOR);
+define('DCTL_TMP', 'temp'.SYS_PATH_SEP);
+define('DCTL_DTD', 'dtd'.SYS_PATH_SEP);
+define('DCTL_XSLT', 'xslt'.SYS_PATH_SEP);
+define('DCTL_COLLECTION', 'collection'.SYS_PATH_SEP);
+define('DCTL_PACKAGE', 'package'.SYS_PATH_SEP);
+define('DCTL_MEDIA', DCTL_RESERVED_PREFIX.'media'.SYS_PATH_SEP);
+define('DCTL_MEDIA_SML', DCTL_MEDIA.'sml'.SYS_PATH_SEP);
+define('DCTL_MEDIA_MED', DCTL_MEDIA.'med'.SYS_PATH_SEP);
+define('DCTL_MEDIA_BIG', DCTL_MEDIA.'big'.SYS_PATH_SEP);
+define('DCTL_COLLECTION_XSLT', DCTL_RESERVED_PREFIX.'xslt'.SYS_PATH_SEP);
+define('DCTL_ADDONS', 'add-ons'.SYS_PATH_SEP);
+define('DCTL_COMMON', DCTL_RESERVED_PREFIX.'common'.SYS_PATH_SEP);
+define('DCTL_TEMPLATES', 'templates'.SYS_PATH_SEP);
 define('DCTL_FILE_HEADER', DCTL_RESERVED_PREFIX.'header.ent');
 define('DCTL_FILE_BUILDER', DCTL_RESERVED_PREFIX.'builder.xml');
 define('DCTL_FILE_LINKER', DCTL_RESERVED_PREFIX.'linker.xml');
@@ -169,7 +169,7 @@ define('DCTL_PUBLISH_MEDIA', DCTL_PUBLISH.DCTL_MEDIA);
 define('DCTL_PUBLISH_TEXTCLASS', DCTL_PUBLISH.DCTL_TEXTCLASS);
 // + - - - - - - - - - - - - - - - - - -
 // | XML:DB ENVIRONMENT
-define('DB_PATH_SEPARATOR', '/');
+define('DB_PATH_SEP', '/');
 if (!defined('XMLDB_HOST')) define('XMLDB_HOST', 'http://'.$_SERVER['SERVER_NAME']); // eXist host
 if (!defined('XMLDB_PORT')) define('XMLDB_PORT', 8080); // eXist port
 if (!defined('XMLDB_TIMEOUT_MULTIPLIER')) define('XMLDB_TIMEOUT_MULTIPLIER', 1);
@@ -181,17 +181,17 @@ if (!defined('DCTL_XMLDB_USER_ADMIN')) define('DCTL_XMLDB_USER_ADMIN', DCTL_XMLD
 if (!defined('DCTL_XMLDB_PSWD_ADMIN')) define('DCTL_XMLDB_PSWD_ADMIN', DCTL_XMLDB_PSWD);
 if (!defined('DCTL_XMLDB_GROUP_ADMIN')) define('DCTL_XMLDB_GROUP_ADMIN', 'dba');
 if (!defined('DCTL_XMLDB_PERMISSIONS_ADMIN')) define('DCTL_XMLDB_PERMISSIONS_ADMIN', 508); // rwurwur--
-define('XMLDB_CATALOG', DCTL_TOOL_PATH.'webapp'.SYS_PATH_SEPARATOR.'WEB-INF'.SYS_PATH_SEPARATOR.'catalog.xml');
-define('XMLDB_ENTITIES', DCTL_TOOL_PATH.'webapp'.SYS_PATH_SEPARATOR.'WEB-INF'.SYS_PATH_SEPARATOR.'entities');
-define("SAXON_DIR", DCTL_TOOL_PATH.'lib'.SYS_PATH_SEPARATOR.'endorsed'.SYS_PATH_SEPARATOR);
+define('XMLDB_CATALOG', DCTL_TOOL_PATH.'webapp'.SYS_PATH_SEP.'WEB-INF'.SYS_PATH_SEP.'catalog.xml');
+define('XMLDB_ENTITIES', DCTL_TOOL_PATH.'webapp'.SYS_PATH_SEP.'WEB-INF'.SYS_PATH_SEP.'entities');
+define("SAXON_DIR", DCTL_TOOL_PATH.'lib'.SYS_PATH_SEP.'endorsed'.SYS_PATH_SEP);
 // /db/
-define('XMLDB_DBCTL_MAINPATH', DB_PATH_SEPARATOR.'db'.DB_PATH_SEPARATOR);
+define('XMLDB_DBCTL_MAINPATH', DB_PATH_SEP.'db'.DB_PATH_SEP);
 // /db/version/; optional
-define('XMLDB_DBCTL_BASEPATH', XMLDB_DBCTL_MAINPATH.(DCTL_VERSION?DCTL_VERSION.DB_PATH_SEPARATOR:''));
+define('XMLDB_DBCTL_BASEPATH', XMLDB_DBCTL_MAINPATH.(DCTL_VERSION?DCTL_VERSION.DB_PATH_SEP:''));
 // /db/dctl-pub/
-define('XMLDB_DBCTL_PUB', XMLDB_DBCTL_BASEPATH.DCTL_PUB_NAME.DB_PATH_SEPARATOR);
+define('XMLDB_DBCTL_PUB', XMLDB_DBCTL_BASEPATH.DCTL_PUB_NAME.DB_PATH_SEP);
 // /db/dctl-temp/
-define('XMLDB_DBCTL_TMP', XMLDB_DBCTL_BASEPATH.DCTL_TMP_NAME.DB_PATH_SEPARATOR);
+define('XMLDB_DBCTL_TMP', XMLDB_DBCTL_BASEPATH.DCTL_TMP_NAME.DB_PATH_SEP);
 // /db/dctl-???/
 if (TEMPORARY_SYSTEM) {
  define('XMLDB_PATH_BASE', XMLDB_DBCTL_TMP);
@@ -200,11 +200,11 @@ if (TEMPORARY_SYSTEM) {
 };
 // + - - - - - - - - - - - - - - - - - -
 // | WEB ENVIRONMENT
-define('WEB_PATH_SEPARATOR', '/');
+define('WEB_PATH_SEP', '/');
 if (!defined('WWW_PORT')) define('WWW_PORT', '80');
 if (!defined('WWW_NAME')) define('WWW_NAME', 'http://'.$_SERVER['SERVER_NAME'].':'.WWW_PORT);
 if (!defined('WWW_HOST')) define('WWW_HOST', WWW_NAME.'');
-define('HOST_BASE_PATH', dirname(dirname(dirname($_SERVER['PHP_SELF']))).WEB_PATH_SEPARATOR);
+define('HOST_BASE_PATH', dirname(dirname(dirname($_SERVER['PHP_SELF']))).WEB_PATH_SEP);
 define('DCTL_QUERY_STRING', htmlspecialchars($_SERVER['QUERY_STRING']));
 define('DCTL_REQUEST_URI', htmlspecialchars($_SERVER['REQUEST_URI']));
 define('DCTL_FORM_METHOD', 'post');
@@ -212,11 +212,11 @@ define('DCTL_FORM_ENCTYPE', 'application/x-www-form-urlencoded');
 define('DCTL_FORM_METHOD_POST', 'post');
 define('DCTL_FORM_ENCTYPE_POST', 'multipart/form-data');
 // data/db/version?/
-define('HOST_DATA_PATH', dirname(HOST_BASE_PATH).WWW_DATA.'db'.WEB_PATH_SEPARATOR.(DCTL_VERSION?DCTL_VERSION.WEB_PATH_SEPARATOR:''));
+define('HOST_DATA_PATH', dirname(HOST_BASE_PATH).WWW_DATA.'db'.WEB_PATH_SEP.(DCTL_VERSION?DCTL_VERSION.WEB_PATH_SEP:''));
 // data/db/dctl-pub/
-define('WEB_DBCTL_PUB', HOST_DATA_PATH.DCTL_PUB_NAME.WEB_PATH_SEPARATOR);
+define('WEB_DBCTL_PUB', HOST_DATA_PATH.DCTL_PUB_NAME.WEB_PATH_SEP);
 // data/db/dctl-temp/
-define('WEB_DBCTL_TMP', HOST_DATA_PATH.DCTL_TMP_NAME.WEB_PATH_SEPARATOR);
+define('WEB_DBCTL_TMP', HOST_DATA_PATH.DCTL_TMP_NAME.WEB_PATH_SEP);
 // data/db/dctl-???/
 if (TEMPORARY_SYSTEM) {
  define('WEB_PUBLISH', WEB_DBCTL_TMP);
@@ -235,8 +235,8 @@ define('MASTRO', 'mastro');
 define('MASTRO_RETRIEVE', 'retrieve');
 define('MASTRO_DISPLAY', 'display');
 define('DCTL_MASTRO_XSLT', DCTL_XSLT);
-define('DCTL_MASTRO_RETRIEVE_XSLT', DCTL_MASTRO_XSLT.MASTRO_RETRIEVE.SYS_PATH_SEPARATOR);
-define('DCTL_MASTRO_DISPLAY_XSLT', DCTL_MASTRO_XSLT.MASTRO_DISPLAY.SYS_PATH_SEPARATOR);
+define('DCTL_MASTRO_RETRIEVE_XSLT', DCTL_MASTRO_XSLT.MASTRO_RETRIEVE.SYS_PATH_SEP);
+define('DCTL_MASTRO_DISPLAY_XSLT', DCTL_MASTRO_XSLT.MASTRO_DISPLAY.SYS_PATH_SEP);
 // + - - - - - - - - - - - - - - - - - -
 // | EXIST-XQUERY
 define('XMLDB_XML_N', 'xmlns');
@@ -257,7 +257,7 @@ define('XMLDB_XMLDB_NS', 'xmldb="http://exist-db.org/xquery/xmldb"');
 define('XMLDB_EXIST_NS', 'exist="http://exist.sourceforge.net/NS/exist"');
 define('XMLDB_TRANSFORM_NS', 'transform="http://exist-db.org/xquery/transform"');
 define('XMLDB_FUNCTX_NS', 'functx = "http://www.functx.com"');
-$xquery_lib = ($xquery_lib = @file_get_contents(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'..'.SYS_PATH_SEPARATOR.'_shared'.SYS_PATH_SEPARATOR.'functions.inc.xq')) ? $xquery_lib : '';
+$xquery_lib = ($xquery_lib = @file_get_contents(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).'..'.SYS_PATH_SEP.'_shared'.SYS_PATH_SEP.'functions.inc.xq')) ? $xquery_lib : '';
 //declare default element namespace "'.XMLDB_TEI_S.'";  // NON IMPORTA
 define('DCTL_XQUERY_BASE',
 'xquery version "1.0";
@@ -274,13 +274,13 @@ declare option exist:serialize "highlight-matches=both";
 '.$xquery_lib);
 // + - - - - - - - - - - - - - - - - - -
 // | ADD-ONS
-define('DCTL_STATS_PATH', '..'.SYS_PATH_SEPARATOR.'..'.SYS_PATH_SEPARATOR.'..'.SYS_PATH_SEPARATOR.'slimstat/inc.stats.php');
+define('DCTL_STATS_PATH', '..'.SYS_PATH_SEP.'..'.SYS_PATH_SEP.'..'.SYS_PATH_SEP.'slimstat/inc.stats.php');
 if (is_file(DCTL_STATS_PATH)) {
- require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).DCTL_STATS_PATH);
+ require_once(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).DCTL_STATS_PATH);
 };
 // + - - - - - - - - - - - - - - - - - -
 // | REQUIRE NEXT SETUP
-require_once(str_replace(SYS_PATH_SEPARATOR_DOUBLE,SYS_PATH_SEPARATOR,dirname(__FILE__).SYS_PATH_SEPARATOR).'..'.SYS_PATH_SEPARATOR.'_shared'.SYS_PATH_SEPARATOR.'functions.inc.php');
+require_once(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).'..'.SYS_PATH_SEP.'_shared'.SYS_PATH_SEP.'functions.inc.php');
 // + - - - - - - - - - - - - - - - - - -
 // | MORE SETUP
 $EXTENSION_PACKAGE = array();

@@ -109,7 +109,7 @@ function ajax_deleteLink($id1='', $id2='', $label='', $what='', $overwrite=TRUE)
 	};
 	$collection_id = $collection_id	[0];
  if ($collection_id != '') {
-		$thePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR;
+		$thePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEP;
 		switch ($what) {
 			case 'lnk':
 				$thePath .= DCTL_FILE_LINKER;
@@ -123,7 +123,7 @@ function ajax_deleteLink($id1='', $id2='', $label='', $what='', $overwrite=TRUE)
 		};
 		if (is_file($thePath)) {
 			$file_content = file_get_contents($thePath);
-			$file_content = preg_replace('/'.WHITESPACES.'+/',' ',$file_content);
+			$file_content = preg_replace('/'.WS.'+/',' ',$file_content);
 			$text_head = substr($file_content,0,stripos($file_content,'%BEGIN%')).'%BEGIN% -->';
 			$text_foot = '<!-- '.substr($file_content,stripos($file_content,'%END%'));
 			$dom = new DOMDocument('1.0', 'UTF-8');
@@ -155,7 +155,7 @@ function ajax_deleteLink($id1='', $id2='', $label='', $what='', $overwrite=TRUE)
 				};
 				if ($resultKO == '') {
 					$file_content = $dom->saveXML();
-					$file_content = preg_replace('/'.WHITESPACES.'+/',' ',$file_content);
+					$file_content = preg_replace('/'.WS.'+/',' ',$file_content);
 					$from = stripos($file_content,'%BEGIN%')+strlen('%BEGIN% -->');
 					$to = stripos($file_content,'%END%')-strlen('<-- ') - $from -1;
 					$text_content = substr($file_content,$from,$to);
@@ -196,7 +196,7 @@ function ajax_saveLink($selector = 'new', $id1='', $id2='', $label='', $what='',
 	$collection_id = explode('/',str_ireplace('xml://','',$id1));
 	$collection_id = $collection_id	[0];
  if ($collection_id != '') {
-		$thePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR;
+		$thePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEP;
 		switch ($what ) {
 			case 'lnk':
 				$thePath .= DCTL_FILE_LINKER;
@@ -215,7 +215,7 @@ function ajax_saveLink($selector = 'new', $id1='', $id2='', $label='', $what='',
 				case 'mod':
 				case 'ovw':
 					$file_content = file_get_contents($thePath);
-					$file_content = preg_replace('/'.WHITESPACES.'+/',' ',$file_content);
+					$file_content = preg_replace('/'.WS.'+/',' ',$file_content);
 					$text_head = substr($file_content,0,stripos($file_content,'%BEGIN%')).'%BEGIN% -->';
 					$text_foot = '<!-- '.substr($file_content,stripos($file_content,'%END%'));
 					$dom = new DOMDocument('1.0', 'UTF-8');
@@ -273,7 +273,7 @@ function ajax_saveLink($selector = 'new', $id1='', $id2='', $label='', $what='',
 						};
 						if ($resultKO == '') {
 							$file_content = $dom->saveXML();
-							$file_content = preg_replace('/'.WHITESPACES.'+/',' ',$file_content);
+							$file_content = preg_replace('/'.WS.'+/',' ',$file_content);
 							$from = stripos($file_content,'%BEGIN%')+strlen('%BEGIN% -->');
 							$to = stripos($file_content,'%END%')-strlen('<-- ') - $from -1;
 							$text_content = substr($file_content,$from,$to);
@@ -360,30 +360,30 @@ function ajax_loadImageList ($selector = 1, $collection_id='', $package_id='', $
  $resultText .= '<ul class="simpleTree">';
 	$resultText .= '<li class="root">';
 	$basePath = DCTL_PROJECT_PATH;
-	$basePath .= $collection_id.SYS_PATH_SEPARATOR;
+	$basePath .= $collection_id.SYS_PATH_SEP;
 	getCollectionRecord($basePath, &$collectionRecord);
 	$resultText .= '<span class="text">'.$collectionRecord['collection_full'].'</span>';
 	$resultText .= '<ul>';
 	$resultText .= '<li class="line"/>';
 	$resultText .= '<li class="folder-open-last">';
-	$basePath .= $package_id.SYS_PATH_SEPARATOR;
+	$basePath .= $package_id.SYS_PATH_SEP;
 	getPackageRecord($basePath, &$packageRecord);
 	$resultText .= '<span class="text">'.$packageRecord['package_full'].'</span>';
-	$basePath .= SYS_PATH_SEPARATOR.$part_id;
+	$basePath .= SYS_PATH_SEP.$part_id;
 	getPartRecord($basePath, &$partRecord);
 	$resultText .= '<ul>';
 	$resultText .= '<li class="line"/>';
 	$resultText .= '<li class="folder-open-last">';
 	$resultText .= '<span class="text">'.cleanWebString($partRecord['part_short'].': '.$partRecord['part_work'], FIELD_STRING_LENGTH).'</span>';
 	$resultText .= '<ul>';
-	$basePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR.$package_id.SYS_PATH_SEPARATOR.$part_id;
+	$basePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEP.$package_id.SYS_PATH_SEP.$part_id;
  if(getImageList($basePath, &$imageList)>0) {
 		foreach ($imageList['path'] as $key=>$fPath) {
 			getImageRecord($fPath, &$imageRecord, $imageList['image_short'][$key]);
 			$resultText .= '<li class="line"/>';
 			$resultText .= '<li class="doc'.(($key+1)==count($imageList['path'])?'-last':'').'">';
 			// carica IMG
-			$img = ajax_loadImage($collection_id.SYS_PATH_SEPARATOR.DCTL_MEDIA_BIG.$imageRecord['image_id'], $dim, $what);
+			$img = ajax_loadImage($collection_id.SYS_PATH_SEP.DCTL_MEDIA_BIG.$imageRecord['image_id'], $dim, $what);
    if ($img) {
 				$mapped = ajax_loadLinkList($selector, $collection_id, $package_id, $part_id, $item_id, $what);
 				$mapped = preg_match('/(.*)\?(.*)\#(.*)\@(.*)/', $mapped, $matches);
@@ -438,9 +438,9 @@ function ajax_loadImageList ($selector = 1, $collection_id='', $package_id='', $
 };
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 function ajax_loadLinkList ($selector = 1, $collection_id='', $package_id='', $part_id='', $item_id='', $what = '')  {
-	$fullItem = 'xml://'.$collection_id.SYS_PATH_SEPARATOR.$package_id.SYS_PATH_SEPARATOR.$item_id;
+	$fullItem = 'xml://'.$collection_id.SYS_PATH_SEP.$package_id.SYS_PATH_SEP.$item_id;
 	$resultText = '';
- $thePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR;
+ $thePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEP;
 	switch ($what) {
   case 'lnk':
 			$thePath .= DCTL_FILE_LINKER;
@@ -490,7 +490,7 @@ function ajax_loadLinkList ($selector = 1, $collection_id='', $package_id='', $p
 						$resultText .= '<ul>';
 						foreach(explode(' ',$link['target']) as $k=>$v) {
 							if ($v!=''){
-								$parsed = explode(SYS_PATH_SEPARATOR,$v);
+								$parsed = explode(SYS_PATH_SEP,$v);
 								$lnk_coll =$parsed[2];
 								switch (count($parsed)) {
 									case 4: // xml://_coll_/_id_ => linker
@@ -512,11 +512,11 @@ function ajax_loadLinkList ($selector = 1, $collection_id='', $package_id='', $p
 								$resultText .= 	'<a href="javascript:void(0);" onclick="';
 								// carica XML
 								$resultText .= '$(\'#xml_chunk\').load(\'indexAjax.php\', {action:\'ajax_loadChunk\', collection_id:\''.$lnk_coll.'\', package_id:\''.$lnk_pack.'\', part_id:\''.$lnk_part.'\', item_id:\''.$lnk_item.'\', what:\''.$what.'\'});';
-								$resultText .= '" title="#">'.cleanWebString(str_ireplace('xml://'.$lnk_coll.SYS_PATH_SEPARATOR,'',$v)).'</a>';
+								$resultText .= '" title="#">'.cleanWebString(str_ireplace('xml://'.$lnk_coll.SYS_PATH_SEP,'',$v)).'</a>';
 								$resultText .= '</span>';
 								if ($v == $fullItem) {
 									if ($selector==1) {
-										$fullItem2 = 'xml://'.$lnk_coll.SYS_PATH_SEPARATOR.$lnk_pack.SYS_PATH_SEPARATOR.$lnk_item;
+										$fullItem2 = 'xml://'.$lnk_coll.SYS_PATH_SEP.$lnk_pack.SYS_PATH_SEP.$lnk_item;
 											$resultText .= '&#160;&#160;<img src="'.DCTL_IMAGES.'published_no.png" alt="" onclick="deleteLink(\''.$attrs['id'].'\',\''.$fullItem2.'\',\''.$label.'\', \''.$what.'\')" />';
 									};
 								};
@@ -558,7 +558,7 @@ function ajax_loadId ($selector = 1, $collection_id='', $package_id='', $part_id
  $resultText .= '<a href="javascript:void(0);" onclick="';
  $resultText .= '$(\'#xml_chunk\').load(\'indexAjax.php\', {action:\'ajax_loadChunk\', selector:\''.$selector.'\', collection_id:\''.$collection_id.'\', package_id:\''.$package_id.'\', part_id:\''.$part_id.'\', item_id:\''.$item_id.'\', what:\''.$what.'\'});';
  $resultText .= '" title="#">';
-	$fullItem = 'xml://'.$collection_id.SYS_PATH_SEPARATOR.$package_id.SYS_PATH_SEPARATOR.$item_id;
+	$fullItem = 'xml://'.$collection_id.SYS_PATH_SEP.$package_id.SYS_PATH_SEP.$item_id;
 	$resultText .= cleanWebString($fullItem);
 	$resultText .= '</a>';
  return $resultText;
@@ -566,9 +566,9 @@ function ajax_loadId ($selector = 1, $collection_id='', $package_id='', $part_id
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 function ajax_loadChunk ($selector = 1, $collection_id='', $package_id='', $part_id='', $item_id='', $what='')  {
 	$resultText = '';
- $fullItem = $collection_id.SYS_PATH_SEPARATOR.$package_id.SYS_PATH_SEPARATOR.$part_id;
+ $fullItem = $collection_id.SYS_PATH_SEP.$package_id.SYS_PATH_SEP.$part_id;
  $thePath = DCTL_PROJECT_PATH.$fullItem;
- // 	$resultText .= '<div class="lineH2">'.htmlentities($collection_id.SYS_PATH_SEPARATOR.$package_id.SYS_PATH_SEPARATOR.$part_id.SYS_PATH_SEPARATOR.$item_id,ENT_QUOTES,'UTF-8').'</div>';
+ // 	$resultText .= '<div class="lineH2">'.htmlentities($collection_id.SYS_PATH_SEP.$package_id.SYS_PATH_SEP.$part_id.SYS_PATH_SEP.$item_id,ENT_QUOTES,'UTF-8').'</div>';
 	if (is_file($thePath)) {
 		forceUTF8($thePath);
 		$simplexml = simplexml_load_file($thePath, 'asPrettyXMLElement', DCTL_XML_LOADER);
@@ -596,7 +596,7 @@ function ajax_loadImage ($fullItem='', &$dim=array(), $what='')  {
  $thePath = DCTL_PROJECT_PATH.$fullItem;
 	if (is_file($thePath)) {
 		$dim = getimagesize($thePath);
-		$thePath = str_ireplace(DCTL_PROJECT_PATH, HOST_BASE_PATH.'data'.WEB_PATH_SEPARATOR.'dctl-project'.WEB_PATH_SEPARATOR, $thePath);
+		$thePath = str_ireplace(DCTL_PROJECT_PATH, HOST_BASE_PATH.'data'.WEB_PATH_SEP.'dctl-project'.WEB_PATH_SEP, $thePath);
   $resultText .= $thePath;
 	} else {
   $resultText .= '';
@@ -629,7 +629,7 @@ function ajax_loadTree ($selector = 1, $collection_id='', $package_id='', $part_
  };
 	// BEGIN
 	$basePath = DCTL_PROJECT_PATH;
-	$collectionPath = $basePath.$collection_id.SYS_PATH_SEPARATOR;
+	$collectionPath = $basePath.$collection_id.SYS_PATH_SEP;
 	if ($collection_id == '') {
   /*
   // ALL COLLECTIONS
@@ -654,7 +654,7 @@ function ajax_loadTree ($selector = 1, $collection_id='', $package_id='', $part_
 			$resultText .= '<span class="text">'.$collectionRecord['collection_full'].'</span>';
   };
 		$basePath = $collectionPath;
-		$packagePath = $basePath.$package_id.SYS_PATH_SEPARATOR;
+		$packagePath = $basePath.$package_id.SYS_PATH_SEP;
 	 // ONE COLLECTION
 		if ($package_id == '') {
 			// ALL PACKAGES
@@ -673,7 +673,7 @@ function ajax_loadTree ($selector = 1, $collection_id='', $package_id='', $part_
 		} else {
 				// ONE PACKAGE
 				$basePath = $packagePath;
-				$partPath = $basePath.$part_id.SYS_PATH_SEPARATOR;
+				$partPath = $basePath.$part_id.SYS_PATH_SEP;
 				if ($part_id == '') {
 					// ALL PARTS
 					$resultText .= '<ul>';
@@ -704,7 +704,7 @@ function ajax_loadTree ($selector = 1, $collection_id='', $package_id='', $part_
 					$resultText .= '</ul>';
 				} else {
 					$basePath = $partPath;
-					$itemPath = $basePath.$item_id.SYS_PATH_SEPARATOR;
+					$itemPath = $basePath.$item_id.SYS_PATH_SEP;
 					// ONE PART
 					if ($item_id == '') {
 						// ALL ITEMS
@@ -713,7 +713,7 @@ function ajax_loadTree ($selector = 1, $collection_id='', $package_id='', $part_
 							$resultText .= '<dctl_ext_init>';
 						 $resultText .= '<xml>';
        if(getItemList($basePath, &$itemList, $what)>0) {
-        $thePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR.DCTL_FILE_MAPPER;
+        $thePath = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEP.DCTL_FILE_MAPPER;
 								if (is_file($thePath)) {
 									forceUTF8($thePath);
 									$simplexml = simplexml_load_file($thePath, 'SimpleXMLElement', DCTL_XML_LOADER);
@@ -804,7 +804,7 @@ function ajax_loadTree ($selector = 1, $collection_id='', $package_id='', $part_
 										// carica XML
 										$resultText .= '$(\'#xml_chunk\').load(\'indexAjax.php\', {action:\'ajax_loadChunk\', collection_id:\''.$collection_id.'\', package_id:\''.$package_id.'\', part_id:\''.$part_id.'\', item_id:\''.$itemRecord['item_short'].'\', what:\''.$what.'\'});';
 										// carica ID
-										$resultText .= '$(\':input[name=xml_id'.$selector.']\').addClass(\'active\').attr({value:\''.'xml://'.$collection_id.SYS_PATH_SEPARATOR.$package_id.SYS_PATH_SEPARATOR.$itemRecord['item_short'].'\'});';
+										$resultText .= '$(\':input[name=xml_id'.$selector.']\').addClass(\'active\').attr({value:\''.'xml://'.$collection_id.SYS_PATH_SEP.$package_id.SYS_PATH_SEP.$itemRecord['item_short'].'\'});';
 										switch ($what) {
 											case 'lnk':
 												// carica LINK
@@ -828,7 +828,7 @@ function ajax_loadTree ($selector = 1, $collection_id='', $package_id='', $part_
 												$resultText .= '$(\'#xml_tree'.($selector+1).'\').load(\'indexAjax.php\', {action:\'ajax_loadImageList\', selector:\''.($selector+1).'\', collection_id:\''.$collection_id.'\', package_id:\''.$package_id.'\', part_id:\''.$part_id.'\', item_id:\''.$itemRecord['item_short'].'\', what:\''.$what.'\'}';
 												if ($mapped) {
 													$uri = $matches[3];
-													$img = str_ireplace('img://', $collection_id.SYS_PATH_SEPARATOR.DCTL_MEDIA_BIG, $uri);
+													$img = str_ireplace('img://', $collection_id.SYS_PATH_SEP.DCTL_MEDIA_BIG, $uri);
 													$coord = explode(',', $matches[4]);
 													$resultText .= ', function () {';
 													$img = ajax_loadImage($img, $dim, $what);
@@ -1002,20 +1002,20 @@ function getModel ($originalPath) {
 	$filePath = str_ireplace(DCTL_PROJECT_PATH, '', $sourcePath);
 	$zip = new zipfile();
 
-	$zipdir = SYS_PATH_SEPARATOR;
+	$zipdir = SYS_PATH_SEP;
 	$zip->add_dir($zipdir);
 
 	addToZip(DCTL_SETTINGS, $zip, $zipdir);
 
-	$zipdir = SYS_PATH_SEPARATOR;
+	$zipdir = SYS_PATH_SEP;
 	$source = DCTL_PROJECT_PATH;
-	foreach(explode(SYS_PATH_SEPARATOR, $filePath) as $item) {
+	foreach(explode(SYS_PATH_SEP, $filePath) as $item) {
 
 		$source .= $item;
 		$zipdir .= $item;
 		if (is_dir($source)) {
-			$source .= SYS_PATH_SEPARATOR;
-			$zipdir .= SYS_PATH_SEPARATOR;
+			$source .= SYS_PATH_SEP;
+			$zipdir .= SYS_PATH_SEP;
 			$zip->add_dir($zipdir);
 			$item = $source.DCTL_FILE_HEADER;
 			if (is_file($item)) {
@@ -1027,7 +1027,7 @@ function getModel ($originalPath) {
 			// 				};
 		};
 	};
-	$zipdir = dirname($zipdir).SYS_PATH_SEPARATOR;
+	$zipdir = dirname($zipdir).SYS_PATH_SEP;
 	if (is_dir($source)) {
 		if ((stripos(DCTL_MEDIA_SML, $source) === FALSE) && (stripos(DCTL_MEDIA_MED, $source) === FALSE)) {
 			addToZip($source, $zip, $zipdir);
@@ -1038,7 +1038,7 @@ function getModel ($originalPath) {
 			addToZip($item, $zip, $zipdir);
 		};
 	};
-	$filePath = dirname($originalPath).SYS_PATH_SEPARATOR.str_ireplace(SYS_PATH_SEPARATOR, '#', $filePath).'.zip';
+	$filePath = dirname($originalPath).SYS_PATH_SEP.str_ireplace(SYS_PATH_SEP, '#', $filePath).'.zip';
 	$fd = fopen ($filePath, "wb");
 	$out = fwrite ($fd, $zip->file());
 	fclose ($fd);
@@ -1115,7 +1115,7 @@ function getManagementOfImages ($fDivX, $labelX, $collection_id, $itemName, $loc
 
 	$array_estensioni_ammesse = $EXTENSION_ALLOWED;
 
-	$basename = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEPARATOR;
+	$basename = DCTL_PROJECT_PATH.$collection_id.SYS_PATH_SEP;
 
 	$regexp = '[';
 	foreach($array_estensioni_ammesse as $k=>$v) {
@@ -1210,7 +1210,7 @@ function getManagementOfImages ($fDivX, $labelX, $collection_id, $itemName, $loc
 		$tail = '';
 		$dPath2 = $dPath; //$dPath2 = str_ireplace(DCTL_MEDIA_SML, DCTL_MEDIA_BIG, $dPath);
 		$files = scandir($dPath2);
-		$filePattern = '/-('.WHITESPACES.'*)(.*)('.WHITESPACES.'*)=('.WHITESPACES.'*)$('.WHITESPACES.'*)-/';
+		$filePattern = '/-('.WS.'*)(.*)('.WS.'*)=('.WS.'*)$('.WS.'*)-/';
 		if ($dPath != '') {
 			$entries = array();
 			$handle = opendir($dPath);
@@ -1227,7 +1227,7 @@ function getManagementOfImages ($fDivX, $labelX, $collection_id, $itemName, $loc
 					$labelx = array_values(preg_grep($labelval, $files));
 					if (count($labelx)>0) {
 						$label = $labelx[0];
-						$labelx = preg_split('/('.WHITESPACES.'*)=('.WHITESPACES.'*)/', $label, -1);
+						$labelx = preg_split('/('.WS.'*)=('.WS.'*)/', $label, -1);
 						$label = str_ireplace('-', '', $labelx[0]);
 					} else {
 						$label = $entry;
@@ -1280,7 +1280,7 @@ function getManagementOfXML ($fSelectorX, $fDivX, $labelX, $collection_id, $pack
 	$isMultiPart = stripos($fSelectorX, '$') !== FALSE;
 	$basename = DCTL_PROJECT_PATH.$collection_id;
 	if ($package_id != '') {
-		$basename .= SYS_PATH_SEPARATOR.$package_id;
+		$basename .= SYS_PATH_SEP.$package_id;
 	};
 	$dPath = $basename;
 	$regexp = str_ireplace(DCTL_PACKAGE_BODY_REGEXP1, DCTL_PACKAGE_BODY_REGEXP2, $fSelectorX);
@@ -1329,7 +1329,7 @@ function getManagementOfXML ($fSelectorX, $fDivX, $labelX, $collection_id, $pack
   $idx = sprintf("%03d", $vKey);
 		$fDiv = str_ireplace('$', $vKey, $fDivX);
 		$fSelector = str_ireplace('$', $idx, $fSelectorX);
-		$fPath = $basename.SYS_PATH_SEPARATOR.$fSelector;
+		$fPath = $basename.SYS_PATH_SEP.$fSelector;
 		$who = '';
 		$content = array();
 		$label .= '<br/><span class="morelink">';
@@ -1598,7 +1598,7 @@ function getCollectionList ($thePath, &$collectionList, $withEmpty=false) {
 		};
 		sort($entries);
 		foreach($entries as $entry) {
-			$full = $thePath.$entry.SYS_PATH_SEPARATOR;
+			$full = $thePath.$entry.SYS_PATH_SEP;
 			if (is_dir($full)) {
 				getCollectionRecord ($full, &$collectionRecord);
 				$collectionList['collection_id'][] = $collectionRecord['collection_id'];
@@ -1632,7 +1632,7 @@ function getPackageList ($thePath, &$packageList, $withEmpty=false) {
 		};
 		sort($entries);
 		foreach($entries as $entry) {
-			$full = $thePath.$entry.SYS_PATH_SEPARATOR;
+			$full = $thePath.$entry.SYS_PATH_SEP;
 			if (is_dir($full)) {
 				getPackageRecord ($full, &$packageRecord);
 				$packageList['package_id'][] = $packageRecord['package_id'];
@@ -1665,7 +1665,7 @@ function getMediaList ($thePath, &$mediaList, $withEmpty=false) {
 		};
 		sort($entries);
 		foreach($entries as $entry) {
-			$full = $thePath.$entry.SYS_PATH_SEPARATOR;
+			$full = $thePath.$entry.SYS_PATH_SEP;
 			if (is_dir($full)) {
 				getMediaRecord ($full, &$mediaRecord);
 				$mediaList['media_id'][] = $mediaRecord['media_id'];
@@ -1715,7 +1715,7 @@ function getItemList ($thePath, &$itemList, $what, $withEmpty=false) {
   $itemList['path'][] = '';
 	};
 	$itemRecord = array();
-	if ($thePath[strlen($thePath)-1] == SYS_PATH_SEPARATOR) $thePath = dirname($thePath.'xxx');
+	if ($thePath[strlen($thePath)-1] == SYS_PATH_SEP) $thePath = dirname($thePath.'xxx');
 	if ($thePath != '') {
 		if (is_file($thePath)) {
 			forceUTF8($thePath);
@@ -1737,7 +1737,7 @@ function getItemList ($thePath, &$itemList, $what, $withEmpty=false) {
 			$resultXML = $simplexml->xpath($xpath);
    foreach ($resultXML as $k=>$v) {
 				$entry = $v['id'];
-				$full = $thePath.SYS_PATH_SEPARATOR.$entry;
+				$full = $thePath.SYS_PATH_SEP.$entry;
 				getItemRecord ($full, &$itemRecord, cleanWebString($v->asXML()));
 				$itemList['item_id'][] = $itemRecord['item_id'];
 				$itemList['item_short'][] = $itemRecord['item_work'];
@@ -1758,7 +1758,7 @@ function getImageList ($thePath, &$imageList, $withEmpty=false) {
   $imageList['path'][] = '';
 	};
 	$imageRecord = array();
-	if ($thePath[strlen($thePath)-1] == SYS_PATH_SEPARATOR) $thePath = dirname($thePath.'xxx');
+	if ($thePath[strlen($thePath)-1] == SYS_PATH_SEP) $thePath = dirname($thePath.'xxx');
 	if ($thePath != '') {
 		if (is_file($thePath)) {
    forceUTF8($thePath);
@@ -1773,7 +1773,7 @@ function getImageList ($thePath, &$imageList, $withEmpty=false) {
 			$resultXML = $simplexml->xpath($xpath);
    foreach ($resultXML as $k=>$v) {
     $entry = $v->graphic['url'];
-    $full = $thePath.SYS_PATH_SEPARATOR.$entry;
+    $full = $thePath.SYS_PATH_SEP.$entry;
     getImageRecord ($full, &$imageRecord, cleanWebString($v->figDesc->asXML()));
     $imageList['image_id'][] = $imageRecord['image_id'];
     $imageList['image_short'][] = $imageRecord['image_short'];
@@ -1792,7 +1792,7 @@ function publish_transformXML($entry, $fullsrc, $fulldst, $xsl_proc, &$operation
 	$basename = basename(dirname($fullsrc));
 	$uppername = basename(dirname(dirname($fullsrc)));
 	$operationsPublish .= '&gt; processo "'.$basename.'"...';
-	$level = count(explode(SYS_PATH_SEPARATOR, str_ireplace(DCTL_PROJECT_PATH, '', $fullsrc)));
+	$level = count(explode(SYS_PATH_SEP, str_ireplace(DCTL_PROJECT_PATH, '', $fullsrc)));
 	switch ($level) {
 		case 2 : // COLLECTION
 			switch ($entry) {
@@ -1842,7 +1842,7 @@ function publish_transformXML($entry, $fullsrc, $fulldst, $xsl_proc, &$operation
 			$text = str_ireplace('xmlns=""','', $text);
 			if ($text != '') {
 				try {
-					$fulldst = dirname($fulldst).SYS_PATH_SEPARATOR.$fTarget;
+					$fulldst = dirname($fulldst).SYS_PATH_SEP.$fTarget;
 					$fd = fopen ($fulldst, "wb");
 					$out = fwrite ($fd, forceUTF8($text));
 					fclose ($fd);
@@ -1877,7 +1877,7 @@ function dctl_insertContent ($complete_id, $param) {
 	$fSelectorX = str_ireplace('item=', '', $fSelectorX);
 	$dPath = DCTL_PROJECT_PATH.$collection_id;
 	if ($package_id != '') {
-		$dPath .= SYS_PATH_SEPARATOR.$package_id;
+		$dPath .= SYS_PATH_SEP.$package_id;
 	};
 	$isMultiPart = stripos($fSelectorX, '$') !== FALSE;
 	if ($isMultiPart) {
@@ -1899,15 +1899,15 @@ function dctl_insertContent ($complete_id, $param) {
  $max = count($variants)-1;
 	foreach($variants as $vKey=>$fSelector) {
 	 if ((!$isMultiPart) || ($isMultiPart && (($vKey>0) && ($vKey<$max)))) {
-			$fPath = $dPath.SYS_PATH_SEPARATOR.$fSelector;
+			$fPath = $dPath.SYS_PATH_SEP.$fSelector;
 			$textContent = cleanUpIndentation(charset_decode_utf_8(file_get_contents($fPath)));
 			$header = '<!-- %BEGIN% -->';
 			$textContent = substr($textContent, stripos($textContent, $header)+strlen($header));
 			$footer = '<!-- %END% -->';
 			$textContent = substr($textContent, 0, stripos($textContent, $footer));
-			$textContent = preg_replace('/(<!--'.WHITESPACES.'*BEGIN'.WHITESPACES.'*-->)/', '', $textContent);
-			$textContent = preg_replace('/(<!--'.WHITESPACES.'*END'.WHITESPACES.'*-->)/', '', $textContent);
-			$textContent = preg_replace('/'.WHITESPACES.'+/', ' ', $textContent);
+			$textContent = preg_replace('/(<!--'.WS.'*BEGIN'.WS.'*-->)/', '', $textContent);
+			$textContent = preg_replace('/(<!--'.WS.'*END'.WS.'*-->)/', '', $textContent);
+			$textContent = preg_replace('/'.WS.'+/', ' ', $textContent);
 			$textContent = forceUTF8($textContent);
 			$checkContent = preg_replace('/\w+:(\w+)/','$1',$textContent);
 			$checkContent = '<?xml version="1.0" encoding="UTF-8" ?><test>'.translateLiteral2NumericEntities($checkContent).'</test>';
@@ -1951,7 +1951,7 @@ function publish_recurseContents($pathFrom, $collName, $packName, $xsl_proc, &$o
 		// IN COLLECTION
 		// BUILDER
 		$fullsrc = DCTL_SETTINGS_TEMPLATES_COLLECTION.DCTL_FILE_BUILDER;
-		$fulldst = DCTL_PROJECT_PATH.$collName.SYS_PATH_SEPARATOR.DCTL_FILE_BUILDER;
+		$fulldst = DCTL_PROJECT_PATH.$collName.SYS_PATH_SEP.DCTL_FILE_BUILDER;
 		copy($fullsrc, $fulldst);
 		@chmod($fulldst, CHMOD);
 	} else {
@@ -1960,7 +1960,7 @@ function publish_recurseContents($pathFrom, $collName, $packName, $xsl_proc, &$o
 			if ($basex==$packName) {
 					// BUILDER
 				$fullsrc = DCTL_SETTINGS_TEMPLATES_PACKAGE.DCTL_FILE_BUILDER;
-				$fulldst = DCTL_PROJECT_PATH.$collName.SYS_PATH_SEPARATOR.$packName.SYS_PATH_SEPARATOR.DCTL_FILE_BUILDER;
+				$fulldst = DCTL_PROJECT_PATH.$collName.SYS_PATH_SEP.$packName.SYS_PATH_SEP.DCTL_FILE_BUILDER;
 				copy($fullsrc, $fulldst);
 				@chmod($fulldst, CHMOD);
 			};
@@ -1968,8 +1968,8 @@ function publish_recurseContents($pathFrom, $collName, $packName, $xsl_proc, &$o
 	};
 	while ($entry = readdir($handle)) {
 		if (substr($entry, 0, 1) != '.') {
-			$fullsrc = $pathFrom.SYS_PATH_SEPARATOR.$entry;
-			$fulldst = $pathTo.SYS_PATH_SEPARATOR.$entry;
+			$fullsrc = $pathFrom.SYS_PATH_SEP.$entry;
+			$fulldst = $pathTo.SYS_PATH_SEP.$entry;
 			switch ($entry) {
 				case (basename(DCTL_MEDIA)):
 				case (basename(DCTL_MEDIA_SML)):
@@ -1986,12 +1986,12 @@ function publish_recurseContents($pathFrom, $collName, $packName, $xsl_proc, &$o
     if ($packName != '') {
      if ($packName == $entry) {
 				// PUBLISH SELECTED PACKAGE
-      $prosecute = publish_recurseContents(DCTL_PROJECT_PATH.$collName.SYS_PATH_SEPARATOR.$entry, $collName, $entry, $xsl_proc, &$operationsPublish, &$toPublish);
+      $prosecute = publish_recurseContents(DCTL_PROJECT_PATH.$collName.SYS_PATH_SEP.$entry, $collName, $entry, $xsl_proc, &$operationsPublish, &$toPublish);
      };
     } else {
 				// PUBLISH SELECTED COLLECTION
      if (! preg_match('/^'.DCTL_RESERVED_PREFIX.'/',$entry)) {
-      $prosecute = publish_recurseContents(DCTL_PROJECT_PATH.$collName.SYS_PATH_SEPARATOR.$entry, $collName, $entry, $xsl_proc, &$operationsPublish, &$toPublish);
+      $prosecute = publish_recurseContents(DCTL_PROJECT_PATH.$collName.SYS_PATH_SEP.$entry, $collName, $entry, $xsl_proc, &$operationsPublish, &$toPublish);
      };
     };
     break;
@@ -2011,8 +2011,8 @@ function publish_recurseMedia($pathFrom, $pathTo, &$operationsPublish) {
 		$basex = basename($pathFrom);
 		while ($entry = readdir($handle)) {
 			if (substr($entry, 0, 1) != '.') {
-				$fullsrc = $pathFrom.SYS_PATH_SEPARATOR.$entry;
-				$fulldst = $pathTo.SYS_PATH_SEPARATOR.$entry;
+				$fullsrc = $pathFrom.SYS_PATH_SEP.$entry;
+				$fulldst = $pathTo.SYS_PATH_SEP.$entry;
     if (is_dir($fullsrc)) {
 					$operationsPublish .= '&gt; avvio la copia per "'.$entry.':<br />';
 					hardFlush(&$operationsPublish);
@@ -2025,7 +2025,7 @@ function publish_recurseMedia($pathFrom, $pathTo, &$operationsPublish) {
 					$srcx = filemtime($fullsrc);
 					$tgtx = false || @filemtime($fulldst);
 					if ($srcx > $tgtx) {
-						$operationsPublish .= '&gt; copio "'.basename($pathFrom).SYS_PATH_SEPARATOR.$entry.'<br />';
+						$operationsPublish .= '&gt; copio "'.basename($pathFrom).SYS_PATH_SEP.$entry.'<br />';
 						hardFlush(&$operationsPublish);
 						copy($fullsrc, $fulldst);
 						@chmod($fulldst, CHMOD);
@@ -2046,7 +2046,7 @@ function publish_SendToXDB ($exist, $collName, $packName, $partName, &$operation
 		// PREPARA FOLDERS
 	$component = $collName;
 	if ($packName != '') {
-		$component .= SYS_PATH_SEPARATOR.$packName;
+		$component .= SYS_PATH_SEP.$packName;
 	};
 	$operationsPublish .= '&gt; avvio la preparazione dei dati per "'.$component.':<br />';
 	hardFlush(&$operationsPublish);
@@ -2092,7 +2092,7 @@ function publish_SendToXDB ($exist, $collName, $packName, $partName, &$operation
 			while ($entry = readdir($handle)) {
 				if (substr($entry, 0, 1) != '.') {
 					$srcx = filemtime(DCTL_SETTINGS_DTD.$entry);
-					$tgtx = false || @filemtime(XMLDB_ENTITIES.SYS_PATH_SEPARATOR.$entry);
+					$tgtx = false || @filemtime(XMLDB_ENTITIES.SYS_PATH_SEP.$entry);
 					if ($srcx > $tgtx) {
 					 $upd = TRUE;
 					};
@@ -2115,7 +2115,7 @@ function publish_SendToXDB ($exist, $collName, $packName, $partName, &$operation
 					$dtd_root = $xml_dom->getElementsByTagName('catalog')->item(0);
 					$newnode = $dtd_root->appendChild($node);
 					$newnode->setAttribute('systemId', $dtd_needed);
-					$newnode->setAttribute('uri', 'entities'.SYS_PATH_SEPARATOR.$dtd_needed);
+					$newnode->setAttribute('uri', 'entities'.SYS_PATH_SEP.$dtd_needed);
 					$operationsPublish .= '&gt; aggiungo '.$dtd_needed.'...<br />';
 					hardFlush(&$operationsPublish);
 					$upd = TRUE;
@@ -2366,7 +2366,7 @@ function publish_SendToXDB ($exist, $collName, $packName, $partName, &$operation
 																	$entry = basename($fulldst);
 																	// 3) pubblico nella collezione di exist
 																	$operationsPublish .= '&#160;&#160;- pubblico "'.$entry.'"...';
-																	$pathTo = $baseDB.$collName.DB_PATH_SEPARATOR.$entry;
+																	$pathTo = $baseDB.$collName.DB_PATH_SEP.$entry;
 																	$result = ($exist->uploadResource($pathTo, $fulldst) !== FALSE) or dump($exist->getError());
 																	if (!$result) {
 																		$operationsPublish .= '<span class="error">impossibile pubblicare XML "'.$entry.'"!</span><br />';
@@ -2378,7 +2378,7 @@ function publish_SendToXDB ($exist, $collName, $packName, $partName, &$operation
 																		hardFlush(&$operationsPublish);
 																};
 																if ($prosecute) {
-																	$fullsrc = DCTL_PROJECT_PATH.$collName.SYS_PATH_SEPARATOR.DCTL_MEDIA;
+																	$fullsrc = DCTL_PROJECT_PATH.$collName.SYS_PATH_SEP.DCTL_MEDIA;
 																 if (true) {
 																		$prosecute = publish_recurseMedia($fullsrc, DCTL_PUBLISH_MEDIA, &$operationsPublish);
 																	} else {
@@ -2393,7 +2393,7 @@ function publish_SendToXDB ($exist, $collName, $packName, $partName, &$operation
 																	};
 																	$operationsPublish .= '<br /><span class="ok">Pubblicazione per "'.$collName;
 																	if ($packName != '') {
-																		$operationsPublish .= SYS_PATH_SEPARATOR.$packName;
+																		$operationsPublish .= SYS_PATH_SEP.$packName;
 																	};
 																	$operationsPublish .= '" effettuata con successo.</span><br /><br />';
 																} else {
@@ -2422,7 +2422,7 @@ function publish_RemoveFromXDB ($exist, $collName, $packName, $partName, &$opera
 	$toPublish = array();
 	$component = $collName;
 	if ($packName != '') {
-		$component .= SYS_PATH_SEPARATOR.$packName;
+		$component .= SYS_PATH_SEP.$packName;
 	};
 	$operationsPublish .= '(*) &gt; avvio la de-pubblicazione sul web per "'.$component.'":<br />';
 	hardFlush(&$operationsPublish);
@@ -2439,7 +2439,7 @@ function publish_RemoveFromXDB ($exist, $collName, $packName, $partName, &$opera
 				$operationsPublish .= '<span class="error">impossibile de-pubblicare la Collection "'.$collName.'"!</span><br />';
 			};
 		} else {
-			if ($exist->removeDocument($baseDB.$collName.SYS_PATH_SEPARATOR.$packName.'.xml')) {
+			if ($exist->removeDocument($baseDB.$collName.SYS_PATH_SEP.$packName.'.xml')) {
 				$operationsPublish .= '&gt; de-pubblico il Package "'.$packName.'" in "'.$collName.'"...<br />';
 			} else {
 				$operationsPublish .= '<span class="error">impossibile de-pubblicare il Package "'.$packName.'" in "'.$collName.'"!</span><br />';
@@ -2787,7 +2787,7 @@ function ajax_loadFullTree ($upToLevel=0, $collection_id='', $media_id='', $pack
 	 				$resultText .= '</ul>';
 					} else {
 						// ALL PARTS
-						$basePath = $collectionPath.$package_id.SYS_PATH_SEPARATOR;
+						$basePath = $collectionPath.$package_id.SYS_PATH_SEP;
 						$partPath = $basePath.$part_id;
 						$resultText .= '<ul>';
 						getPartList($basePath, &$partList);
