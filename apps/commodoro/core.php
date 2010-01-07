@@ -600,7 +600,7 @@ class dCTL {
 													switch (true) {
 														case preg_match('/^'.WS.'*(\w*|\.)'.WS.'*(\@'.WS.'*\"'.WS.'*((\w|\W|\*)(?:\+*)*)'.WS.'*(\+*)'.WS.'*(.*)'.WS.'*\"'.WS.'*(\;'.WS.'*(\-*\d+)'.WS.'*)?)/', $parsed_anchor, $matches):
 															$tag = isset($matches[1]) ? $matches[1] : $tag;
-															$startAt = isset($matches[3]) ? $matches[3] : $startAt;
+															$startAt = isset($matches[4]) ? $matches[4] : $startAt; // era [3] prima di (?:\+*)
 															$upTo = isset($matches[4]) ? (($matches[4] != '') ? escapeshellcmd($startAt) : '') : '';
 															$startAt = isset($matches[6]) ? $startAt.$matches[6] : $startAt;
 															$howMany = ($startAt) ? 1 : $startAt;
@@ -620,8 +620,8 @@ class dCTL {
 															} else {
 															 $tag = '@'.$tag;
 															};
-															$context .= '[lower-case('.$tag.') >= "'.strtolower($startAt).'"]';
-															if ($upTo != '') $context .= '[matches('.$tag.', "^'.$upTo.'", "msi")]';
+															$context .= '[lower-case(normalize-space('.$tag.')) >= "'.strtolower($startAt).'"]';
+															if ($upTo != '') $context .= '[matches(normalize-space('.$tag.'), "^'.$upTo.'", "msi")]';
 															if ($justContent) {
 																if ($jolly) {
 																 $context .= '//text()[1]'; // cosi ritorna le iniziali ma non dioscoride
@@ -698,7 +698,7 @@ class dCTL {
 // 													$xquery .= "\n".' ("<item><", node-name($node), for $att in $node/@* return (" ", node-name($att), "=&quot;", $att, "&quot;"), ">",';
 // 													$xquery .= "\n".' $chunk, "</", node-name($node), "></item>") ';
 // 													$xquery .= "\n".' element item { element {node-name($node)} {$node/@*, text {$chunk}} } ';
-														$xquery .= "\n".'  $node ';
+														$xquery .= "\n".'  $node '; // <XXX>XXX</XXX>
 
 													$xquery .= "\n".'  else ';
 													$xquery .= "\n".'   let $what := if (/id($node)) then ';
