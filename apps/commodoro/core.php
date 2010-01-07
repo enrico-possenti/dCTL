@@ -709,7 +709,7 @@ class dCTL {
 // 														$xquery .= "\n".' element {node-name($node)} {$node/@*, text {$chunk}} ';
 // 													};
 													$xquery .= "\n".'    for $item in distinct-values( ';
- 													$xquery .= "\n".'     for $token in $what ';
+ 												$xquery .= "\n".'     for $token in $what ';
 //													$xquery .= "\n".'     for $token in $node ';
 													$xquery .= "\n".'      let $include := if ($node/node() or ('.!$last_val.') or name($node) != "'.$last_attr.'") then true() ';
 													$xquery .= ' else contains($token, tokenize("'.$match.'", "'.WS.'")) ';
