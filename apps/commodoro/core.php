@@ -336,6 +336,7 @@ class dCTL {
 								$packageList[$key]['author'] = $packageRecord['author'];
 								$packageList[$key]['title'] = $packageRecord['title'];
 								$packageList[$key]['publisher'] = $packageRecord['publisher'];
+								$packageList[$key]['pubplace'] = $packageRecord['pubplace'];
 							};
 						};
 					};
@@ -372,6 +373,7 @@ class dCTL {
 		// | 'author'         : <teiHeader> field
 		// | 'title'          : <teiHeader> field
 		// | 'publisher'      : <teiHeader> field
+		// | 'pubplace'      : <teiHeader> field
 		// | 'date'           : <teiHeader> field
 		$packageRecord = array();
 		$packageRecord['kind'] = '';
@@ -389,6 +391,7 @@ class dCTL {
 			$packageRecord['author'] = '';
 			$packageRecord['title'] = '';
 			$packageRecord['publisher'] = '';
+			$packageRecord['pubplace'] = '';
 		};
 		$package_id = basename($thePath);
 		$package_id = explode(DCTL_RESERVED_INFIX, $package_id);
@@ -419,6 +422,7 @@ class dCTL {
 				$xquery .= "\n".' author="{$node3/tei:author}"';
 				$xquery .= "\n".' title="{$node3/tei:title[@type=\'main\']}"';
 				$xquery .= "\n".' publisher="{$node2/tei:publisher}"';
+				$xquery .= "\n".' pubplace="{$node2/tei:pubPlace}"';
 			};
 			$xquery .= "\n".'> ';
 			$xquery .= "\n".' </node> ';
@@ -448,6 +452,7 @@ class dCTL {
 							$packageRecord['author'] = (string)$xml_node['author'];
 							$packageRecord['title'] = (string)$xml_node['title'];
 							$packageRecord['publisher'] = (string)$xml_node['publisher'];
+							$packageRecord['pubplace'] = (string)$xml_node['pubplace'];
 						};
 					};
 				};
