@@ -17,8 +17,6 @@ define('APPS_VERSION', $v[0]); // current dCTL version
 $init = dirname(__FILE__).'/../config.inc.php';
 if (!is_file($init)) die('ERROR: '.dirname(dirname(__FILE__)).'/config.inc.php" not found... Fix it. Me, i abort.');
 require_once($init);
-if (!defined('NOVEOPIU')) define('NOVEOPIU', false);
-if (!defined('PRIVATE_ONLY')) define('PRIVATE_ONLY', false);
 // + - - - - - - - - - - - - - - - - - -
 // | PHP ENVIRONMENT
 error_reporting(E_ALL & ~E_NOTICE);
@@ -85,6 +83,7 @@ define('DCTL_DBCTL_BASEPATH', DCTL_DBCTL_MAINPATH.(DCTL_VERSION?DCTL_VERSION.SYS
 if(!is_dir(DCTL_DBCTL_BASEPATH)) mkdir(DCTL_DBCTL_BASEPATH, CHMOD);
 @chmod(DCTL_DBCTL_BASEPATH, CHMOD);
 // reserved or public?
+if (!defined('PRIVATE_ONLY')) define('PRIVATE_ONLY', false);
 define('TEMPORARY_SYSTEM', PRIVATE_ONLY || ((isset($_REQUEST['temp']) ? (($_REQUEST['temp'] == 'true') || ($_REQUEST['temp'] == '1')) : false)));
 define('DCTL_TMP_NAME', 'dctl-temp');
 define('DCTL_PUB_NAME', 'dctl-pub');
@@ -113,6 +112,7 @@ if (!defined('DCTL_USER_KIND')) define('DCTL_USER_KIND', 0);
 if (!defined('DCTL_USER_IS_EDITOR')) define('DCTL_USER_IS_EDITOR', false);
 if (!defined('DCTL_USER_IS_ADMIN')) define('DCTL_USER_IS_ADMIN', false);
 if (!defined('DCTL_USER_IS_GURU')) define('DCTL_USER_IS_GURU', false);
+if (!defined('NOVEOPIU')) define('NOVEOPIU', DCTL_USER_IS_GURU);
 define('MAIL_TO', 'info@noveopiu.com');
 $curr_lang = 'it';
 define('SYS_DBL_SPACE', '&#160;&#160;&#160;');

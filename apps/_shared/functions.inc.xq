@@ -50,7 +50,7 @@ declare function tei:getPage($node as node(), $justRefs as xs:integer) as node()
 			let $parent := tei:getBlock($node)
 		 (: in questo blocco ci sono altri nodi pb dopo questo? :)
 			let $parent :=
-			 if ((count($parent/descendant::tei:pb[. >> $node]) > 0) and (count($parent/descendant::tei:pb[not(string(attribute::ed) = "fake")][. << $node]) > 0))
+			 if ((count($parent/descendant::tei:pb[. >> $node]) > 0) ) (: and (count($parent/descendant::tei:pb[not(string(attribute::ed) = "fake")][. << $node]) > 0) :)
 		   (: si, buono :)
 				 then $parent
 		   (: no, becca il blocco del blocco :)

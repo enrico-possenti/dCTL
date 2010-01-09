@@ -27,10 +27,51 @@ function formatIt ($p, $c, $t, $x) {
 	echo $returnText;
 };
 // +----------------------------------------------------------------------+
-function highlightIt ($method, $tChk, $tXPath, $resultXML) {
-		$simplexml = @simplexml_load_string($resultXML, 'asPrettyXMLElement', DCTL_XML_LOADER);
-		echo '<h2>'.$method.'(\''.$tChk.'\', \''.$tXPath.'\')</h2>';
-		echo '<script type="syntaxhighlighter" class="brush: xml"><![CDATA['.$simplexml->asPrettyXML(1).']]></script>';
+function highlightIt ($method, $tChk, $tXPath, $resultXML, $tTest) {
+	$returnText = '';
+	$tXml = simplexml_load_string($resultXML, 'asPrettyXMLElement', DCTL_XML_LOADER);
+ $addon = '';
+ switch ($method) {
+  case 'getStructure':
+  	switch (true) {
+  	 case preg_match('~xml://~', $tChk):
+     $xpath = '//fragment//*[not(self::error)]';
+  	  break;
+  	 case preg_match('~img://~', $tChk):
+  	 default:
+     $xpath = '//resource[kind and ref and icon and file]';
+  	  break;
+  	};
+  	$tRes = is_array($tRes=$tXml->xpath($xpath)) ? $tRes : array();
+   break;
+  case 'getOptions':
+  	$xpath = '//list/item';
+  	switch (true) {
+  	 case preg_match('/@"(.*\*)"/', $tXPath, $m):
+     $xpath .= '[string-length() = '.strlen($m[1]).']';
+  	  break;
+  	 case preg_match('/@"(.*)\+"/', $tXPath, $m):
+  	  $xpath .= '[starts-with(., "'.strtolower($m[1]).'") or starts-with(., "'.strtoupper($m[1]).'")]';
+  	  break;
+  	 default:
+  	  $xpath .= '[. != ""]';
+  	  break;
+  	};
+  	$tRes = is_array($tRes=$tXml->xpath($xpath)) ? $tRes : array();
+   break;
+  default:
+  	$returnText .= '<span class="warning">unimplemented case for "'.$method.'" in '.__FUNCTION__.'...</span><br />';
+   break;
+ };
+	$t = true;
+	$t &= is_subclass_of($tXml, 'SimpleXMLElement');
+	$t &= (count($tRes) == $tTest);
+	$returnText .= '<h3 title="(toggle view)" class="'.($t ? 'ok' : 'error').'">'.$method.'(\''.$tChk.'\'';
+	if ($tXPath != '') $returnText .=  ', \''.$tXPath.'\'';
+	$returnText .=  ') = #'.count($tRes).'</h3>';// gettype($tRes)
+	$returnText .=  '<script type="syntaxhighlighter" class="brush: xml"><![CDATA['.$tXml->asPrettyXML(1).']]></script>';
+	echo $returnText;
+	return $t;
 };
 // |
 /**
@@ -82,125 +123,413 @@ function highlightIt ($method, $tChk, $tXPath, $resultXML) {
 // +----------------------------------------------------------------------+
 class CoreTester_Repository extends WebTestCase {
 	function __construct () {
-		echo '<hr/><b>dCTL : repo status </b>'.'<br />';
+		echo '<hr/><h2>dCTL : repo status </h2>';
 	}
 	//
 	function Test_RepoHasStructure() {
 		global $dCTL;
 		$tChk = $dCTL->__get('web_publish_path');
-		$tRes = UnitTestCase::assertPattern('/http:\/\/.+\/db\/.+/', $tChk);
-		echo '- [www] '.$tChk.'<br />';
+		$t = UnitTestCase::assertPattern('/http:\/\/.+\/db\/.+/', $tChk);
+		echo '<h3 class="'.($t ? 'ok' : 'error').'">[www] '.$tChk.'</h3><div class="syntaxhighlighter" />';
 	}
 	//
 	function Test_eXistHasStructure() {
 		global $dCTL;
 		$tChk = $dCTL->__get('db_publish_path');
-		$tRes = UnitTestCase::assertPattern('/\/db\/.+/', $tChk);
-		echo '- [exist] '.$tChk.'<br />';
+		$t = UnitTestCase::assertPattern('/\/db\/.+/', $tChk);
+		echo '<h3 class="'.($t ? 'ok' : 'error').'">[exist] '.$tChk.'</h3><div class="syntaxhighlighter" />';
 	}
+}
+// +----------------------------------------------------------------------+
+class CoreTester_getStructure extends WebTestCase {
+	function Test_getStructure() {
+		global $dCTL;
+  $method = 'getStructure';
+//
+//  		$tChk = '';
+//  		$tCmd = $dCTL->$method($tChk);
+//  		$tTest = true;
+//  		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt/xpb000001';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt/xdv000007?//*[@ana &= "genre_short"]#div4';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = false;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt/xdv000007?//*[@ana &= "genre_short"]#div3';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt/xdv000104/?//*[@ana &= "genre_anecdote"]#pb($hier)';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt/xdv000104/?//*[@ana &= "genre_anecdote"]#pb$(hier)';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt/xdv000104?//*[@ana &= "genre_anecdote"]';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt/xdv000123#pb@1';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = false;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt/xpb000269';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_img/p017pt002pg103';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt/p002f005';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/_txt?//*[@corresp &= "img://afd-mondi_047r.jpg"]';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/_img?//*[@corresp &= "img://afd-mondi_047r.jpg"]';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+		 $tChk = 'img://afd-marmi_p1_08_pw.jpg';
+		 $tCmd = $dCTL->$method($tChk);
+		 $tTest = true;
+		 UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+		 $tChk = 'xml://afd/marmi_img/p004ki001';
+		 $tCmd = $dCTL->$method($tChk);
+		 $tTest = true;
+		 UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+		 $tChk = 'xml://afd/marmi_txt/?//*[@ana &= "genre_epistolary"]#pb';
+		 $tCmd = $dCTL->$method($tChk);
+		 $tTest = true;
+		 UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+		 $tChk = 'xml://afd/marmi_txt/?//*[@ana &= "genre_short"]#$(hier)';
+		 $tCmd = $dCTL->$method($tChk);
+		 $tTest = true;
+		 UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+		 $tChk = 'img://afd-marmi_partei_p_007.jpg';
+		 $tCmd = $dCTL->$method($tChk);
+		 $tTest = true;
+		 UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+		 $tChk = 'xml://test/marmi_txt/?//*[@ana &= "genre_short"]#div1';
+		 $tCmd = $dCTL->$method($tChk);
+		 $tTest = true;
+		 UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+			$tChk = 'xml://afd/marmi_txt/xdv000046#page';
+			$tCmd = $dCTL->$method($tChk);
+			$tTest = true;
+			UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+			$tChk = 'xml://afd/marmi_txt/xdv000046#pb';
+			$tCmd = $dCTL->$method($tChk);
+			$tTest = true;
+			UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+			$tChk = 'xml://afd/marmi_txt?//tei:bibl[@type &= "artwork"][tei:title[. &= "Venere"]]';
+			$tCmd = $dCTL->$method($tChk);
+			$tTest = true;
+			UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest));
+
+ 		$tChk = 'xml://afd/marmi_txt/?//tei:bibl[@type &= "artwork"]/tei:title[. &= "Vènere"]';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = false;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+   $tChk = 'xml://afd/marmi_txt?//tei:bibl[@type &= "artwork"][. &= "Venere dipinta da Tiziano"]';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest));
+
+ 		$tChk = 'xml://afd/marmi_txt/?//tei:bibl[@type &= "artwork"]/tei:title[. &= "Venere"]#page';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt/?//tei:bibl[@type &= "artwork"]/tei:title[. &= "Venere"]#pb';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = false;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt/?//tei:bibl[@type = "artwork"]';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/*_txt?//tei:graphic';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_img?//tei:graphic#$(hier)';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_img?//tei:graphic#$(page)';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_img?//tei:graphic#page';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://test/mondi_img/p015mn001cc017';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://test/marmi_img/p003pt001pg016';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://test/marmi_img/p002pt001pg008';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://test/marmi_txt?//*[@ana &= "genre_anecdote"]#pb$(hier)';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt?//*[@ana &= "genre_anecdote"]#page';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt?//*[@ana &= "genre_anecdote"]#$(page)';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt?//*[@ana &= "genre_anecdote"]';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt/xdv000007';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_txt/xdv000007#pb';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'xml://afd/marmi_img/p002pt001pg008';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'img://afd-afdomar1.00.jpg';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = false;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ 		$tChk = 'img://afd/angelica_innamorata_canto_01.jpg';
+ 		$tCmd = $dCTL->$method($tChk);
+ 		$tTest = true;
+ 		UnitTestCase::assertTrue(UnitTestCase::assertTrue(highlightIt($method, $tChk, '', $tCmd, $tTest)));
+
+ }
 }
 // +----------------------------------------------------------------------+
 class CoreTester_getOptions extends WebTestCase {
 	function Test_getOptions() {
 		global $dCTL;
   $method = 'getOptions';
+//
+// 		$tChk = '';
+// 		$tXPath = '';
+// 		$tCmd = $dCTL->$method($tChk,$tXPath);
+//  	$tTest = true;
+// 		UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/_txt';
-		$tXPath = '//(tei:name|tei:rs)[@ana &= "as_source"]#n@"*"';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:bibl/@type';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+ 		UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/_txt';
-		$tXPath = '//(tei:name|tei:rs)[@ana &= "func_place"]#n@"*"';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/_txt';
+ 		$tXPath = '//(tei:name|tei:rs)[@ana &= "as_source"]#n@"a*"';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+ 		UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/_txt';
-		$tXPath = '//(tei:name|tei:rs)[not(@ana)]#n@"*"';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/_txt';
+ 		$tXPath = '//(tei:name|tei:rs)[@ana &= "func_place"]#n@"*"';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+ 		UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/_txt';
-		$tXPath = '//tei:name[@ana &= "func_character"]#n@"*"';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/_txt';
+ 		$tXPath = '//(tei:name|tei:rs)[not(@ana)]#n@"*"';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+ 		UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/_txt';
-		$tXPath = '//tei:name[@ana &= "func_character"]#n@"a+";10';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/_txt';
+ 		$tXPath = '//tei:name[@ana &= "func_character"]#n@"*"';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+ 		UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/marmi_img';
-		$tXPath = '//*[@ana &= "key_item"]';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/_txt';
+ 		$tXPath = '//tei:name[@ana &= "func_character"]#n@"a+";10';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+ 		UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/marmi_img';
-		$tXPath = '//dctl:iconTerm';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/marmi_img';
+ 		$tXPath = '//*[@ana &= "key_item"]';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+ 	 UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/marmi_img';
-		$tXPath = '//dctl:iconTerm#n@"*"';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/marmi_img';
+ 		$tXPath = '//*[@ana &= "key_item"]#.@"*"';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/marmi_txt';
-		$tXPath = '@ana &= "genre*"';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/marmi_img';
+ 		$tXPath = '//dctl:iconTerm';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/marmi_txt';
-		$tXPath = '@ana &= "verbfig*"';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/marmi_img';
+ 		$tXPath = '//dctl:iconTerm#n@"*"';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/marmi_txt';
-		$tXPath = '//tei:bibl[@type &= "artwork"]';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '@ana &= "genre*"';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/marmi_txt';
-		$tXPath = '//tei:name[@ana &= "func_character"]#n@"a*"';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '@ana &= "verbfig*"';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+ 		UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/marmi_txt';
-		$tXPath = '//tei:name[@ana &= "func_character"]#n@"b+"';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:bibl[@type &= "artwork"]';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/marmi_txt';
-		$tXPath = '//tei:name[@ana &= "func_character"]#n@"Betussi, Giuseppe";10';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:name[@ana &= "func_character"]#n@"a*"';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/marmi_txt';
-		$tXPath = '//tei:title#.@"*";0';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:name[@ana &= "func_character"]#n@"b+"';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/marmi_txt';
-		$tXPath = '//tei:title#.@"c+";0';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:name[@ana &= "func_character"]#n@"Betussi, Giuseppe";10';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:title#.@"*";0';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/mondi_img';
-		$tXPath = '//tei:title#.@"*";0';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:title#.@"c+";0';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-		$tChk = 'afd/mondi_img';
-		$tXPath = '//tei:title#.@"d+";0';
-		$tCmd = $dCTL->$method($tChk,$tXPath);
-		highlightIt($method, $tChk, $tXPath, $tCmd);
+ 		$tChk = 'xml://afd/mondi_img';
+ 		$tXPath = '//tei:title#.@"d+";0';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:bibl[@type &= "artwork"]/tei:title#.@"v+";0';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
-//		$tXml = simplexmlloadstring($tCmd);
-// 		$tRes = is_array($tRes=$tXml->xpath($tXPath)) ? $tRes : array();
-// 		$t = count($tRes);
-// 		formatIt('getOptions', $tChk, $t, $tRes);
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:bibl[@type &= "text"]#.@"*"';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
+
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:bibl[@type &= "artwork"]#.@"*";0';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
+
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:bibl[@type &= "artwork"]#.@"t+";0';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = false;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
+
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:bibl[@type &= "artwork"]#.@"t+";0';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = false;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
+
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:bibl[@type &= "text"]#.@"a+";0';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
+
+ 		$tChk = 'xml://afd/marmi_txt';
+ 		$tXPath = '//tei:bibl[@type &= "text"]/tei:title#.@"a+";0';
+ 		$tCmd = $dCTL->$method($tChk,$tXPath);
+  	$tTest = true;
+  	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
  }
 }
@@ -212,7 +541,7 @@ class CoreTester_getStructure extends WebTestCase {
 		global $dCTL;
 		echo '<hr/><b>dCTL : AFD </b>'.'<br />';
 		// 	• getStructure ("afd"); // collection esistente => risultato
-		$tChk = 'afd';
+		$tChk = 'xml://afd';
 		$tXPath = 'resource[kind="collection"]';
 		$tCmd = $dCTL->getStructure($tChk);
 		$tXml = simplexmlloadstring($tCmd);
@@ -268,7 +597,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd"); // collection esistente => risultato
-			$tChk = 'afd';
+			$tChk = 'xml://afd';
 			$tXPath = 'resource[kind="collection"]';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -283,7 +612,7 @@ class CoreTester_getStructure extends WebTestCase {
 			// afd/* equivale a afd/
 
 			//  • getStructure ("afd/*"); // tutti i package => risultato
-			$tChk = 'afd/*';
+			$tChk = 'xml://afd/*';
 			$tXPath = 'resource[kind="collection"]/packages/resource';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -297,7 +626,7 @@ class CoreTester_getStructure extends WebTestCase {
 			echo '[2.2] "package" level (xml://collection/package) <br/>';
 
 			//  • getStructure ("afd/_ERR_"); // package inesistente => record vuoto
-			$tChk = 'afd/_ERR_';
+			$tChk = 'xml://afd/_ERR_';
 			$tXPath = 'resource[kind="package"]';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -308,7 +637,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			//  • getStructure ("afd/marmi_*"); // package esistente => risultato
-			$tChk = 'afd/marmi_*';
+			$tChk = 'xml://afd/marmi_*';
 			$tXPath = 'resource[kind="package"][contains(ref, "marmi_")]';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -319,7 +648,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			//  • getStructure ("afd/marmo_*"); // package inesistente => record vuoto
-			$tChk = 'afd/marm_ERR_*';
+			$tChk = 'xml://afd/marm_ERR_*';
 			$tXPath = 'resource[kind="package"]';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -330,7 +659,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			//  • getStructure ("afd/*_txt"); // package esistente => risultato
-			$tChk = 'afd/*_txt';
+			$tChk = 'xml://afd/*_txt';
 			$tXPath = 'resource[kind="package"][contains(ref, "_txt")]';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -341,7 +670,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			//  • getStructure ("afd/*_ERR"); // package inesistente => record vuoto
-			$tChk = 'afd/*_ERR';
+			$tChk = 'xml://afd/*_ERR';
 			$tXPath = 'resource[kind="package"]';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -355,7 +684,7 @@ class CoreTester_getStructure extends WebTestCase {
 			echo '[3] "id" level (xml://collection/package/id) <br/>';
 
 			// 	• getStructure ("afd/marmi_txt/*"); // id inesistente => nessun risultato in <fragment />
-			$tChk = 'afd/marmi_txt/*';
+			$tChk = 'xml://afd/marmi_txt/*';
 			$tXPath = 'resource[kind="tei" and fragment]/fragment/*';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -366,7 +695,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt/_ERR_"); // id inesistente => nessun risultato in <fragment />
-			$tChk = 'afd/marmi_txt/_ERR_';
+			$tChk = 'xml://afd/marmi_txt/_ERR_';
 			$tXPath = 'resource[kind="tei" and fragment]/fragment/*';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -377,7 +706,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt/xpb000001"); // id esistente => risultato in <fragment> ... </fragment>
-			$tChk = 'afd/marmi_txt/xpb000001';
+			$tChk = 'xml://afd/marmi_txt/xpb000001';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[@id="xpb000001"]';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -392,7 +721,7 @@ class CoreTester_getStructure extends WebTestCase {
 
 			// 	• getStructure ("afd/marmi_txt?_ERR_"); // nodo non trovato  => no <fragment> ... </fragment>
 			// segue...
-			$tChk = 'afd/marmi_txt?_ERR_';
+			$tChk = 'xml://afd/marmi_txt?_ERR_';
 			$tXPath = 'resource[kind="package" and fragment]';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -403,7 +732,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 			// ...segue
 			// 	• getStructure ("afd/marmi_txt?_ERR_"); // errore di sintassi in xpath => messaggio di errore in <error> ... </error>
-			$tChk = 'afd/marmi_txt?_ERR_';
+			$tChk = 'xml://afd/marmi_txt?_ERR_';
 			$tXPath = 'resource[kind="package" and not(fragment)]/error';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -414,7 +743,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt?//*[@ana &= "genre_short"]"); // nodo trovato  => risultato in <fragment> ... </fragment>
-			$tChk = 'afd/marmi_txt?//*[@ana &= "genre_short"]';
+			$tChk = 'xml://afd/marmi_txt?//*[@ana &= "genre_short"]';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment//*[contains(@ana,"genre_short")]';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -428,7 +757,7 @@ class CoreTester_getStructure extends WebTestCase {
 			echo '[4.2] "?query" level (xml://collection/package/id?query) <br/>';
 
 			// 	• getStructure ("afd/marmi_txt/xpb000001?_ERR_"); // errore di sintassi in xpath => messaggio di errore in <error> ... </error>
-			$tChk = 'afd/marmi_txt/xpb000001?_ERR_';
+			$tChk = 'xml://afd/marmi_txt/xpb000001?_ERR_';
 			$tXPath = 'resource[kind="package" and not(fragment)]/error';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -440,7 +769,7 @@ class CoreTester_getStructure extends WebTestCase {
 
 			// 	• getStructure ("afd/marmi_txt/_ERR_?_ERR_"); // nodo non trovato  => nessun risultato in <fragment> ... </fragment>
 			// segue...
-			$tChk = 'afd/marmi_txt/_ERR_?_ERR_';
+			$tChk = 'xml://afd/marmi_txt/_ERR_?_ERR_';
 			$tXPath = 'resource[kind="package" and fragment]';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -450,7 +779,7 @@ class CoreTester_getStructure extends WebTestCase {
 			$t &= UnitTestCase::assertFalse(count($tRes));
 			formatIt('getStructure', $tChk, $t, $tRes);
 			// 	• getStructure ("afd/marmi_txt/_ERR_?_ERR_"); // errore di sintassi in xpath => messaggio di errore in <error> ... </error>
-			$tChk = 'afd/marmi_txt/_ERR_?_ERR_';
+			$tChk = 'xml://afd/marmi_txt/_ERR_?_ERR_';
 			$tXPath = 'resource[kind="package" and not(fragment)]/error';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -464,7 +793,7 @@ class CoreTester_getStructure extends WebTestCase {
 			echo '[5] "#anchor" level (xml://collection/package/id#anchor / xml://collection/package/id?query#anchor) <br />';
 
 			// 	• getStructure ("afd/marmi_txt#_ERR_"); // richiesta non riconosciuta => richiesta ignorata, equivale alla richiesta con #div
-			$tChk = 'afd/marmi_txt#div';
+			$tChk = 'xml://afd/marmi_txt#div';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -474,7 +803,7 @@ class CoreTester_getStructure extends WebTestCase {
 // 				$t &= UnitTestCase::assertTrue(count($tRes));
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 			$t2 = count($tRes);
-			$tChk = 'afd/marmi_txt#_ERR_';
+			$tChk = 'xml://afd/marmi_txt#_ERR_';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -490,7 +819,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#div"); // nodo trovato => risultato in <fragment />
-			$tChk = 'afd/marmi_txt#div';
+			$tChk = 'xml://afd/marmi_txt#div';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -501,7 +830,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#div1"); // nodo trovato => risultato in <fragment />
-			$tChk = 'afd/marmi_txt#div1';
+			$tChk = 'xml://afd/marmi_txt#div1';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -512,7 +841,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#div2"); // nodo trovato => risultato in <fragment />
-			$tChk = 'afd/marmi_txt#div2';
+			$tChk = 'xml://afd/marmi_txt#div2';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -523,7 +852,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#div100"); // nodo non trovato => nessun risultato in <fragment />
-			$tChk = 'afd/marmi_txt#div100';
+			$tChk = 'xml://afd/marmi_txt#div100';
 			$tXPath = 'resource[kind="tei" and fragment]/fragment/*';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -534,7 +863,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#div@1"); // nodo trovato => risultato in <fragment />
-			$tChk = 'afd/marmi_txt#div@1';
+			$tChk = 'xml://afd/marmi_txt#div@1';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -545,7 +874,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#div@100"); // nodo non trovato => nessun risultato in <fragment />
-			$tChk = 'afd/marmi_txt#div@8';
+			$tChk = 'xml://afd/marmi_txt#div@8';
 			$tXPath = 'resource[kind="tei" and fragment]/fragment/*';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -556,7 +885,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#div1@3"); // richiesta non riconosciuta => richiesta ignorata, equivale alla richiesta senza @3
-			$tChk = 'afd/marmi_txt#div1@3';
+			$tChk = 'xml://afd/marmi_txt#div1@3';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -566,7 +895,7 @@ class CoreTester_getStructure extends WebTestCase {
 // 				$t &= UnitTestCase::assertTrue(count($tRes));
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 			$t2 = count($tRes);
-			$tChk = 'afd/marmi_txt#div1';
+			$tChk = 'xml://afd/marmi_txt#div1';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -582,7 +911,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#div@1;3"); // nodo trovato => risultato in <fragment />
-			$tChk = 'afd/marmi_txt#div@1;3';
+			$tChk = 'xml://afd/marmi_txt#div@1;3';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -593,7 +922,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#div@1;-1"); // equivale alla richiesta senza @1;-1
-			$tChk = 'afd/marmi_txt#div';
+			$tChk = 'xml://afd/marmi_txt#div';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -603,7 +932,7 @@ class CoreTester_getStructure extends WebTestCase {
 // 				$t &= UnitTestCase::assertTrue(count($tRes));
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 			$t2 = count($tRes);
-			$tChk = 'afd/marmi_txt#div@1;-1';
+			$tChk = 'xml://afd/marmi_txt#div@1;-1';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -619,7 +948,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#div@1;100"); // equivale alla richiesta senza @1;100
-			$tChk = 'afd/marmi_txt#div';
+			$tChk = 'xml://afd/marmi_txt#div';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -629,7 +958,7 @@ class CoreTester_getStructure extends WebTestCase {
 // 				$t &= UnitTestCase::assertTrue(count($tRes));
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 			$t2 = count($tRes);
-			$tChk = 'afd/marmi_txt#div@1;100';
+			$tChk = 'xml://afd/marmi_txt#div@1;100';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -645,7 +974,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#pb"); // nodo trovato => risultato in <fragment />
-			$tChk = 'afd/marmi_txt#pb';
+			$tChk = 'xml://afd/marmi_txt#pb';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -656,7 +985,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#pb1");  // richiesta non riconosciuta => richiesta ignorata, equivale alla richiesta senza #pb1 ma con #div
-			$tChk = 'afd/marmi_txt#div';
+			$tChk = 'xml://afd/marmi_txt#div';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -666,7 +995,7 @@ class CoreTester_getStructure extends WebTestCase {
 // 				$t &= UnitTestCase::assertTrue(count($tRes));
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 			$t2 = count($tRes);
-			$tChk = 'afd/marmi_txt#pb1';
+			$tChk = 'xml://afd/marmi_txt#pb1';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/div';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -682,7 +1011,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#pb@1"); // nodo trovato => risultato in <fragment />
-			$tChk = 'afd/marmi_txt#pb@1';
+			$tChk = 'xml://afd/marmi_txt#pb@1';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -693,7 +1022,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#pb@100000"); // nodo non trovato => nessun risultato in <fragment />
-			$tChk = 'afd/marmi_txt#pb@100000';
+			$tChk = 'xml://afd/marmi_txt#pb@100000';
 			$tXPath = 'resource[kind="tei" and fragment]/fragment/*';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -704,7 +1033,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#pb@1;3"); // nodo trovato => risultato in <fragment />
-			$tChk = 'afd/marmi_txt#pb@1;3';
+			$tChk = 'xml://afd/marmi_txt#pb@1;3';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -715,7 +1044,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#pb@1;-1"); // equivale alla richiesta senza @1;-1
-			$tChk = 'afd/marmi_txt#pb';
+			$tChk = 'xml://afd/marmi_txt#pb';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -725,7 +1054,7 @@ class CoreTester_getStructure extends WebTestCase {
 // 				$t &= UnitTestCase::assertTrue(count($tRes));
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 			$t2 = count($tRes);
-			$tChk = 'afd/marmi_txt#pb@1;-1';
+			$tChk = 'xml://afd/marmi_txt#pb@1;-1';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -741,7 +1070,7 @@ class CoreTester_getStructure extends WebTestCase {
 			formatIt('getStructure', $tChk, $t, $tRes);
 
 			// 	• getStructure ("afd/marmi_txt#pb@1;100"); // equivale alla richiesta senza @1;100
-			$tChk = 'afd/marmi_txt#pb';
+			$tChk = 'xml://afd/marmi_txt#pb';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -751,7 +1080,7 @@ class CoreTester_getStructure extends WebTestCase {
 // 				$t &= UnitTestCase::assertTrue(count($tRes));
 // 				formatIt('getStructure', $tChk, $t, $tRes);
 			$t2 = count($tRes);
-			$tChk = 'afd/marmi_txt#pb@1;100000';
+			$tChk = 'xml://afd/marmi_txt#pb@1;100000';
 			$tXPath = 'resource[kind="tei" and fragment/*]/fragment/pb';
 			$tCmd = $dCTL->getStructure($tChk);
 			$tXml = simplexmlloadstring($tCmd);
@@ -1103,7 +1432,7 @@ class CoreTester_SimoneFixed extends WebTestCase {
 		global $dCTL;
 		echo '<hr/><b>dCTL : Simone Test => AFD </b>'.'<br />';
 		// 	• getStructure ("afd"); // collection esistente => risultato
-		$tChk = 'afd';
+		$tChk = 'xml://afd';
 		$tXPath = 'resource[kind="collection"]';
 		$tCmd = $dCTL->getStructure($tChk);
 		$tXml = simplexmlloadstring($tCmd);

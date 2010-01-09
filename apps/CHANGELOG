@@ -9,6 +9,10 @@
  | A changes log file                                                   |
  +----------------------------------------------------------------------+
 */
+Version 0.8.00RC15 (2010-01-09)
+>[Core]
+ Modificata tei:getPage() con controllo su tei:pb not "fake".
+
 Version 0.8.00RC14 (2010-01-07)
 >[Core]
  Modificata getOptions() con normalize-space() per ".".

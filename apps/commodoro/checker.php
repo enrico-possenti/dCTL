@@ -10,6 +10,9 @@
  $returnText .= 'var private = 1;';
  $returnText .= '</script>';
  // +----------------------------------------------------------------------+
+ $returnText .= '<style>';
+ $returnText .= '.sh_hide { display: none !important; } ';
+ $returnText .= '</style>';
  $returnText .= '<script type="text/javascript" language="javascript">';
  $returnText .= '$().ready(function () {';
  $returnText .= ' $("input:text").change(function () { ';
@@ -18,7 +21,9 @@
  $returnText .= ' });';
  $returnText .= '});';
  $returnText .= ' function refreshMe() { ';
- $returnText .= ' window.location="#s"; SyntaxHighlighter.all(); killProgress(); ';
+ $returnText .= ' window.location="#s";
+ SyntaxHighlighter.all();
+ $("h3.ok").next(".syntaxhighlighter").addClass("sh_hide").end().click(function(){$(this).next().toggleClass("sh_hide");});killProgress(); ';
  $returnText .= '};';
  $returnText .= '</script>';
  // | end JS

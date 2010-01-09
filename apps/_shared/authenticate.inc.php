@@ -93,7 +93,6 @@
     }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-
 	$auth = FALSE;
 	$current_user = '';
 	if (isset($_SERVER['HTTP_AUTHORIZATION'])) {
@@ -138,6 +137,7 @@
 	};
 
 	require_once(str_replace('//','/',dirname(__FILE__).'/').'_protected/account.inc.php');
+
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
