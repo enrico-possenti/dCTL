@@ -257,6 +257,7 @@ define('XMLDB_XMLDB_NS', 'xmldb="http://exist-db.org/xquery/xmldb"');
 define('XMLDB_EXIST_NS', 'exist="http://exist.sourceforge.net/NS/exist"');
 define('XMLDB_TRANSFORM_NS', 'transform="http://exist-db.org/xquery/transform"');
 define('XMLDB_FUNCTX_NS', 'functx = "http://www.functx.com"');
+define('XMLDB_KWIC_NS', 'http://exist-db.org/xquery/kwic');
 $xquery_lib = ($xquery_lib = @file_get_contents(str_replace(SYS_PATH_SEP_DOUBLE,SYS_PATH_SEP,dirname(__FILE__).SYS_PATH_SEP).'..'.SYS_PATH_SEP.'_shared'.SYS_PATH_SEP.'functions.inc.xq')) ? $xquery_lib : '';
 //declare default element namespace "'.XMLDB_TEI_S.'";  // NON IMPORTA
 define('DCTL_XQUERY_BASE',
@@ -267,6 +268,7 @@ declare namespace '.XMLDB_UTIL_NS.';
 declare namespace '.XMLDB_EXIST_NS.';
 declare namespace '.XMLDB_TRANSFORM_NS.';
 declare namespace '.XMLDB_FUNCTX_NS.';
+import module namespace kwic="'.XMLDB_KWIC_NS.'";
 declare option exist:timeout "' . XMLDB_TIMEOUT . '";
 declare option exist:output-size-limit "'.XMLDB_MAXCOUNT.'";
 declare option exist:serialize "method=xhtml";

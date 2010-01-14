@@ -46,6 +46,7 @@
  $returnText .= '<br />';
  $returnText .= '<br />';
  $returnText .= 'Try: <a href="#unitTest" title="jump to">unitTest()</a><br />';
+ $returnText .= 'Try: <a href="#getTimestamp" title="jump to">getTimestamp()</a><br />';
  $returnText .= 'Try: <a href="#getStructure" title="jump to">getStructure()</a><br />';
  $returnText .= 'Try: <a href="#getOptions" title="jump to">getOptions()</a><br />';
  $returnText .= 'Try: <a href="#getBlock" title="jump to">getBlock()</a><br />';
@@ -61,6 +62,14 @@
  $returnText .= '<h3 id="unitTest">unitTest()</h3><em>launch tests</em><br />';
  $returnText .= '<input id="b0" type="button" value="Run the test" onclick="doProgress();';
  $returnText .= "$('#s').html('loading...');$('#s').load('".AJAX."', { method: 'unitTest', debug: debug, private: private}, function() { refreshMe(); } );";
+ $returnText .= ' return false;"/>';
+ $returnText .= '</p>';
+ $returnText .= '<p>';
+ $returnText .= '<hr />';
+ $returnText .= '<h3 id="getTimestamp">getTimestamp()</h3><em>returns description records for each resource with unix timestamp for last publishing</em><br />';
+ $returnText .= '<label class="label">rsrc:</label>&#160;<input type="text" id="uri6" size="80"/><br/>';
+ $returnText .= '<input id="b6" type="button" value="Try" onclick="doProgress();';
+ $returnText .= "$('#s').html('loading...');$('#s').load('".AJAX."', { method: 'getTimestamp', rsrc: $('#uri6').val(), debug: debug, private: private}, function() { refreshMe(); } );";
  $returnText .= ' return false;"/>';
  $returnText .= '</p>';
  // |

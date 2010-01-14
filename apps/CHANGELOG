@@ -10,9 +10,13 @@
  +----------------------------------------------------------------------+
 */
 
+Version 0.8.00RC17 (2010-01-14)
+>[Core]
+ [new] Aggiunto metodo getTimestamp().
+
 Version 0.8.00RC16 (2010-01-09)
 >[Core]
- Aggiunto <pubplace>.
+ [new] Aggiunto <pubplace>.
 
 Version 0.8.00RC15 (2010-01-09)
 >[Core]

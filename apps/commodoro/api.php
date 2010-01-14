@@ -81,6 +81,9 @@
 	$goBack .= ' [pid:'.$dCTL->db->pid.']<br/>';
  switch ($method) {
 		// | core methods
+		case 'getTimestamp':
+			$resultXML = $dCTL->getTimestamp($rsrc);
+			break;
 		case 'getStructure':
 			$resultXML = $dCTL->getStructure($rsrc);
 			break;

@@ -105,6 +105,10 @@ class dCTL {
 		return $this->_get_link (true, $resourceList, DCTL_FILE_MAPPER);
 	}
 	// +----------------------------------------------------------------------+
+	public function getTimestamp ($resourceList='') {
+		return $this->_get_timestamp (true, $resourceList);
+	}
+	// +----------------------------------------------------------------------+
 	public function getAuthorityName () {
 		return '<dctl><stub>UNIMPLEMENTED '.__METHOD__.', JUST A STUB TO CATCH CALLS...</stub></dctl>';
 	}
@@ -1016,6 +1020,34 @@ class dCTL {
 		// wraps results
 		return $this->_resources_to_xml($docList);
 	}
+	// +----------------------------------------------------------------------+
+	protected function _get_timestamp ($justRefs=false, $resourceList='') {
+		$resourceList = $this->_parse_uri($resourceList);
+		$docList = array();
+		foreach($resourceList as $key4docList=>$parsed) {
+			$resList = array();
+			switch ($parsed['scheme']) {
+				case 'xml':
+				 $collection = $parsed['collection'];
+				 $dPath = $this->_fs_publish_path;
+// 					$handle = opendir($dPath);
+// 					while ($entry = readdir($handle)) {
+// 						if (substr($entry, 0, 1) != '.') {
+// 							if (preg_match()) {
+//
+// 							};
+// 						};
+// 					};
+				 $xml_resource = $collection.DCTL_RESERVED_INFIX.DCTL_RESERVED_PREFIX.$collection.'.xml';
+				 $fTarget = $dPath.$xml_resource;
+					$resList[$key]['ref'] = $parsed['source'];
+					$resList[$key]['timestamp'] = is_file($fTarget) ? filemtime($fTarget) : -1;
+				 break;
+			};
+			$docList = array_merge($docList, $resList);
+		};
+		return $this->_resources_to_xml($docList);
+ }
 	// +----------------------------------------------------------------------+
 	protected function _resources_to_xml($resourceList, $recursion=false) {
 		// | convert record to xml
