@@ -35,6 +35,10 @@
 <!ENTITY source_edition_pages "">
 <!ENTITY source_lang "">
 <!ENTITY source_genre "">
+<!ENTITY source_location "">
+<!ENTITY source_commissioner "">
+<!ENTITY source_provenance "">
+<!ENTITY source_idno "">
 <!ENTITY source_note "">
 <!-- # -->
 <!-- # REFERENCE # -->
@@ -49,5 +53,9 @@
 <!ENTITY reference_edition_pages "">
 <!ENTITY reference_lang "">
 <!ENTITY reference_genre "">
+<!ENTITY reference_location "">
+<!ENTITY reference_commissioner "">
+<!ENTITY reference_provenance "">
+<!ENTITY reference_idno "">
 <!ENTITY reference_note "">
 <!-- # -->

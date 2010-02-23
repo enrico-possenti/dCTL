@@ -20,8 +20,8 @@
  <xsl:template match="/">
   <xsl:variable name="thisLevel" select="0" />
   <xsl:choose>
-   <xsl:when test="count(//dctl:scene) > 0">
-    <xsl:for-each select="//dctl:scene">
+   <xsl:when test="count(//dctl:item) > 0">
+    <xsl:for-each select="//dctl:item">
      <div class="line">
       <xsl:variable name="thisID">
        <xsl:call-template name="get_id" />

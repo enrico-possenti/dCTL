@@ -973,7 +973,7 @@ function transformXMLwithXSLT ($mastro= '', $doc='', $where='', $xslt='', $block
       break;
 
 					case (stripos($xslt, 'scene_by_package') !== false): // sia IMG che PTX
-						$context = '(dctl:scene | tei:div[@type="dctlObject"][count(./descendant::dctl:scene) = 0 and count(ancestor::tei:div[@type="dctlObject"]) = 0])';
+						$context = '(dctl:item | tei:div[@type="dctlObject"][count(./descendant::dctl:item) = 0 and count(ancestor::tei:div[@type="dctlObject"]) = 0])';
 						$xquery .= ' let $node := for $doc in xmldb:document(';
       $xquery .= '"'.$xml_resource.'"';
       $xquery .= '), $item in $doc/tei:TEI/tei:text//'.$context;

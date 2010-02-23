@@ -11,14 +11,27 @@
 <!ENTITY % xhtml-symbol SYSTEM "xhtml-symbol.ent" >
 %xhtml-symbol;
 
-<!ENTITY % div.type "abstract | act | allegory | appendix | argument
- | back | ballad | bibliography | bio | book | canto | canzone | chapter
- | collection | colophon | contents | cover | dctlObject | dedication
+<!ENTITY % div.type "
+   abstract | act | allegory | appendix | argument
+ | back | ballad | bibliography | bio | book
+ | canto | canzone | chapter | collection | colophon | contents | cover
+ | dedication
  | editorial | emblem | epigram | epilogue | errata
- | frontispiece | glossary | iconography | imprimatur | index | interpretation | introduction
- | leaf | letter | madrigal | notes
- | octave | part | preface | prologue | scene | section | segment | sonnet | speech | stanza
- | subsection | tercet | treatise | volume | work">
+ | frontispiece
+ | glossary
+ | iconography | imprimatur | index | interpretation | introduction
+ | leaf | letter
+ | madrigal
+ | notes
+ | octave
+ | part | preface | prologue
+ | scene | section | segment | sonnet | speech | stanza | subsection
+ | tercet | treatise
+ | volume
+ | work
+ | dctlObject 
+ | caseCharacter | caseFloat | caseWagon | caseThrone | caseDeity | caseAnimal | caseFrame
+ ">
 <!ENTITY % p.type "motto | inscription">
 <!ENTITY % pb.ed "ctl | fake">
 <!ENTITY % pb.label "c | p | f">
@@ -37,7 +50,7 @@
 <!ENTITY % note.place "above | apparatus | below | bottom | end | foot | inline | inspace | margin | opposite | overleaf | top">
 <!ENTITY % figure.place "above | apparatus | below | bottom | end | foot | inline | inspace | margin | opposite | overleaf | top">
 <!ENTITY % distributor.role "commissioner | location | provenance">
-<!ENTITY % ref.type "link | map | generic"> 
+<!ENTITY % ref.type "link | map | generic | note | meta"> 
 
 <!ATTLIST figure
  place (%figure.place;) #IMPLIED

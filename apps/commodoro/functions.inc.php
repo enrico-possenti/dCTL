@@ -1568,6 +1568,9 @@ function getImageRecord ($thePath, &$imageRecord, $theLabel='') {
 	$imageRecord['image_short'] = '';
 	$imageRecord['image_work'] = '';
 	$image_id = basename($thePath);
+	if (stripos($image_id, '-') === false) {
+	 $image_id = basename(dirname($thePath)).'-'.$image_id;
+	};
 	$image_id = normalize($image_id);
 	$imageRecord['image_id'] = $image_id;
 	$image_short = $image_id;
@@ -2267,7 +2270,7 @@ function publish_SendToXDB ($exist, $collName, $packName, $partName, &$operation
 													$prosecute = FALSE;
 												};
 												if ($prosecute) {
-													$operationsPublish .= '&gt; trasformo i file XML :: LABEL/NAME/ICONTERM (#3):<br />';
+													$operationsPublish .= '&gt; trasformo i file XML :: LABEL/NAME/TOPIC (#3):<br />';
 													hardFlush(&$operationsPublish);
 													global $mysql_dbName;
 													global $mysql_dbIconclass;

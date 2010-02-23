@@ -10,12 +10,3 @@
  +----------------------------------------------------------------------+
 */
 
-Version 0.8.00 (2009-12-12)
- Adesso è eliminato l'errore di namespace (corretto XQuery).
-
-Version 0.7.02 (2009-12-07)
- Eliminato l'errore di namespace (tolta la causa) => NON È VERO, ERRORE PERSISTE
-
-Version 0.7.01 (2009-12-05)
- Per problemi di namespace (ancora non capisco perché, getBlock("test/marmi_txt/xdv000004") fallisce.
-

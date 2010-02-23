@@ -11,7 +11,6 @@
 
 <!ENTITY % dctl-studio "%dctl-prefix;studio" >
 
-<!ENTITY % dctl-settings "%dctl-prefix;settings" >
 <!ENTITY % dctl-desc "%dctl-prefix;desc" >
 <!ENTITY % dctl-transcription "%dctl-prefix;transcription" >
 <!ENTITY % dctl-inscription "%dctl-prefix;inscription" >
@@ -22,24 +21,23 @@
 <!ENTITY % dctl-measure "%dctl-prefix;measure" >
 <!ENTITY % dctl-position "%dctl-prefix;position" >
 <!ENTITY % dctl-frame "%dctl-prefix;frame" >
-<!ENTITY % dctl-ornament "%dctl-prefix;ornament" >
 <!ENTITY % dctl-support "%dctl-prefix;support" >
 <!ENTITY % dctl-extra "%dctl-prefix;extra" >
-<!ENTITY % dctl-meaning "%dctl-prefix;meaning" >
 <!ENTITY % dctl-sequence "%dctl-prefix;sequence" >
 <!ENTITY % dctl-pattern "%dctl-prefix;pattern" >
-<!ENTITY % dctl-character "%dctl-prefix;character" >
-<!ENTITY % dctl-iconclass "%dctl-prefix;iconclass" >
 <!ENTITY % dctl-matrix "%dctl-prefix;matrix" >
+<!ENTITY % dctl-ornament "%dctl-prefix;ornament" >
+<!ENTITY % dctl-setting "%dctl-prefix;setting" >
+<!ENTITY % dctl-topic "%dctl-prefix;topic" >
 <!ENTITY % dctl-source "%dctl-prefix;source" >
 <!ENTITY % dctl-reuseList "%dctl-prefix;reuseList" >
 <!ENTITY % dctl-reuse "%dctl-prefix;reuse" >
 <!ENTITY % dctl-list "%dctl-prefix;list" >
 <!ENTITY % dctl-item "%dctl-prefix;item" >
+<!ENTITY % dctl-owner "%dctl-prefix;owner" >
 
-<!ENTITY % dctl-sceneList "%dctl-prefix;sceneList" >
-<!ENTITY % dctl-scene "%dctl-prefix;scene" >
-<!ENTITY % dctl-iconTerm "%dctl-prefix;iconTerm" >
+<!-- [TODO] DOVREBBE SPARIRE! -->
+<!ENTITY % dctl-character "%dctl-prefix;character" >
 
 <!ENTITY % dctl-att.global.attribute.xmlns.ns "CDATA #FIXED 'http://www.ctl.sns.it/ns/1.0'" >
 <!ENTITY % dctl-att.global.attribute.xmlns.dctl "xmlns:dctl %dctl-att.global.attribute.xmlns.ns;" >
@@ -53,12 +51,12 @@ illumination" >
 <!ENTITY % dctl-pattern.type "perspective">
 <!ENTITY % dctl-technique.type "fusion | oil | tempera | fresco | mural_painting | etching | graver | dry_point | woodcut | repousse | gilded | embroidery | stucco | mosaic | black_chalk | red_chalk | pen  | silver_point | metal_point | pastel | watercolor | ink | majolica | pencil" >
 <!ENTITY % dctl-material.type "parchment | canvas | panel | copper | paesina | paper | colored_paper | fabric | wood | silver | marble | terracotta | bronze | majolica | earthen_ware | porcelain" >
-<!ENTITY % dctl-reuseList.type "preceding | following">
-<!ENTITY % dctl-reuse.type "self | other">
-<!ENTITY % dctl-meaning.type "textual | original | context">
 <!ENTITY % dctl-position.place "above | below | left | right | around">
 <!ENTITY % dctl-extra.type "extratestual | paraphrase">
-
+<!ENTITY % dctl-inscription.type "motto | subscriptio">
+<!ENTITY % dctl-meaning.type "textual | original | context">
+<!ENTITY % dctl-reuseList.type "preceding | following">
+<!ENTITY % dctl-reuse.type "self | other">
 <!ENTITY % dctl-item.type "textual | graphical">
 
 <!ENTITY % model.graphicLike "graphic | formula | eg | %dctl-studio;"> 
@@ -78,13 +76,32 @@ illumination" >
 <!-- DCTL DEFINITION #2 -->
 
 <!ENTITY % dctl-macro.paraContent '%macro.paraContent;' >
+<!ENTITY %  dctl-macro.item '(%dctl-desc; | %dctl-sequence; | %dctl-meaning; | %dctl-topic; | div)*' >
+<!ENTITY %  dctl-macro.physical '(%dctl-typology; | %dctl-technique; | %dctl-material; | %dctl-measure; | %dctl-position; | %dctl-desc; | bibl | note)*' >
 
 <!ELEMENT %dctl-studio; (
-  %dctl-typology; | %dctl-technique; | %dctl-material; | %dctl-measure;
- | %dctl-position; | %dctl-desc;
- | %dctl-frame; | %dctl-ornament; | %dctl-matrix; | %dctl-support; | %dctl-inscription; | %dctl-transcription; | %dctl-settings;
- | %dctl-character; | %dctl-sceneList; | %dctl-list; | %dctl-pattern; | %dctl-extra;
- | %dctl-iconclass; | %dctl-iconTerm; | %dctl-meaning; | %dctl-source; | %dctl-reuseList;
+  %dctl-desc; |
+  %dctl-typology; | 
+  %dctl-technique; | 
+  %dctl-material; | 
+  %dctl-measure; |
+  %dctl-position; |
+  %dctl-frame; | 
+  %dctl-ornament; | 
+  %dctl-matrix; | 
+  %dctl-support; |  
+  %dctl-inscription; | 
+  %dctl-transcription; |
+  %dctl-setting; | 
+  %dctl-character; | 
+  %dctl-pattern; | 
+  %dctl-extra; | 
+  %dctl-topic; | 
+  %dctl-meaning; | 
+  %dctl-source; | 
+  %dctl-reuseList; | 
+  %dctl-list; |
+  %dctl-owner;
  )* >
 <!ATTLIST %dctl-studio;
  %att.global.attribute.xmlid;
@@ -96,7 +113,8 @@ illumination" >
  >
 
 <!--doc:(...) ... -->
-<!ELEMENT %dctl-reuseList; (%dctl-reuse;)+ >
+<!-- PER I RIUSI DEGLI ELEMENTI -->
+<!ELEMENT %dctl-reuseList; (%dctl-reuse; | bibl)+ >
 <!ATTLIST %dctl-reuseList;
  %att.global.attribute.xmlid;
  %att.global.attribute.n;
@@ -120,7 +138,8 @@ type (%dctl-reuse.type;) #REQUIRED
  >
 
 <!--doc:(...) ... -->
-<!ELEMENT %dctl-source; (bibl | note)* >
+<!-- PER LE CITAZIONI DELLE FONTI -->
+<!ELEMENT %dctl-source; %macro.paraContent; >
 <!ATTLIST %dctl-source;
  %att.global.attribute.xmlid;
  %att.global.attribute.n;
@@ -131,7 +150,7 @@ type (%dctl-reuse.type;) #REQUIRED
  >
 
 <!--doc:(...) ... -->
-<!ELEMENT %dctl-matrix; (%dctl-typology; | %dctl-technique; | %dctl-material; | %dctl-measure; | %dctl-desc; | bibl | note)* >
+<!ELEMENT %dctl-matrix; %dctl-macro.physical; >
 <!ATTLIST %dctl-matrix;
  %att.global.attribute.xmlid;
  %att.global.attribute.n;
@@ -142,7 +161,7 @@ type (%dctl-reuse.type;) #REQUIRED
  >
 
 <!--doc:(...) ... -->
-<!ELEMENT %dctl-frame; (%dctl-typology; | %dctl-technique; | %dctl-material; | %dctl-measure; | %dctl-position; | %dctl-desc;)* >
+<!ELEMENT %dctl-frame; %dctl-macro.physical; >
 <!ATTLIST %dctl-frame;
  %att.global.attribute.xmlid;
  %att.global.attribute.n;
@@ -153,7 +172,7 @@ type (%dctl-reuse.type;) #REQUIRED
 >
 
 <!--doc:(...) ... -->
-<!ELEMENT %dctl-ornament; (%dctl-typology; | %dctl-technique; | %dctl-material; | %dctl-measure; | %dctl-position; | %dctl-desc;)* >
+<!ELEMENT %dctl-ornament; %dctl-macro.physical; >
 <!ATTLIST %dctl-ornament;
  %att.global.attribute.xmlid;
  %att.global.attribute.n;
@@ -164,7 +183,7 @@ type (%dctl-reuse.type;) #REQUIRED
 >
  
 <!--doc:(...) ... -->
-<!ELEMENT %dctl-support; (%dctl-typology; | %dctl-technique; | %dctl-material; | %dctl-measure; | %dctl-position; | %dctl-desc;)* >
+<!ELEMENT %dctl-support; %dctl-macro.physical; >
 <!ATTLIST %dctl-support;
  %att.global.attribute.xmlid;
  %att.global.attribute.n;
@@ -173,28 +192,6 @@ type (%dctl-reuse.type;) #REQUIRED
  %att.global.analytic.attribute.ana;
  %att.global.linking.attribute.corresp;
  >
-
-<!--doc:(...) ... -->
-<!ELEMENT %dctl-sceneList; (%dctl-scene;)+ >
-<!ATTLIST %dctl-sceneList;
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.analytic.attribute.ana;
- %att.global.linking.attribute.corresp;
->
-
-<!--doc:(...) ... -->
-<!ELEMENT %dctl-scene; (%dctl-desc; | %dctl-sequence; | %dctl-meaning; | div)* >
-<!ATTLIST %dctl-scene;
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.analytic.attribute.ana;
- %att.global.linking.attribute.corresp;
->
 
 <!--doc:(...) ... -->
 <!ELEMENT %dctl-list; (%dctl-item;)+ >
@@ -208,7 +205,7 @@ type (%dctl-reuse.type;) #REQUIRED
 >
 
 <!--doc:(...) ... -->
-<!ELEMENT %dctl-item; (%dctl-desc; | %dctl-sequence; | %dctl-meaning; | %dctl-list; | div)* >
+<!ELEMENT %dctl-item; (%dctl-macro.item; | %dctl-list;)* >
 <!ATTLIST %dctl-item;
  %att.global.attribute.xmlid;
  %att.global.attribute.n;
@@ -216,34 +213,21 @@ type (%dctl-reuse.type;) #REQUIRED
  %att.global.attribute.rend;
  %att.global.analytic.attribute.ana;
  %att.global.linking.attribute.corresp;
-type (%dctl-item.type;) #IMPLIED
+ type (%dctl-item.type;) #IMPLIED 
 >
 
 <!--doc:(...) ... -->
-<!ELEMENT %dctl-iconTerm; %dctl-macro.paraContent; >
-<!ATTLIST %dctl-iconTerm;
+<!ELEMENT %dctl-topic; %dctl-macro.paraContent; >
+<!ATTLIST %dctl-topic;
  %att.global.attribute.xmlid;
  %att.global.attribute.n;
  %att.global.attribute.xmllang;
  %att.global.attribute.rend;
  %att.global.analytic.attribute.ana;
  %att.global.linking.attribute.corresp;
- key CDATA #REQUIRED
- iconclass CDATA #IMPLIED
- >
-
-<!--doc:(...) ... -->
-<!ELEMENT %dctl-iconclass; %dctl-macro.paraContent; >
-<!ATTLIST %dctl-iconclass;
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.analytic.attribute.ana;
- %att.global.linking.attribute.corresp;
- key CDATA #REQUIRED
- code CDATA #IMPLIED
- >
+  key CDATA #IMPLIED
+  iconclass CDATA #IMPLIED
+>
 
 <!--doc:(...) ... -->
 <!ELEMENT %dctl-sequence; %dctl-macro.paraContent; >
@@ -257,8 +241,19 @@ type (%dctl-item.type;) #IMPLIED
  >
 
 <!--doc:(...) ... -->
-<!ELEMENT %dctl-character; (name | rs) >
+<!ELEMENT %dctl-character; %dctl-macro.paraContent; >
 <!ATTLIST %dctl-character;
+ %att.global.attribute.xmlid;
+ %att.global.attribute.n;
+ %att.global.attribute.xmllang;
+ %att.global.attribute.rend;
+ %att.global.analytic.attribute.ana;
+ %att.global.linking.attribute.corresp;
+ >
+
+<!--doc:(...) ... -->
+<!ELEMENT %dctl-owner; %dctl-macro.paraContent; >
+<!ATTLIST %dctl-owner;
  %att.global.attribute.xmlid;
  %att.global.attribute.n;
  %att.global.attribute.xmllang;
@@ -370,11 +365,12 @@ type (%dctl-item.type;) #IMPLIED
  %att.global.attribute.rend;
  %att.global.analytic.attribute.ana;
  %att.global.linking.attribute.corresp;
- >
+ type (%dctl-inscription.type;) #IMPLIED
+>
 
 <!--doc:(...) ... -->
-<!ELEMENT %dctl-settings; %macro.paraContent; >
-<!ATTLIST %dctl-settings;
+<!ELEMENT %dctl-setting; %macro.paraContent; >
+<!ATTLIST %dctl-setting;
  %att.global.attribute.xmlid;
  %att.global.attribute.n;
  %att.global.attribute.xmllang;
@@ -392,7 +388,7 @@ ana %data.pointers; #REQUIRED
  %att.global.attribute.rend;
  %att.global.analytic.attribute.ana;
  %att.global.linking.attribute.corresp;
-type (%dctl-meaning.type;) #IMPLIED
+ type (%dctl-meaning.type;) #IMPLIED
  >
 
 <!--doc:(...) ... -->

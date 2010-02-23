@@ -147,7 +147,7 @@
               <span class="widget_label">Episodi e Significati:</span>
              <span class="widget_field">&#160;</span>
              <span class="widget_field">
-              <xsl:apply-templates select="tei:figure/dctl:studio/dctl:sceneList" />
+              <xsl:apply-templates select="tei:figure/dctl:studio/dctl:list" />
              </span>
               <!-- descrizione -->
              <xsl:if test="not(tei:figure/dctl:studio//dctl:studio)">
@@ -251,7 +251,7 @@
               <!-- select locals -->
               <xsl:apply-templates select="tei:figure/dctl:studio/dctl:settings" />
               <!-- select all -->
-              <xsl:apply-templates select="tei:figure/dctl:studio/dctl:sceneList//dctl:settings" />
+              <xsl:apply-templates select="tei:figure/dctl:studio/dctl:list//dctl:settings" />
              </xsl:variable>
              <xsl:variable name="settings2">
               <xsl:call-template name="getDistinct">
@@ -267,10 +267,10 @@
              <!-- pattern -->
              <xsl:apply-templates select="tei:figure/dctl:studio/dctl:pattern" />
              <!-- iconclass -->
-             <xsl:variable name="iconTerm">
+             <xsl:variable name="topic">
               <xsl:value-of select="concat($distinctSep, ' ')" />
               <!-- select all -->
-              <xsl:for-each select="tei:figure/dctl:studio/dctl:sceneList//dctl:iconTerm">
+              <xsl:for-each select="tei:figure/dctl:studio/dctl:list//dctl:topic">
                <xsl:value-of select="concat($distinctSep, ' ')" />
                <xsl:text>&lt;a href="http://www.iconclass.nl/libertas/ic?style=notationbb.xsl&amp;task=getnotation&amp;taal=it&amp;datum=</xsl:text>
                <xsl:value-of select="@iconclass" />
@@ -281,17 +281,17 @@
                <xsl:text>&lt;/a&gt;</xsl:text>
               </xsl:for-each>
              </xsl:variable>
-             <xsl:variable name="iconTerm2">
+             <xsl:variable name="topic2">
               <xsl:call-template name="getDistinct">
-               <xsl:with-param name="text" select="$iconTerm" />
+               <xsl:with-param name="text" select="$topic" />
               </xsl:call-template>
              </xsl:variable>
-             <xsl:if test="$iconTerm2 != '' or tei:figure/dctl:studio/dctl:iconTerm">
+             <xsl:if test="$topic2 != '' or tei:figure/dctl:studio/dctl:topic">
               <span class="widget_label">Iconclass:</span>
               <span class="widget_field">
-               <xsl:value-of select="$iconTerm2" disable-output-escaping="yes" />
+               <xsl:value-of select="$topic2" disable-output-escaping="yes" />
                <!-- select locals -->
-               <xsl:for-each select="tei:figure/dctl:studio/dctl:iconTerm">
+               <xsl:for-each select="tei:figure/dctl:studio/dctl:topic">
                 <xsl:if test="position() > 1">
                  <xsl:text>, </xsl:text>
                 </xsl:if>
@@ -312,11 +312,11 @@
           </ul>
          </xsl:if>
         </xsl:when>
-        <!-- # DCTL : SCENELIST -->
-        <xsl:when test="local-name(.)='sceneList'">
+        <!-- # DCTL : list -->
+        <xsl:when test="local-name(.)='list'">
          <xsl:if test="normalize-space(.//text()) != ''">
           <ul class="scene_loader">
-           <xsl:for-each select="dctl:scene">
+           <xsl:for-each select="dctl:item">
             <xsl:if test="normalize-space(.//text()) != ''">
              <li>
               <a class="collapsible_handle2" title="{$tooltip_toggle}">

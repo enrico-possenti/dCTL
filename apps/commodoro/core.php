@@ -913,7 +913,7 @@ class dCTL {
 					$package = (preg_match('/\.xml$/i', $parsed['package']) ? $parsed['package'] : $parsed['package'].'.xml');
 					$xml_resource = $this->_db_publish_path.$parsed['collection'].DB_PATH_SEP.$parsed['collection'].DCTL_RESERVED_INFIX.$package;
 					$this->_get_package_record (true, $xml_resource, &$resList[$key4package]);
-					$resList[$key4package]['xquery'] = htmlentities($context);
+					$resList[$key4package]['xquery'] = htmlentities($context, ENT_QUOTES, 'UTF-8');
 					if ($resList[$key4package]['ref'] != '') {
 						if ($parsed['locator'] != '') $resList[$key4package]['ref'] .= DB_PATH_SEP.$parsed['locator'];
 					};
@@ -1010,7 +1010,7 @@ class dCTL {
        $this->_get_collection_record (true, $xml_resource, &$resList[]);
 				   break;
 				 };
-					$resList[$key4package]['xquery'] = htmlentities($context);
+					$resList[$key4package]['xquery'] = htmlentities($context, ENT_QUOTES, 'UTF-8');
 					$resList[$key4package]['kind'] = "link";
 					$resList[$key4package]['link'] = $db_resource;
 					break;

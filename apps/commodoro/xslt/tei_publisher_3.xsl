@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
 	/**
 	+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
 	| A digital tale (C) 2009 Enrico Possenti :: dCTL                     |
@@ -157,8 +157,8 @@
 					<xsl:apply-templates select="@corresp" />
 					<xsl:apply-templates select="node()" />
 				</xsl:when>
-				<!-- ICONTERM -->
-				<xsl:when test="self::dctl:iconTerm">
+				<!-- TOPIC -->
+				<xsl:when test="self::dctl:topic">
 					<xsl:attribute name="key">
 						<xsl:value-of select="@key" />
 					</xsl:attribute>
@@ -323,8 +323,8 @@
 						<xsl:apply-templates select="@ana" />
 						<xsl:apply-templates select="node()" />
 					</xsl:when>
-					<!-- ICONTERM -->
-					<xsl:when test="local-name(.)='iconTerm'">
+					<!-- TOPIC -->
+					<xsl:when test="local-name(.)='topic'">
 						<xsl:attribute name="key">
 							<xsl:value-of select="@key" />
 						</xsl:attribute>

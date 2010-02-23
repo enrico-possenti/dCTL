@@ -10,6 +10,12 @@
  +----------------------------------------------------------------------+
 */
 
+[TO DO LIST]
+> Procedura Core per prendere i dati da teiHeader.
+
+
+
+
 [HIGH PRIORITY]
 
 Realizzazione di un modulo per la gestione via ACL (Access Control List).

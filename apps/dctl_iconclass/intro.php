@@ -14,7 +14,7 @@ La banca dati prevede l'associazione di un codice Iconclass ad un soggetto, rito
 &#160;&#160;- un codice KEY<br />
 &#160;&#160;- un codice Iconclass<br />
 <br />
-Il codice KEY &egrave; da inserire come attributo <strong>key</strong> dell'elemento <strong>&lt;dctl:iconTerm&gt;</strong> nella codifica TEI:<br />
+Il codice KEY &egrave; da inserire come attributo <strong>key</strong> dell'elemento <strong>&lt;dctl:topic&gt;</strong> nella codifica TEI:<br />
 </b>
-&#160;&#160;p.es. &lt;dctl:iconTerm key=&quot;000042&quot;&gt;eremita&lt;dctl:iconTerm&gt;<br />
+&#160;&#160;p.es. &lt;dctl:topic key=&quot;000042&quot;&gt;eremita&lt;dctl:topic&gt;<br />
 <br />

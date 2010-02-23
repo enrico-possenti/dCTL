@@ -9,20 +9,14 @@
 ]>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="&collection_id;" n="&collection_work;"
 		>
-	&TEI.header; <text xml:id="&collection_id;.collection">
+ &TEI.header; <text xml:id="&collection_id;.linker">
 		<body>
-			<div type="collection">
-				<head type="main">&collection_work;</head>
-				<head type="alt">&collection_short;</head>
-				<div type="introduction">
-					<p xml:lang="it"><lb />&collection_summary_it;</p>
-					<p xml:lang="en"><lb />&collection_summary_en;</p>
-				</div>
-				<div type="work">
-					<p xml:lang="it"><lb />&collection_desc_it;</p>
-					<p xml:lang="en"><lb />&collection_desc_en;</p>
-				</div>
-			</div>
+			<p>
+				<!-- %BEGIN% -->
+				<code xml:id="placeholder"><!-- % DO NOT REMOVE FOR ANY REASON % --></code>
+				<!-- -->
+				<!-- %END% -->
+			</p>
 		</body>
 	</text>
 </TEI>

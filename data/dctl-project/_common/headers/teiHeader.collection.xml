@@ -24,7 +24,7 @@
 			</respStmt>
 			<respStmt>
 				<resp>Technical advisor</resp>
-				<name key="ctl" type="person">Enrico Possenti</name>
+				<name key="ctl" type="person">Enrico Possenti (info@noveopiu.com)</name>
 			</respStmt>
 		</titleStmt>
 		<editionStmt>
@@ -34,7 +34,7 @@
 		</editionStmt>
 		<extent>
 			<term type="fileCount">&collection_packageCount;</term>
-			<term type="filesize">100 kb</term>
+			<term type="filesize">&lt;10 Mb</term>
 			<term type="encoding">XML TEI P5 (TEi Lite), following dCTL Guidelines</term>
 		</extent>
 		<publicationStmt>

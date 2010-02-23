@@ -424,13 +424,13 @@ class CoreTester_getOptions extends WebTestCase {
   	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
  		$tChk = 'xml://afd/marmi_img';
- 		$tXPath = '//dctl:iconTerm';
+ 		$tXPath = '//dctl:topic';
  		$tCmd = $dCTL->$method($tChk,$tXPath);
   	$tTest = true;
   	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));
 
  		$tChk = 'xml://afd/marmi_img';
- 		$tXPath = '//dctl:iconTerm#n@"*"';
+ 		$tXPath = '//dctl:topic#n@"*"';
  		$tCmd = $dCTL->$method($tChk,$tXPath);
   	$tTest = true;
   	UnitTestCase::assertTrue(highlightIt($method, $tChk, $tXPath, $tCmd, $tTest));

@@ -50,11 +50,19 @@
    <eg xml:lang="it">Carlo Alberto Girotto</eg>
    <eg xml:lang="en">Carlo Alberto Girotto</eg>
   </term>
-  <term xml:id="FP">
-   <eg xml:lang="it">Federica Pich</eg>
-   <eg xml:lang="en">Federica Pich</eg>
-  </term>
-  <term xml:id="CTL">
+ 	<term xml:id="FP">
+ 		<eg xml:lang="it">Federica Pich</eg>
+ 		<eg xml:lang="en">Federica Pich</eg>
+ 	</term>
+ 	<term xml:id="SM">
+ 		<eg xml:lang="it">Sonia Maffei</eg>
+ 		<eg xml:lang="en">Sonia Maffei</eg>
+ 	</term>
+ 	<term xml:id="LI">
+ 		<eg xml:lang="it">Luca Degl'Innocenti</eg>
+ 		<eg xml:lang="en">Luca Degl'Innocenti</eg>
+ 	</term>
+ 	<term xml:id="CTL">
    <eg xml:lang="it">CTL</eg>
    <eg xml:lang="en">CTL</eg>
   </term>
@@ -209,22 +217,56 @@
  <classCode scheme="dCTL-InterpretationAndAnalysis">
   <eg xml:lang="it" />
   <eg xml:lang="en" />
- 	<!--  -->
+  	
+ 	<!-- TOPIC_ -->
+ 	<term xml:id="topic_vegetal">
+ 		<eg xml:lang="it">Elementi vegetali</eg>
+ 		<eg xml:lang="en">Vegetal matter</eg>
+ 	</term>
+ 	<term xml:id="topic_animal">
+ 		<eg xml:lang="it">Elementi animali</eg>
+ 		<eg xml:lang="en">Animal matter</eg>
+ 	</term>
+ 	<term xml:id="topic_human">
+ 		<eg xml:lang="it">Elementi umani</eg>
+ 		<eg xml:lang="en">Human matter</eg>
+ 	</term>
+ 	
+ 	
+ 	
+ 	<term xml:id="topic_watch">
+ 		<eg xml:lang="it">Orologio</eg>
+ 		<eg xml:lang="en">Watch</eg>
+ 	</term>
+ 	<term xml:id="topic_sand">
+ 		<eg xml:lang="it">Sabbia</eg>
+ 		<eg xml:lang="en">Sand</eg>
+ 	</term>
+ 	<term xml:id="topic_dust">
+ 		<eg xml:lang="it">Polvere</eg>
+ 		<eg xml:lang="en">Dust, Powder</eg>
+ 	</term>
+ 	<term xml:id="topic_timer">
+ 		<eg xml:lang="it">Misuratore di tempo</eg>
+ 		<eg xml:lang="en">Timer</eg>
+ 	</term>
+ 	
+ 	<!-- STRUCT_ -->
  	<term xml:id="struct_component">
  		<eg xml:lang="it">Componente</eg>
  		<eg xml:lang="en">Component</eg>
  	</term>
- 	<!--  -->
+ 	<!-- KEY_ -->
  	<term xml:id="key_item">
  		<eg xml:lang="it">Parole chiave</eg>
  		<eg xml:lang="en">Words as key</eg>
  	</term>
- 	<!--  -->
+ 	<!-- AS_ -->
   	<term xml:id="as_source">
  		<eg xml:lang="it">Nome come Fonte</eg>
  		<eg xml:lang="en">Name as Source</eg>
  	</term>
-  <!--  -->
+  <!-- WHAT_ -->
  	<term xml:id="what_introduction">
    <eg xml:lang="it">Introduzione</eg>
    <eg xml:lang="en">Introduction</eg>
@@ -241,7 +283,7 @@
    <eg xml:lang="it">Conclusione</eg>
    <eg xml:lang="en">Conclusion</eg>
   </term>
-  <!--  -->
+  <!-- WHO_ -->
   <term xml:id="who_subject">
    <eg xml:lang="it">Soggetto della Figura</eg>
    <eg xml:lang="en">Subject of Figure</eg>
@@ -266,7 +308,7 @@
    <eg xml:lang="it">Sognatore</eg>
    <eg xml:lang="en">Dreamer</eg>
   </term>
-  <!--		-->
+  <!--	NARRATION_	-->
   <term xml:id="narration_first_level">
    <eg xml:lang="it">Narrazione di primo livello</eg>
    <eg xml:lang="en">First level narration</eg>
@@ -275,7 +317,7 @@
    <eg xml:lang="it">Narrazione di secondo livello</eg>
    <eg xml:lang="en">Second level narration</eg>
   </term>
-  <!--		-->
+  <!--	QUOTATION_	-->
   <term xml:id="quotation_simple">
    <eg xml:lang="it">Citazione Semplice</eg>
    <eg xml:lang="en">Simple quotation</eg>
@@ -296,7 +338,7 @@
    <eg xml:lang="it">Auto-Citazione</eg>
    <eg xml:lang="en">Self-Citation</eg>
   </term>
-  <!--		-->
+  <!--	DESC_	-->
   <term xml:id="desc_character">
    <eg xml:lang="it">Descrizione Personaggio</eg>
    <eg xml:lang="en">Character description</eg>
@@ -309,7 +351,7 @@
    <eg xml:lang="it">Descrizione Oggetto</eg>
    <eg xml:lang="en">Object description</eg>
   </term>
-  <!--		-->
+  <!--	SYNTEXP_	-->
   <term xml:id="syntexp_idiomatic">
    <eg xml:lang="it">Espressione Idiomatica</eg>
    <eg xml:lang="en">Idiomatic expression</eg>
@@ -322,7 +364,7 @@
    <eg xml:lang="it">Wellerismo</eg>
    <eg xml:lang="en">Wellerism</eg>
   </term>
- 	<!--		-->
+ 	<!--	VERBFIG	-->
  	<term xml:id="verbfig_memory">
  		<eg xml:lang="it">Memoria</eg>
  		<eg xml:lang="en">Memory</eg>
@@ -343,7 +385,15 @@
    <eg xml:lang="it">Ecfrasi</eg>
    <eg xml:lang="en">Ecphrasis</eg>
   </term>
-  <!--		-->
+  <!--	FUNC_	-->
+ 	<term xml:id="func_number">
+ 		<eg xml:lang="it">Numero</eg>
+ 		<eg xml:lang="en">Number</eg>
+ 	</term>
+ 	<term xml:id="func_alpha">
+ 		<eg xml:lang="it">Lettera dell'alfabeto</eg>
+ 		<eg xml:lang="en">Alphabet letter</eg>
+ 	</term>
  	<term xml:id="func_person">
  		<eg xml:lang="it">Persona</eg>
  		<eg xml:lang="en">Person</eg>
@@ -408,7 +458,7 @@
    <eg xml:lang="it">Ritratto</eg>
    <eg xml:lang="en">Portrait</eg>
   </term>
-  <!--		-->
+  <!--	SETTING_	-->
    <term xml:id="setting_spring">
    <eg xml:lang="it">Sorgente</eg>
    <eg xml:lang="en">Spring</eg>

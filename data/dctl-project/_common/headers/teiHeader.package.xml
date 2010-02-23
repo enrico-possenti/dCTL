@@ -22,7 +22,7 @@
    </respStmt>
    <respStmt>
     <resp>Technical advisor</resp>
-    <name key="ctl" type="person">Enrico Possenti</name>
+   	<name key="ctl" type="person">Enrico Possenti (info@noveopiu.com)</name>
    </respStmt>
   </titleStmt>
   <editionStmt>
@@ -62,6 +62,10 @@
      <publisher>&source_edition_publisher;</publisher>
      <pubPlace>&source_edition_place;</pubPlace>
      <date value="&source_edition_year;-00-00">&source_edition_year;</date>
+    	<distributor role="location">&source_location;</distributor>
+    	<distributor role="commissioner">&source_commissioner;</distributor>
+    	<distributor role="provenance">&source_provenance;</distributor>
+    	<idno>&source_idno;</idno>
     </publicationStmt>
    </biblFull>
    <biblFull n="reference">
@@ -79,7 +83,11 @@
     <publicationStmt>
      <publisher>&reference_edition_publisher;</publisher>
      <pubPlace>&reference_edition_place;</pubPlace>
-     <date value="&source_edition_year;-00-00">&reference_edition_year;</date>
+    	<date value="&reference_edition_year;-00-00">&reference_edition_year;</date>
+    	<distributor role="location">&reference_location;</distributor>
+    	<distributor role="commissioner">&reference_commissioner;</distributor>
+    	<distributor role="provenance">&reference_provenance;</distributor>
+    	<idno>&reference_idno;</idno>
     </publicationStmt>
    </biblFull>
   </sourceDesc>

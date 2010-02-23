@@ -531,10 +531,10 @@ if ($prosecute) {
 							if (($field == 'package_work') && ($value == '')) {
 								$value = $_REQUEST['source_author'].' - '.$_REQUEST['source_title_main'];
 							};
-							$value = stripslashes($value);
-							$value = trim(preg_replace('/'.WS.'+/', ' ', $value));
-							$value = htmlentities($value);
-							$value = preg_replace('/'.WS.'+/', '<lb />', $value);
+       $value = stripslashes($value);
+							$value = trim(preg_replace('/'.WS.WS.'+/', ' ', $value));
+							$value = htmlentities($value, ENT_QUOTES, 'UTF-8');
+							$value = preg_replace('/'.WS.WS.'+/', '<lb />', $value);
 							$value = stripslashes($value);
 							$contents = str_ireplace($field.' ""', $field.' "'.$value.'"', $contents);
 						};

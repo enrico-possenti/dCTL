@@ -52,7 +52,7 @@ function initializeUser ($user_id) {
    break;
   case 'giovannar':
 			$user_name = 'Giovanna Rizzarelli';
-			$user_kind = DCTL_USER_EDITOR;
+			$user_kind = DCTL_USER_ADMIN;
 			$sql_user = 'ctl';
 			$sql_pswd = 'sirena';
 			$xmldb_user = DCTL_XMLDB_USER_ADMIN;
@@ -60,7 +60,7 @@ function initializeUser ($user_id) {
    break;
   case 'carlog':
 			$user_name = 'Carlo Alberto Girotto';
-			$user_kind = DCTL_USER_EDITOR;
+			$user_kind = DCTL_USER_ADMIN;
 			$sql_user = 'ctl';
 			$sql_pswd = 'sirena';
 			$xmldb_user = DCTL_XMLDB_USER_ADMIN;
@@ -68,7 +68,7 @@ function initializeUser ($user_id) {
    break;
   case 'andreat':
 			$user_name = 'Andrea Torre';
-			$user_kind = DCTL_USER_EDITOR;
+			$user_kind = DCTL_USER_ADMIN;
 			$sql_user = 'ctl';
 			$sql_pswd = 'sirena';
 			$xmldb_user = DCTL_XMLDB_USER_ADMIN;
@@ -76,7 +76,7 @@ function initializeUser ($user_id) {
    break;
   case 'federicap':
 			$user_name = 'Federica Pich';
-			$user_kind = DCTL_USER_EDITOR;
+			$user_kind = DCTL_USER_ADMIN;
 			$sql_user = 'ctl';
 			$sql_pswd = 'sirena';
 			$xmldb_user = DCTL_XMLDB_USER_ADMIN;
